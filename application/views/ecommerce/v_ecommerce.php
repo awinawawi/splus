@@ -134,7 +134,7 @@
                                 <h4><a style="color: #fff;">Door</a></h4>
                                 <span>Best door Resistant to all weather conditions, Not brittle, not discolored and not eaten by termites.</span>
                                 <div class="main-border-button">
-                                    <a href="#">Read more</a>
+                                    <a href="<?= base_url('product_pintu') ?>">Read more</a>
                                 </div>
                             </div>
                             <img src="<?= base_url('assets/images/ourproduk/pintu.jpg') ?>">

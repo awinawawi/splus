@@ -1465,7 +1465,7 @@
                             <li><a href="<?= base_url('v_kategori') ?>">Produk</a></li>
                             <li><a href="<?= base_url('e-katalog') ?>"><span style="text-transform: lowercase;">e</span>-Katalog</a></li>
                             <!-- <li><a href='https://localhost/splus_ecommerce'>e-commerce</a></li> -->
-                            <li><a href="<?= base_url('perbaikan') ?>">e-commerce</a></li>
+                            <li><a href="<?= base_url('Ecommerce') ?>">e-commerce</a></li>
                             <!-- <li><a href="<?= base_url('administrator') ?>">Login</a></li> -->
                         </ul>
                     </div>

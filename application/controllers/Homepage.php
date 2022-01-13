@@ -289,9 +289,16 @@ class Homepage extends CI_Controller
 		$this->load->view('user/pemesanan');
 	}
 
-	public function perbaikan()
+	public function Ecommerce()
 	{
-		$this->load->view('user/v_perbaikan');
+		// $this->load->view('user/v_perbaikan');
+		$this->load->view('ecommerce/v_ecommerce');
+	}
+
+	public function product_pintu()
+	{
+		// $this->load->view('user/v_perbaikan');
+		$this->load->view('ecommerce/v_product_pintu');
 	}
 
 	public function v_kategori()

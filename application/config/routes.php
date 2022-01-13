@@ -11,11 +11,12 @@ $route['katalog']               = 'homepage/katalog';
 $route['katalog/(:any)']        = 'homepage/katalog/$1';
 $route['hubungi-kami']          = 'homepage/hubungi_kami';
 $route['tentang-kami']          = 'homepage/tentang_kami';
-$route['karire']                 = 'homepage/karire';
+$route['karire']                = 'homepage/karire';
 $route['pemesanan']             = 'homepage/pemesanan';
-$route['perbaikan']             = 'homepage/perbaikan';
-$route['galeri']                  = 'homepage/galeri';
-$route['galeri/(:any)']          = 'homepage/galeri/$1';
+$route['Ecommerce']             = 'homepage/Ecommerce';
+$route['product_pintu']         = 'homepage/product_pintu';
+$route['galeri']                = 'homepage/galeri';
+$route['galeri/(:any)']         = 'homepage/galeri/$1';
 $route['galeri/(:any)/(:any)']  = 'homepage/galeri/$1/$2';
 $route['galeri-video']          = 'homepage/galeri_video';
 $route['pemasangan/(:any)']     = 'homepage/instalasi/$1';
@@ -23,8 +24,8 @@ $route['standar-pengukuran']    = 'homepage/standar_pengukuran';
 $route['hubungi-kami/(:any)']   = 'homepage/showroom/$1';
 $route['kebijakan-privasi']     = 'homepage/kebijakan_privasi';
 $route['syarat-ketentuan']      = 'homepage/syarat_ketentuan';
-$route['faq']                      = 'homepage/faq';
-$route['karir']                  = 'homepage/karir';
+$route['faq']                   = 'homepage/faq';
+$route['karir']                 = 'homepage/karir';
 
 // Transaksi
 $route['order']                     = 'order';
