@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 658.86 655.35">
+    <defs>
+        <radialGradient id="a" cx="583.92" cy="267.06" r="388.94" gradientUnits="userSpaceOnUse">
+            <stop offset="0.04" stop-color="#d8d9dd" />
+            <stop offset="0.55" stop-color="#edeef0" />
+            <stop offset="1" stop-color="#f7f7f8" />
+        </radialGradient>
+        <radialGradient id="b" cx="694.51" cy="383.49" r="161.2" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#828282" />
+            <stop offset="0.3" stop-color="#848484" stop-opacity="0.98" />
+            <stop offset="0.47" stop-color="#8b8b8b" stop-opacity="0.92" />
+            <stop offset="0.6" stop-color="#969697" stop-opacity="0.81" />
+            <stop offset="0.72" stop-color="#a6a6a7" stop-opacity="0.66" />
+            <stop offset="0.83" stop-color="#bbbcbd" stop-opacity="0.47" />
+            <stop offset="0.92" stop-color="#d4d5d7" stop-opacity="0.23" />
+            <stop offset="1" stop-color="#edeef0" stop-opacity="0" />
+        </radialGradient>
+        <radialGradient id="c" cx="610.55" cy="297.26" r="297" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#f7f7f8" />
+            <stop offset="0.51" stop-color="#fbfbfb" />
+            <stop offset="0.72" stop-color="#fff" />
+        </radialGradient>
+    </defs>
+    <title>1016 [Recovered]</title>
+    <path d="M829.44,393a132.89,132.89,0,0,0-265.75,3.75A132.89,132.89,0,0,0,829.44,393Z" transform="translate(-367.13 -66.95)" style="fill:url(#a)" />
+    <path d="M620.92,464.37l62.71,62.71q5.55.46,11.22.47A134.59,134.59,0,0,0,829.44,393c0-2.13-.05-4.26-.15-6.37l-45.66-45.65Z" transform="translate(-367.13 -66.95)" style="fill:url(#b)" />
+    <path d="M798,393.4A102.77,102.77,0,1,1,695.25,290.63,102.77,102.77,0,0,1,798,393.4Z" transform="translate(-367.13 -66.95)" style="fill:#fff" />
+    <path d="M798,393.4A102.77,102.77,0,1,0,695.25,496.17,102.4,102.4,0,0,0,798,393.4Z" transform="translate(-367.13 -66.95)" style="fill:url(#c)" />
+    <path d="M787.63,348.33A102.78,102.78,0,0,1,610.69,450.67,102.45,102.45,0,0,0,787.63,348.33Z" transform="translate(-367.13 -66.95)" style="fill:#edeef0" />
+    <path d="M696.56,234a160.81,160.81,0,1,1-113.7,47.1A159.71,159.71,0,0,1,696.56,234m0-7.05A167.86,167.86,0,1,0,864.42,394.83,167.85,167.85,0,0,0,696.56,227Z" transform="translate(-367.13 -66.95)" style="fill:#edeef0" />
+    <path d="M695.25,227v6.17A161,161,0,0,1,857.58,395.48h6.17A167.14,167.14,0,0,0,695.25,227Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M528.57,394.34h6.16a161,161,0,0,1,161.2-161.2V227A167.16,167.16,0,0,0,528.57,394.34Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <image width="300" height="218" transform="translate(246.73 267.76) scale(0.55)" xlink:href="<?=base_url('assets/user/images/icon/product/logo.png')?>" />
+    <rect x="494.06" y="328.11" width="67.78" height="5.49" style="fill:#dfe0e3" />
+    <circle cx="494.06" cy="330.86" r="11.45" style="fill:#dfe0e3" />
+    <path d="M1026,393.93a65,65,0,1,0-65,65A64.82,64.82,0,0,0,1026,393.93Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M925.24,428.43l30.3,30.3c1.79.15,3.6.23,5.43.23a65,65,0,0,0,65-65c0-1,0-2.06-.08-3.08l-22.06-22.06Z" transform="translate(-367.13 -66.95)" style="fill:#cecece" />
+    <path d="M1010.82,394.14a49.66,49.66,0,1,0-49.66,49.66A49.45,49.45,0,0,0,1010.82,394.14Z" transform="translate(-367.13 -66.95)" style="fill:#fff" />
+    <image width="1000" height="1000" transform="translate(558.11 290.69) scale(0.07)" xlink:href="<?=base_url('assets/user/images/icon/product/plafon.png')?>" />
+    <rect x="97.4" y="328.11" width="67.78" height="5.5" style="fill:#dfe0e3" />
+    <path d="M532.32,409.26a11.45,11.45,0,1,1,11.44-11.45A11.45,11.45,0,0,1,532.32,409.26Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M495.53,393.93a65,65,0,1,0-65,65A64.82,64.82,0,0,0,495.53,393.93Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M394.78,428.43l30.3,30.3c1.79.15,3.6.23,5.42.23a65,65,0,0,0,65-65c0-1,0-2.06-.07-3.08L473.4,368.79Z" transform="translate(-367.13 -66.95)" style="fill:#cecece" />
+    <path d="M480.36,394.14A49.66,49.66,0,1,0,430.7,443.8,49.5,49.5,0,0,0,480.36,394.14Z" transform="translate(-367.13 -66.95)" style="fill:#fff" />
+    <image width="1000" height="1000" transform="translate(27.65 293.5) scale(0.07)" xlink:href="<?=base_url('assets/user/images/icon/product/kitchen.png')?>" />
+    <rect x="326.05" y="95.67" width="5.5" height="67.78" style="fill:#dfe0e3" />
+    <path d="M684.48,230.4a11.45,11.45,0,1,1,11.45,11.45A11.45,11.45,0,0,1,684.48,230.4Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M760.77,130.17a64.78,64.78,0,0,0-16.34-43.09,65,65,0,0,0-95.74,88,65,65,0,0,0,112.08-44.9Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M660,164.67,690.31,195c1.79.14,3.6.22,5.42.22a65,65,0,0,0,65-65c0-1,0-2.06-.08-3.08L738.63,105Z" transform="translate(-367.13 -66.95)" style="fill:#cecece" />
+    <path d="M745.59,130.38a49.66,49.66,0,1,1-49.66-49.66A49.66,49.66,0,0,1,745.59,130.38Z" transform="translate(-367.13 -66.95)" style="fill:#fff" />
+    <image width="1000" height="1000" transform="translate(280.92 13.78) scale(0.1)" xlink:href="<?=base_url('assets/user/images/icon/product/pintu.png')?>" />
+    <rect x="802.58" y="251.33" width="67.78" height="5.5" transform="translate(-301.79 598.95) rotate(-45)" style="fill:#dfe0e3" />
+    <path d="M804.41,270a11.45,11.45,0,1,1,0,16.19A11.45,11.45,0,0,1,804.41,270Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M948,206.27a65,65,0,1,0-65,65A64.77,64.77,0,0,0,948,206.27Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M847.2,240.77l30.3,30.3c1.78.15,3.59.23,5.42.23a65,65,0,0,0,65-65c0-1,0-2.06-.07-3.08l-22.06-22.06Z" transform="translate(-367.13 -66.95)" style="fill:#cecece" />
+    <path d="M932.77,206.48a49.65,49.65,0,1,0-49.66,49.66A49.45,49.45,0,0,0,932.77,206.48Z" transform="translate(-367.13 -66.95)" style="fill:#fff" />
+    <image width="1000" height="1000" transform="translate(477.99 101.99) scale(0.07)" xlink:href="<?=base_url('assets/user/images/icon/product/jendela.png')?>" />
+    <rect x="553.99" y="221.33" width="5.49" height="67.78" transform="translate(-384.53 401.47) rotate(-45)" style="fill:#dfe0e3" />
+    <path d="M572.6,287.27a11.45,11.45,0,1,1,16.19,0A11.45,11.45,0,0,1,572.6,287.27Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M573.73,207a65,65,0,1,0-65,65A64.77,64.77,0,0,0,573.73,207Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M473,241.46l30.3,30.31c1.79.14,3.59.22,5.42.22a65,65,0,0,0,65-65c0-1,0-2.06-.07-3.08L551.6,181.82Z" transform="translate(-367.13 -66.95)" style="fill:#cecece" />
+    <path d="M558.56,207.17a49.66,49.66,0,1,1-49.66-49.65A49.66,49.66,0,0,1,558.56,207.17Z" transform="translate(-367.13 -66.95)" style="fill:#fff" />
+    <image width="1000" height="1000" transform="translate(103.27 101.73) scale(0.08)" xlink:href="<?=base_url('assets/user/images/icon/product/namo.png')?>" />
+    <rect x="313.89" y="491.9" width="5.5" height="67.78" style="fill:#dfe0e3" />
+    <path d="M672.32,558.85a11.45,11.45,0,1,0,11.45-11.45A11.45,11.45,0,0,0,672.32,558.85Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M748.61,659.08a65,65,0,1,1-65-65A64.78,64.78,0,0,1,748.61,659.08Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M647.19,691.55l30.3,30.31c1.79.14,3.59.22,5.42.22a65,65,0,0,0,65-65c0-1,0-2.06-.07-3.07l-22.06-22.06Z" transform="translate(-367.13 -66.95)" style="fill:#cecece" />
+    <path d="M733.43,658.87a49.66,49.66,0,1,0-49.66,49.66A49.66,49.66,0,0,0,733.43,658.87Z" transform="translate(-367.13 -66.95)" style="fill:#fff" />
+    <image width="1000" height="1000" transform="translate(289.51 564.16) scale(0.06)" xlink:href="<?=base_url('assets/user/images/icon/product/shade.png')?>" />
+    <rect x="821.56" y="510.28" width="5.5" height="67.78" transform="translate(-510.48 675.3) rotate(-45)" style="fill:#dfe0e3" />
+    <path d="M792.25,528.3a11.45,11.45,0,1,0,0-16.19A11.45,11.45,0,0,0,792.25,528.3Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M935.79,592a65,65,0,1,1-65-65A64.8,64.8,0,0,1,935.79,592Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M835,624.33l30.31,30.3c1.78.15,3.59.22,5.42.22a65,65,0,0,0,65-65c0-1,0-2.05-.07-3.07l-22.06-22.06Z" transform="translate(-367.13 -66.95)" style="fill:#cecece" />
+    <path d="M920.61,591.77A49.66,49.66,0,1,1,871,542.11,49.45,49.45,0,0,1,920.61,591.77Z" transform="translate(-367.13 -66.95)" style="fill:#fff" />
+    <image width="500" height="500" transform="translate(465.28 484.95) scale(0.16)" xlink:href="<?=base_url('assets/user/images/icon/product/wpc.png')?>" />
+    <rect x="519.3" y="530.43" width="67.78" height="5.49" transform="translate(-582.12 480.38) rotate(-45)" style="fill:#dfe0e3" />
+    <path d="M569.06,501.11a11.45,11.45,0,1,0,16.19,0A11.46,11.46,0,0,0,569.06,501.11Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M570.19,581.43a65,65,0,1,1-65-65A64.77,64.77,0,0,1,570.19,581.43Z" transform="translate(-367.13 -66.95)" style="fill:#dfe0e3" />
+    <path d="M469.43,614.46l30.3,30.31c1.79.14,3.6.22,5.43.22a65,65,0,0,0,65-65c0-1,0-2.06-.07-3.08l-22.06-22.06Z" transform="translate(-367.13 -66.95)" style="fill:#cecece" />
+    <path d="M555,581.22a49.66,49.66,0,1,0-49.66,49.65A49.66,49.66,0,0,0,555,581.22Z" transform="translate(-367.13 -66.95)" style="fill:#fff" />
+    <image width="500" height="500" transform="translate(99.83 474.55) scale(0.16)" xlink:href="<?=base_url('assets/user/images/icon/product/solid.png')?>" />
+</svg>

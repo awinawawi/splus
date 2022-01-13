@@ -1,0 +1,730 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1366 768">
+    <defs>
+        <clipPath id="a" transform="translate(0)">
+            <rect x="68.24" y="32.69" width="266.16" height="176.56" rx="5" ry="5" style="fill:none" />
+        </clipPath>
+        <clipPath id="b" transform="translate(0)">
+            <rect x="275.97" y="67.11" width="293.3" height="194.57" rx="5" ry="5" style="fill:none" />
+        </clipPath>
+        <clipPath id="c" transform="translate(0)">
+            <rect x="260.4" y="90.98" width="293.3" height="194.57" rx="5" ry="5" style="fill:none" />
+        </clipPath>
+        <clipPath id="d" transform="translate(0)">
+            <rect x="287.93" y="91.4" width="293.3" height="194.57" rx="5" ry="5" style="fill:none" />
+        </clipPath>
+        <clipPath id="e" transform="translate(0)">
+            <rect x="313.07" y="80.74" width="293.3" height="194.57" rx="5" ry="5" style="fill:none" />
+        </clipPath>
+        <clipPath id="f" transform="translate(0)">
+            <rect x="355.03" y="146.69" width="293.3" height="194.57" rx="5" ry="5" style="fill:none" />
+        </clipPath>
+        <clipPath id="g" transform="translate(0)">
+            <rect x="346.26" y="130.41" width="293.3" height="194.57" rx="5" ry="5" style="fill:none" />
+        </clipPath>
+        <clipPath id="h" transform="translate(0)">
+            <rect x="434.38" y="118.94" width="293.3" height="194.57" rx="5" ry="5" style="fill:none" />
+        </clipPath>
+        <clipPath id="i" transform="translate(0)">
+            <rect x="615.32" y="140.41" width="293.3" height="194.57" rx="5" ry="5" style="fill:none" />
+        </clipPath>
+        <clipPath id="j" transform="translate(0)">
+            <rect x="633.24" y="212.81" width="256.14" height="193.27" rx="10" ry="10" style="fill:none" />
+        </clipPath>
+        <clipPath id="k" transform="translate(0)">
+            <rect x="830.89" y="167.1" width="260.19" height="193.41" rx="10" ry="10" style="fill:none" />
+        </clipPath>
+        <clipPath id="l" transform="translate(0)">
+            <rect x="846.04" y="182.43" width="260.19" height="193.41" rx="10" ry="10" style="fill:none" />
+        </clipPath>
+        <clipPath id="m" transform="translate(0)">
+            <rect x="1029.52" y="265.75" width="258.48" height="192.14" rx="10" ry="10" style="fill:none" />
+        </clipPath>
+		<style>
+            .medan-gallery-list {
+                display: none;
+            }
+            .medan-gallery:hover .medan-gallery-list{
+                cursor: pointer;
+                display: block;
+            } 
+
+            .jakarta-gallery-list {
+                display: none;
+            }
+            .jakarta-gallery:hover .jakarta-gallery-list {
+                cursor: pointer;
+                display: block;
+            }
+
+            .tangerang-gallery-list {
+                display: none;
+            }
+
+            .tangerang-gallery:hover .tangerang-gallery-list {
+                cursor: pointer;
+                display: block;
+            }
+
+            .bekasi-gallery-list {
+                display: none;
+            }
+            .bekasi-gallery:hover .bekasi-gallery-list {
+                cursor: pointer;
+                display: block;
+            }
+
+            .cibubur-gallery-list {
+                display: none;
+            }
+            .cibubur-gallery:hover .cibubur-gallery-list {
+                cursor: pointer;
+                display: block;
+            }
+
+            .bandung-gallery-1-list {
+                display: none;
+            }
+            .bandung-gallery-1:hover .bandung-gallery-1-list {
+                cursor: pointer;
+                display: block;
+            }
+
+            .bandung-gallery-2-list {
+                display: none;
+            }
+            .bandung-gallery-2:hover .bandung-gallery-2-list {
+                cursor: pointer;
+                display: block;
+            }
+
+            .head-office-list {
+                display: none;
+            }
+            .head-office:hover .head-office-list {
+                cursor: pointer;
+                display: block;
+            }
+
+            .semarang-gallery-list {
+                display: none;
+            }
+            .semarang-gallery:hover .semarang-gallery-list {
+                cursor: pointer;
+                display: block;
+            }
+
+            .yogyakarta-gallery-list {
+                display: none;
+            }
+            .yogyakarta-gallery:hover .yogyakarta-gallery-list {
+                cursor: pointer;
+                display: block;
+            }
+
+            .surabaya-gallery-1-list {
+                display: none;
+            }
+            .surabaya-gallery-1:hover .surabaya-gallery-1-list {
+                cursor: pointer;
+                display: block;
+            }
+
+            .surabaya-gallery-2-list {
+                display: none;
+            }
+            .surabaya-gallery-2:hover .surabaya-gallery-2-list {
+                cursor: pointer;
+                display: block;
+            }
+
+            .bali-gallery-list {
+                display: none;
+            }
+            .bali-gallery:hover .bali-gallery-list {
+                cursor: pointer;
+                display: block;
+            }
+
+        </style>
+    </defs>
+    <title>maps</title>
+    <rect width="1366" height="768" style="fill:#aadaff" />
+    <image width="1234" height="409" transform="translate(266 425.9) scale(0.73)" xlink:href="maps1.png" />
+    <image width="522" height="367" transform="translate(1072 614) scale(0.33)" xlink:href="maps2.png" />
+    <image width="879" height="286" transform="translate(0 354) scale(0.32)" xlink:href="maps3.png" />
+    
+	<g class="medan-gallery">
+	<path d="M201.11,348.2c-7.67,0-16.7,4.72-13.77,16.72,1.88,7.68,13.77,30.3,13.77,30.3s11.52-22.62,13.39-30.3C217.44,352.92,208.77,348.2,201.11,348.2Zm-.19,21.94a8.36,8.36,0,1,1,8.36-8.36A8.36,8.36,0,0,1,200.92,370.14Z" transform="translate(0)" style="fill:#960c0c" />
+    <circle cx="200.92" cy="361.78" r="8.36" style="fill:#fff" />
+		<g class="medan-gallery-list">
+            <path d="M374.8,329.92H239a12,12,0,0,0-10.81,6.91l-17.1,35.33a11.9,11.9,0,0,1-21.06,1l-22.61-37.4a12,12,0,0,0-10.26-5.87H28.09A12.29,12.29,0,0,1,16,317.43V31.6A12.3,12.3,0,0,1,28.09,19.1H374.8a12.3,12.3,0,0,1,12.09,12.5V317.43A12.29,12.29,0,0,1,374.8,329.92Z" transform="translate(0)" style="stroke:#960c0c;stroke-miterlimit:10;stroke-width:3px" />
+            <text transform="translate(131.97 234.35)" style="font-size:21px;fill:#f9f9f9;font-family:Calibri, Calibri">ME
+                <tspan x="28.21" y="0" style="letter-spacing:-0.0146484375em">D</tspan>
+                <tspan x="40.82" y="0">AN GALLE</tspan>
+                <tspan x="124.58" y="0" style="letter-spacing:-0.0146484375em">R</tspan>
+                <tspan x="135.68" y="0">Y</tspan>
+            </text>
+            <g style="clip-path:url(#a)">
+                <image width="1032" height="774" transform="translate(56.75 8.66) scale(0.29)" xlink:href="showroom/medan.jpeg" />
+            </g>
+            <text transform="translate(72.03 260.5)" style="font-size:15.331899642944336px;fill:#fff;font-family:Calibri, Calibri">J
+                <tspan x="4.89" y="0" style="font-size:18px">l. Cema</tspan>
+                <tspan x="59.19" y="0" style="font-size:18px;letter-spacing:-0.0205078125em">r</tspan>
+                <tspan x="65.09" y="0" style="font-size:18px">a No 63 </tspan>
+                <tspan x="125.28" y="0" style="font-size:18px;letter-spacing:-0.01806640625em">K</tspan>
+                <tspan x="134.31" y="0" style="font-size:18px">ec. Medan Timu</tspan>
+                <tspan x="252.18" y="0" style="font-size:18px;letter-spacing:-0.0859375em">r</tspan>
+                <tspan x="256.91" y="0" style="font-size:18px">, </tspan>
+                <tspan style="font-size:18px">
+                    <tspan x="106.79" y="21.6">Medan</tspan>
+                </tspan>
+            </text>
+            <a href="/splus/hubungi-kami/gallery-medan" target="_PARENT">
+                <text transform="translate(137.27 312.53)" style="font-size:18px;fill:#fff;font-family:Calibri, Calibri">Lih
+                    <tspan x="21.16" y="0" style="letter-spacing:-0.00927734375em">a</tspan>
+                    <tspan x="29.61" y="0">t Sh</tspan>
+                    <tspan x="57.44" y="0" style="letter-spacing:-0.00390625em">o</tspan>
+                    <tspan x="66.86" y="0">w</tspan>
+                    <tspan x="79.73" y="0" style="letter-spacing:-0.01611328125em">r</tspan>
+                    <tspan x="85.71" y="0">oom</tspan>
+                </text>
+            </a>
+		</g>
+	</g>
+	
+    <g class="jakarta-gallery">
+        <path d="M422.38,424c-8.44,0-18.4,5.2-15.17,18.42,2.07,8.46,15.17,33.39,15.17,33.39s12.7-24.93,14.77-33.39C440.38,429.21,430.83,424,422.38,424Zm-.2,24.18a9.21,9.21,0,1,1,9.21-9.21A9.21,9.21,0,0,1,422.18,448.19Z" transform="translate(0)" style="fill:#960c0c" />
+        <circle cx="422.18" cy="438.98" r="9.21" style="fill:#fff" />
+        <g class="jakarta-gallery-list">
+            <path d="M613.79,394.65H464.13a13.3,13.3,0,0,0-11.92,7.61L433.38,441.2a13.12,13.12,0,0,1-23.21,1.14l-24.92-41.22a13.26,13.26,0,0,0-11.3-6.47H231.72a13.55,13.55,0,0,1-13.32-13.77v-315a13.55,13.55,0,0,1,13.32-13.76H613.79a13.55,13.55,0,0,1,13.32,13.76v315A13.55,13.55,0,0,1,613.79,394.65Z" transform="translate(0)" style="stroke:#960c0c;stroke-miterlimit:10;stroke-width:3px" />
+            <text transform="translate(341.59 289.34)" style="font-size:22.01926040649414px;fill:#f9f9f9;font-family:Calibri, Calibri">
+                <tspan style="letter-spacing:-0.01707489513994363em">J</tspan>
+                <tspan x="6.64" y="0">AKA</tspan>
+                <tspan x="43.57" y="0" style="letter-spacing:-0.009757082937110646em">R</tspan>
+                <tspan x="55.31" y="0" style="letter-spacing:-0.0781453642508589em">T</tspan>
+                <tspan x="64.32" y="0">A GALLE</tspan>
+                <tspan x="137.93" y="0" style="letter-spacing:-0.014635624405665968em">R</tspan>
+                <tspan x="149.57" y="0">Y</tspan>
+            </text>
+            <g style="clip-path:url(#b)">
+                <image width="1040" height="780" transform="translate(274.82 40.63) scale(0.29)" xlink:href="showroom/jakarta.jpg" />
+            </g>
+            <text transform="translate(279.88 318.16)" style="font-size:16.895130157470703px;fill:#fff;font-family:Calibri, Calibri">Jl. Pinangsia R
+                <tspan x="95.32" y="0" style="letter-spacing:-0.018496454131299987em">a</tspan>
+                <tspan x="103.1" y="0" style="letter-spacing:-0.015143971820001864em">y</tspan>
+                <tspan x="110.5" y="0">a No. 105 Pinangsia Ba</tspan>
+                <tspan x="265.9" y="0" style="letter-spacing:-0.020577305221071235em">r</tspan>
+                <tspan x="271.44" y="0" style="letter-spacing:-0.009248227065649994em">a</tspan>
+                <tspan x="279.38" y="0">t, </tspan>
+                <tspan x="102.22" y="20.27">Ja</tspan>
+                <tspan x="115.7" y="20.27" style="letter-spacing:-0.017109220071452488em">k</tspan>
+                <tspan x="123.09" y="20.27">ar</tspan>
+                <tspan x="137.07" y="20.27" style="letter-spacing:-0.012196099442825929em">t</tspan>
+                <tspan x="142.52" y="20.27">a Ba</tspan>
+                <tspan x="171.72" y="20.27" style="letter-spacing:-0.020577305221071235em">r</tspan>
+                <tspan x="177.26" y="20.27" style="letter-spacing:-0.009248227065649994em">a</tspan>
+                <tspan x="185.2" y="20.27">t</tspan>
+            </text>
+
+            <a href="/splus/hubungi-kami/gallery-jakarta" target="_PARENT">
+                <text transform="translate(354.94 375.49)" style="font-size:18.958499908447266px;fill:#fff;font-family:Calibri, Calibri">Lih
+                    <tspan x="22.28" y="0" style="letter-spacing:-0.009271896555574938em">a</tspan>
+                    <tspan x="31.19" y="0" style="letter-spacing:-0.000051510536419860774em">t Sh</tspan>
+                    <tspan x="60.5" y="0" style="letter-spacing:-0.003914800767909419em">o</tspan>
+                    <tspan x="70.42" y="0" style="letter-spacing:-0.000051510536419860774em">w</tspan>
+                    <tspan x="83.97" y="0" style="letter-spacing:-0.01607128736299656em">r</tspan>
+                    <tspan x="90.28" y="0" style="letter-spacing:-0.000051510536419860774em">oom</tspan>
+                </text>
+            </a>
+        </g>
+    </g>
+    <g class="tangerang-gallery">
+        <path d="M406.82,445.57c-8.45,0-18.4,5.21-15.17,18.42,2.07,8.46,15.17,33.39,15.17,33.39s12.69-24.93,14.76-33.39C424.82,450.78,415.27,445.57,406.82,445.57Zm-.2,24.18a9.21,9.21,0,1,1,9.21-9.21A9.21,9.21,0,0,1,406.62,469.75Z" transform="translate(0)" style="fill:#960c0c" />
+        <circle cx="406.62" cy="460.54" r="9.21" style="fill:#fff" />
+        <g class="tangerang-gallery-list">
+            <path d="M598.22,418.52H448.56a13.26,13.26,0,0,0-11.91,7.61l-18.84,38.93a13.11,13.11,0,0,1-23.21,1.14L369.68,425a13.21,13.21,0,0,0-11.29-6.47H216.16a13.55,13.55,0,0,1-13.32-13.77v-315A13.55,13.55,0,0,1,216.16,76H598.22a13.55,13.55,0,0,1,13.32,13.77v315A13.55,13.55,0,0,1,598.22,418.52Z" transform="translate(0)" style="stroke:#960c0c;stroke-miterlimit:10;stroke-width:3px" />
+            <text transform="translate(307.61 313.2)" style="font-size:22.01926040649414px;fill:#f9f9f9;font-family:Calibri, Calibri">
+                <tspan style="letter-spacing:-0.07812318906236547em">T</tspan>
+                <tspan x="9.01" y="0" style="letter-spacing:-0.000022175188493433285em">ANGERANG GALLE</tspan>
+                <tspan x="174.28" y="0" style="letter-spacing:-0.014679974782652835em">R</tspan>
+                <tspan x="185.92" y="0">Y</tspan>
+            </text>
+            <g style="clip-path:url(#c)">
+                <image width="1152" height="864" transform="translate(256.95 76.01) scale(0.26)" xlink:href="showroom/tangerang.jpeg" />
+            </g>
+            <text transform="translate(283.3 342.02)" style="font-size:16.895130157470703px;fill:#fff;font-family:Calibri, Calibri">Jl. Boul
+                <tspan x="48.2" y="0" style="letter-spacing:-0.004855319209466247em">e</tspan>
+                <tspan x="56.53" y="0" style="letter-spacing:-0.014681560466719366em">v</tspan>
+                <tspan x="63.91" y="0">a</tspan>
+                <tspan x="72" y="0" style="letter-spacing:-0.013698936340994054em">r</tspan>
+                <tspan x="77.66" y="0">d R</tspan>
+                <tspan x="99.53" y="0" style="letter-spacing:-0.0185542555504603em">a</tspan>
+                <tspan x="107.31" y="0" style="letter-spacing:-0.015143971820001864em">y</tspan>
+                <tspan x="114.7" y="0">a Ru</tspan>
+                <tspan x="144.66" y="0" style="letter-spacing:-0.033698227370462165em">k</tspan>
+                <tspan x="151.78" y="0" style="letter-spacing:0.00005780141916031246em">o 1B Blok </tspan>
+                <tspan x="219.55" y="0" style="letter-spacing:-0.009768439838092806em">B</tspan>
+                <tspan x="228.58" y="0" style="letter-spacing:0.005895744754351871em">A</tspan>
+                <tspan x="238.45" y="0">.3 </tspan>
+                <tspan x="26.38" y="20.27">No 54-55 Serpon</tspan>
+                <tspan x="141.98" y="20.27" style="letter-spacing:0.011213475317100617em">g</tspan>
+                <tspan x="150.12" y="20.27">, </tspan>
+                <tspan x="158.16" y="20.27" style="letter-spacing:-0.07814751870474244em">T</tspan>
+                <tspan x="165.07" y="20.27">an</tspan>
+                <tspan x="182.04" y="20.27" style="letter-spacing:-0.008265602939924682em">g</tspan>
+                <tspan x="189.85" y="20.27">e</tspan>
+                <tspan x="198.26" y="20.27" style="letter-spacing:-0.020519503801910925em">r</tspan>
+                <tspan x="203.8" y="20.27">ang</tspan>
+            </text>
+            <a href="/splus/hubungi-kami/gallery-tangerang" target="_PARENT">
+                <text transform="translate(339.38 399.35)" style="font-size:18.958499908447266px;fill:#fff;font-family:Calibri, Calibri">Lih
+                    <tspan x="22.28" y="0" style="letter-spacing:-0.009271896555574938em">a</tspan>
+                    <tspan x="31.19" y="0" style="letter-spacing:-0.000051510536419860774em">t Sh</tspan>
+                    <tspan x="60.5" y="0" style="letter-spacing:-0.003914800767909419em">o</tspan>
+                    <tspan x="70.42" y="0" style="letter-spacing:-0.000051510536419860774em">w</tspan>
+                    <tspan x="83.97" y="0" style="letter-spacing:-0.01607128736299656em">r</tspan>
+                    <tspan x="90.28" y="0" style="letter-spacing:-0.000051510536419860774em">oom</tspan>
+                </text>
+            </a>
+        </g>
+    </g>
+	<g class="cibubur-gallery">
+    <path d="M434.34,443.69c-8.45,0-18.4,5.2-15.17,18.42,2.07,8.46,15.17,33.39,15.17,33.39s12.7-24.93,14.77-33.39C452.34,448.89,442.79,443.69,434.34,443.69Zm-.2,24.18a9.21,9.21,0,1,1,9.21-9.21A9.21,9.21,0,0,1,434.14,467.87Z" transform="translate(0)" style="fill:#960c0c" />
+    <circle cx="434.14" cy="458.66" r="9.21" style="fill:#fff" />
+        <g class="cibubur-gallery-list">
+            <path d="M625.75,418.94H476.08a13.28,13.28,0,0,0-11.91,7.61l-18.83,38.93a13.11,13.11,0,0,1-23.21,1.14L397.2,425.41a13.21,13.21,0,0,0-11.29-6.47H243.68a13.56,13.56,0,0,1-13.32-13.77V90.2a13.56,13.56,0,0,1,13.32-13.77H625.75A13.56,13.56,0,0,1,639.07,90.2v315A13.56,13.56,0,0,1,625.75,418.94Z" transform="translate(0)" style="stroke:#960c0c;stroke-miterlimit:10;stroke-width:3px" />
+            <text transform="translate(353.55 313.62)" style="font-size:22.01926040649414px;fill:#f9f9f9;font-family:Calibri, Calibri">CIBUBUR GALLE
+                <tspan x="142.33" y="0" style="letter-spacing:-0.014635624405665968em">R</tspan>
+                <tspan x="153.96" y="0" style="letter-spacing:-0.00004435037698686657em">Y</tspan>
+            </text>
+            <g style="clip-path:url(#d)">
+                <image width="3264" height="2448" transform="translate(286.77 83.34) scale(0.09)" xlink:href="showroom/cibubur.jpg" />
+            </g>
+            <text transform="translate(275.01 342.45)" style="font-size:16.895130157470703px;fill:#fff;font-family:Calibri, Calibri">Ru
+                <tspan x="18.05" y="0" style="letter-spacing:-0.033698227370462165em">k</tspan>
+                <tspan x="25.16" y="0">o Cit</tspan>
+                <tspan x="56.44" y="0" style="letter-spacing:-0.020577305221071235em">r</tspan>
+                <tspan x="61.98" y="0" style="letter-spacing:0.00005780141916031246em">a G</tspan>
+                <tspan x="84.55" y="0" style="letter-spacing:-0.020519503801910925em">r</tspan>
+                <tspan x="90.09" y="0">an, Blok R6/35 Jl. R</tspan>
+                <tspan x="220.3" y="0" style="letter-spacing:-0.0185542555504603em">a</tspan>
+                <tspan x="228.08" y="0" style="letter-spacing:-0.015143971820001864em">y</tspan>
+                <tspan x="235.48" y="0">a Al</tspan>
+                <tspan x="261.04" y="0" style="letter-spacing:-0.010751063963818117em">t</tspan>
+                <tspan x="266.52" y="0">ern</tspan>
+                <tspan x="289.69" y="0" style="letter-spacing:-0.009248227065649994em">a</tspan>
+                <tspan x="297.63" y="0">ti</tspan>
+                <tspan x="307.04" y="0" style="letter-spacing:-0.009768439838092806em">v</tspan>
+                <tspan x="314.51" y="0">e </tspan>
+                <tspan x="13.81" y="20.27">Cibubur KM.4 J</tspan>
+                <tspan x="117.16" y="20.27" style="letter-spacing:-0.009248227065649994em">a</tspan>
+                <tspan x="125.1" y="20.27">tisampurna-Cibubu</tspan>
+                <tspan x="256.89" y="20.27" style="letter-spacing:-0.08600851171054494em">r</tspan>
+                <tspan x="261.33" y="20.27">, Be</tspan>
+                <tspan x="286.96" y="20.27" style="letter-spacing:-0.017109220071452488em">k</tspan>
+                <tspan x="294.35" y="20.27">asi</tspan>
+            </text>
+            <a href="/splus/hubungi-kami/gallery-cibubur" target="_PARENT">
+                <text transform="translate(366.9 399.77)" style="font-size:18.958499908447266px;fill:#fff;font-family:Calibri, Calibri">Lih
+                    <tspan x="22.28" y="0" style="letter-spacing:-0.009271896555574938em">a</tspan>
+                    <tspan x="31.19" y="0" style="letter-spacing:-0.000051510536419860774em">t Sh</tspan>
+                    <tspan x="60.5" y="0" style="letter-spacing:-0.003914800767909419em">o</tspan>
+                    <tspan x="70.42" y="0" style="letter-spacing:-0.000051510536419860774em">w</tspan>
+                    <tspan x="83.97" y="0" style="letter-spacing:-0.01607128736299656em">r</tspan>
+                    <tspan x="90.28" y="0" style="letter-spacing:-0.000051510536419860774em">oom</tspan>
+                </text>
+            </a>
+        </g>
+    </g>
+	<g class="bekasi-gallery">
+        <path d="M459.49,433c-8.45,0-18.41,5.21-15.17,18.43,2.07,8.46,15.17,33.38,15.17,33.38s12.69-24.92,14.76-33.38C477.48,438.24,467.93,433,459.49,433Zm-.21,24.18a9.21,9.21,0,1,1,9.21-9.21A9.21,9.21,0,0,1,459.28,457.21Z" transform="translate(0)" style="fill:#960c0c" />
+        <circle cx="459.28" cy="448" r="9.21" style="fill:#fff" />
+        <g class="bekasi-gallery-list">
+            <path d="M650.89,408.28H501.23a13.3,13.3,0,0,0-11.92,7.61l-18.83,38.94A13.12,13.12,0,0,1,447.27,456l-24.92-41.22a13.24,13.24,0,0,0-11.3-6.47H268.83a13.55,13.55,0,0,1-13.32-13.77v-315a13.54,13.54,0,0,1,13.32-13.76H650.89a13.54,13.54,0,0,1,13.32,13.76v315A13.55,13.55,0,0,1,650.89,408.28Z" transform="translate(0)" style="stroke:#960c0c;stroke-miterlimit:10;stroke-width:3px" />
+            <text transform="translate(387.9 302.97)" style="font-size:22.01926040649414px;fill:#f9f9f9;font-family:Calibri, Calibri">BEKASI GALLE
+                <tspan x="123.45" y="0" style="letter-spacing:-0.014635624405665968em">R</tspan>
+                <tspan x="135.08" y="0">Y</tspan>
+            </text>
+            <g style="clip-path:url(#e)">
+                <image width="1040" height="585" transform="translate(275.08 77.29) scale(0.35)" xlink:href="showroom/bekasi.jpeg" />
+            </g>
+            <text transform="translate(325.88 331.79)" style="font-size:16.895130157470703px;fill:#fff;font-family:Calibri, Calibri">Jl.I
+                <tspan x="17.79" y="0" style="letter-spacing:-0.100632270758104em">r</tspan>
+                <tspan x="21.98" y="0" style="letter-spacing:0.00005780141916031246em">.H</tspan>
+                <tspan x="36.77" y="0" style="letter-spacing:0.009306028484810306em">.</tspan>
+                <tspan x="41.19" y="0">Juanda No 91C-D </tspan>
+                <tspan x="162.37" y="0" style="letter-spacing:-0.0180918441971778em">K</tspan>
+                <tspan x="170.84" y="0">el. Be</tspan>
+                <tspan x="208.8" y="0" style="letter-spacing:-0.017109220071452488em">k</tspan>
+                <tspan x="216.2" y="0">asi J</tspan>
+                <tspan x="243.98" y="0" style="letter-spacing:-0.0185542555504603em">a</tspan>
+                <tspan x="251.76" y="0" style="letter-spacing:-0.015143971820001864em">y</tspan>
+                <tspan x="259.15" y="0" style="letter-spacing:0.00005780141916031246em">a, </tspan>
+                <tspan x="36.64" y="20.27" style="letter-spacing:-0.018034042778017487em">K</tspan>
+                <tspan x="45.11" y="20.27">ec. Be</tspan>
+                <tspan x="86.34" y="20.27" style="letter-spacing:-0.017109220071452488em">k</tspan>
+                <tspan x="93.74" y="20.27">asi Timur </tspan>
+                <tspan x="160.33" y="20.27" style="letter-spacing:-0.018034042778017487em">K</tspan>
+                <tspan x="168.8" y="20.27">o</tspan>
+                <tspan x="177.71" y="20.27" style="letter-spacing:-0.012196099442825929em">t</tspan>
+                <tspan x="183.16" y="20.27">a Be</tspan>
+                <tspan x="212.67" y="20.27" style="letter-spacing:-0.017109220071452488em">k</tspan>
+                <tspan x="220.06" y="20.27">asi</tspan>
+            </text>
+            <a href="/splus/hubungi-kami/gallery-bekasi" target="_PARENT">
+                <text transform="translate(392.04 389.12)" style="font-size:18.958499908447266px;fill:#fff;font-family:Calibri, Calibri">Lih
+                    <tspan x="22.28" y="0" style="letter-spacing:-0.009271896555574938em">a</tspan>
+                    <tspan x="31.19" y="0" style="letter-spacing:-0.000051510536419860774em">t Sh</tspan>
+                    <tspan x="60.5" y="0" style="letter-spacing:-0.003914800767909419em">o</tspan>
+                    <tspan x="70.42" y="0" style="letter-spacing:-0.000051510536419860774em">w</tspan>
+                    <tspan x="83.97" y="0" style="letter-spacing:-0.01607128736299656em">r</tspan>
+                    <tspan x="90.28" y="0" style="letter-spacing:-0.000051510536419860774em">oom</tspan>
+                </text>
+            </a>
+        </g>
+    </g>
+    <g class="bandung-gallery-1">
+        <path d="M501.44,503.58c-8.44,0-18.4,5.21-15.17,18.42,2.07,8.46,15.17,33.39,15.17,33.39s12.7-24.93,14.77-33.39C519.44,508.79,509.89,503.58,501.44,503.58Zm-.2,24.18a9.21,9.21,0,1,1,9.21-9.21A9.21,9.21,0,0,1,501.24,527.76Z" transform="translate(0)" style="fill:#960c0c" />
+        <circle cx="501.24" cy="518.55" r="9.21" style="fill:#fff" />
+        <g class="bandung-gallery-1-list">
+            <path d="M692.85,474.23H543.19a13.28,13.28,0,0,0-11.92,7.61l-18.83,38.93a13.11,13.11,0,0,1-23.21,1.14L464.31,480.7a13.23,13.23,0,0,0-11.3-6.47H310.78a13.56,13.56,0,0,1-13.32-13.77v-315a13.55,13.55,0,0,1,13.32-13.77H692.85a13.55,13.55,0,0,1,13.32,13.77v315A13.56,13.56,0,0,1,692.85,474.23Z" transform="translate(0)" style="stroke:#960c0c;stroke-miterlimit:10;stroke-width:3px" />
+            <text transform="translate(399.93 368.91)" style="font-size:22.01926040649414px;fill:#f9f9f9;font-family:Calibri, Calibri">
+                <tspan style="letter-spacing:-0.009757082937110646em">B</tspan>
+                <tspan x="11.76" y="0">ANDUNG GALLE</tspan>
+                <tspan x="155.37" y="0" style="letter-spacing:-0.014679974782652835em">R</tspan>
+                <tspan x="167" y="0">Y 1</tspan>
+            </text>
+            <g style="clip-path:url(#f)">
+                <image width="1040" height="780" transform="translate(353.88 140.93) scale(0.28)" xlink:href="showroom/bandung-1.jpg" />
+            </g>
+            <text transform="translate(336.72 397.73)" style="font-size:16.895130157470703px;fill:#fff;font-family:Calibri, Calibri">Pla
+                <tspan x="20.7" y="0" style="letter-spacing:-0.016589007299009677em">z</tspan>
+                <tspan x="27.09" y="0">a IBCC Block D2 No.5 Jl. Jende</tspan>
+                <tspan x="231.45" y="0" style="letter-spacing:-0.020577305221071235em">r</tspan>
+                <tspan x="236.99" y="0">al Ahmad </tspan>
+                <tspan x="305.72" y="0" style="letter-spacing:-0.0654312064894737em">Y</tspan>
+                <tspan x="312.85" y="0">ani </tspan>
+                <tspan x="107.57" y="20.27">No. 269, Bandung</tspan>
+            </text>
+            <a href="/splus/hubungi-kami/gallery-bandung1" target="_PARENT">
+                <text transform="translate(434 455.06)" style="font-size:18.958499908447266px;fill:#fff;font-family:Calibri, Calibri">Lih
+                    <tspan x="22.28" y="0" style="letter-spacing:-0.009271896555574938em">a</tspan>
+                    <tspan x="31.19" y="0" style="letter-spacing:-0.000051510536419860774em">t Sh</tspan>
+                    <tspan x="60.5" y="0" style="letter-spacing:-0.003914800767909419em">o</tspan>
+                    <tspan x="70.42" y="0" style="letter-spacing:-0.000051510536419860774em">w</tspan>
+                    <tspan x="83.97" y="0" style="letter-spacing:-0.01607128736299656em">r</tspan>
+                    <tspan x="90.28" y="0" style="letter-spacing:-0.000051510536419860774em">oom</tspan>
+                </text>
+            </a>
+        </g>
+    </g>
+    <g class="bandung-gallery-2">
+        <path d="M492.68,482.7c-8.45,0-18.4,5.2-15.17,18.42,2.07,8.46,15.17,33.39,15.17,33.39s12.69-24.93,14.76-33.39C510.68,487.9,501.13,482.7,492.68,482.7Zm-.2,24.18a9.21,9.21,0,1,1,9.21-9.21A9.21,9.21,0,0,1,492.48,506.88Z" transform="translate(0)" style="fill:#960c0c" />
+        <circle cx="492.48" cy="497.67" r="9.21" style="fill:#fff" />
+        <g class="bandung-gallery-2-list">
+            <path d="M684.08,458H534.42a13.28,13.28,0,0,0-11.91,7.61l-18.84,38.93a13.11,13.11,0,0,1-23.21,1.14l-24.92-41.21A13.21,13.21,0,0,0,444.25,458H302a13.55,13.55,0,0,1-13.32-13.77v-315A13.55,13.55,0,0,1,302,115.44H684.08a13.55,13.55,0,0,1,13.32,13.77v315A13.55,13.55,0,0,1,684.08,458Z" transform="translate(0)" style="stroke:#960c0c;stroke-miterlimit:10;stroke-width:3px" />
+            <text transform="translate(391.16 352.63)" style="font-size:22.01926040649414px;fill:#f9f9f9;font-family:Calibri, Calibri">
+                <tspan style="letter-spacing:-0.009757082937110646em">B</tspan>
+                <tspan x="11.76" y="0">ANDUNG GALLE</tspan>
+                <tspan x="155.37" y="0" style="letter-spacing:-0.014679974782652835em">R</tspan>
+                <tspan x="167" y="0">Y 2</tspan>
+            </text>
+            <g style="clip-path:url(#g)">
+                <image width="1280" height="960" transform="translate(342.81 115.44) scale(0.24)" xlink:href="showroom/bandung-2.jpg" />
+            </g>
+            <text transform="translate(324.28 381.46)" style="font-size:16.895130157470703px;fill:#fff;font-family:Calibri, Calibri">Pla
+                <tspan x="20.7" y="0" style="letter-spacing:-0.016589007299009677em">z</tspan>
+                <tspan x="27.09" y="0">a IBCC Block B3 No.18 Jl. Jende</tspan>
+                <tspan x="238.81" y="0" style="letter-spacing:-0.020519503801910925em">r</tspan>
+                <tspan x="244.35" y="0">al Ahmad </tspan>
+                <tspan x="313.08" y="0" style="letter-spacing:-0.0654312064894737em">Y</tspan>
+                <tspan x="320.21" y="0">ani </tspan>
+                <tspan x="115.23" y="20.27">No. 296, Bandun</tspan>
+            </text>
+            <a href="/splus/hubungi-kami/gallery-bandung2" target="_PARENT">
+                <text transform="translate(425.24 438.78)" style="font-size:18.958499908447266px;fill:#fff;font-family:Calibri, Calibri">Lih
+                    <tspan x="22.28" y="0" style="letter-spacing:-0.009271896555574938em">a</tspan>
+                    <tspan x="31.19" y="0" style="letter-spacing:-0.000051510536419860774em">t Sh</tspan>
+                    <tspan x="60.5" y="0" style="letter-spacing:-0.003914800767909419em">o</tspan>
+                    <tspan x="70.42" y="0" style="letter-spacing:-0.000051510536419860774em">w</tspan>
+                    <tspan x="83.97" y="0" style="letter-spacing:-0.01607128736299656em">r</tspan>
+                    <tspan x="90.28" y="0" style="letter-spacing:-0.000051510536419860774em">oom</tspan>
+                </text>
+            </a>
+        </g>
+    </g>
+    <g class="head-office">
+        <path d="M580.79,473.53c-8.45,0-18.4,5.2-15.17,18.42,2.07,8.46,15.17,33.39,15.17,33.39s12.7-24.93,14.77-33.39C598.79,478.73,589.24,473.53,580.79,473.53Zm-.2,24.18a9.21,9.21,0,1,1,9.21-9.21A9.21,9.21,0,0,1,580.59,497.71Z" transform="translate(0)" style="fill:#960c0c" />
+        <circle cx="580.59" cy="488.5" r="9.21" style="fill:#fff" />
+        <g class="head-office-list">
+            <path d="M772.2,446.48H622.54a13.28,13.28,0,0,0-11.92,7.61L591.79,493a13.11,13.11,0,0,1-23.21,1.14L543.65,453a13.21,13.21,0,0,0-11.29-6.47H390.13a13.56,13.56,0,0,1-13.32-13.77v-315A13.56,13.56,0,0,1,390.13,104H772.2a13.56,13.56,0,0,1,13.32,13.77v315A13.56,13.56,0,0,1,772.2,446.48Z" transform="translate(0)" style="stroke:#960c0c;stroke-miterlimit:10;stroke-width:3px" />
+            <text transform="translate(465.46 341.16)" style="font-size:22.01926040649414px;fill:#f9f9f9;font-family:Calibri, Calibri">H
+                <tspan x="13.72" y="0" style="letter-spacing:-0.010732791230821711em">E</tspan>
+                <tspan x="24.23" y="0">AD OFFICE &amp; </tspan>
+                <tspan x="143.33" y="0" style="letter-spacing:-0.05614757726537308em">F</tspan>
+                <tspan x="152.21" y="0" style="letter-spacing:-0.007317812202832984em">A</tspan>
+                <tspan x="164.79" y="0" style="letter-spacing:0.00492289184554219em">C</tspan>
+                <tspan x="176.64" y="0" style="letter-spacing:-0.028339890894607738em">T</tspan>
+                <tspan x="186.74" y="0">O</tspan>
+                <tspan x="201.32" y="0" style="letter-spacing:-0.014635624405665968em">R</tspan>
+                <tspan x="212.96" y="0" style="letter-spacing:-0.00004435037698686657em">Y</tspan>
+            </text>
+            <g style="clip-path:url(#h)">
+                <image width="1024" height="687" transform="translate(430.02 114.58) scale(0.29)" xlink:href="showroom/headoffice.jpg" />
+            </g>
+            <text transform="translate(408.5 369.98)" style="font-size:16.895130157470703px;fill:#fff;font-family:Calibri, Calibri">Jl. R
+                <tspan x="26.52" y="0" style="letter-spacing:-0.0185542555504603em">a</tspan>
+                <tspan x="34.3" y="0" style="letter-spacing:-0.015143971820001864em">y</tspan>
+                <tspan x="41.69" y="0">a </tspan>
+                <tspan x="53.61" y="0" style="letter-spacing:-0.016589007299009677em">K</tspan>
+                <tspan x="62.1" y="0">anci Ci</tspan>
+                <tspan x="106.8" y="0" style="letter-spacing:-0.01317872356855124em">r</tspan>
+                <tspan x="112.47" y="0">ebon – </tspan>
+                <tspan x="163.59" y="0" style="letter-spacing:-0.08889858266856057em">T</tspan>
+                <tspan x="170.32" y="0">e</tspan>
+                <tspan x="178.73" y="0" style="letter-spacing:-0.018496454131299987em">g</tspan>
+                <tspan x="186.37" y="0">al KM 13,5 Ds. R</tspan>
+                <tspan x="297.18" y="0" style="letter-spacing:-0.006878368880077182em">a</tspan>
+                <tspan x="305.16" y="0" style="letter-spacing:-0.011213475317100617em">w</tspan>
+                <tspan x="317.05" y="0">aurip</tspan>
+                <tspan x="57.76" y="20.27" style="letter-spacing:-0.018034042778017487em">K</tspan>
+                <tspan x="66.24" y="20.27">ec. </tspan>
+                <tspan x="89.87" y="20.27" style="letter-spacing:-0.021502127927636235em">P</tspan>
+                <tspan x="98.24" y="20.27">an</tspan>
+                <tspan x="115.2" y="20.27" style="letter-spacing:-0.008265602939924682em">g</tspan>
+                <tspan x="123.02" y="20.27">enan </tspan>
+                <tspan x="161.09" y="20.27" style="letter-spacing:-0.016589007299009677em">K</tspan>
+                <tspan x="169.59" y="20.27">ab. Ci</tspan>
+                <tspan x="207.53" y="20.27" style="letter-spacing:-0.013236524987711554em">r</tspan>
+                <tspan x="213.19" y="20.27">ebon 45182</tspan>
+            </text>
+            <a href="/splus/hubungi-kami" target="_PARENT">
+                <text transform="translate(513.35 427.31)" style="font-size:18.958499908447266px;fill:#fff;font-family:Calibri, Calibri">Lih
+                    <tspan x="22.28" y="0" style="letter-spacing:-0.009271896555574938em">a</tspan>
+                    <tspan x="31.19" y="0" style="letter-spacing:-0.000051510536419860774em">t Sh</tspan>
+                    <tspan x="60.5" y="0" style="letter-spacing:-0.003914800767909419em">o</tspan>
+                    <tspan x="70.42" y="0" style="letter-spacing:-0.000051510536419860774em">w</tspan>
+                    <tspan x="83.97" y="0" style="letter-spacing:-0.01607128736299656em">r</tspan>
+                    <tspan x="90.28" y="0" style="letter-spacing:-0.000051510536419860774em">oom</tspan>
+                </text>
+            </a>
+        </g>
+    </g>
+    <g class="semarang-gallery">
+        <path d="M761.74,495c-8.45,0-18.4,5.21-15.17,18.42,2.07,8.47,15.17,33.39,15.17,33.39s12.69-24.92,14.76-33.39C779.74,500.21,770.19,495,761.74,495Zm-.2,24.18a9.21,9.21,0,1,1,9.21-9.21A9.21,9.21,0,0,1,761.54,519.18Z" transform="translate(0)" style="fill:#960c0c" />
+        <circle cx="761.54" cy="509.97" r="9.21" style="fill:#fff" />
+        <g class="semarang-gallery-list">
+            <path d="M953.14,468H803.48a13.28,13.28,0,0,0-11.91,7.61l-18.84,38.93a13.11,13.11,0,0,1-23.21,1.14L724.6,474.42A13.21,13.21,0,0,0,713.31,468H571.08a13.55,13.55,0,0,1-13.32-13.77v-315a13.55,13.55,0,0,1,13.32-13.77H953.14a13.55,13.55,0,0,1,13.32,13.77v315A13.55,13.55,0,0,1,953.14,468Z" transform="translate(0)" style="stroke:#960c0c;stroke-miterlimit:10;stroke-width:3px" />
+            <text transform="translate(660.22 362.63)" style="font-size:22.01926040649414px;fill:#f9f9f9;font-family:Calibri, Calibri">SEMARANG GALLE
+                <tspan x="166.11" y="0" style="letter-spacing:-0.014679974782652835em">R</tspan>
+                <tspan x="177.75" y="0">Y</tspan>
+            </text>
+            <g style="clip-path:url(#i)">
+                <image width="1032" height="581" transform="translate(595.75 136.96) scale(0.34)" xlink:href="showroom/semarang.jpeg" />
+            </g>
+            <text transform="translate(651.46 391.46)" style="font-size:16.895130157470703px;fill:#fff;font-family:Calibri, Calibri">Jln
+                <tspan x="21.96" y="0" style="letter-spacing:-0.01999929102946811em">P</tspan>
+                <tspan x="30.35" y="0">e</tspan>
+                <tspan x="38.76" y="0" style="letter-spacing:-0.03375602878962248em">k</tspan>
+                <tspan x="45.87" y="0" style="letter-spacing:0.00005780141916031246em">ojan No 49 Pu</tspan>
+                <tspan x="141.79" y="0" style="letter-spacing:0.005317730562748747em">r</tspan>
+                <tspan x="147.77" y="0" style="letter-spacing:-0.009248227065649994em">w</tspan>
+                <tspan x="159.7" y="0">odin</tspan>
+                <tspan x="190.24" y="0" style="letter-spacing:-0.009306028484810306em">a</tspan>
+                <tspan x="198.17" y="0" style="letter-spacing:-0.012196099442825929em">t</tspan>
+                <tspan x="203.62" y="0">an, </tspan>
+                <tspan x="53.98" y="20.27">Sema</tspan>
+                <tspan x="91.74" y="20.27" style="letter-spacing:-0.020519503801910925em">r</tspan>
+                <tspan x="97.28" y="20.27">ang </tspan>
+                <tspan x="126.02" y="20.27" style="letter-spacing:-0.08884078124940026em">T</tspan>
+                <tspan x="132.76" y="20.27">en</tspan>
+                <tspan x="150.04" y="20.27" style="letter-spacing:-0.018496454131299987em">g</tspan>
+                <tspan x="157.68" y="20.27">ah</tspan>
+            </text>
+            <a href="/splus/hubungi-kami/gallery-semarang" target="_PARENT">
+                <text transform="translate(694.29 448.78)" style="font-size:18.958499908447266px;fill:#fff;font-family:Calibri, Calibri">Lih
+                    <tspan x="22.28" y="0" style="letter-spacing:-0.009271896555574938em">a</tspan>
+                    <tspan x="31.19" y="0" style="letter-spacing:-0.000051510536419860774em">t Sh</tspan>
+                    <tspan x="60.5" y="0" style="letter-spacing:-0.003914800767909419em">o</tspan>
+                    <tspan x="70.42" y="0" style="letter-spacing:-0.000051510536419860774em">w</tspan>
+                    <tspan x="83.97" y="0" style="letter-spacing:-0.01607128736299656em">r</tspan>
+                    <tspan x="90.28" y="0" style="letter-spacing:-0.000051510536419860774em">oom</tspan>
+                </text>
+            </a>
+        </g>
+    </g>
+    <g class="yogyakarta-gallery">
+        <path d="M756.85,572.56c-8.54,0-18.61,5.27-15.34,18.63,2.1,8.56,15.34,33.77,15.34,33.77s12.84-25.21,14.93-33.77C775.05,577.83,765.4,572.56,756.85,572.56Zm-.2,24.45A9.31,9.31,0,1,1,766,587.7,9.31,9.31,0,0,1,756.65,597Z" transform="translate(0)" style="fill:#960c0c" />
+        <circle cx="756.65" cy="587.7" r="9.31" style="fill:#fff" />
+        <g class="yogyakarta-gallery-list">
+            <path d="M950.41,542.88H799.07A13.43,13.43,0,0,0,787,550.57L768,590a13.26,13.26,0,0,1-23.47,1.15l-25.2-41.68a13.38,13.38,0,0,0-11.43-6.54H564.05A13.71,13.71,0,0,1,550.58,529V210.43a13.71,13.71,0,0,1,13.47-13.92H950.41a13.71,13.71,0,0,1,13.47,13.92V529A13.71,13.71,0,0,1,950.41,542.88Z" transform="translate(0)" style="stroke:#960c0c;stroke-miterlimit:10;stroke-width:3px" />
+            <text transform="translate(654.19 438.7)" style="font-size:22.267370223999023px;fill:#f9f9f9;font-family:Calibri, Calibri">
+                <tspan style="letter-spacing:-0.032190459303876866em">Y</tspan>
+                <tspan x="10.13" y="0">O</tspan>
+                <tspan x="24.88" y="0" style="letter-spacing:-0.014647974669611543em">G</tspan>
+                <tspan x="38.6" y="0" style="letter-spacing:-0.0742047100029423em">Y</tspan>
+                <tspan x="47.8" y="0">AKA</tspan>
+                <tspan x="85.13" y="0" style="letter-spacing:-0.009779935183602916em">R</tspan>
+                <tspan x="97.01" y="0" style="letter-spacing:-0.07810791283406635em">T</tspan>
+                <tspan x="106.12" y="0">A GALLE</tspan>
+                <tspan x="180.56" y="0" style="letter-spacing:-0.014647974669611543em">R</tspan>
+                <tspan x="192.33" y="0">Y</tspan>
+            </text>
+            <text transform="translate(623.36 465.52)" style="font-size:17.085500717163086px;fill:#fff;font-family:Calibri, Calibri">Jl.Dipone
+                <tspan x="63.58" y="0" style="letter-spacing:-0.006801728519624909em">g</tspan>
+                <tspan x="71.5" y="0">o</tspan>
+                <tspan x="80.51" y="0" style="letter-spacing:-0.0161183818700355em">r</tspan>
+                <tspan x="86.2" y="0">o No. 103, </tspan>
+                <tspan x="161.39" y="0" style="letter-spacing:-0.009773912410553441em">R</tspan>
+                <tspan x="170.5" y="0" style="letter-spacing:-0.05224184762132073em">T</tspan>
+                <tspan x="177.93" y="0">/</tspan>
+                <tspan x="184.53" y="0" style="letter-spacing:-0.008802236907749882em">R</tspan>
+                <tspan x="193.66" y="0" style="letter-spacing:-0.00005715738251785638em">W 022/006 </tspan>
+                <tspan x="26.22" y="20.5" style="letter-spacing:-0.018061732875642614em">K</tspan>
+                <tspan x="34.78" y="20.5">el. Bumijo </tspan>
+                <tspan x="108.18" y="20.5" style="letter-spacing:-0.018004575493124758em">K</tspan>
+                <tspan x="116.75" y="20.5">ec. J</tspan>
+                <tspan x="146.1" y="20.5" style="letter-spacing:-0.005372793956678499em">e</tspan>
+                <tspan x="154.51" y="20.5">tis, Jogja</tspan>
+                <tspan x="213.61" y="20.5" style="letter-spacing:-0.017090057372839057em">k</tspan>
+                <tspan x="221.08" y="20.5" style="letter-spacing:0.00005715738251785638em">ar</tspan>
+                <tspan x="235.22" y="20.5" style="letter-spacing:-0.012174522476303408em">t</tspan>
+                <tspan x="240.74" y="20.5">a</tspan>
+            </text>
+            <a href="/splus/hubungi-kami/gallery-jogjakarta" target="_PARENT">
+                <text transform="translate(688.65 523.49)" style="font-size:19.172119140625px;fill:#fff;font-family:Calibri, Calibri">Lih
+                    <tspan x="22.53" y="0" style="letter-spacing:-0.009321397190846693em">a</tspan>
+                    <tspan x="31.54" y="0">t Sh</tspan>
+                    <tspan x="61.18" y="0" style="letter-spacing:-0.003922117943689593em">o</tspan>
+                    <tspan x="71.21" y="0">w</tspan>
+                    <tspan x="84.92" y="0" style="letter-spacing:-0.016095964548128717em">r</tspan>
+                    <tspan x="91.29" y="0">oom</tspan>
+                </text>
+            </a>
+            <g style="clip-path:url(#j)">
+                <image width="3264" height="2488" transform="translate(633.24 212.81) scale(0.08)" xlink:href="showroom/jogja.png" />
+            </g>
+        </g>
+    </g>
+    <g class="surabaya-gallery-1">
+        <path d="M964.65,520.54c-8.45,0-18.41,5.2-15.17,18.42,2.07,8.46,15.17,33.39,15.17,33.39s12.69-24.93,14.76-33.39C982.64,525.74,973.09,520.54,964.65,520.54Zm-.21,24.18a9.21,9.21,0,1,1,9.21-9.21A9.21,9.21,0,0,1,964.44,544.72Z" transform="translate(0)" style="fill:#960c0c" />
+        <circle cx="964.44" cy="535.51" r="9.21" style="fill:#fff" />
+        <g class="surabaya-gallery-1-list">
+            <path d="M1156.05,495.79H1006.39a13.27,13.27,0,0,0-11.91,7.61l-18.84,38.93a13.11,13.11,0,0,1-23.21,1.14l-24.92-41.21a13.22,13.22,0,0,0-11.3-6.47H774A13.55,13.55,0,0,1,760.67,482v-315A13.55,13.55,0,0,1,774,153.28h382.06a13.55,13.55,0,0,1,13.32,13.77V482A13.55,13.55,0,0,1,1156.05,495.79Z" transform="translate(0)" style="stroke:#960c0c;stroke-miterlimit:10;stroke-width:3px" />
+            <text transform="translate(863.13 392.78)" style="font-size:22.01926040649414px;fill:#f9f9f9;font-family:Calibri, Calibri">SURA
+                <tspan x="48.94" y="0" style="letter-spacing:-0.009801433314097512em">B</tspan>
+                <tspan x="60.7" y="0" style="letter-spacing:-0.07322247240531671em">A</tspan>
+                <tspan x="71.83" y="0" style="letter-spacing:-0.07424253107601464em">Y</tspan>
+                <tspan x="80.93" y="0" style="letter-spacing:0.00004435037698686657em">A GALLE</tspan>
+                <tspan x="154.54" y="0" style="letter-spacing:-0.014635624405665968em">R</tspan>
+                <tspan x="166.18" y="0" style="letter-spacing:-0.00004435037698686657em">Y 1</tspan>
+            </text>
+            <text transform="translate(863.43 419.3)" style="font-size:16.895130157470703px;fill:#fff;font-family:Calibri, Calibri">Jl. R
+                <tspan x="26.52" y="0" style="letter-spacing:-0.0185542555504603em">a</tspan>
+                <tspan x="34.3" y="0" style="letter-spacing:-0.015143971820001864em">y</tspan>
+                <tspan x="41.69" y="0">a Jemu</tspan>
+                <tspan x="89.77" y="0" style="letter-spacing:-0.017109220071452488em">r</tspan>
+                <tspan x="95.37" y="0" style="letter-spacing:0.00005780141916031246em">sari No. 2F &amp; 2G,</tspan>
+                <tspan x="74.04" y="20.27">Su</tspan>
+                <tspan x="90.68" y="20.27" style="letter-spacing:-0.020577305221071235em">r</tspan>
+                <tspan x="96.22" y="20.27" style="letter-spacing:0.00005780141916031246em">ab</tspan>
+                <tspan x="113.19" y="20.27" style="letter-spacing:-0.0185542555504603em">a</tspan>
+                <tspan x="120.97" y="20.27" style="letter-spacing:-0.015143971820001864em">y</tspan>
+                <tspan x="128.36" y="20.27">a</tspan>
+            </text>
+            <a href="/splus/hubungi-kami/gallery-surabaya1" target="_PARENT">
+                <text transform="translate(897.2 476.62)" style="font-size:18.958499908447266px;fill:#fff;font-family:Calibri, Calibri">Lih
+                    <tspan x="22.28" y="0" style="letter-spacing:-0.009271896555574938em">a</tspan>
+                    <tspan x="31.19" y="0" style="letter-spacing:-0.000051510536419860774em">t Sh</tspan>
+                    <tspan x="60.5" y="0" style="letter-spacing:-0.003914800767909419em">o</tspan>
+                    <tspan x="70.42" y="0" style="letter-spacing:-0.000051510536419860774em">w</tspan>
+                    <tspan x="83.97" y="0" style="letter-spacing:-0.01607128736299656em">r</tspan>
+                    <tspan x="90.28" y="0" style="letter-spacing:-0.000051510536419860774em">oom</tspan>
+                </text>
+            </a>
+            <g style="clip-path:url(#k)">
+                <image width="3264" height="2448" transform="translate(830.89 167.1) scale(0.08)" xlink:href="showroom/surabaya.png" />
+            </g>
+        </g>
+    </g>
+    <g class="surabaya-gallery-2">
+        <path d="M979.79,533.57c-8.45,0-18.4,5.2-15.17,18.42,2.07,8.46,15.17,33.38,15.17,33.38s12.69-24.92,14.76-33.38C997.79,538.77,988.24,533.57,979.79,533.57Zm-.2,24.17a9.21,9.21,0,1,1,9.21-9.21A9.21,9.21,0,0,1,979.59,557.74Z" transform="translate(0)" style="fill:#960c0c" />
+        <circle cx="979.59" cy="548.53" r="9.21" style="fill:#fff" />
+        <g class="surabaya-gallery-2-list">
+            <path d="M1171.19,508.81H1021.53a13.27,13.27,0,0,0-11.91,7.62l-18.84,38.93a13.11,13.11,0,0,1-23.21,1.14l-24.92-41.21a13.22,13.22,0,0,0-11.29-6.48H789.13a13.54,13.54,0,0,1-13.32-13.76v-315a13.55,13.55,0,0,1,13.32-13.77h382.06a13.55,13.55,0,0,1,13.32,13.77v315A13.54,13.54,0,0,1,1171.19,508.81Z" transform="translate(0)" style="stroke:#960c0c;stroke-miterlimit:10;stroke-width:3px" />
+            <text transform="translate(878.27 405.8)" style="font-size:22.01926040649414px;fill:#f9f9f9;font-family:Calibri, Calibri">SURA
+                <tspan x="48.94" y="0" style="letter-spacing:-0.009801433314097512em">B</tspan>
+                <tspan x="60.7" y="0" style="letter-spacing:-0.07322247240531671em">A</tspan>
+                <tspan x="71.83" y="0" style="letter-spacing:-0.07424253107601464em">Y</tspan>
+                <tspan x="80.93" y="0" style="letter-spacing:0.00004435037698686657em">A GALLE</tspan>
+                <tspan x="154.54" y="0" style="letter-spacing:-0.014635624405665968em">R</tspan>
+                <tspan x="166.18" y="0" style="letter-spacing:-0.00004435037698686657em">Y 2</tspan>
+            </text>
+            <text transform="translate(848.74 432.32)" style="font-size:16.895130157470703px;fill:#fff;font-family:Calibri, Calibri">Jl. Bali
+                <tspan x="42.39" y="0" style="letter-spacing:-0.008728014293207182em">w</tspan>
+                <tspan x="54.32" y="0">erti No 28 Alon-Alon Co</tspan>
+                <tspan x="216.21" y="0" style="letter-spacing:-0.009306028484810306em">n</tspan>
+                <tspan x="224.93" y="0">t</tspan>
+                <tspan x="230.59" y="0" style="letter-spacing:-0.016126595945727178em">r</tspan>
+                <tspan x="236.21" y="0">on</tspan>
+                <tspan x="254" y="0" style="letter-spacing:0.011213475317100617em">g</tspan>
+                <tspan x="262.14" y="0">, </tspan>
+                <tspan x="72.85" y="20.27">Bubu</tspan>
+                <tspan x="108.67" y="20.27" style="letter-spacing:-0.012196099442825929em">t</tspan>
+                <tspan x="114.12" y="20.27">an Su</tspan>
+                <tspan x="151.55" y="20.27" style="letter-spacing:-0.020577305221071235em">r</tspan>
+                <tspan x="157.09" y="20.27" style="letter-spacing:0.00005780141916031246em">ab</tspan>
+                <tspan x="174.06" y="20.27" style="letter-spacing:-0.0185542555504603em">a</tspan>
+                <tspan x="181.84" y="20.27" style="letter-spacing:-0.015143971820001864em">y</tspan>
+                <tspan x="189.23" y="20.27">a</tspan>
+            </text>
+            <text transform="translate(912.34 489.65)" style="font-size:18.958499908447266px;fill:#fff;font-family:Calibri, Calibri">Lih
+                <tspan x="22.28" y="0" style="letter-spacing:-0.009271896555574938em">a</tspan>
+                <tspan x="31.19" y="0" style="letter-spacing:-0.000051510536419860774em">t Sh</tspan>
+                <tspan x="60.5" y="0" style="letter-spacing:-0.003914800767909419em">o</tspan>
+                <tspan x="70.42" y="0" style="letter-spacing:-0.000051510536419860774em">w</tspan>
+                <tspan x="83.97" y="0" style="letter-spacing:-0.01607128736299656em">r</tspan>
+                <tspan x="90.28" y="0" style="letter-spacing:-0.000051510536419860774em">oom</tspan>
+            </text>
+            <g style="clip-path:url(#l)">
+                <image width="1040" height="780" transform="translate(848.34 182.43) scale(0.25)" xlink:href="showroom/surabaya2.jpg" />
+            </g>
+        </g>
+    </g>
+    <g class="bali-gallery">
+        <path d="M1154.28,619.19c-8.45,0-18.41,5.21-15.17,18.42,2.07,8.46,15.17,33.39,15.17,33.39S1167,646.07,1169,637.61C1172.27,624.4,1162.72,619.19,1154.28,619.19Zm-.21,24.18a9.21,9.21,0,1,1,9.21-9.21A9.21,9.21,0,0,1,1154.07,643.37Z" transform="translate(0)" style="fill:#960c0c" />
+        <circle cx="1154.07" cy="634.16" r="9.21" style="fill:#fff" />
+        <g class="bali-gallery-list">
+            <path d="M1345.68,592.14H1196a13.28,13.28,0,0,0-11.92,7.61l-18.83,38.93a13.11,13.11,0,0,1-23.21,1.14l-24.92-41.21a13.22,13.22,0,0,0-11.3-6.47H963.62a13.55,13.55,0,0,1-13.32-13.77v-315a13.55,13.55,0,0,1,13.32-13.77h382.06A13.55,13.55,0,0,1,1359,263.4v315A13.55,13.55,0,0,1,1345.68,592.14Z" transform="translate(0)" style="stroke:#960c0c;stroke-miterlimit:10;stroke-width:3px" />
+            <text transform="translate(1095.5 488.22)" style="font-size:21px;fill:#f9f9f9;font-family:Calibri, Calibri">
+                <tspan style="letter-spacing:-0.009765625em">B</tspan>
+                <tspan x="11.22" y="0">ALI GALLE</tspan>
+                <tspan x="95.55" y="0" style="letter-spacing:-0.0146484375em">R</tspan>
+                <tspan x="106.64" y="0">Y</tspan>
+            </text>
+            <text transform="translate(1072.52 515.64)" style="font-size:16.895130157470703px;fill:#fff;font-family:Calibri, Calibri">Jl. Mahend
+                <tspan x="74.92" y="0" style="letter-spacing:-0.020577305221071235em">r</tspan>
+                <tspan x="80.47" y="0">ad</tspan>
+                <tspan x="97.44" y="0" style="letter-spacing:-0.009248227065649994em">a</tspan>
+                <tspan x="105.37" y="0" style="letter-spacing:-0.012253900861986243em">t</tspan>
+                <tspan x="110.82" y="0" style="letter-spacing:0.00005780141916031246em">a No. 59 </tspan>
+                <tspan x="37.36" y="20.27">Denpasa</tspan>
+                <tspan x="96.71" y="20.27" style="letter-spacing:-0.08595071029138462em">r</tspan>
+                <tspan x="101.15" y="20.27" style="letter-spacing:-0.00005780141916031246em">, Bali</tspan>
+            </text>
+            <a href="/splus/hubungi-kami/gallery-bali" target="_PARENT">
+                <text transform="translate(1089.83 571.97)" style="font-size:18.958499908447266px;fill:#fff;font-family:Calibri, Calibri">Lih
+                    <tspan x="22.28" y="0" style="letter-spacing:-0.009271896555574938em">a</tspan>
+                    <tspan x="31.19" y="0" style="letter-spacing:-0.000051510536419860774em">t Sh</tspan>
+                    <tspan x="60.5" y="0" style="letter-spacing:-0.003914800767909419em">o</tspan>
+                    <tspan x="70.42" y="0" style="letter-spacing:-0.000051510536419860774em">w</tspan>
+                    <tspan x="83.97" y="0" style="letter-spacing:-0.01607128736299656em">r</tspan>
+                    <tspan x="90.28" y="0" style="letter-spacing:-0.000051510536419860774em">oom</tspan>
+                </text>
+            </a>
+            <g style="clip-path:url(#m)">
+                <image width="1280" height="768" transform="translate(999.79 268.04) scale(0.25)" xlink:href="showroom/bali.jpg" />
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Debugging</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <style type="text/css">
+      body {
+        background-color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        height: 100vh;
+        /* width: 95%;
+        margin: 20px auto; */
+      }
+      .fullscreen {
+        background-color: #333;
+      }
+    </style>
+    <div class="container" id="container">
+
+    </div>
+
+    <script src="3d/js/libs/jquery.min.js"></script>
+    <script src="3d/js/libs/html2canvas.min.js"></script>
+    <script src="3d/js/libs/three.min.js"></script>
+    <script src="3d/js/libs/pdf.min.js"></script>
+
+    <script src="3d/js/dist/3dflipbook.js"></script>
+    <script type="text/javascript">
+      function countKatalog(n) {
+        return {
+          type: 'image',
+          src: '3d/public/katalog-pintu/'+(n+1)+'.jpg',
+          interactive: false
+        };
+      }
+
+      $('#container').FlipBook({
+        pageCallback: countKatalog,
+        pages: 28,
+        propertiesCallback: function(props) {
+          props.cover.color = 0x000000;
+          return props;
+        },
+        template: {
+          html: '3d/templates/default-book-view.html',
+          styles: [
+            '3d/css/short-white-book-view.css'
+          ],
+          links: [
+            {
+              rel: 'stylesheet',
+              href: '3d/css/font-awesome.min.css'
+            }
+          ],
+          script: '3d/js/default-book-view.js',
+          sounds: {
+            startFlip: '3d/sounds/start-flip.mp3',
+            endFlip: '3d/sounds/end-flip.mp3'
+          }
+        }
+      });
+    </script>
+
+  </body>
+</html>

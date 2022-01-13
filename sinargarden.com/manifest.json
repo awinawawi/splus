@@ -1,0 +1,25 @@
+{
+    "name": "Sinar Garden",
+    "short_name": "Sinar Garden",
+    "description": "Sinargarden Fabrics Awning Upholstery",
+    "lang": "en-US",
+    "dir": "ltr",
+    "theme_color": "#d50000",
+    "start_url": ".",
+    "background_color": "#fff",
+    "display": "standalone",
+    "orientation": "portrait-primary",
+    "icons": [{
+      "src": "assets/images/logo72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+     },{
+      "src": "assets/images/logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+     },{
+      "src": "assets/images/logo512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+     }]
+   }
