@@ -1,0 +1,14 @@
+{
+    "name": "smarttech/splus",
+    "description": "Splus Indonesia",
+    "authors": [
+        {
+            "name": "Akhmad Junaedi",
+            "email": "akhmadjunaedi@urp.co.id"
+        }
+    ],
+    "require": {
+        "dompdf/dompdf": "^0.8.4",
+        "xendit/xendit-php-clients": "^1.4"
+    }
+}
