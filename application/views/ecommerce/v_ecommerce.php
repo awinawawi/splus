@@ -707,17 +707,21 @@
                     <div class="row">
                         <div class="col-6">
                             <ul>
-                                <li>Store Location:<br><span>Jl. Raya Kanci Cirebon – Tegal KM 13,5 Desa Rawaurip<br>
+                                <li>Office Location:<br><span>Jl. Raya Kanci Cirebon – Tegal KM 13,5 Desa Rawaurip<br>
                                         Kec. Pangenan Kab. Cirebon 45182</span></li>
                                 <li>Phone:<br><span>(0231) 8511781 – 85</span></li>
-                                <li>Office Location:<br><span>Cirebon-Pangenan</span></li>
                             </ul>
                         </div>
                         <div class="col-6">
                             <ul>
                                 <li>Work Hours:<br><span>08:00 AM - 16:00 PM Daily</span></li>
                                 <li>Email:<br><span>splusindonesia@gmail.com</span></li>
-                                <li>Social Media:<br><span><a href="#" class="fa fa-facebook"></a> <a href="#" class="fa fa-instagram"></a> <a href="#" class="fa fa-youtube"></a> <a href="#" class="fa fa-twitter  "></a></span></li>
+                                <li>Social Media:<br><span>
+                                        <a href="https://www.facebook.com/S-Plus-Indonesia-100698461599924/" class="fa fa-facebook"></a>
+                                        <a href="https://www.instagram.com/splusindonesia/" class="fa fa-instagram"></a>
+                                        <a href="https://www.youtube.com/channel/UCMYj8Md6whMbPNFcyxjyA6A" class="fa fa-youtube"></a> <a href="#" class="fa fa-twitter  "></a>
+                                    </span>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -736,10 +740,16 @@
                         <a style="color: #fff;">Head Office & Factory</a>
                         <br></br>
                         <ul>
-                            <li><a href="#">Jl. Raya Kanci Cirebon – Tegal KM 13,5 Desa Rawaurip<br>
-                                    Kec. Pangenan Kab. Cirebon 45182</a></li>
-                            <li><a href="#">Telp. (0231) 8511781 – 85</a></li>
-                            <li><a href="#">Fax.(0231) 85117825</a></li>
+                            <li>
+                                <p style="color:#fff">Jl. Raya Kanci Cirebon – Tegal KM 13,5 Desa Rawaurip<br>
+                                    Kec. Pangenan Kab. Cirebon 45182</P>
+                            </li>
+                            <li>
+                                <p style="color: #fff;">Telp. (0231) 8511781 – 85</p>
+                            </li>
+                            <li>
+                                <p style="color: #fff;">Fax.(0231) 85117825</p>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -760,10 +770,9 @@
                     <br></br>
 
                     <ul>
-                        <li><a href="#">Hubungi Kami</a></li>
-                        <li><a href="#">Pemasangan</a></li>
-                        <li><a href="#">Tentang Kami</a></li>
-                        <li><a href="#">Karir</a></li>
+                        <li><a href="<?= base_url('tentang-kami') ?>">Hubungi Kami</a></li>
+                        <li><a href="<?= base_url('pemasangan/splus') ?>">Pemasangan</a></li>
+                        <li><a href="<?= base_url('karir') ?>">Karir</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3">
@@ -783,10 +792,10 @@
                             <br>Follow Us on Social Media: <a href="https://localhost/splus" target="_blank" title="free & premium responsive templates">Splus Indonesia</a>
                         </p>
                         <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.facebook.com/S-Plus-Indonesia-100698461599924/"><i class="fa fa-facebook"></i></a></li>
+                            <!-- <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+                            <li><a href="https://www.instagram.com/splusindonesia/"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="" https://www.youtube.com/channel/UCMYj8Md6whMbPNFcyxjyA6A"><i class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>
