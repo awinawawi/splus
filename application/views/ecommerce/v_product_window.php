@@ -114,7 +114,7 @@
             <div class="row">
                 <?php $query = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
                                                                 a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
-                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="9"
+                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="11"
                                                                 GROUP BY a.varian_nama
                                                                 ');
                 foreach ($query->result_array() as $kat) {
@@ -157,7 +157,7 @@
                                 </a> -->
 
                                 <a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>">
-                                    <img src="<?= base_url('assets/user/images/kategori/produk/pintu/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
+                                    <img src="<?= base_url('assets/images/ourproduk/produk/window/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
                                 </a>
                             </div>
 

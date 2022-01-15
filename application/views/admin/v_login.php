@@ -31,7 +31,7 @@
       <p class="login-box-msg"> <img src="<?php echo base_url() . 'assets/user/images/logi-1.png' ?>"></p>
       <hr />
 
-      <form action="<?php echo base_url('administrator/auth');  ?>" method="post">
+      <form action="<?php echo base_url() . 'administrator/auth' ?>" method="post">
         <div class="form-group has-feedback">
           <input type="text" name="username" class="form-control" placeholder="Username" required>
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -55,6 +55,8 @@
           <!-- /.col -->
         </div>
       </form>
+
+      <!-- <?php var_dump($username) ?> -->
 
 
       <!-- /.social-auth-links -->

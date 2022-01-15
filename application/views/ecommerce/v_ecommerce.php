@@ -99,10 +99,10 @@
                                     <li class="scroll-to-section"><a href="#men">Rekomendasi</a></li>
                                     <li class="scroll-to-section"><a href="#women">New Brands</a></li>
                                     <li class="scroll-to-section"><a href="#kids">Best Product</a></li>
+                                    <li class="scroll-to-section"><a href="#explore">Explore</a></li>
 
                                 </ul>
                             </li>
-                            <li class="scroll-to-section"><a href="#explore">Explore</a></li>
                             <li class="scroll-to-section"><a href="#explore">login</a></li>
                         </ul>
                         <a class='menu-trigger'>
