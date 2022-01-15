@@ -17,10 +17,6 @@ class Administrator extends CI_Controller
         $password = strip_tags(str_replace("'", "", $this->input->post('password', TRUE)));
         $cadmin = $this->m_login->cekadmin($username, $password);
 
-        // $this->session->set_userdata('admin/dashboard');
-        // var_dump($username);
-
-
         if ($cadmin->num_rows() > 0) {
             $xcadmin = $cadmin->row_array();
             $newdata = array(
@@ -34,7 +30,7 @@ class Administrator extends CI_Controller
             $this->session->set_userdata($newdata);
             redirect('admin/dashboard');
         } else {
-            redirect('administrator/gagallogin');
+            redirect('administrator/gagallogin',);
         }
     }
 

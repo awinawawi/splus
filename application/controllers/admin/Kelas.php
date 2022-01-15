@@ -1,5 +1,5 @@
 <?php
-class Kategori extends CI_Controller
+class Kelas extends CI_Controller
 {
 	function __construct()
 	{
@@ -13,7 +13,7 @@ class Kategori extends CI_Controller
 			redirect(base_url('admin/dashboard'));
 		}
 
-		$this->load->model('m_kategori');
+		$this->load->model('m_kelas');
 		$this->load->model('m_pengguna');
 		$this->load->library('upload');
 	}
@@ -21,11 +21,11 @@ class Kategori extends CI_Controller
 
 	function index()
 	{
-		$x['data'] = $this->m_kategori->get_all_kategori();
-		$this->load->view('admin/v_kategori', $x);
+		$x['data'] = $this->m_kelas->get_all_kelas();
+		$this->load->view('admin/v_kelas', $x);
 	}
 
-	function simpan_kategori()
+	function simpan_kelas()
 	{
 		$config['upload_path'] = './assets/user/images/galeri/'; //path folder
 		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
@@ -48,26 +48,26 @@ class Kategori extends CI_Controller
 				$this->image_lib->resize();
 
 				$gambar = $gbr['file_name'];
-				$kategori_nama = strip_tags($this->input->post('xnama_kategori'));
-				$kategori_deskripsi = strip_tags($this->input->post('xdeskripsi_kategori'));
+				$kelas_nama = strip_tags($this->input->post('xnama_kelas'));
+				$kategori = strip_tags($this->input->post('xkategori'));
 				$kode = $this->session->userdata('idadmin');
 				$user = $this->m_pengguna->get_pengguna_login($kode);
 				$p = $user->row_array();
 				$user_id = $p['pengguna_id'];
 				$user_nama = $p['pengguna_nama'];
-				$this->m_kategori->simpan_kategori($kategori_nama, $kategori_deskripsi, $user_id, $user_nama, $gambar);
+				$this->m_kelas->simpan_kelas($kelas_nama, $kelas_deskripsi, $user_id, $user_nama, $gambar);
 				echo $this->session->set_flashdata('msg', 'success');
-				redirect('admin/kategori');
+				redirect('admin/kelas');
 			} else {
 				echo $this->session->set_flashdata('msg', 'warning');
-				redirect('admin/kategori');
+				redirect('admin/kelas');
 			}
 		} else {
-			redirect('admin/kategori');
+			redirect('admin/kelas');
 		}
 	}
 
-	function update_kategori()
+	function update_kelas()
 	{
 
 		$config['upload_path'] = './assets/user/images/galeri/'; //path folder
@@ -91,9 +91,9 @@ class Kategori extends CI_Controller
 				$this->image_lib->resize();
 
 				$gambar = $gbr['file_name'];
-				$kategori_id = $this->input->post('kode');
-				$kategori_nama = strip_tags($this->input->post('xnama_kategori'));
-				$kategori_deskripsi = strip_tags($this->input->post('xdeskripsi_kategori'));
+				$kelas_id = $this->input->post('kode');
+				$kelas_nama = strip_tags($this->input->post('xnama_kelas'));
+				$kelas_deskripsi = strip_tags($this->input->post('xdeskripsi_kelas'));
 				$images = $this->input->post('gambar');
 				$path = './assets/user/images/galeri/' . $images;
 				unlink($path);
@@ -102,36 +102,36 @@ class Kategori extends CI_Controller
 				$p = $user->row_array();
 				$user_id = $p['pengguna_id'];
 				$user_nama = $p['pengguna_nama'];
-				$this->m_kategori->update_kategori($kategori_id, $kategori_nama, $kategori_deskripsi, $user_id, $user_nama, $gambar);
+				$this->m_kelas->update_kelas($kelas_id, $kelas_nama, $kelas_deskripsi, $user_id, $user_nama, $gambar);
 				echo $this->session->set_flashdata('msg', 'info');
-				redirect('admin/kategori');
+				redirect('admin/kelas');
 			} else {
 				echo $this->session->set_flashdata('msg', 'warning');
-				redirect('admin/kategori');
+				redirect('admin/kelas');
 			}
 		} else {
-			$kategori_id = $this->input->post('kode');
-			$kategori_nama = strip_tags($this->input->post('xnama_kategori'));
-			$kategori_deskripsi = strip_tags($this->input->post('xdeskripsi_kategori'));
+			$kelas_id = $this->input->post('kode');
+			$kelas_nama = strip_tags($this->input->post('xnama_kelas'));
+			$kelas_deskripsi = strip_tags($this->input->post('xdeskripsi_kelas'));
 			$kode = $this->session->userdata('idadmin');
 			$user = $this->m_pengguna->get_pengguna_login($kode);
 			$p = $user->row_array();
 			$user_id = $p['pengguna_id'];
 			$user_nama = $p['pengguna_nama'];
-			$this->m_kategori->update_kategori_tanpa_img($kategori_id, $kategori_nama, $kategori_deskripsi, $user_id, $user_nama);
+			$this->m_kelas->update_kelas_tanpa_img($kelas_id, $kelas_nama, $kelas_deskripsi, $user_id, $user_nama);
 			echo $this->session->set_flashdata('msg', 'info');
-			redirect('admin/kategori');
+			redirect('admin/kelas');
 		}
 	}
 
-	function hapus_kategori()
+	function hapus_kelas()
 	{
 		$kode = $this->input->post('kode');
 		$gambar = $this->input->post('gambar');
 		$path = './assets/user/images/galeri/' . $gambar;
 		unlink($path);
-		$this->m_kategori->hapus_kategori($kode);
+		$this->m_kelas->hapus_kelas($kode);
 		echo $this->session->set_flashdata('msg', 'success-hapus');
-		redirect('admin/kategori');
+		redirect('admin/kelas');
 	}
 }
