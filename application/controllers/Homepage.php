@@ -289,6 +289,8 @@ class Homepage extends CI_Controller
 		$this->load->view('user/pemesanan');
 	}
 
+	//----------E-commerce-------------//
+
 	public function Ecommerce()
 	{
 		// $this->load->view('user/v_perbaikan');
@@ -297,9 +299,42 @@ class Homepage extends CI_Controller
 
 	public function product_pintu()
 	{
-		// $this->load->view('user/v_perbaikan');
 		$this->load->view('ecommerce/v_product_pintu');
 	}
+
+	public function product_window()
+	{
+		$this->load->view('ecommerce/v_product_window');
+	}
+
+	public function product_interior()
+	{
+		$this->load->view('ecommerce/v_product_interior');
+	}
+
+	public function product_exterior()
+	{
+		$this->load->view('ecommerce/v_product_exterior');
+	}
+
+	public function product_aksesoris()
+	{
+		$this->load->view('ecommerce/v_product_aksesoris');
+	}
+
+	public function product_masker()
+	{
+		$this->load->view('ecommerce/v_product_masker');
+	}
+
+	public function product_detail_pintu()
+	{
+		$this->load->view('ecommerce/v_product_detail_pintu');
+	}
+
+	//----------End-------------//
+
+
 
 	public function v_kategori()
 	{

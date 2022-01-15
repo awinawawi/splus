@@ -13,13 +13,12 @@ class Administrator extends CI_Controller
     function auth()
     {
 
-        $username = $this->input->post('username', TRUE);
-        $password = $this->input->post('password', TRUE);
-
+        $username = strip_tags(str_replace("'", "", $this->input->post('username', TRUE)));
+        $password = strip_tags(str_replace("'", "", $this->input->post('password', TRUE)));
         $cadmin = $this->m_login->cekadmin($username, $password);
 
         // $this->session->set_userdata('admin/dashboard');
-
+        // var_dump($username);
 
 
         if ($cadmin->num_rows() > 0) {
@@ -33,7 +32,7 @@ class Administrator extends CI_Controller
             );
 
             $this->session->set_userdata($newdata);
-            redirect('admin/dashboard', $username);
+            redirect('admin/dashboard');
         } else {
             redirect('administrator/gagallogin');
         }

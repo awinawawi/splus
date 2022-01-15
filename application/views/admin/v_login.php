@@ -56,6 +56,7 @@
         </div>
       </form>
 
+      <!-- <?php var_dump($username) ?> -->
 
 
       <!-- /.social-auth-links -->

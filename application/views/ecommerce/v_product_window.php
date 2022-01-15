@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Splus Ecommerce</title>
+    <title>Splus Ecommerce | Window</title>
 
 
     <!-- Additional CSS Files -->
@@ -43,7 +43,6 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <div>
-
                             <a href="<?= base_url('Ecommerce') ?>" class="logo">
                                 <img src="<?= base_url('assets/images/ourproduk/logo.jpg') ?>" style="width: 300px;">
                             </a>
@@ -84,13 +83,13 @@
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Main Banner Area Start ***** -->
-    <div class="page-heading" id="top" style="background: url('<?= base_url('assets/images/ourproduk/produk/pintu2.jpg') ?>'); background-size: cover;" class="pt-20">
+    <div class="page-heading" id="top" style="background: url('<?= base_url('assets/images/ourproduk/produk/jendela2.jpg') ?>'); background-size: cover;" class="pt-20">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-content">
-                        <h2>Our Products Door</h2>
-                        <span>Featured door products</span>
+                        <h2>Our Products Window</h2>
+                        <span>Featured Window products</span>
                     </div>
                 </div>
             </div>

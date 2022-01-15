@@ -1,19 +1,17 @@
 <?php
-class Dashboard extends CI_Controller
-{
-	function __construct()
-	{
+class Dashboard extends CI_Controller{
+	function __construct(){
 		parent::__construct();
-		if (!isset($_SESSION['logged_in'])) {
-			$url = base_url('administrator');
-			redirect($url);
-		};
+		if(!isset($_SESSION['logged_in'])){
+            $url=base_url('administrator');
+            redirect($url);
+        };
 		$this->load->model('m_pengunjung');
 	}
-
-	function index()
-	{
-		$x['visitor'] = $this->m_pengunjung->stats_visitor();
-		$this->load->view('admin/v_home', $x);
+	
+	function index(){
+			$x['visitor'] = $this->m_pengunjung->stats_visitor();
+			$this->load->view('admin/v_home',$x);
 	}
+
 }

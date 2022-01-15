@@ -13,8 +13,17 @@ $route['hubungi-kami']          = 'homepage/hubungi_kami';
 $route['tentang-kami']          = 'homepage/tentang_kami';
 $route['karire']                = 'homepage/karire';
 $route['pemesanan']             = 'homepage/pemesanan';
+
 $route['Ecommerce']             = 'homepage/Ecommerce';
 $route['product_pintu']         = 'homepage/product_pintu';
+$route['product_window']        = 'homepage/product_window';
+$route['product_interior']      = 'homepage/product_interior';
+$route['product_exterior']      = 'homepage/product_exterior';
+$route['product_aksesoris']     = 'homepage/product_aksesoris';
+$route['product_masker']        = 'homepage/product_masker';
+$route['product_detail_pintu']  = 'homepage/product_detail_pintu';
+
+
 $route['galeri']                = 'homepage/galeri';
 $route['galeri/(:any)']         = 'homepage/galeri/$1';
 $route['galeri/(:any)/(:any)']  = 'homepage/galeri/$1/$2';
