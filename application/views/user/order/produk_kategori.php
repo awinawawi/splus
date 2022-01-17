@@ -57,7 +57,7 @@
                             <div class="col-md-6">
                                 <div class="title">
                                     <h1 class="h-subtitle h-m-title pb-40">
-                                        <?= strtoupper($varian[0]->produk_nama) ?>
+                                        <?= strtoupper($varian[0]->prodak_nama) ?>
                                     </h1>
                                 </div>
                                 <div class="body">

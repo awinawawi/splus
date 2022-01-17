@@ -84,7 +84,7 @@
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Main Banner Area Start ***** -->
-    <div class="page-heading" id="top" style="background: url('<?= base_url('assets/images/ourproduk/produk/engsel.jpg') ?>'); background-size: cover;" class="pt-20">
+    <div class="page-heading" id="top" style="background: url('<?= base_url('assets/images/ourproduk/produk/set.jpg') ?>'); background-size: cover;" class="pt-20">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
