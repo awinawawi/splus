@@ -19,12 +19,12 @@
         <div class="content-wrapper">
             <section class="content-header">
                 <h1>
-                    Daftar kelas
+                    Daftar varian
                     <small>S Plus Indonesia</small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li class="active">kelas</li>
+                    <li class="active">varian</li>
                 </ol>
             </section>
             <section class="content">
@@ -32,8 +32,8 @@
                     <div class="col-xs-12">
                         <div class="box">
                             <div class="box-header">
-                                <form class="form-inline" action="<?= base_url('admin/kelas') ?>" method="GET">
-                                    <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Tambah Kelas</a>
+                                <form class="form-inline" action="<?= base_url('admin/varian') ?>" method="GET">
+                                    <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Tambah varian</a>
                                     <div class="form-group">
                                         <select name="kategori" class="form-control">
                                             <option value="all">Pilih Kategori</option>
@@ -53,7 +53,8 @@
                                     <thead>
                                         <tr>
                                             <th>Gambar</th>
-                                            <th>Kelas</th>
+                                            <th>Varian Nama</th>
+                                            <th>Varian Type</th>
                                             <th>Kategori</th>
                                             <th>Author</th>
                                             <th style="text-align:right;">Aksi</th>
@@ -64,21 +65,21 @@
                                         $no = 0;
                                         foreach ($data->result_array() as $i) :
                                             $no++;
-                                            $kelas_id = $i['kelas_id'];
-                                            $kelas_nama = $i['kelas_nama'];
-                                            $kelas_author = $i['kelas_author'];
-                                            $kelas_gambar = $i['kelas_cover'];
-                                            $kelas_kategori_id = $i['kelas_kategori_id'];
-                                            $kelas_kategori_nama = $i['kategori_nama'];
+                                            $varian_id = $i['varian_id'];
+                                            $varian_nama = $i['varian_nama'];
+                                            $varian_author = $i['varian_author'];
+                                            $varian_gambar = $i['varian_cover'];
+                                            $varian_kategori_id = $i['varian_kategori_id'];
+                                            $varian_kategori_nama = $i['kategori_nama'];
                                         ?>
                                             <tr>
-                                                <td><img src="<?php echo base_url() . 'assets/user/images/kelas/' . $kelas_gambar; ?>" style="width:80px;"></td>
-                                                <td><?php echo $kelas_nama; ?></td>
-                                                <td><?php echo $kelas_kategori_nama; ?></td>
-                                                <td><?php echo $kelas_author; ?></td>
+                                                <td><img src="<?php echo base_url() . 'assets/user/images/varian/' . $varian_gambar; ?>" style="width:80px;"></td>
+                                                <td><?php echo $varian_nama; ?></td>
+                                                <td><?php echo $varian_kategori_nama; ?></td>
+                                                <td><?php echo $varian_author; ?></td>
                                                 <td style="text-align:right;">
-                                                    <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $kelas_id; ?>"><span class="fa fa-pencil"></span></a>
-                                                    <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $kelas_id; ?>"><span class="fa fa-trash"></span></a>
+                                                    <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $varian_id; ?>"><span class="fa fa-pencil"></span></a>
+                                                    <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $varian_id; ?>"><span class="fa fa-trash"></span></a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
@@ -100,20 +101,20 @@
     </div>
     <!-- ./wrapper -->
 
-    <!--Modal Tambah kelas-->
+    <!--Modal Tambah varian-->
     <div class="modal fade " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                    <h4 class="modal-title" id="myModalLabel">Tambah kelas</h4>
+                    <h4 class="modal-title" id="myModalLabel">Tambah varian</h4>
                 </div>
-                <form class="form-horizontal" action="<?php echo base_url() . 'admin/kelas/simpan_kelas' ?>" method="post" enctype="multipart/form-data">
+                <form class="form-horizontal" action="<?php echo base_url() . 'admin/varian/simpan_varian' ?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Nama kelas</label>
+                            <label for="inputUserName" class="col-sm-4 control-label">Nama varian</label>
                             <div class="col-sm-7">
-                                <input type="text" name="xnama_kelas" class="form-control" placeholder="Nama kelas" required>
+                                <input type="text" name="nama_varian" class="form-control" placeholder="Nama varian" required>
                             </div>
                         </div>
 
@@ -121,25 +122,20 @@
                             <label for="inputUserName" class="col-sm-4 control-label">Kategori</label>
                             <div class="col-sm-7">
 
-                                <select class="form-control" name="xkategori" id="xkategori_suggest" style="width: 100%;" required>
-                                    <option value="">-Pilih-</option>
-                                    <?php
-                                    $no = 0;
-                                    foreach ($alb->result_array() as $a) :
-                                        $no++;
-                                        $alb_id = $a['kategori_id'];
-                                        $alb_nama = $a['kategori_nama'];
-                                    ?>
-                                        <option value="<?php echo $alb_id; ?>"><?php echo $alb_nama; ?></option>
+                                <select name="kategori" class="form-control">
+                                    <option value="all">Pilih Kategori</option>
+                                    <?php $kategori = $this->db->get('tbl_kategori')->result(); ?>
+                                    <?php foreach ($kategori as $k) : ?>
+                                        <option value="<?= $k->kategori_id ?>"><?= $k->kategori_nama ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Type kelas</label>
+                            <label for="inputUserName" class="col-sm-4 control-label">Type varian</label>
                             <div class="col-sm-4">
-                                <input type="text" name="xtype" class="form-control" id="type" placeholder="Type kelas" data-toggle="tooltip" title="Isi manual jika tidak ada data pada pilihan type!" required>
+                                <input type="text" name="xtype" class="form-control" id="type" placeholder="Type varian" data-toggle="tooltip" title="Isi manual jika tidak ada data pada pilihan type!" required>
                             </div>
                             <div class="col-sm-3">
                                 <select id="xtype_suggestion" class="form-control" data-toggle="tooltip" title="Pilih jika ada data!">
@@ -148,9 +144,9 @@
                             </div>
                         </div>
 
-                        <!-- ajax get kelas type -->
-                        <script>
-                            $('#xkategori_suggest').change(function() {
+                        <!-- ajax get varian type -->
+                        <!-- <script>
+                            $('#kategori_suggest').change(function() {
                                 var id = $(this).val();
                                 $.get("<?= base_url('admin/produk/ajax_get_type/') ?>" + id, function(response) {
                                     if (response !== 'empty') {
@@ -170,52 +166,17 @@
                                     $('#type').val(type);
                                 }
                             })
-                        </script>
+                        </script> -->
 
                         <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Deskripsi kelas</label>
+                            <label for="inputUserName" class="col-sm-4 control-label">Deskripsi varian</label>
                             <div class="col-sm-7">
-                                <textarea id="ckeditor" name="xdeskripsi" class="form-control ckedit" placeholder="Deskripsi" required></textarea>
+                                <textarea id="ckeditor" name="deskripsi" class="form-control ckedit" placeholder="Deskripsi" required></textarea>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Deskripsi Tambahan</label>
-                            <div class="col-sm-7">
-                                <textarea id="ckeditor" name="xdeskripsi_tambahan" class="form-control ckedit" placeholder="Deskripsi" required></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Panduan Instalasi</label>
-                            <div class="col-sm-7">
-                                <textarea id="ckeditor" name="xdeskripsi_instalasi" class="form-control ckedit" placeholder="Deskripsi" required></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Harga kelas</label>
-                            <div class="col-sm-7">
-                                <input type="text" name="xharga" class="form-control" placeholder="Harga" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Warna kelas</label>
-                            <div class="col-sm-7">
-                                <input type="text" name="xwarna" class="form-control" placeholder="Warna kelas" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Stok kelas</label>
-                            <div class="col-sm-7">
-                                <input type="text" name="xstok" class="form-control" placeholder="Stok kelas" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Gambar kelas</label>
+                            <label for="inputUserName" class="col-sm-4 control-label">Gambar varian</label>
                             <div class="col-sm-1">
                                 <span class="btn btn-default btn-file">
                                     <i class="fa fa-file-image-o" style="padding-top:12px;"></i>
@@ -239,13 +200,13 @@
                                 <center>variasi 1</center>
                             </div>
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" placeholder="Warna kelas">
+                                <input type="text" class="form-control" placeholder="Warna varian">
                             </div>
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" placeholder="Stok kelas">
+                                <input type="text" class="form-control" placeholder="Stok varian">
                             </div>
                             <div class="col-sm-4">
-                                <input type="text" class="form-control" placeholder="Harga kelas">
+                                <input type="text" class="form-control" placeholder="Harga varian">
                             </div>
                         </div> -->
 
@@ -303,70 +264,70 @@
         });
     </script>
 
-    <!--Modal Edit kelas-->
+    <!--Modal Edit varian-->
     <?php foreach ($data->result_array() as $i) :
-        $kelas_id = $i['kelas_id'];
-        $kelas_judul = $i['kelas_judul'];
-        $kelas_type = $i['kelas_type'];
-        $kelas_warna = $i['kelas_warna'];
-        $kelas_deskripsi = $i['kelas_deskripsi'];
-        $harga = $i['kelas_harga'];
-        $stok = $i['kelas_stok'];
-        $kelas_tanggal = $i['tanggal'];
-        $kelas_author = $i['kelas_author'];
-        $kelas_gambar = $i['kelas_gambar'];
-        $kelas_kategori_id = $i['kelas_kategori_id'];
-        $kelas_kategori_nama = $i['kategori_nama'];
+        $varian_id = $i['varian_id'];
+        $varian_judul = $i['varian_judul'];
+        $varian_type = $i['varian_type'];
+        $varian_warna = $i['varian_warna'];
+        $varian_deskripsi = $i['varian_deskripsi'];
+        $harga = $i['varian_harga'];
+        $stok = $i['varian_stok'];
+        $varian_tanggal = $i['tanggal'];
+        $varian_author = $i['varian_author'];
+        $varian_gambar = $i['varian_gambar'];
+        $varian_kategori_id = $i['varian_kategori_id'];
+        $varian_kategori_nama = $i['kategori_nama'];
     ?>
 
-        <div class="modal fade" id="ModalEdit<?php echo $kelas_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="ModalEdit<?php echo $varian_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit kelas</h4>
+                        <h4 class="modal-title" id="myModalLabel">Edit varian</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url() . 'admin/kelas/update_kelas' ?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url() . 'admin/varian/update_varian' ?>" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
-                            <input type="hidden" name="kode" value="<?php echo $kelas_id; ?>" />
-                            <input type="hidden" value="<?php echo $kelas_gambar; ?>" name="gambar">
+                            <input type="hidden" name="kode" value="<?php echo $varian_id; ?>" />
+                            <input type="hidden" value="<?php echo $varian_gambar; ?>" name="gambar">
                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Nama kelas</label>
+                                <label for="inputUserName" class="col-sm-4 control-label">Nama varian</label>
                                 <div class="col-sm-7">
-                                    <input type="text" name="xjudul" class="form-control" value="<?php echo $kelas_judul; ?>" placeholder="Judul" required>
+                                    <input type="text" name="xjudul" class="form-control" value="<?php echo $varian_judul; ?>" placeholder="Judul" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Type kelas</label>
+                                <label for="inputUserName" class="col-sm-4 control-label">Type varian</label>
                                 <div class="col-sm-7">
-                                    <input type="text" name="xtype" class="form-control" value="<?php echo $kelas_type; ?>" placeholder="Type" required>
+                                    <input type="text" name="xtype" class="form-control" value="<?php echo $varian_type; ?>" placeholder="Type" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Warna kelas</label>
+                                <label for="inputUserName" class="col-sm-4 control-label">Warna varian</label>
                                 <div class="col-sm-7">
-                                    <input type="text" name="xwarna" class="form-control" value="<?php echo $kelas_warna; ?>" placeholder="Warna" required>
+                                    <input type="text" name="xwarna" class="form-control" value="<?php echo $varian_warna; ?>" placeholder="Warna" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Deskripsi kelas</label>
+                                <label for="inputUserName" class="col-sm-4 control-label">Deskripsi varian</label>
                                 <div class="col-sm-7">
-                                    <textarea name="xdeskripsi" class="form-control ckedit" placeholder="Deskripsi" required><?php echo $kelas_deskripsi; ?></textarea>
+                                    <textarea name="xdeskripsi" class="form-control ckedit" placeholder="Deskripsi" required><?php echo $varian_deskripsi; ?></textarea>
 
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Harga kelas</label>
+                                <label for="inputUserName" class="col-sm-4 control-label">Harga varian</label>
                                 <div class="col-sm-7">
                                     <input type="text" name="xharga" class="form-control" value="<?php echo $harga; ?>" placeholder="Harga" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Stok kelas</label>
+                                <label for="inputUserName" class="col-sm-4 control-label">Stok varian</label>
                                 <div class="col-sm-7">
                                     <input type="text" name="xstok" class="form-control" value="<?php echo $stok; ?>" placeholder="Stok" required>
                                 </div>
@@ -382,7 +343,7 @@
                                         foreach ($alb->result_array() as $a) {
                                             $alb_id = $a['kategori_id'];
                                             $alb_nama = $a['kategori_nama'];
-                                            if ($kelas_kategori_id == $alb_id)
+                                            if ($varian_kategori_id == $alb_id)
                                                 echo "<option value='$alb_id' selected>$alb_nama</option>";
                                             else
                                                 echo "<option value='$alb_id'>$alb_nama</option>";
@@ -392,7 +353,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Gambar kelas</label>
+                                <label for="inputUserName" class="col-sm-4 control-label">Gambar varian</label>
                                 <div class="col-sm-7">
                                     <input type="file" name="filefoto" class="filefoto" />
                                 </div>
@@ -412,28 +373,28 @@
     <!--Modal Edit kategori-->
 
     <?php foreach ($data->result_array() as $i) :
-        $kelas_id = $i['kelas_id'];
-        $kelas_judul = $i['kelas_judul'];
-        $kelas_tanggal = $i['tanggal'];
-        $kelas_author = $i['kelas_author'];
-        $kelas_gambar = $i['kelas_gambar'];
-        $kelas_kategori_id = $i['kelas_kategori_id'];
-        $kelas_kategori_nama = $i['kategori_nama'];
+        $varian_id = $i['varian_id'];
+        $varian_judul = $i['varian_judul'];
+        $varian_tanggal = $i['tanggal'];
+        $varian_author = $i['varian_author'];
+        $varian_gambar = $i['varian_gambar'];
+        $varian_kategori_id = $i['varian_kategori_id'];
+        $varian_kategori_nama = $i['kategori_nama'];
     ?>
         <!--Modal Hapus Pengguna-->
-        <div class="modal fade" id="ModalHapus<?php echo $kelas_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="ModalHapus<?php echo $varian_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Hapus kelas</h4>
+                        <h4 class="modal-title" id="myModalLabel">Hapus varian</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url() . 'admin/kelas/hapus_kelas' ?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url() . 'admin/varian/hapus_varian' ?>" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
-                            <input type="hidden" name="kode" value="<?php echo $kelas_id; ?>" />
-                            <input type="hidden" value="<?php echo $kelas_gambar; ?>" name="gambar">
-                            <input type="hidden" value="<?php echo $kelas_kategori_id; ?>" name="kategori">
-                            <p>Apakah Anda yakin mau menghapus kelas <b><?php echo $kelas_judul; ?></b> ?</p>
+                            <input type="hidden" name="kode" value="<?php echo $varian_id; ?>" />
+                            <input type="hidden" value="<?php echo $varian_gambar; ?>" name="gambar">
+                            <input type="hidden" value="<?php echo $varian_kategori_id; ?>" name="kategori">
+                            <p>Apakah Anda yakin mau menghapus varian <b><?php echo $varian_judul; ?></b> ?</p>
 
                         </div>
                         <div class="modal-footer">
@@ -488,7 +449,7 @@
         <script type="text/javascript">
             $.toast({
                 heading: 'Success',
-                text: "kelas Berhasil disimpan ke database.",
+                text: "varian Berhasil disimpan ke database.",
                 showHideTransition: 'slide',
                 icon: 'success',
                 hideAfter: false,
@@ -501,7 +462,7 @@
         <script type="text/javascript">
             $.toast({
                 heading: 'Info',
-                text: "kelas berhasil di update",
+                text: "varian berhasil di update",
                 showHideTransition: 'slide',
                 icon: 'info',
                 hideAfter: false,
@@ -514,7 +475,7 @@
         <script type="text/javascript">
             $.toast({
                 heading: 'Success',
-                text: "kelas Berhasil dihapus.",
+                text: "varian Berhasil dihapus.",
                 showHideTransition: 'slide',
                 icon: 'success',
                 hideAfter: false,
