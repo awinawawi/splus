@@ -6,7 +6,7 @@ $this->load->view('user/header', $meta) ?>
 <div class="ps-section" <?php if ($this->agent->is_mobile) {
                             echo 'style="background: url(' . base_url('assets/user/images/tentang/tentangg.jpg') . ') no-repeat; height:250px;margin-left:-80px;"';
                         } else {
-                            echo 'style="background: url(' . base_url('assets/user/images/tentang/tentangg.jpg') . ') no-repeat; height:250px;"';
+                            echo 'style="background: url(' . base_url('assets/user/images/tentang/tentang_kami.jpg') . ') no-repeat; height:250px;"';
                         } ?>></div>
 <div class="ps-contact ps-section" id="tentang-kami">
 
@@ -15,7 +15,7 @@ $this->load->view('user/header', $meta) ?>
         <!--versi indonesia-->
         <!--<iframe style="<?= !$this->agent->is_mobile() ? "width:70%" : "width:100%" ?>" width="500px" height="400px" style="display:block;" src="https://www.youtube.com/embed/mWdghRVq8ew" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
         <!--versi inggris-->
-        <iframe style="<?= !$this->agent->is_mobile() ? "width:70%" : "width:100%" ?>" width="500px" height="400px" style="display:block;" src="https://www.youtube.com/embed/sTB6RMN1IEA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe style="<?= !$this->agent->is_mobile() ? "width:70%" : "width:100%" ?>" width="500px" height="500px" style="display:block;" src="https://www.youtube.com/embed/sTB6RMN1IEA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <div class="prl hideimg wow fadeInDown">
@@ -35,7 +35,7 @@ $this->load->view('user/header', $meta) ?>
                 Fax &nbsp; : (0231) 8511782 <br> <br>
                 <b>Jam Kerja </b><br>
                 Senin - Jumat &nbsp; &nbsp; &nbsp; &nbsp;: 08.00 - 16.00 <br>
-                Sabtu &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : 08.00 - 13.00
+                Sabtu &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : 08.00 - 13.00
                 <br>
             </div>
         </div>

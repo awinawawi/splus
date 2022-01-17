@@ -88,9 +88,18 @@
                                 <a href="javascript:;">Pages</a>
                                 <ul>
                                     <li><a href="about.html">About Us</a></li>
-                                    <li><a href="products.html">Products</a></li>
-                                    <li><a href="single-product.html">Single Product</a></li>
                                     <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </li>
+                            <li class="submenu">
+                                <a href="javascript:;">Products</a>
+                                <ul>
+                                    <li><a href="<?= base_url('product_pintu') ?>">Door</a></li>
+                                    <li><a href="<?= base_url('product_window') ?>">Window</a></li>
+                                    <li><a href="<?= base_url('product_interior') ?>">Interior Material</a></li>
+                                    <li><a href="<?= base_url('product_exterior') ?>">Exterior Material</a></li>
+                                    <li><a href="<?= base_url('product_aksesoris') ?>">Aksesoris</a></li>
+                                    <li><a href="<?= base_url('product_masker') ?>">Masker</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
@@ -100,9 +109,9 @@
                                     <li class="scroll-to-section"><a href="#women">New Brands</a></li>
                                     <li class="scroll-to-section"><a href="#kids">Best Product</a></li>
                                     <li class="scroll-to-section"><a href="#explore">Explore</a></li>
-
                                 </ul>
                             </li>
+
                             <li class="scroll-to-section"><a href="#explore">login</a></li>
                         </ul>
                         <a class='menu-trigger'>

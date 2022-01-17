@@ -55,21 +55,22 @@
                                 <a href="javascript:;">Pages</a>
                                 <ul>
                                     <li><a href="about.html">About Us</a></li>
-                                    <li><a href="products.html">Products</a></li>
-                                    <li><a href="single-product.html">Single Product</a></li>
                                     <li><a href="contact.html">Contact Us</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
-                                <a href="javascript:;">Features</a>
+                                <a href="javascript:;">Products</a>
                                 <ul>
-                                    <li class="scroll-to-section"><a href="#men">Rekomendasi</a></li>
-                                    <li class="scroll-to-section"><a href="#women">New Brands</a></li>
-                                    <li class="scroll-to-section"><a href="#kids">Best Product</a></li>
-
+                                    <li><a href="<?= base_url('product_pintu') ?>">Door</a></li>
+                                    <li><a href="<?= base_url('product_window') ?>">Window</a></li>
+                                    <li><a href="<?= base_url('product_interior') ?>">Interior Material</a></li>
+                                    <li><a href="<?= base_url('product_exterior') ?>">Exterior Material</a></li>
+                                    <li><a href="<?= base_url('product_aksesoris') ?>">Aksesoris</a></li>
+                                    <li><a href="<?= base_url('product_masker') ?>">Masker</a></li>
                                 </ul>
                             </li>
-                            <li class="scroll-to-section"><a href="#explore">Explore</a></li>
+
+
                             <li class="scroll-to-section"><a href="#explore">login</a></li>
                         </ul>
                         <a class='menu-trigger'>
@@ -115,7 +116,7 @@
             <div class="row">
                 <?php $query = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
                                                                 a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
-                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="9"
+                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="13"
                                                                 GROUP BY a.varian_nama
                                                                 ');
                 foreach ($query->result_array() as $kat) {
@@ -158,7 +159,7 @@
                                 </a> -->
 
                                 <a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>">
-                                    <img src="<?= base_url('assets/user/images/kategori/produk/pintu/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
+                                    <img src="<?= base_url('assets/images/ourproduk/produk/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
                                 </a>
                             </div>
 
