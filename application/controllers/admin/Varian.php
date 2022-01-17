@@ -1,5 +1,5 @@
 <?php
-class Kelas extends CI_Controller
+class Varian extends CI_Controller
 {
 	function __construct()
 	{
@@ -13,7 +13,7 @@ class Kelas extends CI_Controller
 			redirect(base_url('admin/dashboard'));
 		}
 
-		$this->load->model('m_kelas');
+		$this->load->model('m_varian');
 		$this->load->model('m_pengguna');
 		$this->load->library('upload');
 	}
@@ -21,11 +21,11 @@ class Kelas extends CI_Controller
 
 	function index()
 	{
-		$x['data'] = $this->m_kelas->get_all_kelas();
-		$this->load->view('admin/v_kelas', $x);
+		$x['data'] = $this->m_varian->get_all_varian();
+		$this->load->view('admin/v_varian', $x);
 	}
 
-	function simpan_kelas()
+	function simpan_varian()
 	{
 		$config['upload_path'] = './assets/user/images/galeri/'; //path folder
 		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
@@ -48,26 +48,26 @@ class Kelas extends CI_Controller
 				$this->image_lib->resize();
 
 				$gambar = $gbr['file_name'];
-				$kelas_nama = strip_tags($this->input->post('xnama_kelas'));
-				$kategori = strip_tags($this->input->post('xkategori'));
+				$varian_nama = strip_tags($this->input->post('nama_varian'));
+				$kategori = strip_tags($this->input->post('kategori'));
 				$kode = $this->session->userdata('idadmin');
 				$user = $this->m_pengguna->get_pengguna_login($kode);
 				$p = $user->row_array();
 				$user_id = $p['pengguna_id'];
 				$user_nama = $p['pengguna_nama'];
-				$this->m_kelas->simpan_kelas($kelas_nama, $kelas_deskripsi, $user_id, $user_nama, $gambar);
+				$this->m_varian->simpan_varian($varian_nama, $varian_deskripsi, $user_id, $user_nama, $gambar);
 				echo $this->session->set_flashdata('msg', 'success');
-				redirect('admin/kelas');
+				redirect('admin/varian');
 			} else {
 				echo $this->session->set_flashdata('msg', 'warning');
-				redirect('admin/kelas');
+				redirect('admin/varian');
 			}
 		} else {
-			redirect('admin/kelas');
+			redirect('admin/varian');
 		}
 	}
 
-	function update_kelas()
+	function update_varian()
 	{
 
 		$config['upload_path'] = './assets/user/images/galeri/'; //path folder
@@ -91,9 +91,9 @@ class Kelas extends CI_Controller
 				$this->image_lib->resize();
 
 				$gambar = $gbr['file_name'];
-				$kelas_id = $this->input->post('kode');
-				$kelas_nama = strip_tags($this->input->post('xnama_kelas'));
-				$kelas_deskripsi = strip_tags($this->input->post('xdeskripsi_kelas'));
+				$varian_id = $this->input->post('kode');
+				$varian_nama = strip_tags($this->input->post('xnama_varian'));
+				$varian_deskripsi = strip_tags($this->input->post('xdeskripsi_varian'));
 				$images = $this->input->post('gambar');
 				$path = './assets/user/images/galeri/' . $images;
 				unlink($path);
@@ -102,36 +102,36 @@ class Kelas extends CI_Controller
 				$p = $user->row_array();
 				$user_id = $p['pengguna_id'];
 				$user_nama = $p['pengguna_nama'];
-				$this->m_kelas->update_kelas($kelas_id, $kelas_nama, $kelas_deskripsi, $user_id, $user_nama, $gambar);
+				$this->m_varian->update_varian($varian_id, $varian_nama, $varian_deskripsi, $user_id, $user_nama, $gambar);
 				echo $this->session->set_flashdata('msg', 'info');
-				redirect('admin/kelas');
+				redirect('admin/varian');
 			} else {
 				echo $this->session->set_flashdata('msg', 'warning');
-				redirect('admin/kelas');
+				redirect('admin/varian');
 			}
 		} else {
-			$kelas_id = $this->input->post('kode');
-			$kelas_nama = strip_tags($this->input->post('xnama_kelas'));
-			$kelas_deskripsi = strip_tags($this->input->post('xdeskripsi_kelas'));
+			$varian_id = $this->input->post('kode');
+			$varian_nama = strip_tags($this->input->post('xnama_varian'));
+			$varian_deskripsi = strip_tags($this->input->post('xdeskripsi_varian'));
 			$kode = $this->session->userdata('idadmin');
 			$user = $this->m_pengguna->get_pengguna_login($kode);
 			$p = $user->row_array();
 			$user_id = $p['pengguna_id'];
 			$user_nama = $p['pengguna_nama'];
-			$this->m_kelas->update_kelas_tanpa_img($kelas_id, $kelas_nama, $kelas_deskripsi, $user_id, $user_nama);
+			$this->m_varian->update_varian_tanpa_img($varian_id, $varian_nama, $varian_deskripsi, $user_id, $user_nama);
 			echo $this->session->set_flashdata('msg', 'info');
-			redirect('admin/kelas');
+			redirect('admin/varian');
 		}
 	}
 
-	function hapus_kelas()
+	function hapus_varian()
 	{
 		$kode = $this->input->post('kode');
 		$gambar = $this->input->post('gambar');
 		$path = './assets/user/images/galeri/' . $gambar;
 		unlink($path);
-		$this->m_kelas->hapus_kelas($kode);
+		$this->m_varian->hapus_varian($kode);
 		echo $this->session->set_flashdata('msg', 'success-hapus');
-		redirect('admin/kelas');
+		redirect('admin/varian');
 	}
 }
