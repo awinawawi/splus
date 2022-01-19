@@ -42,39 +42,39 @@ class M_produk extends CI_Model
 	}
 
 	//Front-End
-	function get_produk_home()
-	{
-		$hsl = $this->db->query("SELECT tbl_produk.*,DATE_FORMAT(produk_tanggal,'%d/%m/%Y') AS tanggal,kategori_nama FROM tbl_produk join tbl_kategori on produk_kategori_id=kategori_id ORDER BY produk_id DESC limit 4");
-		return $hsl;
-	}
+	// function get_produk_home()
+	// {
+	// 	$hsl = $this->db->query("SELECT tbl_produk.*,DATE_FORMAT(produk_tanggal,'%d/%m/%Y') AS tanggal,kategori_nama FROM tbl_produk join tbl_kategori on produk_kategori_id=kategori_id ORDER BY produk_id DESC limit 4");
+	// 	return $hsl;
+	// }
 
-	function get_produk_by_kategori_id($idkategori)
-	{
-		$hsl = $this->db->query("SELECT tbl_produk.*,DATE_FORMAT(produk_tanggal,'%d/%m/%Y') AS tanggal,kategori_nama FROM tbl_produk join tbl_kategori on produk_kategori_id=kategori_id where produk_kategori_id='$idkategori' ORDER BY produk_id DESC");
-		return $hsl;
-	}
+	// function get_produk_by_kategori_id($idkategori)
+	// {
+	// 	$hsl = $this->db->query("SELECT tbl_produk.*,DATE_FORMAT(produk_tanggal,'%d/%m/%Y') AS tanggal,kategori_nama FROM tbl_produk join tbl_kategori on produk_kategori_id=kategori_id where produk_kategori_id='$idkategori' ORDER BY produk_id DESC");
+	// 	return $hsl;
+	// }
 
-	public function view_by_month($month, $year)
-	{
-		$this->db->where('MONTH(produk_tanggal)', $month); // Tambahkan where bulan
-		$this->db->where('YEAR(produk_tanggal)', $year); // Tambahkan where tahun
-		return $this->db->get('tbl_produk')->result(); // Tampilkan data transaksi sesuai bulan dan tahun yang diinput oleh user pada filter
-	}
+	// public function view_by_month($month, $year)
+	// {
+	// 	$this->db->where('MONTH(produk_tanggal)', $month); // Tambahkan where bulan
+	// 	$this->db->where('YEAR(produk_tanggal)', $year); // Tambahkan where tahun
+	// 	return $this->db->get('tbl_produk')->result(); // Tampilkan data transaksi sesuai bulan dan tahun yang diinput oleh user pada filter
+	// }
 
-	public function view_by_year($year)
-	{
-		$this->db->where('YEAR(produk_tanggal)', $year); // Tambahkan where tahun
-		return $this->db->get('tbl_produk')->result(); // Tampilkan data transaksi sesuai tahun yang diinput oleh user pada filter
-	}
+	// public function view_by_year($year)
+	// {
+	// 	$this->db->where('YEAR(produk_tanggal)', $year); // Tambahkan where tahun
+	// 	return $this->db->get('tbl_produk')->result(); // Tampilkan data transaksi sesuai tahun yang diinput oleh user pada filter
+	// }
 
-	public function option_tahun()
-	{
-		$this->db->select('YEAR(produk_tanggal) AS tahun'); // Ambil Tahun dari field tgl
-		$this->db->from('tbl_produk'); // select ke tabel transaksi
-		$this->db->order_by('YEAR(produk_tanggal)'); // Urutkan berdasarkan tahun secara Ascending (ASC)
-		$this->db->group_by('YEAR(produk_tanggal)'); // Group berdasarkan tahun pada field tgl
-		return $this->db->get()->result(); // Ambil data pada tabel transaksi sesuai kondisi diatas
-	}
+	// public function option_tahun()
+	// {
+	// 	$this->db->select('YEAR(produk_tanggal) AS tahun'); // Ambil Tahun dari field tgl
+	// 	$this->db->from('tbl_produk'); // select ke tabel transaksi
+	// 	$this->db->order_by('YEAR(produk_tanggal)'); // Urutkan berdasarkan tahun secara Ascending (ASC)
+	// 	$this->db->group_by('YEAR(produk_tanggal)'); // Group berdasarkan tahun pada field tgl
+	// 	return $this->db->get()->result(); // Ambil data pada tabel transaksi sesuai kondisi diatas
+	// }
 
 	//get new product with limit 8
 	function get_new_product()

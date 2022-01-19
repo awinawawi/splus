@@ -55,7 +55,6 @@
                                             <th>Gambar</th>
                                             <th>Nama Produk</th>
                                             <th>Kategori</th>
-                                            <th>Author</th>
                                             <th style="text-align:right;">Aksi</th>
                                         </tr>
                                     </thead>
@@ -65,18 +64,15 @@
                                         foreach ($data->result_array() as $i) :
                                             $no++;
                                             $produk_id = $i['produk_id'];
-                                            $produk_judul = $i['produk_judul'];
-                                            $produk_author = $i['produk_author'];
+                                            $produk_nama = $i['produk_nama'];
                                             $produk_gambar = $i['produk_gambar'];
                                             $produk_kategori_id = $i['produk_kategori_id'];
                                             $produk_kategori_nama = $i['kategori_nama'];
-                                            $produk_deskripsi = $i['produk_deskripsi'];
                                         ?>
                                             <tr>
                                                 <td><img src="<?php echo base_url() . 'assets/user/images/produk/' . $produk_gambar; ?>" style="width:80px;"></td>
-                                                <td><?php echo $produk_judul; ?></td>
+                                                <td><?php echo $produk_nama; ?></td>
                                                 <td><?php echo $produk_kategori_nama; ?></td>
-                                                <td><?php echo $produk_author; ?></td>
                                                 <td style="text-align:right;">
                                                     <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $produk_id; ?>"><span class="fa fa-pencil"></span></a>
                                                     <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $produk_id; ?>"><span class="fa fa-trash"></span></a>
@@ -214,8 +210,6 @@
     <?php foreach ($data->result_array() as $i) :
         $produk_id = $i['produk_id'];
         $produk_judul = $i['produk_judul'];
-        $produk_type = $i['produk_type'];
-        $produk_warna = $i['produk_warna'];
         $produk_deskripsi = $i['produk_deskripsi'];
         $harga = $i['produk_harga'];
         $stok = $i['produk_stok'];
