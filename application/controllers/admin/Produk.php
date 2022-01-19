@@ -127,14 +127,11 @@ class Produk extends CI_Controller
 
 				$gambar = $gbr['file_name'];
 				$produk_id = $this->input->post('kode');
-				$judul = strip_tags($this->input->post('xjudul'));
-				$type = strip_tags($this->input->post('xtype'));
-				$warna = strip_tags($this->input->post('xwarna'));
-				$deskripsi = $this->input->post('xdeskripsi');
-				$harga = strip_tags($this->input->post('xharga'));
-				$stok = strip_tags($this->input->post('xstok'));
-				$harga = strip_tags($this->input->post('xharga'));
-				$kategori = strip_tags($this->input->post('xkategori'));
+				$judul = strip_tags($this->input->post('judul'));
+				$slug = url_title($this->request->getVar('judul'), '-', true);
+				$deskripsi = $this->input->post('deskripsi');
+				$author = $this->input->post('author');
+				$kategori = strip_tags($this->input->post('kategori'));
 				$images = $this->input->post('gambar');
 				$path = './assets/user/images/produk/' . $images;
 				unlink($path);
@@ -143,8 +140,7 @@ class Produk extends CI_Controller
 				$p = $user->row_array();
 				$user_id = $p['pengguna_id'];
 				$user_nama = $p['pengguna_nama'];
-
-				$this->m_produk->update_produk($produk_id, $judul, $type, $warna, $deskripsi, $harga, $stok, $kategori, $user_id, $user_nama, $gambar);
+				$this->m_produk->update_produk($produk_id, $judul, $slug, $deskripsi, $kategori, $author, $user_id, $user_nama, $gambar);
 				$this->session->set_flashdata('msg', 'info');
 				redirect('admin/produk');
 			} else {
@@ -153,19 +149,17 @@ class Produk extends CI_Controller
 			}
 		} else {
 			$produk_id = $this->input->post('kode');
-			$judul = strip_tags($this->input->post('xjudul'));
-			$type = strip_tags($this->input->post('xtype'));
-			$warna = strip_tags($this->input->post('xwarna'));
-			$deskripsi = $this->input->post('xdeskripsi');
-			$stok = strip_tags($this->input->post('xstok'));
-			$kategori = strip_tags($this->input->post('xkategori'));
-			$harga = strip_tags($this->input->post('xharga'));
+			$judul = strip_tags($this->input->post('judul'));
+			$slug = url_title($this->request->getVar('judul'), '-', true);
+			$deskripsi = $this->input->post('deskripsi');
+			$author = $this->input->post('author');
+			$kategori = strip_tags($this->input->post('kategori'));
 			$kode = $this->session->userdata('idadmin');
 			$user = $this->m_pengguna->get_pengguna_login($kode);
 			$p = $user->row_array();
 			$user_id = $p['pengguna_id'];
 			$user_nama = $p['pengguna_nama'];
-			$this->m_produk->update_produk_tanpa_img($produk_id, $judul, $type, $warna, $deskripsi, $harga, $stok, $kategori, $user_id, $user_nama);
+			$this->m_produk->update_produk_tanpa_img($produk_id, $judul, $slug, $deskripsi, $author, $kategori, $user_id, $user_nama);
 			echo $this->session->set_flashdata('msg', 'info');
 			redirect('admin/produk');
 		}

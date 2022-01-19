@@ -4,10 +4,10 @@ class M_produk extends CI_Model
 
 	function get_all_produk()
 	{
-		$hsl = $this->db->query("SELECT tbl_produk.*,DATE_FORMAT(produk_tanggal,'%d %M %Y') AS tanggal,kategori_nama FROM tbl_produk join tbl_kategori on produk_kategori_id=kategori_id ORDER BY produk_id ASC");
+		$hsl = $this->db->query("SELECT * FROM tbl_produk join tbl_kategori on produk_kategori_id=kategori_id ORDER BY produk_id ASC");
 		return $hsl;
 	}
-	function simpan_produk($judul, $type, $warna, $deskripsi, $harga, $stok, $kategori, $user_id, $user_nama, $gambar)
+	function simpan_produk($produk_id, $judul, $slug, $deskripsi, $kategori, $author, $user_id, $user_nama, $gambar)
 	{
 		$this->db->trans_start();
 		$this->db->query("insert into tbl_produk(produk_id, produk_deskripsi,produk_harga,produk_stok,produk_kategori_id,produk_pengguna_id,produk_author,produk_gambar) values ('$judul','$type','$warna','$deskripsi','$harga','$stok','$kategori','$user_id','$user_nama','$gambar')");
