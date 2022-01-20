@@ -7,11 +7,11 @@ class M_produk extends CI_Model
 		$hsl = $this->db->query("SELECT * FROM tbl_produk join tbl_kategori on produk_kategori_id=kategori_id ORDER BY produk_id ASC");
 		return $hsl;
 	}
-	function simpan_produk($produk_id, $judul, $slug, $deskripsi, $kategori, $author, $user_id, $user_nama, $gambar)
+	function simpan_produk($produk_slug, $produk_nama, $produk_kategori_id, $produk_kategori, $produk_gambar, $produk_deskripsi)
 	{
 		$this->db->trans_start();
-		$this->db->query("insert into tbl_produk(produk_id, produk_deskripsi,produk_harga,produk_stok,produk_kategori_id,produk_pengguna_id,produk_author,produk_gambar) values ('$judul','$type','$warna','$deskripsi','$harga','$stok','$kategori','$user_id','$user_nama','$gambar')");
-		$this->db->query("update tbl_kategori set kategori_count=kategori_count+1 where kategori_id='$kategori'");
+		$this->db->query("insert into tbl_produk(produk_slug, produk_nama,produk_kategori_id,produk_kategori,produk_gambar,produk_deskripsi) values ('$produk_slug', '$produk_nama','$produk_kategori_id','$produk_kategori','$produk_gambar','$produk_deskripsi')");
+		// $this->db->query("update tbl_kategori set kategori_count=kategori_count+1 where kategori_id='$kategori'");
 		$this->db->trans_complete();
 		if ($this->db->trans_status() == true)
 			return true;
@@ -19,14 +19,14 @@ class M_produk extends CI_Model
 			return false;
 	}
 
-	function update_produk($produk_id, $judul, $type, $warna, $deskripsi, $harga, $stok, $kategori, $user_id, $user_nama, $gambar)
+	function update_produk($produk_id, $produk_slug, $produk_nama,  $produk_kategori, $produk_gambar, $produk_deskripsi)
 	{
-		$hsl = $this->db->query("update tbl_produk set produk_id='$judul',produk_type='$type',produk_warna='$warna',produk_deskripsi='$deskripsi',produk_harga='$harga',produk_stok='$stok',produk_kategori_id='$kategori',produk_pengguna_id='$user_id',produk_author='$user_nama',produk_gambar='$gambar' where produk_id='$produk_id'");
+		$hsl = $this->db->query("update tbl_produk set produk_slug='$produk_slug', produk_nama='$produk_nama', produk_kategori='$produk_kategori', produk_gambar='$produk_gambar', produk_deskripsi='$produk_deskripsi' where produk_id='$produk_id'");
 		return $hsl;
 	}
-	function update_produk_tanpa_img($produk_id, $judul, $type, $warna, $deskripsi, $harga, $stok, $kategori, $user_id, $user_nama)
+	function update_produk_tanpa_img($produk_id, $produk_slug, $produk_nama,  $produk_kategori, $produk_deskripsi)
 	{
-		$hsl = $this->db->query("update tbl_produk set produk_id='$judul',produk_type='$type',produk_warna='$warna',produk_deskripsi='$deskripsi',produk_harga='$harga',produk_stok='$stok',produk_kategori_id='$kategori',produk_pengguna_id='$user_id',produk_author='$user_nama' where produk_id='$produk_id'");
+		$hsl = $this->db->query("update tbl_produk set produk_slug='$produk_slug', produk_nama='$produk_nama', produk_kategori='$produk_kategori', produk_deskripsi='$produk_deskripsi' where produk_id='$produk_id'");
 		return $hsl;
 	}
 	function hapus_produk($kode, $kategori)

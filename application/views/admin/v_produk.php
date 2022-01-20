@@ -211,10 +211,6 @@
         $produk_id = $i['produk_id'];
         $produk_judul = $i['produk_judul'];
         $produk_deskripsi = $i['produk_deskripsi'];
-        $harga = $i['produk_harga'];
-        $stok = $i['produk_stok'];
-        $produk_tanggal = $i['tanggal'];
-        $produk_author = $i['produk_author'];
         $produk_gambar = $i['produk_gambar'];
         $produk_kategori_id = $i['produk_kategori_id'];
         $produk_kategori_nama = $i['kategori_nama'];
@@ -234,21 +230,7 @@
                             <div class="form-group">
                                 <label for="inputUserName" class="col-sm-4 control-label">Nama Produk</label>
                                 <div class="col-sm-7">
-                                    <input type="text" name="xjudul" class="form-control" value="<?php echo $produk_judul; ?>" placeholder="Judul" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Type Produk</label>
-                                <div class="col-sm-7">
-                                    <input type="text" name="xtype" class="form-control" value="<?php echo $produk_type; ?>" placeholder="Type" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Warna Produk</label>
-                                <div class="col-sm-7">
-                                    <input type="text" name="xwarna" class="form-control" value="<?php echo $produk_warna; ?>" placeholder="Warna" required>
+                                    <input type="text" name="xjudul" class="form-control" value="<?php echo $produk_judul; ?>" placeholder="Jenis Produk" required>
                                 </div>
                             </div>
 
@@ -257,19 +239,6 @@
                                 <div class="col-sm-7">
                                     <textarea name="xdeskripsi" class="form-control ckedit" placeholder="Deskripsi" required><?php echo $produk_deskripsi; ?></textarea>
 
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Harga Produk</label>
-                                <div class="col-sm-7">
-                                    <input type="text" name="xharga" class="form-control" value="<?php echo $harga; ?>" placeholder="Harga" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Stok Produk</label>
-                                <div class="col-sm-7">
-                                    <input type="text" name="xstok" class="form-control" value="<?php echo $stok; ?>" placeholder="Stok" required>
                                 </div>
                             </div>
 

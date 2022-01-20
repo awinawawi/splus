@@ -82,13 +82,13 @@ class Produk extends CI_Controller
 				$this->load->library('image_lib', $config);
 				$this->image_lib->resize();
 
-				$gambar = $gbr['file_name'];
-				$judul = strip_tags($this->input->post('judul'));
-				$slug = url_title()
-				$deskripsi = $this->input->post('deskripsi');
-				$kategori = strip_tags($this->input->post('kategori'));
-				$kode = $this->session->userdata('idadmin');
-				$this->m_produk->simpan_produk($judul,  $kategori, $gambar, $deskripsi);
+				$produk_gambar = $gbr['file_name'];
+				$produk_nama = strip_tags($this->input->post('judul'));
+				$produk_slug = url_title($this->input->post('judul'), '-', true);
+				$produk_deskripsi = $this->input->post('deskripsi');
+				$produk_kategori = strip_tags($this->input->post('kategori'));
+				$produk_kategori_id = $this->session->userdata('idadmin');
+				$this->m_produk->simpan_produk($produk_slug, $produk_nama, $produk_kategori_id, $produk_kategori, $produk_gambar, $produk_deskripsi);
 				echo $this->session->set_flashdata('msg', 'success');
 				redirect('admin/produk');
 			} else {
@@ -122,22 +122,16 @@ class Produk extends CI_Controller
 				$this->load->library('image_lib', $config);
 				$this->image_lib->resize();
 
-				$gambar = $gbr['file_name'];
+				$produk_gambar = $gbr['file_name'];
 				$produk_id = $this->input->post('kode');
-				$judul = strip_tags($this->input->post('judul'));
-				$slug = url_title($this->request->getVar('judul'), '-', true);
-				$deskripsi = $this->input->post('deskripsi');
-				$author = $this->input->post('author');
-				$kategori = strip_tags($this->input->post('kategori'));
-				$images = $this->input->post('gambar');
-				$path = './assets/user/images/produk/' . $images;
+				$produk_nama = strip_tags($this->input->post('judul'));
+				$produk_slug = url_title($this->input->post('judul'), '-', true);
+				$produk_deskripsi = $this->input->post('deskripsi');
+				$produk_kategori = strip_tags($this->input->post('kategori'));
+				$produk_gambar = $this->input->post('gambar');
+				$path = './assets/user/images/produk/' . $produk_gambar;
 				unlink($path);
-				$kode = $this->session->userdata('idadmin');
-				$user = $this->m_pengguna->get_pengguna_login($kode);
-				$p = $user->row_array();
-				$user_id = $p['pengguna_id'];
-				$user_nama = $p['pengguna_nama'];
-				$this->m_produk->update_produk($produk_id, $judul, $slug, $deskripsi, $kategori, $author, $user_id, $user_nama, $gambar);
+				$this->m_produk->update_produk($produk_id, $produk_slug, $produk_nama,  $produk_kategori, $produk_gambar, $produk_deskripsi);
 				$this->session->set_flashdata('msg', 'info');
 				redirect('admin/produk');
 			} else {
