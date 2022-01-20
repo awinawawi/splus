@@ -28,6 +28,14 @@ class M_order extends CI_Model
         return $this->db->insert('tbl_produk_keranjang', $data);
     }
 
+    // function addCart($nama_produk, $tipe_produk, $harga_produk_meter, $lebar_produk, $tinggi_produk, $warna_produk, $jumlah_produk, $harga_produk)
+    // {
+    //     $hsl = $this->db->query("insert into tbl_produk_keranjang
+    //     (nama_produk,tipe_produk,harga_produk_meter,lebar_produk,tinggi_produk,warna_produk,jumlah_produk,harga_produk) 
+    //     values ('$nama_produk','$tipe_produk','$harga_produk_meter','$lebar_produk','$tinggi_produk','$warna_produk','$jumlah_produk','$harga_produk')");
+    //     return $hsl;
+    // }
+
     public function Addrr($data)
     {
         $data = array(
