@@ -14,6 +14,7 @@ class Varian extends CI_Controller
 		}
 
 		$this->load->model('m_varian');
+		$this->load->model('m_dependentSelect');
 		$this->load->model('m_pengguna');
 		$this->load->library('upload');
 	}
@@ -47,7 +48,8 @@ class Varian extends CI_Controller
 				$this->load->library('image_lib', $config);
 				$this->image_lib->resize();
 
-				$gambar = $gbr['file_name'];
+				$varian_gambar = $gbr['file_name'];
+				$varian_nama = strip_tags($this->input->post('nama_varian'));
 				$varian_nama = strip_tags($this->input->post('nama_varian'));
 				$kategori = strip_tags($this->input->post('kategori'));
 				$kode = $this->session->userdata('idadmin');
@@ -133,5 +135,14 @@ class Varian extends CI_Controller
 		$this->m_varian->hapus_varian($kode);
 		echo $this->session->set_flashdata('msg', 'success-hapus');
 		redirect('admin/varian');
+	}
+
+	function ambil_data()
+	{
+		$modul = $this->input->post('modul');
+		$id = $this->input->post('id');
+		if ($modul == 'produk') {
+			echo $this->m_dependentSelect->produk($id);
+		}
 	}
 }

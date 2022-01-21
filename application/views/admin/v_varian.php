@@ -35,12 +35,17 @@
                                 <form class="form-inline" action="<?= base_url('admin/varian') ?>" method="GET">
                                     <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Tambah varian</a>
                                     <div class="form-group">
-                                        <select name="kategori" class="form-control">
-                                            <option value="all">Pilih Kategori</option>
+                                        <select name="kategori" class="form-control" id="kategori">
+                                            <option value="0">Pilih Kategori</option>
                                             <?php $kategori = $this->db->get('tbl_kategori')->result(); ?>
                                             <?php foreach ($kategori as $k) : ?>
                                                 <option value="<?= $k->kategori_id ?>"><?= $k->kategori_nama ?></option>
                                             <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <select name="produk" class="form-control" id="produk">
+                                            <option value="0">Pilih Produk</option>
                                         </select>
                                     </div>
                                     <button stype="submit" class="btn btn-default btn-flat"><span class="fa fa-print"></span> Cetak</button>
@@ -53,9 +58,13 @@
                                     <thead>
                                         <tr>
                                             <th>Gambar</th>
+                                            <th>Warna</th>
+                                            <th>ukuran</th>
                                             <th>Varian Nama</th>
                                             <th>Varian Type</th>
+                                            <th>Produk</th>
                                             <th>Kategori</th>
+                                            <th>stok</th>
                                             <th>Author</th>
                                             <th style="text-align:right;">Aksi</th>
                                         </tr>
@@ -66,16 +75,27 @@
                                         foreach ($data->result_array() as $i) :
                                             $no++;
                                             $varian_id = $i['varian_id'];
+                                            $varian_gambar = $i['varian_gambar_utama'];
+                                            $varian_warna = $i['varian_warna'];
+                                            $varian_ukuran = $i['varian_ukuran'];
                                             $varian_nama = $i['varian_nama'];
-                                            $varian_author = $i['varian_author'];
-                                            $varian_gambar = $i['varian_cover'];
+                                            $varian_type = $i['varian_type'];
+                                            $varian_produk_id = $i['varian_produk_id'];
+                                            $varian_produk_nama = $i['produk_nama'];
                                             $varian_kategori_id = $i['varian_kategori_id'];
                                             $varian_kategori_nama = $i['kategori_nama'];
+                                            $varian_stok = $i['varian_jumlah'];
+                                            $varian_author = $i['varian_author'];
                                         ?>
                                             <tr>
                                                 <td><img src="<?php echo base_url() . 'assets/user/images/varian/' . $varian_gambar; ?>" style="width:80px;"></td>
+                                                <td><?php echo $varian_warna; ?></td>
+                                                <td><?php echo $varian_ukuran; ?></td>
                                                 <td><?php echo $varian_nama; ?></td>
+                                                <td><?php echo $varian_type; ?></td>
+                                                <td><?php echo $varian_produk_nama; ?></td>
                                                 <td><?php echo $varian_kategori_nama; ?></td>
+                                                <td><?php echo $varian_stok; ?></td>
                                                 <td><?php echo $varian_author; ?></td>
                                                 <td style="text-align:right;">
                                                     <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $varian_id; ?>"><span class="fa fa-pencil"></span></a>

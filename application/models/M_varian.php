@@ -4,7 +4,7 @@ class M_varian extends CI_Model
 
 	function get_all_varian()
 	{
-		$hsl = $this->db->query("SELECT * FROM tbl_produk_varian ORDER BY varian_id ASC");
+		$hsl = $this->db->query("SELECT * FROM tbl_produk_varian join tbl_produk on varian_produk_id=produk_id join tbl_kategori on varian_kategori_id=kategori_id ORDER BY varian_id ASC");
 		return $hsl;
 	}
 	function simpan_varian($varian_nama, $varian_deskripsi, $user_id, $user_nama, $gambar)
