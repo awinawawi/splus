@@ -112,7 +112,7 @@
                                 </ul>
                             </li>
 
-                            <li class="scroll-to-section"><a href="#explore">login</a></li>
+                            <li class="scroll-to-section"><a href="<?= base_url('administrator') ?>">login</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
