@@ -55,7 +55,6 @@
                                             <th>Gambar</th>
                                             <th>Nama Produk</th>
                                             <th>Kategori</th>
-                                            <th>Author</th>
                                             <th style="text-align:right;">Aksi</th>
                                         </tr>
                                     </thead>
@@ -65,18 +64,15 @@
                                         foreach ($data->result_array() as $i) :
                                             $no++;
                                             $produk_id = $i['produk_id'];
-                                            $produk_judul = $i['produk_judul'];
-                                            $produk_author = $i['produk_author'];
+                                            $produk_nama = $i['produk_nama'];
                                             $produk_gambar = $i['produk_gambar'];
                                             $produk_kategori_id = $i['produk_kategori_id'];
                                             $produk_kategori_nama = $i['kategori_nama'];
-                                            $produk_deskripsi = $i['produk_deskripsi'];
                                         ?>
                                             <tr>
                                                 <td><img src="<?php echo base_url() . 'assets/user/images/produk/' . $produk_gambar; ?>" style="width:80px;"></td>
-                                                <td><?php echo $produk_judul; ?></td>
+                                                <td><?php echo $produk_nama; ?></td>
                                                 <td><?php echo $produk_kategori_nama; ?></td>
-                                                <td><?php echo $produk_author; ?></td>
                                                 <td style="text-align:right;">
                                                     <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $produk_id; ?>"><span class="fa fa-pencil"></span></a>
                                                     <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $produk_id; ?>"><span class="fa fa-trash"></span></a>
@@ -214,13 +210,7 @@
     <?php foreach ($data->result_array() as $i) :
         $produk_id = $i['produk_id'];
         $produk_judul = $i['produk_judul'];
-        $produk_type = $i['produk_type'];
-        $produk_warna = $i['produk_warna'];
         $produk_deskripsi = $i['produk_deskripsi'];
-        $harga = $i['produk_harga'];
-        $stok = $i['produk_stok'];
-        $produk_tanggal = $i['tanggal'];
-        $produk_author = $i['produk_author'];
         $produk_gambar = $i['produk_gambar'];
         $produk_kategori_id = $i['produk_kategori_id'];
         $produk_kategori_nama = $i['kategori_nama'];
@@ -240,21 +230,7 @@
                             <div class="form-group">
                                 <label for="inputUserName" class="col-sm-4 control-label">Nama Produk</label>
                                 <div class="col-sm-7">
-                                    <input type="text" name="xjudul" class="form-control" value="<?php echo $produk_judul; ?>" placeholder="Judul" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Type Produk</label>
-                                <div class="col-sm-7">
-                                    <input type="text" name="xtype" class="form-control" value="<?php echo $produk_type; ?>" placeholder="Type" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Warna Produk</label>
-                                <div class="col-sm-7">
-                                    <input type="text" name="xwarna" class="form-control" value="<?php echo $produk_warna; ?>" placeholder="Warna" required>
+                                    <input type="text" name="xjudul" class="form-control" value="<?php echo $produk_judul; ?>" placeholder="Jenis Produk" required>
                                 </div>
                             </div>
 
@@ -263,19 +239,6 @@
                                 <div class="col-sm-7">
                                     <textarea name="xdeskripsi" class="form-control ckedit" placeholder="Deskripsi" required><?php echo $produk_deskripsi; ?></textarea>
 
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Harga Produk</label>
-                                <div class="col-sm-7">
-                                    <input type="text" name="xharga" class="form-control" value="<?php echo $harga; ?>" placeholder="Harga" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Stok Produk</label>
-                                <div class="col-sm-7">
-                                    <input type="text" name="xstok" class="form-control" value="<?php echo $stok; ?>" placeholder="Stok" required>
                                 </div>
                             </div>
 

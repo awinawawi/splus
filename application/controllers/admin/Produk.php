@@ -21,39 +21,39 @@ class Produk extends CI_Controller
 
 	function index()
 	{
-		if (isset($_GET['filter']) && !empty($_GET['filter'])) { // Cek apakah user telah memilih filter dan klik tombol tampilkan
-			$filter = $_GET['filter']; // Ambil data filder yang dipilih user
+		// if (isset($_GET['filter']) && !empty($_GET['filter'])) { // Cek apakah user telah memilih filter dan klik tombol tampilkan
+		// 	$filter = $_GET['filter']; // Ambil data filder yang dipilih user
 
-			if ($filter == '1') { // Jika filter nya 1 (per tanggal)
-				$tgl = $_GET['tanggal'];
+		// 	if ($filter == '1') { // Jika filter nya 1 (per tanggal)
+		// 		$tgl = $_GET['tanggal'];
 
-				$ket = 'Data Transaksi Tanggal ' . date('d-m-y', strtotime($tgl));
-				$url_cetak = 'transaksi/cetak?filter=1&tahun=' . $tgl;
-				$transaksi = $this->TransaksiModel->view_by_date($tgl); // Panggil fungsi view_by_date yang ada di TransaksiModel
-			} else if ($filter == '2') {
-				$bulan = $_GET['bulan'];
-				$tahun = $_GET['tahun'];
-				$nama_bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
+		// 		$ket = 'Data Transaksi Tanggal ' . date('d-m-y', strtotime($tgl));
+		// 		$url_cetak = 'transaksi/cetak?filter=1&tahun=' . $tgl;
+		// 		$transaksi = $this->TransaksiModel->view_by_date($tgl); // Panggil fungsi view_by_date yang ada di TransaksiModel
+		// 	} else if ($filter == '2') {
+		// 		$bulan = $_GET['bulan'];
+		// 		$tahun = $_GET['tahun'];
+		// 		$nama_bulan = array('', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
 
-				$ket = 'Data Transaksi Bulan ' . $nama_bulan[$bulan] . ' ' . $tahun;
-				$url_cetak = 'transaksi/cetak?filter=2&bulan=' . $bulan . '&tahun=' . $tahun;
-				$transaksi = $this->TransaksiModel->view_by_month($bulan, $tahun); // Panggil fungsi view_by_month yang ada di TransaksiModel
-			} else { // Jika filter nya 3 (per tahun)
-				$tahun = $_GET['tahun'];
+		// 		$ket = 'Data Transaksi Bulan ' . $nama_bulan[$bulan] . ' ' . $tahun;
+		// 		$url_cetak = 'transaksi/cetak?filter=2&bulan=' . $bulan . '&tahun=' . $tahun;
+		// 		$transaksi = $this->TransaksiModel->view_by_month($bulan, $tahun); // Panggil fungsi view_by_month yang ada di TransaksiModel
+		// 	} else { // Jika filter nya 3 (per tahun)
+		// 		$tahun = $_GET['tahun'];
 
-				$ket = 'Data Transaksi Tahun ' . $tahun;
-				$url_cetak = 'transaksi/cetak?filter=3&tahun=' . $tahun;
-				$transaksi = $this->TransaksiModel->view_by_year($tahun); // Panggil fungsi view_by_year yang ada di TransaksiModel
-			}
-		} else { // Jika user tidak mengklik tombol tampilkan
-			$ket = 'Semua Data Transaksi';
-			$url_cetak = 'transaksi/cetak';
-			$transaksi = $this->m_produk->get_all_produk(); // Panggil fungsi view_all yang ada di TransaksiModel
-		}
+		// 		$ket = 'Data Transaksi Tahun ' . $tahun;
+		// 		$url_cetak = 'transaksi/cetak?filter=3&tahun=' . $tahun;
+		// 		$transaksi = $this->TransaksiModel->view_by_year($tahun); // Panggil fungsi view_by_year yang ada di TransaksiModel
+		// 	}
+		// } else { // Jika user tidak mengklik tombol tampilkan
+		// 	$ket = 'Semua Data Transaksi';
+		// 	$url_cetak = 'transaksi/cetak';
+		// 	$transaksi = $this->m_produk->get_all_produk(); // Panggil fungsi view_all yang ada di TransaksiModel
+		// }
 
-		$data['ket'] = $ket;
-		$data['transaksi'] = $transaksi;
-		$data['option_tahun'] = $this->m_produk->option_tahun();
+		// $data['ket'] = $ket;
+		// $data['transaksi'] = $transaksi;
+		// $data['option_tahun'] = $this->m_produk->option_tahun();
 
 		$x['data'] = $this->m_produk->get_all_produk();
 		$x['alb'] = $this->m_kategori->get_all_kategori();
@@ -82,16 +82,13 @@ class Produk extends CI_Controller
 				$this->load->library('image_lib', $config);
 				$this->image_lib->resize();
 
-				$gambar = $gbr['file_name'];
-				$judul = strip_tags($this->input->post('judul'));
-				$deskripsi = $this->input->post('deskripsi');
-				$kategori = strip_tags($this->input->post('kategori'));
-				$kode = $this->session->userdata('idadmin');
-				$user = $this->m_pengguna->get_pengguna_login($kode);
-				$p = $user->row_array();
-				$user_id = $p['pengguna_id'];
-				$user_nama = $p['pengguna_nama'];
-				$this->m_produk->simpan_produk($judul,  $kategori, $gambar, $deskripsi, $user_id, $user_nama);
+				$produk_gambar = $gbr['file_name'];
+				$produk_nama = strip_tags($this->input->post('judul'));
+				$produk_slug = url_title($this->input->post('judul'), '-', true);
+				$produk_deskripsi = $this->input->post('deskripsi');
+				$produk_kategori = strip_tags($this->input->post('kategori'));
+				$produk_kategori_id = $this->session->userdata('idadmin');
+				$this->m_produk->simpan_produk($produk_slug, $produk_nama, $produk_kategori_id, $produk_kategori, $produk_gambar, $produk_deskripsi);
 				echo $this->session->set_flashdata('msg', 'success');
 				redirect('admin/produk');
 			} else {
@@ -125,22 +122,16 @@ class Produk extends CI_Controller
 				$this->load->library('image_lib', $config);
 				$this->image_lib->resize();
 
-				$gambar = $gbr['file_name'];
+				$produk_gambar = $gbr['file_name'];
 				$produk_id = $this->input->post('kode');
-				$judul = strip_tags($this->input->post('judul'));
-				$slug = url_title($this->request->getVar('judul'), '-', true);
-				$deskripsi = $this->input->post('deskripsi');
-				$author = $this->input->post('author');
-				$kategori = strip_tags($this->input->post('kategori'));
-				$images = $this->input->post('gambar');
-				$path = './assets/user/images/produk/' . $images;
+				$produk_nama = strip_tags($this->input->post('judul'));
+				$produk_slug = url_title($this->input->post('judul'), '-', true);
+				$produk_deskripsi = $this->input->post('deskripsi');
+				$produk_kategori = strip_tags($this->input->post('kategori'));
+				$produk_gambar = $this->input->post('gambar');
+				$path = './assets/user/images/produk/' . $produk_gambar;
 				unlink($path);
-				$kode = $this->session->userdata('idadmin');
-				$user = $this->m_pengguna->get_pengguna_login($kode);
-				$p = $user->row_array();
-				$user_id = $p['pengguna_id'];
-				$user_nama = $p['pengguna_nama'];
-				$this->m_produk->update_produk($produk_id, $judul, $slug, $deskripsi, $kategori, $author, $user_id, $user_nama, $gambar);
+				$this->m_produk->update_produk($produk_id, $produk_slug, $produk_nama,  $produk_kategori, $produk_gambar, $produk_deskripsi);
 				$this->session->set_flashdata('msg', 'info');
 				redirect('admin/produk');
 			} else {
