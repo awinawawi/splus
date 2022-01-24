@@ -327,6 +327,11 @@ class Homepage extends CI_Controller
 		$this->load->view('ecommerce/v_product_masker');
 	}
 
+	public function product_all()
+	{
+		$this->load->view('ecommerce/v_product_all');
+	}
+
 	public function product_detail_pintu()
 	{
 		$this->load->view('ecommerce/v_product_detail_pintu');
