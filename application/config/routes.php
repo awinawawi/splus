@@ -21,6 +21,7 @@ $route['product_interior']      = 'homepage/product_interior';
 $route['product_exterior']      = 'homepage/product_exterior';
 $route['product_aksesoris']     = 'homepage/product_aksesoris';
 $route['product_masker']        = 'homepage/product_masker';
+$route['product_all']           = 'homepage/product_all';
 $route['product_detail_pintu']  = 'homepage/product_detail_pintu';
 
 

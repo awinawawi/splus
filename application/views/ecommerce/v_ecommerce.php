@@ -100,6 +100,7 @@
                                     <li><a href="<?= base_url('product_exterior') ?>">Exterior Material</a></li>
                                     <li><a href="<?= base_url('product_aksesoris') ?>">Aksesoris</a></li>
                                     <li><a href="<?= base_url('product_masker') ?>">Masker</a></li>
+                                    <li><a href="<?= base_url('product_all') ?>">All Product</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
@@ -282,11 +283,11 @@
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('assets/images/ourproduk/recomen/kichen.jpg') ?>"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
+
                                     <img src="<?= base_url('assets/images/ourproduk/recomen/kichen.jpg') ?>">
 
                                 </div>
@@ -306,9 +307,8 @@
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('assets/images/ourproduk/recomen/kichen2.jpg') ?>"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
 
@@ -330,9 +330,8 @@
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('assets/images/ourproduk/recomen/kichen3.jpg') ?>"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
 
@@ -354,9 +353,8 @@
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('assets/images/ourproduk/recomen/kichen4.jpg') ?>"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
 
@@ -425,7 +423,7 @@
                         </div>
 
                         <div class="main-border-button">
-                            <center><a href="products.html">Read More</a></center>
+                            <center><a href="<?= base_url('product_all') ?>">Read More</a></center>
                         </div>
                     </div>
                 </div>
@@ -482,7 +480,7 @@
                                     <div class="hover-content">
                                         <ul>
                                             <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
+
                                             <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
