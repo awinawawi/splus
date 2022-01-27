@@ -22,7 +22,8 @@ $route['product_exterior']      = 'homepage/product_exterior';
 $route['product_aksesoris']     = 'homepage/product_aksesoris';
 $route['product_masker']        = 'homepage/product_masker';
 $route['product_all']           = 'homepage/product_all';
-$route['product_detail_pintu']  = 'homepage/product_detail_pintu';
+$route['contact']               = 'homepage/contact';
+$route['testimoni']  = 'homepage/testimoni';
 
 
 $route['galeri']                = 'homepage/galeri';
@@ -54,7 +55,7 @@ $route['pemesanan1']                 = 'pemesanan/getAllProduct';
 
 // Ajax Get Cost and Address
 $route['ajax_post_user_session']    = 'order/postUserSession';
-$route['order_get_province']   = 'order/getProvince';
+$route['ajax_order_get_province']   = 'order/getProvince';
 $route['ajax_order_get_city/(:num)'] = 'order/getCity/$1';
 $route['ajax_order_get_district/(:num)'] = 'order/getDistrict/$1';
 $route['ajax_order_get_cost']       = 'order/getCost';

@@ -14,7 +14,7 @@ $this->load->view('user/header', $meta) ?>
                                 <span class="h-subtitle">KERANJANG BELANJA</span>
                             </div>
                             <div class="col-lg-6">
-                                <a href="<?= base_url('kategori/s-plus-sun-shade') ?>" target="_blank" class="btn btn-primary pull-right">PILIH PRODUK LAIN</a>
+                                <a href="<?= base_url('Ecommerce') ?>" target="_blank" class="btn btn-primary pull-right">PILIH PRODUK LAIN</a>
                             </div>
                         </div>
                         <style>
@@ -125,7 +125,7 @@ $this->load->view('user/header', $meta) ?>
 
                                 <div class="col-lg-6">
                                     <div class="form-group row">
-                                        <label for="type" class="col-sm-3 pt-10">Provinsi </label>
+                                        <label for="type" class="col-sm-3 pt-10">Provinsi</label>
                                         <div class="col-sm-6">
                                             <select name="provinsi" id="ajax_order_address_province" class="form-control" style="height:40px" required></select>
                                         </div>
@@ -279,7 +279,7 @@ $this->load->view('user/header', $meta) ?>
                                     <input type="hidden" id="diskon" name="diskon" value="0">
                                 </div>
                                 <div class="col-lg-6 pt-10">
-                                    <button class="btn btn-primary pull-right" type="button" id="pesanSekarang">Pesan Sekarang </button>
+                                    <button class="btn btn-primary pull-right" type="button" id="pesanSekarang">Pesan Sekarang</button>
                                     <button class="btn btn-success pull-right hide" type="button" id="pesanSekarangModal" data-toggle="modal" data-target="#exampleModal">Pembelian Berhasil</button>
                                 </div>
                             </div>
