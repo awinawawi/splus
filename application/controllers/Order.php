@@ -15,7 +15,6 @@ class Order extends CI_Controller
         $a = array(
             "page"  => "Order Page"
         );
-
         print_r($a);
     }
 
@@ -54,46 +53,6 @@ class Order extends CI_Controller
         $this->load->view('user/order/cart', $data);
     }
 
-    // public function tambah_keranjang()
-    // {
-
-    //     $nama = $this->input->post['nama_produk'];
-    //     $tipe = $this->input->post['tipe_produk'];
-    //     $harga_m = $this->input->post['order_varian_harga_meter_value'];
-    //     $lebar = $this->input->post['order_varian_ukuran_lebar'];
-    //     $tinggi = $this->input->post['order_varian_ukuran_tinggi'];
-    //     $warna = $this->input->post['order_varian_warna_value'];
-    //     $jumlah = $this->input->post['order_produk_jumlah'];
-    //     $harga_p = $this->input->post['order_varian_harga_value'];
-    //     $data = array(
-    //         'session_id'            => $this->session->userdata('user_session_id'),
-    //         'nama_produk'           => $nama,
-    //         'tipe_produk'           => $tipe,
-    //         'harga_produk_meter'    => $harga_m,
-    //         'lebar_produk'          => $lebar,
-    //         'tinggi_produk'         => $tinggi,
-    //         'warna_produk'          => $warna,
-    //         'jumlah_produk'         => $jumlah,
-    //         'harga_produk'          => $harga_p
-    //     );
-
-    //     $this->M_order->addCart($data);
-    //     redirect('cart');
-
-    //     $nama_produk = $this->input->post['nama_produk'];
-    //     $tipe_produk = $this->input->post['tipe_produk'];
-    //     $harga_produk_meter = $this->input->post['order_varian_harga_meter_value'];
-    //     $lebar_produk = $this->input->post['order_varian_ukuran_lebar'];
-    //     $tinggi_produk = $this->input->post['order_varian_ukuran_tinggi'];
-    //     $warna_produk = $this->input->post['order_varian_warna_value'];
-    //     $jumlah_produk = $this->input->post['order_produk_jumlah'];
-    //     $harga_produk = $this->input->post['order_varian_harga_value'];
-    //     $this->session->set_userdata('user_session_id', (isset($_POST['session_id'])));
-    //     $this->M_order->addCart($nama_produk, $tipe_produk, $harga_produk_meter, $lebar_produk, $tinggi_produk, $warna_produk, $jumlah_produk, $harga_produk);
-    //     redirect('cart');
-    // }
-
-
     public function tambah_keranjang()
     {
         $this->session->set_userdata('user_session_id', $_POST['session_id']);
@@ -131,7 +90,6 @@ class Order extends CI_Controller
     public function getProvince()
     {
         $url = "https://pro.rajaongkir.com/api/province";
-
         echo json_encode($this->getAddress($url));
     }
 
@@ -301,7 +259,7 @@ class Order extends CI_Controller
 
         $this->email->from($from_email, 'S-Plus Indonesia');
         $this->email->to($to_email);
-        $this->email->subject('Pembelian Sunshade S-Plus Indonesia');
+        $this->email->subject('Order Barang S-Plus Indonesia');
         $this->email->message($html);
 
         //Send mail 
