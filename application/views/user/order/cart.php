@@ -1,8 +1,75 @@
-<?php
-$meta['title']          = 'Keranjang - S-Plus Indonesia';
-$meta['description']    = 'S-Plus merupakan manufacturer fabrikasi general building materials, yaitu ABS-Engineering Door, uPVC Window, Plafon, WPC, Roll Blind, Solid Surface, Kitchen Set dan Furniture.';
-$meta['keywords']       = 'pintu abs, jual pintu abs,pintu abs s plus, pintu upvc,jendala upvc,plafon upvc,solid surface,kitchen set,namo pintu,pintu kayu,solid surface,wpc,wpc deck,wpc wall, namo pintu';
-$this->load->view('user/header', $meta) ?>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Splus Ecommerce</title>
+
+
+    <!-- Additional CSS Files -->
+
+    <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/ecommerce/css/font-awesome.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/ecommerce/css/templatemo-hexashop.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/ecommerce/css/owl-carousel.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/ecommerce/css/lightbox.css') ?>">
+    <link rel="shortcut icon" href="<?= base_url('assets/user/images/logo.png') ?>">
+
+    <link rel="preload" href="<?= base_url('assets/user/plugins/bootstrap/dist/css/bootstrap.min.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?= base_url('assets/user/plugins/font-awesome/font/fontawesome-webfont.woff2?v=4.6.3') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?= base_url('assets/user/plugins/font-awesome/css/font-awesome.min.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?= base_url('assets/user/css/style.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?= base_url('assets/user/css/custom.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?= base_url('assets/user/css/animation.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?= base_url('assets/user/plugins/bootstrap-select/dist/css/bootstrap-select.min.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?= base_url('assets/user/css/bootstrap-datepicker.standalone.min.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+</head>
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <div>
+
+                        <a href="<?= base_url('Ecommerce') ?>" class="logo">
+                            <img src="<?= base_url('assets/images/ourproduk/logo.jpg') ?>" style="width: 300px;">
+                        </a>
+                    </div>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+
+                        <li class="submenu">
+                            <a href="javascript:;">Products</a>
+                            <ul>
+                                <li><a href="<?= base_url('product_pintu') ?>">Door</a></li>
+                                <li><a href="<?= base_url('product_window') ?>">Window</a></li>
+                                <li><a href="<?= base_url('product_interior') ?>">Interior Material</a></li>
+                                <li><a href="<?= base_url('product_exterior') ?>">Exterior Material</a></li>
+                                <li><a href="<?= base_url('product_aksesoris') ?>">Aksesoris</a></li>
+                                <li><a href="<?= base_url('product_masker') ?>">Masker</a></li>
+                                <li><a href="<?= base_url('product_all') ?>">All Product</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="scroll-to-section"><a href="#explore">login</a></li>
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<br></br>
+<br></br>
 <main class="ps-main">
     <div class="ps-section--features-product ps-section masonry-root pb-40 bg-grey">
         <div class="ps-container">
@@ -311,4 +378,82 @@ $this->load->view('user/header', $meta) ?>
             </div>
         </div>
     </div>
-    <?php $this->load->view('user/footer') ?>
+    <!-- JS Library-->
+    <script defer type="text/javascript" src="<?= base_url('assets/user/plugins/jquery/dist/jquery.min.js') ?>"></script>
+    <script defer type="text/javascript" src="<?= base_url('assets/user/js/jssor.slider-28.0.0.min.js') ?>"></script>
+    <script defer type="text/javascript" src="<?= base_url('assets/user/js/slider.js') ?>"></script>
+    <script defer type="text/javascript" src="<?= base_url('assets/user/js/lazysizes.min.js') ?>"></script>
+    <script defer type="text/javascript" src="<?= base_url('assets/user/js/custom.js') ?>"></script>
+    <script defer type="text/javascript" src="<?= base_url('assets/user/plugins/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
+    <script defer type="text/javascript" src="<?= base_url('assets/user/plugins/bootstrap-select/dist/js/bootstrap-select.min.js') ?>"></script>
+    <script defer type="text/javascript" src="<?= base_url('assets/user/js/main.js') ?>"></script>
+    <?php if ($this->uri->segment(1) == "order" || $this->uri->segment(1) == "cart") : ?>
+        <script defer type="text/javascript" src="<?= base_url('assets/user/js/bootstrap-datepicker.min.js') ?>"></script>
+        <script defer type="text/javascript" src="<?= base_url('assets/user/js/order.js') ?>"></script>
+    <?php endif; ?>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="first-item">
+                        <a style="color: #fff;">Head Office & Factory</a>
+                        <br></br>
+                        <ul>
+                            <li><a href="#">Jl. Raya Kanci Cirebon – Tegal KM 13,5 Desa Rawaurip<br>
+                                    Kec. Pangenan Kab. Cirebon 45182</a></li>
+                            <li><a href="#">Telp. (0231) 8511781 – 85</a></li>
+                            <li><a href="#">Fax.(0231) 85117825</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <a style="color: #fff;">Our product &amp; Categories</a>
+                    <br></br>
+                    <ul>
+                        <li><a href="#">Pintu</a></li>
+                        <li><a href="#">Jendela</a></li>
+                        <li><a href="#">Interior Material</a></li>
+                        <li><a href="#">Exterior Material</a></li>
+                        <li><a href="#">Aksesoris</a></li>
+                        <li><a href="#">Masker</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <a style="color: #fff;">Customer service</a>
+                    <br></br>
+
+                    <ul>
+                        <li><a href="#">Hubungi Kami</a></li>
+                        <li><a href="#">Pemasangan</a></li>
+                        <li><a href="#">Tentang Kami</a></li>
+                        <li><a href="#">Karir</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <a style="color: #fff;">Help &amp; Information</a>
+                    <br></br>
+
+                    <ul>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">FAQ's</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Tracking ID</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-12">
+                    <div class="under-footer">
+                        <p>Copyright © 2022 PT Smart Techtex Group.All Rights Reserved.
+                            <br>Follow Us on Social Media: <a href="https://localhost/splus" target="_blank" title="free & premium responsive templates">Splus Indonesia</a>
+                        </p>
+                        <ul>
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>

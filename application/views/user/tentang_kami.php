@@ -4,19 +4,29 @@ $meta['description']    = 'S-Plus adalah suplier material bangunan terbesar di I
 $meta['keywords']       = 'pintu abs s plus, pintu abs,jual pintu abs,pintu upvc,jendala upvc,plafon upvc,solid surface,kitchen set,namo';
 $this->load->view('user/header', $meta) ?>
 <div class="ps-section" <?php if ($this->agent->is_mobile) {
-                            echo 'style="background: url(' . base_url('assets/user/images/tentang/tentangg.jpg') . ') no-repeat; height:250px;margin-left:-80px;"';
+                            echo 'style="background: url(' . base_url('assets/user/images/tentang/tentang_kami_mobile.jpg') . ') no-repeat; height:250px;margin-left:-50px;"';
                         } else {
                             echo 'style="background: url(' . base_url('assets/user/images/tentang/tentang_kami.jpg') . ') no-repeat; height:250px;"';
-                        } ?>></div>
+                        } ?>>
+</div>
 <div class="ps-contact ps-section" id="tentang-kami">
 
-    <div class="video-profile pb-80" style="width:100%; text-align:center;">
-        <span class="h-subtitle h-m-title" style="padding-bottom: 15px; font-size: 30px;">COMPANY PROFILE PT. SMART TECHTEX</span>
-        <!--versi indonesia-->
-        <!--<iframe style="<?= !$this->agent->is_mobile() ? "width:70%" : "width:100%" ?>" width="500px" height="400px" style="display:block;" src="https://www.youtube.com/embed/mWdghRVq8ew" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-        <!--versi inggris-->
-        <iframe style="<?= !$this->agent->is_mobile() ? "width:70%" : "width:100%" ?>" width="500px" height="500px" style="display:block;" src="https://www.youtube.com/embed/sTB6RMN1IEA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
+    <?php if ($this->agent->is_mobile()) : ?>
+        <div class="video-profile pb-80" style="width:100%; text-align:center;">
+            <span class="h-subtitle h-m-title" style="padding-bottom: 15px; font-size: 30px;">COMPANY PROFILE PT. SMART TECHTEX</span>
+            <iframe style="<?= !$this->agent->is_mobile() ? "width:70%" : "width:80%" ?>" width="300px" height="300px" style="display:block;" src="https://www.youtube.com/embed/sTB6RMN1IEA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    <?php else : ?>
+        <div class="video-profile pb-80" style="width:100%; text-align:center;">
+            <span class="h-subtitle h-m-title" style="padding-bottom: 15px; font-size: 30px;">COMPANY PROFILE PT. SMART TECHTEX</span>
+            <!--versi indonesia-->
+            <!--<iframe style="<?= !$this->agent->is_mobile() ? "width:70%" : "width:100%" ?>" width="500px" height="400px" style="display:block;" src="https://www.youtube.com/embed/mWdghRVq8ew" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+            <!--versi inggris-->
+            <iframe style="<?= !$this->agent->is_mobile() ? "width:70%" : "width:100%" ?>" width="500px" height="500px" style="display:block;" src="https://www.youtube.com/embed/sTB6RMN1IEA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    <?php endif; ?>
+
+
 
     <div class="prl hideimg wow fadeInDown">
         <img class="imgbg" src="<?= base_url('assets/user/images/background/bg-hubungi.jpg') ?>" width="46%">
@@ -28,16 +38,18 @@ $this->load->view('user/header', $meta) ?>
                 HEAD OFFICE AND FACTORY
             </div> <br>
             <div class="hbody" style="font-size: 20px; font-weight:500; font: 'Montserrat';">
+
                 Jl. Raya Kanci Cirebon – Tegal KM 13,5 Desa Rawaurip <br>
-                Kec. Pangenan Kab. Cirebon 45182<br> <br>
+                Kec. Pangenan Kab. Cirebon 45182<br><br>
                 Email : <a href="mailto:splus@splusindonesia.co.id">splus@splusindonesia.co.id</a> <br>
-                Telp&nbsp; : (0231) 8511781 – 85 <br>
+                Telp &nbsp; : (0231) 8511781 – 85 <br>
                 Fax &nbsp; : (0231) 8511782 <br> <br>
                 <b>Jam Kerja </b><br>
                 Senin - Jumat &nbsp; &nbsp; &nbsp; &nbsp;: 08.00 - 16.00 <br>
                 Sabtu &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : 08.00 - 13.00
                 <br>
             </div>
+
         </div>
 
         <div class="marketing pb-20">

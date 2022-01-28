@@ -1641,22 +1641,22 @@ a.fg-light:focus {
   background-color: #2f89fc;
 }
 
-.back-to-top {
+/* .back-to-top {
   position: fixed;
   bottom: 20px;
   right: 25px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: rgba(175, 183, 193, 0.7);
+  background: rgba(4, 111, 241, 0.7);
   visibility: hidden;
   cursor: pointer;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   z-index: 1100;
-}
+} */
 
-.back-to-top::after {
+/* .back-to-top::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -1669,15 +1669,15 @@ a.fg-light:focus {
   border-right: 2px solid #555;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
-}
+} */
 
-.back-to-top:hover {
+/* .back-to-top:hover {
   background: #2f89fc;
-}
+} */
 
-.back-to-top:hover::after {
+/* .back-to-top:hover::after {
   border-color: #fff;
-}
+} */
 
 .top-bar {
   display: block;

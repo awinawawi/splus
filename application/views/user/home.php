@@ -3,6 +3,8 @@ $meta['title']          = 'S-Plus Indonesia - Smart Living With S-Plus';
 $meta['description']    = 'S-Plus merupakan manufacturer fabrikasi general building materials, yaitu ABS-Engineering Door, uPVC Window, Plafon, WPC, Roll Blind, Solid Surface, Kitchen Set dan Furniture.';
 $meta['keywords']       = 'pintu abs, jual pintu abs,pintu abs s plus, pintu upvc,jendala upvc,plafon upvc,solid surface,kitchen set,namo pintu,pintu kayu,solid surface,wpc,wpc deck,wpc wall, namo pintu';
 $this->load->view('user/header', $meta) ?>
+
+
 <!-- <main class="ps-main" style="background-color:#1d1c25"> -->
 <main class="ps-main" style="background-color: #fafaff;">
     <!-- for desktop -->
@@ -491,132 +493,6 @@ $this->load->view('user/header', $meta) ?>
         <?php endif; ?>
     </div>
 
-    <!-- <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            padding-top: 100px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 50px;
-            border: 1px solid #888;
-            width: 50%;
-        }
-
-        .close {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #000;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
-    <center>
-        <div style="background-color:#BB0301;background-image: url(assets/user/portfolio/bg_pattern.svg);">
-            <br></br>
-            <h1><b style="color:#fff6f6;">ABOUT USE PT.SMART TECTEXT INDONESIA</b></h1>
-            <button id="myBtn" class="btn btn-outline-primary">OPEN</button>
-            <br></br>
-        </div>
-    </center>
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p><img src="assets/user/images/background/tentang.png" alt="" style="width: 100%;"></p>
-        </div>
-    </div>
-    <script>
-        var modal = document.getElementById("myModal");
-        var btn = document.getElementById("myBtn");
-        var span = document.getElementsByClassName("close")[0];
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }  
-    </script> -->
-
-    <!-- <div class="page-section1" style="background-color: #ff5a5f;">
-        <div class="container">
-            <div class="text-center">
-                <h1 class="title-section"><b style="color:#fff6f6;">About Use PT.Smart Techtext Indonesia</b></h1>
-            </div>
-            <div class="col-md-12">
-                <br></br>
-                <div>
-                    <center><iframe style="<?= !$this->agent->is_mobile() ? "width:70%" : "width:100%"  ?>" width="600px" height="400px" style="display:block;" class="portfolio" src="https://www.youtube.com/embed/sTB6RMN1IEA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
-                </div>
-                <br></br>
-                <div class="row mt-3">
-                    <div class="col-lg-4 py-3">
-                        <div class="portfolio">
-                            <a href="../assets/img/portfolio/work-1.jpg" data-fancybox="portfolio">
-                                <img src="assets/user/images/pabrik/aa3.jpg" alt="" class="scl zoom-in">
-                            </a>
-                        </div>
-                        <a style="text-align:center;">
-                            <h4><b style="color:#ffffff; ">(Bagian Depan)</b><br></h4>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 py-3">
-                        <div class="portfolio">
-                            <a href="../assets/img/portfolio/work-2.jpg" data-fancybox="portfolio">
-                                <img src="assets/user/images/pabrik/aa.jpg" alt="" class="scl zoom-in">
-                            </a>
-                        </div>
-                        <a style="text-align:center;">
-                            <h4><b style="color:#ffffff; ">(Bagian Samping)</b><br></h4>
-                        </a>
-                    </div>
-                    <div class="col-lg-4 py-3">
-                        <div class="portfolio">
-                            <a href="../assets/img/portfolio/work-3.jpg" data-fancybox="portfolio">
-                                <img src="assets/user/images/pabrik/aa2.jpg" alt="" class="scl zoom-in">
-                            </a>
-                        </div>
-                        <a style="text-align:center;">
-                            <h4><b style="color:#ffffff; ">(Bagian belakang)</b><br></h4>
-                        </a>
-                    </div>
-
-
-
-                </div>
-                <br></br>
-            </div>
-        </div>
-    </div> -->
-
-
-
     <div class="page-section" style="background-image: url(assets/user/portfolio/world_pattern.svg);background-color: #220000;">
         <?php if ($this->agent->is_mobile()) : ?>
             <div class="container">
@@ -753,7 +629,7 @@ $this->load->view('user/header', $meta) ?>
                 <div class="row pt-20">
                     <div class="col-sm-4 col-xs-6">
                         <div class="card-blog">
-                            <iframe src="https://www.youtube.com/embed/sTB6RMN1IEA" style="height:200px;display:block;" frameborder="0" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
+                            <iframe src="assets/images/vidiopromosi/splus1.mp4" style="height:200px;display:block;" frameborder="0" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
                             <br></br>
                             <div class="">
                                 <div class="avatar">
@@ -820,7 +696,6 @@ $this->load->view('user/header', $meta) ?>
                 </div>
                 <div class="row my-5 card-blog-row" style="margin-top: 60px;">
                     <div class="col-lg-3 py-3">
-
                         <!-- <div class="">
                                 <div class="avatar">
                                     <img src="assets/user/images/profile/mr-kim.jpg" alt="">
@@ -838,14 +713,14 @@ $this->load->view('user/header', $meta) ?>
                                     Kami S-Plus, memproduksi semua produk di Cirebon-Indonesia menggunakan teknologi.</div>
                             </div> -->
                         <div class="card-blog">
-                            <iframe src="https://www.youtube.com/embed/sTB6RMN1IEA" style="height:200px;display:block;" frameborder="0" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
+                            <iframe src="assets/images/vidiopromosi/splus1.mp4" style="height:400px;display:block;" frameborder="0" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" type="video/mp4"></iframe>
                             <br></br>
 
                             <div class="testimony-wrap py-4" style="color: #0a0a0a;">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
                                 <div class="text">
-                                    <p class="mb-4">Splus adalah produk yang berkualitas.</p>
-                                    <div class="d-flex align-items-center">
+                                    <p class="mb-5">RUMAH PAK DARMONO BOS DAIHATZU.</p>
+                                    <!-- <div class="d-flex align-items-center">
                                         <div class="user-img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.a2MnMHMs44.webp)"></div>
                                         <div class="avatar">
                                             <img src="assets/user/images/profile/ms-dian.jpg" alt="">
@@ -854,39 +729,21 @@ $this->load->view('user/header', $meta) ?>
                                             <div class="post-author" style="color: #0a0a0a;">DIAN SUDIANTI</div>
                                             <a class="post-date" style="color: #0a0a0a;"><b>General Manager</b></a>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
                         </div>
-
                     </div>
                     <div class="col-lg-3 py-3">
-                        <!-- <div class="card-blog" style="background: #6D728B;">
-                            <div class="">
-                                <div class="avatar">
-                                    <img src="assets/user/images/profile/ms-dian.jpg" alt="">
-                                </div>
-                                <div class="entry-footer">
-                                    <div class="post-author" style="color: #0a0a0a;">DIAN SUDIANTI</div>
-                                    <a class="post-date" style="color: #0a0a0a;">General Manager</a>
-                                </div>
-                            </div>
-                            <div class="body">
-                                <div class="post-title" style="color: #0a0a0a;">Terima kasih atas kunjungan Anda di website PT SMART TECHTEX dengan nama brand “S-Plus”</div>
-                                <div class="post-excerpt" style="color: #0a0a0a;">S-Plus telah menjadi bagian penting dari industri pendukung pembangunan di Indonesia,Sebagai suplier material bangunan terbesar di Indonesia,
-                                    S-Plus hadir sebagai penopang pertumbuhan industri melalui layanan terbaik</div>
-                            </div>
-                        </div> -->
                         <div class="card-blog">
-                            <iframe src="https://www.youtube.com/embed/sTB6RMN1IEA" style="height:200px;display:block;" frameborder="0" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
+                            <iframe src="assets/images/vidiopromosi/splus2.mp4" style="height:400px;display:block;" frameborder="0" allow="encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
                             <br></br>
-
                             <div class="testimony-wrap py-4" style="color: #0a0a0a;">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
                                 <div class="text">
-                                    <p class="mb-4">Splus adalah produk yang berkualitas.</p>
-                                    <div class="d-flex align-items-center">
+                                    <p class="mb-5">RS.SEKAR KAMULYAN KUNINGAN JAWA BARAT.</p>
+                                    <!-- <div class="d-flex align-items-center">
                                         <div class="user-img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.a2MnMHMs44.webp)"></div>
                                         <div class="avatar">
                                             <img src="assets/user/images/profile/ms-dian.jpg" alt="">
@@ -895,7 +752,7 @@ $this->load->view('user/header', $meta) ?>
                                             <div class="post-author" style="color: #0a0a0a;">DIAN SUDIANTI</div>
                                             <a class="post-date" style="color: #0a0a0a;"><b>General Manager</b></a>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
@@ -903,14 +760,13 @@ $this->load->view('user/header', $meta) ?>
                     </div>
                     <div class="col-lg-3 py-3">
                         <div class="card-blog">
-                            <iframe src="https://www.youtube.com/embed/sTB6RMN1IEA" style="height:200px;display:block;" frameborder="0" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
+                            <iframe src="assets/images/vidiopromosi/splu3.mp4" style="height:400px;display:block;" frameborder="0" allow="encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
                             <br></br>
-
                             <div class="testimony-wrap py-4">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
                                 <div class="text">
-                                    <p class="mb-4">Splus adalah produk yang berkualitas.</p>
-                                    <div class="d-flex align-items-center">
+                                    <p class="mb-5">PERUMAHAN BAGET AYU KUNINGAN.</p>
+                                    <!-- <div class="d-flex align-items-center">
                                         <div class="user-img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.a2MnMHMs44.webp)"></div>
                                         <div class="avatar">
                                             <img src="assets/user/images/showroom/cirebon/tim/feri.jpg" alt="">
@@ -919,23 +775,20 @@ $this->load->view('user/header', $meta) ?>
                                             <div class="post-author" style="color: #0a0a0a;">Feri Budi M</div>
                                             <a class="post-date" style="color: #0a0a0a;"><b>Manager Marketing</b></a>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     <div class="col-lg-3 py-3">
-
                         <div class="card-blog">
-                            <iframe src="https://www.youtube.com/embed/sTB6RMN1IEA" style="height:200px;display:block;" frameborder="0" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
+                            <iframe src="assets/images/vidiopromosi/splus4.mp4" style="height:400px;display:block;" frameborder="0" allow="encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
                             <br></br>
-
                             <div class="testimony-wrap py-4">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
                                 <div class="text">
-                                    <p class="mb-4">Splus adalah produk yang berkualitas.</p>
-                                    <div class="d-flex align-items-center">
+                                    <p class="mb-5">KANTOR JASA MARGA CIREBON.</p>
+                                    <!-- <div class="d-flex align-items-center">
                                         <div class="user-img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.a2MnMHMs44.webp)"></div>
                                         <div class="avatar">
                                             <img src="assets/user/images/showroom/cirebon/tim/ivan.jpg" alt="">
@@ -944,18 +797,23 @@ $this->load->view('user/header', $meta) ?>
                                             <div class="post-author" style="color: #0a0a0a;">Ivan Hermawan</div>
                                             <a class="post-date" style="color: #0a0a0a;"><b>Asisten Marketing</b></a>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
 
                         </div>
                     </div>
+
+                    <div>
+                        <center><a href="<?= base_url('testimoni') ?>" class="btn btn-primary mt-4" style="margin-top: 30px;">Read More</a></center>
+                    </div>
+
+
+
                 </div>
             </div>
         <?php endif; ?>
     </div>
-
-
 
 
     <?php if ($this->agent->is_mobile()) : ?>

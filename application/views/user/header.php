@@ -1310,9 +1310,6 @@
     <link rel="preload" href="<?= base_url('assets/user/css/bootstrap-datepicker.standalone.min.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- new -->
-    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
-    <!-- <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.css') ?>"> -->
-    <!-- <link rel="preload" href="<?= base_url('assets/user/css/innovation.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'"> -->
     <link rel="stylesheet" href="<?= base_url('assets/css/theme.css') ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -1333,8 +1330,6 @@
         <link rel="stylesheet" href="<?= base_url('assets/user/css/custom.css') ?>">
         <link rel="stylesheet" href="<?= base_url('assets/user/css/animation.css') ?>">
         <link rel="stylesheet" href="<?= base_url('assets/user/plugins/bootstrap-select/dist/css/bootstrap-select.min.css') ?>">
-
-
     </noscript>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161516523-1"></script>
@@ -1463,7 +1458,7 @@
                             <li><a href="<?= base_url() ?>"><i class="fa fa-home fa-lg"></i></a></li>
                             <li><a href="<?= base_url('tentang-kami') ?>">Tentang Kami </a></li>
                             <li><a href="<?= base_url('v_kategori') ?>">Produk</a></li>
-                            <li><a href="<?= base_url('e-katalog') ?>"><span style="text-transform: lowercase;">e</span>-Katalog</a></li>
+                            <li><a href="<?= base_url('e-katalog') ?>"><span style="text-transform: lowercase;">E</span>-Katalog</a></li>
                             <!-- <li><a href='https://localhost/splus_ecommerce'>e-commerce</a></li> -->
                             <li><a href="<?= base_url('Ecommerce') ?>">e-commerce</a></li>
                             <!-- <li><a href="<?= base_url('administrator') ?>">Login</a></li> -->

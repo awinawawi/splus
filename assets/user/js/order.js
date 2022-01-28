@@ -14,7 +14,7 @@ function getVarian(varian){
         // $('#order_image').attr("src",baseUrl+"assets/user/images/kategori/produk/pintu/"+data[0]['varian_gambar_utama']);
         // $('#order_image_varian').attr("src",baseUrl+"assets/user/images/kategori/produk/pintu/"+data[0]['varian_gambar_warna']);
         $('#order_image').attr("src",baseUrl+"assets/images/ourproduk/produk/"+data[0]['varian_gambar_utama']);
-        $('#order_image_varian').attr("src",baseUrl+"assets/user/images/kategori/produk/pintu/"+data[0]['varian_gambar_warna']);
+        $('#order_image_varian').attr("src",baseUrl+"assets/images/ourproduk/produk/"+data[0]['varian_gambar_warna']);
         $('#order_image_varian_label').html(data[0]['varian_warna'])
         let ukuran = data[0]['varian_ukuran'].split("x");
         if($('#order_varian_ukuran_lebar').val() == ''){ $('#order_varian_ukuran_lebar').val(ukuran[0]); }
@@ -33,7 +33,7 @@ function getPrice(price){
         let data = JSON.parse(result);
         // $('#order_image').attr("src",baseUrl+"assets/user/images/kategori/splus-shade/"+data[0]['varian_gambar_utama']);
         // $('#order_image_varian').attr("src",baseUrl+"assets/user/images/kategori/splus-shade/"+data[0]['varian_gambar_warna']);
-        $('#order_image').attr("src",baseUrl+"assets/user/images/kategori/produk/pintu/"+data[0]['varian_gambar_utama']);
+        $('#order_image').attr("src",baseUrl+"assets/images/ourproduk/produk/"+data[0]['varian_gambar_utama']);
         $('#order_image_varian').attr("src",baseUrl+"assets/user/images/kategori/produk/pintu/"+data[0]['varian_gambar_warna']);
         $('#order_image_varian_label').html(data[0]['varian_warna'])
         let ukuran = data[0]['varian_ukuran'].split("x");

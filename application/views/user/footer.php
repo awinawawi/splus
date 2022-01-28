@@ -187,12 +187,7 @@
 
     <!-- new-->
 
-    <!-- <script defer type="text/javascript" src="<?= base_url('assets/css/vendor/owl-carousel/js/owl.carousel.min.js') ?>"></script>
-    <script src="<?= base_url('assets/css/vendor/wow/wow.min.js') ?>"></script>
-    <script src="<?= base_url('assets/css/vendor/fancybox/js/jquery.fancybox.min.js') ?>"></script>
-    <script src="<?= base_url('assets/css/vendor/isotope/isotope.pkgd.min.js') ?>"></script>
-    <script src="<?= base_url('assets/css/js/google-maps.js') ?>"></script>
-    <script src="<?= base_url('assets/css/js/theme.js') ?>"></script> -->
+
 
     <!-- JS Library-->
     <script defer type="text/javascript" src="<?= base_url('assets/user/plugins/jquery/dist/jquery.min.js') ?>"></script>
