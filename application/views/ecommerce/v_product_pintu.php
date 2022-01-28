@@ -67,6 +67,7 @@
                                     <li><a href="<?= base_url('product_exterior') ?>">Exterior Material</a></li>
                                     <li><a href="<?= base_url('product_aksesoris') ?>">Aksesoris</a></li>
                                     <li><a href="<?= base_url('product_masker') ?>">Masker</a></li>
+                                    <li><a href="<?= base_url('product_all') ?>">All Product</a></li>
                                 </ul>
                             </li>
 
@@ -148,9 +149,8 @@
                             <div class="thumb">
                                 <div class="hover-content">
                                     <ul>
-                                        <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                        <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li><a href="<?= base_url('assets/images/ourproduk/produk/' . $kat['varian_gambar_depan']) ?>"><i class="fa fa-eye"></i></a></li>
+                                        <li><a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                     </ul>
                                 </div>
 
@@ -158,7 +158,7 @@
                                     <img src="<?= base_url('assets/user/images/kategori/produk/pintu/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
                                 </a> -->
 
-                                <a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>">
+                                <a>
                                     <img src="<?= base_url('assets/images/ourproduk/produk/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
                                 </a>
                             </div>
@@ -182,27 +182,16 @@
                 <?php } ?>
 
             </div>
-            <!-- <div class="col-lg-12">
-                <div class="pagination">
-                    <ul>
-                        <li>
-                            <a href="#">1</a>
-                        </li>
-                        <li class="active">
-                            <a href="#">2</a>
-                        </li>
-                        <li>
-                            <a href="#">3</a>
-                        </li>
-                        <li>
-                            <a href="#">4</a>
-                        </li>
-                        <li>
-                            <a href="#">></a>
-                        </li>
-                    </ul>
+            <div class="col-lg-12">
+                <div class="mt-30 pb-50">
+                    <div class="ps-pagination">
+                        <!-- <?= $paginasi['pagination'] ?> -->
+                        <?php
+                        echo $this->pagination->create_links();
+                        ?>
+                    </div>
                 </div>
-            </div> -->
+            </div>
         </div>
 
         <!-- <div class="container">

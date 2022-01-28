@@ -77,7 +77,7 @@
                         <!-- ***** Logo Start ***** -->
                         <div>
 
-                            <a href="index.html" class="logo">
+                            <a class="logo">
                                 <img src="<?= base_url('assets/images/ourproduk/logo.jpg') ?>" style="width: 300px;">
                             </a>
                         </div>
@@ -85,10 +85,10 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="submenu">
-                                <a href="javascript:;">Pages</a>
+                                <a href="javascript:;">Hubungi kami</a>
                                 <ul>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="<?= base_url('tentang-kami') ?>">About Us</a></li>
+                                    <li><a href="<?= base_url('contact') ?>">Contact Us</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">
@@ -385,8 +385,6 @@
                 <div class="col-lg-12">
                     <div class="left-content">
                         <h2>Explore Our Products</h2>
-
-
                         <div class="quote">
                             <i class="fa fa-quote-left"></i>
                             <p>You know what we are proud of ? That is your satisfaction.</p>
@@ -454,9 +452,8 @@
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('assets/images/ourproduk/newbrand/ambalan2.jpg') ?>"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
 
@@ -479,9 +476,8 @@
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('assets/images/ourproduk/newbrand/ambalan4.jpg') ?>"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="<?= base_url('assets/images/ourproduk/newbrand/ambalan4.jpg') ?>">
@@ -503,9 +499,8 @@
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('assets/images/ourproduk/newbrand/ambalan3.jpg') ?>"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
 
@@ -527,9 +522,8 @@
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('assets/images/ourproduk/newbrand/ambalan1.jpg') ?>"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
 
@@ -576,9 +570,8 @@
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('assets/images/ourproduk/bestproduct/art1.jpg') ?>"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="<?= base_url('product_pintu') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
 
@@ -600,9 +593,8 @@
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('assets/images/ourproduk/bestproduct/art2.jpg') ?>"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="<?= base_url('product_pintu') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="<?= base_url('assets/images/ourproduk/bestproduct/art2.jpg') ?>">
@@ -624,9 +616,8 @@
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('assets/images/ourproduk/bestproduct/art3.jpg') ?>"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="<?= base_url('product_pintu') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="<?= base_url('assets/images/ourproduk/bestproduct/art3.jpg') ?>">
@@ -648,9 +639,8 @@
                                 <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
-                                            <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                            <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('assets/images/ourproduk/bestproduct/art4.jpg') ?>"><i class="fa fa-eye"></i></a></li>
+                                            <li><a href="<?= base_url('product_pintu') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="<?= base_url('assets/images/ourproduk/bestproduct/art4.jpg') ?>">
@@ -714,17 +704,22 @@
                     <div class="row">
                         <div class="col-6">
                             <ul>
-                                <li>Store Location:<br><span>Jl. Raya Kanci Cirebon – Tegal KM 13,5 Desa Rawaurip<br>
-                                        Kec. Pangenan Kab. Cirebon 45182</span></li>
-                                <li>Phone:<br><span>(0231) 8511781 – 85</span></li>
-                                <li>Office Location:<br><span>Cirebon-Pangenan</span></li>
+                                <li><b>Store Location:</b><br>Jl. Raya Kanci Cirebon – Tegal KM 13,5 Desa Rawaurip<br>
+                                    Kec. Pangenan Kab. Cirebon 45182</li>
+                                <li><b>Phone:</b><br>(0231) 8511781 – 85</li>
+                                <li><b>Office Location:</b><br>Cirebon-Pangenan</li>
                             </ul>
                         </div>
                         <div class="col-6">
                             <ul>
-                                <li>Work Hours:<br><span>08:00 AM - 16:00 PM Daily</span></li>
-                                <li>Email:<br><span>splusindonesia@gmail.com</span></li>
-                                <li>Social Media:<br><span><a href="#" class="fa fa-facebook"></a> <a href="#" class="fa fa-instagram"></a> <a href="#" class="fa fa-youtube"></a> <a href="#" class="fa fa-twitter  "></a></span></li>
+                                <li><b>Work Hours:</b><br>08:00 AM - 16:00 PM Daily</li>
+                                <li><b>Email:</b><br>splusindonesia@gmail.com</li>
+                                <li><b>Social Media:</b><br>
+                                    <a href="https://www.facebook.com/S-Plus-Indonesia-100698461599924/" class="fa fa-facebook"></a>
+                                    <a href="https://www.instagram.com/splusindonesia/" class="fa fa-instagram"></a>
+                                    <a href="https://www.youtube.com/channel/UCMYj8Md6whMbPNFcyxjyA6A" class="fa fa-youtube"></a>
+                                    <a href="https://www.twitter.com/" class="fa fa-twitter"></a>
+                                </li>
                             </ul>
                         </div>
                     </div>
