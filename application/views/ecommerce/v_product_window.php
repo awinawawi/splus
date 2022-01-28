@@ -350,13 +350,13 @@
                                                     <div class="down-content">
                                                         <h4><?= $kat['varian_nama'] ?></h4>
                                                         <span>RP.<?= ($kat['varian_harga_meter'])  ?> </span>
-                                                        <ul class="stars">
+                                                        <!-- <ul class="stars">
                                                             <li><i class="fa fa-star"></i></li>
                                                             <li><i class="fa fa-star"></i></li>
                                                             <li><i class="fa fa-star"></i></li>
                                                             <li><i class="fa fa-star"></i></li>
                                                             <li><i class="fa fa-star"></i></li>
-                                                        </ul>
+                                                        </ul> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -410,13 +410,13 @@
                                                     <div class="down-content">
                                                         <h4><?= $kat['varian_nama'] ?></h4>
                                                         <span>RP.<?= ($kat['varian_harga_meter'])  ?> </span>
-                                                        <ul class="stars">
+                                                        <!-- <ul class="stars">
                                                             <li><i class="fa fa-star"></i></li>
                                                             <li><i class="fa fa-star"></i></li>
                                                             <li><i class="fa fa-star"></i></li>
                                                             <li><i class="fa fa-star"></i></li>
                                                             <li><i class="fa fa-star"></i></li>
-                                                        </ul>
+                                                        </ul> -->
                                                     </div>
                                                 </div>
                                             </div>
