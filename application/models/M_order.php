@@ -17,6 +17,45 @@ class M_order extends CI_Model
             ->get('tbl_produk_varian')->result();
     }
 
+    public function get_all_category()
+    {
+        $data = $this->db->select('*')
+            ->from('tbl_kategoriproduk')
+            ->order_by('id_kategori_produk', 'desc')
+            ->get()
+            ->result();
+        return $data;
+    }
+    public function get_all_sub_category()
+    {
+        $data = $this->db->select('*')
+            ->from('tbl_subkategoriproduk')
+            ->order_by('id_subkategori_produk', 'desc')
+            ->get()
+            ->result();
+        return $data;
+    }
+
+    // public function post_sub($id)
+    // {
+    //     $data = $this->db->select('*')
+    //         ->from('tbl_produk_varian')
+    //         ->where('produk_id', $id)
+    //         ->get()
+    //         ->result();
+    //     return $data;
+    // }
+
+    public function post_sub()
+    {
+        $data = $this->db->select('*')
+            ->from('tbl_produk_varian')
+
+            ->get()
+            ->result();
+        return $data;
+    }
+
     public function getPrice($id)
     {
         return $this->db->where('varian_id', $id)

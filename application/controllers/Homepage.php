@@ -299,6 +299,7 @@ class Homepage extends CI_Controller
 
 	public function product_pintu()
 	{
+
 		$this->load->view('ecommerce/v_product_pintu');
 	}
 

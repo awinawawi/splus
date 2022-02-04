@@ -102,7 +102,7 @@
 
 
     <!-- ***** Products Area Starts ***** -->
-    <section class="section" id="products">
+    <!-- <section class="section" id="products">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -124,26 +124,7 @@
 
                 ?>
 
-                    <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20" data-layout="grid-4-full" data-with-features="false">
-                        <div class="container_images">
-
-                            <div class="content_img">
-
-                                <a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>">
-                                    <img src="<?= base_url('assets/user/images/kategori/produk/pintu/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
-                                    <div>More Detail</div>
-                                </a>
-                            </div>
-
-                            <div class="text-overlay-ss">
-                                <a class="syahrul text-sm"><b>Type: </b><?= $kat['varian_type'] ?></a>
-                                <a><br></a>
-                                <a class="syahrul text-sm"><b>Kategori: </b><?= $kat['produk_nama'] ?></a>
-
-                            </div>
-                        </div>
-                    </div> -->
-
+                
                     <div class="col-lg-4">
                         <div class="item">
                             <div class="thumb">
@@ -154,9 +135,9 @@
                                     </ul>
                                 </div>
 
-                                <!-- <a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>">
+                                <a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>">
                                     <img src="<?= base_url('assets/user/images/kategori/produk/pintu/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
-                                </a> -->
+                                </a>
 
                                 <a>
                                     <img src="<?= base_url('assets/images/ourproduk/produk/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
@@ -185,7 +166,7 @@
             <div class="col-lg-12">
                 <div class="mt-30 pb-50">
                     <div class="ps-pagination">
-                        <!-- <?= $paginasi['pagination'] ?> -->
+                        
                         <?php
                         echo $this->pagination->create_links();
                         ?>
@@ -194,256 +175,252 @@
             </div>
         </div>
 
-        <!-- <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
+        
+    </section> -->
+
+    <section class="section" id="products">
+        <div class="container">
+
+            <div class="row pb-50 pt-50">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 bg-grey shd">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-heading" style="text-align:left;">
+                                <aside class="ps-widget--sidebar ">
+                                    <div class="ps-widget__header">
+                                        <h3>
+                                            <a> <b>PRODUCT</b></a>
+                                        </h3>
+                                    </div>
+                                    <br></br>
+                                    <!-- <div class="ps-widget__content ">
+                                        <div class="widget-products widget">
+                                            <div>
+                                                <?php $query = $this->db->query('SELECT * FROM tbl_kategoriproduk a INNER JOIN tbl_produk b 
+                                                ON a.id_kategori_produk=b.id_kategori_produk ORDER BY a.id_kategori_produk');
+                                                foreach ($query->result_array() as $kat) {
+                                                ?>
+                                                    <div>
+                                                        <a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>"><?= $kat['nama_kategori'] ?></a>
+                                                    </div>
+
+                                                <?php } ?>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <div class="ps-widget">
+
+                                        <div class="panel-group category-products" id="accordian">
+
+                                            <?php $data = $this->db->query("SELECT * from tbl_kategoriproduk where id_kategori_produk='1' order by id_kategori_produk Asc"); ?>
+                                            <?php $data1 = $this->db->query("SELECT * from tbl_subkategoriproduk where id_kategori_produk='1' order by id_subkategori_produk Asc"); ?>
+                                            <?php foreach ($data->result() as $maincat) { ?>
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" data-parent="#accordian" href="#<?php echo $maincat->nama_kategori; ?>">
+                                                                <span class="badge pull-right">
+                                                                    <?php foreach ($data1->result() as $plusicon) { ?>
+                                                                        <?php if ($plusicon->id_kategori_produk == $maincat->id_kategori_produk) { ?>
+                                                                            <i class="fa fa-plus"></i>
+                                                                            <?php if ($plusicon->id_kategori_produk == $maincat->id_kategori_produk) {
+                                                                                break;
+                                                                            } ?>
+                                                                    <?php }
+                                                                    } ?>
+
+                                                                </span>
+                                                                <?php echo "Jenis Pintu" ?>
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="<?php echo $maincat->nama_kategori; ?>" class="panel-collapse collapse">
+                                                        <div class="panel-body">
+                                                            <ul>
+                                                                <?php foreach ($data1->result() as $subcat) { ?>
+                                                                    <?php if ($subcat->id_kategori_produk == $maincat->id_kategori_produk) { ?>
+                                                                        <li><a href="<?= base_url() ?>subkategori_pintu/<?php echo $subcat->id_subkategori_produk ?>"><?php echo $subcat->nama_subkategori ?></a></li>
+                                                                    <?php } ?>
+                                                                <?php } ?>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            <?php } ?>
+                                        </div>
+
+                                    </div>
+                                    <br></br>
+                                    <div class="ps-widget__content ">
+                                        <div class="widget-products widget">
+                                            <h4 class="widget__title">TIPE </h4>
+                                            <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
+                                                <?php $query = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+                                                                a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="9"
+                                                                GROUP BY a.varian_nama
+                                                                ');
+                                                foreach ($query->result_array() as $kat) {
+                                                ?>
+                                                    <div class="form-check" style="padding-left: 10px;">
+                                                        <label>
+                                                            <input class="common_selector storage" type="checkbox">
+                                                            <?= $kat['varian_nama'] ?></BR>
+                                                        </label>
+                                                    </div>
+
+                                                <?php } ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aside>
                             </div>
-                            <img src="<?= base_url('assets/images/ourproduk/bestproduct/art4.jpg') ?>">
-                        </div>
-                        <div class="down-content">
-                            <h4>Classic Spring</h4>
-                            <span>$120.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
                         </div>
                     </div>
+
                 </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
+                <div class="col-md-9">
+                    <?php if ($this->agent->is_mobile()) : ?>
+                        <section class="section" id="products">
+                            <div class="">
+                                <center>
+                                    <span class="h-subtitle h-m-title"><strong>OUR PRODUCTS</strong></span>
+                                </center>
+                                <hr style="margin-bottom: 25px;width: 25%; border: 0.5px solid #e24545">
+                                <div class="container">
+                                    <div class="row">
+                                        <?php $query = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+                                                                a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="9"
+                                                                GROUP BY a.varian_nama
+                                                                ');
+                                        foreach ($query->result_array() as $kat) {
+
+                                        ?>
+
+                                            <div class="col-lg-4">
+                                                <div class="item">
+                                                    <div class="thumb">
+                                                        <div class="hover-content">
+                                                            <ul>
+                                                                <li><a href="<?= base_url('assets/images/ourproduk/produk/' . $kat['varian_gambar_depan']) ?>"><i class="fa fa-eye"></i></a></li>
+                                                                <li><a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>"><i class="fa fa-shopping-cart"></i></a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <a>
+                                                            <img src="<?= base_url('assets/images/ourproduk/produk/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="down-content">
+                                                        <h4><?= $kat['varian_nama'] ?></h4>
+                                                        <span>RP.<?= ($kat['varian_harga_meter'])  ?> </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+
                             </div>
-                            <img src="assets/images/men-02.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Air Force 1 X</h4>
-                            <span>$90.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
+                        </section>
+                    <?php else : ?>
+                        <section class="section" id="products">
+                            <div class="">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="section-heading">
+                                            <h2>Our Latest Products</h2>
+                                            <span>Check out all of our products.</span>
+                                            <hr style="margin-bottom: 25px;width: 25%; border: 0.5px solid #e24545">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container">
+                                    <!-- <div class="row">
+                                        <?php $query = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+                                                                a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="9"
+                                                                GROUP BY a.varian_nama
+                                                                ');
+                                        foreach ($query->result_array() as $kat) {
+
+                                        ?>
+
+                                            <div class="col-lg-4">
+                                                <div class="item">
+                                                    <div class="thumb">
+                                                        <div class="hover-content">
+                                                            <ul>
+                                                                <li><a href="<?= base_url('assets/images/ourproduk/produk/' . $kat['varian_gambar_depan']) ?>"><i class="fa fa-eye"></i></a></li>
+                                                                <li><a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>"><i class="fa fa-shopping-cart"></i></a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <a>
+                                                            <img src="<?= base_url('assets/images/ourproduk/produk/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="down-content">
+                                                        <h4><?= $kat['varian_nama'] ?></h4>
+                                                        <span>RP.<?= ($kat['varian_harga_meter'])  ?> </span>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        <?php } ?>
+                                    </div> -->
+
+                                    <div class="row">
+
+                                        <?php $brand_data = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+                                                                a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="9"
+                                                                GROUP BY a.varian_nama'); ?>
+
+                                        <?php foreach ($brand_data->result_array() as $kat) { ?>
+
+
+                                            <div class="col-lg-4">
+                                                <div class="item">
+                                                    <div class="thumb">
+                                                        <div class="hover-content">
+                                                            <ul>
+                                                                <li><a href="<?= base_url('assets/images/ourproduk/produk/' . $kat['varian_gambar_depan']) ?>"><i class="fa fa-eye"></i></a></li>
+                                                                <li><a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>"><i class="fa fa-shopping-cart"></i></a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                        <a>
+                                                            <img src="<?= base_url('assets/images/ourproduk/produk/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
+                                                        </a>
+                                                    </div>
+
+                                                    <div class="down-content">
+                                                        <h4><?= $kat['varian_nama'] ?></h4>
+                                                        <span>RP.<?= ($kat['varian_harga_meter'])  ?> </span>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        <?php
+                                        } ?>
+                                    </div>
+
+                                </div>
                             </div>
-                            <img src="assets/images/men-03.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Love Nana ‘20</h4>
-                            <span>$150.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
+                        </section>
+                    <?php endif; ?>
                 </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/women-01.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>New Green Jacket</h4>
-                            <span>$75.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/women-02.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Classic Dress</h4>
-                            <span>$45.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/women-03.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Spring Collection</h4>
-                            <span>$130.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/kid-01.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>School Collection</h4>
-                            <span>$80.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/kid-02.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Summer Cap</h4>
-                            <span>$12.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/kid-03.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Classic Kid</h4>
-                            <span>$30.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="pagination">
-                        <ul>
-                            <li>
-                                <a href="#">1</a>
-                            </li>
-                            <li class="active">
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li>
-                                <a href="#">4</a>
-                            </li>
-                            <li>
-                                <a href="#">></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+
             </div>
-        </div> -->
+        </div>
     </section>
     <!-- ***** Products Area Ends ***** -->
 

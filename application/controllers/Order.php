@@ -32,6 +32,40 @@ class Order extends CI_Controller
         $this->load->view('user/order/produk_kategori', ['varian' => $produk]);
     }
 
+    //filter
+
+    public function subkategori_window()
+    {
+
+        $this->load->view('ecommerce/v_product_window');
+    }
+    public function subkategori_pintu()
+    {
+
+        $data['brand_data'] = $this->M_order->post_sub();
+        $this->load->view('ecommerce/v_product_pintu', $data);
+
+        // $this->load->view('ecommerce/v_product_pintu');
+    }
+    public function subkategori_interior()
+    {
+        $this->load->view('ecommerce/v_product_interior');
+    }
+    public function subkategori_exterior()
+    {
+        $this->load->view('ecommerce/v_product_exterior');
+    }
+    public function subkategori_aksesoris()
+    {
+        $this->load->view('ecommerce/v_product_aksesoris');
+    }
+    public function subkategori_masker()
+    {
+        $this->load->view('ecommerce/v_product_masker');
+    }
+
+    //end filter
+
     public function produk_varian()
     {
         $_POST ? true : redirect('order');

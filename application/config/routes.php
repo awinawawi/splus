@@ -23,7 +23,15 @@ $route['product_aksesoris']     = 'homepage/product_aksesoris';
 $route['product_masker']        = 'homepage/product_masker';
 $route['product_all']           = 'homepage/product_all';
 $route['contact']               = 'homepage/contact';
-$route['testimoni']  = 'homepage/testimoni';
+$route['testimoni']             = 'homepage/testimoni';
+
+$route['subkategori_pintu/(:any)']     = 'order/subkategori_pintu';
+$route['subkategori_window/(:any)']    = 'order/subkategori_window';
+$route['subkategori_interior/(:any)']  = 'order/subkategori_interior';
+$route['subkategori_exterior/(:any)']  = 'order/subkategori_exterior';
+$route['subkategori_aksesoris/(:any)'] = 'order/subkategori_aksesoris';
+$route['subkategori_masker/(:any)']    = 'order/subkategori_masker';
+
 
 
 $route['galeri']                = 'homepage/galeri';
@@ -37,6 +45,7 @@ $route['kebijakan-privasi']     = 'homepage/kebijakan_privasi';
 $route['syarat-ketentuan']      = 'homepage/syarat_ketentuan';
 $route['faq']                   = 'homepage/faq';
 $route['karir']                 = 'homepage/karir';
+
 
 // Transaksi
 $route['order']                     = 'order';

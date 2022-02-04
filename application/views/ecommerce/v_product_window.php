@@ -171,139 +171,90 @@
                                 <aside class="ps-widget--sidebar ">
                                     <div class="ps-widget__header">
                                         <h3>
-                                            <a href="<?= base_url('v_kategori') ?>"> <b>Products</b></a>
+                                            <a> <b>PRODUCT</b></a>
                                         </h3>
                                     </div>
                                     <br></br>
-                                    <div class="ps-widget__content ">
-                                        <ul class="ps-list--arrow">
-                                            <li class="panel-title" data-toggle="collapse" data-target="#test">
-                                                <a href="<?= base_url('kategori/s-plus-pintu') ?>"><b>PINTU</b>
-                                                </a>
-                                                <ul id="test">
-                                                    <li class="sm panel-title" data-toggle="collapse" data-target="#testsp1"><a href="<?= base_url('kategori/s-plus-pintu/abs') ?>"><b>PINTU ABS</b></a>
-                                                        <ul id="testsp1" class="panel-collapse collapse">
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/classic') ?>">Classic</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/fortebello') ?>">Fortebello</a></li>
-                                                            <li class="sm panel-title" id="closee"><a href="#">Premium</a></li>
+                                    <!-- <div class="ps-widget__content ">
+                                        <div class="widget-products widget">
+                                            <div>
+                                                <?php $query = $this->db->query('SELECT * FROM tbl_kategoriproduk a INNER JOIN tbl_produk b 
+                                                ON a.id_kategori_produk=b.id_kategori_produk ORDER BY a.id_kategori_produk');
+                                                foreach ($query->result_array() as $kat) {
+                                                ?>
+                                                    <div>
+                                                        <a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>"><?= $kat['nama_kategori'] ?></a>
+                                                    </div>
+
+                                                <?php } ?>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                    <div class="ps-widget">
+
+                                        <div class="panel-group category-products" id="accordian">
+
+                                            <?php $data = $this->db->query("SELECT * from tbl_kategoriproduk where id_kategori_produk='2' order by id_kategori_produk Asc"); ?>
+                                            <?php $data1 = $this->db->query("SELECT * from tbl_subkategoriproduk where id_kategori_produk='2' order by id_subkategori_produk Asc"); ?>
+                                            <?php foreach ($data->result() as $maincat) { ?>
+                                                <div class="panel panel-default">
+                                                    <div class="panel-heading">
+                                                        <h4 class="panel-title">
+                                                            <a data-toggle="collapse" data-parent="#accordian" href="#<?php echo $maincat->nama_kategori; ?>">
+                                                                <span class="badge pull-right">
+                                                                    <?php foreach ($data1->result() as $plusicon) { ?>
+                                                                        <?php if ($plusicon->id_kategori_produk == $maincat->id_kategori_produk) { ?>
+                                                                            <i class="fa fa-plus"></i>
+                                                                            <?php if ($plusicon->id_kategori_produk == $maincat->id_kategori_produk) {
+                                                                                break;
+                                                                            } ?>
+                                                                    <?php }
+                                                                    } ?>
+
+                                                                </span>
+                                                                <?php echo "Jenis Jendela" ?>
+                                                            </a>
+                                                        </h4>
+                                                    </div>
+                                                    <div id="<?php echo $maincat->nama_kategori; ?>" class="panel-collapse collapse">
+                                                        <div class="panel-body">
                                                             <ul>
-                                                                <li class="sn" id="menu"><a href="<?= base_url('kategori/s-plus-pintu/premium-general') ?>">General</a></li>
-                                                                <li class="sn" id="menu"><a href="<?= base_url('kategori/s-plus-pintu/premium-deco') ?>">Deco</a></li>
-                                                                <li class="sn" id="menu"><a href="<?= base_url('kategori/s-plus-pintu/grande') ?>">Grande</a></li>
+                                                                <?php foreach ($data1->result() as $subcat) { ?>
+                                                                    <?php if ($subcat->id_kategori_produk == $maincat->id_kategori_produk) { ?>
+                                                                        <li><a href="<?= base_url() ?>subkategori_window/<?php echo $subcat->id_subkategori_produk ?>"><?php echo $subcat->nama_subkategori ?></a></li>
+                                                                    <?php } ?>
+                                                                <?php } ?>
                                                             </ul>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/art-door') ?>">Art Door</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/exterior-door') ?>">Exterior Door</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/kusen') ?>">Kusen</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>">Aksesoris</a></li>
-                                                        </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                                    </li>
+                                            <?php } ?>
+                                        </div>
 
-                                                    <li class="sm panel-title" data-toggle="collapse" data-target="#testsp2"><a href="<?= base_url('kategori/s-plus-pintu/upvc') ?>"><b>PINTU UPVC</b></a>
-                                                        <ul id="testsp2" class="panel-collapse collapse">
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-pintu#felice') ?>">Felice</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-pintu#sash') ?>">Sash Door</a></li>
-                                                        </ul>
+                                    </div>
+                                    <br></br>
+                                    <div class="ps-widget__content ">
+                                        <div class="widget-products widget">
+                                            <h4 class="widget__title">TIPE </h4>
+                                            <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
+                                                <?php $query = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+                                                                a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="10"
+                                                                GROUP BY a.varian_nama
+                                                                ');
+                                                foreach ($query->result_array() as $kat) {
+                                                ?>
+                                                    <div class="form-check" style="padding-left: 10px;">
+                                                        <label>
+                                                            <input class="common_selector storage" type="checkbox">
+                                                            <?= $kat['varian_nama'] ?></BR>
+                                                        </label>
+                                                    </div>
 
-
-                                                    </li>
-                                                    <li class="sm panel-title" data-toggle="collapse" data-target="#testsp3"><a href="<?= base_url('kategori/s-plus-pintu/namo') ?>"><b>PINTU NAMO</b></a>
-                                                        <ul id="testsp3" class="panel-collapse collapse">
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#laminate-door') ?>">Laminate Door</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#eco-door') ?>">ECO Door</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#veneer-solid-door') ?>">Veneer Solid Door</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#timber-joint-door') ?>">Timber Joint Door</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#art-door') ?>">ART Door</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/iroom_door') ?>"><b>PINTU IROOM</b></a></li>
-                                                </ul>
-
-                                            </li>
-
-                                            <li class="panel-title" data-toggle="collapse" data-target="#test2">
-                                                <a href="<?= base_url('kategori/s-plus-upvc-jendela') ?>"><b>JENDELA</b></a>
-                                                <ul id="test2">
-                                                    <!-- <li class="sm panel-title" data-toggle="collapse" data-target="#testsp4"><a href="<?= base_url('kategori/s-plus-upvc-jendela/jendela_upvc') ?>"><b>JENDELA UPVC</b></a>
-                                                <ul id="testsp4" class="panel-collapse collapse">
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/kaca-mati') ?>">Jendela Kaca Mati</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/jungkit') ?>">Jendela Jungkit</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/sliding') ?>">Jendela Sliding</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/swing') ?>">Jendela Swing</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/kombinasi') ?>">Jendela Kombinasi</a></li>
-                                                </ul>
-
-                                            </li> -->
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/jendela_upvc') ?>"><b>JENDELA UPVC</b></a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/jendela_IROOM') ?>"><b>JENDELA IROOM</b></a></li>
-
-                                                </ul>
-                                            </li>
-
-                                            <li class="panel-title" data-toggle="collapse" data-target="#test3">
-                                                <a href="<?= base_url('kategori/s-plus-upvc-plafon/plafon') ?>"><b>INTERIOR MATERIAL</b></a>
-                                                <ul id="test3">
-                                                    <li class="sm panel-title" data-toggle="collapse" data-target="#testsp5"><a href="<?= base_url('kategori/s-plus-upvc-plafon/plafon_upvc') ?>"><b>PLAFON UPVC</b></a>
-                                                        <ul id="testsp5" class="panel-collapse collapse">
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-plafon#polos') ?>">Plafon Polos</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-plafon#laminate') ?>">Plafon Laminate</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-plafon#deco') ?>">Plafon Deco</a></li>
-                                                        </ul>
-
-                                                    </li>
-                                                    <li class="sm panel-title" data-toggle="collapse" data-target="#testsp6"><a href="<?= base_url('kategori/s-plus-sun-shade/sun-shead') ?>"><b>SUN SHADE</b></a>
-                                                        <ul id="testsp6" class="panel-collapse collapse">
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-sun-shade/combi') ?>">Combi Roll Screen</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-sun-shade/roll-screen') ?>">Roll Screen</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-sun-shade/sun-screen') ?>">Sun Screen</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-sun-shade/blackout') ?>">Blackout Roll Screen</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-sun-shade/vertical') ?>">Vertical Blind</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-sun-shade/wood') ?>">Horizontal Wood</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-sun-shade/alumunium') ?>">Horizontal Aluminium</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-sun-shade/honeycomb') ?>">Honeycomb</a></li>
-                                                        </ul>
-
-                                                    </li>
-                                                    <li class="sm panel-title" data-toggle="collapse" data-target="#testsp7"><a href="<?= base_url('kategori/s-plus-solid-surface/solid') ?>"><b>SOLID SURFACE</b></a>
-                                                        <ul id="testsp7" class="panel-collapse collapse">
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-solid-surface#chip') ?>">CHIP</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-solid-surface#deco') ?>">DECO</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-kitchen-set') ?>"><b>KITCHEN SET</b></a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-pvc-foam-board') ?>"><b>PVC FOAM BOARD</b></a></li>
-                                                    <li class="sm panel-title" data-toggle="collapse" data-target="#testsp8"><a href="<?= base_url('kategori/s-plus-vinyl-flooring/vinyl_kategori') ?>"><b>VINYL FLOORING</b></a>
-                                                        <ul id="testsp8" class="panel-collapse collapse">
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-vinyl-flooring/vinyl-flooring') ?>">Vinyl Flooring</a></li>
-                                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-vinyl-flooring/woven-vinyl-flooring') ?>">Woven Vinyl Flooring</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-pvc-foam-board/ambalan') ?>"><b>AMBALAN (Wall Shelving)</b></a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="panel-title " data-toggle="collapse" data-target="#test4">
-                                                <a href="<?= base_url('kategori/s-plus-wpc/wpc') ?>"><b>EXTERIOR MATERIAL</b></a>
-                                                <ul id="test4">
-                                                    <li class="sm panel-title" data-toggle="collapse" data-target="#testsp9"><a href="<?= base_url('kategori/s-plus-wpc/wpc_kategori') ?>"><b>WPC</b></a>
-                                                        <ul id="testsp9" class="panel-collapse collapse">
-                                                            <li class="sm"><a href="#deck">Deck Tile</a></li>
-                                                            <li class="sm"><a href="#wall">Wall Partition</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li class="sm"><a href='https://sinargarden.com/parasol'><b>PARASOL</b></a></li>
-                                                </ul>
-                                            </li>
-
-                                            <li class="panel-title " data-toggle="collapse" data-target="#test5">
-                                                <a href="<?= base_url('kategori/s-plus-face-mask') ?>"><b>MASKER</b></a>
-                                                <ul id="test5">
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-face-mask/dewasa') ?>"><b>MASKER DEWASA</b></a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-face-mask/anak') ?>"><b>MASKER ANAK-ANAK</b></a></li>
-
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                                <?php } ?>
+                                            </div>
+                                        </div>
                                     </div>
                                 </aside>
                             </div>
