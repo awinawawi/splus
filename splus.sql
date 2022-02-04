@@ -588,7 +588,7 @@ CREATE TABLE `tbl_pengunjung` (
   `pengunjung_ip` varchar(40) DEFAULT NULL,
   `pengunjung_perangkat` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`pengunjung_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=124777 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=124780 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 /*Data for the table `tbl_pengunjung` */
 
@@ -610,7 +610,10 @@ insert  into `tbl_pengunjung`(`pengunjung_id`,`pengunjung_tanggal`,`pengunjung_i
 (124773,'2022-01-27 07:35:06','::1','Chrome'),
 (124774,'2022-01-28 08:33:11','::1','Chrome'),
 (124775,'2022-01-29 07:44:26','::1','Chrome'),
-(124776,'2022-01-31 07:50:27','::1','Chrome');
+(124776,'2022-01-31 07:50:27','::1','Chrome'),
+(124777,'2022-02-02 07:45:43','::1','Chrome'),
+(124778,'2022-02-03 08:02:01','::1','Chrome'),
+(124779,'2022-02-04 08:02:15','::1','Chrome');
 
 /*Table structure for table `tbl_produk` */
 
@@ -618,6 +621,7 @@ DROP TABLE IF EXISTS `tbl_produk`;
 
 CREATE TABLE `tbl_produk` (
   `produk_id` int(20) NOT NULL AUTO_INCREMENT,
+  `id_kategori_produk` int(11) DEFAULT NULL,
   `produk_slug` varchar(200) DEFAULT NULL,
   `produk_nama` varchar(100) DEFAULT NULL,
   `produk_kategori` varchar(100) DEFAULT NULL,
@@ -628,21 +632,21 @@ CREATE TABLE `tbl_produk` (
 
 /*Data for the table `tbl_produk` */
 
-insert  into `tbl_produk`(`produk_id`,`produk_slug`,`produk_nama`,`produk_kategori`,`produk_gambar`,`produk_deskripsi`) values 
-(1,'sunshade-combi-roll-screen','Combi Roll Screen','Sunshade','combi/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
-(2,'sunshade-roll-screen','Roll Screen','Sunshade','roll-screen/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
-(3,'sunshade-sun-screen','Sun Screen','Sunshade','sun-screen/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
-(4,'sunshade-black-out-roll-screen','Blackout Roll Screen	','Sunshade','blackout/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
-(5,'sunshade-vertical-blind','Vertical Blind','Sunshade','vert-blind/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
-(6,'sunshade-horizontal-wood','Horizontal Wood','Sunshade','wood-blind/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
-(7,'sunshade-honeycomb','Honeycomb','Sunshade','honeycomb/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
-(8,'sunshade-horizontal-alumunium','Horizontal Alumunium','Sunshade','alumunium/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
-(9,'pintu','Pintu','pintu','classic-2-20.jpg','Pintu ABS'),
-(10,'window','window','window','window.jpg','window'),
-(11,'interor-Material','Interor Material','Interor ',NULL,NULL),
-(12,'exterior-Material','Exterior Material','Exterior',NULL,NULL),
-(13,'Aksesoris','Aksesoris','Aksesoris',NULL,NULL),
-(14,'Masker','Masker','Masker',NULL,NULL);
+insert  into `tbl_produk`(`produk_id`,`id_kategori_produk`,`produk_slug`,`produk_nama`,`produk_kategori`,`produk_gambar`,`produk_deskripsi`) values 
+(1,0,'sunshade-combi-roll-screen','Combi Roll Screen','Sunshade','combi/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(2,0,'sunshade-roll-screen','Roll Screen','Sunshade','roll-screen/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(3,0,'sunshade-sun-screen','Sun Screen','Sunshade','sun-screen/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(4,0,'sunshade-black-out-roll-screen','Blackout Roll Screen	','Sunshade','blackout/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(5,0,'sunshade-vertical-blind','Vertical Blind','Sunshade','vert-blind/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(6,0,'sunshade-horizontal-wood','Horizontal Wood','Sunshade','wood-blind/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(7,0,'sunshade-honeycomb','Honeycomb','Sunshade','honeycomb/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(8,0,'sunshade-horizontal-alumunium','Horizontal Alumunium','Sunshade','alumunium/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(9,1,'pintu','Pintu','pintu','classic-2-20.jpg','Pintu ABS'),
+(10,2,'window','window','window','window.jpg','window'),
+(11,3,'interor-Material','Interor Material','Interor ',NULL,NULL),
+(12,4,'exterior-Material','Exterior Material','Exterior',NULL,NULL),
+(13,5,'Aksesoris','Aksesoris','Aksesoris',NULL,NULL),
+(14,6,'Masker','Masker','Masker',NULL,NULL);
 
 /*Table structure for table `tbl_produk_keranjang` */
 
@@ -918,7 +922,7 @@ CREATE TABLE `tbl_subkategoriproduk` (
 /*Data for the table `tbl_subkategoriproduk` */
 
 insert  into `tbl_subkategoriproduk`(`id_kategori_produk`,`id_subkategori_produk`,`nama_subkategori`,`subkategori_seo`) values 
-(1,1,'Pintu ABS','pondasi'),
+(1,1,'Pintu ABS','pintu_abs'),
 (1,2,'Pintu UPVC','Pintu_UPVC'),
 (1,3,'Pintu Namo','Pintu_Namo'),
 (1,4,'Pintu IROOM','Pintu_IROOM'),
@@ -933,7 +937,9 @@ insert  into `tbl_subkategoriproduk`(`id_kategori_produk`,`id_subkategori_produk
 (4,13,'WPC','WPC'),
 (4,14,'Parasol','Parasol'),
 (5,15,'Masker Dewasa','Masker_Dewasa'),
-(5,16,'Masker Anak-anak','Masker_Anak-anak');
+(5,16,'Masker Anak-anak','Masker_Anak-anak'),
+(3,17,'Ambalan','ambalan'),
+(6,18,'aksesoris','aksesoris');
 
 /*Table structure for table `tbl_testimoni` */
 
