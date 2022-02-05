@@ -7,7 +7,7 @@ $this->load->view('user/header', $meta) ?>
     <div class="ps-contact ps-section pb-80 pt-40">
         <div class="ps-container text-center">
             <span class="h-subtitle h-m-title">E-KATALOG S-PLUS</span>
-            <hr style="width: 8%; border: 1px solid #e24545; margin-bottom: 30px;">
+            <hr style="width: 8%; border: 1px solid e24545; margin-bottom: 30px;">
             <div class="gallery-header pb-80">
                 <div class="gallery-body">
                     <style>
@@ -28,7 +28,7 @@ $this->load->view('user/header', $meta) ?>
                         .dropdown-content {
                             display: none;
                             position: absolute;
-                            background-color: #f9f9f9;
+                            background-color: f9f9f9;
                             min-width: 130px;
                             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
                             z-index: 1;
@@ -50,7 +50,7 @@ $this->load->view('user/header', $meta) ?>
                         }
 
                         .dropdown:hover .dropbtn {
-                            background-color: #3e8e41;
+                            background-color: 3e8e41;
                         }
                     </style>
                     <div class="dropdown" style="margin-bottom: 20px;">
@@ -312,10 +312,10 @@ $this->load->view('user/header', $meta) ?>
     <div class="ps-contact ps-section pb-80 pt-40" style="background: url('<?= base_url('assets/user/images/background/bgproduk/shorombg.jpg') ?>'); background-size: cover;" class="pt-10">
         <div class="ps-container text-center">
             <span class="h-subtitle h-m-title">E-KATALOG S-PLUS</span>
-            <hr style="width: 8%; border: 1px solid #e24545; margin-bottom: 30px;">
+            <hr style="width: 8%; border: 1px solid e24545; margin-bottom: 30px;">
             <div class="gallery-header pb-80">
                 <div class="gallery-body">
-                    <style>
+                    <!-- <style>
                         .dropbtn {
                             background-color: red;
                             color: white;
@@ -333,7 +333,7 @@ $this->load->view('user/header', $meta) ?>
                         .dropdown-content {
                             display: none;
                             position: absolute;
-                            background-color: #f9f9f9;
+                            background-color: f9f9f9;
                             min-width: 130px;
                             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
                             z-index: 1;
@@ -355,10 +355,10 @@ $this->load->view('user/header', $meta) ?>
                         }
 
                         .dropdown:hover .dropbtn {
-                            background-color: #3e8e41;
+                            background-color: 3e8e41;
                         }
-                    </style>
-                    <div class="dropdown" style="margin-right: 1100px;margin-bottom: 20px;">
+                    </style> -->
+                    <!-- <div class="dropdown" style="margin-right: 1100px;margin-bottom: 20px;">
                         <span class="fa fa-search" style="width:20px;height:20px;"></span><button class="dropbtn">Kategori E-katalog</button>
                         <div class="dropdown-content">
                             <a href="<?= base_url('assets/katalog-pdf/ABS Door.pdf') ?>" class="w3-bar-item w3-button">ABS DOOR</a>
@@ -376,7 +376,53 @@ $this->load->view('user/header', $meta) ?>
                             <a href="<?= base_url('assets/katalog-pdf/vinyl flooring.pdf') ?>" class="w3-bar-item w3-button">VINYL FLOORING</a>
                             <a href="<?= base_url('/pintu') ?>" class="w3-bar-item w3-button">PINTU</a>
                         </div>
+                    </div> -->
+
+                    <br>
+                    <style>
+                        .grid-container {
+                            display: grid;
+                            grid-template-columns: auto auto auto auto auto auto auto;
+
+                            padding: 20px;
+                            border-radius: 20px;
+                            justify-items: left;
+                            align-items: center;
+                            justify-content: start;
+                            align-content: center;
+                            border-style: groove;
+                        }
+
+                        .grid-itemx {
+
+                            padding: 2px;
+                            font-size: 14px;
+                            text-align: center;
+                            margin-right: 15px;
+
+                        }
+                    </style>
+
+                    <div class="grid-container">
+                        <a class="grid-itemx " href="<?= base_url('assets/katalog-pdf/ABS Door.pdf') ?>"><i class="fa fa-tags"></i> <b>ABS DOOR</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/NAMO Door.pdf') ?>"><i class="fa fa-tags"></i> <b>NAMO DOOR</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/pintu-upvc.pdf') ?>"><i class="fa fa-tags"></i> <b>UPVC DOOR</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/UPVC Window.pdf') ?>"><i class="fa fa-tags"></i> <b>UPVC WINDOW</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/Plafon.pdf') ?>"><i class="fa fa-tags"></i> <b>PLAFON UPVC</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/masker.pdf') ?>"><i class="fa fa-tags"></i> <b>MASKER</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/vinyl flooring.pdf') ?>"><i class="fa fa-tags"></i> <b>VINYL FLOORING</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/Parasol.pdf') ?>"><i class="fa fa-tags"></i> <b>PARASOL</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/Roll Insect Screen.pdf') ?>"><i class="fa fa-tags"></i> <b>ROLL INSECT SCREEN</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/Sun Shade.pdf') ?>"><i class="fa fa-tags"></i> <b>SUN SHADE</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/deck tile.pdf') ?>"><i class="fa fa-tags"></i> <b>WPC DECK TILE</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/Iroom.pdf') ?>"><i class="fa fa-tags"></i> <b>IROOM</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/Kitchen Set.pdf') ?>"><i class="fa fa-tags"></i> <b>KITCHEN SET</b></a>
+
                     </div>
+
+
+
+
                     <br>
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 pb-20">

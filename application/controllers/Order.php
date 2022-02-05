@@ -39,14 +39,22 @@ class Order extends CI_Controller
 
         $this->load->view('ecommerce/v_product_window');
     }
-    public function subkategori_pintu()
+
+    // public function subkategori_pintu()
+    // {
+    //     $data['brand_data'] = $this->M_order->post_sub();
+    //     $this->load->view('ecommerce/v_product_pintu', $data); 
+    // }
+
+    function subkategori_pintu()
     {
+        $data = array(
+            'brand_data' => $this->M_order->post_sub()
+        );
 
-        $data['brand_data'] = $this->M_order->post_sub();
         $this->load->view('ecommerce/v_product_pintu', $data);
-
-        // $this->load->view('ecommerce/v_product_pintu');
     }
+
     public function subkategori_interior()
     {
         $this->load->view('ecommerce/v_product_interior');

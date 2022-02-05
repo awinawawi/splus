@@ -70,8 +70,13 @@ $this->load->view('user/header', $meta) ?>
                         </aside> -->
                     </div>
                 <?php endif; ?>
+
                 <div class="col-lg-12">
+
+
                     <div class="ps-box pb-60 pt-20 pl-20 pr-20 bg-white shd">
+                        <h4><a href="<?= base_url('kategori') ?>"><b>Produk </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-pintu') ?>"><b> Pintu </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-pintu/abs') ?>"><b> Pintu ABS </b></a><span class="fa fa-chevron-right"><b> Classic </b></h4>
+                        <br>
                         <div class="">
                             <img src="<?= base_url('assets/user/images/kategori/splus-door/classic/classic1.jpg') ?>" class="pb-20">
                         </div> <br>
@@ -106,13 +111,7 @@ $this->load->view('user/header', $meta) ?>
                                 <hr style="margin-bottom: 5px;width: 65%; border: 0.5px solid #000000">
                                 <img width="<?php echo ($this->agent->is_mobile() ? "85%" : "50%") ?>" src="<?= base_url('assets/user/images/kategori/splus-door/classic/ukuran.jpg') ?>" alt="">
                             </div> <br>
-                            <!--    <div class="pt-40 text-center">
-                                <span class="h-subtitle h-m-title"><strong>PORTFOLIO</strong></span>
-                                <hr style="margin-bottom: 25px;width: 15%; border: 0.5px solid #e24545">  <br>
-                                <div class="row pt-20">
-                                    
-                                </div>
-                            </div> -->
+
                             <div class="row pt-40">
                                 <div class="col-md-12 col-sm-6 col-xs-12">
                                     <center><a href="<?= base_url('kategori/s-plus-pintu/abs') ?>" class="ps-btn h-m-body">Kembali</a></center>
@@ -128,16 +127,5 @@ $this->load->view('user/header', $meta) ?>
     </div>
     </div>
 
-    // <script>
-        //     $("select").imagepicker();
-        //      $('#closee').next('ul').hide();
-        //     $("#closee").click(function(){
-        //       $(this).next("ul").toggle();
-        //     });
-        //      $('#close').next('ul').hide();
-        //     $("#close").click(function(){
-        //       $(this).next("ul").toggle();
-        //     });
-        // 
-    </script>
+
     <?php $this->load->view('user/footer') ?>

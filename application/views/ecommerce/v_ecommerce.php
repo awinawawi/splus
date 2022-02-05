@@ -35,7 +35,7 @@
 
 <title>E-commerce- S-Plus Indonesia</title>
 
-<head>
+<!-- <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -46,7 +46,7 @@
     <title>Splus Ecommerce</title>
 
 
-    <!-- Additional CSS Files -->
+    
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/ecommerce/css/bootstrap.min.css') ?>">
     <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/ecommerce/css/font-awesome.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/ecommerce/css/templatemo-hexashop.css') ?>">
@@ -54,11 +54,11 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/ecommerce/css/lightbox.css') ?>">
     <link rel="shortcut icon" href="<?= base_url('assets/user/images/logo.png') ?>">
 
-</head>
+</head> -->
 
-<body>
+<!-- <body>
 
-    <!-- ***** Preloader Start ***** -->
+    
     <div id="preloader">
         <div class="jumper">
             <div></div>
@@ -67,22 +67,21 @@
         </div>
     </div>
 
-    <!-- ***** Header Area Start ***** -->
+    
     <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
                 <div class="col-12">
 
                     <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
+                       
                         <div>
 
                             <a class="logo">
                                 <img src="<?= base_url('assets/images/ourproduk/logo.jpg') ?>" style="width: 300px;">
                             </a>
                         </div>
-                        <!-- ***** Logo End ***** -->
-                        <!-- ***** Menu Start ***** -->
+                       
                         <ul class="nav">
                             <li class="submenu">
                                 <a href="javascript:;">Hubungi kami</a>
@@ -118,7 +117,7 @@
                         <a class='menu-trigger'>
                             <span>Menu</span>
                         </a>
-                        <!-- ***** Menu End ***** -->
+                        
                     </nav>
                 </div>
             </div>
@@ -126,7 +125,7 @@
     </header>
 
 
-    <!-- ***** Main Banner Area Start ***** -->
+    
     <div class="main-banner" id="top">
         <div class="section-heading">
             <center>
@@ -158,8 +157,7 @@
                                 <div class="right-first-image">
                                     <div class="thumb">
                                         <div class="inner-content">
-                                            <!-- <h4>Interior Material</h4>
-                                            <span>Best Trend Interior Material</span> -->
+                                            
                                         </div>
                                         <div class="hover-content">
                                             <div class="inner">
@@ -180,8 +178,7 @@
                                 <div class="right-first-image">
                                     <div class="thumb">
                                         <div class="inner-content">
-                                            <!-- <h4>Eksterior Material</h4>
-                                            <span>Best Trend Eksterior Material</span> -->
+                                            
                                         </div>
                                         <div class="hover-content">
                                             <div class="inner">
@@ -262,7 +259,7 @@
     </div>
 
 
-    <!-- ***** Men Area Starts ***** -->
+    
     <section class="section" id="men">
         <div class="container">
             <div class="row">
@@ -431,7 +428,7 @@
     </section>
 
 
-    <!-- ***** Women Area Starts ***** -->
+    
     <section class="section" id="women">
         <div class="container">
             <div class="row">
@@ -549,7 +546,7 @@
     </section>
 
 
-    <!-- ***** Kids Area Starts ***** -->
+    
     <section class="section" id="kids">
         <div class="container">
             <div class="row">
@@ -666,12 +663,12 @@
     </section>
 
 
-    <!-- ***** Explore Area Starts ***** -->
+   
 
 
 
 
-    <!-- ***** Subscribe Area Starts ***** -->
+    
     <div class="subscribe">
         <div class="container">
             <div class="row">
@@ -729,7 +726,7 @@
     </div>
 
 
-    <!-- ***** Footer Start ***** -->
+    
     <footer>
         <div class="container">
             <div class="row">
@@ -797,15 +794,15 @@
     </footer>
 
 
-    <!-- jQuery -->
+ 
 
     <script defer type="text/javascript" src="<?= base_url('assets/css/ecommerce/js/jquery-2.1.0.min.js') ?>"></script>
 
-    <!-- Bootstrap -->
+  
     <script defer type="text/javascript" src="<?= base_url('assets/css/ecommerce/js/popper.js') ?>"></script>
     <script defer type="text/javascript" src="<?= base_url('assets/css/ecommerce/js/bootstrap.min.js') ?>"></script>
 
-    <!-- Plugins -->
+   
     <script defer type="text/javascript" src="<?= base_url('assets/css/ecommerce/js/owl-carousel.js') ?>"></script>
     <script defer type="text/javascript" src="<?= base_url('assets/css/ecommerce/js/accordions.js') ?>"></script>
     <script defer type="text/javascript" src="<?= base_url('assets/css/ecommerce/js/datepicker.js') ?>"></script>
@@ -818,7 +815,7 @@
     <script defer type="text/javascript" src="<?= base_url('assets/css/ecommerce/js/isotope.js') ?>"></script>
 
 
-    <!-- Global Init -->
+   
     <script defer type="text/javascript" src="<?= base_url('assets/css/ecommerce/js/custom.js') ?>"></script>
 
     <script>
@@ -836,5 +833,19 @@
             });
         });
     </script>
+
+</body> -->
+
+<body>
+
+    <div style="margin-top: 350px;">
+
+
+        <center> <img src="<?= base_url('assets/images/ourproduk/logo.jpg') ?>" style="width: 300px;">
+        </center>
+        <CENTER>
+            <h1>COMING SOON</h1>
+        </CENTER>
+    </div>
 
 </body>

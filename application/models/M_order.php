@@ -48,12 +48,9 @@ class M_order extends CI_Model
 
     public function post_sub()
     {
-        $data = $this->db->select('*')
-            ->from('tbl_produk_varian')
-
-            ->get()
-            ->result();
-        return $data;
+        $this->db->select('*');
+        $this->db->from('tbl_produk_varian');
+        return $this->db->get()->result();
     }
 
     public function getPrice($id)

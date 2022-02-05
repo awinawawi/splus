@@ -196,7 +196,7 @@ $this->load->view('user/header', $meta) ?>
                                     <li class="panel-title" data-toggle="collapse" data-target="#test">
                                         <a href="<?= base_url('kategori/s-plus-pintu') ?>"><b>PINTU</b>
                                         </a>
-                                        <ul id="test">
+                                        <ul id="test" class="panel-collapse collapse">
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#testsp1"><a href="<?= base_url('kategori/s-plus-pintu/abs') ?>"><b>PINTU ABS</b></a>
                                                 <ul id="testsp1" class="panel-collapse collapse">
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/classic') ?>">Classic</a></li>
@@ -238,7 +238,7 @@ $this->load->view('user/header', $meta) ?>
                                     </li>
 
                                     <li class="panel-title" data-toggle="collapse" data-target="#test2">
-                                        <a href="<?= base_url('kategori/s-plus-upvc-jendela') ?>"><b>JENDELA</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-upvc-jendela') ?>" style="color:#e24545;"><b>JENDELA</b></a>
                                         <ul id="test2">
                                             <!-- <li class="sm panel-title" data-toggle="collapse" data-target="#testsp4"><a href="<?= base_url('kategori/s-plus-upvc-jendela/jendela_upvc') ?>"><b>JENDELA UPVC</b></a>
                                                 <ul id="testsp4" class="panel-collapse collapse">
@@ -258,7 +258,7 @@ $this->load->view('user/header', $meta) ?>
 
                                     <li class="panel-title" data-toggle="collapse" data-target="#test3">
                                         <a href="<?= base_url('kategori/s-plus-upvc-plafon/plafon') ?>"><b>INTERIOR MATERIAL</b></a>
-                                        <ul id="test3">
+                                        <ul id="test3" class="panel-collapse collapse">
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#testsp5"><a href="<?= base_url('kategori/s-plus-upvc-plafon/plafon_upvc') ?>"><b>PLAFON UPVC</b></a>
                                                 <ul id="testsp5" class="panel-collapse collapse">
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-plafon#polos') ?>">Plafon Polos</a></li>
@@ -300,7 +300,7 @@ $this->load->view('user/header', $meta) ?>
 
                                     <li class="panel-title " data-toggle="collapse" data-target="#test4">
                                         <a href="<?= base_url('kategori/s-plus-wpc/wpc') ?>"><b>EXTERIOR MATERIAL</b></a>
-                                        <ul id="test4">
+                                        <ul id="test4" class="panel-collapse collapse">
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#testsp9"><a href="<?= base_url('kategori/s-plus-wpc/wpc_kategori') ?>"><b>WPC</b></a>
                                                 <ul id="testsp9" class="panel-collapse collapse">
                                                     <li class="sm"><a href="#deck">Deck Tile</a></li>
@@ -313,7 +313,7 @@ $this->load->view('user/header', $meta) ?>
 
                                     <li class="panel-title " data-toggle="collapse" data-target="#test5">
                                         <a href="<?= base_url('kategori/s-plus-face-mask') ?>"><b>MASKER</b></a>
-                                        <ul id="test5">
+                                        <ul id="test5" class="panel-collapse collapse">
                                             <li class="sm"><a href="<?= base_url('kategori/s-plus-face-mask/dewasa') ?>"><b>MASKER DEWASA</b></a></li>
                                             <li class="sm"><a href="<?= base_url('kategori/s-plus-face-mask/anak') ?>"><b>MASKER ANAK-ANAK</b></a></li>
 

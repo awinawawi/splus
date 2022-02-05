@@ -377,13 +377,16 @@
                                     </div> -->
 
                                     <div class="row">
+                                        <!-- <h1 class="h-subtitle h-m-title pb-40">
+                                            <?= strtoupper($varian[0]->produk_nama) ?>
+                                        </h1> -->
 
                                         <?php $brand_data = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
                                                                 a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
                                                                 INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="9"
-                                                                GROUP BY a.varian_nama'); ?>
+                                                                GROUP BY a.varian_nama')->result_array(); ?>
 
-                                        <?php foreach ($brand_data->result_array() as $kat) { ?>
+                                        <?php foreach ($brand_data as $kat) { ?>
 
 
                                             <div class="col-lg-4">
