@@ -1405,7 +1405,7 @@
                                 <li class="dropdown-submenu">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">INTERIOR</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="<?= base_url('kategori/s-plus-upvc-plafon') ?>">PLAFON UPVC</a></li>
+                                        <li><a href="<?= base_url('kategori/s-plus-interior-material') ?>">PLAFON UPVC</a></li>
                                         <li class="dropdown-submenu">
                                             <a href="<?= base_url('kategori/s-plus-sun-shade') ?>" class="dropdown-toggle" data-toggle="dropdown">SUN SHADE</a>
                                             <ul class="dropdown-menu" style="margin-left: -300px !important; margin-top: 179px;">

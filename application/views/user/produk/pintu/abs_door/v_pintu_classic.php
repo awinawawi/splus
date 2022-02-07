@@ -37,9 +37,9 @@ $this->load->view('user/header', $meta) ?>
                                     </li>
 
                                     <li class="panel-title" data-toggle="collapse" data-target="#test3">
-                                        <a href="<?= base_url('kategori/s-plus-upvc-plafon/plafon') ?>"><b>INLIFE</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-interior-material') ?>"><b>INLIFE</b></a>
                                         <ul id="test3">
-                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-plafon/plafon_upvc') ?>">PLAFON UPVC</a></li>
+                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material_upvc') ?>">PLAFON UPVC</a></li>
                                             <li class="sm"><a href="<?= base_url('kategori/s-plus-sun-shade/sun-shead') ?>"><b>SUN SHADE</b></a></li>
                                             <li class="sm"><a href="<?= base_url('kategori/s-plus-solid-surface/solid') ?>"><b>SOLID SURFACE</b></a></li>
                                             <li class="sm"><a href="<?= base_url('kategori/s-plus-kitchen-set') ?>"><b>KITCHEN SET</b></a></li>
@@ -72,11 +72,11 @@ $this->load->view('user/header', $meta) ?>
                 <?php endif; ?>
 
                 <div class="col-lg-12">
-
-
                     <div class="ps-box pb-60 pt-20 pl-20 pr-20 bg-white shd">
-                        <h4><a href="<?= base_url('kategori') ?>"><b>Produk </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-pintu') ?>"><b> Pintu </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-pintu/abs') ?>"><b> Pintu ABS </b></a><span class="fa fa-chevron-right"><b> Classic </b></h4>
-                        <br>
+                        <div>
+                            <h4><a href="<?= base_url('kategori') ?>"><b>Produk </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-pintu') ?>"><b> Pintu </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-pintu/abs') ?>"><b> Pintu ABS </b></a><span class="fa fa-chevron-right"><b> Classic Door </b></h4>
+                            <br>
+                        </div>
                         <div class="">
                             <img src="<?= base_url('assets/user/images/kategori/splus-door/classic/classic1.jpg') ?>" class="pb-20">
                         </div> <br>

@@ -1,13 +1,13 @@
 <?php $this->load->view('user/header') ?>
 <main class="ps-main">
-    <div class="ps-section--features-product ps-section masonry-root pb-40  bg-grey">
+    <div class="ps-section--features-product ps-section masonry-root pb-40 bg-grey">
         <div class="ps-container">
             <div class="row pb-50 pt-50">
                 <?php if (!$this->agent->is_mobile()) : ?>
-                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 bg-white shd ">
-                        <aside class="ps-widget--sidebar">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 bg-white shd">
+                        <aside class="ps-widget--sidebar ">
                             <div class="ps-widget__header">
-                                <h3>KATEGORI KAMI</h3>
+                                <h3>KATEGORI</h3>
                             </div>
                             <div class="ps-widget__content ">
                                 <ul class="ps-list--arrow">
@@ -33,17 +33,17 @@
                                             </li>
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#test1b"><a href="<?= base_url('kategori/s-plus-upvc-pintu') ?>"><b>PINTU UPVC</b></a>
                                                 <ul id="test1b" class="panel-collapse collapse">
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-pintu#felice') ?>">Felice</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-pintu#sash') ?>">Sash Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-pintu/felice') ?>">Felice</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-pintu/sash') ?>">Sash Door</a></li>
                                                 </ul>
                                             </li>
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#test1c"><a href="<?= base_url('kategori/s-plus-namo-pintu') ?>">PINTU NAMO</a>
                                                 <ul id="test1c" class="panel-collapse collapse">
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#laminate-door') ?>">Laminate Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#eco-door') ?>">ECO Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#veneer-solid-door') ?>">Veneer Solid Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#timber-joint-door') ?>">Timber Joint Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#art-door') ?>">ART Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/namo-pintu#laminate-door') ?>">Laminate Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/namo-pintu#eco-door') ?>">ECO Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/namo-pintu#veneer-solid-door') ?>">Veneer Solid Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/namo-pintu#timber-joint-door') ?>">Timber Joint Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/namo-pintu#art-door') ?>">ART Door</a></li>
                                                 </ul>
                                             </li>
                                             <li class="sm panel-title" data-toggle="collapse"><a href="#">PINTU IROOM</a>
@@ -53,15 +53,15 @@
                                     </li>
 
                                     <li class="panel-title " data-toggle="collapse" data-target="#test2">
-                                        <a href="<?= base_url('kategori/s-plus-upvc-jendela') ?>"><b>JENDELA</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-pintu') ?>"><b>JENDELA</b></a>
                                         <ul id="test2">
-                                            <li class="sm panel-title" data-toggle="collapse" data-target="#test2a"><a href="<?= base_url('kategori/s-plus-upvc-jendela') ?>">JENDELA UPVC</a>
+                                            <li class="sm panel-title" data-toggle="collapse" data-target="#test2a"><a href="#">JENDELA UPVC</a>
                                                 <ul id="test2a" class="panel-collapse collapse">
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/kaca-mati') ?>">Jendela Kaca Mati</a></li>
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/jungkit') ?>">Jendela Jungkit</a></li>
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/sliding') ?>">Jendela Sliding</a></li>
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/swing') ?>">Jendela Swing</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/kombinasi') ?>">Jendela Kombinasi</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-jendela/kombinasi') ?>">Jendela Kombinasi</a></li>
                                                 </ul>
                                             </li>
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#test2b"><a href="<?= base_url('kategori/s-plus-upvc-pintu') ?>"><b>JENDELA IROOM</b></a>
@@ -74,7 +74,7 @@
                                     </li>
 
                                     <li class="panel-title " data-toggle="collapse" data-target="#test3">
-                                        <a href="<?= base_url('kategori/s-plus-interior-material') ?>"><b>INLIFE</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-pintu') ?>"><b>INLIFE</b></a>
                                         <ul id="test3">
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#test3a"><a href="<?= base_url('kategori/s-plus-interior-material') ?>">PLAFON UPVC</a>
                                                 <ul id="test3a" class="panel-collapse collapse">
@@ -138,7 +138,7 @@
                         <div class="ps-widget__content">
                         <ul class="ps-list--arrow">
                             <li><a href="<?= base_url('pemasangan/pintu') ?>"><b>S-PLUS PINTU</b></a></li>
-                            <li><a href="<?= base_url('pemasangan/jendela') ?>"><b>S-PLUS JENDELA</b></a></li>
+                            <li><a href="<?= base_url('pemasangan/jendela') ?>"><b>S-PLUS JENDELA </b></a></li>
                             <li><a href="<?= base_url('pemasangan/plafon') ?>"><b>S-PLUS PLAFON</b></a></li>
                             <li><a href="<?= base_url('pemasangan/sunshade') ?>"><b>S-PLUS SUN SHADE </b></a></li>
                             <li><a href="<?= base_url('pemasangan/wpc') ?>"><b>S-PLUS WPC </b></a></li>
@@ -152,64 +152,153 @@
                 <div class="col-md-9">
                     <div class="ps-box pb-40 pt-20 pl-20 pr-20 bg-white shd">
                         <div class="">
-                            <img src="<?= base_url('assets/user/images/kategori/splus-solid/solid.jpg') ?>" class="pb-20">
-                        </div>
-
-                        <div class="">
-                            <center>
-                                <span class="h-subtitle h-m-title" style="padding-bottom: 10px;"><strong>TIPE SOLID DECO</strong></span>
-                            </center>
-                            <hr style="width:20%; border: solid 0.5px #e24545; margin-bottom: 40px;">
-                            <div class="row pb-40">
-                                <?php if ($this->agent->is_mobile()) : ?>
-                                    <div class="col-sm-12 col-xs-12">
-                                        <img src="<?= base_url('assets/user/images/kategori/splus-solid/deco/m-deco.jpg') ?>">
-                                    </div>
-                                <?php else : ?>
-                                    <div class="col-md-12">
-                                        <img src="<?= base_url('assets/user/images/kategori/splus-solid/deco/detail.jpg') ?>">
-                                    </div>
-                                <?php endif; ?>
-                            </div>
                             <div class="">
-                                <center>
-                                    <span class="h-subtitle h-m-title"><strong>PORTFOLIO</strong></span>
-                                </center>
-                                <hr style="width:15%; border: solid 0.5px #e24545; margin-bottom: 40px;">
-                                <div class="row pb-30 gallery-popup">
-                                    <div class="col-lg-4 col-md-8 col-sm-12 col-xs-12">
-                                        <img src="<?= base_url('assets/user/images/portfolio/deco/p1.jpg') ?>" alt="">
+                                <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
+                                    <!-- Loading Screen -->
+                                    <div data-u="loading" class="jssorl-004-double-tail-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
+                                        <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="<?= base_url('assets/user/images/banner/double-tail-spin.svg') ?>" />
+                                    </div>
+                                    <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+                                        <div style="background-color:#000000;">
+                                            <img data-u="image" src="<?= base_url('assets/user/images/kategori/splus-door/felice/felice.jpg') ?>" />
+                                        </div>
+
+                                        <div style="background-color:#000000;">
+                                            <img data-u="image" src="<?= base_url('assets/user/images/kategori/splus-door/sash-door/detail.jpg') ?>" />
+                                        </div>
+                                    </div>
+                                    <!-- Bullet Navigator -->
+                                    <div data-u="navigator" class="jssorb031" style="position:absolute;bottom:16px;right:16px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                                        <div data-u="prototype" class="i" style="width:13px;height:13px;">
+                                            <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                                <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- Arrow Navigator -->
+                                    <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                                        <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                            <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                                        </svg>
+                                    </div>
+                                    <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                                        <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                                            <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                                        </svg>
                                     </div>
                                 </div>
+                                <script type="text/javascript">
+                                    jssor_1_slider_init();
+                                </script>
+                            </div>
+                            <br>
+                            <span class="h-subtitle h-m-subtitle">Kelebihan S-Plus Pintu & Sash Door:</span> <br>
+                            <ul class="a h-body h-m-body">
+                                <li>Bahan utama terbuat dari UPVC yang berkualitas tinggi</li>
+                                <li>Ramah Lingkungan</li>
+                                <li>Tahan di segala cuaca</li>
+                                <li>Kokoh, kuat dan tahan lama</li>
+                                <li>Anti rayap</li>
+                                <li>Mudah pemasangan dan mudah perawatannya</li>
+                            </ul>
+                            <br>
+                            <div class="">
+                                <center>
+                                    <span class="h-subtitle h-m-title"><strong>FELICE</strong></span>
+                                </center>
+                                <hr style="margin-bottom: 15px;width: 10%; border: 0.5px solid #e24545">
+                                <span class="h-body h-m-body pb-70">Felice tersedia dalam 2 model yaitu F1 merupakan kombinasi antara panel uPVC dan kaca serta F2 merupakan panel uPVC</span>
+                                <div class="row">
+                                    <?php if ($this->agent->is_mobile()) : ?>
+                                        <div class="col-sm-12 col-xs-12 pb-40">
+                                            <img src="<?= base_url('assets/user/images/kategori/splus-door/felice/m-felice.png') ?>">
+                                        </div>
+                                    <?php else : ?>
+                                        <div class="col-md-12 pb-20">
+                                            <!-- gambar produk -->
+                                            <div class="ps-product--detail pt-30">
+                                                <div class="ps-container">
+                                                    <div class="row">
+                                                        <div class="col-md-9">
+                                                            <div><img class="" src="<?= base_url('assets/user/images/kategori/splus-door/felice/detail.png') ?>">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                                <br>
+                                <div class="text-center pb-20">
+                                    <span class="h-subtitle h-m-title"><strong>Ukuran Standar</strong></span>
+                                    <hr style="margin-bottom: 25px;width: 15%; border: 0.5px solid #e24545">
+                                    <h5> 700 x 1950 </h5> <br>
+                                    <h5> 700 x 2000 </h5> <br>
+                                    <span class="text-danger">* Tersedia ukuran custom</span><br>
+                                    <span class="text-danger">* Ukuran dalam hitungan milimeter</span>
+                                </div> <br>
+                                <!--SASH DOOR-->
+                                <center>
+                                    <span class="h-subtitle h-m-title"><strong>SASH DOOR</strong></span>
+                                </center>
+                                <hr style="margin-bottom: 15px;width: 15%; border: 0.5px solid #e24545">
+                                <div class="row">
+                                    <?php if ($this->agent->is_mobile()) : ?>
+                                        <div class="col-sm-12 col-xs-12 pb-40">
+                                            <img src="<?= base_url('assets/user/images/kategori/splus-door/sash-door/m-sash-door.jpg') ?>">
+                                        </div>
+                                    <?php else : ?>
+                                        <div class="col-md-12 pb-40">
+                                            <!-- gambar produk -->
+                                            <div class="ps-product--detail pt-30">
+                                                <div class="ps-container">
+                                                    <div class="row">
+                                                        <div class="col-md-9">
+                                                            <div><img class="" src="<?= base_url('assets/user/images/kategori/splus-door/sash-door/sash-door-detail.jpg') ?>">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                                <br>
+                                <div class="text-center">
+                                    <span class="h-subtitle h-m-title"><strong>Ukuran Standar</strong></span>
+                                    <hr style="margin-bottom: 25px;width: 15%; border: 0.5px solid #e24545">
+                                    <span class="text-danger">* Tersedia ukuran custom</span><br>
+                                    <span class="text-danger">* Ukuran dalam hitungan milimeter</span>
+                                </div> <br>
+                                <div class="pt-40 text-center">
+                                    <span class="h-subtitle h-m-title"><strong>PORTFOLIO</strong></span>
+                                    <hr style="margin-bottom: 25px;width: 15%; border: 0.5px solid #e24545"> <br>
+                                </div>
+                                <div class="row pt-40">
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                        <center><a href="<?= base_url('kategori/s-plus-pintu/kusen') ?>" class="ps-btn h-m-body">Lihat Kusen</a></center>
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 col-xs-12 btnCtg">
+                                        <center><a href="<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>" class="ps-btn h-m-body">Lihat Aksesoris</a></center>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- image popup -->
-    <div class="show-image-popup">
-        <div class="image-popup-overlay"></div>
-        <div class="img-show">
-            <img src="">
-        </div>
-    </div>
-    <script type="text/javascript">
-        $(function() {
-            "use strict";
 
-            $(".gallery-popup img").click(function() {
-                var $src = $(this).attr("src");
-                $(".show-image-popup").fadeIn();
-                $(".img-show img").attr("src", $src);
-            });
-
-            $(".image-popup-overlay, .img-show").click(function() {
-                $(".show-image-popup").fadeOut();
-            });
-
-        });
-    </script>
-    <?php $this->load->view('user/footer') ?>
+        // <script>
+            // $("#closee").click(function(){
+            //   $(this).next("ul").toggle();
+            // });
+            //  $('#close').next('ul').hide();
+            // $("#close").click(function(){
+            //   $(this).next("ul").toggle();
+            // });
+            // 
+        </script>
+        <?php $this->load->view('user/footer') ?>

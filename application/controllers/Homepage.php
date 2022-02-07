@@ -33,34 +33,36 @@ class Homepage extends CI_Controller
 		if ($name == 's-plus-pintu') {
 			if (empty($produk)) {
 				$this->load->view('user/produk/pintu/v_kategori_pintu');
+			} else if ($produk == 'abs') {                                                         //abs door routes Group
+				$this->load->view('user/produk/pintu/abs_door/v_kategori_abs');
 			} else if ($produk == 'classic') {
-				$this->load->view('user/produk/pintu/v_pintu_classic');
+				$this->load->view('user/produk/pintu/abs_door/v_pintu_classic');
 			} else if ($produk == 'fortebello') {
-				$this->load->view('user/produk/pintu/v_pintu_fortebello');
+				$this->load->view('user/produk/pintu/abs_door/v_pintu_fortebello');
+			} else if ($produk == 'premium') {
+				$this->load->view('user/produk/pintu//abs_door/premium/v_kategori_premium');
 			} else if ($produk == 'premium-general') {
-				$this->load->view('user/produk/pintu/v_pintu_premium');
+				$this->load->view('user/produk/pintu/abs_door/premium/v_pintu_premium');
 			} else if ($produk == 'premium-deco') {
-				$this->load->view('user/produk/pintu/v_pintu_premium_deco');
+				$this->load->view('user/produk/pintu/abs_door/premium/v_pintu_premium_deco');
 			} else if ($produk == 'grande') {
-				$this->load->view('user/produk/pintu/v_pintu_grande');
+				$this->load->view('user/produk/pintu/abs_door/premium/v_pintu_grande');
+			} else if ($produk == 'upvc') {                                                           //upvc door routes Group
+				$this->load->view('user/produk/pintu/upvc_door/v_kategori_upvc');
+			} else if ($produk == 'felice') {                                                           //upvc door routes Group
+				$this->load->view('user/produk/pintu/upvc_door/v_pintu_felice');
 			} else if ($produk == 'art-door') {
-				$this->load->view('user/produk/pintu/v_pintu_art_door');
+				$this->load->view('user/produk/pintu/abs_door/v_pintu_art_door');
 			} else if ($produk == 'exterior-door') {
-				$this->load->view('user/produk/pintu/v_pintu_exterior_door');
+				$this->load->view('user/produk/pintu/abs_door/v_pintu_exterior_door');
 			} else if ($produk == 'kusen') {
 				$this->load->view('user/produk/pintu/v_pintu_kusen');
 			} else if ($produk == 'aksesoris-pintu') {
 				$this->load->view('user/produk/pintu/v_pintu_aksesoris');
-			} else if ($produk == 'abs') {
-				$this->load->view('user/produk/pintu/v_kategori_abs');
-			} else if ($produk == 'upvc') {
-				$this->load->view('user/produk/pintu/v_kategori_upvc');
 			} else if ($produk == 'namo') {
-				$this->load->view('user/produk/pintu/v_kategori_namo');
+				$this->load->view('user/produk/pintu/namo_door/v_kategori_namo');
 			} else if ($produk == 'iroom_door') {
-				$this->load->view('user/produk/pintu/v_kategori_iroom');
-			} else if ($produk == 'premium') {
-				$this->load->view('user/produk/pintu/v_kategori_premium');
+				$this->load->view('user/produk/pintu/iroom_door/v_kategori_iroom');
 			} else if ($produk == 'room') {
 				$this->load->view('user/produk/pintu/iroom_door/v_iroom_door');
 			} else if ($produk == 'armour') {
@@ -98,9 +100,9 @@ class Homepage extends CI_Controller
 			} else {
 				return redirect(base_url());
 			}
-		} elseif ($name == 's-plus-upvc-plafon') {
+		} elseif ($name == 's-plus-interior-material') {
 			if (empty($produk)) {
-				$this->load->view('user/produk/v_splus_plafon');
+				$this->load->view('user/produk/plafon/v_kategori_inlife');
 			} else if ($produk == 'polos') {
 				$this->load->view('user/produk/plafon/v_plafon_polos');
 			} else if ($produk == 'laminate') {
@@ -110,7 +112,7 @@ class Homepage extends CI_Controller
 			} else if ($produk == 'plafon_upvc') {
 				$this->load->view('user/produk/plafon/v_kategori_plafon_upvc');
 			} else if ($produk == 'plafon') {
-				$this->load->view('user/produk/plafon/v_kategori_inlife');
+				$this->load->view('user/produk/plafon/v_splus_plafon');
 			} else {
 				return redirect(base_url());
 			}

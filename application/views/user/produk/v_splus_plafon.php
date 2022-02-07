@@ -37,9 +37,9 @@ $this->load->view('user/header', $meta) ?>
                                     </li>
 
                                     <li class="panel-title" data-toggle="collapse" data-target="#test3">
-                                        <a href="<?= base_url('kategori/s-plus-upvc-plafon/plafon') ?>"><b>INLIFE</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-interior-material') ?>"><b>INLIFE</b></a>
                                         <ul id="test3">
-                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-plafon/plafon_upvc') ?>">PLAFON UPVC</a></li>
+                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material_upvc') ?>">PLAFON UPVC</a></li>
                                             <li class="sm"><a href="<?= base_url('kategori/s-plus-sun-shade/sun-shead') ?>"><b>SUN SHADE</b></a></li>
                                             <li class="sm"><a href="<?= base_url('kategori/s-plus-solid-surface/solid') ?>"><b>SOLID SURFACE</b></a></li>
                                             <li class="sm"><a href="<?= base_url('kategori/s-plus-kitchen-set') ?>"><b>KITCHEN SET</b></a></li>
@@ -131,13 +131,13 @@ $this->load->view('user/header', $meta) ?>
                                     </li>
 
                                     <li class="panel-title " data-toggle="collapse" data-target="#test3">
-                                        <a href="<?= base_url('kategori/s-plus-upvc-plafon/plafon') ?>"><b>INLIFE</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-interior-material') ?>"><b>INLIFE</b></a>
                                         <ul id="test3">
-                                            <li class="sm panel-title" data-toggle="collapse" data-target="#test3a"><a href="<?= base_url('kategori/s-plus-upvc-plafon') ?>">PLAFON UPVC</a>
+                                            <li class="sm panel-title" data-toggle="collapse" data-target="#test3a"><a href="<?= base_url('kategori/s-plus-interior-material') ?>">PLAFON UPVC</a>
                                                 <ul id="test3a" class="panel-collapse collapse">
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-plafon#polos') ?>">Plafon Polos</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-plafon#laminate') ?>">Plafon Laminate</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-plafon#deco') ?>">Plafon Deco</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material#polos') ?>">Plafon Polos</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material#laminate') ?>">Plafon Laminate</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material#deco') ?>">Plafon Deco</a></li>
                                                 </ul>
                                             </li>
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#test3b"><a href="<?= base_url('kategori/s-plus-sun-shade') ?>"><b>SUN SHADE</b></a>
@@ -372,7 +372,7 @@ $this->load->view('user/header', $meta) ?>
 
                         <div class="row pt-40">
                             <div class="col-md-12 col-sm-6 col-xs-12">
-                                <center><a href="<?= base_url('kategori/s-plus-upvc-plafon/plafon_upvc') ?>" class="ps-btn h-m-body">Kembali</a></center>
+                                <center><a href="<?= base_url('kategori/s-plus-interior-material_upvc') ?>" class="ps-btn h-m-body">Kembali</a></center>
                             </div>
 
                         </div>

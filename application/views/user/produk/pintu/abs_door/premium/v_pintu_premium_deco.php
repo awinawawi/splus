@@ -1,6 +1,6 @@
 <?php
-$meta['title']          = 'Pintu Grande - S-Plus Indonesia';
-$meta['description']    = 'Pintu grande memiliki desain yang elegan serta memiliki banyak motif dengan harga menengah ke atas.';
+$meta['title']          = 'Pintu Premium Deco - S-Plus Indonesia';
+$meta['description']    = 'Pintu Premium Deco biasa digunakan untuk kebutuhan rumah-rumah hunian modern dengan konsep minimalis dan elegan.';
 $meta['keywords']       = 'jual pintu abs, jual pintu abs murah, jual pintu abs berkualitas, jual pintu abs terbaik, pintu abs murah, pintu abs minimalis, pintu abs elegan, pintu abs terbaik, pintu abs berkualitas,pintu abs s plus, pintu abs vs upvc';
 $this->load->view('user/header', $meta) ?>
 <main class="ps-main">
@@ -11,7 +11,7 @@ $this->load->view('user/header', $meta) ?>
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 bg-white shd">
                         <!-- <aside class="ps-widget--sidebar ">
                         <div class="ps-widget__header">
-                            <h3>KATEGORI KAMI</h3>
+                            <h3>KATEGORI</h3>
                         </div>
                         <div class="ps-widget__content ">
                         <ul class="ps-list--arrow">
@@ -80,11 +80,11 @@ $this->load->view('user/header', $meta) ?>
                             <li class="panel-title " data-toggle="collapse" data-target="#test3">
                                 <a href="<?= base_url('kategori/s-plus-pintu') ?>"><b>INLIFE</b></a>
                                 <ul id="test3">
-                                    <li class="sm panel-title" data-toggle="collapse" data-target="#test3a"  ><a href="<?= base_url('kategori/s-plus-upvc-plafon') ?>">PLAFON UPVC</a>
+                                    <li class="sm panel-title" data-toggle="collapse" data-target="#test3a"  ><a href="<?= base_url('kategori/s-plus-interior-material') ?>">PLAFON UPVC</a>
                                         <ul id="test3a" class="panel-collapse collapse">
-                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-plafon#polos') ?>">Plafon Polos</a></li>
-                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-plafon#laminate') ?>">Plafon Laminate</a></li>
-                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-plafon#deco') ?>">Plafon Deco</a></li>
+                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material#polos') ?>">Plafon Polos</a></li>
+                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material#laminate') ?>">Plafon Laminate</a></li>
+                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material#deco') ?>">Plafon Deco</a></li>
                                         </ul> 
                                     </li>
                                     <li class="sm panel-title" data-toggle="collapse" data-target="#test3b"><a href="<?= base_url('kategori/s-plus-sun-shade') ?>"><b>SUN SHADE</b></a>
@@ -136,54 +136,67 @@ $this->load->view('user/header', $meta) ?>
 
                         </ul>
                         </div>
+                        
                     </aside> -->
                     </div>
                 <?php endif; ?>
                 <div class="col-lg-12">
                     <div class="ps-box pb-40 pt-20 pl-20 pr-20 bg-white shd">
+                        <div>
+                            <h4><a href="<?= base_url('kategori') ?>"><b>Produk </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-pintu') ?>"><b> Pintu </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-pintu/abs') ?>"><b> Pintu ABS </b></a><span class="fa fa-chevron-right"><b> Premium Deco </b></h4>
+                            <br>
+                        </div>
                         <div class="">
-                            <img src="<?= base_url('assets/user/images/kategori/splus-door/grande/grande.jpg') ?>" class="pb-20">
+                            <img src="<?= base_url('assets/user/images/kategori/splus-door/premium-deco/premium-deco.jpg') ?>" class="pb-20">
                         </div>
                         <br>
                         <div class="">
                             <center>
-                                <span class="h-subtitle h-m-title" style="color:#000000;"><strong>GRANDE</strong></span>
+                                <span class="h-subtitle h-m-title" style="color:#975E33;"><strong>PREMIUM DECO</strong></span>
                             </center>
                             <hr style="margin-bottom: 25px;width: 100%; border: 0.5px solid #000000">
-                            <span class="h-body h-m-body">Pintu tipe Grande dibuat dengan ukuran yang besar diatas standar ukuran pintu pada umumnya dengan menggunakan struktur pintu yang kokoh.</span>
+                            <span class="h-body h-m-body">Tipe Premium Deco dibuat dengan struktur pintu yang kokoh dengan two tone colors, menajdikan interior ruangan modern dan mewah.</span>
                             <div class="row">
                                 <div style="margin-left:15px; margin-top:25px;">
-                                    <span class="h-subtitle h-m-title" style="font-size:15px;">Pilihan Motif Pintu Grande</span>
+                                    <span class="h-subtitle h-m-title" style="font-size:15px;">Pilihan Motif Pintu Premium Deco</span>
                                 </div>
                                 <?php if ($this->agent->is_mobile()) : ?>
-                                    <div class="col-sm-12 col-xs-12" style="padding-top:10px;">
-                                        <img src="<?= base_url('assets/user/images/kategori/splus-door/web-abs/convert/grande-m.jpg') ?>">
+                                    <div class="col-sm-12 col-xs-12" style="padding-top:10px; ">
+                                        <img src="<?= base_url('assets/user/images/kategori/splus-door/web-abs/convert/premium-deco-m.jpg') ?>">
                                     </div>
                                 <?php else : ?>
-                                    <div class="col-md-12 pb-40" style="padding-top:10px;">
-                                        <img src="<?= base_url('assets/user/images/kategori/splus-door/web-abs/convert/grande.jpg') ?>">
+                                    <div class="col-md-12" style="padding-top:10px; ">
+                                        <img src="<?= base_url('assets/user/images/kategori/splus-door/web-abs/convert/premium-deco.jpg') ?>">
                                     </div>
                                 <?php endif; ?>
                             </div>
-                            <div class="text-center">
-                                <center style="padding-top: 20px;">
-                                    <span class="h-subtitle h-m-title" style="color:#000000;"><strong>Pilihan Standar Ukuran</strong></span>
-                                </center>
-                                <hr style="margin-bottom: 5px;width:30%; border: 0.5px solid #000000">
-                                <img width="<?php echo ($this->agent->is_mobile ? "85%" : "50%") ?>" src="<?= base_url('assets/user/images/kategori/splus-door/grande/ukuran.jpg') ?>" alt="">
-                            </div> <br>
                             <!-- <div class="pt-40 text-center">
-                                <span class="h-subtitle h-m-title"><strong>PORTFOLIO</strong></span>
-                                <hr style="margin-bottom: 25px;width: 15%; border: 0.5px solid #e24545">  <br>
+                                <span class="h-subtitle h-m-title" style="color:#975E33;"><strong>Pilihan Warna Premium Deco</strong></span>
+                                <hr style="margin-bottom: 25px;width: 35%; border: 0.5px solid #000000">
+                                <img width="<?php echo ($this->agent->is_mobile() ? "85%" : "50%") ?>" src="<?= base_url('assets/user/images/kategori/splus-door/premium-deco/warna 2.png') ?>" alt=""> <br>
                             </div> <br> -->
+
+                            <!--<div class="pt-40 text-center">-->
+                            <!--    <span class="h-subtitle h-m-title"><strong>UKURAN STANDAR</strong></span>-->
+                            <!--    <hr style="margin-bottom: 25px;width: 25%; border: 0.5px solid #e24545">-->
+                            <!--    <img width="<?php echo ($this->agent->is_mobile() ? "100%" : "50%") ?>" src="<?= base_url('assets/user/images/kategori/splus-door/premium-deco/ukuran-deco.jpg') ?>" alt=""> <br>-->
+                            <!--    <span class="text-danger">* Tersedia ukuran custom</span><br>-->
+                            <!--    <span class="text-danger">* Ukuran dalam hitungan milimeter</span>-->
+                            <!--</div> <br>-->
+                            <!-- <div class="pt-40 text-center">
+                            <span class="h-subtitle h-m-title"><strong>PORTFOLIO</strong></span>
+                            <hr style="margin-bottom: 25px;width: 15%; border: 0.5px solid #e24545">  <br>
+                        </div> -->
+
                             <!-- <div class="row pt-40">
-                                    <div class="col-md-6 col-sm-12 col-xs-12">
-                                        <center><a href="<?= base_url('kategori/s-plus-pintu/kusen') ?>" class="ps-btn h-m-body">Lihat Kusen</a></center>
-                                    </div>
-                                    <div class="col-md-6 col-sm-12 col-xs-12 btnCtg">
-                                        <center><a href="<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>" class="ps-btn h-m-body">Lihat Aksesoris</a></center>
-                                    </div>
-                                </div> -->
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <center><a href="<?= base_url('kategori/s-plus-pintu/kusen') ?>" class="ps-btn h-m-body">Lihat Kusen</a></center>
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-xs-12 btnCtg">
+                                    <center><a href="<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>" class="ps-btn h-m-body">Lihat Aksesoris</a></center>
+                                </div>
+                            </div> -->
+
                             <div class="row pt-40">
                                 <div class="col-md-12 col-sm-6 col-xs-12">
                                     <center><a href="<?= base_url('kategori/s-plus-pintu/premium') ?>" class="ps-btn h-m-body">Kembali</a></center>
@@ -199,6 +212,14 @@ $this->load->view('user/header', $meta) ?>
 
     // <script>
         //     $("select").imagepicker();
+
+        //     $("#closee").click(function(){
+        //       $(this).next("ul").toggle();
+        //     });
+        //      $('#close').next('ul').hide();
+        //     $("#close").click(function(){
+        //       $(this).next("ul").toggle();
+        //     });
         // 
     </script>
     <?php $this->load->view('user/footer') ?>

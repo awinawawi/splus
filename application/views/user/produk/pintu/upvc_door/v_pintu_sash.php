@@ -1,8 +1,4 @@
-<?php
-$meta['title']          = 'Sun Shade - S-Plus Indonesia';
-$meta['description']    = 'S-Plus Sun shade dirancang untuk anda yang mengutamakan kenyamanan dan kualitas hidup yang sehat. S-Plus Sun shade berfungsi sebagai pelindung ruangan dari sinar matahari & pendukung keindahan interior anda, tidak hanya berfungsi sebagai pelindung ruangan dari efek negatif panas dan cahaya sinar matahari.';
-$meta['keywords']       = 'jual sun shade, jual sun shade murah, jual sun shade berkualitas, jual sun shade terbaik, sun shade murah, sun shade minimalis, sun shade elegan, sun shade terbaik, sun shade berkualitas, roller blind, roller blind harga, roller blind s plus, sun shade s plus';
-$this->load->view('user/header', $meta) ?>
+<?php $this->load->view('user/header') ?>
 <main class="ps-main">
     <div class="ps-section--features-product ps-section masonry-root pb-40 bg-grey">
         <div class="ps-container">
@@ -43,11 +39,11 @@ $this->load->view('user/header', $meta) ?>
                                             </li>
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#test1c"><a href="<?= base_url('kategori/s-plus-namo-pintu') ?>">PINTU NAMO</a>
                                                 <ul id="test1c" class="panel-collapse collapse">
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#laminate-door') ?>">Laminate Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#eco-door') ?>">ECO Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#veneer-solid-door') ?>">Veneer Solid Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#timber-joint-door') ?>">Timber Joint Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#art-door') ?>">ART Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/namo-pintu#laminate-door') ?>">Laminate Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/namo-pintu#eco-door') ?>">ECO Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/namo-pintu#veneer-solid-door') ?>">Veneer Solid Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/namo-pintu#timber-joint-door') ?>">Timber Joint Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/namo-pintu#art-door') ?>">ART Door</a></li>
                                                 </ul>
                                             </li>
                                             <li class="sm panel-title" data-toggle="collapse"><a href="#">PINTU IROOM</a>
@@ -57,15 +53,15 @@ $this->load->view('user/header', $meta) ?>
                                     </li>
 
                                     <li class="panel-title " data-toggle="collapse" data-target="#test2">
-                                        <a href="<?= base_url('kategori/s-plus-upvc-jendela') ?>"><b>JENDELA</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-pintu') ?>"><b>JENDELA</b></a>
                                         <ul id="test2">
-                                            <li class="sm panel-title" data-toggle="collapse" data-target="#test2a"><a href="<?= base_url('kategori/s-plus-upvc-jendela') ?>">JENDELA UPVC</a>
+                                            <li class="sm panel-title" data-toggle="collapse" data-target="#test2a"><a href="#">JENDELA UPVC</a>
                                                 <ul id="test2a" class="panel-collapse collapse">
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/kaca-mati') ?>">Jendela Kaca Mati</a></li>
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/jungkit') ?>">Jendela Jungkit</a></li>
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/sliding') ?>">Jendela Sliding</a></li>
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/swing') ?>">Jendela Swing</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/kombinasi') ?>">Jendela Kombinasi</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-jendela/kombinasi') ?>">Jendela Kombinasi</a></li>
                                                 </ul>
                                             </li>
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#test2b"><a href="<?= base_url('kategori/s-plus-upvc-pintu') ?>"><b>JENDELA IROOM</b></a>
@@ -78,7 +74,7 @@ $this->load->view('user/header', $meta) ?>
                                     </li>
 
                                     <li class="panel-title " data-toggle="collapse" data-target="#test3">
-                                        <a href="<?= base_url('kategori/s-plus-interior-material') ?>"><b>INLIFE</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-pintu') ?>"><b>INLIFE</b></a>
                                         <ul id="test3">
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#test3a"><a href="<?= base_url('kategori/s-plus-interior-material') ?>">PLAFON UPVC</a>
                                                 <ul id="test3a" class="panel-collapse collapse">
@@ -155,164 +151,80 @@ $this->load->view('user/header', $meta) ?>
                 <?php endif; ?>
                 <div class="col-md-9">
                     <div class="ps-box pb-40 pt-20 pl-20 pr-20 bg-white shd">
-                        <div class="">
-                            <img src="<?= base_url('assets/user/images/kategori/splus-shade/shade1.jpg') ?>"> <br> <br>
-                            <span class="h-body h-m-body">
-                                &nbsp&nbsp S-Plus Sun shade dirancang untuk anda yang mengutamakan kenyamanan dan kualitas hidup
-                                yang sehat.
-                                S-Plus Sun shade berfungsi sebagai pelindung ruangan dari sinar matahari & pendukung
-                                keindahan interior anda,
-                                tidak hanya berfungsi sebagai pelindung ruangan dari efek negatif panas dan cahaya sinar
-                                matahari tapi juga
-                                S-Plus Sun shade juga dirancang untuk mengatur intensitas cahaya yang masuk kedalam
-                                ruangan. <br>
-                                &nbsp&nbsp Selain itu S-Plus Sun shade juga menambah nilai estetika interior ruangan. Dengan design
-                                yang elegan dan modern,
-                                S-Plus Sun shade sangat cocok diaplikasikan pada ruang perkantoran, apartemen, residence
-                                hotel, rumah sakit, cafe dan
-                                lain-lain.
-                            </span> <br> <br>
-                            <span class="h-subtitle h-m-title"><b>Kelebihan S-Plus Sun Shade</b> :</span> <br>
-                            <ul class="a h-body h-m-body">
-                                <li>Di produksi dengan kualitas bahan PVC & Polyester
-                                    terbaik</li>
-                                <li>Ramah lingkungan</li>
-                                <li>Mudah Perawatan.</li>
-                                <li>Anti Bakteri.</li>
-                            </ul>
-                        </div>
+                        <img src="<?= base_url('assets/user/images/kategori/splus-door/sash-door/detail.jpg') ?>" class="pb-20">
+                        <span class="h-body h-m-body">Sash Door tersedia dalam 7 model dengan kombinasi antara panel uPVC dan Kaca.</span>
+                        <br> <br>
+                        <span class="h-subtitle h-m-subtitle">Kelebihan S-Plus Pintu SASH DOOR :</span> <br>
+                        <ul class="a h-body h-m-body">
+                            <li>Bahan utama terbuat dari UPVC yang berkualitas tinggi</li>
+                            <li>Ramah Lingkungan</li>
+                            <li>Tahan di segala cuaca</li>
+                            <li>Kokoh, kuat dan tahan lama</li>
+                            <li>Anti rayap</li>
+                        </ul> <br>
                         <div class="">
                             <center>
-                                <span class="h-subtitle h-m-title"><strong>S-PLUS SUN SHADE</strong></span>
+                                <span class="h-subtitle h-m-title"><strong>JENIS-JENIS SASH DOOR</strong></span>
                             </center>
-                            <hr style="margin-bottom: 25px;width: 25%; border: 0.5px solid #e24545">
+                            <hr style="margin-bottom: 25px;width: 28%; border: 0.5px solid #e24545">
                             <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-25">
-                                    <div class="container_images">
-                                        <div class="content_img">
-                                            <a href="<?= base_url('kategori/s-plus-sun-shade/combi') ?>">
-                                                <img src="<?= base_url('assets/user/images/kategori/splus-shade/combi/1.jpg') ?>" alt="" class="image" width="80%">
-                                                <div>More Detail</div>
-                                            </a>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-overlay-ss">COMBI ROLL SCREEN</div>
+                                <?php if ($this->agent->is_mobile()) : ?>
+                                    <div class="col-sm-12 col-xs-12 pb-40">
+                                        <img src="<?= base_url('assets/user/images/kategori/splus-door/sash-door/m-sash-door.png') ?>">
+                                    </div>
+                                <?php else : ?>
+                                    <div class="col-md-12">
+                                        <!-- gambar produk -->
+                                        <div class="ps-product--detail pt-10">
+                                            <div class="ps-container">
+                                                <div class="row">
+                                                    <div class="col-md-9">
+                                                        <div><img class="" src="<?= base_url('assets/user/images/kategori/splus-door/sash-door/sash-door.png') ?>">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+                                <?php endif; ?>
+                            </div>
+                            <hr> <br>
+                            <div class="pt-40 text-center">
+                                <span class="h-subtitle h-m-title"><strong>UKURAN STANDAR</strong></span>
+                                <hr style="margin-bottom: 25px;width: 28%; border: 0.5px solid #e24545">
+                                <span class="text-danger">* Ukuran Custom</span><br>
+                                <span class="text-danger">* Ukuran dalam hitungan milimeter</span>
+                            </div> <br>
+                            <div class="pt-40 text-center">
+                                <span class="h-subtitle h-m-title"><strong>PORTFOLIO</strong></span>
+                                <hr style="margin-bottom: 25px;width: 15%; border: 0.5px solid #e24545"> <br>
+                            </div>
+                            <div class="row pt-40">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <center><a href="<?= base_url('kategori/s-plus-pintu/kusen') ?>" class="ps-btn h-m-body">Lihat Kusen</a></center>
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20">
-                                    <div class="container_images">
-                                        <div class="content_img">
-                                            <a href="<?= base_url('kategori/s-plus-sun-shade/roll-screen') ?>">
-                                                <img src="<?= base_url('assets/user/images/kategori/splus-shade/roll-screen/1.jpg') ?>" alt="" class="image" width="80%">
-                                                <div>More Detail</div>
-                                            </a>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-overlay-ss">ROLL SCREEN</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-50">
-                                    <div class="container_images">
-                                        <div class="content_img">
-                                            <a href="<?= base_url('kategori/s-plus-sun-shade/sun-screen') ?>">
-                                                <img src="<?= base_url('assets/user/images/kategori/splus-shade/sun-screen/1.jpg') ?>" alt="" class="image" width="80%">
-                                                <div>More Detail</div>
-                                            </a>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-overlay-ss">SUN SCREEN</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-50">
-                                    <div class="container_images">
-                                        <div class="content_img">
-                                            <a href="<?= base_url('kategori/s-plus-sun-shade/blackout') ?>">
-                                                <img src="<?= base_url('assets/user/images/kategori/splus-shade/blackout/1.jpg') ?>" alt="" class="image" width="80%">
-                                                <div>More Detail</div>
-                                            </a>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-overlay-ss">BLACK-OUT ROLL SCREEN</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20">
-                                    <div class="container_images">
-                                        <div class="content_img">
-                                            <a href="<?= base_url('kategori/s-plus-sun-shade/vertical') ?>">
-                                                <img src="<?= base_url('assets/user/images/kategori/splus-shade/vert-blind/1.jpg') ?>" alt="" class="image" width="80%">
-                                                <div>More Detail</div>
-                                            </a>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-overlay-ss">VERTICAL BLIND</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-25">
-                                    <div class="container_images">
-                                        <div class="content_img">
-                                            <a href="<?= base_url('kategori/s-plus-sun-shade/wood') ?>">
-                                                <img src="<?= base_url('assets/user/images/kategori/splus-shade/wood-blind/1.jpg') ?>" alt="" class="image" width="80%">
-                                                <div>More Detail</div>
-                                            </a>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-overlay-ss">HORIZONTAL WOOD</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-25">
-                                    <div class="container_images">
-                                        <div class="content_img">
-                                            <a href="<?= base_url('kategori/s-plus-sun-shade/honeycomb') ?>">
-                                                <img src="<?= base_url('assets/user/images/kategori/splus-shade/honeycomb/1.jpg') ?>" alt="" class="image" width="80%">
-                                                <div>More Detail</div>
-                                            </a>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-overlay-ss">HONEYCOMB</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-50">
-                                    <div class="container_images">
-                                        <div class="content_img">
-                                            <a href="<?= base_url('kategori/s-plus-sun-shade/alumunium') ?>">
-                                                <img src="<?= base_url('assets/user/images/kategori/splus-shade/alumunium/1.jpg') ?>" alt="" class="image" width="80%">
-                                                <div>More Detail</div>
-                                            </a>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-overlay-ss">HORIZONTAL ALUMUNIUM</div>
-                                        </div>
-                                    </div>
+                                <div class="col-md-6 col-sm-12 col-xs-12 btnCtg">
+                                    <center><a href="<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>" class="ps-btn h-m-body">Lihat Aksesoris</a></center>
                                 </div>
                             </div>
                         </div>
-                        <!--<div class="">-->
-                        <!--    <center>-->
-                        <!--        <span class="h-subtitle h-m-title">-->
-                        <!--            <strong>UKURAN STANDART</strong>-->
-                        <!--        </span>-->
-                        <!--    </center>-->
-                        <!--    <hr style="margin-bottom: 5px;width: 25%; border: 0.5px solid #e24545">-->
-                        <!--    <span class="h-body h-m-body">Sun Shade S-Plus Indonesia memiliki 3 ukuran yaitu shade mini, shade standart dan shade jumbo, untuk informasi lebih detail dapat di bawah ini: </span>-->
-                        <!--    <div class="text-center pt-5 pb-20">-->
-                        <!--        <center>-->
-                        <!--            <img src="<?= base_url("assets/user/images/kategori/splus-shade/ukuran.png") ?>"-->
-                        <!--                width="60%"><br>-->
-                        <!--            <p style="padding-bottom: 10px; color: red; font-size: 13px;">*Perbedaan Lebar-->
-                        <!--                Roller dan Screen Selisih 2cm</p>-->
-                        <!--        </center>-->
-
-                        <!--    </div>-->
-                        <!--</div>-->
                     </div>
                 </div>
             </div>
         </div>
-        <?php $this->load->view('user/footer') ?>
+    </div>
+    </div>
+
+    // <script>
+        //     $("select").imagepicker();
+        //      $('#closee').next('ul').hide();
+        //     $("#closee").click(function(){
+        //       $(this).next("ul").toggle();
+        //     });
+        //      $('#close').next('ul').hide();
+        //     $("#close").click(function(){
+        //       $(this).next("ul").toggle();
+        //     });
+        // 
+    </script>
+    <?php $this->load->view('user/footer') ?>

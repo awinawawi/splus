@@ -213,7 +213,7 @@ $this->load->view('user/header', $meta) ?>
                         </a>
                     </div>
                     <div class="col-sm-4 col-xs-4">
-                        <a href="<?= base_url('kategori/s-plus-upvc-plafon') ?>">
+                        <a href="<?= base_url('kategori/s-plus-interior-material') ?>">
                             <img loading="lazy" src="<?= base_url('assets/user/images/banner/plafon.webp') ?>" alt="S-Plus Plafon">
                             <div class="h-box">
                                 <div class="h-box-title"><b>INLIFE</b></div>
@@ -332,7 +332,7 @@ $this->load->view('user/header', $meta) ?>
                     </a>
                 </div>
                 <div class="col-sm-4 col-xs-4">
-                    <a href="<?= base_url('kategori/s-plus-upvc-plafon') ?>">
+                    <a href="<?= base_url('kategori/s-plus-interior-material') ?>">
                         <img loading="lazy" src="<?= base_url('assets/user/images/banner/plafon.webp') ?>" alt="S-Plus Plafon">
                         <div class="h-box">
                             <div class="h-box-title"><b>INLIFE</b></div>
@@ -465,7 +465,7 @@ $this->load->view('user/header', $meta) ?>
                                     <div class="h-box-title"><b>AKSESORIS</b></div>
                                 </div>
                             </div>
-                            <div class="hexagon-icon" onclick="window.location.href = '<?= base_url('kategori/s-plus-upvc-plafon/plafon') ?>'">
+                            <div class="hexagon-icon" onclick="window.location.href = '<?= base_url('kategori/s-plus-interior-material') ?>'">
                                 <img loading="lazy" src="<?= base_url('assets/user/images/banner/kitchen.webp') ?>" class="scl zoom-in" alt="S-Plus Kitchen Set">
                                 <div class="h-box">
                                     <div class="h-box-title"><b>INTERIOR MATERIAL</b></div>

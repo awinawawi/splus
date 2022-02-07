@@ -97,7 +97,7 @@
                     <li id="upvc"><a href="<?= base_url('kategori/s-plus-upvc-pintu') ?>">PINTU UPVC</a></li>
                     <li id="namo"><a href="<?= base_url('kategori/s-plus-namo-pintu') ?>">PINTU NAMO</a></li>
                     <li id="jendela"><a href="javascript:;">JENDELA UPVC</a></li>
-                    <li id="plafon"><a href="<?= base_url('kategori/s-plus-upvc-plafon') ?>">PLAFON UPVC</a>
+                    <li id="plafon"><a href="<?= base_url('kategori/s-plus-interior-material') ?>">PLAFON UPVC</a>
                     </li>
                     <li id="wpc"><a href="<?= base_url('kategori/s-plus-wpc') ?>">WPC</a></li>
                     <li id="shade"><a href="javascript:;">SUN SHADE</a></li>
@@ -150,7 +150,7 @@
                 <ul class="float-menu-items">
                     <li id="upvc"><a href="<?= base_url('kategori/s-plus-pintu') ?>">PINTU</a></li>
                     <li id="namo"><a href="<?= base_url('kategori/s-plus-upvc-jendela') ?>">JENDELA</a></li>
-                    <li id="plafon"><a href="<?= base_url('kategori/s-plus-upvc-plafon/plafon') ?>">INLIFE</a></li>
+                    <li id="plafon"><a href="<?= base_url('kategori/s-plus-interior-material') ?>">INLIFE</a></li>
                     <li id="wpc"><a href="<?= base_url('kategori/s-plus-wpc/wpc') ?>">OUTLIFE</a></li>
                     <li id="wpc"><a href="<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>">AKSESORIS</a></li>
                 </ul>
@@ -245,11 +245,11 @@
                 //s-plus-pintu  s-plus-pintu-upvc   s-plus-plafon   s-plus-wpc  namo-pintu
                 <?php
                 $uri = $this->uri->segment(2);
-                if ($uri == 's-plus-pintu' || $uri == 's-plus-upvc-pintu' || $uri == 's-plus-upvc-plafon' || $uri == 's-plus-wpc' || $uri == 's-plus-iroom' || $uri == 's-plus-namo-pintu' || $uri == 's-plus-face-mask') :
+                if ($uri == 's-plus-pintu' || $uri == 's-plus-upvc-pintu' || $uri == 's-plus-interior-material' || $uri == 's-plus-wpc' || $uri == 's-plus-iroom' || $uri == 's-plus-namo-pintu' || $uri == 's-plus-face-mask') :
                     $uris = $this->uri->segment(3);
                     if (
                         $uris == 'fortebello' || $uris == 'premium-general' || $uris == 'premium-deco' || $uris == 'grande' || $uris == 'classic' ||
-                        $uris == 'kusen' || $uris == 'aksesoris-pintu'
+                        $uris == 'kusen' || $uris == 'aksesoris-pintu' || $uris == 'felice'
                     ) : else : ?>
                         jssor_1_slider_init();
                 <?php endif;
@@ -332,11 +332,11 @@
                 //s-plus-pintu  s-plus-pintu-upvc   s-plus-plafon   s-plus-wpc  namo-pintu
                 <?php
                 $uri = $this->uri->segment(2);
-                if ($uri == 's-plus-pintu' || $uri == 's-plus-upvc-pintu' || $uri == 's-plus-upvc-plafon' || $uri == 's-plus-wpc' || $uri == 's-plus-iroom' || $uri == 's-plus-namo-pintu' || $uri == 's-plus-upvc-jendela' || $uri == 's-plus-face-mask') :
+                if ($uri == 's-plus-pintu' || $uri == 's-plus-upvc-pintu' || $uri == 's-plus-interior-material' || $uri == 's-plus-wpc' || $uri == 's-plus-iroom' || $uri == 's-plus-namo-pintu' || $uri == 's-plus-upvc-jendela' || $uri == 's-plus-face-mask') :
                     $uris = $this->uri->segment(3);
                     if (
                         $uris == 'fortebello' || $uris == 'premium-general' || $uris == 'premium-deco' || $uris == 'grande' || $uris == 'classic' ||
-                        $uris == 'kusen' || $uris == 'aksesoris-pintu'
+                        $uris == 'kusen' || $uris == 'aksesoris-pintu' || $uris == 'felice'
                     ) : else : ?>
                         jssor_1_slider_init();
                 <?php endif;

@@ -50,7 +50,7 @@ $this->load->view('user/header', $meta) ?>
                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-jendela/kombinasi') ?>">Jendela Kombinasi</a></li> 
                                  </ul>  
                                  
-                            <li class="panel-title" data-toggle="collapse" data-target="#test3"><a href="<?= base_url('kategori/s-plus-upvc-plafon') ?>"><b>S-PLUS PLAFON UPVC</b></a></li> 
+                            <li class="panel-title" data-toggle="collapse" data-target="#test3"><a href="<?= base_url('kategori/s-plus-interior-material') ?>"><b>S-PLUS PLAFON UPVC</b></a></li> 
                                 <ul id="test3" class="panel-collapse collapse">
                                     <li class="sm"><a href="#polos">Plafon Polos</a></li>
                                     <li class="sm"><a href="#laminate">Plafon Laminate</a></li>
