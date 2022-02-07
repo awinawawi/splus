@@ -157,6 +157,7 @@ $this->load->view('user/header', $meta) ?>
 
                 <div class="col-md-9">
                     <div class="ps-box pb-40 pt-20 pl-20 pr-20 bg-white shd">
+
                         <div class="row">
                             <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
                                 <div class="text-center">

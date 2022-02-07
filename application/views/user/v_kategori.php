@@ -251,9 +251,9 @@ $this->load->view('user/header', $meta) ?>
                                     </li>
 
                                     <li class="panel-title " data-toggle="collapse" data-target="#test4">
-                                        <a href="<?= base_url('kategori/s-plus-exterior-material') ?>"><b>EXTERIOR MATERIAL</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-wpc/wpc') ?>"><b>EXTERIOR MATERIAL</b></a>
                                         <ul id="test4" class="panel-collapse collapse">
-                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp9"><a href="<?= base_url('kategori/s-plus-exterior-material/wpc_kategori') ?>"><b>WPC</b></a>
+                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp9"><a href="<?= base_url('kategori/s-plus-wpc/wpc_kategori') ?>"><b>WPC</b></a>
                                                 <ul id="testsp9" class="panel-collapse collapse">
                                                     <li class="sm"><a href="#deck">Deck Tile</a></li>
                                                     <li class="sm"><a href="#wall">Wall Partition</a></li>
@@ -313,7 +313,7 @@ $this->load->view('user/header', $meta) ?>
                                         </a>
                                     </div>
                                     <div class="col-sm-4 col-xs-4">
-                                        <a href="<?= base_url('s-plus-exterior-material') ?>">
+                                        <a href="<?= base_url('kategori/s-plus-wpc/wpc') ?>">
                                             <img loading="lazy" src="<?= base_url('assets/user/images/banner/plafon.webp') ?>" alt="S-Plus WPC">
                                             <div class="h-box">
                                                 <div class="h-box-title"><b>EXTERIOR MATERIAL</b></div>
@@ -453,7 +453,7 @@ $this->load->view('user/header', $meta) ?>
                                                 </div>
                                             </div>
 
-                                            <div class="hexagon-icon" onclick="window.location.href = '<?= base_url('kategori/s-plus-exterior-material') ?>'">
+                                            <div class="hexagon-icon" onclick="window.location.href = '<?= base_url('kategori/s-plus-wpc/wpc') ?>'">
                                                 <img loading="lazy" src="<?= base_url('assets/user/images/banner/plafon.webp') ?>" class="scl zoom-in" alt="S-Plus Plafon">
                                                 <div class="h-box">
                                                     <div class="h-box-title"><b>EXTERIOR MATERIAL</b></div>

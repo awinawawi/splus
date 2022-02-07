@@ -116,15 +116,17 @@ class Homepage extends CI_Controller
 			} else {
 				return redirect(base_url());
 			}
-		} elseif ($name == 's-plus-exterior-material') {
+		} elseif ($name == 's-plus-wpc') {
 			if (empty($produk)) {
-				$this->load->view('user/produk/exterior-material/v_kategori_outlife');
+				$this->load->view('user/produk/v_splus_wpc');
 			} else if ($produk == 'deck-tile') {
 				$this->load->view('user/produk/wpc/v_wpc_deck');
-			} else if ($produk == 'wpc') {
-				$this->load->view('user/produk/exterior-material/wpc/v_splus_wpc');
+			} else if ($produk == 'wall-partition') {
+				$this->load->view('user/produk/wpc/v_wpc_wall');
 			} else if ($produk == 'wpc_kategori') {
-				$this->load->view('user/produk/exterior-material/wpc/v_kategori_wpc');
+				$this->load->view('user/produk/wpc/v_kategori_wpc');
+			} else if ($produk == 'wpc') {
+				$this->load->view('user/produk/wpc/v_kategori_outlife');
 			} else {
 				return redirect(base_url());
 			}
@@ -173,9 +175,9 @@ class Homepage extends CI_Controller
 			if (empty($produk)) {
 				$this->load->view('user/produk/masker/v_kategori_masker');
 			} else if ($produk == 'dewasa') {
-				$this->load->view('user/produk/v_splus_face_mask');
+				$this->load->view('user/produk/masker/v_splus_face_mask_dewasa');
 			} else if ($produk == 'anak') {
-				$this->load->view('user/produk/v_splus_face_mask');
+				$this->load->view('user/produk/masker/v_splus_face_mask_anak');
 			} else {
 				return redirect(base_url());
 			}
@@ -224,6 +226,10 @@ class Homepage extends CI_Controller
 		} elseif ($name == 's-plus-upvc-pintu') {
 			if (empty($produk)) {
 				$this->load->view('user/produk/v_splus_upvc');
+			} else if ($produk == 'upvc_felice') {
+				$this->load->view('user/produk/pintu/upvc_door/v_splus_upvc_felice');
+			} else if ($produk == 'upvc_sash') {
+				$this->load->view('user/produk/pintu/upvc_door/v_splus_upvc_sash');
 			} else {
 				redirect(base_url());
 			}

@@ -143,6 +143,10 @@ $this->load->view('user/header', $meta) ?>
 
                 <div class="col-lg-12">
                     <div class="ps-box pb-40 pt-20 pl-20 pr-20 bg-white shd">
+                        <div>
+                            <h4><a href="<?= base_url('v_kategori') ?>"><b>Produk </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-upvc-jendela') ?>"><b> Jendela </b></a><span class="fa fa-chevron-right"><b> Jendela Iroom </b></h4>
+                            <br>
+                        </div>
                         <div class="">
                             <img src="<?= base_url('assets/user/images/kategori/splus-iroom/banner/jendela.jpg') ?>" class="pb-20">
                             <span class="h-body h-m-body">

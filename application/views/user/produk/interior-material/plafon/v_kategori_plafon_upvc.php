@@ -84,9 +84,9 @@ $this->load->view('user/header', $meta) ?>
                                         <ul id="test3">
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#testsp5"><a href="<?= base_url('kategori/s-plus-interior-material/plafon_upvc') ?>" style="color:#e24545;"><b>PLAFON UPVC</b></a>
                                                 <ul id="testsp5">
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material/plafon_upvc#polos') ?>">Plafon Polos</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material/plafon_upvc#laminate') ?>">Plafon Laminate</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material/plafon_upvc#deco') ?>">Plafon Deco</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material/polos') ?>">Plafon Polos</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material/laminate') ?>">Plafon Laminate</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material/deco') ?>">Plafon Deco</a></li>
                                                 </ul>
 
                                             </li>
@@ -159,7 +159,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-interior-material/plafon#polos') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-interior-material/polos') ?>">
                                                 <img src="<?= base_url('assets/user/images/background/bgproduk/c15.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
                                         </div>
@@ -168,7 +168,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-interior-material/plafon#laminate') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-interior-material/laminate') ?>">
                                                 <img src="<?= base_url('assets/user/images/background/bgproduk/c16.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
                                         </div>
@@ -177,7 +177,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-interior-material/plafon#deco') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-interior-material/deco') ?>">
                                                 <img src="<?= base_url('assets/user/images/background/bgproduk/c17.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
                                         </div>
@@ -256,7 +256,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-25">
                                     <div class="container_images">
                                         <div class="content_img">
-                                            <a href="<?= base_url('kategori/s-plus-interior-material/plafon#polos') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-interior-material/polos') ?>">
                                                 <img src="<?= base_url('assets/user/images/kategori/produk/plafon/plafon-deco-pd5.jpg') ?>" alt="" class="image" width="80%">
                                                 <div>More Detail</div>
                                             </a>
@@ -269,7 +269,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20">
                                     <div class="container_images">
                                         <div class="content_img">
-                                            <a href="<?= base_url('kategori/s-plus-interior-material/plafon#laminate') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-interior-material/laminate') ?>">
                                                 <img src="<?= base_url('assets/user/images/kategori/produk/plafon/plafon-lam-80.jpg') ?>" alt="" class="image" width="80%">
                                                 <div>More Detail</div>
                                             </a>
@@ -282,7 +282,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20">
                                     <div class="container_images">
                                         <div class="content_img">
-                                            <a href="<?= base_url('kategori/s-plus-interior-material#deco') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-interior-material/deco') ?>">
                                                 <img src="<?= base_url('assets/user/images/kategori/produk/plafon/plafon-deco-pd9.jpg') ?>" alt="" class="image" width="80%">
                                                 <div>More Detail</div>
                                             </a>

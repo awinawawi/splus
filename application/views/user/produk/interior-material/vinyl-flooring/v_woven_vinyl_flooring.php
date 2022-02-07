@@ -130,6 +130,10 @@ $this->load->view('user/header', $meta) ?>
                 <?php endif; ?>
                 <div class="col-lg-12">
                     <div class="ps-box pb-60 pt-20 pl-20 pr-20 bg-white shd">
+                        <div>
+                            <h4><a href="<?= base_url('v_kategori') ?>"><b>Produk </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-interior-material') ?>"><b> Interior Material </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-vinyl-flooring/vinyl_kategori') ?>"><b> Vinyl Flooring </b></a><span class="fa fa-chevron-right"><b>Woven Vinyl Flooring</b></h4>
+                            <br>
+                        </div>
                         <div class="">
                             <img src="<?= base_url('assets/user/images/kategori/splus-vinyl-flooring/woven-vinyl-flooring/banner1.jpg') ?>" class="pb-20">
                         </div> <br>

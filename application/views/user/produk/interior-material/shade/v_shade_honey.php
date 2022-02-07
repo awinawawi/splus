@@ -258,6 +258,10 @@ $this->load->view('user/header', $meta) ?>
                 <?php endif; ?>
                 <div class="col-lg-12">
                     <div class="ps-box pb-60 pt-20 pl-20 pr-20 bg-white shd">
+                        <div>
+                            <h4><a href="<?= base_url('v_kategori') ?>"><b>Produk </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-interior-material') ?>"><b> Interior Material </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-sun-shade/sun-shead') ?>"><b> Sun Shade </b></a><span class="fa fa-chevron-right"><b> Honeycomb </b></h4>
+                            <br>
+                        </div>
                         <div class="">
                             <img src="<?= base_url('assets/user/images/kategori/produk/sun_shade/sunshade.jpg') ?>"> <br> <br>
                             <span class="h-subtitle h-m-title"><b>Honeycomb</b></span> <br>

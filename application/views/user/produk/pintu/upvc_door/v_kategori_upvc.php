@@ -161,7 +161,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-upvc-pintu#felice') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-upvc-pintu/upvc_felice') ?>">
                                                 <img src="<?= base_url('assets/user/images/background/bgproduk/c6.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
                                         </div>
@@ -170,7 +170,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-upvc-pintu#sash') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-upvc-pintu/upvc_sash') ?>">
                                                 <img src="<?= base_url('assets/user/images/background/bgproduk/c7.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
                                         </div>
@@ -244,7 +244,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20 ">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-upvc-pintu#felice') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-upvc-pintu/upvc_felice') ?>">
                                                 <img src="<?= base_url('assets/user/images/kategori/produk/icon/FELICE.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
                                         </div>
@@ -254,7 +254,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-upvc-pintu#sash') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-upvc-pintu/upvc_sash') ?>">
                                                 <img src="<?= base_url('assets/user/images/kategori/produk/icon/SASHDOOR.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
                                         </div>

@@ -73,6 +73,10 @@ $this->load->view('user/header', $meta) ?>
                 <?php endif; ?>
                 <div class="col-lg-12">
                     <div class="ps-box pb-60 pt-20 pl-20 pr-20 bg-white shd">
+                        <div>
+                            <h4><a href="<?= base_url('v_kategori') ?>"><b>Produk </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-interior-material') ?>"><b> Interior Material </b></a><span class="fa fa-chevron-right"><b> Ambalan</b></h4>
+                            <br>
+                        </div>
                         <div class="">
                             <center style="padding-top: 20px;">
                                 <span class="h-subtitle h-m-title"><strong>AMBALAN (Wall Shelving)</strong></span>

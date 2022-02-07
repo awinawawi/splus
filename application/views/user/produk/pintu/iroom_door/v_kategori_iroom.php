@@ -338,7 +338,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-pintu/classic') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-pintu/room') ?>">
                                                 <img src="<?= base_url('assets/user/images/background/bgproduk/c13.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
                                         </div>
@@ -347,7 +347,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-pintu/fortebello') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-pintu/armour') ?>">
                                                 <img src="<?= base_url('assets/user/images/background/bgproduk/c14.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
                                         </div>

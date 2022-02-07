@@ -333,7 +333,7 @@ $this->load->view('user/header', $meta) ?>
                     <div class="ps-box pb-40 pt-20 pl-20 pr-20 bg-white shd" style="background: url('<?= base_url('assets/user/images/background/bgproduk/produkbg3.jpg') ?>'); background-size: cover;" class="pt-10">
                         <div class="">
                             <center>
-                                <span class="h-subtitle h-m-title"><strong>OUR INSIDE BUILDING PRODUCTS</strong></span>
+                                <span class="h-subtitle h-m-title"><strong>Our Interior Material Product</strong></span>
                             </center>
                             <hr style="margin-bottom: 25px;width: 25%; border: 0.5px solid #e24545">
                             <div class="row">

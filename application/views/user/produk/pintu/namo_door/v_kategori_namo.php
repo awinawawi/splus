@@ -356,7 +356,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20 ">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-namo-pintu#laminate-door') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-namo-pintu/namo_laminate') ?>">
                                                 <img src="<?= base_url('assets/user/images/kategori/produk/icon/LAMINATEDOOR.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
                                         </div>
@@ -366,7 +366,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-namo-pintu#eco-door') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-namo-pintu/namo_eco') ?>">
                                                 <img src="<?= base_url('assets/user/images/kategori/produk/icon/ECODOOR.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
                                         </div>
@@ -377,7 +377,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-namo-pintu#veneer-solid-door') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-namo-pintu/namo_vaneer') ?>">
                                                 <img src="<?= base_url('assets/user/images/kategori/produk/icon/VANEER.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
                                         </div>
@@ -388,7 +388,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-namo-pintu#timber-joint-door') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-namo-pintu/namo_timber') ?>">
                                                 <img src="<?= base_url('assets/user/images/kategori/produk/icon/TIMBER.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
 
@@ -400,7 +400,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-namo-pintu#art-door') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-namo-pintu/namo_artdoor') ?>">
                                                 <img src="<?= base_url('assets/user/images/kategori/produk/icon/ART.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
 

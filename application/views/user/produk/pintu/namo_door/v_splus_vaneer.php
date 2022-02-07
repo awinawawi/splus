@@ -14,6 +14,10 @@ $this->load->view('user/header', $meta) ?>
                 <?php endif; ?>
                 <div class="col-lg-12">
                     <div class="ps-box pb-40 pt-20 pl-20 pr-20 bg-white shd">
+                        <div>
+                            <h4><a href="<?= base_url('v_kategori') ?>"><b>Produk </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-pintu') ?>"><b> Pintu </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-pintu/namo') ?>"><b> Pintu Namo </b></a><span class="fa fa-chevron-right"><b> Veneer Solid Door </b></h4>
+                            <br>
+                        </div>
                         <div class="">
                             <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
                                 <!-- Loading Screen -->
