@@ -26,7 +26,7 @@ $this->load->view('user/header', $meta) ?>
                                                 <ul id="testsp1" class="panel-collapse collapse">
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/classic') ?>">Classic</a></li>
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/fortebello') ?>">Fortebello</a></li>
-                                                    <li class="sm panel-title" id="closee"><a href="#">Premium</a></li>
+                                                    <li class="sm panel-title" id="closee"><a href="<?= base_url('kategori/s-plus-pintu/premium') ?>">Premium</a></li>
                                                     <ul>
                                                         <li class="sn" id="menu"><a href="<?= base_url('kategori/s-plus-pintu/premium-general') ?>">General</a></li>
                                                         <li class="sn" id="menu"><a href="<?= base_url('kategori/s-plus-pintu/premium-deco') ?>">Deco</a></li>
@@ -34,8 +34,8 @@ $this->load->view('user/header', $meta) ?>
                                                     </ul>
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/art-door') ?>">Art Door</a></li>
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/exterior-door') ?>">Exterior Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/kusen') ?>">Kusen</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>">Aksesoris</a></li>
+                                                    <!-- <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/kusen') ?>">Kusen</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>">Aksesoris</a></li> -->
                                                 </ul>
 
                                             </li>
@@ -124,12 +124,12 @@ $this->load->view('user/header', $meta) ?>
                                     </li>
 
                                     <li class="panel-title " data-toggle="collapse" data-target="#test4">
-                                        <a href="<?= base_url('kategori/s-plus-wpc/wpc') ?>" style="color:#e24545;"><b>EXTERIOR MATERIAL</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-exterior-material') ?>" style="color:#e24545;"><b>EXTERIOR MATERIAL</b></a>
                                         <ul id="test4">
-                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp9"><a href="<?= base_url('kategori/s-plus-wpc/wpc_kategori') ?>"><b>WPC</b></a>
+                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp9"><a href="<?= base_url('kategori/s-plus-exterior-material/wpc_kategori') ?>"><b>WPC</b></a>
                                                 <ul id="testsp9" class="panel-collapse collapse">
-                                                    <li class="sm"><a href="#deck">Deck Tile</a></li>
-                                                    <li class="sm"><a href="#wall">Wall Partition</a></li>
+                                                    <li class="sm"><a href="kategori/s-plus-exterior-material/wpc#deck">Deck Tile</a></li>
+                                                    <li class="sm"><a href="kategori/s-plus-exterior-material/wpc#wall">Wall Partition</a></li>
                                                 </ul>
                                             </li>
                                             <li class="sm"><a href='https://sinargarden.com/parasol'><b>PARASOL</b></a></li>
@@ -141,8 +141,11 @@ $this->load->view('user/header', $meta) ?>
                                         <ul id="test5" class="panel-collapse collapse">
                                             <li class="sm"><a href="<?= base_url('kategori/s-plus-face-mask/dewasa') ?>"><b>MASKER DEWASA</b></a></li>
                                             <li class="sm"><a href="<?= base_url('kategori/s-plus-face-mask/anak') ?>"><b>MASKER ANAK-ANAK</b></a></li>
-
                                         </ul>
+                                    </li>
+
+                                    <li class="title " data-toggle="collapse" data-target="#uu">
+                                        <a href="<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>"><b>AKSESORIS</b></a>
                                     </li>
                                 </ul>
                             </div>
