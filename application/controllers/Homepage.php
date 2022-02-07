@@ -102,17 +102,17 @@ class Homepage extends CI_Controller
 			}
 		} elseif ($name == 's-plus-interior-material') {
 			if (empty($produk)) {
-				$this->load->view('user/produk/plafon/v_kategori_inlife');
-			} else if ($produk == 'polos') {
-				$this->load->view('user/produk/plafon/v_plafon_polos');
-			} else if ($produk == 'laminate') {
-				$this->load->view('user/produk/plafon/v_plafon_laminate');
-			} else if ($produk == 'deco') {
-				$this->load->view('user/produk/plafon/v_plafon_deco');
+				$this->load->view('user/produk/interior-material/v_kategori_inlife');
 			} else if ($produk == 'plafon_upvc') {
-				$this->load->view('user/produk/plafon/v_kategori_plafon_upvc');
+				$this->load->view('user/produk/interior-material/plafon/v_kategori_plafon_upvc');
+			} else if ($produk == 'polos') {
+				$this->load->view('user/produk/interior-material/plafon/v_plafon_polos');
+			} else if ($produk == 'laminate') {
+				$this->load->view('user/produk/interior-material/plafon/v_plafon_laminate');
+			} else if ($produk == 'deco') {
+				$this->load->view('user/produk/interior-material/plafon/v_plafon_deco');
 			} else if ($produk == 'plafon') {
-				$this->load->view('user/produk/plafon/v_splus_plafon');
+				$this->load->view('user/produk/interior-material/plafon/v_splus_plafon');
 			} else {
 				return redirect(base_url());
 			}
@@ -132,43 +132,43 @@ class Homepage extends CI_Controller
 			}
 		} elseif ($name == 's-plus-sun-shade') {
 			if (empty($produk)) {
-				$this->load->view('user/produk/v_splus_shade');
+				$this->load->view('user/produk/v_splus_shade'); //gk kepake
 			} else if ($produk == 'alumunium') {
-				$this->load->view('user/produk/shade/v_shade_aluminium');
+				$this->load->view('user/produk/interior-material/shade/v_shade_aluminium');
 			} else if ($produk == 'blackout') {
-				$this->load->view('user/produk/shade/v_shade_blackout');
+				$this->load->view('user/produk/interior-material/shade/v_shade_blackout');
 			} else if ($produk == 'combi') {
-				$this->load->view('user/produk/shade/v_shade_combi');
+				$this->load->view('user/produk/interior-material/shade/v_shade_combi');
 			} else if ($produk == 'honeycomb') {
-				$this->load->view('user/produk/shade/v_shade_honey');
+				$this->load->view('user/produk/interior-material/shade/v_shade_honey');
 			} else if ($produk == 'roll-screen') {
-				$this->load->view('user/produk/shade/v_shade_roll_screen');
+				$this->load->view('user/produk/interior-material/shade/v_shade_roll_screen');
 			} else if ($produk == 'vertical') {
-				$this->load->view('user/produk/shade/v_shade_vertical');
+				$this->load->view('user/produk/interior-material/shade/v_shade_vertical');
 			} else if ($produk == 'wood') {
-				$this->load->view('user/produk/shade/v_shade_wood');
+				$this->load->view('user/produk/interior-material/shade/v_shade_wood');
 			} else if ($produk == 'sun-screen') {
-				$this->load->view('user/produk/shade/v_shade_sun_screen');
+				$this->load->view('user/produk/interior-material/shade/v_shade_sun_screen');
 			} else if ($produk == 'sun-shead') {
-				$this->load->view('user/produk/shade/v_kategori_sunshade');
+				$this->load->view('user/produk/interior-material/shade/v_kategori_sunshade');
 			} else {
 				return redirect(base_url());
 			}
 		} elseif ($name == 's-plus-solid-surface') {
 			if (empty($produk)) {
-				$this->load->view('user/produk/v_splus_solid');
+				$this->load->view('user/produk/v_splus_solid'); //gk kepake
 			} else if ($produk == 'chip') {
-				$this->load->view('user/produk/solid/v_solid_chip');
+				$this->load->view('user/produk/interior-material/solid/v_solid_chip');
 			} else if ($produk == 'deco') {
-				$this->load->view('user/produk/solid/v_solid_deco');
+				$this->load->view('user/produk/interior-material/solid/v_solid_deco');
 			} else if ($produk == 'solid') {
-				$this->load->view('user/produk/solid/v_kategori_solid');
+				$this->load->view('user/produk/interior-material/solid/v_kategori_solid');
 			} else {
 				return redirect(base_url());
 			}
 		} elseif ($name == 's-plus-kitchen-set') {
 			if (empty($produk)) {
-				$this->load->view('user/produk/v_splus_kitchen');
+				$this->load->view('user/produk/interior-material/v_splus_kitchen');
 			}
 		} elseif ($name == 's-plus-face-mask') {
 			// $this->load->view('user/produk/masker/v_kategori_masker');
@@ -184,32 +184,36 @@ class Homepage extends CI_Controller
 		} elseif ($name == 's-plus-namo-pintu') {
 			if (empty($produk)) {
 				$this->load->view('user/produk/v_splus_namo');
-			} else if ($produk == 'uno') {
-				$this->load->view('user/produk/namo/v_namo_pintu_uno');
-			} else if ($produk == 'duo') {
-				$this->load->view('user/produk/namo/v_namo_pintu_duo');
-			} else if ($produk == 'custom') {
-				$this->load->view('user/produk/namo/v_namo_custom');
+			} else if ($produk == 'namo_eco') {
+				$this->load->view('user/produk/pintu/namo_door/v_splus_eco');
+			} else if ($produk == 'namo_laminate') {
+				$this->load->view('user/produk/pintu/namo_door/v_splus_laminate');
+			} else if ($produk == 'namo_vaneer') {
+				$this->load->view('user/produk/pintu/namo_door/v_splus_vaneer');
+			} else if ($produk == 'namo_timber') {
+				$this->load->view('user/produk/pintu/namo_door/v_splus_timber');
+			} else if ($produk == 'namo_artdoor') {
+				$this->load->view('user/produk/pintu/namo_door/v_splus_artdoor');
 			} else {
 				return redirect(base_url());
 			}
 		} elseif ($name == 's-plus-pvc-foam-board') {
 			if (empty($produk)) {
-				$this->load->view('user/produk/v_splus_pvc_foam_board');
+				$this->load->view('user/produk/interior-material/v_splus_pvc_foam_board');
 			} else if ($produk == 'ambalan') {
-				$this->load->view('user/produk/Ambalan/v_ambalan');
+				$this->load->view('user/produk/interior-material/ambalan/v_ambalan');
 			} else {
 				return redirect(base_url());
 			}
 		} elseif ($name == 's-plus-vinyl-flooring') {
 			if (empty($produk)) {
-				$this->load->view('user/produk/v_splus_vinyl');
+				$this->load->view('user/produk/v_splus_vinyl'); //gk kepake
 			} else if ($produk == 'vinyl-flooring') {
-				$this->load->view('user/produk/vinyl-flooring/v_vinyl_flooring');
+				$this->load->view('user/produk/interior-material/vinyl-flooring/v_vinyl_flooring');
 			} else if ($produk == 'woven-vinyl-flooring') {
-				$this->load->view('user/produk/vinyl-flooring/v_woven_vinyl_flooring');
+				$this->load->view('user/produk/interior-material/vinyl-flooring/v_woven_vinyl_flooring');
 			} else if ($produk == 'vinyl_kategori') {
-				$this->load->view('user/produk/vinyl-flooring/v_kategori_vinyl');
+				$this->load->view('user/produk/interior-material/vinyl-flooring/v_kategori_vinyl');
 			} else {
 				return redirect(base_url());
 			}
