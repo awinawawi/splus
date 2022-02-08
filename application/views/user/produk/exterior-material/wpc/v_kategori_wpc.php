@@ -16,7 +16,6 @@ $this->load->view('user/header', $meta) ?>
                                     <a href="<?= base_url('v_kategori') ?>"> <b>PRODUK</b></a>
                                 </h3>
                             </div>
-
                             <div class="ps-widget__content ">
                                 <ul class="ps-list--arrow">
                                     <li class="panel-title" data-toggle="collapse" data-target="#test">
@@ -43,19 +42,19 @@ $this->load->view('user/header', $meta) ?>
 
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#testsp2"><a href="<?= base_url('kategori/s-plus-pintu/upvc') ?>"><b>PINTU UPVC</b></a>
                                                 <ul id="testsp2" class="panel-collapse collapse">
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-pintu#felice') ?>">Felice</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-pintu#sash') ?>">Sash Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-pintu/upvc_felice') ?>">Felice</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-pintu/upvc_sash') ?>">Sash Door</a></li>
                                                 </ul>
 
 
                                             </li>
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#testsp3"><a href="<?= base_url('kategori/s-plus-pintu/namo') ?>"><b>PINTU NAMO</b></a>
                                                 <ul id="testsp3" class="panel-collapse collapse">
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#laminate-door') ?>">Laminate Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#eco-door') ?>">ECO Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#veneer-solid-door') ?>">Veneer Solid Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#timber-joint-door') ?>">Timber Joint Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#art-door') ?>">ART Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu/namo_laminate') ?>">Laminate Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu/namo_eco') ?>">ECO Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu/namo_vaneer') ?>">Veneer Solid Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu/namo_timber') ?>">Timber Joint Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu/namo_artdoor') ?>">ART Door</a></li>
                                                 </ul>
                                             </li>
                                             <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/iroom_door') ?>"><b>PINTU IROOM</b></a></li>
@@ -85,11 +84,11 @@ $this->load->view('user/header', $meta) ?>
                                     <li class="panel-title" data-toggle="collapse" data-target="#test3">
                                         <a href="<?= base_url('kategori/s-plus-interior-material') ?>"><b>INTERIOR MATERIAL</b></a>
                                         <ul id="test3" class="panel-collapse collapse">
-                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp5"><a href="<?= base_url('kategori/s-plus-interior-material_upvc') ?>"><b>PLAFON UPVC</b></a>
+                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp5"><a href="<?= base_url('kategori/s-plus-interior-material/plafon_upvc') ?>"><b>PLAFON UPVC</b></a>
                                                 <ul id="testsp5" class="panel-collapse collapse">
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material#polos') ?>">Plafon Polos</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material#laminate') ?>">Plafon Laminate</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material#deco') ?>">Plafon Deco</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material/polos') ?>">Plafon Polos</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material/laminate') ?>">Plafon Laminate</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material/deco') ?>">Plafon Deco</a></li>
                                                 </ul>
 
                                             </li>
@@ -125,12 +124,12 @@ $this->load->view('user/header', $meta) ?>
                                     </li>
 
                                     <li class="panel-title " data-toggle="collapse" data-target="#test4">
-                                        <a href="<?= base_url('kategori/s-plus-exterior-material') ?>" style="color:#e24545;"><b>EXTERIOR MATERIAL</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-wpc/wpc') ?>" style="color:#e24545;"><b>EXTERIOR MATERIAL</b></a>
                                         <ul id="test4">
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#testsp9"><a href="<?= base_url('kategori/s-plus-exterior-material/wpc_kategori') ?>" style="color:#e24545;"><b>WPC</b></a>
                                                 <ul id="testsp9">
-                                                    <li class="sm"><a href="kategori/s-plus-exterior-material/wpc#deck">Deck Tile</a></li>
-                                                    <li class="sm"><a href="kategori/s-plus-exterior-material/wpc#wall">Wall Partition</a></li>
+                                                    <li class="sm"><a href="deck-tile">Deck Tile</a></li>
+                                                    <li class="sm"><a href="wall-partition">Wall Partition</a></li>
                                                 </ul>
                                             </li>
                                             <li class="sm"><a href='https://sinargarden.com/parasol'><b>PARASOL</b></a></li>
@@ -163,7 +162,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 ">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-wpc#deck') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-exterior-material/deck-tile') ?>">
                                                 <img src="<?= base_url('assets/user/images/background/bgproduk/c28.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
                                         </div>
@@ -172,7 +171,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
                                     <div class="text-center">
                                         <div class="img-fluid mb-4">
-                                            <a href="<?= base_url('kategori/s-plus-wpc#wall') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-exterior-material/wall-partition') ?>">
                                                 <img src="<?= base_url('assets/user/images/background/bgproduk/c29.jpg') ?>" alt="" class="scl zoom-in">
                                             </a>
                                         </div>
@@ -240,7 +239,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20">
                                     <div class="container_images">
                                         <div class="content_img">
-                                            <a href="<?= base_url('kategori/s-plus-wpc#deck') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-exterior-material/deck-tile') ?>">
                                                 <img src="<?= base_url('assets/user/images/kategori/produk/wpc/wpc_deck.jpg') ?>" alt="" class="image" width="80%">
                                                 <div>More Detail</div>
                                             </a>
@@ -253,7 +252,7 @@ $this->load->view('user/header', $meta) ?>
                                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20">
                                     <div class="container_images">
                                         <div class="content_img">
-                                            <a href="<?= base_url('kategori/s-plus-wpc#wall') ?>">
+                                            <a href="<?= base_url('kategori/s-plus-exterior-material/wall-partition') ?>">
                                                 <img src="<?= base_url('assets/user/images/kategori/produk/wpc/wpc_wall.jpg') ?>" alt="" class="image" width="80%">
                                                 <div>More Detail</div>
                                             </a>

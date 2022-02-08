@@ -122,12 +122,12 @@ $this->load->view('user/header', $meta) ?>
                                     </li>
 
                                     <li class="panel-title " data-toggle="collapse" data-target="#test4">
-                                        <a href="<?= base_url('kategori/s-plus-wpc/wpc') ?>"><b>EXTERIOR MATERIAL</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-exterior-material/wpc') ?>"><b>EXTERIOR MATERIAL</b></a>
                                         <ul id="test4" class="panel-collapse collapse">
-                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp9"><a href="<?= base_url('kategori/s-plus-wpc/wpc_kategori') ?>"><b>WPC</b></a>
+                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp9"><a href="<?= base_url('kategori/s-plus-exterior-material/wpc_kategori') ?>"><b>WPC</b></a>
                                                 <ul id="testsp9" class="panel-collapse collapse">
-                                                    <li class="sm"><a href="#deck">Deck Tile</a></li>
-                                                    <li class="sm"><a href="#wall">Wall Partition</a></li>
+                                                    <li class="sm"><a href="deck-tile">Deck Tile</a></li>
+                                                    <li class="sm"><a href="wall-partition">Wall Partition</a></li>
                                                 </ul>
                                             </li>
                                             <li class="sm"><a href='https://sinargarden.com/parasol'><b>PARASOL</b></a></li>
