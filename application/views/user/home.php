@@ -135,50 +135,52 @@ $this->load->view('user/header', $meta) ?>
 
 
 
-    <div class="page-section" style="background: url('<?= base_url('assets/user/images/background/bgdb5.jpg') ?>'); background-size: cover;" class="pt-20">
+    <div>
         <?php if ($this->agent->is_mobile()) : ?>
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-3 py-3">
-                        <div class="subhead" style="color:#0a0a0a;font-size: 18px; ">About Us</div>
-                        <h1 class="title-section"><b>WELCOME TO</b>
-                            <span class="fg-danger"><b>S-PLUS INDONESIA</b></span>
-                        </h1>
-                        <p style="color:#0a0a0a;font-size: 18px; text-align: justify;">S-Plus merupakan perusahaan manufaktur yang memproduksi general building materials,
-                            yaitu ABS-Engineering Door, UPVC Window, Plafon, WPC, Roll Blind, Solid Surface, Kitchen Set dan Furniture.
-                            Semua produk tersebut digunakan umum untuk rumah tinggal di Korea Selatan Eropa dan AS.Kami S-Plus,memproduksi semua produk di Cirebon-Indonesia menggunakan
-                            teknologi standar dari Korea Selatan.</p>
-                        <br></br>
-                        <a href="<?= base_url('tentang-kami') ?>" class="btn btn-primary mt-4">Read More</a>
-                    </div>
-                    <div class="col-lg-3 py-3">
-                        <div class="">
+            <div class="page-section">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-3 py-3">
                             <img loading="lazy" src="<?= base_url('assets/user/portfolio/sample.png') ?>" alt="welcome">
-                            <!-- <iframe src="https://www.youtube.com/embed/sTB6RMN1IEA" style="<?= !$this->agent->is_mobile() ? "width:70%" : "width:100%"  ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                            <br></br>
+                            <center>
+                                <h1 class="h-heading"><b>WELCOME TO</b>
+                                    <span class="fg-danger"><b>S-PLUS INDONESIA</b></span>
+                                </h1>
+                            </center>
+                            <p style="color:#0a0a0a;font-size: 12px; text-align: justify;">S-Plus merupakan perusahaan manufaktur yang memproduksi general building materials,
+                                yaitu ABS-Engineering Door, UPVC Window, Plafon, WPC, Roll Blind, Solid Surface, Kitchen Set dan Furniture.
+                                Semua produk tersebut digunakan umum untuk rumah tinggal di Korea Selatan Eropa dan AS.Kami S-Plus,memproduksi semua produk di Cirebon-Indonesia menggunakan
+                                teknologi standar dari Korea Selatan.</p>
+                            <br></br>
+                            <center><a href="<?= base_url('tentang-kami') ?>" class="btn btn-primary mt-2">Read More</a></center>
                         </div>
+
                     </div>
                 </div>
             </div>
         <?php else : ?>
-            <div class="container">
-                <div class="row align-items-center">
-                    <!-- <div class="col-lg-3 py-3">
+            <div class="page-section" style="background: url('<?= base_url('assets/user/images/background/bgdb5.jpg') ?>'); background-size: cover;" class="pt-20">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- <div class="col-lg-3 py-3">
                         <img loading="lazy" src="<?= base_url('assets/user/portfolio/sampel.png') ?>" style="height: 290px;" alt="welcome">
 
                     </div> -->
-                    <div class="col-lg-6 py-3">
+                        <div class="col-lg-6 py-3">
 
-                        <h1 class="title-section"><b>WELCOME TO</b>
-                            <span class="fg-danger"><b>S-PLUS INDONESIA</b></span>
-                        </h1>
-                        <p style="color:#0a0a0a;font-size: 18px;" class="h-box-title">PT.Smart Techtex adalah Perusahaan No.1 manufacturer of material Building</p>
-                        <br></br>
-                        <a href="<?= base_url('tentang-kami') ?>" class="btn btn-primary mt-4">Read More</a>
-                    </div>
-                    <div class="col-lg-6 py-3">
-                        <div class="">
-                            <img loading="lazy" src="<?= base_url('assets/user/portfolio/sample.png') ?>" alt="welcome">
-                            <!-- <iframe src="https://www.youtube.com/embed/sTB6RMN1IEA" style="width:600px;height:300px;display:block;" frameborder="0" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe> -->
+                            <h1 class="title-section"><b>WELCOME TO</b>
+                                <span class="fg-danger"><b>S-PLUS INDONESIA</b></span>
+                            </h1>
+                            <p style="color:#0a0a0a;font-size: 18px;" class="h-box-title">PT.Smart Techtex adalah Perusahaan No.1 manufacturer of material Building</p>
+                            <br></br>
+                            <a href="<?= base_url('tentang-kami') ?>" class="btn btn-primary mt-4">Read More</a>
+                        </div>
+                        <div class="col-lg-6 py-3">
+                            <div class="">
+                                <img loading="lazy" src="<?= base_url('assets/user/portfolio/sample.png') ?>" alt="welcome">
+                                <!-- <iframe src="https://www.youtube.com/embed/sTB6RMN1IEA" style="width:600px;height:300px;display:block;" frameborder="0" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe> -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -307,122 +309,72 @@ $this->load->view('user/header', $meta) ?>
 
 
 
-    <div style="background: url('<?= base_url('assets/user/images/background/bgdb4.jpg') ?>'); background-size: cover;" class="pt-10">
-
-        <Center>
-            <h1 class="title-section"><b>OUR PRODUCT</b><span class="fg-danger"><b>S-PLUS INDONESIA</b></span></h1>
-        </center>
-
+    <div>
         <?php if ($this->agent->is_mobile()) : ?>
-            <div class="row pt-20">
-                <div class="col-sm-4 col-xs-4">
-                    <a href="<?= base_url('kategori/s-plus-pintu') ?>">
-                        <img loading="lazy" src="<?= base_url('assets/user/images/banner/pintu.webp') ?>" alt="S-Plus Pintu">
-                        <div class="h-box">
-                            <div class="h-box-title"><b>PINTU</b></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-4">
-                    <a href="<?= base_url('kategori/s-plus-upvc-jendela') ?>">
-                        <img loading="lazy" src="<?= base_url('assets/user/images/banner/jendela.webp') ?>" alt="S-Plus jendela">
-                        <div class="h-box">
-                            <div class="h-box-title"><b>JENDELA</b></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-4">
-                    <a href="<?= base_url('kategori/s-plus-interior-material') ?>">
-                        <img loading="lazy" src="<?= base_url('assets/user/images/banner/plafon.webp') ?>" alt="S-Plus Plafon">
-                        <div class="h-box">
-                            <div class="h-box-title"><b>INLIFE</b></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-4">
-                    <a href="<?= base_url('kategori/s-plus-wpc') ?>">
-                        <img loading="lazy" src="<?= base_url('assets/user/images/banner/wpc.webp') ?>" alt="S-Plus WPC">
-                        <div class="h-box">
-                            <div class="h-box-title"><b>OUTLIFE</b></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-4">
-                    <a href="<?= base_url('kategori/s-plus-sun-shade') ?>">
-                        <img loading="lazy" src="<?= base_url('assets/user/images/banner/shade.webp') ?>" alt="S-Plus Sun Shade">
-                        <div class="h-box">
-                            <div class="h-box-title"><b>MASKER</b></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-4">
-                    <a href="<?= base_url('kategori/s-plus-solid-surface') ?>">
-                        <img loading="lazy" src="<?= base_url('assets/user/images/banner/solid.webp') ?>" alt="S-Plus Solid Surface">
-                        <div class="h-box">
-                            <div class="h-box-title"><b>SOLID</b></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-4">
-                    <a href="<?= base_url('kategori/s-plus-namo-pintu') ?>">
-                        <img loading="lazy" src="<?= base_url('assets/user/images/banner/namo.webp') ?>" alt="S-Plus Namo">
-                        <div class="h-box">
-                            <div class="h-box-title"><b>NAMO</b></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-4">
-                    <a href="<?= base_url('kategori/s-plus-kitchen-set') ?>">
-                        <img loading="lazy" src="<?= base_url('assets/user/images/banner/kitchen.webp') ?>" alt="S-Plus Kitchen Set">
-                        <div class="h-box">
-                            <div class="h-box-title"><b>KITCHEN</b></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-4">
-                    <a href="https://sinargarden.com/parasol">
-                        <img loading="lazy" src="<?= base_url('assets/user/images/banner/parasol.webp') ?>" alt="S-Plus Parasol">
-                        <div class="h-box">
-                            <div class="h-box-title"><b>PARASOL</b></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-4">
-                    <a href="<?= base_url('kategori/s-plus-pvc-foam-board') ?>">
-                        <img loading="lazy" src="<?= base_url('assets/user/images/banner/pvc-foam-board.webp') ?>" width="100x100" alt="S-Plus PVC Foam Board">
-                        <div class="h-box">
-                            <div class="h-box-title"><b>PVC Foam</b></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-4">
-                    <a href="<?= base_url('kategori/s-plus-vinyl-flooring') ?>">
-                        <img loading="lazy" src="<?= base_url('assets/user/images/banner/vinyl-flooring.webp') ?>" width="100x100" alt="S-Plus Vinyl Flooring">
-                        <div class="h-box">
-                            <div class="h-box-title"><b>Vinyl Flooring</b></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-4">
-                    <a href="<?= base_url('kategori/s-plus-vinyl-flooring/woven-vinyl-flooring') ?>">
-                        <img loading="lazy" src="<?= base_url('assets/user/images/banner/woven-vinyl-flooring.webp') ?>" width="100x100" alt="S-Plus Woven Vinyl Flooring">
-                        <div class="h-box">
-                            <div class="h-box-title"><b>Woven Vinyl</b></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-sm-4 col-xs-4">
-                    <a href="<?= base_url('kategori/s-plus-iroom') ?>">
-                        <img loading="lazy" src="<?= base_url('assets/user/images/banner/iroom.webp') ?>" width="100x100" alt="S-Plus IROOM">
-                        <div class="h-box">
-                            <div class="h-box-title"><b>IROOM</b></div>
-                        </div>
-                    </a>
+            <div>
+                <Center>
+                    <h1 class="h-heading"><b>OUR PRODUCT</b><span class="fg-danger"><b>S-PLUS INDONESIA</b></span></h1>
+                </center>
+
+
+                <div class="row pt-20">
+                    <div class="col-sm-4 col-xs-4">
+                        <a href="<?= base_url('kategori/s-plus-pintu') ?>">
+                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/pintu.webp') ?>" alt="S-Plus Pintu">
+                            <div class="h-box">
+                                <div class="h-box-title-m"><b>PINTU</b></div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-4 col-xs-4">
+                        <a href="<?= base_url('kategori/s-plus-upvc-jendela') ?>">
+                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/jendela.webp') ?>" alt="S-Plus Parasol">
+                            <div class="h-box">
+                                <div class="h-box-title-m"><b>JENDELA</b></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <a href="<?= base_url('kategori/s-plus-interior-material') ?>">
+                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/kitchen.webp') ?>" width="100x100" alt="S-Plus PVC Foam Board">
+                            <div class="h-box">
+                                <div class="h-box-title-m"><b>INTERIOR MATERIAL</b></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <a href="<?= base_url('kategori/s-plus-wpc/wpc') ?>">
+                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/plafon.webp') ?>" width="100x100" alt="S-Plus Vinyl Flooring">
+                            <div class="h-box">
+                                <div class="h-box-title-m"><b>EXTERIOR MATERIAL</b></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <a href="<?= base_url('kategori/s-plus-face-mask') ?>">
+                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/pvc-foam-board.webp') ?>" width="100x100" alt="S-Plus Woven Vinyl Flooring">
+                            <div class="h-box">
+                                <div class="h-box-title-m"><b>MASKER</b></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <a href="<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>">
+                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/namo.webp') ?>" width="100x100" alt="S-Plus IROOM">
+                            <div class="h-box">
+                                <div class="h-box-title-m"><b>AKSESORIS</b></div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
 
         <?php else : ?>
-            <div class="block bg-lighter full-block bottom-null">
+            <div class="block bg-lighter full-block bottom-null" style="background: url('<?= base_url('assets/user/images/background/bgdb4.jpg') ?>'); background-size: cover;" class="pt-10">
+                <Center>
+                    <h1 class="title-section"><b>OUR PRODUCT</b><span class="fg-danger"><b>S-PLUS INDONESIA</b></span></h1>
+                </center>
                 <div class="container">
                     <div class="hexagon-box-wrapper">
                         <div class="hexagon-box">
@@ -497,59 +449,60 @@ $this->load->view('user/header', $meta) ?>
         <?php if ($this->agent->is_mobile()) : ?>
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="text-left">
-                        <h1 class="title-section"><b style="color:#fff6f6;">Portfolio Our Latest Projects</b></h1>
-                    </div>
+                    <center><span class="h-heading">PORTFOLIO OUR LATEST PROJECTS</span></center>
 
-
-                    <div class="col-md-12 py-3 text-md-right">
-                        <a href="portfolio.html" class="btn btn-outline-primary">Browse Projects <span class="mai-arrow-forward ml-2"></span></a>
-                    </div>
                 </div>
-                <div class="row pt-20">
-                    <div class="col-sm-4 col-xs-6">
+                <div class="row mt-20">
+
+                    <div class="col-sm-4 col-xs-6" style=" bottom: 10px;">
                         <div class="portfolio">
-                            <a href="../assets/img/portfolio/work-1.jpg" data-fancybox="portfolio">
-                                <img src="<?= base_url('assets/katalog-pdf/abs.jpg') ?>" alt="" class="image" width="100%">
+                            <a href="<?= base_url('assets/katalog-pdf/ABS Door.pdf') ?>" data-fancybox="portfolio">
+                                <img src="<?= base_url('assets/user/portfolio/abs.jpg') ?>" alt="">
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-4 col-xs-6" style=" bottom: 10px;">
+                        <div class="portfolio">
+                            <a href="<?= base_url('assets/katalog-pdf/pintu-upvc.pdf') ?>" data-fancybox="portfolio">
+                                <img src="<?= base_url('assets/user/portfolio/upvc-door.jpg') ?>" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-6" style=" bottom: 5px;">
+                        <div class="portfolio">
+                            <a href="<?= base_url('assets/katalog-pdf/NAMO Door.pdf') ?>" data-fancybox="portfolio">
+                                <img src="<?= base_url('assets/user/portfolio/namo.jpg') ?>" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-6" style=" bottom: 5px;">
+                        <div class="portfolio">
+                            <a href="<?= base_url('assets/katalog-pdf/UPVC Window.pdf') ?>" data-fancybox="portfolio">
+                                <img src="assets/user/portfolio/upvc-window.jpg" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-6">
                         <div class="portfolio">
-                            <a href="../assets/img/portfolio/work-2.jpg" data-fancybox="portfolio">
-                                <img src="assets/user/portfolio/work-2.jpg" alt="">
+                            <a href="<?= base_url('assets/katalog-pdf/Plafon.pdf') ?>" data-fancybox="portfolio">
+                                <img src="<?= base_url('assets/user/portfolio/plafon.jpg') ?>" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-6">
                         <div class="portfolio">
-                            <a href="../assets/img/portfolio/work-3.jpg" data-fancybox="portfolio">
-                                <img src="assets/user/portfolio/work-3.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-6">
-                        <div class="portfolio">
-                            <a href="../assets/img/portfolio/work-4.jpg" data-fancybox="portfolio">
-                                <img src="assets/user/portfolio/work-4.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-6">
-                        <div class="portfolio">
-                            <a href="../assets/img/portfolio/work-5.jpg" data-fancybox="portfolio">
-                                <img src="assets/user/portfolio/work-5.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-sm-4 col-xs-6">
-                        <div class="portfolio">
-                            <a href="../assets/img/portfolio/work-6.jpg" data-fancybox="portfolio">
-                                <img src="assets/user/portfolio/work-6.jpg" alt="">
+                            <a href="<?= base_url('assets/katalog-pdf/masker.pdf') ?>" data-fancybox="portfolio">
+                                <img src="<?= base_url('assets/user/portfolio/Masker.jpg') ?>" alt="">
                             </a>
                         </div>
                     </div>
                 </div>
+                <br></br>
+
+                <center><a href="<?= base_url('e-katalog') ?>" class="btn btn-outline-primary">Browse Projects <span class="mai-arrow-forward ml-2"></span></a></center>
+
             </div>
         <?php else : ?>
             <div class="container">
@@ -620,15 +573,16 @@ $this->load->view('user/header', $meta) ?>
         <?php endif; ?>
     </div>
 
-    <div class="page-section3" style="background: url('<?= base_url('assets/user/images/background/bgdb3.jpg') ?>'); background-size: cover;" class="pt-70">
+    <div class="page-section3">
         <?php if ($this->agent->is_mobile()) : ?>
             <div class="container">
                 <div class="text-center">
-                    <h1 class="title-section"><b style="color:#020202;">Testimoni</b></h1>
+                    <h1 class="h-heading">TESTIMONI</h1>
                 </div>
+
                 <div class="row pt-20">
                     <div class="col-sm-4 col-xs-6">
-                        <div class="card-blog">
+                        <!-- <div class="card-blog">
                             <iframe src="assets/images/vidiopromosi/splus1.mp4" style="height:200px;display:block;" frameborder="0" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
                             <br></br>
                             <div class="">
@@ -640,10 +594,20 @@ $this->load->view('user/header', $meta) ?>
                                     <a class="post-date" style="color: #0a0a0a;">Executive Director</a>
                                 </div>
                             </div>
+                        </div> -->
+                        <div class="card-blog" style="padding:0px;">
+                            <iframe src="assets/images/vidiopromosi/splus1.mp4" style="height:200px;display:block;" frameborder="0" allow="accelerometer;encrypted-media;gyroscope;picture-in-picture" type="video/mp4"></iframe>
+
+                            <div class="testimony-wrap py-4" style="color: #0a0a0a;">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                <div class="text">
+                                    <p class="mb-3">RUMAH PAK DARMONO BOS DAIHATZU.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-6">
-                        <div class="card-blog">
+                        <!-- <div class="card-blog">
                             <iframe src="https://www.youtube.com/embed/sTB6RMN1IEA" style="height:200px;display:block;" frameborder="0" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
                             <br></br>
                             <div class="">
@@ -655,10 +619,20 @@ $this->load->view('user/header', $meta) ?>
                                     <a class="post-date" style="color: #0a0a0a;">General Manager</a>
                                 </div>
                             </div>
+                        </div> -->
+                        <div class="card-blog" style="padding:0px;">
+                            <iframe src="assets/images/vidiopromosi/splus2.mp4" style="height:200px;display:block;" frameborder="0" allow="accelerometer;encrypted-media;gyroscope;picture-in-picture" type="video/mp4"></iframe>
+
+                            <div class="testimony-wrap py-4" style="color: #0a0a0a;">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                <div class="text">
+                                    <p class="mb-3">RS.SEKAR KAMULYAN KUNINGAN JAWA BARAT.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-6">
-                        <div class="card-blog">
+                        <!-- <div class="card-blog">
                             <iframe src="https://www.youtube.com/embed/sTB6RMN1IEA" style="height:200px;display:block;" frameborder="0" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
                             <br></br>
                             <div class="">
@@ -670,10 +644,20 @@ $this->load->view('user/header', $meta) ?>
                                     <a class="post-date" style="color: #0a0a0a;">Manager Marketing</a>
                                 </div>
                             </div>
+                        </div> -->
+                        <div class="card-blog" style="padding:0px;">
+                            <iframe src="assets/images/vidiopromosi/splu3.mp4" style="height:200px;display:block;" frameborder="0" allow="accelerometer;encrypted-media;gyroscope;picture-in-picture" type="video/mp4"></iframe>
+
+                            <div class="testimony-wrap py-4" style="color: #0a0a0a;">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                <div class="text">
+                                    <p class="mb-3">KANTOR JASA MARGA CIREBON.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-6">
-                        <div class="card-blog">
+                        <!-- <div class="card-blog">
                             <iframe src="https://www.youtube.com/embed/sTB6RMN1IEA" style="height:200px;display:block;" frameborder="0" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
                             <br></br>
                             <div class="">
@@ -685,18 +669,29 @@ $this->load->view('user/header', $meta) ?>
                                     <a class="post-date" style="color: #0a0a0a;">Asisten Marketing</a>
                                 </div>
                             </div>
+                        </div> -->
+                        <div class="card-blog" style="padding:0px;">
+                            <iframe src="assets/images/vidiopromosi/splus4.mp4" style="height:200px;display:block;" frameborder="0" allow="accelerometer;encrypted-media;gyroscope;picture-in-picture" type="video/mp4"></iframe>
+
+                            <div class="testimony-wrap py-4" style="color: #0a0a0a;">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                <div class="text">
+                                    <p class="mb-3">PERUMAHAN BAGET AYU KUNINGAN.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         <?php else : ?>
-            <div class="container">
-                <div class="text-center">
-                    <h1 class="title-section"><b style="color:#020202;">Testimoni</b></h1>
-                </div>
-                <div class="row my-5 card-blog-row" style="margin-top: 60px;">
-                    <div class="col-lg-3 py-3">
-                        <!-- <div class="">
+            <div class="page-section1" style="background: url('<?= base_url('assets/user/images/background/bgdb3.jpg') ?>'); background-size: cover;" class="pt-70">
+                <div class="container">
+                    <div class="text-center">
+                        <h1 class="title-section"><b style="color:#020202;">Testimoni</b></h1>
+                    </div>
+                    <div class="row my-5 card-blog-row" style="margin-top: 60px;">
+                        <div class="col-lg-3 py-3">
+                            <!-- <div class="">
                                 <div class="avatar">
                                     <img src="assets/user/images/profile/mr-kim.jpg" alt="">
                                 </div>
@@ -712,15 +707,15 @@ $this->load->view('user/header', $meta) ?>
                                     Semua produk tersebut digunakan umum untuk rumah tinggal di Korea Selatan,Eropa dan AS,
                                     Kami S-Plus, memproduksi semua produk di Cirebon-Indonesia menggunakan teknologi.</div>
                             </div> -->
-                        <div class="card-blog">
-                            <iframe src="assets/images/vidiopromosi/splus1.mp4" style="height:400px;display:block;" frameborder="0" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" type="video/mp4"></iframe>
-                            <br></br>
+                            <div class="card-blog">
+                                <iframe src="assets/images/vidiopromosi/splus1.mp4" style="height:400px;display:block;" frameborder="0" allow="accelerometer;autoplay;encrypted-media;gyroscope;picture-in-picture" type="video/mp4"></iframe>
+                                <br></br>
 
-                            <div class="testimony-wrap py-4" style="color: #0a0a0a;">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-5">RUMAH PAK DARMONO BOS DAIHATZU.</p>
-                                    <!-- <div class="d-flex align-items-center">
+                                <div class="testimony-wrap py-4" style="color: #0a0a0a;">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                    <div class="text">
+                                        <p class="mb-5">RUMAH PAK DARMONO BOS DAIHATZU.</p>
+                                        <!-- <div class="d-flex align-items-center">
                                         <div class="user-img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.a2MnMHMs44.webp)"></div>
                                         <div class="avatar">
                                             <img src="assets/user/images/profile/ms-dian.jpg" alt="">
@@ -730,20 +725,20 @@ $this->load->view('user/header', $meta) ?>
                                             <a class="post-date" style="color: #0a0a0a;"><b>General Manager</b></a>
                                         </div>
                                     </div> -->
+                                    </div>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 py-3">
-                        <div class="card-blog">
-                            <iframe src="assets/images/vidiopromosi/splus2.mp4" style="height:400px;display:block;" frameborder="0" allow="encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
-                            <br></br>
-                            <div class="testimony-wrap py-4" style="color: #0a0a0a;">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-5">RS.SEKAR KAMULYAN KUNINGAN JAWA BARAT.</p>
-                                    <!-- <div class="d-flex align-items-center">
+                        <div class="col-lg-3 py-3">
+                            <div class="card-blog">
+                                <iframe src="assets/images/vidiopromosi/splus2.mp4" style="height:400px;display:block;" frameborder="0" allow="encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
+                                <br></br>
+                                <div class="testimony-wrap py-4" style="color: #0a0a0a;">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                    <div class="text">
+                                        <p class="mb-5">RS.SEKAR KAMULYAN KUNINGAN JAWA BARAT.</p>
+                                        <!-- <div class="d-flex align-items-center">
                                         <div class="user-img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.a2MnMHMs44.webp)"></div>
                                         <div class="avatar">
                                             <img src="assets/user/images/profile/ms-dian.jpg" alt="">
@@ -753,20 +748,20 @@ $this->load->view('user/header', $meta) ?>
                                             <a class="post-date" style="color: #0a0a0a;"><b>General Manager</b></a>
                                         </div>
                                     </div> -->
+                                    </div>
                                 </div>
-                            </div>
 
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 py-3">
-                        <div class="card-blog">
-                            <iframe src="assets/images/vidiopromosi/splu3.mp4" style="height:400px;display:block;" frameborder="0" allow="encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
-                            <br></br>
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-5">PERUMAHAN BAGET AYU KUNINGAN.</p>
-                                    <!-- <div class="d-flex align-items-center">
+                        <div class="col-lg-3 py-3">
+                            <div class="card-blog">
+                                <iframe src="assets/images/vidiopromosi/splu3.mp4" style="height:400px;display:block;" frameborder="0" allow="encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
+                                <br></br>
+                                <div class="testimony-wrap py-4">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                    <div class="text">
+                                        <p class="mb-5">PERUMAHAN BAGET AYU KUNINGAN.</p>
+                                        <!-- <div class="d-flex align-items-center">
                                         <div class="user-img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.a2MnMHMs44.webp)"></div>
                                         <div class="avatar">
                                             <img src="assets/user/images/showroom/cirebon/tim/feri.jpg" alt="">
@@ -776,19 +771,19 @@ $this->load->view('user/header', $meta) ?>
                                             <a class="post-date" style="color: #0a0a0a;"><b>Manager Marketing</b></a>
                                         </div>
                                     </div> -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 py-3">
-                        <div class="card-blog">
-                            <iframe src="assets/images/vidiopromosi/splus4.mp4" style="height:400px;display:block;" frameborder="0" allow="encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
-                            <br></br>
-                            <div class="testimony-wrap py-4">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
-                                <div class="text">
-                                    <p class="mb-5">KANTOR JASA MARGA CIREBON.</p>
-                                    <!-- <div class="d-flex align-items-center">
+                        <div class="col-lg-3 py-3">
+                            <div class="card-blog">
+                                <iframe src="assets/images/vidiopromosi/splus4.mp4" style="height:400px;display:block;" frameborder="0" allow="encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
+                                <br></br>
+                                <div class="testimony-wrap py-4">
+                                    <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
+                                    <div class="text">
+                                        <p class="mb-5">KANTOR JASA MARGA CIREBON.</p>
+                                        <!-- <div class="d-flex align-items-center">
                                         <div class="user-img" style="background-image:url(images/xperson_1.jpg.pagespeed.ic.a2MnMHMs44.webp)"></div>
                                         <div class="avatar">
                                             <img src="assets/user/images/showroom/cirebon/tim/ivan.jpg" alt="">
@@ -798,18 +793,18 @@ $this->load->view('user/header', $meta) ?>
                                             <a class="post-date" style="color: #0a0a0a;"><b>Asisten Marketing</b></a>
                                         </div>
                                     </div> -->
+                                    </div>
                                 </div>
+
                             </div>
-
                         </div>
+
+                        <div>
+                            <center><a href="<?= base_url('testimoni') ?>" class="btn btn-primary mt-4" style="margin-top: 30px;">Read More</a></center>
+                        </div>
+
+
                     </div>
-
-                    <div>
-                        <center><a href="<?= base_url('testimoni') ?>" class="btn btn-primary mt-4" style="margin-top: 30px;">Read More</a></center>
-                    </div>
-
-
-
                 </div>
             </div>
         <?php endif; ?>

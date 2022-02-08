@@ -314,6 +314,15 @@ body.layout-2 .hexagon-icon i {
   font-family: Chivo, sans-serif;
   color: black;
 }
+
+.h-box-title-m {
+  margin-bottom: 0;
+  padding: 30px 5px;
+
+  font-family: Chivo, sans-serif;
+  color: black;
+}
+
 .h2-box-title {
   margin-bottom: 0;
   padding: 30px 5px;
