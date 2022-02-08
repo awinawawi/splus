@@ -7,10 +7,10 @@ $this->load->view('user/header', $meta) ?>
     <div class="ps-contact ps-section pb-80 pt-40">
         <div class="ps-container text-center">
             <span class="h-subtitle h-m-title">E-KATALOG S-PLUS</span>
-            <hr style="width: 8%; border: 1px solid e24545; margin-bottom: 30px;">
+            <hr style="width: 8%; border: 1px solid e24545; margin-bottom: 20px;">
             <div class="gallery-header pb-80">
                 <div class="gallery-body">
-                    <style>
+                    <!-- <style>
                         .dropbtn {
                             background-color: red;
                             color: white;
@@ -71,6 +71,48 @@ $this->load->view('user/header', $meta) ?>
                             <a href="<?= base_url('assets/katalog-pdf/vinyl flooring.pdf') ?>" class="w3-bar-item w3-button">VINYL FLOORING</a>
                             <a href="<?= base_url('/pintu') ?>" class="w3-bar-item w3-button">PINTU</a>
                         </div>
+                    </div>
+                    <br> -->
+
+
+                    <style>
+                        .grid-container {
+                            display: grid;
+                            grid-template-columns: auto auto auto;
+                            padding: 10px;
+                            border-radius: 20px;
+                            justify-items: left;
+                            align-items: center;
+                            justify-content: start;
+                            align-content: center;
+                            border-style: groove;
+                        }
+
+                        .grid-itemx {
+
+                            padding: 2px;
+                            font-size: 8px;
+                            text-align: center;
+                            margin-right: 15px;
+
+                        }
+                    </style>
+
+                    <div class="grid-container">
+                        <a class="grid-itemx " href="<?= base_url('assets/katalog-pdf/ABS Door.pdf') ?>"><i class="fa fa-tags"></i> <b>ABS DOOR</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/NAMO Door.pdf') ?>"><i class="fa fa-tags"></i> <b>NAMO DOOR</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/pintu-upvc.pdf') ?>"><i class="fa fa-tags"></i> <b>UPVC DOOR</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/UPVC Window.pdf') ?>"><i class="fa fa-tags"></i> <b>UPVC WINDOW</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/Plafon.pdf') ?>"><i class="fa fa-tags"></i> <b>PLAFON UPVC</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/masker.pdf') ?>"><i class="fa fa-tags"></i> <b>MASKER</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/vinyl flooring.pdf') ?>"><i class="fa fa-tags"></i> <b>VINYL FLOORING</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/Parasol.pdf') ?>"><i class="fa fa-tags"></i> <b>PARASOL</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/Roll Insect Screen.pdf') ?>"><i class="fa fa-tags"></i> <b>ROLL INSECT SCREEN</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/Sun Shade.pdf') ?>"><i class="fa fa-tags"></i> <b>SUN SHADE</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/deck tile.pdf') ?>"><i class="fa fa-tags"></i> <b>WPC DECK TILE</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/Iroom.pdf') ?>"><i class="fa fa-tags"></i> <b>IROOM</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/Kitchen Set.pdf') ?>"><i class="fa fa-tags"></i> <b>KITCHEN SET</b></a>
+
                     </div>
                     <br>
                     <div class="row">
@@ -419,10 +461,6 @@ $this->load->view('user/header', $meta) ?>
                         <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/Kitchen Set.pdf') ?>"><i class="fa fa-tags"></i> <b>KITCHEN SET</b></a>
 
                     </div>
-
-
-
-
                     <br>
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 pb-20">
