@@ -124,7 +124,7 @@ $this->load->view('user/header', $meta) ?>
                                     </li>
 
                                     <li class="panel-title " data-toggle="collapse" data-target="#test4">
-                                        <a href="<?= base_url('kategori/s-plus-exterior-material/wpc') ?>" style="color:#e24545;"><b>EXTERIOR MATERIAL</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-exterior-material') ?>" style="color:#e24545;"><b>EXTERIOR MATERIAL</b></a>
                                         <ul id="test4">
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#testsp9"><a href="<?= base_url('kategori/s-plus-exterior-material/wpc_kategori') ?>"><b>WPC</b></a>
                                                 <ul id="testsp9" class="panel-collapse collapse">

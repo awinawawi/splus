@@ -251,7 +251,7 @@ $this->load->view('user/header', $meta) ?>
                                     </li>
 
                                     <li class="panel-title " data-toggle="collapse" data-target="#test4">
-                                        <a href="<?= base_url('kategori/s-plus-exterior-material/wpc') ?>"><b>EXTERIOR MATERIAL</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-exterior-material') ?>"><b>EXTERIOR MATERIAL</b></a>
                                         <ul id="test4" class="panel-collapse collapse">
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#testsp9"><a href="<?= base_url('kategori/s-plus-exterior-material/wpc_kategori') ?>"><b>WPC</b></a>
                                                 <ul id="testsp9" class="panel-collapse collapse">
@@ -306,15 +306,15 @@ $this->load->view('user/header', $meta) ?>
                                     </div>
                                     <div class="col-sm-4 col-xs-4">
                                         <a href="<?= base_url('kategori/s-plus-interior-material') ?>">
-                                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/kitchen.webp') ?>" alt="S-Plus Plafon">
+                                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/kitchen.webp') ?>" alt="S-Plus Interior Material">
                                             <div class="h-box">
                                                 <div class="h-box-title"><b>INTERIOR MATERIAL</b></div>
                                             </div>
                                         </a>
                                     </div>
                                     <div class="col-sm-4 col-xs-4">
-                                        <a href="<?= base_url('kategori/s-plus-wpc/wpc') ?>">
-                                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/plafon.webp') ?>" alt="S-Plus WPC">
+                                        <a href="<?= base_url('kategori/s-plus-exterior-material') ?>">
+                                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/plafon.webp') ?>" alt="S-Plus Exterior Material">
                                             <div class="h-box">
                                                 <div class="h-box-title"><b>EXTERIOR MATERIAL</b></div>
                                             </div>
@@ -453,8 +453,8 @@ $this->load->view('user/header', $meta) ?>
                                                 </div>
                                             </div>
 
-                                            <div class="hexagon-icon" onclick="window.location.href = '<?= base_url('kategori/s-plus-wpc/wpc') ?>'">
-                                                <img loading="lazy" src="<?= base_url('assets/user/images/banner/plafon.webp') ?>" class="scl zoom-in" alt="S-Plus Plafon">
+                                            <div class="hexagon-icon" onclick="window.location.href = '<?= base_url('kategori/s-plus-exterior-material') ?>'">
+                                                <img loading="lazy" src="<?= base_url('assets/user/images/banner/plafon.webp') ?>" class="scl zoom-in" alt="S-Plus Exterior Material">
                                                 <div class="h-box">
                                                     <div class="h-box-title"><b>EXTERIOR MATERIAL</b></div>
                                                 </div>
@@ -464,20 +464,20 @@ $this->load->view('user/header', $meta) ?>
                                                 <img loading="lazy" src="<?= base_url('assets/user/images/logo-poduk.png') ?>" class="scl zoom-in" style='width:180px' alt="S-Plus Indonesia">
                                             </div>
                                             <div class="hexagon-icon" onclick="window.location.href = '<?= base_url('kategori/s-plus-face-mask') ?>'">
-                                                <img loading="lazy" src="<?= base_url('assets/user/images/banner/pvc-foam-board.webp') ?>" class="scl zoom-in" alt="S-Plus WPC">
+                                                <img loading="lazy" src="<?= base_url('assets/user/images/banner/pvc-foam-board.webp') ?>" class="scl zoom-in" alt="S-Plus Face Masker">
                                                 <div class="h-box">
                                                     <div class="h-box-title"><b>MASKER</b></div>
                                                 </div>
                                             </div>
 
                                             <div class="hexagon-icon" onclick="window.location.href = '<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>'">
-                                                <img loading="lazy" src="<?= base_url('assets/user/images/banner/namo.webp') ?>" class="scl zoom-in" alt="S-Plus Namo">
+                                                <img loading="lazy" src="<?= base_url('assets/user/images/banner/namo.webp') ?>" class="scl zoom-in" alt="S-Plus Aksesoris">
                                                 <div class="h-box">
                                                     <div class="h-box-title"><b>AKSESORIS</b></div>
                                                 </div>
                                             </div>
                                             <div class="hexagon-icon" onclick="window.location.href = '<?= base_url('kategori/s-plus-interior-material') ?>'">
-                                                <img loading="lazy" src="<?= base_url('assets/user/images/banner/kitchen.webp') ?>" class="scl zoom-in" alt="S-Plus Kitchen Set">
+                                                <img loading="lazy" src="<?= base_url('assets/user/images/banner/kitchen.webp') ?>" class="scl zoom-in" alt="S-Plus Interior Material">
                                                 <div class="h-box">
                                                     <div class="h-box-title"><b>INTERIOR MATERIAL</b></div>
                                                 </div>

@@ -118,15 +118,13 @@ class Homepage extends CI_Controller
 			}
 		} elseif ($name == 's-plus-exterior-material') {
 			if (empty($produk)) {
-				$this->load->view('user/produk/exterior-material/v_splus_wpc');
+				$this->load->view('user/produk/exterior-material/v_kategori_outlife');
 			} else if ($produk == 'deck-tile') {
 				$this->load->view('user/produk/exterior-material/wpc/v_wpc_deck');
 			} else if ($produk == 'wall-partition') {
 				$this->load->view('user/produk/exterior-material/wpc/v_wpc_wall');
 			} else if ($produk == 'wpc_kategori') {
 				$this->load->view('user/produk/exterior-material/wpc/v_kategori_wpc');
-			} else if ($produk == 'wpc') {
-				$this->load->view('user/produk/exterior-material/v_kategori_outlife');
 			} else {
 				return redirect(base_url());
 			}
