@@ -53,11 +53,16 @@ $this->load->view('user/header', $meta) ?>
         TIM MARKETING
       </div>
       <hr style="width: 10%; margin-bottom: 40px; border: 1px solid #333; margin-top: 10px; ">
-      <div class="col-md-5"></div>
+      <div class="col-md-4"></div>
       <div class="col-md-2 col-sm-6 col-xs-6 pb-20 text-center">
-        <img src="<?= base_url('assets/user/images/showroom/jakarta/tim/Deni-Firdaus.jpg') ?>" class="imground">
+        <img src="<?= base_url('assets/user/images/showroom/bogor/tim/Deni-Firdaus.jpg') ?>" class="imground">
         <div class="h-body h-m-body"><b>Deni Firdaus</b></div>
         <div class="h-body h-m-body">0896 2547 3471</div>
+      </div>
+      <div class="col-md-2 col-sm-6 col-xs-6 pb-20 text-center">
+        <img src="<?= base_url('assets/user/images/showroom/bogor/tim/edvin.jpg') ?>" class="imground">
+        <div class="h-body h-m-body"><b>Edvin Suryadin</b></div>
+        <div class="h-body h-m-body">0821 1444 3048</div>
       </div>
     </div>
 
