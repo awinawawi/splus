@@ -88,14 +88,19 @@
     <div class="contact-us">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-12">
+
+                    <CENTER>
+                        <h2>Contact Info</h2>
+                    </CENTER>
+                    <center><span style="color:black;">Corporate Address</span></center>
+                    <br></br>
+
                     <div id="map">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7923.530852348345!2d108.65283277419924!3d-6.798368480344978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f037edb36a2df%3A0xb9f84f4adbd2d8bf!2sSmart%20Techtex!5e0!3m2!1sid!2sid!4v1642991890593!5m2!1sid!2sid" width="100%" height="400px" style="border:0;" frameborder="0" allowfullscreen="" loading="lazy"></iframe>
-
-
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <!-- <div class="col-lg-6">
                     <div class="section-heading">
                         <h2>Katakan hallo.</h2>
 
@@ -123,7 +128,7 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

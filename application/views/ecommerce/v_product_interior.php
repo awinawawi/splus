@@ -52,10 +52,10 @@
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li class="submenu">
-                                <a href="javascript:;">Pages</a>
+                                <a href="javascript:;">Hubungi kami</a>
                                 <ul>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><a href="<?= base_url('tentang-kami') ?>">About Us</a></li>
+                                    <li><a href="<?= base_url('contact') ?>">Contact Us</a></li>
                                 </ul>
                             </li>
                             <li class="submenu">

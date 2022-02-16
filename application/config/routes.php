@@ -2,7 +2,7 @@
 defined('BASEPATH') or exit('No direct script access allowed');
 
 $route['default_controller']    = 'homepage';
-$route['v_kategori']              = 'homepage/v_kategori';
+$route['v_kategori']            = 'homepage/kategori_produk';
 $route['kategori/(:any)']       = 'homepage/kategori/$1';
 $route['kategori/(:any)/(:any)'] = 'homepage/kategori/$1/$2';
 $route['e-katalog']             = 'homepage/katalog';
@@ -23,6 +23,7 @@ $route['product_aksesoris']     = 'homepage/product_aksesoris';
 $route['product_masker']        = 'homepage/product_masker';
 $route['product_all']           = 'homepage/product_all';
 $route['contact']               = 'homepage/contact';
+$route['about_us']              = 'homepage/about_us';
 $route['testimoni']             = 'homepage/testimoni';
 
 $route['subkategori_pintu/(:any)']     = 'order/subkategori_pintu';

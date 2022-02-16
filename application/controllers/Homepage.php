@@ -116,15 +116,17 @@ class Homepage extends CI_Controller
 			} else {
 				return redirect(base_url());
 			}
-		} elseif ($name == 's-plus-exterior-material') {
+		} elseif ($name == 's-plus-wpc') {
 			if (empty($produk)) {
-				$this->load->view('user/produk/exterior-material/v_kategori_outlife');
+				$this->load->view('user/produk/v_splus_wpc');
 			} else if ($produk == 'deck-tile') {
-				$this->load->view('user/produk/exterior-material/wpc/v_wpc_deck');
+				$this->load->view('user/produk/wpc/v_wpc_deck');
 			} else if ($produk == 'wall-partition') {
-				$this->load->view('user/produk/exterior-material/wpc/v_wpc_wall');
+				$this->load->view('user/produk/wpc/v_wpc_wall');
 			} else if ($produk == 'wpc_kategori') {
-				$this->load->view('user/produk/exterior-material/wpc/v_kategori_wpc');
+				$this->load->view('user/produk/wpc/v_kategori_wpc');
+			} else if ($produk == 'wpc') {
+				$this->load->view('user/produk/wpc/v_kategori_outlife');
 			} else {
 				return redirect(base_url());
 			}
@@ -228,6 +230,22 @@ class Homepage extends CI_Controller
 				$this->load->view('user/produk/pintu/upvc_door/v_splus_upvc_felice');
 			} else if ($produk == 'upvc_sash') {
 				$this->load->view('user/produk/pintu/upvc_door/v_splus_upvc_sash');
+			} else {
+				redirect(base_url());
+			}
+		} elseif ($name == 's-plus-aksesoris') {
+			if (empty($produk)) {
+				$this->load->view('user/produk/aksesoris/p_aksesoris');
+			} else if ($produk == 'aksesoris_pintu') {
+				$this->load->view('user/produk/aksesoris/pintu/v_aksesoris_pintu');
+			} else if ($produk == 'aksesoris_jendela') {
+				$this->load->view('user/produk/aksesoris/jendela/v_aksesoris_jendela');
+			} else if ($produk == 'aksesoris_kitchenset') {
+				$this->load->view('user/produk/aksesoris/kitchen/v_aksesoris_kitchen');
+			} else if ($produk == 'aksesoris_aoutomatic') {
+				$this->load->view('user/produk/aksesoris/aoutomatic/v_aksesoris_aoutomatic');
+			} else if ($produk == 'aksesoris_cubicle') {
+				$this->load->view('user/produk/aksesoris/cubicle/v_aksesoris_cubicle');
 			} else {
 				redirect(base_url());
 			}
@@ -346,6 +364,11 @@ class Homepage extends CI_Controller
 		$this->load->view('ecommerce/contact');
 	}
 
+	public function about_us()
+	{
+		$this->load->view('ecommerce/about_us');
+	}
+
 	public function testimoni()
 	{
 		$this->load->view('ecommerce/v_testimoni');
@@ -355,7 +378,7 @@ class Homepage extends CI_Controller
 
 
 
-	public function v_kategori()
+	public function kategori_produk()
 	{
 		$this->load->view('user/v_kategori');
 	}
