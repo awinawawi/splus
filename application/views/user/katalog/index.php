@@ -446,8 +446,8 @@ $this->load->view('user/header', $meta) ?>
                     </style>
 
                     <div class="grid-container">
-                        <a class="grid-itemx " href="<?= base_url('assets/katalog-pdf/ABS Door.pdf') ?>"><i class="fa fa-tags"></i> <b>ABS DOOR</b></a>
-                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/NAMO Door.pdf') ?>"><i class="fa fa-tags"></i> <b>NAMO DOOR</b></a>
+                        <a class="grid-itemx " href="<?= base_url('assets/katalog-pdf/xxx.pdf') ?>"><i class="fa fa-tags"></i> <b>ABS DOOR</b></a>
+                        <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/Namo.pdf') ?>"><i class="fa fa-tags"></i> <b>NAMO DOOR</b></a>
                         <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/pintu-upvc.pdf') ?>"><i class="fa fa-tags"></i> <b>UPVC DOOR</b></a>
                         <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/UPVC Window.pdf') ?>"><i class="fa fa-tags"></i> <b>UPVC WINDOW</b></a>
                         <a class="grid-itemx" href="<?= base_url('assets/katalog-pdf/Plafon.pdf') ?>"><i class="fa fa-tags"></i> <b>PLAFON UPVC</b></a>
@@ -464,7 +464,7 @@ $this->load->view('user/header', $meta) ?>
                     <br>
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 pb-20">
-                            <a href="<?= base_url('assets/katalog-pdf/ABS Door.pdf') ?>" target="_blank">
+                            <a href="<?= base_url('assets/katalog-pdf/xxx.pdf') ?>" target="_blank">
                                 <!--<div class="header-gallery">-->
                                 <!--    ABS DOOR    -->
                                 <!--</div>-->
@@ -473,13 +473,13 @@ $this->load->view('user/header', $meta) ?>
                                         <img src="<?= base_url('assets/katalog-pdf/abs.jpg') ?>" alt="" class="image" width="100%">
                                     </div>
                                     <div class="text-center">
-                                        <div class="text-overlay-ss">ABS Door (Download)</div>
+                                        <div class="text-overlay-ss">xxx (Download)</div>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 pb-20">
-                            <a href="<?= base_url('assets/katalog-pdf/NAMO Door.pdf') ?>" target="_blank">
+                            <a href="<?= base_url('assets/katalog-pdf/Namo.pdf') ?>" target="_blank">
                                 <!--<div class="header-gallery">-->
                                 <!--    NAMO DOOR    -->
                                 <!--</div>-->
