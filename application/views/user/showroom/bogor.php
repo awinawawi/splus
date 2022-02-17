@@ -55,14 +55,14 @@ $this->load->view('user/header', $meta) ?>
       <hr style="width: 10%; margin-bottom: 40px; border: 1px solid #333; margin-top: 10px; ">
       <div class="col-md-4"></div>
       <div class="col-md-2 col-sm-6 col-xs-6 pb-20 text-center">
-        <img src="<?= base_url('assets/user/images/showroom/bogor/tim/Deni-Firdaus.jpg') ?>" class="imground">
+        <img src="<?= base_url('assets/user/images/showroom/bogor/tim/deni.jpg') ?>" class="imground">
         <div class="h-body h-m-body"><b>Deni Firdaus</b></div>
-        <div class="h-body h-m-body">0896 2547 3471</div>
+        <div class="h-body h-m-body">0813 1014 9090 / 0896 5247 3471</div>
       </div>
       <div class="col-md-2 col-sm-6 col-xs-6 pb-20 text-center">
         <img src="<?= base_url('assets/user/images/showroom/bogor/tim/edvin.jpg') ?>" class="imground">
         <div class="h-body h-m-body"><b>Edvin Suryadin</b></div>
-        <div class="h-body h-m-body">0821 1444 3048</div>
+        <div class="h-body h-m-body">0878 0996 0438</div>
       </div>
     </div>
 
