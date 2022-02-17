@@ -143,7 +143,7 @@ $this->load->view('user/header', $meta) ?>
                                     </li>
                                 </ul>
                             </div> -->
-                            <div class="ps-widget__content ">
+                            <div class="ps-widget__content">
                                 <ul class="ps-list--arrow">
                                     <li class="panel-title" data-toggle="collapse" data-target="#test">
                                         <a href="<?= base_url('kategori/s-plus-pintu') ?>"><b>PINTU</b>
@@ -434,7 +434,7 @@ $this->load->view('user/header', $meta) ?>
                                     <span class="h-subtitle h-m-title"><strong>OUR PRODUCTS</strong></span>
                                 </center>
                                 <hr style="margin-bottom: 25px;width: 25%; border: 0.5px solid #e24545">
-                                <div class="container">
+                                <div class="container" style="width: 970px;">
                                     <div class="hexagon-box-wrapper-2">
                                         <div class="hexagon-box">
                                             <div class="hexagon-icon" onclick="window.location.href = '<?= base_url('kategori/s-plus-pintu') ?>'">
@@ -456,7 +456,7 @@ $this->load->view('user/header', $meta) ?>
                                             <div class="hexagon-icon" onclick="window.location.href = '<?= base_url('kategori/s-plus-exterior-material') ?>'">
                                                 <img loading="lazy" src="<?= base_url('assets/user/images/banner/plafon.webp') ?>" class="scl zoom-in" alt="S-Plus Exterior Material">
                                                 <div class="h-box">
-                                                    <div class="h-box-title"><b>EXTERIOR MATERIAL</b></div>
+                                                    <div class="h-box-title"><b>EXTERIOR <br>MATERIAL</b></div>
                                                 </div>
                                             </div>
 
@@ -479,7 +479,7 @@ $this->load->view('user/header', $meta) ?>
                                             <div class="hexagon-icon" onclick="window.location.href = '<?= base_url('kategori/s-plus-interior-material') ?>'">
                                                 <img loading="lazy" src="<?= base_url('assets/user/images/banner/kitchen.webp') ?>" class="scl zoom-in" alt="S-Plus Interior Material">
                                                 <div class="h-box">
-                                                    <div class="h-box-title"><b>INTERIOR MATERIAL</b></div>
+                                                    <div class="h-box-title"><b>INTERIOR <br>MATERIAL</b></div>
                                                 </div>
                                             </div>
 
