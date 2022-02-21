@@ -29,6 +29,8 @@
 
 <body>
 
+    <div class="back-to-topx"></div>
+    <a id="back-to-top" href="#" class="back-to-top" role="button" style="color:#d50000"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
     <div id="preloader">
         <div class="jumper">
@@ -286,8 +288,9 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <h2>Recommendation</h2>
-                        <span>Recommended product details</span>
+                        <h2>SPECIAL OFFERS</h2>
+                        <span>Produk dari s-plus indonesia
+                            yang kami tawarkan dengan harga spesial.</span>
                     </div>
                 </div>
             </div>
@@ -378,7 +381,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="left-content">
-                        <h2>Promo Partner</h2>
+                        <h2>PROMO PARTNER</h2>
                         <div class="quote">
                             <i class="fa fa-quote-left"></i>
                             <p>You know what we are proud of ? That is your satisfaction.</p>
@@ -431,8 +434,8 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section-heading">
-                        <h2>New Brands</h2>
-                        <span>New brands product details</span>
+                        <h2>NEW ARRIVAL</h2>
+                        <span>Produk terbaru dari S-plus Indonesia.</span>
                     </div>
                 </div>
             </div>
@@ -543,121 +546,63 @@
     </section>
 
 
-
-    <section class="section" id="kids">
+    <div class="page-section" id="kids">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-heading">
-                        <h2>Best Product</h2>
-                        <span>Details to Best Product.</span>
-                    </div>
-                </div>
+            <div class="text-center">
+                <h2 class="title-section">NEWS S-PLUS</h2>
             </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="kid-item-carousel">
-                        <div class="owl-kid-item owl-carousel">
-                            <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="<?= base_url('assets/images/ourproduk/bestproduct/art1.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_pintu') ?>"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
 
-                                    <img src="<?= base_url('assets/images/ourproduk/bestproduct/art1.jpg') ?>">
-                                </div>
-                                <div class="down-content">
-                                    <h4>Artdoor-01</h4>
-                                    <span>$80.00</span>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="<?= base_url('assets/images/ourproduk/bestproduct/art2.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_pintu') ?>"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <img src="<?= base_url('assets/images/ourproduk/bestproduct/art2.jpg') ?>">
-
-                                </div>
-                                <div class="down-content">
-                                    <h4>Artdoor-02</h4>
-                                    <span>$12.00</span>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="<?= base_url('assets/images/ourproduk/bestproduct/art3.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_pintu') ?>"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <img src="<?= base_url('assets/images/ourproduk/bestproduct/art3.jpg') ?>">
-
-                                </div>
-                                <div class="down-content">
-                                    <h4>Artdoor-03</h4>
-                                    <span>$30.00</span>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="<?= base_url('assets/images/ourproduk/bestproduct/art4.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_pintu') ?>"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <img src="<?= base_url('assets/images/ourproduk/bestproduct/art4.jpg') ?>">
-
-                                </div>
-                                <div class="down-content">
-                                    <h4>Artdoor-04</h4>
-                                    <span>$120.00</span>
-                                    <ul class="stars">
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                        <li><i class="fa fa-star"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
+            <div class="row my-5 card-blog-row">
+                <div class="col-lg-4 py-3">
+                    <div class="card-blog" style="max-width: 330px;">
+                        <div class="header">
+                            <img src="<?= base_url('assets/images/news/news1.jpg') ?>">
+                        </div>
+                        <div class="body">
+                            <div class="post-title"><a href="https://www.youtube.com/watch?v=z3BkgCAwUuo">Tutorial Blind Combi Roll Splus Indonesia.</a></div>
+                        </div>
+                        <div class="footer">
+                            <a href="https://www.youtube.com/watch?v=z3BkgCAwUuo">Read More <span class=""></span></a>
                         </div>
                     </div>
                 </div>
+                <div class="col-lg-4 py-3">
+                    <div class="card-blog" style="max-width: 330px;">
+                        <div class="header">
+                            <img src="<?= base_url('assets/images/news/news2.jpg') ?>">
+                        </div>
+                        <div class="body">
+                            <div class="post-title"><a href="https://www.youtube.com/watch?v=fqfNgL6PuTY">Tutorial Pemasangan Lis Jendela UPVC</a></div>
+                        </div>
+                        <div class="footer">
+                            <a href="https://www.youtube.com/watch?v=fqfNgL6PuTY">Read More <span class=""></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 py-3">
+                    <div class="card-blog" style="max-width: 330px;">
+                        <div class="header">
+                            <img src="<?= base_url('assets/images/news/news3.jpg') ?>">
+                        </div>
+                        <div class="body">
+                            <div class="post-title"><a href="https://www.youtube.com/watch?v=99670Nzg2K4">Tutorial Pemasangan Pintu S Plus Door</a></div>
+                        </div>
+                        <div class="footer">
+                            <a href="https://www.youtube.com/watch?v=99670Nzg2K4">Read More <span class=""></span></a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+            <div class=" text-center">
+                <a href="blog.html" class="btn btn-primary">View More</a>
+            </div>
+
         </div>
-    </section>
+    </div>
+
+
 
     <div class="subscribe">
         <div class="container">
@@ -791,6 +736,7 @@
     <script src="<?= base_url('assets/css/depan-ecommerce/vendor/isotope/isotope.pkgd.min.js') ?>"></script>
     <script src="<?= base_url('assets/css/depan-ecommerce/js/google-maps.js') ?>"></script>
     <script src="<?= base_url('assets/css/depan-ecommerce/js/theme.js') ?>"></script>
+    <script defer type="text/javascript" src="<?= base_url('assets/user/js/main.js') ?>"></script>
 
 
 

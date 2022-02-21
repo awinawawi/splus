@@ -187,12 +187,13 @@
                         <div class="col-lg-12">
                             <div class="section-heading" style="text-align:left;">
                                 <aside class="ps-widget--sidebar ">
-                                    <div class="ps-widget__header">
-                                        <h3>
-                                            <a> <b>PRODUCT</b></a>
-                                        </h3>
+                                    <div>
+                                        <h2>
+                                            <a>FILTER</a>
+                                        </h2>
                                     </div>
                                     <br></br>
+
                                     <!-- <div class="ps-widget__content ">
                                         <div class="widget-products widget">
                                             <div>
@@ -208,10 +209,20 @@
                                             </div>
                                         </div>
                                     </div> -->
+
+                                    <div class="widget-box">
+                                        <h4 class="widget-title">Search</h4>
+                                        <div class="divider"></div>
+                                        <form action="#" class="search-form">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                                                <button type="submit" class="btn"><span class="icon mai-search"></span></button>
+                                            </div>
+                                        </form>
+                                    </div>
+
                                     <div class="ps-widget">
-
                                         <div class="panel-group category-products" id="accordian">
-
                                             <?php $data = $this->db->query("SELECT * from tbl_kategoriproduk where id_kategori_produk='1' order by id_kategori_produk Asc"); ?>
                                             <?php $data1 = $this->db->query("SELECT * from tbl_subkategoriproduk where id_kategori_produk='1' order by id_subkategori_produk Asc"); ?>
                                             <?php foreach ($data->result() as $maincat) { ?>
@@ -239,7 +250,7 @@
                                                             <ul>
                                                                 <?php foreach ($data1->result() as $subcat) { ?>
                                                                     <?php if ($subcat->id_kategori_produk == $maincat->id_kategori_produk) { ?>
-                                                                        <li><a href="<?= base_url() ?>subkategori_pintu/<?php echo $subcat->id_subkategori_produk ?>"><?php echo $subcat->nama_subkategori ?></a></li>
+                                                                        <li><a href="<?= base_url() ?>product_pintu/<?php echo $subcat->id_subkategori_produk ?>"><?php echo $subcat->nama_subkategori ?></a></li>
                                                                     <?php } ?>
                                                                 <?php } ?>
                                                             </ul>
@@ -251,8 +262,9 @@
                                         </div>
 
                                     </div>
+
                                     <br></br>
-                                    <div class="ps-widget__content ">
+                                    <!-- <div class="ps-widget__content">
                                         <div class="widget-products widget">
                                             <h4 class="widget__title">TIPE </h4>
                                             <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
@@ -273,7 +285,27 @@
                                                 <?php } ?>
                                             </div>
                                         </div>
+                                    </div> -->
+                                    <div class="ps-widget__content">
+                                        <div class="widget-products widget">
+                                            <h4 class="widget-title">Tipe</h4>
+                                            <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
+                                                <?php $query = $this->db->query('SELECT * FROM tbl_produk_varian WHERE produk_id="9" group by varian_type
+                                                                ');
+                                                foreach ($query->result_array() as $kat) {
+                                                ?>
+                                                    <div class="form-check" style="padding-left: 10px;">
+                                                        <label>
+                                                            <input class="common_selector storage" type="checkbox">
+                                                            <?= $kat['varian_type'] ?></BR>
+                                                        </label>
+                                                    </div>
+
+                                                <?php } ?>
+                                            </div>
+                                        </div>
                                     </div>
+
                                 </aside>
                             </div>
                         </div>
@@ -332,7 +364,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="section-heading">
-                                            <h2>Our Latest Products</h2>
+                                            <h2>Products Door</h2>
                                             <span>Check out all of our products.</span>
                                             <hr style="margin-bottom: 25px;width: 25%; border: 0.5px solid #e24545">
                                         </div>
@@ -376,19 +408,19 @@
                                         <?php } ?>
                                     </div> -->
 
+
+
                                     <div class="row">
-                                        <!-- <h1 class="h-subtitle h-m-title pb-40">
-                                            <?= strtoupper($varian[0]->produk_nama) ?>
-                                        </h1> -->
 
                                         <?php $brand_data = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
                                                                 a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
                                                                 INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="9"
                                                                 GROUP BY a.varian_nama')->result_array(); ?>
 
+
+
+
                                         <?php foreach ($brand_data as $kat) { ?>
-
-
                                             <div class="col-lg-4">
                                                 <div class="item">
                                                     <div class="thumb">
@@ -415,6 +447,7 @@
                                         <?php
                                         } ?>
                                     </div>
+
 
                                 </div>
                             </div>
