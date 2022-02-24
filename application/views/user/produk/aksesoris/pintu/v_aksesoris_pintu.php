@@ -242,17 +242,17 @@ $this->load->view('user/header', $meta) ?>
                         </div> -->
 
                         <center>
-                            <span class="h-subtitle h-m-title" style="padding-bottom: 10px;" id="plafon"><strong>Jenis-Jenis Pintu Aksesoris</strong></span>
+                            <span class="h-subtitle h-m-title" style="padding-bottom: 10px;" id="plafon"><strong>Macam-Macam Aksesoris Pintu</strong></span>
                         </center>
                         <hr style="margin-bottom: 25px;width: 15%; border: 0.5px solid #e24545">
                         <div class="row pb-40">
                             <?php if ($this->agent->is_mobile()) : ?>
                                 <div class="col-sm-12 col-xs-12 gallery-popup">
-                                    <img src="<?= base_url('assets/user/images/kategori/produk/kategori/aksesoris/acc-pintu-m.jpg') ?>">
+                                    <img src="<?= base_url('assets/images/ourproduk/produk/aksesoris/acc-pintu-m.jpg') ?>">
                                 </div>
                             <?php else : ?>
                                 <div class="col-md-12 pb-20 gallery-popup">
-                                    <img class="" src="<?= base_url('assets/user/images/kategori/produk/aksesoris/acc-pintu.jpg') ?>">
+                                    <img class="" src="<?= base_url('assets/images/ourproduk/produk/aksesoris/acc-pintu.jpg') ?>">
                                 </div>
                             <?php endif; ?>
                         </div>

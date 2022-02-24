@@ -100,7 +100,6 @@
     </div>
     <!-- ***** Main Banner Area End ***** -->
 
-
     <!-- ***** Products Area Starts ***** -->
     <!-- <section class="section" id="products">
         <div class="container">
@@ -250,7 +249,10 @@
                                                             <ul>
                                                                 <?php foreach ($data1->result() as $subcat) { ?>
                                                                     <?php if ($subcat->id_kategori_produk == $maincat->id_kategori_produk) { ?>
-                                                                        <li><a href="<?= base_url() ?>product_pintu/<?php echo $subcat->id_subkategori_produk ?>"><?php echo $subcat->nama_subkategori ?></a></li>
+
+                                                                        <li><a href="<?= base_url('order/product_pintu/' . $subcat->id_subkategori_produk) ?>">
+                                                                                <?php echo $subcat->nama_subkategori ?></a></li>
+
                                                                     <?php } ?>
                                                                 <?php } ?>
                                                             </ul>
@@ -264,33 +266,12 @@
                                     </div>
 
                                     <br></br>
-                                    <!-- <div class="ps-widget__content">
-                                        <div class="widget-products widget">
-                                            <h4 class="widget__title">TIPE </h4>
-                                            <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
-                                                <?php $query = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
-                                                                a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
-                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="9"
-                                                                GROUP BY a.varian_nama
-                                                                ');
-                                                foreach ($query->result_array() as $kat) {
-                                                ?>
-                                                    <div class="form-check" style="padding-left: 10px;">
-                                                        <label>
-                                                            <input class="common_selector storage" type="checkbox">
-                                                            <?= $kat['varian_nama'] ?></BR>
-                                                        </label>
-                                                    </div>
 
-                                                <?php } ?>
-                                            </div>
-                                        </div>
-                                    </div> -->
                                     <div class="ps-widget__content">
                                         <div class="widget-products widget">
                                             <h4 class="widget-title">Tipe</h4>
                                             <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
-                                                <?php $query = $this->db->query('SELECT * FROM tbl_produk_varian WHERE produk_id="9" group by varian_type
+                                                <?php $query = $this->db->query('SELECT * FROM tbl_produk_varian WHERE produk_id="1" group by varian_type
                                                                 ');
                                                 foreach ($query->result_array() as $kat) {
                                                 ?>
@@ -407,18 +388,11 @@
 
                                         <?php } ?>
                                     </div> -->
-
-
-
                                     <div class="row">
-
                                         <?php $brand_data = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
                                                                 a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
-                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="9"
+                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="1"
                                                                 GROUP BY a.varian_nama')->result_array(); ?>
-
-
-
 
                                         <?php foreach ($brand_data as $kat) { ?>
                                             <div class="col-lg-4">
@@ -446,10 +420,21 @@
 
                                         <?php
                                         } ?>
+                                        <?php if ($brand_data != NUll) { ?>
+                                            <?php echo $this->pagination->create_links(); ?>
+                                        <?php } else { ?>
+                                            <p>There are no product available......please check again thanks brother</p>
+                                        <?php } ?>
+
+
+
                                     </div>
 
 
                                 </div>
+
+
+
                             </div>
                         </section>
                     <?php endif; ?>
@@ -458,7 +443,9 @@
             </div>
         </div>
     </section>
-    <!-- ***** Products Area Ends ***** -->
+
+
+
 
     <!-- ***** Footer Start ***** -->
     <footer>
@@ -567,6 +554,11 @@
             });
         });
     </script>
+
+
+
+
+
 
 </body>
 

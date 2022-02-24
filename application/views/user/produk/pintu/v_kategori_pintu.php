@@ -7,6 +7,7 @@ $this->load->view('user/header', $meta) ?>
     <div class="ps-section--features-product ps-section masonry-root pb-40 bg-grey">
         <div class="ps-container">
             <div class="row pb-50 pt-50">
+
                 <?php if (!$this->agent->is_mobile()) : ?>
                     <!-- desktop view sidebar -->
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 bg-white shd">
@@ -307,8 +308,8 @@ $this->load->view('user/header', $meta) ?>
 
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#testsp2"><a href="<?= base_url('kategori/s-plus-pintu/upvc') ?>"><b>PINTU UPVC</b></a>
                                                 <ul id="testsp2" class="panel-collapse collapse">
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-pintu#felice') ?>">Felice</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-pintu#sash') ?>">Sash Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-pintu/upvc_felice') ?>">Felice</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-upvc-pintu/upvc_sash') ?>">Sash Door</a></li>
                                                 </ul>
 
 
@@ -349,7 +350,7 @@ $this->load->view('user/header', $meta) ?>
                                     <li class="panel-title" data-toggle="collapse" data-target="#test3">
                                         <a href="<?= base_url('kategori/s-plus-interior-material') ?>"><b>INTERIOR MATERIAL</b></a>
                                         <ul id="test3" class="panel-collapse collapse">
-                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp5"><a href="<?= base_url('kategori/s-plus-interior-material/plafon_upvc') ?>"><b>PLAFON UPVC</b></a>
+                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp5"><a href="<?= base_url('kategori/s-plus-interior-material_upvc') ?>"><b>PLAFON UPVC</b></a>
                                                 <ul id="testsp5" class="panel-collapse collapse">
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material#polos') ?>">Plafon Polos</a></li>
                                                     <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material#laminate') ?>">Plafon Laminate</a></li>
@@ -389,12 +390,12 @@ $this->load->view('user/header', $meta) ?>
                                     </li>
 
                                     <li class="panel-title " data-toggle="collapse" data-target="#test4">
-                                        <a href="<?= base_url('kategori/s-plus-exterior-material') ?>"><b>EXTERIOR MATERIAL</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-wpc/wpc') ?>"><b>EXTERIOR MATERIAL</b></a>
                                         <ul id="test4" class="panel-collapse collapse">
-                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp9"><a href="<?= base_url('kategori/s-plus-exterior-material/wpc_kategori') ?>"><b>WPC</b></a>
+                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp9"><a href="<?= base_url('kategori/s-plus-wpc/wpc_kategori') ?>"><b>WPC</b></a>
                                                 <ul id="testsp9" class="panel-collapse collapse">
-                                                    <li class="sm"><a href="deck-tile">Deck Tile</a></li>
-                                                    <li class="sm"><a href="wall-partition">Wall Partition</a></li>
+                                                    <li class="sm"><a href="#deck">Deck Tile</a></li>
+                                                    <li class="sm"><a href="#wall">Wall Partition</a></li>
                                                 </ul>
                                             </li>
                                             <li class="sm"><a href='https://sinargarden.com/parasol'><b>PARASOL</b></a></li>
@@ -409,14 +410,32 @@ $this->load->view('user/header', $meta) ?>
                                         </ul>
                                     </li>
 
-                                    <li class="title " data-toggle="collapse" data-target="#uu">
-                                        <a href="<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>"><b>AKSESORIS</b></a>
+                                    <li class="panel-title" data-toggle="collapse" data-target="#aks1">
+                                        <a href="<?= base_url('kategori/s-plus-aksesoris') ?>"><b>AKSESORIS</b>
+                                        </a>
+                                        <ul id="aks1" class="panel-collapse collapse">
+                                            <!-- <li class="sm panel-title" data-toggle="collapse" data-target="#aks2"><a href="<?= base_url('kategori/s-plus-pintu/abs') ?>"><b>PINTU</b></a>
+                                                <ul id="aks2" class="panel-collapse collapse">
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/classic') ?>">Handle & Mortise</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/fortebello') ?>">Hinge</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/art-door') ?>">Kusen Pintu</a></li>
+
+                                                </ul>
+                                            </li> -->
+                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-aksesoris/aksesoris_pintu') ?>"><b>PINTU</b></a></li>
+                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-aksesoris/aksesoris_aoutomatic') ?>"><b>AUTOMATIC</b></a></li>
+                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-aksesoris/aksesoris_cubicle') ?>"><b>CUBICLE</b></a></li>
+                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-aksesoris/aksesoris_jendela') ?>"><b>JENDELA</b></a></li>
+                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-aksesoris/aksesoris_kitchenset') ?>"><b>KITCHEN SET</b></a></li>
+                                        </ul>
                                     </li>
+
                                 </ul>
                             </div>
                         </aside>
                     </div>
                 <?php endif; ?>
+
                 <!-- desktop view cotent -->
 
                 <div class=" col-md-9">

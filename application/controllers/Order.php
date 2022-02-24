@@ -12,6 +12,7 @@ class Order extends CI_Controller
     public function index()
     {
         // $this->load->view('user/order/index');
+
         $a = array(
             "page"  => "Order Page"
         );
@@ -34,25 +35,24 @@ class Order extends CI_Controller
 
     //filter
 
-    public function subkategori_window()
-    {
 
-        $this->load->view('ecommerce/v_product_window');
+    function product_pintu($id_subkategori_produk)
+    {
+        // $data = array(
+        //     'brand_data' => $this->M_order->post_sub()
+        // );
+        // $this->load->view('ecommerce/v_product_pintu', $data);
+
+        $data['brand_data'] = $this->M_order->post_sub($id_subkategori_produk);
+        $this->load->view('ecommerce/filter/v_product_pintu', $data);
     }
 
-    // public function subkategori_pintu()
-    // {
-    //     $data['brand_data'] = $this->M_order->post_sub();
-    //     $this->load->view('ecommerce/v_product_pintu', $data); 
-    // }
 
-    function subkategori_pintu()
+
+
+    public function subkategori_window()
     {
-        $data = array(
-            'brand_data' => $this->M_order->post_sub()
-        );
-
-        $this->load->view('ecommerce/v_product_pintu', $data);
+        $this->load->view('ecommerce/v_product_window');
     }
 
     public function subkategori_interior()

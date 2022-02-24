@@ -26,14 +26,14 @@ $this->load->view('user/header', $meta) ?>
                                 </div>
                                 <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
 
-                                    <div style="background-color:#000000;">
+                                    <!-- <div style="background-color:#000000;">
                                         <img data-u="image" src="<?= base_url('assets/user/images/kategori/splus-namo/banner/Laminate door.jpg') ?>" />
-                                    </div>
+                                    </div> -->
 
                                     <div style="background-color:#000000;">
                                         <img data-u="image" src="<?= base_url('assets/user/images/kategori/splus-namo/banner/ECO door.jpg') ?>" />
                                     </div>
-                                    <div style="background-color:#000000;">
+                                    <!-- <div style="background-color:#000000;">
                                         <img data-u="image" src="<?= base_url('assets/user/images/kategori/splus-namo/banner/Veneer Solid door.jpg') ?>" />
                                     </div>
 
@@ -42,7 +42,7 @@ $this->load->view('user/header', $meta) ?>
                                     </div>
                                     <div style="background-color:#000000;">
                                         <img data-u="image" src="<?= base_url('assets/user/images/kategori/splus-namo/banner/ART door.jpg') ?>" />
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <!-- Bullet Navigator -->
                                 <div data-u="navigator" class="jssorb031" style="position:absolute;bottom:16px;right:16px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
@@ -71,19 +71,34 @@ $this->load->view('user/header', $meta) ?>
                         <span class="h-body h-m-body">
                             <!--ECO DOOR-->
                             <div class="row pb-20" style="padding-bottom:10px;">
-                                <center>
-                                    <span class="h-subtitle h-m-title" id="eco-door">ECO DOOR</span>
-                                    <hr style="margin-bottom: 25px;width: 10%; border: 0.5px solid #e24545">
-                                </center>
-                                <div style="padding-left:15px; padding-bottom:25px; padding-right:15px;">
-                                    <span class="h-body h-m-body">
-                                        <b>ECO Door</b> adalah pintu ekonomis yang menggunakan struktur rangka kayu dan di produksi secara pabrikasi menggunakan mesin
-                                        kekuatan press 50 Ton dan finishing cat. Keunggulan pintu NAMO Eco Door, pada bagian bawah menggunakan cover WPC, sehingga
-                                        tahan terhadap air.
-                                    </span>
+                                <div class="row pb-20" style="padding-bottom:10px;">
+                                    <center>
+                                        <span class="h-subtitle h-m-title" id="eco-door">ECO DOOR</span>
+                                        <hr style="margin-bottom: 25px;width: 10%; border: 0.5px solid #e24545">
+                                    </center>
+                                    <div style="padding-left:15px; padding-bottom:25px; padding-right:15px;">
+                                        <span class="h-body h-m-body">
+                                            <b>ECO Door</b> adalah pintu ekonomis yang menggunakan struktur rangka kayu dan di produksi secara pabrikasi menggunakan mesin
+                                            kekuatan press 50 Ton dan finishing cat. Keunggulan pintu NAMO Eco Door, pada bagian bawah menggunakan cover WPC, sehingga
+                                            tahan terhadap air.
+                                        </span>
+                                    </div>
+                                    <div class="col-md-12 col-sm-12 col-xs-12 pt-40" style="padding-top:15px;">
+                                        <span class="h-subtitle h-m-title" style="padding-bottom: 5px; font-size: 18px;">Struktur ECO DOOR</span> <br>
+                                        <?php if ($this->agent->is_mobile()) : ?>
+                                            <div class="col-sm-12 col-xs-12 gallery-popup">
+                                                <img src="<?= base_url('assets/user/images/kategori/splus-namo/eco-door/struktur-m.jpg') ?>">
+                                            </div>
+                                        <?php else : ?>
+                                            <div class="col-md-12 pb-40 gallery-popup">
+                                                <!-- gambar produk -->
+                                                <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/eco-door/struktur.jpg') ?>">
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
                                 </div>
                                 <div class="col-md-12 col-sm-12 col-xs-12 pt-40" style="padding-top:15px;">
-                                    <span class="h-subtitle h-m-title" style="padding-bottom: 5px; font-size: 18px;">Struktur ECO DOOR</span> <br>
+                                    <span class="h-subtitle h-m-title" style="padding-bottom: 5px; font-size: 18px;">Pilihan Motif ECO Door</span> <br>
                                     <?php if ($this->agent->is_mobile()) : ?>
                                         <div class="col-sm-12 col-xs-12 gallery-popup">
                                             <!-- <img src="<?= base_url('assets/user/images/kategori/splus-namo/eco-door/struktur-m.jpg') ?>"> -->

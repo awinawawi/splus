@@ -150,8 +150,9 @@
                 <ul class="float-menu-items">
                     <li id="upvc"><a href="<?= base_url('kategori/s-plus-pintu') ?>">PINTU</a></li>
                     <li id="namo"><a href="<?= base_url('kategori/s-plus-upvc-jendela') ?>">JENDELA</a></li>
-                    <li id="plafon"><a href="<?= base_url('kategori/s-plus-interior-material') ?>">INLIFE</a></li>
-                    <li id="wpc"><a href="<?= base_url('kategori/s-plus-wpc/wpc') ?>">OUTLIFE</a></li>
+                    <li id="plafon"><a href="<?= base_url('kategori/s-plus-interior-material') ?>">INTERIOR MATERIALS</a></li>
+                    <li id="wpc"><a href="<?= base_url('kategori/s-plus-wpc/wpc') ?>">EXTERIOR MATERIALS</a></li>
+                    <li id="wpc"><a href="<?= base_url('kategori/s-plus-face-mask') ?>">MASKER</a></li>
                     <li id="wpc"><a href="<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>">AKSESORIS</a></li>
                 </ul>
             </div>

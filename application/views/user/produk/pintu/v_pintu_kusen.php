@@ -209,7 +209,7 @@ $this->load->view('user/header', $meta) ?>
                 <div class="col-lg-12">
                     <div class="ps-box pb-40 pt-20 pl-20 pr-20 bg-white shd">
                         <div class="">
-                            <img src="<?= base_url('assets/user/images/kategori/splus-kusen/kusen1.jpg') ?>" class="pb-20">
+                            <img src="<?= base_url('assets/user/images/kategori/splus-kusen/kusen.jpg') ?>" class="pb-20">
                         </div>
                         <div class="">
                             <center>
@@ -237,7 +237,7 @@ $this->load->view('user/header', $meta) ?>
                             </div>
                             <div class="row pt-40">
                                 <center>
-                                    <a href="<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>" class="ps-btn">Lihat Aksesoris</a>
+                                    <a href="<?= base_url('kategori/s-plus-aksesoris/aksesoris_pintu') ?>" class="ps-btn">Kembali</a>
                                 </center>
                             </div>
                         </div>
@@ -247,7 +247,7 @@ $this->load->view('user/header', $meta) ?>
         </div>
     </div>
 
-    // <script>
+    <script>
         //     $('.closee').next('ul').hide();
         //     $(".closee").click(function(){
         //       $(this).next("ul").toggle();

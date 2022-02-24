@@ -26,7 +26,9 @@ $route['contact']               = 'homepage/contact';
 $route['about_us']              = 'homepage/about_us';
 $route['testimoni']             = 'homepage/testimoni';
 
-$route['subkategori_pintu/(:any)']     = 'order/subkategori_pintu';
+
+
+
 $route['subkategori_window/(:any)']    = 'order/subkategori_window';
 $route['subkategori_interior/(:any)']  = 'order/subkategori_interior';
 $route['subkategori_exterior/(:any)']  = 'order/subkategori_exterior';
@@ -46,6 +48,7 @@ $route['kebijakan-privasi']     = 'homepage/kebijakan_privasi';
 $route['syarat-ketentuan']      = 'homepage/syarat_ketentuan';
 $route['faq']                   = 'homepage/faq';
 $route['karir']                 = 'homepage/karir';
+$route['register']              = 'homepage/register';
 
 
 // Transaksi

@@ -61,10 +61,10 @@ $this->load->view('user/header', $meta) ?>
                         </span>
                         <br>
                         <span class="animated fadeInDown delay-2s c-body">
-                            PVC BERKUALITAS
+                            UPVC BERKUALITAS
                         </span>
                         <br><br>
-                        <a href="<?= base_url('kategori/s-plus-jendela') ?>" class="btn btn-primary animated fadeInDown delay-2s">SELENGKAPNYA</a>
+                        <a href="<?= base_url('kategori/s-plus-upvc-jendela') ?>" class="btn btn-primary animated fadeInDown delay-2s">SELENGKAPNYA</a>
                     </div>
                 </div>
                 <div class="item">
@@ -78,7 +78,7 @@ $this->load->view('user/header', $meta) ?>
                             WPC KUALITAS TERBAIK
                         </span>
                         <br><br>
-                        <a href="<?= base_url('kategori/s-plus-wpc') ?>" class="btn btn-primary animated fadeInDown delay-2s">SELENGKAPNYA</a>
+                        <a href="<?= base_url('kategori/s-plus-wpc/wpc_kategori') ?>" class="btn btn-primary animated fadeInDown delay-2s">SELENGKAPNYA</a>
                     </div>
                 </div>
                 <div class="item">
@@ -92,7 +92,7 @@ $this->load->view('user/header', $meta) ?>
                             RINGAN DAN AWET
                         </span>
                         <br><br>
-                        <a href="<?= base_url('kategori/s-plus-plafon') ?>" class="btn btn-primary animated fadeInDown delay-2s">SELENGKAPNYA</a>
+                        <a href="<?= base_url('kategori/s-plus-interior-material/plafon_upvc') ?>" class="btn btn-primary animated fadeInDown delay-2s">SELENGKAPNYA</a>
                     </div>
                 </div>
                 <div class="item">
@@ -106,7 +106,7 @@ $this->load->view('user/header', $meta) ?>
                             HALUS DAN KOKOH
                         </span>
                         <br><br>
-                        <a href="<?= base_url('kategori/s-plus-solid-surface') ?>" class="btn btn-primary animated fadeInDown delay-2s">SELENGKAPNYA</a>
+                        <a href="<?= base_url('kategori/s-plus-solid-surface/solid') ?>" class="btn btn-primary animated fadeInDown delay-2s">SELENGKAPNYA</a>
                     </div>
                 </div>
             </div>
@@ -132,8 +132,6 @@ $this->load->view('user/header', $meta) ?>
         </div>
     <?php endif; ?>
     <br><br><br><br>
-
-
 
     <div>
         <?php if ($this->agent->is_mobile()) : ?>
@@ -187,127 +185,6 @@ $this->load->view('user/header', $meta) ?>
             </div>
         <?php endif; ?>
     </div>
-
-
-    <!-- <div class="page-section">
-        <div class="container">
-            <div class="text-center">
-                <Center>
-                    <h1 class="title-section"><b>OUR PRODUCT</b><span class="fg-danger"><b>S-PLUS INDONESIA</b></span></h1>
-                </center>
-            </div>
-            <?php if ($this->agent->is_mobile()) : ?>
-                <div class="row pt-20">
-                    <div class="col-sm-4 col-xs-4">
-                        <a href="<?= base_url('kategori/s-plus-pintu') ?>">
-                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/pintu.webp') ?>" alt="S-Plus Pintu">
-                            <div class="h-box">
-                                <div class="h-box-title"><b>PINTU</b></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-4 col-xs-4">
-                        <a href="<?= base_url('kategori/s-plus-upvc-jendela') ?>">
-                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/jendela.webp') ?>" alt="S-Plus jendela">
-                            <div class="h-box">
-                                <div class="h-box-title"><b>JENDELA</b></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-4 col-xs-4">
-                        <a href="<?= base_url('kategori/s-plus-interior-material') ?>">
-                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/plafon.webp') ?>" alt="S-Plus Plafon">
-                            <div class="h-box">
-                                <div class="h-box-title"><b>INLIFE</b></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-4 col-xs-4">
-                        <a href="<?= base_url('kategori/s-plus-wpc') ?>">
-                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/wpc.webp') ?>" alt="S-Plus WPC">
-                            <div class="h-box">
-                                <div class="h-box-title"><b>OUTLIFE</b></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-4 col-xs-4">
-                        <a href="<?= base_url('kategori/s-plus-face-mask') ?>">
-                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/masker.jpg') ?>" alt="S-Plus Sun Shade">
-                            <div class="h-box">
-                                <div class="h-box-title"><b>MASKER</b></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-sm-4 col-xs-4">
-                        <a href="<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>">
-                            <img loading="lazy" src="<?= base_url('assets/user/images/banner/namo.webp') ?>" width="100x100" alt="S-Plus IROOM">
-                            <div class="h-box">
-                                <div class="h-box-title"><b>AKSESORIS</b></div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-            <?php else : ?>
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-                        <div class="text-center">
-                            <div class="img-fluid mb-4" onclick="window.location.href = '<?= base_url('kategori/s-plus-pintu') ?>'">
-                                <img loading=" lazy" src="<?= base_url('assets/user/images/banner/pintu.webp') ?>" class="scl zoom-in" alt="S-Plus Pintu">
-                            </div>
-                            <div class="h-box-title"><b>PINTU</b></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-                        <div class="text-center">
-                            <div class="img-fluid mb-4" onclick="window.location.href = '<?= base_url('kategori/s-plus-upvc-jendela') ?>'">
-                                <img loading="lazy" src="<?= base_url('assets/user/images/banner/jendela.webp') ?>" class="scl zoom-in" alt="S-Plus Jendela">
-                            </div>
-                            <div class="h-box-title"><b>JENDELA</b></div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-                        <div class="text-center">
-                            <div class="img-fluid mb-4" onclick="window.location.href = '<?= base_url('kategori/s-plus-kitchen-set') ?>'">
-                                <img loading="lazy" src="<?= base_url('assets/user/images/banner/plafon.webp') ?>" class="scl zoom-in" alt="S-Plus Plafon">
-                            </div>
-                            <div class="h-box-title"><b>INSIDE BUILDING</b></div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-                        <div class="text-center">
-                            <div class="img-fluid mb-4" onclick="window.location.href = '<?= base_url('kategori/s-plus-wpc/wpc') ?>'">
-                                <img loading="lazy" src="<?= base_url('assets/user/images/banner/plafon.webp') ?>" class="scl zoom-in" alt="S-Plus Plafon">
-                            </div>
-                            <div class="h-box-title"><b>OUTSIDE BUILDING</b></div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-                        <div class="text-center">
-                            <div class="img-fluid mb-4" onclick="window.location.href = '<?= base_url('kategori/s-plus-face-mask') ?>'">
-                                <img loading="lazy" src="<?= base_url('assets/user/images/banner/masker.jpg') ?>" class="scl zoom-in" alt="S-Plus Pintu">
-                            </div>
-                            <div class="h-box-title"><b>MASKER</b></div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-                        <div class="text-center">
-                            <div class="img-fluid mb-4" onclick="window.location.href = '<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>'">
-                                <img loading="lazy" src="<?= base_url('assets/user/images/banner/namo.webp') ?>" class="scl zoom-in" alt="S-Plus Pintu">
-                            </div>
-                            <div class="h-box-title"><b>AKSESORIS</b></div>
-                        </div>
-                    </div>
-
-                </div>
-            <?php endif; ?>
-        </div>
-    </div> -->
-
-
 
     <div>
         <?php if ($this->agent->is_mobile()) : ?>

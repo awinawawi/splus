@@ -9,6 +9,7 @@ class Administrator extends CI_Controller
     function index()
     {
         $this->load->view('admin/v_login');
+        // $this->load->view('user/login');
     }
     function auth()
     {

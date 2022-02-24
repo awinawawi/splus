@@ -592,8 +592,7 @@ $this->load->view('user/header', $meta) ?>
                                     </header>
                                     <footer>
                                         <p style="font-size: 20px; font-weight:500; font: 'Montserrat'; margin-bottom:0px"><i class="fa fa-home"></i>Jl. Raya Jemursari No. 2F & 2G,Surabaya</p>
-                                        <p style="font-size: 20px; font-weight:500; font: 'Montserrat'; margin-bottom:0px"><i class="fa fa-phone"></i>(031) 99853335<br></p>
-                                        <p style="font-size: 20px; font-weight:500; font: 'Montserrat'; margin-bottom:0px"><i class="fa fa-phone"></i>+62812-3120-0088<br></p>
+                                        <p style="font-size: 20px; font-weight:500; font: 'Montserrat'; margin-bottom:0px"><i class="fa fa-phone"></i>(031) 99853335<br>
                                         <p style="font-size: 20px; font-weight:500; font: 'Montserrat'; margin-bottom:0px"></p>
                                         <a href="<?= base_url('hubungi-kami/gallery-surabaya1') ?>" class="ps-btn" style="padding-left:5px; font-size: 20px; font-weight:500; font: 'Montserrat'; float:right; margin-top:-60px">
                                             <i class="fa fa-arrow-circle-right"></i> More

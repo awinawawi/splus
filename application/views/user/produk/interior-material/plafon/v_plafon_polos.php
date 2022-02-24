@@ -95,7 +95,7 @@ $this->load->view('user/header', $meta) ?>
                             </div>
                         </div>
                         <center>
-                            <span class="h-subtitle h-m-title" style="padding-bottom: 10px;" id="plafon"><strong>JENIS-JENIS PLAFON</strong></span>
+                            <span class="h-subtitle h-m-title" style="padding-bottom: 10px;" id="plafon"><strong>PLAFON POLOS</strong></span>
                         </center>
                         <hr style="margin-bottom: 25px;width: 15%; border: 0.5px solid #e24545">
                         <div class="row pb-40">

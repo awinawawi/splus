@@ -25,7 +25,7 @@ $this->load->view('user/header', $meta) ?>
                                 </div>
                                 <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
 
-                                    <div style="background-color:#000000;">
+                                    <!-- <div style="background-color:#000000;">
                                         <img data-u="image" src="<?= base_url('assets/user/images/kategori/splus-namo/banner/Laminate door.jpg') ?>" />
                                     </div>
 
@@ -38,7 +38,8 @@ $this->load->view('user/header', $meta) ?>
 
                                     <div style="background-color:#000000;">
                                         <img data-u="image" src="<?= base_url('assets/user/images/kategori/splus-namo/banner/Timber Joint door.jpg') ?>" />
-                                    </div>
+                                    </div> -->
+
                                     <div style="background-color:#000000;">
                                         <img data-u="image" src="<?= base_url('assets/user/images/kategori/splus-namo/banner/ART door.jpg') ?>" />
                                     </div>
@@ -65,35 +66,9 @@ $this->load->view('user/header', $meta) ?>
                             </div>
                         </div>
                         <br></br>
-                        <br></br>
-                        <!--Namo Engineering Door-->
-                        <span class="h-body h-m-body">
-                            <div class="row pb-20">
-                                <center>
-                                    <span class="h-subtitle h-m-title">NAMO ENGINEERING DOOR </span>
-                                    <hr style="margin-bottom: 15px;width: 40%; border: 0.5px solid #e24545">
-                                </center>
-                                <div style="padding-left:15px; padding-bottom:25px; padding-right:15px;">
-                                    <span class="h-body h-m-body">
-                                        NAMO Engineering Door merupakan pintu yang diproduksi dengan menggunakan bahan kayu olahan
-                                        dan teknik modern / mesin sehingga dihasilkan suatu produk pintu yang memiliki keunggulan dari pada
-                                        pintu kayu konvensional pada umumnya.
-                                    </span>
-                                </div>
-                                <?php if ($this->agent->is_mobile()) : ?>
-                                    <div class="col-sm-12 col-xs-12 gallery-popup" style="padding-bottom:5px;">
-                                        <img src="<?= base_url('assets/user/images/kategori/splus-namo/namo-m.jpg') ?>">
-                                    </div>
-                                <?php else : ?>
-                                    <div class="col-md-12 pb-40 gallery-popup" style="padding-bottom:5px;">
-                                        <!-- gambar produk -->
-                                        <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/namo.jpg') ?>">
-                                    </div>
-                                <?php endif; ?>
-                            </div>
-                            <hr style="margin-bottom: 25px;width: 95%; border: 0.5px solid #000000">
-                            <!--ART DOOR-->
-                            <div class="row pb-20" style="padding-bottom:20px;">
+                        <!--ART DOOR-->
+                        <div class="row pb-20" style="padding-bottom:20px;">
+                            <div>
                                 <center>
                                     <span class="h-subtitle h-m-title" id="art-door">ART DOOR</span>
                                     <hr style="margin-bottom: 25px;width: 10%; border: 0.5px solid #e24545">
@@ -108,108 +83,44 @@ $this->load->view('user/header', $meta) ?>
                                     <span class="h-subtitle h-m-title" style="padding-bottom: 10px; font-size: 18px;">Struktur ART Door</span>
                                     <?php if ($this->agent->is_mobile()) : ?>
                                         <div class="col-sm-12 col-xs-12 gallery-popup" style="padding-top:10px; padding-left:0px; padding-bottom:10px;">
-                                            <!-- <img src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/struktur-m.jpg') ?>"> -->
-                                            <img src="<?= base_url('assets/user/images/kategori/produk/pintu/web_namo/art-m.jpg') ?>">
+                                            <img src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/struktur-m.jpg') ?>">
                                         </div>
                                     <?php else : ?>
                                         <div class="col-md-12 pb-40 gallery-popup" style="padding-top:10px; padding-left:0px; padding-bottom:10px;">
-                                            <!-- <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/struktur.jpg') ?>"> -->
-                                            <img src="<?= base_url('assets/user/images/kategori/produk/pintu/web_namo/art.jpg') ?>">
+                                            <!-- gambar produk -->
+                                            <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/struktur.jpg') ?>">
                                         </div>
                                     <?php endif; ?>
                                 </div>
-                                <!-- <div class="col-md-12 col-sm-12 col-xs-12 pt-40" style="padding-top:10px;">
-                                        <span class="h-subtitle h-m-title" style="padding-bottom: 10px; font-size: 18px;">Pilihan Warna</span>
-                                        <div style="padding-top:10px;"><img src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/warna.png') ?>" width="400"></div>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12 pt-40" style="padding-top:15px;">
-                                        <span class="h-subtitle h-m-title" style="padding-bottom: 10px; font-size: 18px;">Pilihan Frame Figura (ART Door)</span>
-                                        <?php if ($this->agent->is_mobile()) : ?>
-                                            <div class="col-sm-12 col-xs-12 gallery-popup" style="padding-top:10px; padding-left:0px; padding-bottom:10px;">
-                                                <img src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/frame-m.jpg') ?>">
-                                            </div>
-                                        <?php else : ?>
-                                            <div class="col-md-12 pb-40 gallery-popup" style="padding-top:10px; padding-left:0px; padding-bottom:10px;">
-                                                
-                                                <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/frame.jpg') ?>">
-                                            </div>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="col-md-12 col-sm-12 col-xs-12 pt-40" style="padding-top:35px;">
-                                        <span class="h-subtitle h-m-title" style="padding-bottom: 15px; font-size: 18px;">Ukuran Daun Pintu (Lebar x Tinggi x Tebal)</span>
-                                        <div class="row pb-20" style="padding-top:10px;">
-                                            <div class="col-md-6 col-sm-12 col-xs-12 gallery-popup">
-                                                <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/ukuran1.jpg') ?>">
-                                            </div>
-                                            <div class="col-md-6 col-sm-12 col-xs-12 pt-20" style="padding-top:15px;">
-                                                <span class="h-body h-m-body">
-                                                    - 820 x 2100 x 36 mm <br>
-                                                    - <b>Tersedia Ukuran Costum</b><br>
-                                                </span>
-                                            </div> <br>
-                                        </div>
-                                    </div>
-                                    <?php if ($this->agent->is_mobile()) : ?>
-                                        <div class="col-sm-12 col-xs-12 gallery-popup" style="padding-bottom:10px;">
-                                            <img src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/detail-mat2-m.jpg') ?>">
-                                        </div>
-                                    <?php else : ?>
-                                        <div class="col-md-12 pb-40 gallery-popup" style="padding-bottom:10px;">
-                                         
-                                            <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/detail-mat2.jpg') ?>">
-                                        </div>
-                                    <?php endif; ?>
-                                    <?php if ($this->agent->is_mobile()) : ?>
-                                        <div class="col-sm-12 col-xs-12 gallery-popup" style="padding-bottom:10px;">
-                                            <img src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/detail-nat2-m.jpg') ?>">
-                                        </div>
-                                    <?php else : ?>
-                                        <div class="col-md-12 pb-40 gallery-popup" style="padding-bottom:10px;">
-                                            
-                                            <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/detail-nat2.jpg') ?>">
-                                        </div>
-                                    <?php endif; ?>
-                                    <?php if ($this->agent->is_mobile()) : ?>
-                                        <div class="col-sm-12 col-xs-12 gallery-popup" style="padding-bottom:10px;">
-                                            <img src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/detail-rel2-m.jpg') ?>">
-                                        </div>
-                                    <?php else : ?>
-                                        <div class="col-md-12 pb-40 gallery-popup" style="padding-bottom:10px;">
-                                      
-                                            <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/detail-rel2.jpg') ?>">
-                                        </div>
-                                    <?php endif; ?>
-                                    <?php if ($this->agent->is_mobile()) : ?>
-                                        <div class="col-sm-12 col-xs-12 gallery-popup" style="padding-bottom:10px;">
-                                            <img src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/detail-peo2-m.jpg') ?>">
-                                        </div>
-                                    <?php else : ?>
-                                        <div class="col-md-12 pb-40 gallery-popup" style="padding-bottom:10px;">
-                                       
-                                            <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/detail-peo2.jpg') ?>">
-                                        </div>
-                                    <?php endif; ?>
-                                    <?php if ($this->agent->is_mobile()) : ?>
-                                        <div class="col-sm-12 col-xs-12 gallery-popup" style="padding-bottom:10px;">
-                                            <img src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/detail-car2-m.jpg') ?>">
-                                        </div>
-                                    <?php else : ?>
-                                        <div class="col-md-12 pb-40 gallery-popup" style="padding-bottom:10px;">
-                                         
-                                            <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/detail-car2.jpg') ?>">
-                                        </div>
-                                    <?php endif; ?> -->
                             </div>
-                    </div>
-                    <div class="row pt-40">
-                        <div class="col-md-12 col-sm-6 col-xs-12">
-                            <center><a href="<?= base_url('kategori/s-plus-pintu/namo') ?>" class="ps-btn h-m-body">Kembali</a></center>
-                        </div>
 
+                            <div class="col-md-12 col-sm-12 col-xs-12 pt-40" style="padding-top:25px;">
+                                <span class="h-subtitle h-m-title" style="padding-bottom: 10px; font-size: 18px;">Motif ART Door</span>
+                                <?php if ($this->agent->is_mobile()) : ?>
+                                    <div class="col-sm-12 col-xs-12 gallery-popup" style="padding-top:10px; padding-left:0px; padding-bottom:10px;">
+                                        <!-- <img src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/struktur-m.jpg') ?>"> -->
+                                        <img src="<?= base_url('assets/user/images/kategori/produk/pintu/web_namo/art-m.jpg') ?>">
+                                    </div>
+                                <?php else : ?>
+                                    <div class="col-md-12 pb-40 gallery-popup" style="padding-top:10px; padding-left:0px; padding-bottom:10px;">
+                                        <!-- <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/art-door/struktur.jpg') ?>"> -->
+                                        <img src="<?= base_url('assets/user/images/kategori/produk/pintu/web_namo/art.jpg') ?>">
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="row pt-40">
+                            <div class="col-md-12 col-sm-6 col-xs-12">
+                                <center><a href="<?= base_url('kategori/s-plus-pintu/namo') ?>" class="ps-btn h-m-body">Kembali</a></center>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
+    </div>
     </div>
     </div>
     <?php $this->load->view('user/footer') ?>

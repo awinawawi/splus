@@ -231,7 +231,7 @@ $this->load->view('user/header', $meta) ?>
                                             </a>
                                         </div>
                                         <div class="text-center">
-                                            <div class="text-overlay-ss">CUBICLE</div>
+                                            <div class="text-overlay-ss">LAIN-LAIN</div>
                                         </div>
                                     </div>
                                 </div>

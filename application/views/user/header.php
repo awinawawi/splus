@@ -197,6 +197,16 @@
             }
         }
 
+        @media (max-width:1200px) {
+            .ps-container {
+                width: 1170px
+            }
+
+            .container-fluid {
+                padding: 0 30px
+            }
+        }
+
         body {
             position: relative;
             overflow-x: hidden
@@ -1311,16 +1321,8 @@
 
     <!-- new -->
     <link rel="stylesheet" href="<?= base_url('assets/css/theme.css') ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
-
-
-
-
-
-
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <noscript>
         <link rel="stylesheet" href="<?= base_url('assets/user/css/fonts/narrow.css') ?>">
@@ -1456,9 +1458,9 @@
                     <div class="navigation__column center" style="padding-left: 10px; width:90%">
                         <ul class="main-menu menu">
                             <li><a href="<?= base_url() ?>"><i class="fa fa-home fa-lg"></i></a></li>
-                            <li><a href="<?= base_url('tentang-kami') ?>">Tentang Kami </a></li>
+                            <li><a href="<?= base_url('tentang-kami') ?>">Tentang Kami</a></li>
                             <li><a href="<?= base_url('v_kategori') ?>">Produk</a></li>
-                            <li><a href="<?= base_url('e-katalog') ?>"><span style="text-transform: lowercase;">E</span>-Katalog</a></li>
+                            <li><a href="<?= base_url('e-katalog') ?>"><span style="">E</span>-Katalog</a></li>
                             <!-- <li><a href='https://localhost/splus_ecommerce'>e-commerce</a></li> -->
                             <li><a href="<?= base_url('Ecommerce') ?>">e-commerce</a></li>
                             <!-- <li><a href="<?= base_url('administrator') ?>">Login</a></li> -->
@@ -1468,5 +1470,5 @@
 
             </div>
         </nav>
-        </style>
     </header>
+</body>

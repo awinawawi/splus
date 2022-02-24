@@ -18,7 +18,7 @@ class Homepage extends CI_Controller
 
 	public function index()
 	{
-		// 		$x['produk'] 	= $this->M_produk->get_new_product();
+		// $x['produk'] 	= $this->M_produk->get_new_product();
 		$x['paginasi']	= $this->paginasi(12);
 		$this->load->view('user/home', $x);
 	}
@@ -319,7 +319,7 @@ class Homepage extends CI_Controller
 
 	public function Ecommerce()
 	{
-		// $this->load->view('user/v_perbaikan');
+
 		$this->load->view('ecommerce/v_ecommerce');
 	}
 
@@ -372,6 +372,11 @@ class Homepage extends CI_Controller
 	public function testimoni()
 	{
 		$this->load->view('ecommerce/v_testimoni');
+	}
+
+	public function register()
+	{
+		$this->load->view('ecommerce/register');
 	}
 
 	//----------End-------------//

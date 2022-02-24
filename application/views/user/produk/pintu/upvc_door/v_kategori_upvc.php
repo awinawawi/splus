@@ -1,5 +1,5 @@
 <?php
-$meta['title']          = 'Pintu ABS - S-Plus Indonesia';
+$meta['title']          = 'Pintu UPVC - S-Plus Indonesia';
 $meta['description']    = 'S-Plus Pintu menjadikan ruangan Anda menjadi nyaman dan penuh ketenangan yang dipancarkan oleh berbagai macam warna dan tekstur yang khas. Dengan tekstur kayu yang sangat mirip dengan kayu yang sebenarnya memberi kesan keindahan yang alami.';
 $meta['keywords']       = 'pintu abs, jual pintu abs, jual pintu abs murah, jual pintu abs berkualitas, jual pintu abs terbaik, pintu abs murah, pintu abs minimalis, pintu abs elegan, pintu abs terbaik, pintu abs berkualitas, pintu abs s plus, pintu abs vs upvc';
 $this->load->view('user/header', $meta) ?>
@@ -50,11 +50,11 @@ $this->load->view('user/header', $meta) ?>
                                             </li>
                                             <li class="sm panel-title" data-toggle="collapse" data-target="#testsp3"><a href="<?= base_url('kategori/s-plus-pintu/namo') ?>"><b>PINTU NAMO</b></a>
                                                 <ul id="testsp3" class="panel-collapse collapse">
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu/namo_laminate') ?>">Laminate Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu/namo_eco') ?>">ECO Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu/namo_vaneer') ?>">Veneer Solid Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu/namo_timber') ?>">Timber Joint Door</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu/namo_artdoor') ?>">ART Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#laminate-door') ?>">Laminate Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#eco-door') ?>">ECO Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#veneer-solid-door') ?>">Veneer Solid Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#timber-joint-door') ?>">Timber Joint Door</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-namo-pintu#art-door') ?>">ART Door</a></li>
                                                 </ul>
                                             </li>
                                             <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/iroom_door') ?>"><b>PINTU IROOM</b></a></li>
@@ -84,11 +84,11 @@ $this->load->view('user/header', $meta) ?>
                                     <li class="panel-title" data-toggle="collapse" data-target="#test3">
                                         <a href="<?= base_url('kategori/s-plus-interior-material') ?>"><b>INTERIOR MATERIAL</b></a>
                                         <ul id="test3" class="panel-collapse collapse">
-                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp5"><a href="<?= base_url('kategori/s-plus-interior-material/plafon_upvc') ?>"><b>PLAFON UPVC</b></a>
+                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp5"><a href="<?= base_url('kategori/s-plus-interior-material_upvc') ?>"><b>PLAFON UPVC</b></a>
                                                 <ul id="testsp5" class="panel-collapse collapse">
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material/polos') ?>">Plafon Polos</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material/laminate') ?>">Plafon Laminate</a></li>
-                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material/deco') ?>">Plafon Deco</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material#polos') ?>">Plafon Polos</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material#laminate') ?>">Plafon Laminate</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-interior-material#deco') ?>">Plafon Deco</a></li>
                                                 </ul>
 
                                             </li>
@@ -124,12 +124,12 @@ $this->load->view('user/header', $meta) ?>
                                     </li>
 
                                     <li class="panel-title " data-toggle="collapse" data-target="#test4">
-                                        <a href="<?= base_url('kategori/s-plus-exterior-material') ?>"><b>EXTERIOR MATERIAL</b></a>
+                                        <a href="<?= base_url('kategori/s-plus-wpc/wpc') ?>"><b>EXTERIOR MATERIAL</b></a>
                                         <ul id="test4" class="panel-collapse collapse">
-                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp9"><a href="<?= base_url('kategori/s-plus-exterior-material/wpc_kategori') ?>"><b>WPC</b></a>
+                                            <li class="sm panel-title" data-toggle="collapse" data-target="#testsp9"><a href="<?= base_url('kategori/s-plus-wpc/wpc_kategori') ?>"><b>WPC</b></a>
                                                 <ul id="testsp9" class="panel-collapse collapse">
-                                                    <li class="sm"><a href="deck-tile">Deck Tile</a></li>
-                                                    <li class="sm"><a href="wall-partition">Wall Partition</a></li>
+                                                    <li class="sm"><a href="#deck">Deck Tile</a></li>
+                                                    <li class="sm"><a href="#wall">Wall Partition</a></li>
                                                 </ul>
                                             </li>
                                             <li class="sm"><a href='https://sinargarden.com/parasol'><b>PARASOL</b></a></li>
@@ -144,8 +144,24 @@ $this->load->view('user/header', $meta) ?>
                                         </ul>
                                     </li>
 
-                                    <li class="title " data-toggle="collapse" data-target="#uu">
-                                        <a href="<?= base_url('kategori/s-plus-pintu/aksesoris-pintu') ?>"><b>AKSESORIS</b></a>
+                                    <li class="panel-title" data-toggle="collapse" data-target="#aks1">
+                                        <a href="<?= base_url('kategori/s-plus-aksesoris') ?>"><b>AKSESORIS</b>
+                                        </a>
+                                        <ul id="aks1" class="panel-collapse collapse">
+                                            <!-- <li class="sm panel-title" data-toggle="collapse" data-target="#aks2"><a href="<?= base_url('kategori/s-plus-pintu/abs') ?>"><b>PINTU</b></a>
+                                                <ul id="aks2" class="panel-collapse collapse">
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/classic') ?>">Handle & Mortise</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/fortebello') ?>">Hinge</a></li>
+                                                    <li class="sm"><a href="<?= base_url('kategori/s-plus-pintu/art-door') ?>">Kusen Pintu</a></li>
+
+                                                </ul>
+                                            </li> -->
+                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-aksesoris/aksesoris_pintu') ?>"><b>PINTU</b></a></li>
+                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-aksesoris/aksesoris_aoutomatic') ?>"><b>AUTOMATIC</b></a></li>
+                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-aksesoris/aksesoris_cubicle') ?>"><b>CUBICLE</b></a></li>
+                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-aksesoris/aksesoris_jendela') ?>"><b>JENDELA</b></a></li>
+                                            <li class="sm"><a href="<?= base_url('kategori/s-plus-aksesoris/aksesoris_kitchenset') ?>"><b>KITCHEN SET</b></a></li>
+                                        </ul>
                                     </li>
                                 </ul>
                             </div>
@@ -179,9 +195,9 @@ $this->load->view('user/header', $meta) ?>
 
                             </div>
                             <br>
-                            <div class="">
+                            <!-- <div class="">
                                 <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
-                                    <!-- Loading Screen -->
+                                 
                                     <div data-u="loading" class="jssorl-004-double-tail-spin" style="position:absolute;top:0px;left:0px;width:100%;height:100%;text-align:center;background-color:rgba(0,0,0,0.7);">
                                         <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="<?= base_url('assets/user/images/banner/double-tail-spin.svg') ?>" />
                                     </div>
@@ -195,7 +211,7 @@ $this->load->view('user/header', $meta) ?>
                                             <img data-u="image" src="<?= base_url('assets/user/images/kategori/splus-door/felice/felice_old.jpg') ?>" />
                                         </div>
                                     </div>
-                                    <!-- Bullet Navigator -->
+                                  
                                     <div data-u="navigator" class="jssorb031" style="position:absolute;bottom:16px;right:16px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
                                         <div data-u="prototype" class="i" style="width:13px;height:13px;">
                                             <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
@@ -203,7 +219,7 @@ $this->load->view('user/header', $meta) ?>
                                             </svg>
                                         </div>
                                     </div>
-                                    <!-- Arrow Navigator -->
+                                   
                                     <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
                                         <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
                                             <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
@@ -215,6 +231,9 @@ $this->load->view('user/header', $meta) ?>
                                         </svg>
                                     </div>
                                 </div>
+                            </div> -->
+                            <div>
+                                <img data-u="image" src="<?= base_url('assets/user/images/kategori/produk/pintu/upvc-banner.jpg') ?>" />
                             </div>
 
 
@@ -263,77 +282,7 @@ $this->load->view('user/header', $meta) ?>
                                 </div>
 
                             </div>
-                            <!-- <center>
-                                <span class="h-subtitle h-m-title"><strong>S-PLUS PINTU UPVC</strong></span>
-                            </center>
-                            <hr style="margin-bottom: 25px;width: 25%; border: 0.5px solid #e24545">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-25">
-                                    <div class="container_images">
-                                        <div class="content_img">
-                                            <a href="<?= base_url('kategori/s-plus-upvc-pintu#felice') ?>">
-                                                <img src="<?= base_url('assets/user/images/kategori/produk/pintu/upvc/felice_upvc/felice-f2a-putih.jpg') ?>" alt="" class="image" width="80%">
-                                                <div>More Detail</div>
-                                            </a>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-overlay-ss">FELICE</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20">
-                                    <div class="container_images">
-                                        <div class="content_img">
-                                            <a href="<?= base_url('kategori/s-plus-upvc-pintu#sash') ?>">
-                                                <img src="<?= base_url('assets/user/images/kategori/produk/pintu/upvc/sashdoor_upvc/sash-sd4-putih.jpg') ?>" alt="" class="image" width="80%">
-                                                <div>More Detail</div>
-                                            </a>
-                                        </div>
-                                        <div class="text-center">
-                                            <div class="text-overlay-ss">SASH DOOR</div>
-                                        </div>
-                                    </div>
-                                </div>
 
-
-                            </div> -->
-                            <!-- <div class="row">
-                                <?php $query = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
-                                                                a.varian_gambar_depan,a.varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
-                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="10"
-                                                                GROUP BY a.varian_nama
-                                                                ');
-                                foreach ($query->result_array() as $kat) {
-
-                                ?>
-
-                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20" data-layout="grid-4-full" data-with-features="false">
-                                        <div class="container_images">
-
-                                            <div class="content_img">
-                                             
-                                                <a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>">
-                                                    <img src="<?= base_url('assets/user/images/kategori/produk/pintu/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
-                                                    <div>More Detail</div>
-                                                </a>
-                                            </div>
-
-                                            <div class="text-overlay-ss">
-                                                <a class="syahrul text-sm"><b>Type: </b><?= $kat['varian_type'] ?></a>
-                                                <a><br></a>
-                                                <a class="syahrul text-sm"><b>Kategori: </b><?= $kat['produk_nama'] ?></a>
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="products-view__pagination ">
-                                        <?php echo $this->pagination->create_links(); ?>
-                                    </div>
-
-                                <?php } ?>
-                            </div> -->
                         </div>
 
                     </div>

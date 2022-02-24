@@ -18,29 +18,29 @@ $this->load->view('user/header', $meta) ?>
                             <h4><a href="<?= base_url('v_kategori') ?>"><b>Produk </b></a><span class="fa fa-chevron-right"></span><a href="<?= base_url('kategori/s-plus-aksesoris') ?>"><b> Aksesoris </b></a><span class="fa fa-chevron-right"></span><b>Aoutomatic</b></h4>
                             <br>
                         </div>
-                        <div style="margin-top: 10px;">
+                        <!-- <div style="margin-top: 10px;">
                             <center> <img src="<?= base_url('assets/images/ourproduk/logo.jpg') ?>" style="width: 300px;">
                             </center>
                             <CENTER>
                                 <h2>COMING SOON</h2>
                             </CENTER>
-                        </div>
+                        </div> -->
 
-                        <!-- <center>
-                            <span class="h-subtitle h-m-title" style="padding-bottom: 10px;" id="plafon"><strong>Kitchen set Aksesoris</strong></span>
+                        <center>
+                            <span class="h-subtitle h-m-title" style="padding-bottom: 10px;" id="plafon"><strong>Macam Macam Automatic Aksesoris</strong></span>
                         </center>
                         <hr style="margin-bottom: 25px;width: 15%; border: 0.5px solid #e24545">
                         <div class="row pb-40">
                             <?php if ($this->agent->is_mobile()) : ?>
                                 <div class="col-sm-12 col-xs-12 gallery-popup">
-                                    <img src="<?= base_url('assets/user/images/kategori/produk/plafon/upvc-plafon-m.jpg') ?>">
+                                    <img src="<?= base_url('assets/images/ourproduk/produk/aksesoris/acc-auto-m.jpg') ?>">
                                 </div>
                             <?php else : ?>
                                 <div class="col-md-12 pb-20 gallery-popup">
-                                    <img class="" src="<?= base_url('assets/user/images/kategori/produk/plafon/deco.jpg') ?>">
+                                    <img class="" src="<?= base_url('assets/images/ourproduk/produk/aksesoris/acc-auto.jpg') ?>">
                                 </div>
                             <?php endif; ?>
-                        </div> -->
+                        </div>
 
                         <div class="row pt-40">
                             <div class="col-md-12 col-sm-6 col-xs-12">

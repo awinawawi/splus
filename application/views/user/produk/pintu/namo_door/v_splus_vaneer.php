@@ -26,23 +26,23 @@ $this->load->view('user/header', $meta) ?>
                                 </div>
                                 <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
 
-                                    <div style="background-color:#000000;">
+                                    <!-- <div style="background-color:#000000;">
                                         <img data-u="image" src="<?= base_url('assets/user/images/kategori/splus-namo/banner/Laminate door.jpg') ?>" />
                                     </div>
 
                                     <div style="background-color:#000000;">
                                         <img data-u="image" src="<?= base_url('assets/user/images/kategori/splus-namo/banner/ECO door.jpg') ?>" />
-                                    </div>
+                                    </div> -->
                                     <div style="background-color:#000000;">
                                         <img data-u="image" src="<?= base_url('assets/user/images/kategori/splus-namo/banner/Veneer Solid door.jpg') ?>" />
                                     </div>
 
-                                    <div style="background-color:#000000;">
+                                    <!-- <div style="background-color:#000000;">
                                         <img data-u="image" src="<?= base_url('assets/user/images/kategori/splus-namo/banner/Timber Joint door.jpg') ?>" />
                                     </div>
                                     <div style="background-color:#000000;">
                                         <img data-u="image" src="<?= base_url('assets/user/images/kategori/splus-namo/banner/ART door.jpg') ?>" />
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <!-- Bullet Navigator -->
                                 <div data-u="navigator" class="jssorb031" style="position:absolute;bottom:16px;right:16px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
@@ -66,34 +66,7 @@ $this->load->view('user/header', $meta) ?>
                             </div>
                         </div>
                         <br></br>
-                        <br></br>
-                        <!--Namo Engineering Door-->
-                        <span class="h-body h-m-body">
-                            <div class="row pb-20">
-                                <center>
-                                    <span class="h-subtitle h-m-title">NAMO ENGINEERING DOOR </span>
-                                    <hr style="margin-bottom: 15px;width: 40%; border: 0.5px solid #e24545">
-                                </center>
-                                <div style="padding-left:15px; padding-bottom:25px; padding-right:15px;">
-                                    <span class="h-body h-m-body">
-                                        NAMO Engineering Door merupakan pintu yang diproduksi dengan menggunakan bahan kayu olahan
-                                        dan teknik modern / mesin sehingga dihasilkan suatu produk pintu yang memiliki keunggulan dari pada
-                                        pintu kayu konvensional pada umumnya.
-                                    </span>
-                                </div>
-                                <?php if ($this->agent->is_mobile()) : ?>
-                                    <div class="col-sm-12 col-xs-12 gallery-popup" style="padding-bottom:5px;">
-                                        <img src="<?= base_url('assets/user/images/kategori/splus-namo/namo-m.jpg') ?>">
-                                    </div>
-                                <?php else : ?>
-                                    <div class="col-md-12 pb-40 gallery-popup" style="padding-bottom:5px;">
-                                        <!-- gambar produk -->
-                                        <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/namo.jpg') ?>">
-                                    </div>
-                                <?php endif; ?>
-                            </div>
-                            <hr style="margin-bottom: 25px;width: 95%; border: 0.5px solid #000000">
-                            <!--VENEER SOLID DOOR-->
+                        <div class="row pb-20">
                             <div class="row pb-20">
                                 <center>
                                     <span class="h-subtitle h-m-title" id="veneer-solid-door">VENEER SOLID DOOR</span>
@@ -105,22 +78,36 @@ $this->load->view('user/header', $meta) ?>
                                         pilihan motif yang dan menggunakan pabrikasi proses lem dengan kekuatan press 50 Ton.
                                     </span>
                                 </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12 pt-40" style="padding-top:15px;">
-                                    <span class="h-subtitle h-m-title" style="padding-bottom: 10px; font-size: 18px;">Struktur<b> Veneer Solid Door</b></span> <br>
-                                    <?php if ($this->agent->is_mobile()) : ?>
-                                        <div class="col-sm-12 col-xs-12 gallery-popup" style="padding-bottom:10px; padding-left:0px;">
-                                            <!-- <img src="<?= base_url('assets/user/images/kategori/splus-namo/veneer-solid-door/struktur-m.jpg') ?>"> -->
-                                            <img src="<?= base_url('assets/user/images/kategori/produk/pintu/web_namo/veneer-m.jpg') ?>">
-                                        </div>
-                                    <?php else : ?>
-                                        <div class="col-md-12 pb-40 gallery-popup" style="padding-bottom:10px; padding-left:0px;">
-                                            <!-- <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/veneer-solid-door/struktur.jpg') ?>"> -->
-                                            <img src="<?= base_url('assets/user/images/kategori/produk/pintu/web_namo/veneer.jpg') ?>">
-                                        </div>
-                                    <?php endif; ?>
-                                </div>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 pt-40" style="padding-top:15px;">
+                                <span class="h-subtitle h-m-title" style="padding-bottom: 10px; font-size: 18px;">Struktur<b> Veneer Solid Door</b></span> <br>
+                                <?php if ($this->agent->is_mobile()) : ?>
+                                    <div class="col-sm-12 col-xs-12 gallery-popup" style="padding-bottom:10px; padding-left:0px;">
+                                        <img src="<?= base_url('assets/user/images/kategori/splus-namo/veneer-solid-door/struktur-m.jpg') ?>">
+                                    </div>
+                                <?php else : ?>
+                                    <div class="col-md-12 pb-40 gallery-popup" style="padding-bottom:10px; padding-left:0px;">
+                                        <!-- gambar produk -->
+                                        <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/veneer-solid-door/struktur.jpg') ?>">
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 pt-40" style="padding-top:15px;">
+                                <span class="h-subtitle h-m-title" style="padding-bottom: 10px; font-size: 18px;">Pilihan Motif<b> Veneer Solid Door</b></span> <br>
+                                <?php if ($this->agent->is_mobile()) : ?>
+                                    <div class="col-sm-12 col-xs-12 gallery-popup" style="padding-bottom:10px; padding-left:0px;">
+                                        <!-- <img src="<?= base_url('assets/user/images/kategori/splus-namo/veneer-solid-door/struktur-m.jpg') ?>"> -->
+                                        <img src="<?= base_url('assets/user/images/kategori/produk/pintu/web_namo/veneer-m.jpg') ?>">
+                                    </div>
+                                <?php else : ?>
+                                    <div class="col-md-12 pb-40 gallery-popup" style="padding-bottom:10px; padding-left:0px;">
+                                        <!-- <img class="" src="<?= base_url('assets/user/images/kategori/splus-namo/veneer-solid-door/struktur.jpg') ?>"> -->
+                                        <img src="<?= base_url('assets/user/images/kategori/produk/pintu/web_namo/veneer.jpg') ?>">
+                                    </div>
+                                <?php endif; ?>
+                            </div>
 
-                                <!-- <div class="col-md-12 col-sm-12 col-xs-12 pt-40" style="padding-top:15px;">
+                            <!-- <div class="col-md-12 col-sm-12 col-xs-12 pt-40" style="padding-top:15px;">
                                     <span class="h-subtitle h-m-title" style="padding-bottom: 10px; font-size: 18px;">Pilihan Warna</span>
                                     <div style="padding-top:10px;"><img src="<?= base_url('assets/user/images/kategori/splus-namo/veneer-solid-door/warna.png') ?>" width="200"></div>
                                 </div>
@@ -163,14 +150,14 @@ $this->load->view('user/header', $meta) ?>
                                 </div> -->
 
 
+                        </div>
+
+                        <div class="row pt-40">
+                            <div class="col-md-12 col-sm-6 col-xs-12">
+                                <center><a href="<?= base_url('kategori/s-plus-pintu/namo') ?>" class="ps-btn h-m-body">Kembali</a></center>
                             </div>
 
-                            <div class="row pt-40">
-                                <div class="col-md-12 col-sm-6 col-xs-12">
-                                    <center><a href="<?= base_url('kategori/s-plus-pintu/namo') ?>" class="ps-btn h-m-body">Kembali</a></center>
-                                </div>
-
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

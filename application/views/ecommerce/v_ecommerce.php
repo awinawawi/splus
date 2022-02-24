@@ -50,15 +50,15 @@
                             <span class="fa fa-envelope" style="color: #e10016;"></span> <a href="mailto:splus@splusindonesia.co.id">splus@splusindonesia.co.id</a>
                         </div>
                         <div class="d-inline-block ml-2">
-                            <span class="fa fa-phone" style="color: #e10016;"></span> <a href="tel:(0231) 8511781 – 85">(0231) 8511781 – 85</a>
+                            <span class="fa fa-headphones" style="color: #e10016;"></span> <a href="tel:(0231) 8511781 – 85">(0231) 8511781 – 85</a>
                         </div>
                     </div>
                     <div class="col-md-4 text-right d-none d-md-block">
                         <div class="social-mini-button">
-                            <a href="https://www.facebook.com/S-Plus-Indonesia-100698461599924/"><span class="fa fa-facebook-square" style="color: #0ea1e6;"></span></a>
-                            <a href="https://www.instagram.com/splusindonesia/"><span class="fa fa-instagram" style="color: #0ea1e6;"></span></a>
-                            <a href="https://www.youtube.com/channel/UCMYj8Md6whMbPNFcyxjyA6A"><span class="fa fa-youtube" style="color: #0ea1e6;"></span></a>
-                            <a href="#"><span class="fa fa-linkedin" style="color: #0ea1e6;"></span></a>
+                            <a href="https://www.facebook.com/S-Plus-Indonesia-100698461599924/"><span class="fa fa-facebook-square" style="color: #e10016;"></span></a>
+                            <a href="https://www.instagram.com/splusindonesia/"><span class="fa fa-instagram" style="color: #e10016;"></span></a>
+                            <a href="https://www.youtube.com/channel/UCMYj8Md6whMbPNFcyxjyA6A"><span class="fa fa-youtube" style="color: #e10016;"></span></a>
+                            <a href="#"><span class="fa fa-linkedin" style="color: #e10016;"></span></a>
                         </div>
                     </div>
                 </div>
@@ -74,13 +74,13 @@
                             </a>
                         </div>
                         <ul class="nav">
-                            <li class="submenu">
+                            <!-- <li class="submenu">
                                 <a href="javascript:;">Hubungi kami</a>
                                 <ul>
                                     <li><a href="<?= base_url('tentang-kami') ?>">About Us</a></li>
                                     <li><a href="<?= base_url('contact') ?>">Contact Us</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <li class="submenu">
                                 <a href="javascript:;">Products</a>
                                 <ul>
@@ -96,14 +96,15 @@
                             <li class="submenu">
                                 <a href="javascript:;">Features</a>
                                 <ul>
-                                    <li class="scroll-to-section"><a href="#men">Rekomendasi</a></li>
-                                    <li class="scroll-to-section"><a href="#women">New Brands</a></li>
-                                    <li class="scroll-to-section"><a href="#kids">Best Product</a></li>
-                                    <li class="scroll-to-section"><a href="#explore">Explore</a></li>
+                                    <li class="scroll-to-section"><a href="#men">Special Offers</a></li>
+                                    <li class="scroll-to-section"><a href="#women">New Arrival</a></li>
+                                    <li class="scroll-to-section"><a href="#kids">News S-plus</a></li>
+                                    <li class="scroll-to-section"><a href="#explore">Promo Patner</a></li>
                                 </ul>
                             </li>
 
                             <li class="scroll-to-section"><a href="<?= base_url('administrator') ?>">login</a></li>
+
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -554,7 +555,7 @@
 
             <div class="row my-5 card-blog-row">
                 <div class="col-lg-4 py-3">
-                    <div class="card-blog" style="max-width: 330px;">
+                    <div class="card-blog" style="max-width: 330px;  background-color: #8b0410;">
                         <div class="header">
                             <img src="<?= base_url('assets/images/news/news1.jpg') ?>">
                         </div>
@@ -595,9 +596,9 @@
 
             </div>
 
-            <div class=" text-center">
-                <a href="blog.html" class="btn btn-primary">View More</a>
-            </div>
+            <!-- <div class=" text-center">
+                <a href="blog.html" class="btn btn-danger">View More</a>
+            </div> -->
 
         </div>
     </div>

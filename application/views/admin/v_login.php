@@ -54,6 +54,12 @@
           </div>
           <!-- /.col -->
         </div>
+        <div class="row">
+          <div class="text-center">
+            <p>Belum Punya Akun?</p>
+            <p><a href='<?= base_url('register') ?>'>Daftar akun baru</a></p>
+          </div>
+        </div>
       </form>
 
       <!-- <?php var_dump($username) ?> -->
@@ -62,7 +68,7 @@
       <!-- /.social-auth-links -->
       <hr />
       <p>
-        <center>Copyright <?php echo '2020' ?> by S Plus Indonesia <br /> All Right Reserved</center>
+        <center>Copyright <?php echo '2022' ?> by S Plus Indonesia <br /> All Right Reserved</center>
       </p>
     </div>
     <!-- /.login-box-body -->

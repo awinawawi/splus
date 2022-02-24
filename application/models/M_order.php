@@ -46,10 +46,19 @@ class M_order extends CI_Model
     //     return $data;
     // }
 
-    public function post_sub()
+    public function post_subx($id_subkategori_produk)
+    {
+        return $this->db->join('tbl_produk_varian', 'tbl_produk_varian.produk_id=tbl_produk.produk_id')
+            ->where('id_subkategori_produk', $id_subkategori_produk)
+            ->group_by('varian_nama')
+            ->get('tbl_produk')->result();
+    }
+
+    public function post_sub($id_subkategori_produk)
     {
         $this->db->select('*');
         $this->db->from('tbl_produk_varian');
+        $this->db->where('id_subkategori_produk', $id_subkategori_produk);
         return $this->db->get()->result();
     }
 
