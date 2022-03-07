@@ -86,7 +86,7 @@
     <!-- ***** Header Area End ***** -->
 
     <!-- ***** Main Banner Area Start ***** -->
-    <div class="page-heading" id="top" style="background: url('<?= base_url('assets/images/ourproduk/produk/pintu2.jpg') ?>'); background-size: cover;" class="pt-20">
+    <div class="page-heading" id="top" style="background: url('<?= base_url('assets/images/ourproduk/produk/jendela2.jpg') ?>'); background-size: cover;" class="pt-20">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -98,6 +98,10 @@
             </div>
         </div>
     </div>
+
+    <!-- ***** Main Banner Area Ends ***** -->
+
+    <!-- ***** Products Area start ***** -->
 
     <section class="section" id="products">
         <div class="container">
@@ -126,8 +130,8 @@
 
                                     <div class="ps-widget">
                                         <div class="panel-group category-products" id="accordian">
-                                            <?php $data = $this->db->query("SELECT * from tbl_kategoriproduk where id_kategori_produk='1' order by id_kategori_produk Asc"); ?>
-                                            <?php $data1 = $this->db->query("SELECT * from tbl_subkategoriproduk where id_kategori_produk='1' order by id_subkategori_produk Asc"); ?>
+                                            <?php $data = $this->db->query("SELECT * from tbl_kategoriproduk where id_kategori_produk='2' order by id_kategori_produk Asc"); ?>
+                                            <?php $data1 = $this->db->query("SELECT * from tbl_subkategoriproduk where id_kategori_produk='2' order by id_subkategori_produk Asc"); ?>
                                             <?php foreach ($data->result() as $maincat) { ?>
                                                 <div class="panel panel-default">
                                                     <div class="panel-heading">
@@ -144,7 +148,7 @@
                                                                     } ?>
 
                                                                 </span>
-                                                                <?php echo "Jenis Pintu" ?>
+                                                                <?php echo "Jenis window" ?>
                                                             </a>
                                                         </h4>
                                                     </div>
@@ -154,7 +158,7 @@
                                                                 <?php foreach ($data1->result() as $subcat) { ?>
                                                                     <?php if ($subcat->id_kategori_produk == $maincat->id_kategori_produk) { ?>
 
-                                                                        <li><a href="<?= base_url('order/product_pintu/' . $subcat->id_subkategori_produk) ?>">
+                                                                        <li><a href="<?= base_url('order/product_jendela/' . $subcat->id_subkategori_produk) ?>">
                                                                                 <?php echo $subcat->nama_subkategori ?></a></li>
 
                                                                     <?php } ?>
@@ -181,7 +185,7 @@
                                                 ?>
                                                     <div class="form-check" style="padding-left: 10px;">
                                                         <label>
-                                                            <input class="common_selector storage" type="checkbox" onclick="location.href='<?= base_url('order/tipe/') . $kat['id_tipe_produk']  ?>'">
+                                                            <input class="common_selector storage" type="checkbox" onclick="location.href='<?= base_url('order/tipe_jendela/') . $kat['id_tipe_produk']  ?>'">
                                                             <?= $kat['varian_type'] ?></BR>
                                                         </label>
                                                     </div>
@@ -333,6 +337,8 @@
             </div>
         </div>
     </section>
+
+    <!-- ***** Products Area Ends ***** -->
 
 
 

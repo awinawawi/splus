@@ -32,13 +32,27 @@
     <div class="back-to-topx"></div>
     <a id="back-to-top" href="#" class="back-to-top" role="button" style="color:#d50000"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+    <script defer type="text/javascript">
+        (function() {
+            var options = {
+                whatsapp: "6281387004321", // harus pake 62 dan tanpa spasi
+                // call_to_action: "Message us", // Call to action
+                position: "right",
+            };
+            var proto = document.location.protocol,
+                host = "getbutton.io",
+                url = proto + "//static." + host;
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = url + '/widget-send-button/js/init.js';
+            s.onload = function() {
+                WhWidgetSendButton.init(host, proto, options);
+            };
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        })();
+    </script>
 
 
     <header class="header-area header-sticky">

@@ -30,15 +30,12 @@
             <div class="row">
                 <div class="col-12">
                     <nav class="main-nav">
-                        <!-- ***** Logo Start ***** -->
                         <div>
 
                             <a href="<?= base_url('Ecommerce') ?>" class="logo">
                                 <img src="<?= base_url('assets/images/ourproduk/logo.jpg') ?>" style="width: 300px;">
                             </a>
                         </div>
-
-                        <!-- ***** Menu End ***** -->
                     </nav>
                 </div>
             </div>
@@ -63,6 +60,7 @@
     </div>
     <!-- ***** Main Banner Area End ***** -->
 
+
     <!-- ***** Contact Area Starts ***** -->
     <div class="contact-us">
         <div class="container">
@@ -80,49 +78,64 @@
                 </div>
                 <div class="col-lg-6">
 
-                    <form id="contact" action="" method="post">
+                    <form id="contact" action="<?php echo base_url() . 'admin/pengguna/simpan_pengguna_newup' ?>" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-lg-6">
                                 <fieldset>
-                                    <label>Username</label>
-                                    <input name="Username" type="text" id="name" placeholder="Your Username" required="">
+                                    <label>Nama lengkap</label>
+                                    <input name="xnama" class="form-control" id="inputUserName" placeholder="Your Nama Lengkap" required>
                                 </fieldset>
                             </div>
                             <div class="col-lg-6">
                                 <fieldset>
                                     <label>E-mail</label>
-                                    <input name="email" type="text" id="email" placeholder="Your email" required="">
+                                    <input name="xemail" class="form-control" id="inputEmail3" placeholder="Your email" required>
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
-                                <fieldset>
-                                    <label>Nama Lengkap</label>
-                                    <input name="name" type="text" id="email" placeholder="Your name" required="">
-                                </fieldset>
+                                <label>Jenis Kelamin</label>
+                                <select class="form-control" name="xjenkel" required>
+                                    <option value="1">Laki-Laki</option>
+                                    <option value="2">Perempuan</option>
+                                </select>
                             </div>
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <label>No. Telp</label>
-                                    <input name="number" type="text" id="email" placeholder="Your number" required="">
-                                </fieldset>
-                            </div>
-                            <div class="col-lg-12">
-                                <fieldset>
-                                    <label>Kota Sekarang</label>
-                                    <input name="kota" type="text" id="email" placeholder="Your kota" required="">
 
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <label>Username</label>
+                                    <input name="xusername" class="form-control" id="inputUserName" placeholder="Your username" required>
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
                                 <fieldset>
                                     <label>Password</label>
-                                    <input name="number" type="text" id="email" placeholder="Your password" required="">
+                                    <input name="xpassword" class="form-control" id="inputPassword3" placeholder="Your password" required>
+
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
                                 <fieldset>
                                     <label>Ulangi Password</label>
-                                    <input name="number" type="text" id="email" placeholder="Your password" required="">
+                                    <input name="xpassword2" class="form-control" id="inputPassword4" placeholder="Your password Repeat" required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <label>Kontak Person</label>
+                                    <input name="xkontak" type="text" id="inputUserName" placeholder="Your kontak" required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <label>Level</label>
+                                <select class="form-control" name="xlevel" required>
+                                    <option value="1">Head Office</option>
+                                    <option value="2">Cabang</option>
+                                </select>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <label>Photo</label>
+                                    <input style="border:0px; padding-left: 0px;" type="file" name="filefoto" required="">
                                 </fieldset>
                             </div>
 
@@ -135,6 +148,74 @@
             </div>
         </div>
     </div>
+
+    <?php if ($this->session->flashdata('msg') == 'error') : ?>
+        <script type="text/javascript">
+            $.toast({
+                heading: 'Error',
+                text: "Password dan Ulangi Password yang Anda masukan tidak sama.",
+                showHideTransition: 'slide',
+                icon: 'error',
+                hideAfter: false,
+                position: 'bottom-right',
+                bgColor: '#FF4859'
+            });
+        </script>
+    <?php elseif ($this->session->flashdata('msg') == 'warning') : ?>
+        <script type="text/javascript">
+            $.toast({
+                heading: 'Warning',
+                text: "Gambar yang Anda masukan terlalu besar.",
+                showHideTransition: 'slide',
+                icon: 'warning',
+                hideAfter: false,
+                position: 'bottom-right',
+                bgColor: '#FFC017'
+            });
+        </script>
+    <?php elseif ($this->session->flashdata('msg') == 'success') : ?>
+        <script type="text/javascript">
+            $.toast({
+                heading: 'Success',
+                text: "Pengguna Berhasil disimpan ke database.",
+                showHideTransition: 'slide',
+                icon: 'success',
+                hideAfter: false,
+                position: 'bottom-right',
+                bgColor: '#7EC857'
+            });
+        </script>
+    <?php elseif ($this->session->flashdata('msg') == 'info') : ?>
+        <script type="text/javascript">
+            $.toast({
+                heading: 'Info',
+                text: "Pengguna berhasil di update",
+                showHideTransition: 'slide',
+                icon: 'info',
+                hideAfter: false,
+                position: 'bottom-right',
+                bgColor: '#00C9E6'
+            });
+        </script>
+    <?php elseif ($this->session->flashdata('msg') == 'success-hapus') : ?>
+        <script type="text/javascript">
+            $.toast({
+                heading: 'Success',
+                text: "Pengguna Berhasil dihapus.",
+                showHideTransition: 'slide',
+                icon: 'success',
+                hideAfter: false,
+                position: 'bottom-right',
+                bgColor: '#7EC857'
+            });
+        </script>
+    <?php elseif ($this->session->flashdata('msg') == 'show-modal') : ?>
+        <script type="text/javascript">
+            $('#ModalResetPassword').modal('show');
+        </script>
+    <?php else : ?>
+    <?php endif; ?>
+
     <!-- ***** Contact Area Ends ***** -->
 
 

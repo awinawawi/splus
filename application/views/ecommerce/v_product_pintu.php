@@ -267,22 +267,44 @@
 
                                     <br></br>
 
-                                    <div class="ps-widget__content">
+                                    <!-- <div class="ps-widget__content">
                                         <div class="widget-products widget">
                                             <h4 class="widget-title">Tipe</h4>
                                             <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
-                                                <?php $query = $this->db->query('SELECT * FROM tbl_produk_varian WHERE produk_id="1" group by varian_type
+                                                <?php $tipe = $this->db->query('SELECT * FROM tbl_produk_varian WHERE produk_id="1" group by varian_type
                                                                 ');
-                                                foreach ($query->result_array() as $kat) {
+                                                foreach ($tipe->result_array() as $kat) {
                                                 ?>
                                                     <div class="form-check" style="padding-left: 10px;">
                                                         <label>
-                                                            <input class="common_selector storage" type="checkbox">
+                                                            <input class="common_selector storage" type="checkbox" onclick="location.href='<?= base_url('order/tipe/') . $kat['id_subkategori_produk']  ?>' ">
                                                             <?= $kat['varian_type'] ?></BR>
                                                         </label>
                                                     </div>
 
                                                 <?php } ?>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                    <div class="ps-widget__content">
+                                        <div class="widget-products widget">
+                                            <h4 class="widget-title">Tipe</h4>
+                                            <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
+                                                <?php $tipe = $this->db->query("SELECT * FROM tbl_produk_varian WHERE produk_id='1' group by varian_type
+                                                                ");
+                                                foreach ($tipe->result_array() as $kat) {
+                                                ?>
+                                                    <div class="form-check" style="padding-left: 10px;">
+                                                        <label>
+                                                            <input class="common_selector storage" type="checkbox" onclick="location.href='<?= base_url('order/tipe/') . $kat['id_subkategori_produk']  ?>' ">
+                                                            <?= $kat['varian_type'] ?></BR>
+                                                        </label>
+                                                    </div>
+
+                                                <?php } ?>
+
+
                                             </div>
                                         </div>
                                     </div>
@@ -392,9 +414,9 @@
                                         <?php $brand_data = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
                                                                 a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
                                                                 INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="1"
-                                                                GROUP BY a.varian_nama')->result_array(); ?>
+                                                                GROUP BY a.varian_nama'); ?>
 
-                                        <?php foreach ($brand_data as $kat) { ?>
+                                        <?php foreach ($brand_data->result_array() as $kat) { ?>
                                             <div class="col-lg-4">
                                                 <div class="item">
                                                     <div class="thumb">

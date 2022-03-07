@@ -15,6 +15,7 @@ class Order extends CI_Controller
 
         $a = array(
             "page"  => "Order Page"
+
         );
         print_r($a);
     }
@@ -33,7 +34,8 @@ class Order extends CI_Controller
         $this->load->view('user/order/produk_kategori', ['varian' => $produk]);
     }
 
-    //filter
+
+    //filter-------------------------------------------------------//
 
 
     function product_pintu($id_subkategori_produk)
@@ -43,11 +45,59 @@ class Order extends CI_Controller
         // );
         // $this->load->view('ecommerce/v_product_pintu', $data);
 
-        $data['brand_data'] = $this->M_order->post_sub($id_subkategori_produk);
+
+        // $data['brand_data'] = $this->M_order->post_sub($id_subkategori_produk);
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='1' and a.id_subkategori_produk='$id_subkategori_produk'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='1' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
         $this->load->view('ecommerce/filter/v_product_pintu', $data);
     }
 
 
+    function tipe($id_tipe_produk)
+    {
+        // $data = array(
+        //     'brand_data' => $this->M_order->post_sub($id_subkategori_produk)
+        // );
+        // $this->load->view('ecommerce/filter/v_product_pintu', $data);
+
+        // $data['brand_data'] = $this->M_order->post_sub($id_subkategori_produk);
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='1' and a.id_tipe_produk='$id_tipe_produk'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk ");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='1' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_pintu', $data);
+    }
+
+
+    function product_jendela($id_subkategori_produk)
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='2' and a.id_subkategori_produk='$id_subkategori_produk'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='2' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_window', $data);
+    }
+
+    function tipe_jendela($id_tipe_produk)
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='2' and a.id_tipe_produk='$id_tipe_produk'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='2' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_window', $data);
+    }
+
+
+
+    //end filter----------------------------------------------------------//
 
 
     public function subkategori_window()

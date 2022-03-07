@@ -45,6 +45,15 @@ class M_order extends CI_Model
     //         ->result();
     //     return $data;
     // }
+    public function post_sub($id_subkategori_produk)
+    {
+        $data = $this->db->select('*')
+            ->from('tbl_produk_varian')
+            ->where('id_subkategori_produk', $id_subkategori_produk)
+            ->get()
+            ->result();
+        return $data;
+    }
 
     public function post_subx($id_subkategori_produk)
     {
@@ -54,11 +63,11 @@ class M_order extends CI_Model
             ->get('tbl_produk')->result();
     }
 
-    public function post_sub($id_subkategori_produk)
+    public function post_tipe($id_tipe_produk)
     {
         $this->db->select('*');
         $this->db->from('tbl_produk_varian');
-        $this->db->where('id_subkategori_produk', $id_subkategori_produk);
+        $this->db->where('id_tipe_produk', $id_tipe_produk);
         return $this->db->get()->result();
     }
 
