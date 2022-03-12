@@ -35,8 +35,74 @@ class Order extends CI_Controller
     }
 
 
-    //filter-------------------------------------------------------//
+    //FILTER-------------------------------------------------------//
 
+
+    function cari_pintu()
+    {
+        $keyword = $this->input->post('keyword');
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='1' and a.varian_nama LIKE '$keyword%'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian where produk_id='1'  GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_pintu', $data);
+    }
+
+    function cari_window()
+    {
+        $keyword = $this->input->post('keyword');
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='2' and a.varian_nama LIKE '$keyword%'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian where produk_id='2'  GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_window', $data);
+    }
+
+    function cari_interior()
+    {
+        $keyword = $this->input->post('keyword');
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='3' and  a.varian_nama LIKE '$keyword%'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian where produk_id='3'  GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_interior', $data);
+    }
+
+    function cari_exterior()
+    {
+        $keyword = $this->input->post('keyword');
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='4' and  a.varian_nama LIKE '$keyword%'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian where produk_id='4'  GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_exterior', $data);
+    }
+
+    function cari_aksesoris()
+    {
+        $keyword = $this->input->post('keyword');
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='5' and  a.varian_nama LIKE '$keyword%'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian where produk_id='5'  GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_aksesoris', $data);
+    }
+
+    function cari_masker()
+    {
+        $keyword = $this->input->post('keyword');
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='6' and  a.varian_nama LIKE '$keyword%'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian where produk_id='6'  GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_masker', $data);
+    }
 
     function product_pintu($id_subkategori_produk)
     {
@@ -45,12 +111,12 @@ class Order extends CI_Controller
         // );
         // $this->load->view('ecommerce/v_product_pintu', $data);
 
-
         // $data['brand_data'] = $this->M_order->post_sub($id_subkategori_produk);
         $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
         a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
         INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='1' and a.id_subkategori_produk='$id_subkategori_produk'
         GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['all_subkategori'] = $this->db->query(" SELECT * from tbl_subkategoriproduk where id_kategori_produk='1' order by id_subkategori_produk Asc ");
         $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='1' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
         $this->load->view('ecommerce/filter/v_product_pintu', $data);
     }
@@ -67,7 +133,7 @@ class Order extends CI_Controller
         $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
         a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
         INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='1' and a.id_tipe_produk='$id_tipe_produk'
-        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk ");
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
         $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='1' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
         $this->load->view('ecommerce/filter/v_product_pintu', $data);
     }
@@ -96,8 +162,306 @@ class Order extends CI_Controller
     }
 
 
+    function product_interior($id_subkategori_produk)
+    {
 
-    //end filter----------------------------------------------------------//
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='3' and a.id_subkategori_produk='$id_subkategori_produk'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='3' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_interior', $data);
+    }
+
+    function tipe_interior($id_tipe_produk)
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='3' and a.id_tipe_produk='$id_tipe_produk'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='3' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_interior', $data);
+    }
+
+    function product_exterior($id_subkategori_produk)
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='4' and a.id_subkategori_produk='$id_subkategori_produk'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='4' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_exterior', $data);
+    }
+
+    function tipe_exterior($id_tipe_produk)
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='4' and a.id_tipe_produk='$id_tipe_produk'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='4' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_exterior', $data);
+    }
+
+    function product_aksesoris($id_subkategori_produk)
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='5' and a.id_subkategori_produk='$id_subkategori_produk'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='5' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_aksesoris', $data);
+    }
+
+    function tipe_aksesoris($id_tipe_produk)
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='5' and a.id_tipe_produk='$id_tipe_produk'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='5' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_aksesoris', $data);
+    }
+
+    function product_masker($id_subkategori_produk)
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='6' and a.id_subkategori_produk='$id_subkategori_produk'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        // $data['all_category'] = $this->db->query("SELECT * from tbl_kategoriproduk where id_kategori_produk='5' order by id_kategori_produk Asc");
+        // $data['all_sub_category'] = $this->db->query("SELECT * from tbl_subkategoriproduk where id_kategori_produk='5' order by id_subkategori_produk Asc");
+        $data['tipe'] = $this->db->query("SELECT * FROM tbl_produk_varian WHERE produk_id='6' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_masker', $data);
+    }
+
+    function tipe_masker($id_tipe_produk)
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='6' and a.id_tipe_produk='$id_tipe_produk'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='6' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_masker', $data);
+    }
+
+
+    //END FITER----------------------------------------------------------//
+
+
+    /////////////////FILTER ATAS/////////////////////
+    function arrival_d()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='1' AND a.produk_id='1'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='1' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_pintu', $data);
+    }
+
+    function spesial_d()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='2' AND a.produk_id='1'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='1' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_pintu', $data);
+    }
+
+    function manyviews_d()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='3' AND a.produk_id='1'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='1' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_pintu', $data);
+    }
+
+    function arrival_w()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='1' AND a.produk_id='2'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='2' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_window', $data);
+    }
+
+    function spesial_w()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='2' AND a.produk_id='2'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='2' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_window', $data);
+    }
+
+    function manyviews_w()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='3' AND a.produk_id='2'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='2' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_window', $data);
+    }
+
+    function arrival_i()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='1' AND a.produk_id='3'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='3' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_interior', $data);
+    }
+
+    function spesial_i()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='2' AND a.produk_id='3'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='3' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_interior', $data);
+    }
+
+    function manyviews_i()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='3' AND a.produk_id='3'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='3' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_interior', $data);
+    }
+
+    function arrival_e()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='1' AND a.produk_id='4'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='4' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_exterior', $data);
+    }
+
+    function spesial_e()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='2' AND a.produk_id='4'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='4' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_exterior', $data);
+    }
+
+    function manyviews_e()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='3' AND a.produk_id='4'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='4' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_exterior', $data);
+    }
+
+
+    function arrival_a()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='1' AND a.produk_id='5'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='5' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_aksesoris', $data);
+    }
+
+    function spesial_a()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='2' AND a.produk_id='5'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='5' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_aksesoris', $data);
+    }
+
+    function manyviews_a()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='3' AND a.produk_id='5'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='5' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_aksesoris', $data);
+    }
+
+
+    function arrival_m()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='1' AND a.produk_id='6'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='6' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_masker', $data);
+    }
+
+    function spesial_m()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='2' AND a.produk_id='6'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='6' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_masker', $data);
+    }
+
+    function manyviews_m()
+    {
+
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.id_rekomendasi='3' AND a.produk_id='6'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian WHERE produk_id='6' GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_masker', $data);
+    }
+
+    /////////////////FILTER ATAS END////////////////////
+
+
+
+
 
 
     public function subkategori_window()

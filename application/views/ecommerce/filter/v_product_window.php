@@ -120,10 +120,10 @@
                                     <div class="widget-box">
                                         <h4 class="widget-title">Search</h4>
                                         <div class="divider"></div>
-                                        <form action="#" class="search-form">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
-                                                <button type="submit" class="btn"><span class="icon mai-search"></span></button>
+                                        <form class="example" action="<?= base_url('Order/cari_window') ?>" method="POST">
+                                            <div class=" row no-gutters align-items-center" style="width:590px; height: 50px; ">
+                                                <input type="text" placeholder="Search topics or keywords" name="keyword" style="padding-left: 20 px;">
+                                                <button type="submit">Search</i></button>
                                             </div>
                                         </form>
                                     </div>
@@ -152,6 +152,7 @@
                                                             </a>
                                                         </h4>
                                                     </div>
+                                                    <br></br>
                                                     <div id="<?php echo $maincat->nama_kategori; ?>" class="panel-collapse collapse">
                                                         <div class="panel-body">
                                                             <ul>
@@ -211,12 +212,8 @@
                                 <hr style="margin-bottom: 25px;width: 25%; border: 0.5px solid #e24545">
                                 <div class="container">
                                     <div class="row">
-                                        <?php $query = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
-                                                                a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
-                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="9"
-                                                                GROUP BY a.varian_nama
-                                                                ');
-                                        foreach ($query->result_array() as $kat) {
+                                        <?php
+                                        foreach ($brand_data->result_array() as $kat) {
 
                                         ?>
 
@@ -253,7 +250,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="section-heading">
-                                            <h2>Products Door</h2>
+                                            <h2>Products Window</h2>
                                             <span>Check out all of our products.</span>
                                             <hr style="margin-bottom: 25px;width: 25%; border: 0.5px solid #e24545">
                                         </div>
@@ -296,6 +293,19 @@
 
                                         <?php } ?>
                                     </div> -->
+                                    <div class="container">
+                                        <div class="row">
+                                            <a class="col-md" style="background-color:yellow;" href="<?= base_url('order/arrival_w/') . $kat['id_rekomendasi']  ?>">
+                                                NEW ARRIVAL
+                                            </a>
+                                            <a class="col-md" style="background-color:pink;" href="<?= base_url('order/spesial_w/') . $kat['id_rekomendasi']    ?>">
+                                                SPECIAL OFFERS
+                                            </a>
+                                            <a class="col-md" style="background-color:brown;" href="<?= base_url('order/manyviews_w/') . $kat['id_rekomendasi'] ?>">
+                                                LATEST PRODUCTS
+                                            </a>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <?php foreach ($brand_data->result_array() as $kat) { ?>
                                             <div class="col-lg-4">

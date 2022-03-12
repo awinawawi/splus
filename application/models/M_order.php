@@ -36,15 +36,8 @@ class M_order extends CI_Model
         return $data;
     }
 
-    // public function post_sub($id)
-    // {
-    //     $data = $this->db->select('*')
-    //         ->from('tbl_produk_varian')
-    //         ->where('produk_id', $id)
-    //         ->get()
-    //         ->result();
-    //     return $data;
-    // }
+    /////////////////FILTER PRODUCT//////////////////
+
     public function post_sub($id_subkategori_produk)
     {
         $data = $this->db->select('*')
@@ -70,6 +63,28 @@ class M_order extends CI_Model
         $this->db->where('id_tipe_produk', $id_tipe_produk);
         return $this->db->get()->result();
     }
+
+    public function post_arrival($produk_id)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_produk_varian');
+        $this->db->where('produk_id', $produk_id);
+        return $this->db->get()->result();
+    }
+
+    public function get_product_keyword($keyword)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_produk_varian');
+        $this->db->like('nama', $keyword);
+        $this->db->or_like('harga', $keyword);
+        return $this->db->get()->result();
+    }
+
+
+
+
+    /////////////////END FILTER PRODUCT//////////////////
 
     public function getPrice($id)
     {

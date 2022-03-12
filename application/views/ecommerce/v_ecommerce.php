@@ -32,27 +32,55 @@
     <div class="back-to-topx"></div>
     <a id="back-to-top" href="#" class="back-to-top" role="button" style="color:#d50000"><span class="glyphicon glyphicon-chevron-up"></span></a>
 
-    <script defer type="text/javascript">
-        (function() {
-            var options = {
-                whatsapp: "6281387004321", // harus pake 62 dan tanpa spasi
-                // call_to_action: "Message us", // Call to action
-                position: "right",
-            };
-            var proto = document.location.protocol,
-                host = "getbutton.io",
-                url = proto + "//static." + host;
-            var s = document.createElement('script');
-            s.type = 'text/javascript';
-            s.async = true;
-            s.src = url + '/widget-send-button/js/init.js';
-            s.onload = function() {
-                WhWidgetSendButton.init(host, proto, options);
-            };
-            var x = document.getElementsByTagName('script')[0];
-            x.parentNode.insertBefore(s, x);
-        })();
-    </script>
+    <?php if ($this->agent->is_mobile()) : ?>
+        <div class="">
+            <script defer type="text/javascript">
+                (function() {
+                    var options = {
+                        whatsapp: "6281387004321", // harus pake 62 dan tanpa spasi
+                        // call_to_action: "Message us", // Call to action
+                        position: "right",
+                    };
+                    var proto = document.location.protocol,
+                        host = "getbutton.io",
+                        url = proto + "//static." + host;
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = url + '/widget-send-button/js/init.js';
+                    s.onload = function() {
+                        WhWidgetSendButton.init(host, proto, options);
+                    };
+                    var x = document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                })();
+            </script>
+        </div>
+    <?php else : ?>
+        <div class="">
+            <script defer type="text/javascript">
+                (function() {
+                    var options = {
+                        whatsapp: "6281387004321", // harus pake 62 dan tanpa spasi
+                        // call_to_action: "Message us", // Call to action
+                        position: "right",
+                    };
+                    var proto = document.location.protocol,
+                        host = "getbutton.io",
+                        url = proto + "//static." + host;
+                    var s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.async = true;
+                    s.src = url + '/widget-send-button/js/init.js';
+                    s.onload = function() {
+                        WhWidgetSendButton.init(host, proto, options);
+                    };
+                    var x = document.getElementsByTagName('script')[0];
+                    x.parentNode.insertBefore(s, x);
+                })();
+            </script>
+        </div>
+    <?php endif; ?>
 
 
     <header class="header-area header-sticky">
@@ -794,8 +822,6 @@
 <!-- <body>
 
     <div style="margin-top: 350px;">
-
-
         <center> <img src="<?= base_url('assets/images/ourproduk/logo.jpg') ?>" style="width: 300px;">
         </center>
         <CENTER>

@@ -116,10 +116,10 @@
                                     <div class="widget-box">
                                         <h4 class="widget-title">Search</h4>
                                         <div class="divider"></div>
-                                        <form action="#" class="search-form">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
-                                                <button type="submit" class="btn"><span class="icon mai-search"></span></button>
+                                        <form class="example" action="<?= base_url('Order/cari_pintu') ?>" method="POST">
+                                            <div class=" row no-gutters align-items-center" style="width:590px; height: 50px; ">
+                                                <input type="text" placeholder="Search topics or keywords" name="keyword" style="padding-left: 20 px;">
+                                                <button type="submit">Search</i></button>
                                             </div>
                                         </form>
                                     </div>
@@ -148,6 +148,7 @@
                                                             </a>
                                                         </h4>
                                                     </div>
+                                                    <br></br>
                                                     <div id="<?php echo $maincat->nama_kategori; ?>" class="panel-collapse collapse">
                                                         <div class="panel-body">
                                                             <ul>
@@ -168,8 +169,9 @@
                                         </div>
 
                                     </div>
-
                                     <br></br>
+
+
 
                                     <div class="ps-widget__content">
                                         <div class="widget-products widget">
@@ -190,6 +192,8 @@
                                             </div>
                                         </div>
                                     </div>
+
+
 
                                 </aside>
                             </div>
@@ -256,6 +260,8 @@
                                     </div>
                                 </div>
 
+
+
                                 <div class="container">
                                     <!-- <div class="row">
                                         <?php $query = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
@@ -291,6 +297,79 @@
                                             </div>
 
                                         <?php } ?>
+                                    </div> -->
+                                    <style>
+                                        .dropbtn {
+                                            background-color: red;
+                                            color: white;
+                                            padding: 3px;
+                                            font-size: 16px;
+                                            border: none;
+                                            cursor: pointer;
+                                        }
+
+                                        .dropdown {
+                                            position: relative;
+                                            display: inline-block;
+                                        }
+
+                                        .dropdown-content {
+                                            display: none;
+                                            position: absolute;
+                                            background-color: f9f9f9;
+                                            min-width: 130px;
+                                            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                                            z-index: 1;
+                                        }
+
+                                        .dropdown-content a {
+                                            color: black;
+                                            padding: 12px 16px;
+                                            text-decoration: none;
+                                            display: block;
+                                        }
+
+                                        .dropdown-content a:hover {
+                                            background-color: red
+                                        }
+
+                                        .dropdown:hover .dropdown-content {
+                                            display: block;
+                                        }
+
+                                        .dropdown:hover .dropbtn {
+                                            background-color: 3e8e41;
+                                        }
+                                    </style>
+                                    <div class="dropdown" style="margin-left:500px;">
+                                        <span class="fa fa-arrow-right" style="width:20px;height:20px;color:red;"></span><button class="dropbtn">SPECIAL PRODUCT</button>
+                                        <div class="dropdown-content">
+                                            <a href="<?= base_url('order/arrival_d/') . $kat['id_rekomendasi']  ?>" class="w3-bar-item w3-button">NEW ARRIVAL</a>
+                                            <a href="<?= base_url('order/spesial_d/') . $kat['id_rekomendasi']  ?>" class="w3-bar-item w3-button">SPECIAL OFFERS</a>
+                                            <a href="<?= base_url('order/manyviews_d/') . $kat['id_rekomendasi']  ?>" class="w3-bar-item w3-button">LATEST PRODUCTS</a>
+
+                                        </div>
+                                    </div>
+                                    <!-- <div>
+                                        <div class="row">
+                                            <li>
+                                                <span class="fa fa-repeat" style="color: black; background-color:white;"></span> <a class="col-md " style="background-color:yellow;" href="<?= base_url('order/arrival_d/') . $kat['id_rekomendasi']  ?>">NEW ARRIVAL</a>
+                                            </li>
+                                            <li>
+                                                <span class="fa fa-repeat" style="color: black; background-color:white;"></span> <a class="col-md " style="background-color:pink;" href="<?= base_url('order/spesial_d/') . $kat['id_rekomendasi']  ?>">SPECIAL OFFERS</a>
+                                            </li>
+                                            <li>
+                                                <span class="fa fa-repeat" style="color: black; background-color:white;"></span> <a class="col-md " style="background-color:pink;" href="<?= base_url('order/manyviews_d/') . $kat['id_rekomendasi']  ?>">LATEST PRODUCTS</a>
+                                            </li>
+
+                                            <a class="col-md" style="background-color:pink;" href="<?= base_url('order/spesial_d/') . $kat['id_rekomendasi']    ?>">
+                                                SPECIAL OFFERS
+                                            </a>
+                                            <a class="col-md" style="background-color:brown;" href="<?= base_url('order/manyviews_d/') . $kat['id_rekomendasi'] ?>">
+                                                LATEST PRODUCTS
+                                            </a>
+
+                                        </div>
                                     </div> -->
                                     <div class="row">
                                         <?php foreach ($brand_data->result_array() as $kat) { ?>

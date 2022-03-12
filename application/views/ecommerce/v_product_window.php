@@ -195,10 +195,10 @@
                                     <div class="widget-box">
                                         <h4 class="widget-title">Search</h4>
                                         <div class="divider"></div>
-                                        <form action="#" class="search-form">
-                                            <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
-                                                <button type="submit" class="btn"><span class="icon mai-search"></span></button>
+                                        <form class="example" action="<?= base_url('Order/cari_window') ?>" method="POST">
+                                            <div class=" row no-gutters align-items-center" style="width:590px; height: 50px; ">
+                                                <input type="text" placeholder="Search topics or keywords" name="keyword" style="padding-left: 20 px;">
+                                                <button type="submit">Search</i></button>
                                             </div>
                                         </form>
                                     </div>
@@ -227,6 +227,7 @@
                                                             </a>
                                                         </h4>
                                                     </div>
+                                                    <br></br>
                                                     <div id="<?php echo $maincat->nama_kategori; ?>" class="panel-collapse collapse">
                                                         <div class="panel-body">
                                                             <ul>
@@ -393,6 +394,19 @@
 
                                         <?php } ?>
                                     </div> -->
+                                    <div class="container">
+                                        <div class="row">
+                                            <a class="col-md" style="background-color:yellow;" href="<?= base_url('order/arrival_w/') . $kat['id_rekomendasi']  ?>">
+                                                NEW ARRIVAL
+                                            </a>
+                                            <a class="col-md" style="background-color:pink;" href="<?= base_url('order/spesial_w/') . $kat['id_rekomendasi']    ?>">
+                                                SPECIAL OFFERS
+                                            </a>
+                                            <a class="col-md" style="background-color:brown;" href="<?= base_url('order/manyviews_w/') . $kat['id_rekomendasi'] ?>">
+                                                LATEST PRODUCTS
+                                            </a>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         <?php $brand_data = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
                                                                 a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
