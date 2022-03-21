@@ -16,6 +16,58 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`u5815491_splus` /*!40100 DEFAULT CHARAC
 
 USE `u5815491_splus`;
 
+/*Table structure for table `product` */
+
+DROP TABLE IF EXISTS `product`;
+
+CREATE TABLE `product` (
+  `product_id` int(20) NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(120) NOT NULL,
+  `product_jenis` varchar(100) NOT NULL,
+  `product_price` decimal(8,2) NOT NULL,
+  `product_tipe` varchar(5) NOT NULL,
+  `product_brand` varchar(50) NOT NULL,
+  `product_camera` varchar(20) NOT NULL,
+  `product_image` varchar(100) NOT NULL,
+  `product_quantity` mediumint(5) NOT NULL,
+  `product_status` enum('0','1') NOT NULL COMMENT '0-active,1-inactive',
+  PRIMARY KEY (`product_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+
+/*Data for the table `product` */
+
+insert  into `product`(`product_id`,`product_name`,`product_jenis`,`product_price`,`product_tipe`,`product_brand`,`product_camera`,`product_image`,`product_quantity`,`product_status`) values 
+(1,'Honor 9 Lite (Sapphire Blue, 64 GB)  (4 GB RAM)','Honor',14499.00,'4','64','13','image-1.jpeg',10,'1'),
+(2,'\r\nInfinix Hot S3 (Sandstone Black, 32 GB)  (3 GB RAM)','Infinix',8999.00,'3','32','13','image-2.jpeg',10,'1'),
+(3,'VIVO V9 Youth (Gold, 32 GB)  (4 GB RAM)','VIVO',16990.00,'4','32','16','image-3.jpeg',10,'1'),
+(4,'Moto E4 Plus (Fine Gold, 32 GB)  (3 GB RAM)','Moto',11499.00,'3','32','8','image-4.jpeg',10,'1'),
+(5,'Lenovo K8 Plus (Venom Black, 32 GB)  (3 GB RAM)','Lenevo',9999.00,'3','32','13','image-5.jpg',10,'1'),
+(6,'Samsung Galaxy On Nxt (Gold, 16 GB)  (3 GB RAM)','Samsung',10990.00,'3','16','13','image-6.jpeg',10,'1'),
+(7,'Moto C Plus (Pearl White, 16 GB)  (2 GB RAM)','Moto',7799.00,'2','16','8','image-7.jpeg',10,'1'),
+(8,'Panasonic P77 (White, 16 GB)  (1 GB RAM)','Panasonic',5999.00,'1','16','8','image-8.jpeg',10,'1'),
+(9,'OPPO F5 (Black, 64 GB)  (6 GB RAM)','OPPO',19990.00,'6','64','16','image-9.jpeg',10,'1'),
+(10,'Honor 7A (Gold, 32 GB)  (3 GB RAM)','Honor',8999.00,'3','32','13','image-10.jpeg',10,'1'),
+(11,'Asus ZenFone 5Z (Midnight Blue, 64 GB)  (6 GB RAM)','Asus',29999.00,'6','128','12','image-12.jpeg',10,'1'),
+(12,'Redmi 5A (Gold, 32 GB)  (3 GB RAM)','MI',5999.00,'3','32','13','image-12.jpeg',10,'1'),
+(13,'Intex Indie 5 (Black, 16 GB)  (2 GB RAM)','Intex',4999.00,'2','16','8','image-13.jpeg',10,'1'),
+(14,'Google Pixel 2 XL (18:9 Display, 64 GB) White','Google',61990.00,'4','64','12','image-14.jpeg',10,'1'),
+(15,'Samsung Galaxy A9','Samsung',36000.00,'8','128','24','image-15.jpeg',10,'1'),
+(16,'Lenovo A5','Lenovo',5999.00,'2','16','13','image-16.jpeg',10,'1'),
+(17,'Asus Zenfone Lite L1','Asus',5999.00,'2','16','13','image-17.jpeg',10,'1'),
+(18,'Lenovo K9','Lenovo',8999.00,'3','32','13','image-18.jpeg',10,'1'),
+(19,'Infinix Hot S3x','Infinix',9999.00,'3','32','13','image-19.jpeg',10,'1'),
+(20,'Realme 2','Realme',8990.00,'4','64','13','image-20.jpeg',10,'1'),
+(21,'Redmi Note 6 Pro','Redmi',13999.00,'4','64','20','image-21.jpeg',10,'1'),
+(22,'Realme C1','Realme',7999.00,'2','16','15','image-22.jpeg',10,'1'),
+(23,'Vivo V11','Vivo',22900.00,'6','64','21','image-23.jpeg',10,'1'),
+(24,'Oppo F9 Pro','Oppo',23990.00,'6','64','18','image-24.jpg',10,'1'),
+(25,'Honor 9N','Honor',11999.00,'4','64','15','image-25.jpg',10,'1'),
+(26,'Redmi 6A','Redmi',6599.00,'2','16','13','image-26.jpeg',10,'1'),
+(27,'InFocus Vision 3','InFocus',7399.00,'2','16','13','image-27.jpeg',10,'1'),
+(28,'Vivo Y69','Vivo',11390.00,'3','32','16','image-28.jpeg',10,'1'),
+(29,'Honor 7x','Honor',12721.00,'4','32','18','image-29.jpeg',10,'1'),
+(30,'Nokia 2.1','Nokia',6580.00,'2','1','8','image-30.jpeg',10,'1');
+
 /*Table structure for table `tbl_blog` */
 
 DROP TABLE IF EXISTS `tbl_blog`;
@@ -588,7 +640,7 @@ CREATE TABLE `tbl_pengunjung` (
   `pengunjung_ip` varchar(40) DEFAULT NULL,
   `pengunjung_perangkat` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`pengunjung_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=124793 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=124805 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 /*Data for the table `tbl_pengunjung` */
 
@@ -626,7 +678,48 @@ insert  into `tbl_pengunjung`(`pengunjung_id`,`pengunjung_tanggal`,`pengunjung_i
 (124789,'2022-03-04 08:05:38','::1','Chrome'),
 (124790,'2022-03-05 07:51:48','::1','Chrome'),
 (124791,'2022-03-07 09:02:46','::1','Chrome'),
-(124792,'2022-03-08 07:41:00','::1','Chrome');
+(124792,'2022-03-08 07:41:00','::1','Chrome'),
+(124793,'2022-03-09 07:57:01','::1','Chrome'),
+(124794,'2022-03-10 07:51:25','::1','Chrome'),
+(124795,'2022-03-11 08:27:23','::1','Chrome'),
+(124796,'2022-03-12 08:16:38','::1','Chrome'),
+(124797,'2022-03-14 08:02:36','::1','Chrome'),
+(124798,'2022-03-15 08:37:07','::1','Chrome'),
+(124799,'2022-03-16 07:59:22','::1','Chrome'),
+(124800,'2022-03-16 09:21:01','127.0.0.1','Firefox'),
+(124801,'2022-03-17 07:45:13','::1','Chrome'),
+(124802,'2022-03-18 07:24:45','::1','Chrome'),
+(124803,'2022-03-19 07:43:25','::1','Chrome'),
+(124804,'2022-03-21 07:35:06','::1','Chrome');
+
+/*Table structure for table `tbl_product_splus` */
+
+DROP TABLE IF EXISTS `tbl_product_splus`;
+
+CREATE TABLE `tbl_product_splus` (
+  `product_id` int(20) NOT NULL AUTO_INCREMENT,
+  `product_kategori` int(11) NOT NULL,
+  `product_name` varchar(120) NOT NULL,
+  `product_jenis` varchar(100) NOT NULL,
+  `product_price` decimal(8,2) NOT NULL,
+  `product_tipe` varchar(100) NOT NULL,
+  `product_brand` varchar(50) NOT NULL,
+  `product_image` varchar(100) NOT NULL,
+  `product_quantity` mediumint(5) NOT NULL,
+  `product_status` enum('0','1') NOT NULL COMMENT '0-active,1-inactive',
+  PRIMARY KEY (`product_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+
+/*Data for the table `tbl_product_splus` */
+
+insert  into `tbl_product_splus`(`product_id`,`product_kategori`,`product_name`,`product_jenis`,`product_price`,`product_tipe`,`product_brand`,`product_image`,`product_quantity`,`product_status`) values 
+(1,1,'Pintu Classic-110','ABS',10000.00,'Classic','SPLUS','pintu/classic-2-20.jpg',5,'1'),
+(2,2,'Jendela Classic-110','uPVC',10000.00,'Classic','SPLUS','window/window3.jpg',5,'1'),
+(3,3,'kichen-001','kichen',10000.00,'kichen-001','SPLUS','interior/kichen-001.jpg',5,'1'),
+(4,4,'wpc-001','wpc',10000.00,'wpc-001','SPLUS','exterior/wpc-001.jpg',5,'1'),
+(5,5,'gagang-pintu-001','gagang-pintu',10000.00,'gagang-pintu-001','SPLUS','aksesoris/gagang-pintu.jpg',5,'1'),
+(6,6,'masker-dewasa-001','masker',10000.00,'masker-dewasa-001','SPLUS','masker/masker-dewasa-001.jpg',5,'1'),
+(7,3,'kichen-002','kichen',10000.00,'kichen-002','SPLUS','interior/kichen-002.jpg',5,'1');
 
 /*Table structure for table `tbl_produk` */
 
@@ -718,6 +811,7 @@ CREATE TABLE `tbl_produk_varian` (
   `produk_id` int(11) NOT NULL,
   `id_subkategori_produk` int(11) NOT NULL,
   `id_tipe_produk` int(11) NOT NULL,
+  `id_rekomendasi` int(11) NOT NULL,
   `varian_type` varchar(150) DEFAULT NULL,
   `varian_nama` varchar(150) DEFAULT NULL,
   `varian_gambar_depan` varchar(200) DEFAULT NULL,
@@ -736,38 +830,38 @@ CREATE TABLE `tbl_produk_varian` (
 
 /*Data for the table `tbl_produk_varian` */
 
-insert  into `tbl_produk_varian`(`varian_id`,`produk_id`,`id_subkategori_produk`,`id_tipe_produk`,`varian_type`,`varian_nama`,`varian_gambar_depan`,`varian_gambar_utama`,`varian_gambar_warna`,`varian_harga`,`varian_harga_meter`,`varian_jumlah`,`varian_deskripsi`,`varian_ukuran`,`varian_warna`,`tokopedia`,`bukalapak`) values 
-(141,1,1,1,'classic','classic-2','pintu/classic-2-20.jpg','pintu/classic-2-20.jpg','warna_new/19.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BROWN MOTIF','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9n606-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
-(142,1,1,1,'classic','classic-2','','pintu/classic-2-20.jpg','warna_new/10.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BROWN','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9n606-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
-(143,1,1,1,'classic','classic-1','pintu/classic-1-50.jpg','pintu/classic-1-50.jpg','warna_new/veronastone-57.jpg',0,657800,NULL,'Pintu ABS','1000x1000','WHITE',NULL,NULL),
-(144,1,1,1,'classic','classic-1','','pintu/classic-1-50.jpg','warna_new/10.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BLACK',NULL,NULL),
-(145,1,1,1,'classic','classic-1','','pintu/classic-1-50.jpg','warna_new/20.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BROWN',NULL,NULL),
-(146,1,1,1,'classic','classic-1',NULL,'pintu/classic-1-50.jpg','warna_new/59.jpg',NULL,NULL,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
-(147,1,1,1,'classic','classic-1',NULL,'pintu/classic-1-50.jpg','warna_new/27.jpg',0,NULL,NULL,'Pintu ABS','1000x1000','YELLOW',NULL,NULL),
-(148,1,1,1,'classic','classic-1',NULL,'pintu/classic-1-50.jpg','warna_new/80.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN 2',NULL,NULL),
-(149,1,3,2,'artdoor','artdoor-c1-30','pintu/artdoor-c1-30.jpg','pintu/artdoor-c1-30.jpg','warna_new/59.jpg',NULL,NULL,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
-(150,1,3,2,'artdoor','artdoor-c1-30','','pintu/artdoor-c1-30.jpg','warna_new/20.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
-(151,1,3,2,'artdoor','artdoor-c1-30','','pintu/artdoor-c1-30.jpg','warna_new/27.jpg',NULL,NULL,NULL,NULL,'1000x1000','YELLOW',NULL,NULL),
-(152,1,1,3,'grande','grande-1','pintu/grande.jpg','pintu/grande.jpg','warna_new/50.jpg',NULL,NULL,NULL,'Pintu Upvc','1000x1000','WHITE',NULL,NULL),
-(159,2,5,5,'Jendela sliding','window-003','window/window3.jpg','window/window3.jpg','warna_new/60.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
-(153,1,1,4,'premium','premium-1','pintu/premium.jpg','pintu/premium.jpg','warna_new/50.jpg',NULL,NULL,NULL,'Pintu Upvc','1000x1000','WHITE',NULL,NULL),
-(158,2,5,5,'Jendela sliding','window-002','window/window2.jpg','window/window2.jpg','warna_new/10.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
-(154,1,3,2,'artdoor','artdoor-n2-50','pintu/artdoor-n2-50.jpg','pintu/artdoor-n2-50.jpg','warna_new/50.jpg',NULL,NULL,NULL,NULL,'1000x1000','WHITE',NULL,NULL),
-(155,1,3,2,'artdoor','artdoor-p3-59','pintu/artdoor-p3-59.jpg','pintu/artdoor-p3-59.jpg','warna_new/59.jpg',NULL,NULL,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
-(156,1,3,2,'artdoor','artdoor-r7-60','pintu/artdoor-r7-60.jpg','pintu/artdoor-r7-60.jpg','warna_new/60.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
-(157,2,5,6,'Jendela jungkit','window-001','window/window.jpg','window/window.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','WHITE',NULL,NULL),
-(160,2,5,7,'Jendela swing','window-004','window/window4.jpg','window/window4.jpg','warna_new/50.jpg',NULL,657800,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
-(161,2,5,8,'Jendela casment','window-005','window/window5.jpg','window/window5.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
-(162,2,5,9,'Jendela pivot','window-006','window/window6.jpg','window/window6.jpg','warna_new/59.jpg',NULL,657800,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
-(163,3,11,10,'pvc-toilet','pvc-toilet-001','interior/pvc-toilet-001.jpg','interior/pvc-toilet-001.jpg','warna_new/59.jpg',NULL,657800,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
-(164,3,10,11,'kichen','kichen-001','interior/kichen-001.jpg','interior/kichen-001.jpg','warna_new/59.jpg',NULL,657800,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
-(165,3,10,11,'kichen','kichen-002','interior/kichen-002.jpg','interior/kichen-002.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
-(166,3,11,12,'pvc-toilet','pvc-toilet-002','interior/pvc-toilet-002.jpg','interior/pvc-toilet-002.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
-(167,4,13,13,'wpc','wpc-001','exterior/wpc-001.jpg','exterior/wpc-001.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
-(168,4,13,13,'wpc','wpc-002','exterior/wpc-002.jpeg','exterior/wpc-002.jpeg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
-(169,5,18,14,'gagang-pintu','gagang-pintu-001','aksesoris/gagang-pintu.jpg','aksesoris/gagang-pintu.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000',NULL,NULL,NULL),
-(170,6,15,15,'masker-dewasa','masker-dewasa-001','masker/masker-dewasa-001.jpg','masker/masker-dewasa-001.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000',NULL,NULL,NULL),
-(171,6,16,16,'masker-anak','masker-anak-001','masker/masker-dewasa-002.jpg','masker/masker-dewasa-002.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000',NULL,NULL,NULL);
+insert  into `tbl_produk_varian`(`varian_id`,`produk_id`,`id_subkategori_produk`,`id_tipe_produk`,`id_rekomendasi`,`varian_type`,`varian_nama`,`varian_gambar_depan`,`varian_gambar_utama`,`varian_gambar_warna`,`varian_harga`,`varian_harga_meter`,`varian_jumlah`,`varian_deskripsi`,`varian_ukuran`,`varian_warna`,`tokopedia`,`bukalapak`) values 
+(141,1,1,1,1,'classic','classic-2','pintu/classic-2-20.jpg','pintu/classic-2-20.jpg','warna_new/19.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BROWN MOTIF','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9n606-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(142,1,1,1,1,'classic','classic-2','','pintu/classic-2-20.jpg','warna_new/10.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BROWN','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9n606-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(143,1,1,1,1,'classic','classic-1','pintu/classic-1-50.jpg','pintu/classic-1-50.jpg','warna_new/veronastone-57.jpg',0,657800,NULL,'Pintu ABS','1000x1000','WHITE',NULL,NULL),
+(144,1,1,1,1,'classic','classic-1','','pintu/classic-1-50.jpg','warna_new/10.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BLACK',NULL,NULL),
+(145,1,1,1,1,'classic','classic-1','','pintu/classic-1-50.jpg','warna_new/20.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BROWN',NULL,NULL),
+(146,1,1,1,1,'classic','classic-1',NULL,'pintu/classic-1-50.jpg','warna_new/59.jpg',NULL,NULL,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(147,1,1,1,1,'classic','classic-1',NULL,'pintu/classic-1-50.jpg','warna_new/27.jpg',0,457800,NULL,'Pintu ABS','1000x1000','YELLOW',NULL,NULL),
+(148,1,1,1,1,'classic','classic-1',NULL,'pintu/classic-1-50.jpg','warna_new/80.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN 2',NULL,NULL),
+(149,1,3,2,2,'artdoor','artdoor-c1-30','pintu/artdoor-c1-30.jpg','pintu/artdoor-c1-30.jpg','warna_new/59.jpg',NULL,NULL,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(150,1,3,2,2,'artdoor','artdoor-c1-30','','pintu/artdoor-c1-30.jpg','warna_new/20.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(151,1,3,2,2,'artdoor','artdoor-c1-30','','pintu/artdoor-c1-30.jpg','warna_new/27.jpg',NULL,NULL,NULL,NULL,'1000x1000','YELLOW',NULL,NULL),
+(152,1,1,3,2,'grande','grande-1','pintu/grande.jpg','pintu/grande.jpg','warna_new/50.jpg',NULL,NULL,NULL,'Pintu Upvc','1000x1000','WHITE',NULL,NULL),
+(159,2,5,5,2,'Jendela sliding','window-003','window/window3.jpg','window/window3.jpg','warna_new/60.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(153,1,1,4,2,'premium','premium-1','pintu/premium.jpg','pintu/premium.jpg','warna_new/50.jpg',NULL,NULL,NULL,'Pintu Upvc','1000x1000','WHITE',NULL,NULL),
+(158,2,5,5,2,'Jendela sliding','window-002','window/window2.jpg','window/window2.jpg','warna_new/10.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(154,1,3,2,2,'artdoor','artdoor-n2-50','pintu/artdoor-n2-50.jpg','pintu/artdoor-n2-50.jpg','warna_new/50.jpg',NULL,NULL,NULL,NULL,'1000x1000','WHITE',NULL,NULL),
+(155,1,3,2,2,'artdoor','artdoor-p3-59','pintu/artdoor-p3-59.jpg','pintu/artdoor-p3-59.jpg','warna_new/59.jpg',NULL,NULL,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(156,1,3,2,2,'artdoor','artdoor-r7-60','pintu/artdoor-r7-60.jpg','pintu/artdoor-r7-60.jpg','warna_new/60.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(157,2,5,6,2,'Jendela jungkit','window-001','window/window.jpg','window/window.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','WHITE',NULL,NULL),
+(160,2,5,7,3,'Jendela swing','window-004','window/window4.jpg','window/window4.jpg','warna_new/50.jpg',NULL,657800,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(161,2,5,8,3,'Jendela casment','window-005','window/window5.jpg','window/window5.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(162,2,5,9,3,'Jendela pivot','window-006','window/window6.jpg','window/window6.jpg','warna_new/59.jpg',NULL,657800,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(163,3,11,10,3,'pvc-toilet','pvc-toilet-001','interior/pvc-toilet-001.jpg','interior/pvc-toilet-001.jpg','warna_new/59.jpg',NULL,657800,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(164,3,10,11,3,'kichen','kichen-001','interior/kichen-001.jpg','interior/kichen-001.jpg','warna_new/59.jpg',NULL,657800,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(165,3,10,11,3,'kichen','kichen-002','interior/kichen-002.jpg','interior/kichen-002.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(166,3,11,12,3,'pvc-toilet','pvc-toilet-002','interior/pvc-toilet-002.jpg','interior/pvc-toilet-002.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(167,4,13,13,3,'wpc','wpc-001','exterior/wpc-001.jpg','exterior/wpc-001.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(168,4,13,13,3,'wpc','wpc-002','exterior/wpc-002.jpeg','exterior/wpc-002.jpeg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(169,5,18,14,3,'gagang-pintu','gagang-pintu-001','aksesoris/gagang-pintu.jpg','aksesoris/gagang-pintu.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000',NULL,NULL,NULL),
+(170,6,15,15,3,'masker-dewasa','masker-dewasa-001','masker/masker-dewasa-001.jpg','masker/masker-dewasa-001.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000',NULL,NULL,NULL),
+(171,6,16,16,3,'masker-anak','masker-anak-001','masker/masker-dewasa-002.jpg','masker/masker-dewasa-002.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000',NULL,NULL,NULL);
 
 /*Table structure for table `tbl_produk_varian_lama` */
 
@@ -1015,11 +1109,12 @@ CREATE TABLE `tbl_subkategoriproduk` (
   `nama_subkategori` varchar(255) NOT NULL,
   `subkategori_seo` varchar(255) NOT NULL,
   PRIMARY KEY (`id_subkategori_produk`)
-) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_subkategoriproduk` */
 
 insert  into `tbl_subkategoriproduk`(`id_kategori_produk`,`id_subkategori_produk`,`nama_subkategori`,`subkategori_seo`) values 
+(0,0,'',''),
 (1,1,'Pintu ABS','pintu_abs'),
 (1,2,'Pintu UPVC','Pintu_UPVC'),
 (1,3,'Pintu Namo','Pintu_Namo'),
@@ -1037,7 +1132,11 @@ insert  into `tbl_subkategoriproduk`(`id_kategori_produk`,`id_subkategori_produk
 (5,15,'Masker Dewasa','Masker_Dewasa'),
 (5,16,'Masker Anak-anak','Masker_Anak-anak'),
 (3,17,'Ambalan','ambalan'),
-(6,18,'aksesoris','aksesoris');
+(6,18,'Aksesoris pintu','aksesoris_pintu'),
+(6,19,'Aksesoris jendela','aksesoris_jendela'),
+(6,20,'Aksesoris kichenset','aksesoris_kichenset'),
+(6,21,'Aksesoris Automatic','aksesoris_Automatic'),
+(6,22,'Aksesoris Acclainya','aksesoris_Acclainya');
 
 /*Table structure for table `tbl_testimoni` */
 
