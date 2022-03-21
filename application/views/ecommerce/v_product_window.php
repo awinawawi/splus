@@ -20,6 +20,17 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/ecommerce/css/lightbox.css') ?>">
     <link rel="shortcut icon" href="<?= base_url('assets/user/images/logo.png') ?>">
 
+    <!-- Price Range Script Start-->
+
+    <link href="<?php echo base_url() ?>assets/css/filter/css/price-range.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/css/filter/css/responsive.css" rel="stylesheet">
+    <link href="<?= base_url('assets/css/filter/css/jquery-ui.css') ?>" rel="stylesheet">
+    <script src="<?= base_url('assets/css/filter/js/jquery-1.10.2.min.js') ?>"></script>
+    <script src="<?= base_url('assets/css/filter/js/jquery-ui.js') ?>"></script>
+    <script src="<?= base_url('assets/css/filter/js/bootstrap.min.js') ?>"></script>
+
+    <!-- Price Range Code end -->
+
 </head>
 
 <body>
@@ -193,7 +204,7 @@
                                     </div> -->
 
                                     <div class="widget-box">
-                                        <h4 class="widget-title">Search</h4>
+                                        <h4 class="widget-title">SEARCH</h4>
                                         <div class="divider"></div>
                                         <form class="example" action="<?= base_url('Order/cari_window') ?>" method="POST">
                                             <div class=" row no-gutters align-items-center" style="width:590px; height: 50px; ">
@@ -223,7 +234,7 @@
                                                                     } ?>
 
                                                                 </span>
-                                                                <?php echo "Jenis Window" ?>
+                                                                <?php echo "JENIS-JENIS JENDELA" ?>
                                                             </a>
                                                         </h4>
                                                     </div>
@@ -271,9 +282,9 @@
                                         </div>
                                     </div> -->
 
-                                    <div class="ps-widget__content">
+                                    <!-- <div class="ps-widget__content">
                                         <div class="widget-products widget">
-                                            <h4 class="widget-title">Tipe</h4>
+                                            <h3 class="widget-title">TIPE</h3>
                                             <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
                                                 <?php $tipe = $this->db->query("SELECT * FROM tbl_produk_varian WHERE produk_id='2' group by varian_type
                                                                 ");
@@ -287,13 +298,197 @@
                                                     </div>
 
                                                 <?php } ?>
-
-
                                             </div>
+                                        </div>
+                                    </div> -->
+
+                                    <div class="ps-widget__content">
+                                        <h3>TIP EX</h3>
+                                        <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
+                                            <?php $tipex = $this->db->query("SELECT DISTINCT(varian_type) FROM tbl_produk_varian WHERE produk_id = '2' ORDER BY varian_id DESC
+                                                                ");
+                                            foreach ($tipex->result_array() as $row) {
+                                            ?>
+                                                <div class="form-check" style="padding-left: 10px;">
+                                                    <label>
+
+                                                        <input type="checkbox" class="common_selector" value="<?php echo $row['varian_type']; ?>">
+                                                        <?php echo $row['varian_type']; ?>
+                                                    </label>
+                                                </div>
+
+                                            <?php } ?>
                                         </div>
                                     </div>
 
+                                    <div class="ps-widget__content">
+                                        <h4 class="widget__title">PRINCE HARGA</h4>
+                                        <input type="hidden" id="hidden_minimum_price" value="0" />
+                                        <input type="hidden" id="hidden_maximum_price" value="650000" />
+                                        <p id="price_show">Rp.10000 - Rp.650000</p>
+                                        <div id="price_range"></div>
+                                    </div>
+                                    <br></br>
+
+
+
+                                    <!-- <div class="ps-widget__content">
+                                        <div class="widget-products widget">
+                                            <h4 class="widget__title">PRINCE HARGA</h4>
+                                            <p id="amount" style="text-align:center"></p>
+                                            <div id="slider-range"></div>
+                                            <div class="pricerange">
+                                                <form action="<?= base_url('Order/show_jendela') ?>" method="POST">
+                                                    <input type="hidden" id="amount1" name="amount1" value="">
+                                                    <input type="hidden" id="amount2" name="amount2" value="">
+                                                    <input type="submit" name="submit_range" style="margin-top: 10px;margin-left: 100px;" value="FILTER">
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div> -->
+
+                                    <!-- <script type="text/javascript">
+                                        $(function() {
+                                            $("#slider-range").slider({
+                                                range: true,
+                                                min: 0,
+                                                max: 9000000,
+                                                values: [0, 9000000],
+                                                slide: function(event, ui) {
+                                                    $("#amount").html("Rp." + ui.values[0] + " - Rp." + ui.values[1]);
+                                                    $("#amount1").val(ui.values[0]);
+                                                    $("#amount2").val(ui.values[1]);
+                                                }
+                                            });
+                                            $("#amount").html("Rp." + $("#slider-range").slider("values", 0) +
+                                                " - Rp." + $("#slider-range").slider("values", 1));
+                                        });
+                                    </script> -->
+
+                                    <!-- <style>
+                                        #loading {
+                                            text-align: center;
+                                            background: url('loader.gif') no-repeat center;
+                                            height: 150px;
+                                        }
+                                    </style> -->
+
+                                    <script>
+                                        $(document).ready(function() {
+
+                                            filter_data();
+
+                                            function filter_data(page) {
+                                                // $('.filter_data').html('<div id="loading" style="" ></div>');
+                                                var action = 'fetch_data';
+                                                var minimum_price = $('#hidden_minimum_price').val();
+                                                var maximum_price = $('#hidden_maximum_price').val();
+                                                var tipe = get_filter('tipe');
+
+                                                $.ajax({
+                                                    url: "<?php echo base_url(); ?>product_filter/fetch_data/" + page,
+                                                    // url: "<?= base_url('application/view/ecommerce/fetch_data.php') ?>",
+                                                    method: "POST",
+                                                    dataType: "JSON",
+                                                    data: {
+                                                        action: action,
+                                                        minimum_price: minimum_price,
+                                                        maximum_price: maximum_price,
+                                                        tipe: tipe
+                                                    },
+                                                    success: function(data) {
+                                                        // $('.filter_data').html(data);
+                                                        $('.filter_data').html(data.product_list);
+
+                                                    }
+                                                });
+                                            }
+
+                                            function get_filter(class_name) {
+                                                var filter = [];
+                                                $('.' + class_name + ':checked').each(function() {
+                                                    filter.push($(this).val());
+                                                });
+                                                return filter;
+                                            }
+
+                                            $('.common_selector').click(function() {
+                                                filter_data();
+                                            });
+
+                                            $('#price_range').slider({
+                                                range: true,
+                                                min: 10000,
+                                                max: 650000,
+                                                values: [10000, 650000],
+                                                step: 500,
+                                                stop: function(event, ui) {
+                                                    $('#price_show').html('Rp.' + ui.values[0] + ' - Rp.' + ui.values[1]);
+                                                    $('#hidden_minimum_price').val(ui.values[0]);
+                                                    $('#hidden_maximum_price').val(ui.values[1]);
+                                                    filter_data();
+                                                }
+                                            });
+
+                                        });
+                                    </script>
+
                                 </aside>
+                                <br></br>
+                                <style>
+                                    .dropbtn {
+                                        background-color: white;
+                                        color: black;
+                                        padding: 3px;
+                                        font-size: 16px;
+                                        border: none;
+                                        cursor: pointer;
+                                    }
+
+                                    .dropdown {
+                                        position: relative;
+                                        display: inline-block;
+                                    }
+
+                                    .dropdown-content {
+                                        display: none;
+                                        position: absolute;
+                                        background-color: f9f9f9;
+                                        min-width: 130px;
+                                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                                        z-index: 1;
+                                    }
+
+                                    .dropdown-content a {
+                                        color: black;
+                                        padding: 12px 16px;
+                                        text-decoration: none;
+                                        display: block;
+                                    }
+
+                                    .dropdown-content a:hover {
+                                        background-color: red
+                                    }
+
+                                    .dropdown:hover .dropdown-content {
+                                        display: block;
+                                    }
+
+                                    .dropdown:hover .dropbtn {
+                                        background-color: 3e8e41;
+                                    }
+                                </style>
+                                <div class="dropdown" style="margin-left:0px;">
+                                    <span class="fa fa-arrow-right" style="width:20px;height:20px;color:black;"></span><button class="dropbtn">
+                                        <h4 class="widget-title">SPECIAL PRODUCT</h4>
+                                    </button>
+                                    <div class="dropdown-content">
+                                        <a href="<?= base_url('order/arrival_w/') . $kat['id_rekomendasi']  ?>" class="w3-bar-item w3-button">NEW ARRIVAL</a>
+                                        <a href="<?= base_url('order/spesial_w/') . $kat['id_rekomendasi']  ?>" class="w3-bar-item w3-button">SPECIAL OFFERS</a>
+                                        <a href="<?= base_url('order/manyviews_w/') . $kat['id_rekomendasi']  ?>" class="w3-bar-item w3-button">LATEST PRODUCTS</a>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -358,55 +553,7 @@
                                     </div>
                                 </div>
 
-                                <div class="container">
-                                    <!-- <div class="row">
-                                        <?php $query = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
-                                                                a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
-                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id="9"
-                                                                GROUP BY a.varian_nama
-                                                                ');
-                                        foreach ($query->result_array() as $kat) {
-
-                                        ?>
-
-                                            <div class="col-lg-4">
-                                                <div class="item">
-                                                    <div class="thumb">
-                                                        <div class="hover-content">
-                                                            <ul>
-                                                                <li><a href="<?= base_url('assets/images/ourproduk/produk/' . $kat['varian_gambar_depan']) ?>"><i class="fa fa-eye"></i></a></li>
-                                                                <li><a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>"><i class="fa fa-shopping-cart"></i></a></li>
-                                                            </ul>
-                                                        </div>
-
-                                                        <a>
-                                                            <img src="<?= base_url('assets/images/ourproduk/produk/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
-                                                        </a>
-                                                    </div>
-
-                                                    <div class="down-content">
-                                                        <h4><?= $kat['varian_nama'] ?></h4>
-                                                        <span>RP.<?= ($kat['varian_harga_meter'])  ?> </span>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        <?php } ?>
-                                    </div> -->
-                                    <div class="container">
-                                        <div class="row">
-                                            <a class="col-md" style="background-color:yellow;" href="<?= base_url('order/arrival_w/') . $kat['id_rekomendasi']  ?>">
-                                                NEW ARRIVAL
-                                            </a>
-                                            <a class="col-md" style="background-color:pink;" href="<?= base_url('order/spesial_w/') . $kat['id_rekomendasi']    ?>">
-                                                SPECIAL OFFERS
-                                            </a>
-                                            <a class="col-md" style="background-color:brown;" href="<?= base_url('order/manyviews_w/') . $kat['id_rekomendasi'] ?>">
-                                                LATEST PRODUCTS
-                                            </a>
-                                        </div>
-                                    </div>
+                                <!-- <div class="container">
                                     <div class="row">
                                         <?php $brand_data = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
                                                                 a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
@@ -445,11 +592,22 @@
                                             <p>There are no product available......please check again thanks brother</p>
                                         <?php } ?>
 
-
-
+                                       
                                     </div>
+                                    <div class="products-view__pagination ">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <nav class="mb-5">
+                                                    <?php echo $this->pagination->create_links(); ?>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
 
-
+                                <div class="container">
+                                    <div class="row filter_data">
+                                    </div>
                                 </div>
 
 
@@ -458,6 +616,8 @@
                         </section>
                     <?php endif; ?>
                 </div>
+
+
 
             </div>
         </div>

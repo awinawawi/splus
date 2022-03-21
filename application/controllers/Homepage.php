@@ -11,6 +11,10 @@ class Homepage extends CI_Controller
 		$this->load->model('M_pengunjung');
 		$this->load->model('M_pelanggan');
 		$this->load->model('M_galeri');
+		//filter
+		$this->load->model('product_filter_model');
+		$this->load->model('Product_filter_model_interior');
+		$this->load->model('Product_filter_model_exterior');
 
 		//count pengunjung
 		$this->M_pengunjung->count_visitor();
@@ -18,6 +22,8 @@ class Homepage extends CI_Controller
 
 	public function index()
 	{
+
+
 		// $x['produk'] 	= $this->M_produk->get_new_product();
 		$x['paginasi']	= $this->paginasi(12);
 		$this->load->view('user/home', $x);
@@ -317,6 +323,33 @@ class Homepage extends CI_Controller
 
 	//----------E-commerce-------------//
 
+	public function product_window_splus()
+	{
+		$data['jenis_data'] = $this->product_filter_model->fetch_filter_type('product_jenis');
+		$data['tipe_data'] = $this->product_filter_model->fetch_filter_type('product_tipe');
+		$data['brand_data'] = $this->product_filter_model->fetch_filter_type('product_brand');
+		$this->load->view('ecommerce/product_filter', $data);
+	}
+
+	public function product_interior_material_splus()
+	{
+		$data['jenis_data'] = $this->Product_filter_model_interior->fetch_filter_type('product_jenis');
+		$data['tipe_data'] = $this->Product_filter_model_interior->fetch_filter_type('product_tipe');
+		$data['brand_data'] = $this->Product_filter_model_interior->fetch_filter_type('product_brand');
+		$this->load->view('ecommerce/new_filter/v_product_filter_interior', $data);
+	}
+
+	public function product_exterior_material_splus()
+	{
+		$data['jenis_data'] = $this->Product_filter_model_exterior->fetch_filter_type('product_jenis');
+		$data['tipe_data'] = $this->Product_filter_model_exterior->fetch_filter_type('product_tipe');
+		$data['brand_data'] = $this->Product_filter_model_exterior->fetch_filter_type('product_brand');
+		$this->load->view('ecommerce/new_filter/v_product_filter_exterior', $data);
+	}
+
+
+
+
 	public function Ecommerce()
 	{
 
@@ -333,6 +366,8 @@ class Homepage extends CI_Controller
 	{
 		$this->load->view('ecommerce/v_product_window');
 	}
+
+
 
 	public function product_interior()
 	{

@@ -118,7 +118,7 @@
                                     </div>
                                     <br></br>
                                     <div class="widget-box">
-                                        <h4 class="widget-title">Search</h4>
+                                        <h4 class="widget-title">SEARCH</h4>
                                         <div class="divider"></div>
                                         <form class="example" action="<?= base_url('Order/cari_exterior') ?>" method="POST">
                                             <div class=" row no-gutters align-items-center" style="width:590px; height: 50px; ">
@@ -148,7 +148,7 @@
                                                                     } ?>
 
                                                                 </span>
-                                                                <?php echo "Jenis-Jenis Exterior Material" ?>
+                                                                <?php echo "JENIS-JENIS EXTERIOR MATERIAL" ?>
                                                             </a>
                                                         </h4>
                                                     </div>
@@ -178,7 +178,7 @@
 
                                     <div class="ps-widget__content">
                                         <div class="widget-products widget">
-                                            <h4 class="widget-title">Tipe</h4>
+                                            <h4 class="widget-title">TIPE</h4>
                                             <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
                                                 <?php $tipex = $this->db->query('SELECT * FROM tbl_produk_varian WHERE produk_id="1" group by varian_type
                                                                 ');
@@ -197,6 +197,60 @@
                                     </div>
 
                                 </aside>
+                                <style>
+                                    .dropbtn {
+                                        background-color: white;
+                                        color: black;
+                                        padding: 3px;
+                                        font-size: 16px;
+                                        border: none;
+                                        cursor: pointer;
+                                    }
+
+                                    .dropdown {
+                                        position: relative;
+                                        display: inline-block;
+                                    }
+
+                                    .dropdown-content {
+                                        display: none;
+                                        position: absolute;
+                                        background-color: f9f9f9;
+                                        min-width: 130px;
+                                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                                        z-index: 1;
+                                    }
+
+                                    .dropdown-content a {
+                                        color: black;
+                                        padding: 12px 16px;
+                                        text-decoration: none;
+                                        display: block;
+                                    }
+
+                                    .dropdown-content a:hover {
+                                        background-color: red
+                                    }
+
+                                    .dropdown:hover .dropdown-content {
+                                        display: block;
+                                    }
+
+                                    .dropdown:hover .dropbtn {
+                                        background-color: 3e8e41;
+                                    }
+                                </style>
+                                <div class="dropdown" style="margin-left:0px;">
+                                    <span class="fa fa-arrow-right" style="width:20px;height:20px;color:black;"></span><button class="dropbtn">
+                                        <h4 class="widget-title">SPECIAL PRODUCT</h4>
+                                    </button>
+                                    <div class="dropdown-content">
+                                        <a href="<?= base_url('order/arrival_e/') . $kat['id_rekomendasi']  ?>" class="w3-bar-item w3-button">NEW ARRIVAL</a>
+                                        <a href="<?= base_url('order/spesial_e/') . $kat['id_rekomendasi']  ?>" class="w3-bar-item w3-button">SPECIAL OFFERS</a>
+                                        <a href="<?= base_url('order/manyviews_e/') . $kat['id_rekomendasi']  ?>" class="w3-bar-item w3-button">LATEST PRODUCTS</a>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -293,7 +347,7 @@
 
                                         <?php } ?>
                                     </div> -->
-                                    <div class="container">
+                                    <!-- <div class="container">
                                         <div class="row">
                                             <a class="col-md" style="background-color:yellow;" href="<?= base_url('order/arrival_e/') . $kat['id_rekomendasi']  ?>">
                                                 NEW ARRIVAL
@@ -305,7 +359,7 @@
                                                 LATEST PRODUCTS
                                             </a>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <br></br>
                                     <div class="row">
                                         <?php foreach ($brand_data->result_array() as $kat) { ?>

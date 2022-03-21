@@ -20,6 +20,22 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/ecommerce/css/lightbox.css') ?>">
     <link rel="shortcut icon" href="<?= base_url('assets/user/images/logo.png') ?>">
 
+    <!-- Price Range Script Start-->
+
+    <!-- <link href="<?php echo base_url() ?>assets/css/filter/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="<?php echo base_url() ?>assets/css/filter/css/font-awesome.min.css" rel="stylesheet"> -->
+    <!-- <link href="<?php echo base_url() ?>assets/css/filter/css/prettyPhoto.css" rel="stylesheet"> -->
+    <link href="<?php echo base_url() ?>assets/css/filter/css/price-range.css" rel="stylesheet">
+    <!-- <link href="<?php echo base_url() ?>assets/css/filter/css/animate.css" rel="stylesheet"> -->
+    <!-- <link href="<?php echo base_url() ?>assets/css/filter/css/main.css" rel="stylesheet"> -->
+    <link href="<?php echo base_url() ?>assets/css/filter/css/responsive.css" rel="stylesheet">
+
+    <link href="<?= base_url('assets/css/filter/css/jquery-ui.css') ?>" rel="stylesheet">
+    <script src="<?= base_url('assets/css/filter/js/jquery-1.10.2.min.js') ?>"></script>
+    <script src="<?= base_url('assets/css/filter/js/jquery-ui.js') ?>"></script>
+    <script src="<?= base_url('assets/css/filter/js/bootstrap.min.js') ?>"></script>
+    <!-- Price Range Code end -->
+
 </head>
 
 <body>
@@ -114,7 +130,7 @@
                                     </div>
                                     <br></br>
                                     <div class="widget-box">
-                                        <h4 class="widget-title">Search</h4>
+                                        <h4 class="widget-title">SEARCH</h4>
                                         <div class="divider"></div>
                                         <form class="example" action="<?= base_url('Order/cari_pintu') ?>" method="POST">
                                             <div class=" row no-gutters align-items-center" style="width:590px; height: 50px; ">
@@ -144,7 +160,7 @@
                                                                     } ?>
 
                                                                 </span>
-                                                                <?php echo "Jenis Pintu" ?>
+                                                                <?php echo "JENIS-JENIS PINTU" ?>
                                                             </a>
                                                         </h4>
                                                     </div>
@@ -171,11 +187,9 @@
                                     </div>
                                     <br></br>
 
-
-
                                     <div class="ps-widget__content">
                                         <div class="widget-products widget">
-                                            <h4 class="widget-title">Tipe</h4>
+                                            <h4 class="widget-title">TIPE</h4>
                                             <div style="height: 200px; overflow-y: auto; overflow-x: hidden;">
                                                 <?php $tipex = $this->db->query('SELECT * FROM tbl_produk_varian WHERE produk_id="1" group by varian_type
                                                                 ');
@@ -193,9 +207,101 @@
                                         </div>
                                     </div>
 
+                                    <div class="ps-widget__content">
+                                        <!--price-range-->
+                                        <div class="widget-products widget">
+                                            <h4 class="widget__title">PRINCE HARGA</h4>
+                                            <p id="amount" style="text-align:center"></p>
+                                            <div id="slider-range"></div>
+                                            <div class="pricerange">
+                                                <form action="<?= base_url('Order/show') ?>" method="POST">
+                                                    <input type="hidden" id="amount1" name="amount1" value="">
+                                                    <input type="hidden" id="amount2" name="amount2" value="">
+                                                    <input type="submit" name="submit_range" style="margin-top: 10px;margin-left: 100px;" value="FILTER">
+                                                </form>
 
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <script type="text/javascript">
+                                        $(function() {
+                                            $("#slider-range").slider({
+                                                range: true,
+                                                min: 0,
+                                                max: 9000000,
+                                                values: [0, 9000000],
+                                                slide: function(event, ui) {
+                                                    $("#amount").html("Rp." + ui.values[0] + " - Rp." + ui.values[1]);
+                                                    $("#amount1").val(ui.values[0]);
+                                                    $("#amount2").val(ui.values[1]);
+                                                }
+                                            });
+                                            $("#amount").html("Rp." + $("#slider-range").slider("values", 0) +
+                                                " - Rp." + $("#slider-range").slider("values", 1));
+                                        });
+                                    </script>
+
+                                    <br></br>
+                                    <div class="ps-widget__content ">
+                                        <style>
+                                            .dropbtn {
+                                                background-color: white;
+                                                color: black;
+                                                padding: 3px;
+                                                font-size: 16px;
+                                                border: none;
+                                                cursor: pointer;
+                                            }
+
+                                            .dropdown {
+                                                position: relative;
+                                                display: inline-block;
+                                            }
+
+                                            .dropdown-content {
+                                                display: none;
+                                                position: absolute;
+                                                background-color: f9f9f9;
+                                                min-width: 130px;
+                                                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                                                z-index: 1;
+                                            }
+
+                                            .dropdown-content a {
+                                                color: black;
+                                                padding: 12px 16px;
+                                                text-decoration: none;
+                                                display: block;
+                                            }
+
+                                            .dropdown-content a:hover {
+                                                background-color: red
+                                            }
+
+                                            .dropdown:hover .dropdown-content {
+                                                display: block;
+                                            }
+
+                                            .dropdown:hover .dropbtn {
+                                                background-color: 3e8e41;
+                                            }
+                                        </style>
+                                        <div class="dropdown" style="margin-left:0px;">
+                                            <h4 class="widget-title">SPECIAL PRODUCT</h4>
+                                            <div class="dropdown-content">
+                                                <a href="<?= base_url('order/arrival_d/') . $kat['id_rekomendasi']  ?>" class="w3-bar-item w3-button">NEW ARRIVAL</a>
+                                                <a href="<?= base_url('order/spesial_d/') . $kat['id_rekomendasi']  ?>" class="w3-bar-item w3-button">SPECIAL OFFERS</a>
+                                                <a href="<?= base_url('order/manyviews_d/') . $kat['id_rekomendasi']  ?>" class="w3-bar-item w3-button">LATEST PRODUCTS</a>
+
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </aside>
+
+
                             </div>
                         </div>
                     </div>
@@ -298,58 +404,6 @@
 
                                         <?php } ?>
                                     </div> -->
-                                    <style>
-                                        .dropbtn {
-                                            background-color: red;
-                                            color: white;
-                                            padding: 3px;
-                                            font-size: 16px;
-                                            border: none;
-                                            cursor: pointer;
-                                        }
-
-                                        .dropdown {
-                                            position: relative;
-                                            display: inline-block;
-                                        }
-
-                                        .dropdown-content {
-                                            display: none;
-                                            position: absolute;
-                                            background-color: f9f9f9;
-                                            min-width: 130px;
-                                            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-                                            z-index: 1;
-                                        }
-
-                                        .dropdown-content a {
-                                            color: black;
-                                            padding: 12px 16px;
-                                            text-decoration: none;
-                                            display: block;
-                                        }
-
-                                        .dropdown-content a:hover {
-                                            background-color: red
-                                        }
-
-                                        .dropdown:hover .dropdown-content {
-                                            display: block;
-                                        }
-
-                                        .dropdown:hover .dropbtn {
-                                            background-color: 3e8e41;
-                                        }
-                                    </style>
-                                    <div class="dropdown" style="margin-left:500px;">
-                                        <span class="fa fa-arrow-right" style="width:20px;height:20px;color:red;"></span><button class="dropbtn">SPECIAL PRODUCT</button>
-                                        <div class="dropdown-content">
-                                            <a href="<?= base_url('order/arrival_d/') . $kat['id_rekomendasi']  ?>" class="w3-bar-item w3-button">NEW ARRIVAL</a>
-                                            <a href="<?= base_url('order/spesial_d/') . $kat['id_rekomendasi']  ?>" class="w3-bar-item w3-button">SPECIAL OFFERS</a>
-                                            <a href="<?= base_url('order/manyviews_d/') . $kat['id_rekomendasi']  ?>" class="w3-bar-item w3-button">LATEST PRODUCTS</a>
-
-                                        </div>
-                                    </div>
                                     <!-- <div>
                                         <div class="row">
                                             <li>

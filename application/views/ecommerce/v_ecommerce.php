@@ -136,7 +136,7 @@
                                 </ul>
                             </li>
                             <li class="submenu">
-                                <a href="javascript:;">Features</a>
+                                <a href="javascript:;">Special Product</a>
                                 <ul>
                                     <li class="scroll-to-section"><a href="#men">Special Offers</a></li>
                                     <li class="scroll-to-section"><a href="#women">New Arrival</a></li>
@@ -230,7 +230,7 @@
                                                 <h4><a style="color: #fff;">Window</a></h4>
 
                                                 <div class="main-border-button">
-                                                    <a href="<?= base_url('product_window') ?>">Read more</a>
+                                                    <a href="<?= base_url('product_window_splus') ?>">Read more</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -250,7 +250,8 @@
                                             <div class="inner">
                                                 <h4><a style="color: #fff;">Interior Material</a></h4>
                                                 <div class="main-border-button">
-                                                    <a href="<?= base_url('product_interior') ?>">Read more</a>
+                                                    <!-- <a href="<?= base_url('product_interior') ?>">Read more</a> -->
+                                                    <a href="<?= base_url('product_interior_material_splus') ?>">Read more</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -269,7 +270,8 @@
                                             <div class="inner">
                                                 <h4><a style="color: #fff;">Exterior Material</a></h4>
                                                 <div class="main-border-button">
-                                                    <a href="<?= base_url('product_exterior') ?>">Read more</a>
+                                                    <!-- <a href="<?= base_url('product_exterior') ?>">Read more</a> -->
+                                                    <a href="<?= base_url('product_exterior_material_splus') ?>">Read more</a>
                                                 </div>
                                             </div>
                                         </div>

@@ -37,6 +37,85 @@ class Order extends CI_Controller
 
     //FILTER-------------------------------------------------------//
 
+    function show()
+    {
+        $min_range = $this->input->post('amount1');
+        $max_range = $this->input->post('amount2');
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='1' 
+        AND a.varian_harga_meter BETWEEN '" . $min_range . "' AND '" . $max_range . "'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian where produk_id='1'  GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_pintu', $data);
+    }
+
+    function show_jendela()
+    {
+        $min_range = $this->input->post('amount1');
+        $max_range = $this->input->post('amount2');
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='2' 
+        AND a.varian_harga_meter BETWEEN '" . $min_range . "' AND '" . $max_range . "'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian where produk_id='2'  GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_window', $data);
+    }
+
+    function show_interior()
+    {
+        $min_range = $this->input->post('amount1');
+        $max_range = $this->input->post('amount2');
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='3' 
+        AND a.varian_harga_meter BETWEEN '" . $min_range . "' AND '" . $max_range . "'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian where produk_id='3'  GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_window', $data);
+    }
+
+    function show_exterior()
+    {
+        $min_range = $this->input->post('amount1');
+        $max_range = $this->input->post('amount2');
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='4' 
+        AND a.varian_harga_meter BETWEEN '" . $min_range . "' AND '" . $max_range . "'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian where produk_id='4'  GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_window', $data);
+    }
+
+    function show_aksesoris()
+    {
+        $min_range = $this->input->post('amount1');
+        $max_range = $this->input->post('amount2');
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='5' 
+        AND a.varian_harga_meter BETWEEN '" . $min_range . "' AND '" . $max_range . "'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian where produk_id='5'  GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_window', $data);
+    }
+
+    function show_masker()
+    {
+        $min_range = $this->input->post('amount1');
+        $max_range = $this->input->post('amount2');
+        $data['brand_data'] = $this->db->query("SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
+        a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
+        INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id='6' 
+        AND a.varian_harga_meter BETWEEN '" . $min_range . "' AND '" . $max_range . "'
+        GROUP BY a.varian_nama ORDER BY a.id_tipe_produk");
+        $data['tipe'] = $this->db->query(" SELECT * FROM tbl_produk_varian where produk_id='6'  GROUP BY id_tipe_produk ORDER BY id_tipe_produk");
+        $this->load->view('ecommerce/filter/v_product_window', $data);
+    }
+
+
 
     function cari_pintu()
     {

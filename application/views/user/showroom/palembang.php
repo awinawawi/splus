@@ -66,37 +66,6 @@ $this->load->view('user/header',$meta) ?>
           <div class="h-body h-m-body">0823 7419 9595</div>
         </div>
       </div>
-<<<<<<< HEAD
-=======
-    </div>
-    <div class="row pt-40">
-      <div class="h-title h-m-title text-center">
-        TIM MARKETING
-      </div>
-      <hr style="width: 10%; margin-bottom: 40px; border: 1px solid #333; margin-top: 10px; ">
-      <div class="col-md-2"></div>
-      <div class="col-md-2 col-sm-6 col-xs-6 pb-20 text-center">
-        <img src="<?= base_url('assets/user/images/showroom/palembang/tim/benny_bm.jpg') ?>" class="imground">
-        <div class="h-body h-m-body"><b>Benny Ariansyah</b></div>
-        <div class="h-body h-m-body">0813 6895 1522</div>
-      </div>
-      <div class="col-md-2 col-sm-6 col-xs-6 pb-20 text-center">
-        <img src="<?= base_url('assets/user/images/showroom/palembang/tim/achmad.jpg') ?>" class="imground">
-        <div class="h-body h-m-body"><b>Achmad Satria A.</b></div>
-        <div class="h-body h-m-body">0823 7419 9595</div>
-      </div>
-      <div class="col-md-2 col-sm-6 col-xs-6 pb-20 text-center">
-        <img src="<?= base_url('assets/user/images/showroom/palembang/tim/teddy.jpg') ?>" class="imground">
-        <div class="h-body h-m-body"><b>Teddy Juliansyah</b></div>
-        <div class="h-body h-m-body">0821 7502 2422</div>
-      </div>
-      <div class="col-md-2 col-sm-6 col-xs-6 pb-20 text-center">
-        <img src="<?= base_url('assets/user/images/showroom/palembang/tim/arlan.jpg') ?>" class="imground">
-        <div class="h-body h-m-body"><b>Arlan Patra</b></div>
-        <div class="h-body h-m-body">0812 7920 022</div>
-      </div>
-    </div>
->>>>>>> 1ee077678e47e9fae524e69524cab934ee368035
 
      <!-- Grid row -->
      <div class="row pt-40 gallery-popup" >

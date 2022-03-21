@@ -895,6 +895,8 @@ $this->load->view('user/header', $meta) ?>
                     <a href="<?= base_url('hubungi-kami/gallery-medan') ?>" id="sm-gm" style="color: #D50000; font-size: 16px;"> <br> <i class="fa fa-arrow-circle-right"></i> Lihat Showroom</a>
                 </div>
             </div>
+
+
             <br>
         </div>
     <?php else : ?>
