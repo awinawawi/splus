@@ -82,12 +82,12 @@
 							<li class="submenu">
 								<a href="javascript:;">Products</a>
 								<ul>
-									<li><a href="<?= base_url('product_pintu') ?>">Door</a></li>
-									<li><a href="<?= base_url('product_window') ?>">Window</a></li>
-									<li><a href="<?= base_url('product_interior') ?>">Interior Material</a></li>
-									<li><a href="<?= base_url('product_exterior') ?>">Exterior Material</a></li>
-									<li><a href="<?= base_url('product_aksesoris') ?>">Aksesoris</a></li>
-									<li><a href="<?= base_url('product_masker') ?>">Masker</a></li>
+									<li><a href="<?= base_url('product_pintu_splus') ?>">Door</a></li>
+									<li><a href="<?= base_url('product_window_splus') ?>">Window</a></li>
+									<li><a href="<?= base_url('product_interior_material_splus') ?>">Interior Material</a></li>
+									<li><a href="<?= base_url('product_exterior_material_splus') ?>">Exterior Material</a></li>
+									<li><a href="<?= base_url('product_aksesoris_splus') ?>">Aksesoris</a></li>
+									<li><a href="<?= base_url('product_masker_splus') ?>">Masker</a></li>
 									<li><a href="<?= base_url('product_all') ?>">All Product</a></li>
 								</ul>
 							</li>
@@ -185,7 +185,7 @@
 				</div>
 
 				<div class="col-md-9">
-					<h2 align="center">Product Interior Material</h2>
+					<h2 align="center">Product Exterior Material</h2>
 					<br />
 					<div align="center">
 					</div>

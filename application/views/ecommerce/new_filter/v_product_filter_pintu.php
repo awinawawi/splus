@@ -107,13 +107,13 @@
 	<!-- ***** Header Area End ***** -->
 
 	<!-- ***** Main Banner Area Start ***** -->
-	<div class="page-heading" id="top" style="background: url('<?= base_url('assets/images/ourproduk/produk/liv2.jpg') ?>'); background-size: cover;" class="pt-20">
+	<div class="page-heading" id="top" style="background: url('<?= base_url('assets/images/ourproduk/produk/pintu2.jpg') ?>'); background-size: cover;" class="pt-20">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="inner-content">
-						<h2>Our Products Interior Material</h2>
-						<span>Featured Interior Material products</span>
+						<h2 style="color:black;">Our Products Pintu</h2>
+						<span style="color:black;">Featured Pintu products</span>
 					</div>
 				</div>
 			</div>
@@ -185,7 +185,7 @@
 				</div>
 
 				<div class="col-md-9">
-					<h2 align="center">Product Interior Material</h2>
+					<h2 align="center">Product Pintu</h2>
 					<br />
 					<div align="center">
 					</div>
@@ -222,7 +222,7 @@
 						var ram = get_filter('ram');
 						var storage = get_filter('storage');
 						$.ajax({
-							url: "<?php echo base_url(); ?>product_filter_interior/fetch_data/" + page,
+							url: "<?php echo base_url(); ?>product_filter_pintu/fetch_data/" + page,
 							method: "POST",
 							dataType: "JSON",
 							data: {

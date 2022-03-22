@@ -209,7 +209,8 @@
                                 <h4><a style="color: #fff;">Door</a></h4>
                                 <span>Best door Resistant to all weather conditions, Not brittle, not discolored and not eaten by termites.</span>
                                 <div class="main-border-button">
-                                    <a href="<?= base_url('product_pintu') ?>">Read more</a>
+                                    <!-- <a href="<?= base_url('product_pintu') ?>">Read more</a> -->
+                                    <a href="<?= base_url('product_pintu_splus') ?>">Read more</a>
                                 </div>
                             </div>
                             <img src="<?= base_url('assets/images/ourproduk/pintu.jpg') ?>">
@@ -289,7 +290,8 @@
                                             <div class="inner">
                                                 <h4><a style="color: #fff;">Accessories</a></h4>
                                                 <div class="main-border-button">
-                                                    <a href="<?= base_url('product_aksesoris') ?>">Read more</a>
+                                                    <!-- <a href="<?= base_url('product_aksesoris') ?>">Read more</a> -->
+                                                    <a href="<?= base_url('product_aksesoris_splus') ?>">Read more</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -308,7 +310,8 @@
                                             <div class="inner">
                                                 <h4><a style="color: #fff;">Masker</a></h4>
                                                 <div class="main-border-button">
-                                                    <a href="<?= base_url('product_masker') ?>">Read more</a>
+                                                    <!-- <a href="<?= base_url('product_masker') ?>">Read more</a> -->
+                                                    <a href="<?= base_url('product_masker_splus') ?>">Read more</a>
                                                 </div>
                                             </div>
                                         </div>
