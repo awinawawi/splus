@@ -26,9 +26,13 @@ $route['contact']               = 'homepage/contact';
 $route['about_us']              = 'homepage/about_us';
 $route['testimoni']             = 'homepage/testimoni';
 
+
+$route['product_pintu_splus']                    = 'homepage/product_pintu_splus';
 $route['product_window_splus']                   = 'homepage/product_window_splus';
 $route['product_interior_material_splus']        = 'homepage/product_interior_material_splus';
 $route['product_exterior_material_splus']        = 'homepage/product_exterior_material_splus';
+$route['product_aksesoris_splus']                = 'homepage/product_aksesoris_splus';
+$route['product_masker_splus']                   = 'homepage/product_masker_splus';
 
 
 

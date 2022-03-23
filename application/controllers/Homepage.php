@@ -15,6 +15,9 @@ class Homepage extends CI_Controller
 		$this->load->model('product_filter_model');
 		$this->load->model('Product_filter_model_interior');
 		$this->load->model('Product_filter_model_exterior');
+		$this->load->model('Product_filter_model_aksesoris');
+		$this->load->model('Product_filter_model_masker');
+		$this->load->model('Product_filter_model_pintu');
 
 		//count pengunjung
 		$this->M_pengunjung->count_visitor();
@@ -323,12 +326,20 @@ class Homepage extends CI_Controller
 
 	//----------E-commerce-------------//
 
+	public function product_pintu_splus()
+	{
+		$data['jenis_data'] = $this->Product_filter_model_pintu->fetch_filter_type('product_jenis');
+		$data['tipe_data'] = $this->Product_filter_model_pintu->fetch_filter_type('product_tipe');
+		$data['brand_data'] = $this->Product_filter_model_pintu->fetch_filter_type('product_brand');
+		$this->load->view('ecommerce/new_filter/v_product_filter_pintu', $data);
+	}
+
 	public function product_window_splus()
 	{
 		$data['jenis_data'] = $this->product_filter_model->fetch_filter_type('product_jenis');
 		$data['tipe_data'] = $this->product_filter_model->fetch_filter_type('product_tipe');
 		$data['brand_data'] = $this->product_filter_model->fetch_filter_type('product_brand');
-		$this->load->view('ecommerce/product_filter', $data);
+		$this->load->view('ecommerce/new_filter/v_product_filter_window', $data);
 	}
 
 	public function product_interior_material_splus()
@@ -346,6 +357,24 @@ class Homepage extends CI_Controller
 		$data['brand_data'] = $this->Product_filter_model_exterior->fetch_filter_type('product_brand');
 		$this->load->view('ecommerce/new_filter/v_product_filter_exterior', $data);
 	}
+
+	public function product_aksesoris_splus()
+	{
+		$data['jenis_data'] = $this->Product_filter_model_aksesoris->fetch_filter_type('product_jenis');
+		$data['tipe_data'] = $this->Product_filter_model_aksesoris->fetch_filter_type('product_tipe');
+		$data['brand_data'] = $this->Product_filter_model_aksesoris->fetch_filter_type('product_brand');
+		$this->load->view('ecommerce/new_filter/v_product_filter_aksesoris', $data);
+	}
+
+	public function product_masker_splus()
+	{
+		$data['jenis_data'] = $this->Product_filter_model_pintu->fetch_filter_type('product_jenis');
+		$data['tipe_data'] = $this->Product_filter_model_pintu->fetch_filter_type('product_tipe');
+		$data['brand_data'] = $this->Product_filter_model_pintu->fetch_filter_type('product_brand');
+		$this->load->view('ecommerce/new_filter/v_product_filter_masker', $data);
+	}
+
+
 
 
 
