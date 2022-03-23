@@ -243,9 +243,9 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
-                                <img src="<?= base_url('assets/user/images/kategori/splus-shade/') . $varian[0]->produk_gambar ?>" id="order_image" class="pb-20">
+                                <img src="<?= base_url('assets/images/ourproduk/produk/') . $varian[0]->produk_gambar ?>" id="order_image" class="pb-20">
                                 <div class="color">
-                                    <img src="<?= base_url('assets/user/images/kategori/splus-shade/') . $varian[0]->varian_gambar_warna ?>" id="order_image_varian" style="position: absolute;bottom: 0;right: 30px;width: 200px;">
+                                    <img src="<?= base_url('assets/images/ourproduk/produk/') . $varian[0]->varian_gambar_warna ?>" id="order_image_varian" style="position: absolute;bottom: 0;right: 30px;width: 200px;">
                                     <div class="color-caption" style="background-color: #000;color: white;opacity: 0.8;width: fit-content;padding: 5px 20px;position: absolute;right: 30px;bottom: 0px;">
                                         <span id="order_image_varian_label">WHITE</span>
                                     </div>

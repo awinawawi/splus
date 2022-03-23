@@ -6,17 +6,20 @@ class Product_filter_model_masker extends CI_Model
     {
         $this->db->distinct();
         $this->db->select($type);
-        $this->db->from('tbl_product_splus');
-        $this->db->where('product_kategori', '6');
+        $this->db->from('tbl_produk_varian');
+        $this->db->where('produk_id', '6');
         return $this->db->get();
     }
 
     function make_query($minimum_price, $maximum_price, $brand, $ram, $storage)
     {
-        $query = "
-  SELECT * FROM tbl_product_splus a INNER JOIN tbl_produk b  ON a.product_kategori=b.produk_id
-  WHERE a.product_status = '1' and a.product_kategori='6'
-  ";
+        //         $query = "
+        //   SELECT * FROM tbl_product_splus a INNER JOIN tbl_produk b  ON a.product_kategori=b.produk_id
+        //   WHERE a.product_status = '1' and a.product_kategori='6'
+        //   ";
+
+        $query = "SELECT * FROM tbl_produk_varian a INNER JOIN tbl_produk b  ON a.produk_id=b.produk_id
+WHERE a.product_status = '1' AND a.produk_id='6'";
 
         if (isset($minimum_price, $maximum_price) && !empty($minimum_price) &&  !empty($maximum_price)) {
             $query .= "
@@ -72,7 +75,7 @@ class Product_filter_model_masker extends CI_Model
                             <div class="hover-content">
                                 <ul>
                                     <li><a href="' . base_url() . 'assets/images/ourproduk/produk/' . $row['product_image'] . '" alt="" class="img-responsive"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="' . base_url() . 'order/produk_kategori/' . $row['produk_slug'] . '"><i class="fa fa-shopping-cart"></i></a></li>
+                                    <li><a href="' . base_url() . 'order/produk_kategori/' . $row['varian_nama'] . '"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
 

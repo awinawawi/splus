@@ -368,9 +368,9 @@ class Homepage extends CI_Controller
 
 	public function product_masker_splus()
 	{
-		$data['jenis_data'] = $this->Product_filter_model_pintu->fetch_filter_type('product_jenis');
-		$data['tipe_data'] = $this->Product_filter_model_pintu->fetch_filter_type('product_tipe');
-		$data['brand_data'] = $this->Product_filter_model_pintu->fetch_filter_type('product_brand');
+		$data['jenis_data'] = $this->Product_filter_model_masker->fetch_filter_type('product_jenis');
+		$data['tipe_data'] = $this->Product_filter_model_masker->fetch_filter_type('product_tipe');
+		$data['brand_data'] = $this->Product_filter_model_masker->fetch_filter_type('product_brand');
 		$this->load->view('ecommerce/new_filter/v_product_filter_masker', $data);
 	}
 

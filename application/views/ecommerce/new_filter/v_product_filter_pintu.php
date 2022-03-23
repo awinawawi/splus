@@ -33,7 +33,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
 	<link href="<?php echo base_url(); ?>asset/css/css-filter/jquery-ui.css" rel="stylesheet">
 	<!-- Custom CSS -->
 	<link href="<?= base_url('assets/css/css-filter/style.css') ?>" rel="stylesheet">
@@ -112,8 +112,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="inner-content">
-						<h2 style="color:black;">Our Products Pintu</h2>
-						<span style="color:black;">Featured Pintu products</span>
+						<h2 style="color:black;">Our Product Pintu</h2>
+						<span style="color:black;">Featured Pintu product</span>
 					</div>
 				</div>
 			</div>
@@ -131,7 +131,7 @@
 					<br />
 
 					<div class="list-group">
-						<h3>Jenis</h3>
+						<h4>JENIS</h4>
 						<div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
 
 							<?php
@@ -145,9 +145,9 @@
 							?>
 						</div>
 					</div>
-
+					<br></br>
 					<div class="list-group">
-						<h3>Tipe</h3>
+						<h4>TIPE</h4>
 						<div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
 							<?php
 							foreach ($tipe_data->result_array() as $row) {
@@ -160,9 +160,9 @@
 							?>
 						</div>
 					</div>
-
+					<br></br>
 					<div class="list-group">
-						<h3>Brand</h3>
+						<h4>BRAND</h4>
 						<?php
 						foreach ($brand_data->result_array() as $row) {
 						?>
@@ -173,9 +173,9 @@
 						}
 						?>
 					</div>
-
+					<br></br>
 					<div class="list-group">
-						<h3>Price</h3>
+						<h4>PRICE HARGA</h4>
 						<input type="hidden" id="hidden_minimum_price" value="0" />
 						<input type="hidden" id="hidden_maximum_price" value="65000" />
 

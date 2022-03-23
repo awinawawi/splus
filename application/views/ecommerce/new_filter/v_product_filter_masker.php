@@ -222,7 +222,7 @@
 						var ram = get_filter('ram');
 						var storage = get_filter('storage');
 						$.ajax({
-							url: "<?php echo base_url(); ?>product_filter_aksesoris/fetch_data/" + page,
+							url: "<?php echo base_url(); ?>product_filter_masker/fetch_data/" + page,
 							method: "POST",
 							dataType: "JSON",
 							data: {

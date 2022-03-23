@@ -3,13 +3,22 @@
 class M_order extends CI_Model
 {
 
+    // public function getProduk($slug)
+    // {
+    //     return $this->db->join('tbl_produk_varian', 'tbl_produk_varian.produk_id=tbl_produk.produk_id')
+    //         ->where('produk_slug', $slug)
+    //         ->group_by('varian_nama')
+    //         ->get('tbl_produk')->result();
+    // }
+
     public function getProduk($slug)
     {
         return $this->db->join('tbl_produk_varian', 'tbl_produk_varian.produk_id=tbl_produk.produk_id')
-            ->where('produk_slug', $slug)
+            ->where('varian_nama', $slug)
             ->group_by('varian_nama')
             ->get('tbl_produk')->result();
     }
+
 
     public function getVarian($varian)
     {
