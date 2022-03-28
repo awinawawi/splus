@@ -1,13 +1,12 @@
 <?php
 
-class Product_filter_model_exterior extends CI_Model
+class Product_filter_model_all extends CI_Model
 {
     function fetch_filter_type($type)
     {
         $this->db->distinct();
         $this->db->select($type);
         $this->db->from('tbl_produk_varian');
-        $this->db->where('produk_id', '4');
         return $this->db->get();
     }
 
@@ -15,11 +14,11 @@ class Product_filter_model_exterior extends CI_Model
     {
         //         $query = "
         //   SELECT * FROM tbl_product_splus a INNER JOIN tbl_produk b  ON a.product_kategori=b.produk_id
-        //   WHERE a.product_status = '1' and a.product_kategori='4'
+        //   WHERE a.product_status = '1' and a.product_kategori='1'
         //   ";
 
         $query = "SELECT * FROM tbl_produk_varian a INNER JOIN tbl_produk b  ON a.produk_id=b.produk_id
-WHERE a.product_status = '1' AND a.produk_id='4'";
+        WHERE a.product_status = '1' ";
 
         if (isset($minimum_price, $maximum_price) && !empty($minimum_price) &&  !empty($maximum_price)) {
             $query .= "
@@ -70,20 +69,20 @@ WHERE a.product_status = '1' AND a.produk_id='4'";
             foreach ($data->result_array() as $row) {
                 $output .= '
                 <div class="col-lg-4" data-layout="grid-3-full" >
-                <div class="item">
-                    <div class="thumb">
-                        <a   href="' . base_url() . 'order/produk_kategori/' . $row['varian_nama'] .  '">
-                            <img src="' . base_url() . 'assets/images/ourproduk/produk/' . $row['product_image'] . '" alt="" class="img-responsive " class="image" width="80%">
-                        </a>
-                    </div>                                                
-                    <div class="down-content" >
-                    <h4 align="center">
-                        <a href="' . base_url() . 'order/produk_kategori/' . $row['varian_nama'] .  '">' . $row['product_name'] . '</a>
-                    </h4>
-                        <span align="center">RP.' . $row['product_price'] . ' </span>
+                    <div class="item">
+                        <div class="thumb">
+                            <a   href="' . base_url() . 'order/produk_kategori/' . $row['varian_nama'] .  '">
+                                <img src="' . base_url() . 'assets/images/ourproduk/produk/' . $row['product_image'] . '" alt="" class="img-responsive " class="image" width="80%">
+                            </a>
+                        </div>                                                
+                        <div class="down-content" >
+                        <h4 align="center">
+                            <a href="' . base_url() . 'order/produk_kategori/' . $row['varian_nama'] .  '">' . $row['product_name'] . '</a>
+                        </h4>
+                            <span align="center">RP.' . $row['product_price'] . ' </span>
+                        </div>
                     </div>
-                </div>
-            </div>';
+                </div>';
             }
         } else {
             $output = '<h3>No Data Found</h3>';

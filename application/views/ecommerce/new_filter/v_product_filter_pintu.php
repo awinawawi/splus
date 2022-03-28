@@ -9,7 +9,7 @@
 	<meta name="author" content="">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-	<title>Splus Ecommerce | Window</title>
+	<title>Splus Ecommerce | Pintu</title>
 
 
 	<!-- Additional CSS Files -->
@@ -33,7 +33,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" href="<?= base_url('assets/css/css-filter/bootstrap.min.css') ?>">
 	<link href="<?php echo base_url(); ?>asset/css/css-filter/jquery-ui.css" rel="stylesheet">
 	<!-- Custom CSS -->
 	<link href="<?= base_url('assets/css/css-filter/style.css') ?>" rel="stylesheet">
@@ -72,15 +72,15 @@
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li class="submenu">
+							<!-- <li class="submenu">
 								<a href="javascript:;">Hubungi kami</a>
 								<ul>
 									<li><a href="<?= base_url('tentang-kami') ?>">About Us</a></li>
 									<li><a href="<?= base_url('contact') ?>">Contact Us</a></li>
 								</ul>
-							</li>
-							<li class="submenu">
-								<a href="javascript:;">Products</a>
+							</li> -->
+							<!-- <li class="submenu">
+								<a href="javascript:;">Product</a>
 								<ul>
 									<li><a href="<?= base_url('product_pintu_splus') ?>">Door</a></li>
 									<li><a href="<?= base_url('product_window_splus') ?>">Window</a></li>
@@ -90,10 +90,25 @@
 									<li><a href="<?= base_url('product_masker_splus') ?>">Masker</a></li>
 									<li><a href="<?= base_url('product_all') ?>">All Product</a></li>
 								</ul>
-							</li>
+							</li> -->
+							<li><a href="<?= base_url('/cart') ?>">
+									<span><svg width="20px" height="20px">
+											<use xlink:href="<?= base_url('assets/css/') ?>sprite.svg#cart-20"></use>
+										</svg>
+										<?php
+										$num_rows = $this->db->count_all_results('tbl_produk_keranjang');
+										$isi_keranjang = $num_rows;
+										?>
 
+										<?php if (empty($isi_keranjang)) {
+											echo '';
+										} else { ?>
+											<span> cart(<?= $isi_keranjang; ?>)</span>
+										<?php } ?>
+									</span>
 
-							<li class="scroll-to-section"><a href="#explore">login</a></li>
+								</a></li>
+							<li class="scroll-to-section"><a href="<?= base_url('administrator') ?>"><i class="fa fa-lock"></i>login</a></li>
 						</ul>
 						<a class='menu-trigger'>
 							<span>Menu</span>

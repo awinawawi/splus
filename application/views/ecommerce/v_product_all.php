@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-    <title>Splus Ecommerce</title>
+    <title>Splus Ecommerce | All Product</title>
 
 
     <!-- Additional CSS Files -->
@@ -19,6 +19,29 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/ecommerce/css/owl-carousel.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/ecommerce/css/lightbox.css') ?>">
     <link rel="shortcut icon" href="<?= base_url('assets/user/images/logo.png') ?>">
+
+    <!-- Price Range Script Start-->
+    <link href="<?php echo base_url() ?>assets/css/filter/css/price-range.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/css/filter/css/responsive.css" rel="stylesheet">
+    <link href="<?= base_url('assets/css/filter/css/jquery-ui.css') ?>" rel="stylesheet">
+    <script src="<?= base_url('assets/css/filter/js/jquery-1.10.2.min.js') ?>"></script>
+    <script src="<?= base_url('assets/css/filter/js/jquery-ui.js') ?>"></script>
+    <script src="<?= base_url('assets/css/filter/js/bootstrap.min.js') ?>"></script>
+
+    <!-- Price Range Code end -->
+
+    <!-- Bootstrap Core CSS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="<?= base_url('assets/css/css-filter/bootstrap.min.css') ?>">
+    <link href="<?php echo base_url(); ?>asset/css/css-filter/jquery-ui.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="<?= base_url('assets/css/css-filter/style.css') ?>" rel="stylesheet">
+
+
+
+
 
 </head>
 
@@ -43,7 +66,6 @@
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <div>
-
                             <a href="<?= base_url('Ecommerce') ?>" class="logo">
                                 <img src="<?= base_url('assets/images/ourproduk/logo.jpg') ?>" style="width: 300px;">
                             </a>
@@ -51,28 +73,43 @@
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="submenu">
-                                <a href="javascript:;">Hubungi kami</a>
-                                <ul>
-                                    <li><a href="<?= base_url('tentang-kami') ?>">About Us</a></li>
-                                    <li><a href="<?= base_url('contact') ?>">Contact Us</a></li>
-                                </ul>
-                            </li>
-                            <li class="submenu">
-                                <a href="javascript:;">Products</a>
-                                <ul>
-                                    <li><a href="<?= base_url('product_pintu') ?>">Door</a></li>
-                                    <li><a href="<?= base_url('product_window') ?>">Window</a></li>
-                                    <li><a href="<?= base_url('product_interior') ?>">Interior Material</a></li>
-                                    <li><a href="<?= base_url('product_exterior') ?>">Exterior Material</a></li>
-                                    <li><a href="<?= base_url('product_aksesoris') ?>">Aksesoris</a></li>
-                                    <li><a href="<?= base_url('product_masker') ?>">Masker</a></li>
-                                    <li><a href="<?= base_url('product_all') ?>">All Product</a></li>
-                                </ul>
-                            </li>
+                            <!-- <li class="submenu">
+								<a href="javascript:;">Hubungi kami</a>
+								<ul>
+									<li><a href="<?= base_url('tentang-kami') ?>">About Us</a></li>
+									<li><a href="<?= base_url('contact') ?>">Contact Us</a></li>
+								</ul>
+							</li> -->
+                            <!-- <li class="submenu">
+								<a href="javascript:;">Product</a>
+								<ul>
+									<li><a href="<?= base_url('product_pintu_splus') ?>">Door</a></li>
+									<li><a href="<?= base_url('product_window_splus') ?>">Window</a></li>
+									<li><a href="<?= base_url('product_interior_material_splus') ?>">Interior Material</a></li>
+									<li><a href="<?= base_url('product_exterior_material_splus') ?>">Exterior Material</a></li>
+									<li><a href="<?= base_url('product_aksesoris_splus') ?>">Aksesoris</a></li>
+									<li><a href="<?= base_url('product_masker_splus') ?>">Masker</a></li>
+									<li><a href="<?= base_url('product_all') ?>">All Product</a></li>
+								</ul>
+							</li> -->
+                            <li><a href="<?= base_url('/cart') ?>">
+                                    <span><svg width="20px" height="20px">
+                                            <use xlink:href="<?= base_url('assets/css/') ?>sprite.svg#cart-20"></use>
+                                        </svg>
+                                        <?php
+                                        $num_rows = $this->db->count_all_results('tbl_produk_keranjang');
+                                        $isi_keranjang = $num_rows;
+                                        ?>
 
+                                        <?php if (empty($isi_keranjang)) {
+                                            echo '';
+                                        } else { ?>
+                                            <span> cart(<?= $isi_keranjang; ?>)</span>
+                                        <?php } ?>
+                                    </span>
 
-                            <li class="scroll-to-section"><a href="#explore">login</a></li>
+                                </a></li>
+                            <li class="scroll-to-section"><a href="<?= base_url('administrator') ?>"><i class="fa fa-lock"></i>login</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -91,8 +128,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-content">
-                        <h2 style="color:black;">Our All Products</h2>
-                        <span style="color:black;">Featured all products</span>
+                        <h2 style="color:black;">All Product</h2>
                     </div>
                 </div>
             </div>
@@ -101,360 +137,163 @@
     <!-- ***** Main Banner Area End ***** -->
 
 
-    <!-- ***** Products Area Starts ***** -->
     <section class="section" id="products">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-heading">
-                        <h2>Our Latest Products</h2>
-                        <span>Check out all of our products.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <?php $query = $this->db->query('SELECT a.varian_nama,a.varian_type,a.varian_gambar_utama,c.produk_nama,
-                                                                a.varian_gambar_depan,CONCAT(FORMAT(a.varian_harga_meter, 0)) AS varian_harga_meter,c.produk_slug FROM tbl_produk_varian a 
-                                                                INNER JOIN tbl_produk c ON a.produk_id=c.produk_id where a.produk_id  IN ("9","10","11","12","13","14")
-                                                                GROUP BY a.varian_nama
-                                                                ');
-                foreach ($query->result_array() as $kat) {
+                <div class="col-md-3">
+                    <br />
+                    <br />
+                    <br />
 
-                ?>
+                    <div class="list-group">
+                        <h4>JENIS</h4>
+                        <div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
 
-                    <!-- <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 pb-20" data-layout="grid-4-full" data-with-features="false">
-                        <div class="container_images">
-
-                            <div class="content_img">
-
-                                <a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>">
-                                    <img src="<?= base_url('assets/user/images/kategori/produk/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
-                                    <div>More Detail</div>
-                                </a>
-                            </div>
-
-                            <div class="text-overlay-ss">
-                                <a class="syahrul text-sm"><b>Type: </b><?= $kat['varian_type'] ?></a>
-                                <a><br></a>
-                                <a class="syahrul text-sm"><b>Kategori: </b><?= $kat['produk_nama'] ?></a>
-
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <div class="col-lg-4">
-                        <div class="item">
-                            <div class="thumb">
-                                <div class="hover-content">
-                                    <ul>
-                                        <li><a href="<?= base_url('assets/images/ourproduk/produk/' . $kat['varian_gambar_depan']) ?>"><i class="fa fa-eye"></i></a></li>
-                                        <li><a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>"><i class="fa fa-shopping-cart"></i></a></li>
-                                    </ul>
+                            <?php
+                            foreach ($jenis_data->result_array() as $row) {
+                            ?>
+                                <div class="list-group-item checkbox">
+                                    <label><input type="checkbox" class="common_selector brand" value="<?php echo $row['product_jenis']; ?>"> <?php echo $row['product_jenis']; ?></label>
                                 </div>
-
-                                <!-- <a href="<?= base_url('order/produk_kategori/') . $kat['produk_slug']; ?>">
-                                    <img src="<?= base_url('assets/user/images/kategori/produk/pintu/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
-                                </a> -->
-                                <a>
-                                    <img src="<?= base_url('assets/images/ourproduk/produk/' . $kat['varian_gambar_depan']) ?>" class="image" width="80%">
-                                </a>
-                            </div>
-
-                            <div class="down-content">
-                                <h4><?= $kat['varian_nama'] ?></h4>
-                                <span>RP.<?= ($kat['varian_harga_meter'])  ?> </span>
-                                <ul class="stars">
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                    <li><i class="fa fa-star"></i></li>
-                                </ul>
-                            </div>
+                            <?php
+                            }
+                            ?>
                         </div>
                     </div>
+                    <br></br>
+                    <div class="list-group">
+                        <h4>TIPE</h4>
+                        <div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
+                            <?php
+                            foreach ($tipe_data->result_array() as $row) {
+                            ?>
+                                <div class="list-group-item checkbox">
+                                    <label><input type="checkbox" class="common_selector ram" value="<?php echo $row['product_tipe']; ?>"> <?php echo $row['product_tipe']; ?></label>
+                                </div>
+                            <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
+                    <br></br>
+                    <div class="list-group">
+                        <h4>BRAND</h4>
+                        <?php
+                        foreach ($brand_data->result_array() as $row) {
+                        ?>
+                            <div class="list-group-item checkbox">
+                                <label><input type="checkbox" class="common_selector storage" value="<?php echo $row['product_brand']; ?>"> <?php echo $row['product_brand']; ?></label>
+                            </div>
+                        <?php
+                        }
+                        ?>
+                    </div>
+                    <br></br>
+                    <div class="list-group">
+                        <h4>PRICE HARGA</h4>
+                        <input type="hidden" id="hidden_minimum_price" value="0" />
+                        <input type="hidden" id="hidden_maximum_price" value="65000" />
 
-
-
-                <?php } ?>
-            </div>
-            <!-- <div class="col-lg-12">
-                <div class="pagination">
-                    <ul>
-                        <li>
-                            <a href="#">1</a>
-                        </li>
-                        <li class="active">
-                            <a href="#">2</a>
-                        </li>
-                        <li>
-                            <a href="#">3</a>
-                        </li>
-                        <li>
-                            <a href="#">4</a>
-                        </li>
-                        <li>
-                            <a href="#">></a>
-                        </li>
-                    </ul>
+                        <div id="price_range"></div> <br>
+                        <p align="center" id="price_show">Rp.10.000 - Rp.65.000</p>
+                    </div>
                 </div>
-            </div> -->
+
+                <div class="col-md-9">
+                    <h2 align="center">All Product</h2>
+                    <br />
+                    <div align="center">
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                    <div class="row filter_data">
+
+                    </div>
+                    <div align="center" id="pagination_link">
+                    </div>
+                </div>
+
+            </div>
+            <style>
+                #loading {
+                    text-align: center;
+                    background: url('<?php echo base_url(); ?>asset/loader.gif') no-repeat center;
+                    height: 150px;
+                }
+            </style>
+
+            <script>
+                $(document).ready(function() {
+
+                    filter_data(1);
+
+                    function filter_data(page) {
+                        $('.filter_data').html('<div id="loading" style="" ></div>');
+                        var action = 'fetch_data';
+                        var minimum_price = $('#hidden_minimum_price').val();
+                        var maximum_price = $('#hidden_maximum_price').val();
+                        var brand = get_filter('brand');
+                        var ram = get_filter('ram');
+                        var storage = get_filter('storage');
+                        $.ajax({
+                            url: "<?php echo base_url(); ?>product_filter_all/fetch_data/" + page,
+                            method: "POST",
+                            dataType: "JSON",
+                            data: {
+                                action: action,
+                                minimum_price: minimum_price,
+                                maximum_price: maximum_price,
+                                brand: brand,
+                                ram: ram,
+                                storage: storage
+                            },
+                            success: function(data) {
+                                $('.filter_data').html(data.product_list);
+                                $('#pagination_link').html(data.pagination_link);
+                            }
+                        })
+                    }
+
+                    function get_filter(class_name) {
+                        var filter = [];
+                        $('.' + class_name + ':checked').each(function() {
+                            filter.push($(this).val());
+                        });
+                        return filter;
+                    }
+
+                    $(document).on('click', '.pagination li a', function(event) {
+                        event.preventDefault();
+                        var page = $(this).data('ci-pagination-page');
+                        filter_data(page);
+                    });
+
+                    $('.common_selector').click(function() {
+                        filter_data(1);
+                    });
+
+                    $('#price_range').slider({
+                        range: true,
+                        min: 10000,
+                        max: 650000,
+                        values: [10000, 650000],
+                        step: 500,
+                        stop: function(event, ui) {
+                            $('#price_show').html('Rp.' + ui.values[0] + ' - Rp.' + ui.values[1]);
+                            $('#hidden_minimum_price').val(ui.values[0]);
+                            $('#hidden_maximum_price').val(ui.values[1]);
+                            filter_data(1);
+                        }
+
+                    });
+
+                });
+            </script>
         </div>
-
-        <!-- <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="<?= base_url('assets/images/ourproduk/bestproduct/art4.jpg') ?>">
-                        </div>
-                        <div class="down-content">
-                            <h4>Classic Spring</h4>
-                            <span>$120.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/men-02.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Air Force 1 X</h4>
-                            <span>$90.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/men-03.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Love Nana ‘20</h4>
-                            <span>$150.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/women-01.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>New Green Jacket</h4>
-                            <span>$75.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/women-02.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Classic Dress</h4>
-                            <span>$45.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/women-03.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Spring Collection</h4>
-                            <span>$130.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/kid-01.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>School Collection</h4>
-                            <span>$80.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/kid-02.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Summer Cap</h4>
-                            <span>$12.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="single-product.html"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-star"></i></a></li>
-                                    <li><a href="single-product.html"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <img src="assets/images/kid-03.jpg" alt="">
-                        </div>
-                        <div class="down-content">
-                            <h4>Classic Kid</h4>
-                            <span>$30.00</span>
-                            <ul class="stars">
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                                <li><i class="fa fa-star"></i></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="pagination">
-                        <ul>
-                            <li>
-                                <a href="#">1</a>
-                            </li>
-                            <li class="active">
-                                <a href="#">2</a>
-                            </li>
-                            <li>
-                                <a href="#">3</a>
-                            </li>
-                            <li>
-                                <a href="#">4</a>
-                            </li>
-                            <li>
-                                <a href="#">></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </section>
-    <!-- ***** Products Area Ends ***** -->
+
+
 
     <!-- ***** Footer Start ***** -->
     <footer>

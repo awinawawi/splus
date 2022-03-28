@@ -18,6 +18,7 @@ class Homepage extends CI_Controller
 		$this->load->model('Product_filter_model_aksesoris');
 		$this->load->model('Product_filter_model_masker');
 		$this->load->model('Product_filter_model_pintu');
+		$this->load->model('Product_filter_model_all');
 
 		//count pengunjung
 		$this->M_pengunjung->count_visitor();
@@ -374,6 +375,14 @@ class Homepage extends CI_Controller
 		$this->load->view('ecommerce/new_filter/v_product_filter_masker', $data);
 	}
 
+	public function product_all()
+	{
+		$data['jenis_data'] = $this->Product_filter_model_all->fetch_filter_type('product_jenis');
+		$data['tipe_data'] = $this->Product_filter_model_all->fetch_filter_type('product_tipe');
+		$data['brand_data'] = $this->Product_filter_model_all->fetch_filter_type('product_brand');
+		$this->load->view('ecommerce/v_product_all', $data);
+	}
+
 
 
 
@@ -418,10 +427,7 @@ class Homepage extends CI_Controller
 		$this->load->view('ecommerce/v_product_masker');
 	}
 
-	public function product_all()
-	{
-		$this->load->view('ecommerce/v_product_all');
-	}
+
 
 	public function contact()
 	{

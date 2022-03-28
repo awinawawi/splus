@@ -19,7 +19,7 @@ class Product_filter_model_pintu extends CI_Model
         //   ";
 
         $query = "SELECT * FROM tbl_produk_varian a INNER JOIN tbl_produk b  ON a.produk_id=b.produk_id
-WHERE a.product_status = '1' AND a.produk_id='1'";
+        WHERE a.product_status = '1' AND a.produk_id='1'";
 
         if (isset($minimum_price, $maximum_price) && !empty($minimum_price) &&  !empty($maximum_price)) {
             $query .= "

@@ -9,7 +9,7 @@
 	<meta name="author" content="">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
-	<title>Splus Ecommerce | Window</title>
+	<title>Splus Ecommerce | Interior Material</title>
 
 
 	<!-- Additional CSS Files -->
@@ -33,7 +33,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?= base_url('assets/css/css-filter/bootstrap.min.css') ?>">
 	<link href="<?php echo base_url(); ?>asset/css/css-filter/jquery-ui.css" rel="stylesheet">
 	<!-- Custom CSS -->
 	<link href="<?= base_url('assets/css/css-filter/style.css') ?>" rel="stylesheet">
@@ -72,15 +72,15 @@
 						<!-- ***** Logo End ***** -->
 						<!-- ***** Menu Start ***** -->
 						<ul class="nav">
-							<li class="submenu">
+							<!-- <li class="submenu">
 								<a href="javascript:;">Hubungi kami</a>
 								<ul>
 									<li><a href="<?= base_url('tentang-kami') ?>">About Us</a></li>
 									<li><a href="<?= base_url('contact') ?>">Contact Us</a></li>
 								</ul>
-							</li>
-							<li class="submenu">
-								<a href="javascript:;">Products</a>
+							</li> -->
+							<!-- <li class="submenu">
+								<a href="javascript:;">Product</a>
 								<ul>
 									<li><a href="<?= base_url('product_pintu_splus') ?>">Door</a></li>
 									<li><a href="<?= base_url('product_window_splus') ?>">Window</a></li>
@@ -90,10 +90,25 @@
 									<li><a href="<?= base_url('product_masker_splus') ?>">Masker</a></li>
 									<li><a href="<?= base_url('product_all') ?>">All Product</a></li>
 								</ul>
-							</li>
+							</li> -->
+							<li><a href="<?= base_url('/cart') ?>">
+									<span><svg width="20px" height="20px">
+											<use xlink:href="<?= base_url('assets/css/') ?>sprite.svg#cart-20"></use>
+										</svg>
+										<?php
+										$num_rows = $this->db->count_all_results('tbl_produk_keranjang');
+										$isi_keranjang = $num_rows;
+										?>
 
+										<?php if (empty($isi_keranjang)) {
+											echo '';
+										} else { ?>
+											<span> cart(<?= $isi_keranjang; ?>)</span>
+										<?php } ?>
+									</span>
 
-							<li class="scroll-to-section"><a href="#explore">login</a></li>
+								</a></li>
+							<li class="scroll-to-section"><a href="<?= base_url('administrator') ?>"><i class="fa fa-lock"></i>login</a></li>
 						</ul>
 						<a class='menu-trigger'>
 							<span>Menu</span>
@@ -112,8 +127,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="inner-content">
-						<h2>Our Products Interior Material</h2>
-						<span>Featured Interior Material products</span>
+						<h2 style="color:black;">Our Products Interior Material</h2>
+						<span style="color:black;">Featured Interior Material products</span>
 					</div>
 				</div>
 			</div>
@@ -131,7 +146,7 @@
 					<br />
 
 					<div class="list-group">
-						<h3>Jenis</h3>
+						<h4>JENIS</h4>
 						<div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
 
 							<?php
@@ -145,9 +160,9 @@
 							?>
 						</div>
 					</div>
-
+					<br></br>
 					<div class="list-group">
-						<h3>Tipe</h3>
+						<h4>TIPE</h4>
 						<div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
 							<?php
 							foreach ($tipe_data->result_array() as $row) {
@@ -160,9 +175,9 @@
 							?>
 						</div>
 					</div>
-
+					<br></br>
 					<div class="list-group">
-						<h3>Brand</h3>
+						<h4>BRAND</h4>
 						<?php
 						foreach ($brand_data->result_array() as $row) {
 						?>
@@ -173,9 +188,9 @@
 						}
 						?>
 					</div>
-
+					<br></br>
 					<div class="list-group">
-						<h3>Price</h3>
+						<h4>PRINCE HARGA</h4>
 						<input type="hidden" id="hidden_minimum_price" value="0" />
 						<input type="hidden" id="hidden_maximum_price" value="65000" />
 
@@ -185,7 +200,7 @@
 				</div>
 
 				<div class="col-md-9">
-					<h2 align="center">Product Interior Material</h2>
+					<h2 align="center">Product Interior</h2>
 					<br />
 					<div align="center">
 					</div>

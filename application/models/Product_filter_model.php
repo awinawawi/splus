@@ -71,22 +71,17 @@ WHERE a.product_status = '1' AND a.produk_id='2'
         if ($data->num_rows() > 0) {
             foreach ($data->result_array() as $row) {
                 $output .= '
-                <div class="col-lg-4">
+                <div class="col-lg-4" data-layout="grid-3-full" >
                     <div class="item">
                         <div class="thumb">
-                            <div class="hover-content">
-                                <ul>
-                                    <li><a href="' . base_url() . 'assets/images/ourproduk/produk/' . $row['product_image'] . '" alt="" class="img-responsive"><i class="fa fa-eye"></i></a></li>
-                                    <li><a href="' . base_url() . 'order/produk_kategori/' . $row['varian_nama'] . '"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-
-                            <a>
+                            <a   href="' . base_url() . 'order/produk_kategori/' . $row['varian_nama'] .  '">
                                 <img src="' . base_url() . 'assets/images/ourproduk/produk/' . $row['product_image'] . '" alt="" class="img-responsive " class="image" width="80%">
                             </a>
                         </div>                                                
                         <div class="down-content" >
-                            <h4 align="center">' . $row['product_name'] . '</h4>
+                        <h4 align="center">
+                            <a href="' . base_url() . 'order/produk_kategori/' . $row['varian_nama'] .  '">' . $row['product_name'] . '</a>
+                        </h4>
                             <span align="center">RP.' . $row['product_price'] . ' </span>
                         </div>
                     </div>

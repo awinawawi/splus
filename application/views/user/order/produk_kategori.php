@@ -27,6 +27,7 @@
     <link rel="preload" href="<?= base_url('assets/user/css/animation.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="<?= base_url('assets/user/plugins/bootstrap-select/dist/css/bootstrap-select.min.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="<?= base_url('assets/user/css/bootstrap-datepicker.standalone.min.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
 </head>
 <header class="header-area header-sticky">
@@ -46,14 +47,15 @@
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                         <li class="submenu">
-                            <a href="javascript:;">Products</a>
+                            <a href="javascript:;">Product</a>
                             <ul>
-                                <li><a href="<?= base_url('product_pintu') ?>">Door</a></li>
-                                <li><a href="<?= base_url('product_window') ?>">Window</a></li>
-                                <li><a href="<?= base_url('product_interior') ?>">Interior Material</a></li>
-                                <li><a href="<?= base_url('product_exterior') ?>">Exterior Material</a></li>
-                                <li><a href="<?= base_url('product_aksesoris') ?>">Aksesoris</a></li>
-                                <li><a href="<?= base_url('product_masker') ?>">Masker</a></li>
+                                <li><a href="<?= base_url('product_pintu_splus') ?>">Door</a></li>
+                                <li><a href="<?= base_url('product_window_splus') ?>">Window</a></li>
+                                <li><a href="<?= base_url('product_interior_material_splus') ?>">Interior Material</a></li>
+                                <li><a href="<?= base_url('product_exterior_material_splus') ?>">Exterior Material</a></li>
+                                <li><a href="<?= base_url('product_aksesoris_splus') ?>">Aksesoris</a></li>
+                                <li><a href="<?= base_url('product_masker_splus') ?>">Masker</a></li>
+                                <li><a href="<?= base_url('product_all') ?>">All Product</a></li>
                             </ul>
                         </li>
                         <li class="scroll-to-section"><a href="<?= base_url('administrator') ?>">login</a></li>
@@ -243,6 +245,10 @@
                         </div>
                         <div class="row">
                             <div class="col-md-6">
+
+                                <div style="margin-left:500px;">
+                                    <a href="<?= base_url('assets/images/ourproduk/produk/') .  $varian[0]->varian_gambar_utama ?>"><i class="fa fa-search fa-2x"></i></a>
+                                </div>
                                 <img src="<?= base_url('assets/images/ourproduk/produk/') . $varian[0]->produk_gambar ?>" id="order_image" class="pb-20">
                                 <div class="color">
                                     <img src="<?= base_url('assets/images/ourproduk/produk/') . $varian[0]->varian_gambar_warna ?>" id="order_image_varian" style="position: absolute;bottom: 0;right: 30px;width: 200px;">
@@ -330,6 +336,39 @@
                                         </div>
 
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row pb-20">
+                <div class="col-md-12">
+                    <div class="ps-box pb-20 pt-20 pl-20 pr-20 bg-white shd ">
+                        <span class="h-subtitle"> DESCRIPTION: </span>
+                        <div class="row pt-20 h-body">
+                            <div class="col-lg-3 pb-20">
+                                <h3><b>PRODUCT NAME</b></h3>
+                                <?php foreach ($varian as $v) : ?>
+                                    <option value="<?= $v->produk_nama ?>"><?= strtoupper($v->produk_nama) ?></option>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="col-lg-3 pb-20">
+                                <h3><b>PRODUCT JENIS</b></h3>
+                                <?php foreach ($varian as $v) : ?>
+                                    <option value="<?= $v->product_jenis ?>"><?= strtoupper($v->product_jenis) ?></option>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="col-lg-3 pb-20">
+                                <h3><b>PRODUCT BRAND</b></h3>
+                                <?php foreach ($varian as $v) : ?>
+                                    <option value="<?= $v->product_brand ?>"><?= strtoupper($v->product_brand) ?></option>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="col-lg-3 pb-20">
+                                <h3><b>PRODUCT TIPE</b></h3>
+                                <?php foreach ($varian as $v) : ?>
+                                    <option value="<?= $v->product_name ?>"><?= strtoupper($v->product_name) ?></option>
+                                <?php endforeach; ?>
                             </div>
                         </div>
                     </div>
