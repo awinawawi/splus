@@ -39,6 +39,9 @@
         <clipPath id="m" transform="translate(0)">
             <rect x="1029.52" y="265.75" width="258.48" height="192.14" rx="10" ry="10" style="fill:none" />
         </clipPath>
+        <clipPath id="p" transform="translate(0)">
+            <rect x="80.24" y="40.69" width="280.16" height="176.56" rx="5" ry="5" style="fill:none" />
+        </clipPath>
 		<style>
             .medan-gallery-list {
                 display: none;
@@ -141,6 +144,14 @@
                 display: none;
             }
             .bali-gallery:hover .bali-gallery-list {
+                cursor: pointer;
+                display: block;
+            }
+
+            .palembang-gallery-list {
+                display: none;
+            }
+            .palembang-gallery:hover .palembang-gallery-list {
                 cursor: pointer;
                 display: block;
             }
@@ -699,6 +710,42 @@
             <text transform="translate(1095.5 488.22)" style="font-size:21px;fill:#f9f9f9;font-family:Calibri, Calibri">
                 <tspan style="letter-spacing:-0.009765625em">B</tspan>
                 <tspan x="11.22" y="0">ALI GALLE</tspan>
+                <tspan x="95.55" y="0" style="letter-spacing:-0.0146484375em">R</tspan>
+                <tspan x="106.64" y="0">Y</tspan>
+            </text>
+            <text transform="translate(1072.52 515.64)" style="font-size:16.895130157470703px;fill:#fff;font-family:Calibri, Calibri">Jl. Mahend
+                <tspan x="74.92" y="0" style="letter-spacing:-0.020577305221071235em">r</tspan>
+                <tspan x="80.47" y="0">ad</tspan>
+                <tspan x="97.44" y="0" style="letter-spacing:-0.009248227065649994em">a</tspan>
+                <tspan x="105.37" y="0" style="letter-spacing:-0.012253900861986243em">t</tspan>
+                <tspan x="110.82" y="0" style="letter-spacing:0.00005780141916031246em">a No. 59 </tspan>
+                <tspan x="37.36" y="20.27">Denpasa</tspan>
+                <tspan x="96.71" y="20.27" style="letter-spacing:-0.08595071029138462em">r</tspan>
+                <tspan x="101.15" y="20.27" style="letter-spacing:-0.00005780141916031246em">, Bali</tspan>
+            </text>
+            <a href="/splus/hubungi-kami/gallery-bali" target="_PARENT">
+                <text transform="translate(1089.83 571.97)" style="font-size:18.958499908447266px;fill:#fff;font-family:Calibri, Calibri">Lih
+                    <tspan x="22.28" y="0" style="letter-spacing:-0.009271896555574938em">a</tspan>
+                    <tspan x="31.19" y="0" style="letter-spacing:-0.000051510536419860774em">t Sh</tspan>
+                    <tspan x="60.5" y="0" style="letter-spacing:-0.003914800767909419em">o</tspan>
+                    <tspan x="70.42" y="0" style="letter-spacing:-0.000051510536419860774em">w</tspan>
+                    <tspan x="83.97" y="0" style="letter-spacing:-0.01607128736299656em">r</tspan>
+                    <tspan x="90.28" y="0" style="letter-spacing:-0.000051510536419860774em">oom</tspan>
+                </text>
+            </a>
+            <g style="clip-path:url(#m)">
+                <image width="1280" height="768" transform="translate(999.79 268.04) scale(0.25)" xlink:href="showroom/bali.jpg" />
+            </g>
+        </g>
+    </g>
+    <g class="palembang-gallery">
+        <path d="M1154.28,619.19c-8.45,0-18.41,5.21-15.17,18.42,2.07,8.46,15.17,33.39,15.17,33.39S1167,646.07,1169,637.61C1172.27,624.4,1162.72,619.19,1154.28,619.19Zm-.21,24.18a9.21,9.21,0,1,1,9.21-9.21A9.21,9.21,0,0,1,1154.07,643.37Z" transform="translate(0)" style="fill:#960c0c" />
+        <circle cx="1154.07" cy="634.16" r="9.21" style="fill:#fff" />
+        <g class="palembang-gallery-list">
+            <path d="M1345.68,592.14H1196a13.28,13.28,0,0,0-11.92,7.61l-18.83,38.93a13.11,13.11,0,0,1-23.21,1.14l-24.92-41.21a13.22,13.22,0,0,0-11.3-6.47H963.62a13.55,13.55,0,0,1-13.32-13.77v-315a13.55,13.55,0,0,1,13.32-13.77h382.06A13.55,13.55,0,0,1,1359,263.4v315A13.55,13.55,0,0,1,1345.68,592.14Z" transform="translate(0)" style="stroke:#960c0c;stroke-miterlimit:10;stroke-width:3px" />
+            <text transform="translate(1095.5 488.22)" style="font-size:21px;fill:#f9f9f9;font-family:Calibri, Calibri">
+                <tspan style="letter-spacing:-0.009765625em">P</tspan>
+                <tspan x="11.22" y="0">ALEMBANG GALE</tspan>
                 <tspan x="95.55" y="0" style="letter-spacing:-0.0146484375em">R</tspan>
                 <tspan x="106.64" y="0">Y</tspan>
             </text>

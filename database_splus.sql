@@ -470,9 +470,17 @@ CREATE TABLE `tbl_kategori` (
   `kategori_cover` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`kategori_id`) USING BTREE,
   KEY `album_pengguna_id` (`kategori_pengguna_id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 /*Data for the table `tbl_kategori` */
+
+insert  into `tbl_kategori`(`kategori_id`,`kategori_nama`,`kategori_deskripsi`,`kategori_tanggal`,`kategori_pengguna_id`,`kategori_author`,`kategori_count`,`kategori_cover`) values 
+(1,'PINTU','PINTU','2022-04-20 14:06:01',22,'itakumala',0,'375062cda672824c78b10d39b0778982.png'),
+(2,'JENDELA','jendela','2022-04-07 08:52:33',2,'itakumala',0,'fa93a1a4e6460f864b7b46e96cebb8cd.png'),
+(3,'INTERIOR_MATERIAL','interior_material','2022-04-07 08:54:11',3,'itakumala',0,'9ca4bed9a000591a66a88915309d94a6.png'),
+(4,'EXTERIOR_MATERIAL','exterior_material','2022-04-07 08:54:52',4,'itakumala',0,'36a8d82998cb27eced67daa2881d3563.png'),
+(5,'MASKER','masker','2022-04-07 08:55:10',5,'itakumala',0,'b26a697dd4a4de7280700a7e4af28ee1.png'),
+(6,'AKSESORIS','aksesoris','2022-04-07 08:55:27',6,'itakumala',0,'e0bfafd1187236e800d309311e2ffac3.png');
 
 /*Table structure for table `tbl_kategoriproduk` */
 
@@ -621,14 +629,15 @@ CREATE TABLE `tbl_pengguna` (
   `pengguna_register` timestamp NULL DEFAULT current_timestamp(),
   `pengguna_photo` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`pengguna_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 /*Data for the table `tbl_pengguna` */
 
 insert  into `tbl_pengguna`(`pengguna_id`,`pengguna_nama`,`pengguna_moto`,`pengguna_jenkel`,`pengguna_username`,`pengguna_password`,`pengguna_tentang`,`pengguna_email`,`pengguna_nohp`,`pengguna_facebook`,`pengguna_twitter`,`pengguna_linkdin`,`pengguna_google_plus`,`pengguna_status`,`pengguna_level`,`pengguna_register`,`pengguna_photo`) values 
 (2,'S-Plus Indonesia',NULL,'L','smtechtex@splusindonesia.co.id','e471711af0db2f6c64df4f60573baa8e',NULL,'smtechtex@splusindonesia.co.id','(0231) 8511781',NULL,NULL,NULL,NULL,1,'1','2020-01-13 06:31:34','d540ba14929a5fbc859fcf8004d894fc.png'),
-(3,'S-Plus Jakarta',NULL,'L','arul','4c9d830f39238c6607b162a92e528759',NULL,'jakarta@splusindonesia.co.id','(021) 62301599',NULL,NULL,NULL,NULL,1,'2','2020-04-07 13:59:55','b8167f3e2c7eca3e873838f066a50057.png'),
-(4,'IT',NULL,'L','it','it123',NULL,'it@gmail.com','089235772503',NULL,NULL,NULL,NULL,1,'1','2022-01-13 03:21:25','31400d5a267e02e416784d3a6e820323.jpg');
+(3,'S-Plus Jakarta',NULL,'L','arul','4c9d830f39238c6607b162a92e528759',NULL,'jakarta@splusindonesia.co.id','(021) 62301599',NULL,NULL,NULL,NULL,1,'1','2020-04-07 13:59:55','b8167f3e2c7eca3e873838f066a50057.png'),
+(4,'IT',NULL,'L','it','761dea820b1177a62a122119272e3373',NULL,'it@gmail.com','089235772503',NULL,NULL,NULL,NULL,1,'1','2022-01-13 03:21:25','31400d5a267e02e416784d3a6e820323.jpg'),
+(22,'itakumala',NULL,'P','itakumala','62ca9672c3bf3b1357ae0bd56c244be3',NULL,'itakumala@gmail.com','08923577990',NULL,NULL,NULL,NULL,1,'1','2022-04-01 10:29:24','76ddc7ba0ef32bc274b775fdca5d2f60.png');
 
 /*Table structure for table `tbl_pengunjung` */
 
@@ -640,7 +649,7 @@ CREATE TABLE `tbl_pengunjung` (
   `pengunjung_ip` varchar(40) DEFAULT NULL,
   `pengunjung_perangkat` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`pengunjung_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=124807 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=124827 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 /*Data for the table `tbl_pengunjung` */
 
@@ -692,7 +701,27 @@ insert  into `tbl_pengunjung`(`pengunjung_id`,`pengunjung_tanggal`,`pengunjung_i
 (124803,'2022-03-19 07:43:25','::1','Chrome'),
 (124804,'2022-03-21 07:35:06','::1','Chrome'),
 (124805,'2022-03-22 07:53:34','::1','Chrome'),
-(124806,'2022-03-23 08:13:14','::1','Chrome');
+(124806,'2022-03-23 08:13:14','::1','Chrome'),
+(124807,'2022-03-24 08:03:07','::1','Chrome'),
+(124808,'2022-03-25 08:01:31','::1','Chrome'),
+(124809,'2022-03-26 07:45:42','::1','Chrome'),
+(124810,'2022-03-28 07:46:21','::1','Chrome'),
+(124811,'2022-03-29 08:34:28','::1','Chrome'),
+(124812,'2022-03-30 08:15:38','::1','Chrome'),
+(124813,'2022-04-01 07:27:51','::1','Chrome'),
+(124814,'2022-04-02 08:05:11','::1','Chrome'),
+(124815,'2022-04-04 08:09:18','::1','Chrome'),
+(124816,'2022-04-06 11:21:44','::1','Chrome'),
+(124817,'2022-04-07 08:49:04','::1','Chrome'),
+(124818,'2022-04-08 07:42:40','::1','Chrome'),
+(124819,'2022-04-09 08:11:33','::1','Chrome'),
+(124820,'2022-04-11 08:45:33','::1','Chrome'),
+(124821,'2022-04-12 08:01:57','::1','Chrome'),
+(124822,'2022-04-13 09:18:44','::1','Chrome'),
+(124823,'2022-04-14 11:06:03','::1','Chrome'),
+(124824,'2022-04-18 08:04:48','::1','Chrome'),
+(124825,'2022-04-19 07:57:26','::1','Chrome'),
+(124826,'2022-04-20 09:10:32','::1','Chrome');
 
 /*Table structure for table `tbl_product_splus` */
 
@@ -733,23 +762,27 @@ DROP TABLE IF EXISTS `tbl_produk`;
 CREATE TABLE `tbl_produk` (
   `produk_id` int(20) NOT NULL AUTO_INCREMENT,
   `id_kategori_produk` int(11) DEFAULT NULL,
+  `produk_kategori_id` int(20) DEFAULT NULL,
+  `produk_judul` varchar(50) DEFAULT NULL,
+  `tanggal` timestamp NULL DEFAULT current_timestamp(),
+  `produk_author` varchar(60) DEFAULT NULL,
   `produk_slug` varchar(200) DEFAULT NULL,
   `produk_nama` varchar(100) DEFAULT NULL,
   `produk_kategori` varchar(100) DEFAULT NULL,
   `produk_gambar` varchar(200) DEFAULT NULL,
   `produk_deskripsi` text DEFAULT NULL,
   PRIMARY KEY (`produk_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 /*Data for the table `tbl_produk` */
 
-insert  into `tbl_produk`(`produk_id`,`id_kategori_produk`,`produk_slug`,`produk_nama`,`produk_kategori`,`produk_gambar`,`produk_deskripsi`) values 
-(1,1,'pintu','Pintu','pintu','classic-2-20.jpg','Pintu ABS'),
-(2,2,'window','window','window','window.jpg','window'),
-(3,3,'interor-Material','Interor Material','Interor ',NULL,NULL),
-(4,4,'exterior-Material','Exterior Material','Exterior',NULL,NULL),
-(5,5,'Aksesoris','Aksesoris','Aksesoris',NULL,NULL),
-(6,6,'Masker','Masker','Masker',NULL,NULL);
+insert  into `tbl_produk`(`produk_id`,`id_kategori_produk`,`produk_kategori_id`,`produk_judul`,`tanggal`,`produk_author`,`produk_slug`,`produk_nama`,`produk_kategori`,`produk_gambar`,`produk_deskripsi`) values 
+(1,1,1,NULL,'2022-04-07 09:28:42',NULL,'pintu','Pintu','1','classic-2-20.jpg','Pintu ABS'),
+(2,2,2,NULL,'2022-04-07 09:28:42',NULL,'window','window','2','window.jpg','window'),
+(3,3,3,NULL,'2022-04-07 09:28:42',NULL,'interor-Material','Interor Material','3',NULL,NULL),
+(4,4,4,NULL,'2022-04-07 09:28:42',NULL,'exterior-Material','Exterior Material','4',NULL,NULL),
+(5,5,5,NULL,'2022-04-07 09:28:42',NULL,'Aksesoris','Aksesoris','5',NULL,NULL),
+(6,6,6,NULL,'2022-04-07 09:28:42',NULL,'Masker','Masker','6',NULL,NULL);
 
 /*Table structure for table `tbl_produk_keranjang` */
 
@@ -767,12 +800,9 @@ CREATE TABLE `tbl_produk_keranjang` (
   `jumlah_produk` decimal(10,0) DEFAULT NULL,
   `harga_produk` decimal(50,0) DEFAULT NULL,
   PRIMARY KEY (`keranjang_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=195 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=200 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_produk_keranjang` */
-
-insert  into `tbl_produk_keranjang`(`keranjang_id`,`session_id`,`nama_produk`,`tipe_produk`,`harga_produk_meter`,`lebar_produk`,`tinggi_produk`,`warna_produk`,`jumlah_produk`,`harga_produk`) values 
-(131,'','PINTU','artdoor-c1-30',0,1000,1000,'',1,0);
 
 /*Table structure for table `tbl_produk_lama` */
 
@@ -814,6 +844,13 @@ DROP TABLE IF EXISTS `tbl_produk_varian`;
 CREATE TABLE `tbl_produk_varian` (
   `varian_id` int(11) NOT NULL AUTO_INCREMENT,
   `produk_id` int(11) NOT NULL,
+  `varian_produk_id` int(11) NOT NULL,
+  `varian_kategori_id` int(11) NOT NULL,
+  `varian_author` varchar(150) DEFAULT NULL,
+  `varian_judul` varchar(100) DEFAULT NULL,
+  `varian_stok` varchar(100) DEFAULT NULL,
+  `varian_gambar` varchar(100) DEFAULT NULL,
+  `varian_pengguna_id` int(11) NOT NULL,
   `id_subkategori_produk` int(11) NOT NULL,
   `varian_type` varchar(150) DEFAULT NULL,
   `varian_nama` varchar(150) DEFAULT NULL,
@@ -837,22 +874,23 @@ CREATE TABLE `tbl_produk_varian` (
   `product_quantity` mediumint(5) NOT NULL,
   `product_status` enum('0','1') NOT NULL,
   PRIMARY KEY (`varian_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=179 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=180 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_produk_varian` */
 
-insert  into `tbl_produk_varian`(`varian_id`,`produk_id`,`id_subkategori_produk`,`varian_type`,`varian_nama`,`varian_gambar_depan`,`varian_gambar_utama`,`varian_gambar_warna`,`varian_harga`,`varian_harga_meter`,`varian_jumlah`,`varian_deskripsi`,`varian_ukuran`,`varian_warna`,`tokopedia`,`bukalapak`,`product_name`,`product_jenis`,`product_price`,`product_tipe`,`product_brand`,`product_image`,`product_quantity`,`product_status`) values 
-(7,1,1,'pintu','classic-001','pintu/classic-1-50.jpg','pintu/classic-1-50.jpg','warna_new/20.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'Pintu Classic-001','ABS',10000.00,'Pintu Classic-001','SPLUS','pintu/classic-1-50.jpg',5,'1'),
-(1,1,1,'pintu','classic-001',NULL,'pintu/classic-1-50.jpg','warna_new/19.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN-MOTIF',NULL,NULL,'Pintu Classic-001','ABS',10000.00,'Pintu Classic-001','SPLUS','pintu/classic-1-50.jpg',5,'0'),
-(2,2,1,'jendela','window','window/window3.jpg','window/window3.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000',NULL,NULL,NULL,'Jendela Classic-110','UPVC_JENDELA',10000.00,'Jendela Classic-110','SPLUS','window/window3.jpg',5,'1'),
-(3,3,1,'kichen','kichen-001','interior/kichen-001.jpg','interior/kichen-001.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000',NULL,NULL,NULL,'kichen-001','KICHEN',10000.00,'kichen-001','SPLUS','interior/kichen-001.jpg',5,'1'),
-(4,4,2,'exterior','exterior','exterior/wpc-001.jpg','exterior/wpc-001.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000',NULL,NULL,NULL,'wpc-001','WPC',10000.00,'wpc-001','SPLUS','exterior/wpc-001.jpg',5,'1'),
-(5,5,2,'aksesoris','aksesoris','aksesoris/gagang-pintu.jpg','aksesoris/gagang-pintu.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000',NULL,NULL,NULL,'gagang-pintu-001','AKSESORIS',10000.00,'gagang-pintu-001','NAMO','aksesoris/gagang-pintu.jpg',5,'1'),
-(6,6,2,'masker','masker','masker/masker-dewasa-001.jpg','masker/masker-dewasa-001.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000',NULL,NULL,NULL,'masker-dewasa-001','MASKER',10000.00,'masker-dewasa-001','SPLUS','masker/masker-dewasa-001.jpg',5,'1'),
-(8,1,1,'pintu','classic-002','pintu/classic-2-20.jpg','pintu/classic-2-20.jpg','warna_new/20.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'Pintu Classic-002','ABS',10000.00,'Pintu Classic-002','SPLUS','pintu/classic-2-20.jpg',5,'1'),
-(9,3,1,'kichen','kichen-002','interior/kichen-002.jpg','interior/kichen-002.jpg','warna_new/20.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'kichen-002','KICHEN',10000.00,'kichen-002','SPLUS','interior/kichen-002.jpg',5,'1'),
-(10,1,1,'pintu','artdoor-001','pintu/artdoor-c1-30.jpg','pintu/artdoor-c1-30.jpg','warna_new/20.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'Pintu artdoor-001','NAMO',8000.00,'Pintu artdoor-001','NAMO','pintu/artdoor-c1-30.jpg',3,'1'),
-(11,1,1,'pintu','grande-001','pintu/grande.jpg','pintu/grande.jpg','warna_new/20.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'Pintu grande-001','ABS',8000.00,'Pintu grande-001','SPLUS','pintu/grande.jpg',3,'1');
+insert  into `tbl_produk_varian`(`varian_id`,`produk_id`,`varian_produk_id`,`varian_kategori_id`,`varian_author`,`varian_judul`,`varian_stok`,`varian_gambar`,`varian_pengguna_id`,`id_subkategori_produk`,`varian_type`,`varian_nama`,`varian_gambar_depan`,`varian_gambar_utama`,`varian_gambar_warna`,`varian_harga`,`varian_harga_meter`,`varian_jumlah`,`varian_deskripsi`,`varian_ukuran`,`varian_warna`,`tokopedia`,`bukalapak`,`product_name`,`product_jenis`,`product_price`,`product_tipe`,`product_brand`,`product_image`,`product_quantity`,`product_status`) values 
+(7,1,0,0,NULL,NULL,NULL,NULL,0,1,'pintu','classic-001','pintu/classic-1-50.jpg','pintu/classic-1-50.jpg','warna_new/20.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'Pintu Classic-001','ABS',10000.00,'Pintu Classic-001','SPLUS','pintu/classic-1-50.jpg',5,'1'),
+(1,1,0,0,NULL,NULL,NULL,NULL,0,1,'pintu','classic-001',NULL,'pintu/classic-1-50.jpg','warna_new/19.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN-MOTIF',NULL,NULL,'Pintu Classic-001','ABS',10000.00,'Pintu Classic-001','SPLUS','pintu/classic-1-50.jpg',5,'0'),
+(2,2,0,0,NULL,NULL,NULL,NULL,0,1,'jendela','window','window/window3.jpg','window/window3.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000',NULL,NULL,NULL,'Jendela Classic-110','UPVC_JENDELA',10000.00,'Jendela Classic-110','SPLUS','window/window3.jpg',5,'1'),
+(3,3,0,0,NULL,NULL,NULL,NULL,0,1,'kichen','kichen-001','interior/kichen-001.jpg','interior/kichen-001.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000',NULL,NULL,NULL,'kichen-001','KICHEN',10000.00,'kichen-001','SPLUS','interior/kichen-001.jpg',5,'1'),
+(4,4,0,0,NULL,NULL,NULL,NULL,0,2,'exterior','exterior','exterior/wpc-001.jpg','exterior/wpc-001.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000',NULL,NULL,NULL,'wpc-001','WPC',10000.00,'wpc-001','SPLUS','exterior/wpc-001.jpg',5,'1'),
+(5,5,0,0,NULL,NULL,NULL,NULL,0,2,'aksesoris','aksesoris','aksesoris/gagang-pintu.jpg','aksesoris/gagang-pintu.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000',NULL,NULL,NULL,'gagang-pintu-001','AKSESORIS',10000.00,'gagang pintu-001','NAMO','aksesoris/gagang-pintu.jpg',5,'1'),
+(6,6,0,0,NULL,NULL,NULL,NULL,0,2,'masker','masker','masker/masker-dewasa-001.jpg','masker/masker-dewasa-001.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000',NULL,NULL,NULL,'masker-dewasa-001','MASKER',10000.00,'masker dewasa-001','SPLUS','masker/masker-dewasa-001.jpg',5,'1'),
+(8,1,0,0,NULL,NULL,NULL,NULL,0,1,'pintu','classic-002','pintu/classic-2-20.jpg','pintu/classic-2-20.jpg','warna_new/20.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'Pintu Classic-002','ABS',10000.00,'Pintu Classic-002','SPLUS','pintu/classic-2-20.jpg',5,'1'),
+(9,3,0,0,NULL,NULL,NULL,NULL,0,1,'kichen','kichen-002','interior/kichen-002.jpg','interior/kichen-002.jpg','warna_new/20.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'kichen-002','KICHEN',10000.00,'kichen-002','SPLUS','interior/kichen-002.jpg',5,'1'),
+(10,1,0,0,NULL,NULL,NULL,NULL,0,1,'pintu','artdoor-001','pintu/artdoor-c1-30.jpg','pintu/artdoor-c1-30.jpg','warna_new/20.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'Pintu artdoor-001','NAMO',8000.00,'Pintu artdoor-001','NAMO','pintu/artdoor-c1-30.jpg',3,'1'),
+(11,1,0,0,NULL,NULL,NULL,NULL,0,1,'pintu','grande-001','pintu/grande.jpg','pintu/grande.jpg','warna_new/20.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'Pintu grande-001','ABS',8000.00,'Pintu grande-001','SPLUS','pintu/grande.jpg',3,'1'),
+(12,1,0,0,'itakumala',NULL,NULL,NULL,22,1,'pintu','kuncret',NULL,'a90fa8bb9e31d458c14af3adee8d28b1.png',NULL,NULL,NULL,NULL,'23','1000x1000',NULL,NULL,NULL,'','',0.00,'','','',0,'0');
 
 /*Table structure for table `tbl_produk_varian2` */
 
@@ -1150,6 +1188,35 @@ CREATE TABLE `tbl_slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 /*Data for the table `tbl_slider` */
+
+/*Table structure for table `tbl_subkategori` */
+
+DROP TABLE IF EXISTS `tbl_subkategori`;
+
+CREATE TABLE `tbl_subkategori` (
+  `subkategori_id` int(11) NOT NULL AUTO_INCREMENT,
+  `subkategori_nama` varchar(50) DEFAULT NULL,
+  `subkategori_deskripsi` text NOT NULL,
+  `subkategori_tanggal` timestamp NULL DEFAULT current_timestamp(),
+  `subkategori_pengguna_id` int(11) DEFAULT NULL,
+  `subkategori_author` varchar(60) DEFAULT NULL,
+  `subkategori_count` int(11) DEFAULT 0,
+  `subkategori_cover` varchar(40) DEFAULT NULL,
+  `produk_kategori` int(11) NOT NULL,
+  PRIMARY KEY (`subkategori_id`),
+  KEY `album_pengguna_id` (`subkategori_pengguna_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+
+/*Data for the table `tbl_subkategori` */
+
+insert  into `tbl_subkategori`(`subkategori_id`,`subkategori_nama`,`subkategori_deskripsi`,`subkategori_tanggal`,`subkategori_pengguna_id`,`subkategori_author`,`subkategori_count`,`subkategori_cover`,`produk_kategori`) values 
+(1,'PINTU','pintu','2022-04-06 14:12:46',1,'IT',-1,'a488095d6f885410f3f989f9904d8fbd.png',1),
+(2,'JENDELA','jendela','2022-04-07 08:52:33',22,'itakumala',0,'fa93a1a4e6460f864b7b46e96cebb8cd.png',2),
+(3,'INTERIOR_MATERIAL','interior_material','2022-04-07 08:54:11',22,'itakumala',0,'9ca4bed9a000591a66a88915309d94a6.png',3),
+(4,'EXTERIOR_MATERIAL','exterior_material','2022-04-07 08:54:52',22,'itakumala',0,'36a8d82998cb27eced67daa2881d3563.png',4),
+(5,'MASKER','masker','2022-04-07 08:55:10',22,'itakumala',0,'b26a697dd4a4de7280700a7e4af28ee1.png',5),
+(6,'AKSESORIS','aksesoris','2022-04-07 08:55:27',22,'itakumala',0,'e0bfafd1187236e800d309311e2ffac3.png',6),
+(8,'ayam2','ayam2','2022-04-19 13:27:01',22,'itakumala',0,'febb6097121a887a8965da70f59dd6da.png',1);
 
 /*Table structure for table `tbl_subkategoriproduk` */
 

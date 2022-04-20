@@ -64,7 +64,7 @@ $('document').ready(function() {
 
 $('document').ready(function() {
   // Back to top
-  var backTop = $(".back-to-top");
+  var backTop = $(".back-to-topx");
   
   $(window).scroll(function() {
     if($(document).scrollTop() > 400) {
