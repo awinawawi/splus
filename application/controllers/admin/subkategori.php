@@ -1,5 +1,5 @@
 <?php
-class Varian extends CI_Controller
+class subkategori extends CI_Controller
 {
 	function __construct()
 	{
@@ -13,8 +13,8 @@ class Varian extends CI_Controller
 			redirect(base_url('admin/dashboard'));
 		}
 
-		$this->load->model('m_varian');
-		$this->load->model('m_dependentSelect');
+		$this->load->model('m_subkategori');
+		$this->load->model('m_kategori');
 		$this->load->model('m_pengguna');
 		$this->load->library('upload');
 	}
@@ -22,18 +22,12 @@ class Varian extends CI_Controller
 
 	function index()
 	{
-		$x['data'] = $this->m_varian->get_all_varian();
-		$this->load->view('admin/v_varian', $x);
+		$x['data'] = $this->m_subkategori->get_all_kategori();
+		$x['alb'] = $this->m_kategori->get_all_kategori();
+		$this->load->view('admin/v_subkategori', $x);
 	}
 
-	function filter($kategori)
-	{
-
-		$x['data'] = $this->m_varian->get_all_varian_filter($kategori);
-		$this->load->view('admin/v_varian', $x);
-	}
-
-	function simpan_varian()
+	function simpan_kategori()
 	{
 		$config['upload_path'] = './assets/user/images/galeri/'; //path folder
 		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
@@ -55,29 +49,28 @@ class Varian extends CI_Controller
 				$this->load->library('image_lib', $config);
 				$this->image_lib->resize();
 
-				$varian_gambar = $gbr['file_name'];
-				$varian_nama = strip_tags($this->input->post('nama_varian'));
-				$varian_nama = strip_tags($this->input->post('nama_varian'));
-				$kategori = strip_tags($this->input->post('kategori'));
+				$gambar = $gbr['file_name'];
+				$subkategori_nama = strip_tags($this->input->post('nama_kategori'));
+				$subkategori_deskripsi = strip_tags($this->input->post('deskripsi_kategori'));
 				$kode = $this->session->userdata('idadmin');
 				$user = $this->m_pengguna->get_pengguna_login($kode);
-				$varian_deskripsi = $this->input->post('deskripsi');
 				$p = $user->row_array();
 				$user_id = $p['pengguna_id'];
 				$user_nama = $p['pengguna_nama'];
-				$this->m_varian->simpan_varian($varian_nama, $varian_deskripsi, $user_id, $user_nama, $varian_gambar);
+				$produk_kategori = strip_tags($this->input->post('kategori'));
+				$this->m_subkategori->simpan_kategori($subkategori_nama, $produk_kategori, $subkategori_deskripsi, $user_id, $user_nama, $gambar);
 				echo $this->session->set_flashdata('msg', 'success');
-				redirect('admin/varian');
+				redirect('admin/subkategori');
 			} else {
 				echo $this->session->set_flashdata('msg', 'warning');
-				redirect('admin/varian');
+				redirect('admin/subkategori');
 			}
 		} else {
-			redirect('admin/varian');
+			redirect('admin/subkategori');
 		}
 	}
 
-	function update_varian()
+	function update_kategori()
 	{
 
 		$config['upload_path'] = './assets/user/images/galeri/'; //path folder
@@ -101,9 +94,9 @@ class Varian extends CI_Controller
 				$this->image_lib->resize();
 
 				$gambar = $gbr['file_name'];
-				$varian_id = $this->input->post('kode');
-				$varian_nama = strip_tags($this->input->post('xnama_varian'));
-				$varian_deskripsi = strip_tags($this->input->post('xdeskripsi_varian'));
+				$subkategori_id = $this->input->post('kode');
+				$subkategori_nama = strip_tags($this->input->post('nama_kategori'));
+				$subkategori_deskripsi = strip_tags($this->input->post('deskripsi_kategori'));
 				$images = $this->input->post('gambar');
 				$path = './assets/user/images/galeri/' . $images;
 				unlink($path);
@@ -112,45 +105,38 @@ class Varian extends CI_Controller
 				$p = $user->row_array();
 				$user_id = $p['pengguna_id'];
 				$user_nama = $p['pengguna_nama'];
-				$this->m_varian->update_varian($varian_id, $varian_nama, $varian_deskripsi, $user_id, $user_nama, $gambar);
+				$produk_kategori = strip_tags($this->input->post('kategori'));
+				$this->m_subkategori->update_kategori($subkategori_id, $subkategori_nama, $produk_kategori, $subkategori_deskripsi, $user_id, $user_nama, $gambar);
 				echo $this->session->set_flashdata('msg', 'info');
-				redirect('admin/varian');
+				redirect('admin/subkategori');
 			} else {
 				echo $this->session->set_flashdata('msg', 'warning');
-				redirect('admin/varian');
+				redirect('admin/subkategori');
 			}
 		} else {
-			$varian_id = $this->input->post('kode');
-			$varian_nama = strip_tags($this->input->post('xnama_varian'));
-			$varian_deskripsi = strip_tags($this->input->post('xdeskripsi_varian'));
+			$subkategori_id = $this->input->post('kode');
+			$subkategori_nama = strip_tags($this->input->post('nama_kategori'));
+			$subkategori_deskripsi = strip_tags($this->input->post('deskripsi_kategori'));
 			$kode = $this->session->userdata('idadmin');
 			$user = $this->m_pengguna->get_pengguna_login($kode);
 			$p = $user->row_array();
 			$user_id = $p['pengguna_id'];
 			$user_nama = $p['pengguna_nama'];
-			$this->m_varian->update_varian_tanpa_img($varian_id, $varian_nama, $varian_deskripsi, $user_id, $user_nama);
+			$produk_kategori = strip_tags($this->input->post('kategori'));
+			$this->m_subkategori->update_kategori_tanpa_img($subkategori_id, $subkategori_nama, $produk_kategori, $subkategori_deskripsi, $user_id, $user_nama);
 			echo $this->session->set_flashdata('msg', 'info');
-			redirect('admin/varian');
+			redirect('admin/subkategori');
 		}
 	}
 
-	function hapus_varian()
+	function hapus_kategori()
 	{
 		$kode = $this->input->post('kode');
 		$gambar = $this->input->post('gambar');
 		$path = './assets/user/images/galeri/' . $gambar;
 		unlink($path);
-		$this->m_varian->hapus_varian($kode);
+		$this->m_subkategori->hapus_kategori($kode);
 		echo $this->session->set_flashdata('msg', 'success-hapus');
-		redirect('admin/varian');
-	}
-
-	function ambil_data()
-	{
-		$modul = $this->input->post('modul');
-		$id = $this->input->post('id');
-		if ($modul == 'produk') {
-			echo $this->m_dependentSelect->produk($id);
-		}
+		redirect('admin/subkategori');
 	}
 }

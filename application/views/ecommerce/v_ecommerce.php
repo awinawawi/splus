@@ -657,21 +657,17 @@
             <div class="row">
                 <div class="col-lg-8">
                     <div class="section-heading">
-                        <h2>Tracking Order</h2>
-                        <span>Check your order details is here.</span>
+                        <h2>Cek Resi</h2>
+                        <p>Masukan no. resi pada pada form dibawah ini.</p>
                     </div>
-                    <form id="subscribe" action="" method="get">
+                    <form id="subscribe" action="https://cekresi.com" method="get" target="_BLANK">
                         <div class="row">
                             <div class="col-lg-5">
                                 <fieldset>
-                                    <input name="name" type="text" id="name" placeholder="Your Name" required="">
+                                    <input name="name" type="text" id="name" placeholder="Masukan no resi..." required="">
                                 </fieldset>
                             </div>
-                            <div class="col-lg-5">
-                                <fieldset>
-                                    <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email Address" required="">
-                                </fieldset>
-                            </div>
+
                             <div class="col-lg-2">
                                 <fieldset>
                                     <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
@@ -680,6 +676,27 @@
                         </div>
                     </form>
                 </div>
+                <!-- <div class="col-lg-8">
+                    <div class="section-heading">
+                        <h2>Cek Status Pesanan</h2>
+                        <p>Masukan no. invoice pada pada form dibawah ini.</p>
+                    </div>
+                    <form id="subscribe" action="<?= base_url('konfirmasi/tracking') ?>" method="get" target="_BLANK">
+                        <div class="row">
+                            <div class="col-lg-5">
+                                <fieldset>
+                                    <input name="kode" class="form-control" placeholder="INV-0000000000" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+                                </fieldset>
+                            </div>
+
+                            <div class="col-lg-2">
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="main-dark-button"><i class="fa fa-paper-plane"></i></button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div> -->
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-6">

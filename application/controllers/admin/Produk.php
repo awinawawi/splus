@@ -18,6 +18,13 @@ class Produk extends CI_Controller
 		$this->load->library('upload');
 	}
 
+	function filter($kategori)
+	{
+
+		$x['data'] = $this->m_produk->get_all_produk_filter($kategori);
+		$this->load->view('admin/v_produk', $x);
+	}
+
 
 	function index()
 	{

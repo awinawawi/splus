@@ -4,9 +4,26 @@ class M_produk extends CI_Model
 
 	function get_all_produk()
 	{
-		$hsl = $this->db->query("SELECT * FROM tbl_produk join tbl_kategori on produk_kategori_id=kategori_id ORDER BY produk_id ASC");
+
+		// $hsl = $this->db->query("SELECT * FROM tbl_produk join tbl_kategori on produk_kategori_id=kategori_id ORDER BY produk_id ASC");
+		// $hsl = $this->db->query("SELECT * FROM tbl_produk a JOIN tbl_kategori b ON a.id_kategori_produk=b.kategori_id ORDER BY a.produk_id ASC");
+		$hsl = $this->db->query("SELECT * FROM tbl_produk join tbl_kategori on produk_kategori=kategori_id ORDER BY produk_id ASC");
 		return $hsl;
 	}
+
+	function get_all_produk_filter($kategori)
+	{
+		if (empty($kategori) || $kategori == 'all') :
+			$hsl = $this->db->query("SELECT * FROM tbl_produk join tbl_kategori on produk_kategori=kategori_id 
+		  ORDER BY produk_id ASC");
+			return $hsl;
+		else :
+			$hsl = $this->db->query("SELECT * FROM tbl_produk join tbl_kategori on produk_kategori=kategori_id 
+			where produk_kategori='$kategori'  ORDER BY produk_id ASC");
+			return $hsl;
+		endif;
+	}
+
 	function simpan_produk($produk_slug, $produk_nama, $produk_kategori_id, $produk_kategori, $produk_gambar, $produk_deskripsi)
 	{
 		$this->db->trans_start();

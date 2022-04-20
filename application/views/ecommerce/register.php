@@ -46,13 +46,13 @@
 
 
     <!-- ***** Main Banner Area Start ***** -->
-    <div class="page-heading" id="top" style="background: url('<?= base_url('assets/images/news/bg_login.png') ?>'); background-size: cover;" class="pt-20">
+    <div class="page-heading" id="top" style="background: url('<?= base_url('assets/images/news/Register-now1.jpg') ?>'); background-size: cover;" class="pt-20">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-content">
-                        <h2 style="color:white;">REGISTER</h2>
-                        <span style="color:white;">can you sign up here</span>
+                        <h2 style="color:black;">REGISTER</h2>
+                        <span style="color:black;">can you sign up here</span>
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
 
 
     <!-- ***** Contact Area Starts ***** -->
-    <div class="contact-us">
+    <div class="">
         <div class="container">
             <CENTER>
                 <h2>Daftar Akun Baru</h2>
@@ -92,12 +92,26 @@
                                     <input name="xemail" class="form-control" id="inputEmail3" placeholder="Your email" required>
                                 </fieldset>
                             </div>
-                            <div class="col-lg-12">
+                            <!-- <div class="col-lg-12">
                                 <label>Jenis Kelamin</label>
                                 <select class="form-control" name="xjenkel" required>
                                     <option value="1">Laki-Laki</option>
                                     <option value="2">Perempuan</option>
                                 </select>
+                            </div> -->
+                            <div class="col-lg-12">
+                                <label for="inputUserName">Jenis Kelamin</label>
+
+                                <div class="radio">
+                                    <input type="radio" id="inlineRadio1" value="L" name="xjenkel" checked>
+                                    <label for="inlineRadio1"> Laki-Laki </label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" id="inlineRadio1" value="P" name="xjenkel">
+                                    <label for="inlineRadio2"> Perempuan </label>
+                                </div>
+
+
                             </div>
 
                             <div class="col-lg-12">
@@ -119,10 +133,16 @@
                                     <input name="xpassword2" class="form-control" id="inputPassword4" placeholder="Your password Repeat" required>
                                 </fieldset>
                             </div>
-                            <div class="col-lg-12">
+                            <!-- <div class="col-lg-12">
                                 <fieldset>
                                     <label>Kontak Person</label>
                                     <input name="xkontak" type="text" id="inputUserName" placeholder="Your kontak" required="">
+                                </fieldset>
+                            </div> -->
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <label>Kontak Person</label>
+                                    <input name="xkontak" class="form-control" id="inputUserName" placeholder="Your kontak" required>
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
@@ -132,10 +152,11 @@
                                     <option value="2">Cabang</option>
                                 </select>
                             </div>
-                            <div class="col-lg-12">
+
+                            <div class="col-lg-12" style="margin-top: 20px;">
                                 <fieldset>
                                     <label>Photo</label>
-                                    <input style="border:0px; padding-left: 0px;" type="file" name="filefoto" required="">
+                                    <input style="border:0px; padding-left: 2px; " type="file" name="filefoto" required="">
                                 </fieldset>
                             </div>
 

@@ -35,7 +35,7 @@
                                 <form class="form-inline" action="<?= base_url('admin/varian') ?>" method="GET">
                                     <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Tambah varian</a>
                                     <div class="form-group">
-                                        <select name="kategori" class="form-control" id="kategori">
+                                        <select id="show" name="kategori" class="form-control" id="kategori">
                                             <option value="0">Pilih Kategori</option>
                                             <?php $kategori = $this->db->get('tbl_kategori')->result(); ?>
                                             <?php foreach ($kategori as $k) : ?>
@@ -43,11 +43,22 @@
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
-                                    <div class="form-group">
+                                    <script>
+                                        $('#show').change(function() {
+                                            window.location = '<?= base_url('admin/varian/filter') ?>/' + $(this).val();
+                                        });
+                                    </script>
+                                    <?php if ($filter = $this->uri->segment(4)) : ?>
+                                        <script>
+                                            $('#show option[value="<?= $filter ?>"]').attr('selected', 'selected')
+                                        </script>
+                                    <?php endif; ?>
+
+                                    <!-- <div class="form-group">
                                         <select name="produk" class="form-control" id="produk">
                                             <option value="0">Pilih Produk</option>
                                         </select>
-                                    </div>
+                                    </div> -->
                                     <button stype="submit" class="btn btn-default btn-flat"><span class="fa fa-print"></span> Cetak</button>
                                 </form>
 
@@ -159,7 +170,7 @@
                             </div>
                             <div class="col-sm-3">
                                 <select id="xtype_suggestion" class="form-control" data-toggle="tooltip" title="Pilih jika ada data!">
-                                    <option value="null">Pilihan Type</option>
+                                    <option value="null">Type </option>
                                 </select>
                             </div>
                         </div>

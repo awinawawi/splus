@@ -35,7 +35,7 @@
                                 <form class="form-inline" action="<?= base_url('admin/produk/pdf') ?>" method="GET">
                                     <a class="btn btn-success btn-flat" data-toggle="modal" data-target="#myModal"><span class="fa fa-plus"></span> Tambah Produk</a>
                                     <div class="form-group">
-                                        <select name="kategori" class="form-control">
+                                        <select id="show" name="kategori" class="form-control">
                                             <option value="all">Pilih Kategori</option>
                                             <?php $kategori = $this->db->get('tbl_kategori')->result(); ?>
                                             <?php foreach ($kategori as $k) : ?>
@@ -43,8 +43,22 @@
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
+
+                                    <script>
+                                        $('#show').change(function() {
+                                            window.location = '<?= base_url('admin/produk/filter') ?>/' + $(this).val();
+                                        });
+                                    </script>
+                                    <?php if ($filter = $this->uri->segment(4)) : ?>
+                                        <script>
+                                            $('#show option[value="<?= $filter ?>"]').attr('selected', 'selected')
+                                        </script>
+                                    <?php endif; ?>
+
                                     <button stype="submit" class="btn btn-default btn-flat"><span class="fa fa-print"></span> Cetak</button>
                                 </form>
+
+
 
                             </div>
                             <!-- /.box-header -->
