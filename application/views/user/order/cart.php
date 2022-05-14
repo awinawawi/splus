@@ -346,7 +346,7 @@
                                     <input type="hidden" id="diskon" name="diskon" value="0">
                                 </div>
                                 <div class="col-lg-6 pt-10">
-                                    <button class="btn btn-primary pull-right" type="button" id="pesanSekarang">Pesan Sekarang</button>
+                                    <button class="btn btn-primary pull-right" type="button" id="pesanSekarang">Pesan Sekarang </button>
                                     <button class="btn btn-success pull-right hide" type="button" id="pesanSekarangModal" data-toggle="modal" data-target="#exampleModal">Pembelian Berhasil</button>
                                 </div>
                             </div>

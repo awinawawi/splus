@@ -1,5 +1,5 @@
 <?php
-class Pengguna extends CI_Controller
+class Riwayat_transaksi extends CI_Controller
 {
 	function __construct()
 	{
@@ -9,11 +9,12 @@ class Pengguna extends CI_Controller
 			redirect($url);
 		};
 
-		if ($this->session->userdata('level') != 1) {
-			redirect(base_url('admin/dashboard'));
-		}
+		// if ($this->session->userdata('level') != 1) {
+		// 	redirect(base_url('admin/dashboard'));
+		// }
 
 		$this->load->model('m_pengguna');
+		$this->load->model('M_order');
 		$this->load->library('upload');
 	}
 
@@ -21,9 +22,12 @@ class Pengguna extends CI_Controller
 	function index()
 	{
 		$kode = $this->session->userdata('idadmin');
+		// $kodex = $this->input->post('pelanggan_id');
 		$x['user'] = $this->m_pengguna->get_pengguna_login($kode);
-		$x['data'] = $this->m_pengguna->get_all_pengguna();
-		$this->load->view('admin/v_pengguna', $x);
+		$x['data'] = $this->m_pengguna->get_all_transaksi();
+
+		$x['order'] = $this->M_order->get_all_transaksi();
+		$this->load->view('admin/v_riwayat_transaksi', $x);
 	}
 
 	function simpan_pengguna()
@@ -256,5 +260,11 @@ class Pengguna extends CI_Controller
 		echo $this->session->set_flashdata('uname', $b);
 		echo $this->session->set_flashdata('upass', $pass);
 		redirect('admin/pengguna');
+	}
+
+	function tracking_status($faktur = null)
+	{
+		$data['order'] = $this->M_order->getOrder($faktur);
+		$this->load->view('user/order/cek_riwayatpesan', $data, true);
 	}
 }

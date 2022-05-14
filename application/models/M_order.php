@@ -179,4 +179,20 @@ class M_order extends CI_Model
             ->where('tbl_pembelian.faktur', $faktur);
         return $this->db->get('tbl_pembelian')->result();
     }
+
+    function get_all_transaksi()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_pembelian');
+        $this->db->join('tbl_pelanggan', 'tbl_pelanggan.id=tbl_pembelian.pelanggan_id');
+        return $this->db->get()->result();
+    }
+
+    public function view_where()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_pengguna');
+        $this->db->where('pengguna_status', 1);
+        return $this->db->get()->result();
+    }
 }

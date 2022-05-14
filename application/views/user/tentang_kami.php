@@ -133,6 +133,7 @@ $this->load->view('user/header', $meta) ?>
                     <option value="bali">Bali</option>
                     <option value="medan">Medan</option>
                     <option value="palembang">Palembang</option>
+                    <option value="bekasi">Bekasi</option>
                 </select>
                 <br><br>
                 <!-- Daftar showroom S-Plus -->
@@ -328,6 +329,20 @@ $this->load->view('user/header', $meta) ?>
                         <a href="<?= base_url('hubungi-kami/gallery-palembang') ?>" id="sm-gm" style="color: #D50000; font-size: 16px;"> <br> <i class="fa fa-arrow-circle-right"></i> Lihat Showroom</a>
                     </div>
                 </div>
+
+                <div class="row bekasi pb-40 hide">
+                    <div class="col-sm-4 col-xs-4">
+                        <img src="<?= base_url('assets/user/images/profile/bekasi.jpg') ?>" alt="" style="border-radius: 5px;" style="width:200px">
+                    </div>
+                    <div class="col-sm-8 col-xs-8">
+                        <span class="title">Bekasi Gallery & Warehouse (DC Bekasi)</span> <br>
+                        <span class="body">
+                            Jl.Raya Bantargebang Setu RT.02 RW.04 Kel. Batargebang kec. Batargebang Kota.Bekasi, Provinsi. Jawa Barat
+                        </span>
+                        <a href="<?= base_url('hubungi-kami/gallery-bekasi') ?>" id="sm-gm" style="color: #D50000; font-size: 16px;"> <br> <i class="fa fa-arrow-circle-right"></i> Lihat Showroom</a>
+                    </div>
+                </div>
+
                 <br>
             <?php else : ?>
                 <div class="subshowroom">
@@ -664,6 +679,28 @@ $this->load->view('user/header', $meta) ?>
                                         <p style="font-size: 20px; font-weight:500; font: 'Montserrat'; margin-bottom:0px"><i class="fa fa-phone"></i>0811-2233-4518</p>
                                         <p style="font-size: 20px; font-weight:500; font: 'Montserrat'; margin-bottom:0px"></p>
                                         <a href="<?= base_url('hubungi-kami/gallery-palembang') ?>" class="ps-btn" style="padding-left:5px; font-size: 20px; font-weight:500; font: 'Montserrat'; float:right; margin-top:-60px">
+                                            <i class="fa fa-arrow-circle-right"></i> More
+                                        </a>
+                                    </footer>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="row pb-40">
+                        <a href="<?= base_url('hubungi-kami/gallery-bekasi') ?>">
+                            <div class="col-lg-4 col-md-4 gallery-popup">
+                                <img src="<?= base_url('assets/user/images/profile/bekasi.jpg') ?>" alt="" style="border-radius: 50px;">
+                            </div>
+                            <div class="col-lg-8 col-lg-8">
+                                <div class="ps-contact__block" data-mh="contact-block">
+                                    <header>
+                                        <span style="font-size: 25px; font-weight:800; font: 'Montserrat';">Bekasi Gallery & Warehouse (DC Bekasi)</span>
+                                    </header>
+                                    <footer>
+                                        <p style="font-size: 20px; font-weight:500; font: 'Montserrat'; margin-bottom:0px"><i class="fa fa-home"></i> Jl.Raya Bantargebang Setu RT.02 RW.04 Kel. Batargebang kec. Batargebang Kota.Bekasi, Provinsi. Jawa Barat</p>
+                                        <p style="font-size: 20px; font-weight:500; font: 'Montserrat'; margin-bottom:0px"><i class="fa fa-phone"></i>(021) 88397133</p>
+                                        <p style="font-size: 20px; font-weight:500; font: 'Montserrat'; margin-bottom:0px"></p>
+                                        <a href="<?= base_url('hubungi-kami/gallery-bekasi') ?>" class="ps-btn" style="padding-left:5px; font-size: 20px; font-weight:500; font: 'Montserrat'; float:right; margin-top:-60px">
                                             <i class="fa fa-arrow-circle-right"></i> More
                                         </a>
                                     </footer>

@@ -145,13 +145,13 @@
                                     <input name="xkontak" class="form-control" id="inputUserName" placeholder="Your kontak" required>
                                 </fieldset>
                             </div>
-                            <div class="col-lg-12">
+                            <!-- <div class="col-lg-12">
                                 <label>Level</label>
                                 <select class="form-control" name="xlevel" required>
                                     <option value="1">Head Office</option>
                                     <option value="2">Cabang</option>
                                 </select>
-                            </div>
+                            </div> -->
 
                             <div class="col-lg-12" style="margin-top: 20px;">
                                 <fieldset>

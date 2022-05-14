@@ -23,6 +23,14 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/depan-ecommerce/vendor/owl-carousel/css/owl.carousel.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/depan-ecommerce/vendor/fancybox/css/jquery.fancybox.css') ?>">
 
+    <!-- <link rel="stylesheet" href="<?= base_url('assets/template/tema/css/style.css') ?>"> -->
+
+    <link rel="stylesheet" href="<?= base_url('assets/template/tema/') ?>css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+
+
+
 
 
 </head>
@@ -145,7 +153,233 @@
                                 </ul>
                             </li>
 
-                            <li class="scroll-to-section"><a href="<?= base_url('administrator') ?>">login</a></li>
+                            <!-- <li class="scroll-to-section"><a href="<?= base_url('administrator') ?>"> <span class="indicator__area">
+                                        <svg width="20px" height="20px">
+                                            <use xlink:href="<?= base_url('assets/') ?>images/sprite.svg#person-20"></use>
+                                        </svg>
+                                    </span>login</a>
+                            </li> -->
+
+                            <!-- <li class="submenu">
+                                <a href="javascript:;" class="indicator__button">
+                                    <span class="indicator__area">
+                                        <svg width="20px" height="20px">
+                                            <use xlink:href="<?= base_url('assets/') ?>images/sprite.svg#person-20"></use>
+                                        </svg>
+                                    </span>
+                                </a>
+                                <ul>
+                                    <li class="scroll-to-section">
+                                        <form action="<?php echo base_url() . 'administrator/auth' ?>" method="post">
+
+                                            <div class="account-menu__form-title">Masuk ke akun Anda</div>
+                                            <div class="form-group has-feedback">
+                                                <input type="text" name="username" class="form-control" placeholder="Username" required>
+                                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                            </div>
+                                            <div class="form-group has-feedback">
+                                                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                            </div>
+                                            <div class="form-group account-menu__form-button">
+                                                <button type="submit" name="submit" class="btn btn-primary btn-block">Login</button>
+                                            </div>
+                                            <div class="account-menu__form-link">
+                                                <a href="<?= base_url('register') ?>">Buat akun baru</a>
+                                            </div>
+                                        </form>
+                                    </li>
+
+                                </ul>
+                            </li> -->
+
+                            <li>
+                                <style>
+                                    .dropbtn {
+                                        background-color: #fff;
+                                        color: white;
+                                        padding: 16px;
+                                        font-size: 16px;
+                                        border: none;
+                                        cursor: pointer;
+                                    }
+
+                                    .dropbtn:hover,
+                                    .dropbtn:focus {
+                                        background-color: #2980B9;
+                                    }
+
+                                    .dropdown {
+                                        position: relative;
+                                        display: inline-block;
+                                    }
+
+                                    .dropdown-content {
+                                        display: none;
+                                        position: inherit;
+                                        background-color: #f1f1f1;
+                                        min-width: 160px;
+                                        overflow: auto;
+                                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+                                        z-index: 1;
+                                    }
+
+                                    .dropdown-content a {
+                                        color: black;
+                                        padding: 12px 16px;
+                                        text-decoration: none;
+                                        display: block;
+                                    }
+
+                                    .dropdown a:hover {
+                                        background-color: #ddd;
+                                    }
+
+                                    .show {
+                                        display: block;
+                                    }
+                                </style>
+                                <div class="dropdown">
+
+                                    <a onclick="myFunction()" class="dropbtn">
+                                        <span>
+                                            <svg width="20px" height="20px">
+                                                <use xlink:href="<?= base_url('assets/') ?>images/sprite.svg#person-20"></use>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                    <!-- <button onclick="myFunction()" class="dropbtn">
+                                        Login
+                                    </button> -->
+                                    <div id="myDropdown" class="dropdown-content">
+
+                                        <form action="<?php echo base_url() . 'administrator/auth' ?>" method="post">
+                                            <div class="account-menu__form-title">Masuk ke akun Anda</div>
+                                            <div class="form-group has-feedback">
+                                                <input type="text" name="username" class="form-control" placeholder="Username" required>
+                                                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                            </div>
+                                            <div class="form-group has-feedback">
+                                                <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                            </div>
+                                            <div class="form-group account-menu__form-button">
+                                                <button type="submit" name="submit" class="btn btn-primary btn-block">Login</button>
+                                            </div>
+                                            <div class="account-menu__form-link">
+                                                <a href="<?= base_url('register') ?>">Buat akun baru</a>
+                                            </div>
+                                        </form>
+
+
+                                        <?php
+                                        if (empty($this->session->userdata('user_login'))) { ?>
+                                            <?php
+                                            $id = $this->session->pengguna_id;
+                                            $this->db->where("pengguna_id='$id'");
+                                            $peng = $this->db->get('tbl_pengguna')->row_array();
+                                            if (empty($peng['pengguna_level'])) {
+                                                $nama = $peng['pengguna_username'];
+                                            } else {
+                                                $nama = $peng['pengguna_level'];
+                                            }
+
+                                            if (empty($peng['pengguna_photo'])) {
+                                                $foto = 'default.png';
+                                            } else {
+                                                $foto = $peng['pengguna_photo'];
+                                            }
+                                            ?>
+
+                                            <a href="<?= base_url('members/dashboard') ?>" class="account-menu__user">
+                                                <div class="account-menu__user-avatar"><img src="<?= base_url('assets/user/images/galeri/' . $foto) ?>" alt=""></div>
+                                                <div class="account-menu__user-info">
+                                                    <div class="account-menu__user-name"><?= $nama ?></div>
+                                                    <div class="account-menu__user-email"><?= $peng['email'] ?></div>
+                                                </div>
+                                            </a>
+
+                                            <div class="account-menu__divider"></div>
+                                            <ul class="account-menu__links">
+                                                <li><a href="<?= base_url('members/edit_profile') ?>">Profil</a></li>
+                                                <li><a href="<?= base_url('members/riwayat_belanja') ?>">Riwayat Transaksi</a></li>
+                                                <li><a href="<?= base_url('members/edit_alamat') ?>">Alamat</a></li>
+                                                <li><a href="<?= base_url('members/password') ?>">Password</a></li>
+                                            </ul>
+                                            <div class="account-menu__divider"></div>
+                                            <ul class="account-menu__links">
+                                                <li><a href="javascript:void(0)" onclick="logout()">Keluar</a></li>
+                                            </ul>
+                                        <?php } ?>
+
+
+
+
+
+
+                                    </div>
+                                </div>
+
+                                <script>
+                                    function myFunction() {
+                                        document.getElementById("myDropdown").classList.toggle("show");
+                                    }
+
+                                    // Close the dropdown if the user clicks outside of it
+                                    window.onclick = function(event) {
+                                        if (!event.target.matches('.dropbtn')) {
+                                            var dropdowns = document.getElementsByClassName("dropdown-content");
+                                            var i;
+                                            for (i = 0; i < dropdowns.length; i++) {
+                                                var openDropdown = dropdowns[i];
+                                                if (openDropdown.classList.contains('show')) {
+                                                    openDropdown.classList.remove('show');
+                                                }
+                                            }
+                                        }
+                                    }
+                                </script>
+
+                            </li>
+
+
+                            <!-- <li>
+                                <div class="indicator indicator--trigger--click ">
+                                    <a class="indicator__button">
+                                        <span class="indicator__area">
+                                            <svg width="20px" height="20px">
+                                                <use xlink:href="<?= base_url('assets/') ?>images/sprite.svg#person-20"></use>
+                                            </svg>
+                                        </span>
+                                    </a>
+
+                                    <div class="indicator__dropdown">
+                                        <div class="account-menu">
+
+                                            <form action="<?php echo base_url() . 'administrator/auth' ?>" method="post">
+
+                                                <div class="account-menu__form-title">Masuk ke akun Anda</div>
+                                                <div class="form-group has-feedback">
+                                                    <input type="text" name="username" class="form-control" placeholder="Username" required>
+                                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                                                </div>
+                                                <div class="form-group has-feedback">
+                                                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                                </div>
+                                                <div class="form-group account-menu__form-button">
+                                                    <button type="submit" name="submit" class="btn btn-primary btn-block">Login</button>
+                                                </div>
+                                                <div class="account-menu__form-link">
+                                                    <a href="<?= base_url('register') ?>">Buat akun baru</a>
+                                                </div>
+                                            </form>
+                                            <div class="account-menu__divider"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li> -->
+
 
                         </ul>
                         <a class='menu-trigger'>
@@ -822,6 +1056,8 @@
 
 
     <script defer type="text/javascript" src="<?= base_url('assets/css/ecommerce/js/custom.js') ?>"></script>
+
+    <!-- <script src="<?= base_url('assets/template/jquery-1.10.2.min.js') ?>"></script> -->
 
     <script>
         $(function() {

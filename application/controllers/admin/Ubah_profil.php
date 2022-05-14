@@ -1,5 +1,5 @@
 <?php
-class Pengguna extends CI_Controller
+class Ubah_profil extends CI_Controller
 {
 	function __construct()
 	{
@@ -9,9 +9,9 @@ class Pengguna extends CI_Controller
 			redirect($url);
 		};
 
-		if ($this->session->userdata('level') != 1) {
-			redirect(base_url('admin/dashboard'));
-		}
+		// if ($this->session->userdata('level') != 1) {
+		// 	redirect(base_url('admin/dashboard'));
+		// }
 
 		$this->load->model('m_pengguna');
 		$this->load->library('upload');
@@ -22,8 +22,8 @@ class Pengguna extends CI_Controller
 	{
 		$kode = $this->session->userdata('idadmin');
 		$x['user'] = $this->m_pengguna->get_pengguna_login($kode);
-		$x['data'] = $this->m_pengguna->get_all_pengguna();
-		$this->load->view('admin/v_pengguna', $x);
+		$x['data'] = $this->m_pengguna->get_all_ubah_profil($kode);
+		$this->load->view('admin/v_ubah_profil', $x);
 	}
 
 	function simpan_pengguna()

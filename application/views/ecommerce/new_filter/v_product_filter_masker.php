@@ -106,9 +106,15 @@
 											<span> cart(<?= $isi_keranjang; ?>)</span>
 										<?php } ?>
 									</span>
-
-								</a></li>
-							<li class="scroll-to-section"><a href="<?= base_url('administrator') ?>"><i class="fa fa-lock"></i>login</a></li>
+									Keranjang
+								</a>
+							</li>
+							<li class="scroll-to-section"><a href="<?= base_url('administrator') ?>"> <span class="indicator__area">
+										<svg width="20px" height="20px">
+											<use xlink:href="<?= base_url('assets/') ?>images/sprite.svg#person-20"></use>
+										</svg>
+									</span>login</a>
+							</li>
 						</ul>
 						<a class='menu-trigger'>
 							<span>Menu</span>

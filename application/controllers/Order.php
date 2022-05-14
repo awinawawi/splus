@@ -588,8 +588,34 @@ class Order extends CI_Controller
         $this->load->view('user/order/cart', $data);
     }
 
+    // public function tambah_keranjang()
+    // {
+    //     $this->session->set_userdata('user_session_id', $_POST['session_id']);
+    //     $this->M_order->addCart($_POST);
+    //     redirect('cart');
+    // }
+
     public function tambah_keranjang()
     {
+        // if (isset($_POST['submit'])) {
+        //     $this->session->set_userdata('user_session_id', $_POST['session_id']);
+        //     $this->M_order->addCart($_POST);
+        //     redirect('cart');
+        // } else {
+
+        //     $this->load->view('admin/v_login');
+        // }
+
+        // $cek = $this->M_order->view_where();
+        // if ($cek == 1) {
+        //     $this->session->set_userdata('user_session_id', $_POST['session_id']);
+        //     $this->M_order->addCart($_POST);
+        //     redirect('cart');
+        // } else {
+
+        //     $this->load->view('admin/v_login');
+        // }
+
         $this->session->set_userdata('user_session_id', $_POST['session_id']);
         $this->M_order->addCart($_POST);
         redirect('cart');
