@@ -558,7 +558,7 @@ CREATE TABLE `tbl_pelanggan` (
   `provinsi` varchar(100) DEFAULT NULL,
   `kodepos` varchar(6) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_pelanggan` */
 
@@ -569,7 +569,9 @@ insert  into `tbl_pelanggan`(`id`,`session_id`,`nama`,`email`,`telepon`,`handpho
 (11,'22745457468250657','cecep','smtechtex@splusindonesia.co.id','08921233789','08921233789','bandung','Abiansemal','Kabupaten Badung','Bali','04923'),
 (12,'22745457468250657','cecep','smtechtex@splusindonesia.co.id','08921233789','08921233789','bandung','Abiansemal','Kabupaten Badung','Bali','04923'),
 (13,'22745457468250657','yusi','yusi@gmal.com','0892678899','0892678899','subang ','Ciater','Kabupaten Subang','Jawa Barat','4192'),
-(14,'22745457468250657','syahrul','aruldimyati96@gmail.com','08923442111','08923442111','ciledug','Ciledug','Kabupaten Cirebon','Jawa Barat','4198');
+(14,'22745457468250657','syahrul','aruldimyati96@gmail.com','08923442111','08923442111','ciledug','Ciledug','Kabupaten Cirebon','Jawa Barat','4198'),
+(15,'22745457468250657','serepetnub','serepetnub@gmail.com','08213455212','08213455212','Ancakmanik ','Arcamanik','Kota Bandung','Jawa Barat','45911'),
+(16,'22745457468250657','babibubebo','aruldimyati96@gmail.com','08922334567','08922334567','jawa barat','Cibiru','Kota Bandung','Jawa Barat','45192');
 
 /*Table structure for table `tbl_pembelian` */
 
@@ -598,13 +600,15 @@ CREATE TABLE `tbl_pembelian` (
   `diskon` decimal(3,0) DEFAULT NULL,
   `status` tinyint(1) DEFAULT 1,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_pembelian` */
 
 insert  into `tbl_pembelian`(`id`,`pelanggan_id`,`session_id`,`faktur`,`nama_produk`,`tipe_produk`,`harga_produk_meter`,`lebar_produk`,`tinggi_produk`,`warna_produk`,`jumlah_produk`,`harga_produk`,`kurir_pengiriman`,`layanan_pengiriman`,`ongkos_pengiriman`,`tanggal_pengiriman`,`resi_pengiriman`,`catatan_pembelian`,`metode_pembayaran`,`diskon`,`status`) values 
-(11,14,'22745457468250657','SMTT/27-01-22/3900','PINTU','classic-1',657800,1000,1000,'WHITE',1,657800,'Jalur Nugraha Ekakur','OKE',50000,'2022-02-25',NULL,'ciledug','BNI',NULL,1),
-(9,10,'22745457468250657','SMTT/27-01-22/5218','AKSESORIS','gagang-pintu-001',657800,1000,1000,'',1,657800,'Jalur Nugraha Ekakur','OKE',160000,'0000-00-00',NULL,'pesanan ongkir','BNI',NULL,1);
+(11,15,'22745457468250657','SMTT/27-01-22/3900','PINTU','classic-1',657800,1000,1000,'WHITE',1,657800,'Jalur Nugraha Ekakur','OKE',50000,'2022-02-25',NULL,'ciledug','BNI',0,1),
+(9,10,'22745457468250657','SMTT/27-01-22/5218','AKSESORIS','gagang-pintu-001',657800,1000,1000,'',1,657800,'Jalur Nugraha Ekakur','OKE',160000,'0000-00-00',NULL,'pesanan ongkir','BNI',0,1),
+(12,15,'22745457468250657','SMTT/22-04-22/1852','INTEROR MATERIAL','kichen-001',10000,1000,1000,'',1,10000,'Jalur Nugraha Ekakur','OKE',50000,'0000-00-00',NULL,'Ancakmanik ','BNI',0,1),
+(13,16,'22745457468250657','SMTT/27-04-22/1765','PINTU','classic-001',10000,1000,1000,'BROWN-MOTIF',1,10000,'Jalur Nugraha Ekakur','OKE',50000,'0000-00-00',NULL,'coba',NULL,NULL,1);
 
 /*Table structure for table `tbl_pengguna` */
 
@@ -629,15 +633,16 @@ CREATE TABLE `tbl_pengguna` (
   `pengguna_register` timestamp NULL DEFAULT current_timestamp(),
   `pengguna_photo` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`pengguna_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 /*Data for the table `tbl_pengguna` */
 
 insert  into `tbl_pengguna`(`pengguna_id`,`pengguna_nama`,`pengguna_moto`,`pengguna_jenkel`,`pengguna_username`,`pengguna_password`,`pengguna_tentang`,`pengguna_email`,`pengguna_nohp`,`pengguna_facebook`,`pengguna_twitter`,`pengguna_linkdin`,`pengguna_google_plus`,`pengguna_status`,`pengguna_level`,`pengguna_register`,`pengguna_photo`) values 
 (2,'S-Plus Indonesia',NULL,'L','smtechtex@splusindonesia.co.id','e471711af0db2f6c64df4f60573baa8e',NULL,'smtechtex@splusindonesia.co.id','(0231) 8511781',NULL,NULL,NULL,NULL,1,'1','2020-01-13 06:31:34','d540ba14929a5fbc859fcf8004d894fc.png'),
 (3,'S-Plus Jakarta',NULL,'L','arul','4c9d830f39238c6607b162a92e528759',NULL,'jakarta@splusindonesia.co.id','(021) 62301599',NULL,NULL,NULL,NULL,1,'1','2020-04-07 13:59:55','b8167f3e2c7eca3e873838f066a50057.png'),
-(4,'IT',NULL,'L','it','761dea820b1177a62a122119272e3373',NULL,'it@gmail.com','089235772503',NULL,NULL,NULL,NULL,1,'1','2022-01-13 03:21:25','31400d5a267e02e416784d3a6e820323.jpg'),
-(22,'itakumala',NULL,'P','itakumala','62ca9672c3bf3b1357ae0bd56c244be3',NULL,'itakumala@gmail.com','08923577990',NULL,NULL,NULL,NULL,1,'1','2022-04-01 10:29:24','76ddc7ba0ef32bc274b775fdca5d2f60.png');
+(4,'IT',NULL,'L','it','0b1dd5fabd221ef63c58c026bce4cf6b',NULL,'it@gmail.com','089235772503',NULL,NULL,NULL,NULL,1,'2','2022-01-13 03:21:25','1d55ed29faf8663cd66fd968cbbae450.png'),
+(22,'itakumala',NULL,'P','itakumala','62ca9672c3bf3b1357ae0bd56c244be3',NULL,'itakumala@gmail.com','08923577990',NULL,NULL,NULL,NULL,1,'1','2022-04-01 10:29:24','76ddc7ba0ef32bc274b775fdca5d2f60.png'),
+(24,'gandi',NULL,'L','coro','a83cf5e7e3efb396410e825794c1bff2',NULL,'coro@gmail.com','089235772503',NULL,NULL,NULL,NULL,1,'2','2022-04-20 15:44:03','c8b6acca4131113b6ba17489a8c38aa5.png');
 
 /*Table structure for table `tbl_pengunjung` */
 
@@ -649,7 +654,7 @@ CREATE TABLE `tbl_pengunjung` (
   `pengunjung_ip` varchar(40) DEFAULT NULL,
   `pengunjung_perangkat` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`pengunjung_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=124827 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=124841 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
 /*Data for the table `tbl_pengunjung` */
 
@@ -721,7 +726,21 @@ insert  into `tbl_pengunjung`(`pengunjung_id`,`pengunjung_tanggal`,`pengunjung_i
 (124823,'2022-04-14 11:06:03','::1','Chrome'),
 (124824,'2022-04-18 08:04:48','::1','Chrome'),
 (124825,'2022-04-19 07:57:26','::1','Chrome'),
-(124826,'2022-04-20 09:10:32','::1','Chrome');
+(124826,'2022-04-20 09:10:32','::1','Chrome'),
+(124827,'2022-04-21 07:49:53','::1','Chrome'),
+(124828,'2022-04-22 07:35:43','::1','Chrome'),
+(124829,'2022-04-22 08:35:58','127.0.0.1','Chrome'),
+(124830,'2022-04-23 08:30:51','::1','Chrome'),
+(124831,'2022-04-26 08:28:50','::1','Chrome'),
+(124832,'2022-04-27 07:32:15','::1','Chrome'),
+(124833,'2022-04-28 08:18:16','::1','Chrome'),
+(124834,'2022-05-09 07:32:53','::1','Chrome'),
+(124835,'2022-05-09 13:44:09','127.0.0.1','Firefox'),
+(124836,'2022-05-10 08:29:56','::1','Chrome'),
+(124837,'2022-05-11 08:08:31','::1','Chrome'),
+(124838,'2022-05-12 07:57:41','::1','Chrome'),
+(124839,'2022-05-13 14:40:24','::1','Chrome'),
+(124840,'2022-05-14 07:53:04','::1','Chrome');
 
 /*Table structure for table `tbl_product_splus` */
 
@@ -800,9 +819,12 @@ CREATE TABLE `tbl_produk_keranjang` (
   `jumlah_produk` decimal(10,0) DEFAULT NULL,
   `harga_produk` decimal(50,0) DEFAULT NULL,
   PRIMARY KEY (`keranjang_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=200 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=209 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_produk_keranjang` */
+
+insert  into `tbl_produk_keranjang`(`keranjang_id`,`session_id`,`nama_produk`,`tipe_produk`,`harga_produk_meter`,`lebar_produk`,`tinggi_produk`,`warna_produk`,`jumlah_produk`,`harga_produk`) values 
+(208,'22745457468250657','PINTU','classic-001',10000,1000,1000,'BROWN',1,10000);
 
 /*Table structure for table `tbl_produk_lama` */
 
