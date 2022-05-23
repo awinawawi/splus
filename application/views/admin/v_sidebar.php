@@ -120,6 +120,14 @@
                             </span>
                         </a>
                     </li>
+                    <li class="sm" <?= ($uri == 'Ubah_profil' ? 'class="active"' : '') ?>>
+                        <a href="<?php echo base_url() . 'admin/Ubah_alamat' ?>">
+                            <i class="fa fa-user"></i> <span>Ubah Alamat</span>
+                            <span class="pull-right-container">
+                                <small class="label pull-right"></small>
+                            </span>
+                        </a>
+                    </li>
                     <li class="sm" <?= ($uri == 'Riwayat_transaksi' ? 'class="active"' : '') ?>>
                         <a href="<?php echo base_url() . 'admin/Riwayat_transaksi' ?>">
                             <i class="fa fa-expand"></i> <span>Riwayat Transaksi</span>

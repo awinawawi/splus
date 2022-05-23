@@ -18,9 +18,27 @@ class Administrator extends CI_Controller
         $password = strip_tags(str_replace("'", "", $this->input->post('password', TRUE)));
         $cadmin = $this->m_login->cekadmin($username, $password);
 
+
+
         // $this->session->set_userdata('admin/dashboard');
         // var_dump($username);
 
+
+        // if ($cadmin->num_rows() > 0) {
+        //     $xcadmin = $cadmin->row_array();
+        //     $newdata = array(
+        //         'idadmin'   => $xcadmin['pengguna_id'],
+        //         'username'  => $xcadmin['pengguna_username'],
+        //         'nama'      => $xcadmin['pengguna_nama'],
+        //         'level'     => $xcadmin['pengguna_level'],
+        //         'logged_in' => TRUE
+        //     );
+
+        //     $this->session->set_userdata($newdata);
+        //     redirect('admin/dashboard');
+        // } else {
+        //     redirect('administrator/gagallogin');
+        // }
 
         if ($cadmin->num_rows() > 0) {
             $xcadmin = $cadmin->row_array();

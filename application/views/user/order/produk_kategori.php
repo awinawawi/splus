@@ -387,7 +387,7 @@
 
                 <div class="col-lg-12">
                     <div class="form-group row">
-                        <button class="ps-btn pull-right mr-20" style="border-radius:5px" type="submit"><i class="fa fa-shopping-cart fa-6x" style="font-size:25px;"></i> Tambah Ke Keranjang</button>
+                        <button class="ps-btn pull-right mr-20" style="border-radius:5px" type="submit"><i class="fa fa-shopping-cart fa-6x" style="font-size:25px;"></i> Tambah Ke Keranjang </button>
                     </div>
                 </div>
                 </form>

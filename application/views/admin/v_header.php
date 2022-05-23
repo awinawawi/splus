@@ -55,7 +55,8 @@
         </ul>
       </li>
       <li>
-        <a href="<?php echo base_url() . '' ?>" target="_blank" title="Lihat Website"><i class="fa fa-globe"></i></a>
+        <!-- <a href="<?php echo base_url() . '' ?>" target="_blank" title="Lihat Website"><i class="fa fa-globe"></i></a> -->
+        <a href="<?= base_url('Ecommerce') ?>" target="_blank" title="Lihat Website"><i class="fa fa-globe"></i></a>
       </li>
     </ul>
   </div>

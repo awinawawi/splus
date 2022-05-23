@@ -65,6 +65,7 @@
             </script>
         </div>
     <?php else : ?>
+
         <div class="">
             <script defer type="text/javascript">
                 (function() {
@@ -253,7 +254,7 @@
                                     </button> -->
                                     <div id="myDropdown" class="dropdown-content">
 
-                                        <form action="<?php echo base_url() . 'administrator/auth' ?>" method="post">
+                                        <!-- <form action="<?php echo base_url() . 'administrator/auth' ?>" method="post">
                                             <div class="account-menu__form-title">Masuk ke akun Anda</div>
                                             <div class="form-group has-feedback">
                                                 <input type="text" name="username" class="form-control" placeholder="Username" required>
@@ -269,57 +270,78 @@
                                             <div class="account-menu__form-link">
                                                 <a href="<?= base_url('register') ?>">Buat akun baru</a>
                                             </div>
-                                        </form>
-
+                                        </form> -->
 
                                         <?php
-                                        if (empty($this->session->userdata('user_login'))) { ?>
-                                            <?php
-                                            $id = $this->session->pengguna_id;
-                                            $this->db->where("pengguna_id='$id'");
-                                            $peng = $this->db->get('tbl_pengguna')->row_array();
-                                            if (empty($peng['pengguna_level'])) {
-                                                $nama = $peng['pengguna_username'];
-                                            } else {
-                                                $nama = $peng['pengguna_level'];
-                                            }
+                                        if (!empty($this->session->userdata('idadmin'))) { ?>
 
-                                            if (empty($peng['pengguna_photo'])) {
-                                                $foto = 'default.png';
-                                            } else {
-                                                $foto = $peng['pengguna_photo'];
-                                            }
-                                            ?>
+                                            <form>
+                                                <?php
+                                                $id_admin = $this->session->userdata('idadmin');
+                                                $q = $this->db->query("SELECT * FROM tbl_pengguna WHERE pengguna_id='$id_admin' ");
+                                                $c = $q->row_array();
+                                                ?>
+                                                <ul>
+                                                    <a href="<?= base_url('members/dashboard') ?>" class="account-menu__user">
+                                                        <div class="account-menu__user-avatar">
+                                                            <img src="<?php echo base_url() . 'assets/user/images/admin/' . $c['pengguna_photo']; ?>" class="img-circle" alt="">
+                                                        </div>
+                                                        <div class="account-menu__user-info">
+                                                            <div class="account-menu__user-name"> <b><?php echo $c['pengguna_nama']; ?></b></div>
+                                                            <div class="account-menu__user-email"><?php echo $c['pengguna_email']; ?></div>
+                                                        </div>
 
-                                            <a href="<?= base_url('members/dashboard') ?>" class="account-menu__user">
-                                                <div class="account-menu__user-avatar"><img src="<?= base_url('assets/user/images/galeri/' . $foto) ?>" alt=""></div>
-                                                <div class="account-menu__user-info">
-                                                    <div class="account-menu__user-name"><?= $nama ?></div>
-                                                    <div class="account-menu__user-email"><?= $peng['email'] ?></div>
+                                                    </a>
+                                                </ul>
+                                                <br><br>
+                                                <ul class="account-menu__links">
+                                                    <li><a href="<?= base_url('admin/Ubah_profil') ?>">Profil</a></li>
+                                                    <li><a href="<?= base_url('admin/Riwayat_transaksi') ?>">Riwayat Transaksi</a></li>
+                                                    <li><a href="<?= base_url('admin/Ubah_profil') ?>">Password</a></li>
+                                                </ul>
+                                                <ul class="account-menu__links">
+                                                    <li><a href="<?php echo base_url() . 'administrator/logout' ?>">Keluar</a></li>
+                                                </ul>
+                                            </form>
+
+                                        <?php } else { ?>
+
+                                            <form action="<?php echo base_url() . 'administrator/auth' ?>" method="post">
+                                                <div class="account-menu__form-title">Masuk ke akun Anda</div>
+                                                <div class="form-group has-feedback">
+                                                    <input type="text" name="username" class="form-control" placeholder="Username" required>
+                                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
                                                 </div>
-                                            </a>
+                                                <div class="form-group has-feedback">
+                                                    <input type="password" name="password" class="form-control" placeholder="Password" required>
+                                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                                                </div>
+                                                <div class="form-group account-menu__form-button">
+                                                    <button type="submit" name="submit" class="btn btn-primary btn-block">Login</button>
+                                                </div>
+                                                <div class="account-menu__form-link">
+                                                    <a href="<?= base_url('register') ?>">Buat akun baru</a>
+                                                </div>
+                                            </form>
 
-                                            <div class="account-menu__divider"></div>
-                                            <ul class="account-menu__links">
-                                                <li><a href="<?= base_url('members/edit_profile') ?>">Profil</a></li>
-                                                <li><a href="<?= base_url('members/riwayat_belanja') ?>">Riwayat Transaksi</a></li>
-                                                <li><a href="<?= base_url('members/edit_alamat') ?>">Alamat</a></li>
-                                                <li><a href="<?= base_url('members/password') ?>">Password</a></li>
-                                            </ul>
-                                            <div class="account-menu__divider"></div>
-                                            <ul class="account-menu__links">
-                                                <li><a href="javascript:void(0)" onclick="logout()">Keluar</a></li>
-                                            </ul>
+
+
                                         <?php } ?>
 
-
-
-
-
-
                                     </div>
-                                </div>
 
+
+
+
+
+
+
+
+
+
+
+
+                                </div>
                                 <script>
                                     function myFunction() {
                                         document.getElementById("myDropdown").classList.toggle("show");
@@ -339,57 +361,13 @@
                                         }
                                     }
                                 </script>
-
                             </li>
-
-
-                            <!-- <li>
-                                <div class="indicator indicator--trigger--click ">
-                                    <a class="indicator__button">
-                                        <span class="indicator__area">
-                                            <svg width="20px" height="20px">
-                                                <use xlink:href="<?= base_url('assets/') ?>images/sprite.svg#person-20"></use>
-                                            </svg>
-                                        </span>
-                                    </a>
-
-                                    <div class="indicator__dropdown">
-                                        <div class="account-menu">
-
-                                            <form action="<?php echo base_url() . 'administrator/auth' ?>" method="post">
-
-                                                <div class="account-menu__form-title">Masuk ke akun Anda</div>
-                                                <div class="form-group has-feedback">
-                                                    <input type="text" name="username" class="form-control" placeholder="Username" required>
-                                                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                                                </div>
-                                                <div class="form-group has-feedback">
-                                                    <input type="password" name="password" class="form-control" placeholder="Password" required>
-                                                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                                                </div>
-                                                <div class="form-group account-menu__form-button">
-                                                    <button type="submit" name="submit" class="btn btn-primary btn-block">Login</button>
-                                                </div>
-                                                <div class="account-menu__form-link">
-                                                    <a href="<?= base_url('register') ?>">Buat akun baru</a>
-                                                </div>
-                                            </form>
-                                            <div class="account-menu__divider"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li> -->
-
-
                         </ul>
-                        <a class='menu-trigger'>
-                            <span>Menu</span>
-                        </a>
-
                     </nav>
                 </div>
             </div>
         </div>
+
 
 
 
@@ -406,21 +384,21 @@
                         <img src="<?= base_url('assets/images/ourproduk/produk/slider/slider_1.jpg') ?>">
                         <div class="img-caption">
                             <h1 class="mb-4">Menambah Estetika Nilai Bangunan Anda</h1>
-                            <a href="#services" class="btn btn-outline-light">Get Started</a>
+                            <!-- <a href="#services" class="btn btn-outline-light">Get Started</a> -->
                         </div>
                     </div>
                     <div class="hero-carousel-item">
                         <img src="<?= base_url('assets/images/ourproduk/produk/slider/slider_2.jpg') ?>" alt="">
                         <div class="img-caption">
                             <h1 class="mb-4">Kekayaan Dan Pilihan Warna Motif Adalah Kelebihan Kami</h1>
-                            <a href="#services" class="btn btn-outline-light">Read More</a>
+                            <!-- <a href="#services" class="btn btn-outline-light">Read More</a> -->
                         </div>
                     </div>
                     <div class="hero-carousel-item">
                         <img src="<?= base_url('assets/images/ourproduk/produk/slider/slider_3.jpg') ?>" alt="">
                         <div class="img-caption">
                             <h1 class="mb-4">Wujudkan Ide Renovasi Dan Dekorasi</h1>
-                            <a href="#services" class="btn btn-outline-light">Read More</a>
+                            <!-- <a href="#services" class="btn btn-outline-light">Read More</a> -->
                         </div>
                     </div>
                 </div>
@@ -587,7 +565,7 @@
                                     <div class="hover-content">
                                         <ul>
                                             <li><a href="<?= base_url('assets/images/ourproduk/recomen/kichen.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior_material_splus') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
 
@@ -596,7 +574,7 @@
                                 </div>
                                 <div class="down-content">
                                     <h4>Drew Kitchen Set</h4>
-                                    <span>Rp 9.999.000</span>
+                                    <span>Rp.</span>
 
                                 </div>
                             </div>
@@ -605,7 +583,7 @@
                                     <div class="hover-content">
                                         <ul>
                                             <li><a href="<?= base_url('assets/images/ourproduk/recomen/kichen2.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior_material_splus') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
 
@@ -613,7 +591,7 @@
                                 </div>
                                 <div class="down-content">
                                     <h4>Dalton Kitchen Set</h4>
-                                    <span>Rp 8.799.000</span>
+                                    <span>Rp.</span>
 
                                 </div>
                             </div>
@@ -622,7 +600,7 @@
                                     <div class="hover-content">
                                         <ul>
                                             <li><a href="<?= base_url('assets/images/ourproduk/recomen/kichen3.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior_material_splus') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
 
@@ -630,7 +608,7 @@
                                 </div>
                                 <div class="down-content">
                                     <h4>Ivy Kitchen Set 1.2 Mtr</h4>
-                                    <span>Rp 4.249.000</span>
+                                    <span>Rp.</span>
 
                                 </div>
                             </div>
@@ -639,7 +617,7 @@
                                     <div class="hover-content">
                                         <ul>
                                             <li><a href="<?= base_url('assets/images/ourproduk/recomen/kichen4.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior_material_splus') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
 
@@ -647,7 +625,7 @@
                                 </div>
                                 <div class="down-content">
                                     <h4>Sheldon Set Kabinet Dapur</h4>
-                                    <span>Rp 3.500.000</span>
+                                    <span>Rp.</span>
 
                                 </div>
                             </div>
@@ -732,7 +710,7 @@
                                     <div class="hover-content">
                                         <ul>
                                             <li><a href="<?= base_url('assets/images/ourproduk/newbrand/ambalan2.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior_material_splus') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
 
@@ -741,7 +719,7 @@
                                 </div>
                                 <div class="down-content">
                                     <h4>Ambalan-001</h4>
-                                    <span>$75.00</span>
+                                    <span>Rp.</span>
                                     <ul class="stars">
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>
@@ -756,7 +734,7 @@
                                     <div class="hover-content">
                                         <ul>
                                             <li><a href="<?= base_url('assets/images/ourproduk/newbrand/ambalan4.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior_material_splus') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
                                     <img src="<?= base_url('assets/images/ourproduk/newbrand/ambalan4.jpg') ?>">
@@ -764,7 +742,7 @@
                                 </div>
                                 <div class="down-content">
                                     <h4>Ambalan-002</h4>
-                                    <span>$45.00</span>
+                                    <span>Rp.</span>
                                     <ul class="stars">
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>
@@ -779,7 +757,7 @@
                                     <div class="hover-content">
                                         <ul>
                                             <li><a href="<?= base_url('assets/images/ourproduk/newbrand/ambalan3.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior_material_splus') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
 
@@ -787,7 +765,7 @@
                                 </div>
                                 <div class="down-content">
                                     <h4>Ambalan-003</h4>
-                                    <span>$130.00</span>
+                                    <span>Rp.</span>
                                     <ul class="stars">
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>
@@ -802,7 +780,7 @@
                                     <div class="hover-content">
                                         <ul>
                                             <li><a href="<?= base_url('assets/images/ourproduk/newbrand/ambalan1.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_interior') ?>"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="<?= base_url('product_interior_material_splus') ?>"><i class="fa fa-shopping-cart"></i></a></li>
                                         </ul>
                                     </div>
 
@@ -810,7 +788,7 @@
                                 </div>
                                 <div class="down-content">
                                     <h4>Ambalan-004</h4>
-                                    <span>$120.00</span>
+                                    <span>Rp.</span>
                                     <ul class="stars">
                                         <li><i class="fa fa-star"></i></li>
                                         <li><i class="fa fa-star"></i></li>

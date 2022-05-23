@@ -597,28 +597,18 @@ class Order extends CI_Controller
 
     public function tambah_keranjang()
     {
-        // if (isset($_POST['submit'])) {
-        //     $this->session->set_userdata('user_session_id', $_POST['session_id']);
-        //     $this->M_order->addCart($_POST);
-        //     redirect('cart');
-        // } else {
+        if (!empty($this->session->userdata('idadmin'))) {
+            $this->session->set_userdata('user_session_id', $_POST['session_id']);
+            $this->M_order->addCart($_POST);
+            redirect('cart');
+        } else {
 
-        //     $this->load->view('admin/v_login');
-        // }
+            $this->load->view('admin/v_login');
+        }
 
-        // $cek = $this->M_order->view_where();
-        // if ($cek == 1) {
-        //     $this->session->set_userdata('user_session_id', $_POST['session_id']);
-        //     $this->M_order->addCart($_POST);
-        //     redirect('cart');
-        // } else {
-
-        //     $this->load->view('admin/v_login');
-        // }
-
-        $this->session->set_userdata('user_session_id', $_POST['session_id']);
-        $this->M_order->addCart($_POST);
-        redirect('cart');
+        // $this->session->set_userdata('user_session_id', $_POST['session_id']);
+        // $this->M_order->addCart($_POST);
+        // redirect('cart');
     }
 
     public function update_keranjang()

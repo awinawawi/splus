@@ -31,8 +31,8 @@
             </section>
 
             <!-- Main content -->
-            <section class="content">
-                <!-- <div class="row">
+            <!-- <section class="content">
+                <div class="row">
 
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <div class="info-box">
@@ -89,7 +89,7 @@
                         </div> 
                     </div> 
 
-                </div>  -->
+                </div> 
 
                 <div class="row">
 
@@ -102,7 +102,7 @@
 
 
                     <div class="col-lg-3 col-6">
-                        <!-- small box -->
+
                         <div class="small-box bg-info" style="background-color:#5ac8ff">
                             <div class="inner" style="color:#000">
                                 <h3><?= $produk->num_rows(); ?></h3>
@@ -111,9 +111,7 @@
                             <div class="icon">
                                 <i class="ion ion-bag"></i>
                             </div>
-                            <!-- 
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-               -->
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
 
@@ -132,7 +130,7 @@
                     </div>
 
                     <div class="col-lg-3 col-6">
-                        <!-- small box -->
+                      
                         <div class="small-box bg-warning" style="background-color:#ffc107">
                             <div class="inner" style="color:#000">
                                 <h3><?= $pengguna->num_rows(); ?></h3>
@@ -146,7 +144,7 @@
                     </div>
 
                     <div class="col-lg-3 col-6">
-                        <!-- small box -->
+                      
                         <div class="small-box bg-danger" style="background-color:#dc3545">
                             <div class="inner" style="color:#000">
                                 <h3><?= $pelanggan->num_rows(); ?></h3>
@@ -159,30 +157,221 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-md-12">
                         <div class="box">
                             <div class="box-header with-border">
                                 <h3 class="box-title">Pengunjung bulan ini</h3>
                             </div>
-                            <!-- /.box-header -->
+                           
                             <div class="box-body">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="col-md-12">
                                             <canvas id="canvas" width="1000" height="280"></canvas>
+                                        </div> 
+                                    </div> 
+                                </div> 
+                            </div> 
+                        </div> 
+                    </div> 
+
+                </div>
+            </section> -->
+
+            <?php if ($this->session->userdata('level') == 1) : ?>
+                <section class="content">
+                    <div class="row">
+
+                        <?php
+                        $produk = $this->db->query('SELECT * FROM tbl_produk_varian');
+                        $pengguna = $this->db->query("SELECT * FROM tbl_pengguna WHERE pengguna_level='2'");
+                        $pembelian = $this->db->query('SELECT * FROM tbl_pembelian ');
+                        $pelanggan = $this->db->query('SELECT * FROM tbl_pelanggan');
+                        ?>
+
+
+                        <div class="col-lg-3 col-6">
+
+                            <div class="small-box bg-info" style="background-color:#5ac8ff">
+                                <div class="inner" style="color:#000">
+                                    <h3><?= $produk->num_rows(); ?></h3>
+                                    <p>Produk</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-6">
+
+                            <div class="small-box bg-success" style="background-color:#28a745">
+                                <div class="inner" style="color:#000">
+                                    <h3><?= $pembelian->num_rows(); ?></h3>
+                                    <p>Penjualan</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-warning" style="background-color:#ffc107">
+                                <div class="inner" style="color:#000">
+                                    <h3><?= $pengguna->num_rows(); ?></h3>
+                                    <p>Konsumen/Pengguna</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-danger" style="background-color:#dc3545">
+                                <div class="inner" style="color:#000">
+                                    <h3><?= $pelanggan->num_rows(); ?></h3>
+                                    <p>Pelanggan</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="box">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Pengunjung bulan ini</h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="col-md-12">
+                                                <canvas id="canvas" width="1000" height="280"></canvas>
+                                            </div> <!-- /.col -->
                                         </div> <!-- /.col -->
-                                    </div> <!-- /.col -->
-                                </div> <!-- /.row -->
-                            </div> <!-- ./box-body -->
-                        </div> <!-- /.box -->
-                    </div> <!-- /.col -->
+                                    </div> <!-- /.row -->
+                                </div> <!-- ./box-body -->
+                            </div> <!-- /.box -->
+                        </div> <!-- /.col -->
 
-                </div> <!-- /.row -->
+                    </div>
+                </section>
+            <?php else :  ?>
+                <section class="content">
+                    <div class="row">
 
-            </section> <!-- /.content -->
-        </div> <!-- /.content-wrapper -->
+                        <?php
+                        $produk = $this->db->query('SELECT * FROM tbl_produk_varian');
+                        $pengguna = $this->db->query("SELECT * FROM tbl_pengguna WHERE pengguna_level='2'");
+                        $pembelian = $this->db->query('SELECT * FROM tbl_pembelian ');
+                        $pelanggan = $this->db->query('SELECT * FROM tbl_pelanggan');
+                        ?>
+
+
+                        <div class="col-lg-3 col-6">
+
+                            <div class="small-box bg-info" style="background-color:#5ac8ff">
+                                <div class="inner" style="color:#000">
+                                    <h3><?= $produk->num_rows(); ?></h3>
+                                    <p>Produk</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> -->
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-6">
+
+                            <div class="small-box bg-success" style="background-color:#28a745">
+                                <div class="inner" style="color:#000">
+                                    <h3><?= $pembelian->num_rows(); ?></h3>
+                                    <p>Penjualan</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-warning" style="background-color:#ffc107">
+                                <div class="inner" style="color:#000">
+                                    <h3><?= $pengguna->num_rows(); ?></h3>
+                                    <p>Konsumen/Pengguna</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-danger" style="background-color:#dc3545">
+                                <div class="inner" style="color:#000">
+                                    <h3><?= $pelanggan->num_rows(); ?></h3>
+                                    <p>Pelanggan</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <?php
+                        $id_admin = $this->session->userdata('idadmin');
+                        $q = $this->db->query("SELECT * FROM tbl_pengguna   WHERE pengguna_id='$id_admin' ");
+                        $c = $q->row_array();
+                        ?>
+                        <div class="box-header with-border">
+                            <div class="account-menu__user-avatar">
+                                <img src="<?php echo base_url() . 'assets/user/images/admin/' . $c['pengguna_photo']; ?>" class="img-circle" style="width:50px;height:50px;" alt="">
+                            </div>
+                            <div class="account-menu__user-info">
+                                <div class="account-menu__user-name"> <b><?php echo $c['pengguna_nama']; ?></b></div>
+                                <div class="account-menu__user-email"><?php echo $c['pengguna_email']; ?></div>
+                            </div>
+                        </div>
+
+                        <div class="box-header with-border">
+                            <h3 class="box-title"><b>Nomor Telepone</b></h3>
+                            <div class="profile-card__email"><?php echo $c['pengguna_nohp']; ?></div>
+                        </div>
+                        <div class="box-header with-border">
+                            <h3 class="box-title"><b>Email</b></h3>
+                            <div class="profile-card__email"><?php echo $c['pengguna_email']; ?></div>
+                        </div>
+                        <div class="box-header with-border">
+                            <h3 class="box-title"><b>User Name </b></h3>
+                            <div class="profile-card__email"><?php echo $c['pengguna_username']; ?></div>
+                        </div>
+
+                        <div class="box-header with-border"><a href="<?= base_url('admin/Ubah_profil') ?>">Edit profile</a></div>
+                    </div>
+                </section>
+            <?php endif; ?>
+
+
+        </div>
 
         <?php $this->load->view('admin/v_footer') ?>
 
