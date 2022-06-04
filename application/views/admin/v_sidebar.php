@@ -82,6 +82,15 @@
             <li class="sm panel-title" data-toggle="collapse" data-target="#testsp4"><a><i class="right fa fa-angle-left"></i> <span>Modul Pengguna</span></a>
                 <ul id="testsp4" class="panel-collapse collapse">
 
+                    <li class="sm" <?= ($uri == 'Riwayat_transaksi' ? 'class="active"' : '') ?>>
+                        <a href="<?php echo base_url() . 'admin/Riwayat_transaksi' ?>">
+                            <i class="fa fa-expand"></i> <span>Riwayat Transaksi</span>
+                            <span class="pull-right-container">
+                                <small class="label pull-right"></small>
+                            </span>
+                        </a>
+                    </li>
+
                     <li class="sm" <?= ($uri == 'pengguna' ? 'class="active"' : '') ?>>
                         <a href="<?php echo base_url() . 'admin/pengguna' ?>">
                             <i class="fa fa-user"></i> <span>Pengguna</span>

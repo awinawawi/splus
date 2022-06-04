@@ -327,6 +327,42 @@ class Homepage extends CI_Controller
 
 	//----------E-commerce-------------//
 
+	public function promosi()
+	{
+		$this->load->view('ecommerce/icon/v_promosi');
+	}
+
+	public function bebas_ogkir()
+	{
+		$this->load->view('ecommerce/icon/v_bebas_ongkir');
+	}
+
+	function tracking()
+	{
+
+		$data['data'] = $this->db->query("SELECT *,SUM(a.harga_produk) AS total FROM tbl_pembelian a JOIN tbl_pelanggan b ON a.session_id=b.session_id
+		")->row_array();
+		$this->load->view('ecommerce/icon/view_tracking_view', $data);
+	}
+
+	public function paymen()
+	{
+		$this->load->view('ecommerce/icon/v_paymen');
+	}
+
+	public function shopbybrand()
+	{
+		$data['jenis_data'] = $this->Product_filter_model_all->fetch_filter_type('product_jenis');
+		$data['tipe_data'] = $this->Product_filter_model_all->fetch_filter_type('product_tipe');
+		$data['brand_data'] = $this->Product_filter_model_all->fetch_filter_type('product_brand');
+		$this->load->view('ecommerce/icon/v_shop_by_brand', $data);
+	}
+
+
+
+
+
+
 	public function product_pintu_splus()
 	{
 		$data['jenis_data'] = $this->Product_filter_model_pintu->fetch_filter_type('product_jenis');

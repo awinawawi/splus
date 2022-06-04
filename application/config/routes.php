@@ -34,6 +34,12 @@ $route['product_exterior_material_splus']        = 'homepage/product_exterior_ma
 $route['product_aksesoris_splus']                = 'homepage/product_aksesoris_splus';
 $route['product_masker_splus']                   = 'homepage/product_masker_splus';
 
+$route['promosi']                        = 'homepage/promosi';
+$route['bebas_ogkir']                    = 'homepage/bebas_ogkir';
+$route['paymen']                         = 'homepage/paymen';
+$route['shopbybrand']                    = 'homepage/shopbybrand';
+
+
 
 
 

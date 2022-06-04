@@ -2,6 +2,14 @@
 
 <head>
     <?php $this->load->view('admin/v_head') ?>
+    <link rel="preload" href="<?= base_url('assets/user/plugins/bootstrap/dist/css/bootstrap.min.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?= base_url('assets/user/plugins/font-awesome/font/fontawesome-webfont.woff2?v=4.6.3') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?= base_url('assets/user/plugins/font-awesome/css/font-awesome.min.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?= base_url('assets/user/css/style.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?= base_url('assets/user/css/custom.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?= base_url('assets/user/css/animation.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?= base_url('assets/user/plugins/bootstrap-select/dist/css/bootstrap-select.min.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="<?= base_url('assets/user/css/bootstrap-datepicker.standalone.min.css') ?>" as="style" onload="this.onload=null;this.rel='stylesheet'">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -52,7 +60,7 @@
                                     <div class="modal-header">
                                         <h4 class="modal-title" id="myModalLabel">Ubah Alamat</h4>
                                     </div>
-                                    <form class="form-horizontal" action="<?php echo base_url() . 'admin/Ubah_profil/update_pengguna' ?>" method="post" enctype="multipart/form-data">
+                                    <form class="form-horizontal" action="<?php echo base_url() . 'admin/Ubah_alamat/update_pengguna' ?>" method="post" enctype="multipart/form-data">
                                         <div class="modal-body">
 
                                             <!-- <div class="form-group">
@@ -70,86 +78,37 @@
                                                 </div>
                                             </div>
 
-                                            <!-- <div class="form-group">
-                                                <label for="inputEmail3" class="col-sm-4 control-label">Kecamatan</label>
+                                            <div class="form-group">
+                                                <label for="inputEmail3" class="col-sm-4 control-label">Provinsi</label>
                                                 <div class="col-sm-7">
-                                                    <input type="email" name="xemail" class="form-control" value="<?php echo $pengguna_email; ?>" id="inputEmail3" placeholder="Email" required>
+                                                    <select name="provinsi" id="ajax_order_address_province" class="form-control" style="height:40px" required></select>
                                                 </div>
-                                            </div> -->
+                                            </div>
+
 
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-4 control-label">Kecamatan</label>
                                                 <div class="col-sm-7">
-                                                    <input class='form-control' type='text' name='kec' value="<?php echo $pengguna_email; ?>" required>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="inputUserName" class="col-sm-4 control-label">Jenis Kelamin</label>
-                                                <div class="col-sm-7">
-                                                    <?php if ($pengguna_jenkel == 'L') : ?>
-                                                        <div class="radio radio-info radio-inline">
-                                                            <input type="radio" id="inlineRadio1" value="L" name="xjenkel" checked>
-                                                            <label for="inlineRadio1"> Laki-Laki </label>
-                                                        </div>
-                                                        <div class="radio radio-info radio-inline">
-                                                            <input type="radio" id="inlineRadio1" value="P" name="xjenkel">
-                                                            <label for="inlineRadio2"> Perempuan </label>
-                                                        </div>
-                                                    <?php else : ?>
-                                                        <div class="radio radio-info radio-inline">
-                                                            <input type="radio" id="inlineRadio1" value="L" name="xjenkel">
-                                                            <label for="inlineRadio1"> Laki-Laki </label>
-                                                        </div>
-                                                        <div class="radio radio-info radio-inline">
-                                                            <input type="radio" id="inlineRadio1" value="P" name="xjenkel" checked>
-                                                            <label for="inlineRadio2"> Perempuan </label>
-                                                        </div>
-                                                    <?php endif; ?>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="inputUserName" class="col-sm-4 control-label">Username</label>
-                                                <div class="col-sm-7">
-                                                    <input type="text" name="xusername" class="form-control" value="<?php echo $pengguna_username; ?>" id="inputUserName" placeholder="Username" required>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="inputPassword3" class="col-sm-4 control-label">Password</label>
-                                                <div class="col-sm-7">
-                                                    <input type="password" name="xpassword" class="form-control" id="inputPassword3" placeholder="Password">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="inputPassword4" class="col-sm-4 control-label">Ulangi Password</label>
-                                                <div class="col-sm-7">
-                                                    <input type="password" name="xpassword2" class="form-control" id="inputPassword4" placeholder="Ulangi Password">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="inputUserName" class="col-sm-4 control-label">Kontak Person</label>
-                                                <div class="col-sm-7">
-                                                    <input type="text" name="xkontak" class="form-control" value="<?php echo $pengguna_nohp; ?>" id="inputUserName" placeholder="Kontak Person" required>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="inputUserName" class="col-sm-4 control-label">Level</label>
-                                                <div class="col-sm-7">
-                                                    <select class="form-control" name="xlevel" required>
-                                                        <option value="1" <?= $pengguna_level == '1' ? 'selected' : '' ?>>Head Office</option>
-                                                        <option value="2" <?= $pengguna_level == '2' ? 'selected' : '' ?>>Cabang</option>
+                                                    <select name="kecamatan" id="ajax_order_address_district" class="form-control" style="height:40px" required>
+                                                        <option value="0">-- Pilih Kecamatan --</option>
                                                     </select>
                                                 </div>
                                             </div>
+
                                             <div class="form-group">
-                                                <label for="inputUserName" class="col-sm-4 control-label">Photo</label>
+                                                <label for="inputEmail3" class="col-sm-4 control-label">Kota/Kab</label>
                                                 <div class="col-sm-7">
-                                                    <input type="file" name="filefoto" />
+                                                    <select name="kota" id="ajax_order_address_city" class="form-control" style="height:40px" required>
+                                                        <option value="0">-- Pilih Kota/Kab --</option>
+                                                    </select>
                                                 </div>
                                             </div>
 
 
+
+
                                         </div>
+
                                         <div class="modal-footer">
                                             <a href="<?php echo base_url() . 'admin/dashboard' ?>">
                                                 <button type="button" class="btn btn-default btn-flat">kembali</button>
@@ -157,6 +116,8 @@
                                             <button type="submit" class="btn btn-primary btn-flat" id="simpan">Update</button>
                                         </div>
                                     </form>
+
+
                                 </div>
                             </div>
                         </div>
@@ -170,39 +131,22 @@
 
     </div>
 
+
+    <!-- JS Library-->
+    <script defer type="text/javascript" src="<?= base_url('assets/user/plugins/jquery/dist/jquery.min.js') ?>"></script>
+    <script defer type="text/javascript" src="<?= base_url('assets/user/js/jssor.slider-28.0.0.min.js') ?>"></script>
+    <script defer type="text/javascript" src="<?= base_url('assets/user/js/slider.js') ?>"></script>
+    <script defer type="text/javascript" src="<?= base_url('assets/user/js/lazysizes.min.js') ?>"></script>
+    <script defer type="text/javascript" src="<?= base_url('assets/user/js/custom.js') ?>"></script>
+    <script defer type="text/javascript" src="<?= base_url('assets/user/plugins/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
+    <script defer type="text/javascript" src="<?= base_url('assets/user/plugins/bootstrap-select/dist/js/bootstrap-select.min.js') ?>"></script>
+    <script defer type="text/javascript" src="<?= base_url('assets/user/js/main.js') ?>"></script>
+    <?php if ($this->uri->segment(1) == "order" || $this->uri->segment(1) == "cart") : ?>
+        <script defer type="text/javascript" src="<?= base_url('assets/user/js/bootstrap-datepicker.min.js') ?>"></script>
+        <script defer type="text/javascript" src="<?= base_url('assets/user/js/order.js') ?>"></script>
+    <?php endif; ?>
+
     <!--Modal Reset Password-->
-    <div class="modal fade" id="ModalResetPassword" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                    <h4 class="modal-title" id="myModalLabel">Reset Password</h4>
-                </div>
-
-                <div class="modal-body">
-
-                    <table>
-                        <tr>
-                            <th style="width:120px;">Username</th>
-                            <th>:</th>
-                            <th><?php echo $this->session->flashdata('uname'); ?></th>
-                        </tr>
-                        <tr>
-                            <th style="width:120px;">Password Baru</th>
-                            <th>:</th>
-                            <th><?php echo $this->session->flashdata('upass'); ?></th>
-                        </tr>
-                    </table>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
     <script>
         $(function() {
             $("#example1").DataTable();

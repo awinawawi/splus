@@ -305,51 +305,61 @@
 	<!-- ***** Footer Start ***** -->
 	<footer>
 		<div class="container">
-			<div class="row">
+			<div class="row" style="font-size:20px ;">
 				<div class="col-lg-3">
 					<div class="first-item">
-						<a style="color: #fff;">Head Office & Factory</a>
+						<!-- <a style="color: #fff;">Head Office & Factory</a>
+                        <br></br>
+                        <ul>
+                            <li><a href="#">Jl. Raya Kanci Cirebon – Tegal KM 13,5 Desa Rawaurip<br>
+                                    Kec. Pangenan Kab. Cirebon 45182</a></li>
+                            <li><a href="#">Telp. (0231) 8511781 – 85</a></li>
+                            <li><a href="#">Fax.(0231) 85117825</a></li>
+                        </ul> -->
+						<a style="color: #fff;">Bantuan</a>
 						<br></br>
+
 						<ul>
-							<li><a href="#">Jl. Raya Kanci Cirebon – Tegal KM 13,5 Desa Rawaurip<br>
-									Kec. Pangenan Kab. Cirebon 45182</a></li>
-							<li><a href="#">Telp. (0231) 8511781 – 85</a></li>
-							<li><a href="#">Fax.(0231) 85117825</a></li>
+							<li><a href="#">Cara Belanja</a></li>
+							<li><a href="#">Tanya Jawab/FAQ</a></li>
+							<li><a href="<?php echo base_url('pemasangan/splus'); ?>">Pemasangan Produk</a></li>
+							<li><a href="<?php echo base_url('hubungi-kami'); ?>">Hubungi kami</a></li>
+
 						</ul>
 					</div>
-				</div>
-				<div class="col-lg-3">
-					<a style="color: #fff;">Our product &amp; Categories</a>
-					<br></br>
-					<ul>
-						<li><a href="#">Pintu</a></li>
-						<li><a href="#">Jendela</a></li>
-						<li><a href="#">Interior Material</a></li>
-						<li><a href="#">Exterior Material</a></li>
-						<li><a href="#">Aksesoris</a></li>
-						<li><a href="#">Masker</a></li>
-					</ul>
-				</div>
-				<div class="col-lg-3">
-					<a style="color: #fff;">Customer service</a>
-					<br></br>
-
-					<ul>
-						<li><a href="#">Hubungi Kami</a></li>
-						<li><a href="#">Pemasangan</a></li>
-						<li><a href="#">Tentang Kami</a></li>
-						<li><a href="#">Karir</a></li>
-					</ul>
 				</div>
 				<div class="col-lg-3">
 					<a style="color: #fff;">Help &amp; Information</a>
 					<br></br>
 
 					<ul>
-						<li><a href="#">Help</a></li>
-						<li><a href="#">FAQ's</a></li>
-						<li><a href="#">Shipping</a></li>
-						<li><a href="#">Tracking ID</a></li>
+						<li><a href="<?php echo base_url('tentang-kami'); ?>">Tentang Kami</a></li>
+						<li><a href="<?= base_url('promosi') ?>">Berita & Acara</a></li>
+						<li><a href="<?= base_url('e-katalog') ?>">Katalog Produk</a></li>
+						<li><a href="<?= base_url('bebas_ogkir') ?>">Tracking Pesanan</a></li>
+						<li><a href="<?php echo base_url('karir'); ?>">Jenjang Karir</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3">
+					<a style="color: #fff;">Kebijakan Privasi</a>
+					<br></br>
+					<ul>
+						<li><a href="#">Ketentuan Pengguna</a></li>
+						<li><a href="#">Kebijakan Privasi</a></li>
+						<li><a href="#">Ketentuan Pengiriman</a></li>
+
+					</ul>
+				</div>
+				<div class="col-lg-3">
+					<a style="color: #fff;">Our product &amp; Categories</a>
+					<br></br>
+					<ul>
+						<li><a href="<?= base_url('product_pintu_splus') ?>">Pintu</a></li>
+						<li><a href="<?= base_url('product_window_splus') ?>">Jendela</a></li>
+						<li><a href="<?= base_url('product_interior_material_splus') ?>">Interior Material</a></li>
+						<li><a href="<?= base_url('product_exterior_material_splus') ?>">Exterior Material</a></li>
+						<li><a href="<?= base_url('product_aksesoris_splus') ?>">Aksesoris</a></li>
+						<li><a href="<?= base_url('product_masker_splus') ?>">Masker</a></li>
 					</ul>
 				</div>
 				<div class="col-lg-12">
@@ -358,10 +368,10 @@
 							<br>Follow Us on Social Media: <a href="https://localhost/splus" target="_blank" title="free & premium responsive templates">Splus Indonesia</a>
 						</p>
 						<ul>
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="https://www.facebook.com/S-Plus-Indonesia-100698461599924/"><i class="fa fa-facebook"></i></a></li>
 							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+							<li><a href="https://www.instagram.com/splusindonesia/"><i class="fa fa-instagram"></i></a></li>
+							<li><a href="https://www.youtube.com/channel/UCMYj8Md6whMbPNFcyxjyA6A"><i class="fa fa-youtube"></i></a></li>
 						</ul>
 					</div>
 				</div>

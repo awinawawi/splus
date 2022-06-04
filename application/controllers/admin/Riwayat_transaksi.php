@@ -23,8 +23,10 @@ class Riwayat_transaksi extends CI_Controller
 	{
 		$kode = $this->session->userdata('idadmin');
 		// $kodex = $this->input->post('pelanggan_id');
+		// $pengguna_id = $this->input->post('pengguna_id');
 		$x['user'] = $this->m_pengguna->get_pengguna_login($kode);
-		$x['data'] = $this->m_pengguna->get_all_transaksi();
+		$x['data'] = $this->m_pengguna->get_non_all_transaksi($kode);
+		$x['data_all'] = $this->m_pengguna->get_all_transaksi();
 
 		$x['order'] = $this->M_order->get_all_transaksi();
 		$this->load->view('admin/v_riwayat_transaksi', $x);

@@ -85,13 +85,25 @@ class M_pengguna extends CI_Model
 		where pengguna_id='$kode'");
 		return $hsl;
 	}
+	function get_non_all_transaksi($kode)
+	{
+		$hsl = $this->db->query("SELECT a.id,a.faktur,CASE STATUS
+    	WHEN '1' THEN 'Dikirim'
+    	WHEN '2' THEN 'Belum terkirim'
+    	ELSE STATUS END AS pengiriman,a.tanggal_pengiriman,a.harga_produk,a.jumlah_produk
+     FROM tbl_pembelian a inner join tbl_pelanggan b on a.pelanggan_id=b.id
+	 JOIN tbl_pengguna c ON a.pengguna_id=c.pengguna_id where a.pengguna_id='$kode' ");
+		return $hsl;
+	}
+
 	function get_all_transaksi()
 	{
 		$hsl = $this->db->query("SELECT a.id,a.faktur,CASE STATUS
     	WHEN '1' THEN 'Dikirim'
     	WHEN '2' THEN 'Belum terkirim'
     	ELSE STATUS END AS pengiriman,a.tanggal_pengiriman,a.harga_produk,a.jumlah_produk
-     FROM tbl_pembelian a inner join tbl_pelanggan b on a.pelanggan_id=b.id ");
+     FROM tbl_pembelian a inner join tbl_pelanggan b on a.pelanggan_id=b.id
+	 JOIN tbl_pengguna c ON a.pengguna_id=c.pengguna_id  ");
 		return $hsl;
 	}
 }

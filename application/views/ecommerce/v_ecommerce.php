@@ -28,11 +28,6 @@
     <link rel="stylesheet" href="<?= base_url('assets/template/tema/') ?>css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
-
-
-
-
-
 </head>
 
 <body>
@@ -405,6 +400,66 @@
             </div>
         </div>
 
+        <div class="page-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
+                        <a class="content-item-link" style="color:black;" href="<?= base_url('promosi') ?>">
+                            <span class="img-wrapper"> <img src="<?= base_url('assets/images/promosi.svg') ?>" alt="" width="150" height="150"> </span>
+                            <br></br>
+                            <span class="description">
+                                <h5>Promosi</h5>
+                                <span class="detail">Promosikan Produk anda</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
+                        <a class="content-item-link" style="color:black;" href="<?= base_url('bebas_ogkir') ?>">
+                            <span class="img-wrapper"> <img src="<?= base_url('assets/images/bongkir2.svg') ?>" alt="" width="150" height="150"> </span>
+                            <br></br>
+                            <span class="description">
+                                <h5>Bebas Ongkir</h5>
+                                <span class="detail">Nikmati gratis ongkos kirim. Selalu ada promo gratis ongkos kirim untuk jarak dan minimal belanja tertentu</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
+                        <a class="content-item-link" style="color:black;" href="<?= base_url('paymen') ?>">
+                            <span class="img-wrapper"> <img src="<?= base_url('assets/images/hemat.svg') ?>" alt="" width="150" height="150"> </span>
+                            <br></br>
+                            <span class="description">
+                                <h5>Cara Belanja</h5>
+                                <span class="detail">Belanja Hemat & Mudah</span>
+                            </span>
+                        </a>
+                    </div>
+
+                    <!-- <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
+                        <div class="text-center">
+                            <div class="img-fluid mb-4">
+                                <img src="<?= base_url('assets/images/brand.svg') ?>" alt="">
+                            </div>
+                            <a href="#services" class="btn btn-inline-light">
+                                <h5>Shop By Brand</h5>
+                            </a>
+                        </div>
+                    </div> -->
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
+                        <a class="content-item-link" style="color:black;" href="<?= base_url('shopbybrand') ?>">
+                            <span class="img-wrapper"> <img src="<?= base_url('assets/images/brand.svg') ?>" alt="" width="150" height="150"> </span>
+                            <br></br>
+                            <span class="description">
+                                <h5>Tanya Jawab</h5>
+                                <span class="detail">Diskon, Voucher, dan Flash Sale Setiap Hari</span>
+                            </span>
+                        </a>
+                    </div>
+
+                </div>
+            </div> <!-- .container -->
+        </div> <!-- .page-section -->
+
         <div class="section-heading">
             <center>
                 <h2>OUR PRODUCT S-PLUS</h2><span>Our product details</span>
@@ -561,16 +616,10 @@
                     <div class="men-item-carousel">
                         <div class="owl-men-item owl-carousel">
                             <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="<?= base_url('assets/images/ourproduk/recomen/kichen.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_interior_material_splus') ?>"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-
-                                    <img src="<?= base_url('assets/images/ourproduk/recomen/kichen.jpg') ?>">
-
+                                <div class="hover-content">
+                                    <a href="<?= base_url('product_interior_material_splus') ?>">
+                                        <img src="<?= base_url('assets/images/ourproduk/recomen/kichen.jpg') ?>" alt="">
+                                    </a>
                                 </div>
                                 <div class="down-content">
                                     <h4>Drew Kitchen Set</h4>
@@ -579,15 +628,10 @@
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="<?= base_url('assets/images/ourproduk/recomen/kichen2.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_interior_material_splus') ?>"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-
-                                    <img src="<?= base_url('assets/images/ourproduk/recomen/kichen2.jpg') ?>">
+                                <div class="portfolio">
+                                    <a href="<?= base_url('product_interior_material_splus') ?>">
+                                        <img src="<?= base_url('assets/images/ourproduk/recomen/kichen2.jpg') ?>" alt="">
+                                    </a>
                                 </div>
                                 <div class="down-content">
                                     <h4>Dalton Kitchen Set</h4>
@@ -596,15 +640,10 @@
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="<?= base_url('assets/images/ourproduk/recomen/kichen3.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_interior_material_splus') ?>"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-
-                                    <img src="<?= base_url('assets/images/ourproduk/recomen/kichen3.jpg') ?>">
+                                <div class="portfolio">
+                                    <a href="<?= base_url('product_interior_material_splus') ?>">
+                                        <img src="<?= base_url('assets/images/ourproduk/recomen/kichen3.jpg') ?>" alt="">
+                                    </a>
                                 </div>
                                 <div class="down-content">
                                     <h4>Ivy Kitchen Set 1.2 Mtr</h4>
@@ -613,7 +652,7 @@
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="thumb">
+                                <!-- <div class="thumb">
                                     <div class="hover-content">
                                         <ul>
                                             <li><a href="<?= base_url('assets/images/ourproduk/recomen/kichen4.jpg') ?>"><i class="fa fa-eye"></i></a></li>
@@ -622,6 +661,11 @@
                                     </div>
 
                                     <img src="<?= base_url('assets/images/ourproduk/recomen/kichen4.jpg') ?>">
+                                </div> -->
+                                <div class="portfolio">
+                                    <a href="<?= base_url('product_interior_material_splus') ?>">
+                                        <img src="<?= base_url('assets/images/ourproduk/recomen/kichen4.jpg') ?>" alt="">
+                                    </a>
                                 </div>
                                 <div class="down-content">
                                     <h4>Sheldon Set Kabinet Dapur</h4>
@@ -636,7 +680,7 @@
         </div>
     </section>
 
-    <section class="section" id="explore">
+    <!-- <section class="section" id="explore">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -685,8 +729,107 @@
 
             </div>
         </div>
-    </section>
+    </section> -->
 
+
+    <section class="section" id="explore">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="left-content">
+                        <h2>PROMO PARTNER</h2>
+                        <div class="quote">
+                            <i class="fa fa-quote-left"></i>
+                            <p>Banyak Promo besar besaran loh.</p>
+                        </div>
+                        <div>
+                            <main>
+                                <div class="page-section">
+                                    <div class="container">
+                                        <div class="filterable-btn">
+                                            <button class="btn active" data-filter="*">All</button>
+                                            <button class="btn" data-filter=".brand">Promo Brand</button>
+                                            <button class="btn" data-filter=".online">Promo Online</button>
+                                            <button class="btn" data-filter=".offline">Promo Offline</button>
+                                            <button class="btn" data-filter=".bank">Promo Bank</button>
+                                        </div>
+
+                                        <div class="grid mt-3">
+                                            <div class="grid-item brand">
+                                                <div class="portfolio">
+                                                    <a href="../assets/img/portfolio/work-1.jpg">
+                                                        <img src="<?= base_url('assets/images/icon/promosi/splus2022-promotion.jpg') ?>" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item brand">
+                                                <div class="portfolio">
+                                                    <a href="../assets/img/portfolio/work-2.jpg">
+                                                        <img src="<?= base_url('assets/images/icon/promosi/amayzing-bathroom-promotion.jpg') ?>" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item online">
+                                                <div class="portfolio">
+                                                    <a href="../assets/img/portfolio/work-3.jpg">
+                                                        <img src="<?= base_url('assets/images/icon/promosi/gopay-promotion-april2022.jpg') ?>" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item offline">
+                                                <div class="portfolio">
+                                                    <a href="../assets/img/portfolio/work-4.jpg">
+                                                        <img src="<?= base_url('assets/images/icon/promosi/promo-ACmei-promotion.jpg') ?>" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item bank">
+                                                <div class="portfolio">
+                                                    <a href="../assets/img/portfolio/work-5.jpg">
+                                                        <img src="<?= base_url('assets/images/icon/promosi/promotionapr2022-bnicsa.jpg') ?>" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item bank">
+                                                <div class="portfolio">
+                                                    <a href="../assets/img/portfolio/work-6.jpg">
+                                                        <img src="<?= base_url('assets/images/icon/promosi/promotionapr2022-btn.jpg') ?>" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item bank">
+                                                <div class="portfolio">
+                                                    <a href="../assets/img/portfolio/work-7.jpg">
+                                                        <img src="<?= base_url('assets/images/icon/promosi/promotionfeb2022-bsi.jpg') ?>" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item bank">
+                                                <div class="portfolio">
+                                                    <a href="../assets/img/portfolio/work-8.jpg">
+                                                        <img src="<?= base_url('assets/images/icon/promosi/promotionfeb2022-mandiri.jpg') ?>" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="grid-item offline">
+                                                <div class="portfolio">
+                                                    <a href="../assets/img/portfolio/work-9.jpg">
+                                                        <img src="<?= base_url('assets/images/icon/promosi/promo-ACmei-promotion.jpg') ?>" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </main>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
 
     <section class="section" id="women">
@@ -706,16 +849,10 @@
                     <div class="women-item-carousel">
                         <div class="owl-women-item owl-carousel">
                             <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="<?= base_url('assets/images/ourproduk/newbrand/ambalan2.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_interior_material_splus') ?>"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-
-                                    <img src="<?= base_url('assets/images/ourproduk/newbrand/ambalan2.jpg') ?>">
-
+                                <div class="portfolio">
+                                    <a href="<?= base_url('product_interior_material_splus') ?>">
+                                        <img src="<?= base_url('assets/images/ourproduk/newbrand/ambalan2.jpg') ?>" alt="">
+                                    </a>
                                 </div>
                                 <div class="down-content">
                                     <h4>Ambalan-001</h4>
@@ -730,15 +867,10 @@
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="<?= base_url('assets/images/ourproduk/newbrand/ambalan4.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_interior_material_splus') ?>"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <img src="<?= base_url('assets/images/ourproduk/newbrand/ambalan4.jpg') ?>">
-
+                                <div class="portfolio">
+                                    <a href="<?= base_url('product_interior_material_splus') ?>">
+                                        <img src="<?= base_url('assets/images/ourproduk/newbrand/ambalan4.jpg') ?>" alt="">
+                                    </a>
                                 </div>
                                 <div class="down-content">
                                     <h4>Ambalan-002</h4>
@@ -753,15 +885,10 @@
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="<?= base_url('assets/images/ourproduk/newbrand/ambalan3.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_interior_material_splus') ?>"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-
-                                    <img src="<?= base_url('assets/images/ourproduk/newbrand/ambalan3.jpg') ?>">
+                                <div class="portfolio">
+                                    <a href="<?= base_url('product_interior_material_splus') ?>">
+                                        <img src="<?= base_url('assets/images/ourproduk/newbrand/ambalan3.jpg') ?>" alt="">
+                                    </a>
                                 </div>
                                 <div class="down-content">
                                     <h4>Ambalan-003</h4>
@@ -776,15 +903,10 @@
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="thumb">
-                                    <div class="hover-content">
-                                        <ul>
-                                            <li><a href="<?= base_url('assets/images/ourproduk/newbrand/ambalan1.jpg') ?>"><i class="fa fa-eye"></i></a></li>
-                                            <li><a href="<?= base_url('product_interior_material_splus') ?>"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                    </div>
-
-                                    <img src="<?= base_url('assets/images/ourproduk/newbrand/ambalan1.jpg') ?>">
+                                <div class="portfolio">
+                                    <a href="<?= base_url('product_interior_material_splus') ?>">
+                                        <img src="<?= base_url('assets/images/ourproduk/newbrand/ambalan1.jpg') ?>" alt="">
+                                    </a>
                                 </div>
                                 <div class="down-content">
                                     <h4>Ambalan-004</h4>
@@ -867,7 +989,7 @@
     <div class="subscribe">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8">
+                <!-- <div class="col-lg-8">
                     <div class="section-heading">
                         <h2>Cek Resi</h2>
                         <p>Masukan no. resi pada pada form dibawah ini.</p>
@@ -887,7 +1009,8 @@
                             </div>
                         </div>
                     </form>
-                </div>
+                </div> -->
+
                 <!-- <div class="col-lg-8">
                     <div class="section-heading">
                         <h2>Cek Status Pesanan</h2>
@@ -909,7 +1032,7 @@
                         </div>
                     </form>
                 </div> -->
-                <div class="col-lg-4">
+                <div class="col-lg-12">
                     <div class="row">
                         <div class="col-6">
                             <ul>
@@ -939,51 +1062,61 @@
 
     <footer>
         <div class="container">
-            <div class="row">
+            <div class="row" style="font-size:20px ;">
                 <div class="col-lg-3">
                     <div class="first-item">
-                        <a style="color: #fff;">Head Office & Factory</a>
+                        <!-- <a style="color: #fff;">Head Office & Factory</a>
                         <br></br>
                         <ul>
                             <li><a href="#">Jl. Raya Kanci Cirebon – Tegal KM 13,5 Desa Rawaurip<br>
                                     Kec. Pangenan Kab. Cirebon 45182</a></li>
                             <li><a href="#">Telp. (0231) 8511781 – 85</a></li>
                             <li><a href="#">Fax.(0231) 85117825</a></li>
+                        </ul> -->
+                        <a style="color: #fff;">Bantuan</a>
+                        <br></br>
+
+                        <ul>
+                            <li><a href="<?= base_url('paymen') ?>">Cara Belanja</a></li>
+                            <li><a href="#">Tanya Jawab/FAQ</a></li>
+                            <li><a href="<?php echo base_url('pemasangan/splus'); ?>">Pemasangan Produk</a></li>
+                            <li><a href="<?php echo base_url('hubungi-kami'); ?>">Hubungi kami</a></li>
+
                         </ul>
                     </div>
-                </div>
-                <div class="col-lg-3">
-                    <a style="color: #fff;">Our product &amp; Categories</a>
-                    <br></br>
-                    <ul>
-                        <li><a href="#">Pintu</a></li>
-                        <li><a href="#">Jendela</a></li>
-                        <li><a href="#">Interior Material</a></li>
-                        <li><a href="#">Exterior Material</a></li>
-                        <li><a href="#">Aksesoris</a></li>
-                        <li><a href="#">Masker</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <a style="color: #fff;">Customer service</a>
-                    <br></br>
-
-                    <ul>
-                        <li><a href="#">Hubungi Kami</a></li>
-                        <li><a href="#">Pemasangan</a></li>
-                        <li><a href="#">Tentang Kami</a></li>
-                        <li><a href="#">Karir</a></li>
-                    </ul>
                 </div>
                 <div class="col-lg-3">
                     <a style="color: #fff;">Help &amp; Information</a>
                     <br></br>
 
                     <ul>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">FAQ's</a></li>
-                        <li><a href="#">Shipping</a></li>
-                        <li><a href="#">Tracking ID</a></li>
+                        <li><a href="<?php echo base_url('tentang-kami'); ?>">Tentang Kami</a></li>
+                        <li><a href="<?= base_url('promosi') ?>">Berita & Acara</a></li>
+                        <li><a href="<?= base_url('e-katalog') ?>">Katalog Produk</a></li>
+                        <li><a href="<?= base_url('bebas_ogkir') ?>">Tracking Pesanan</a></li>
+                        <li><a href="<?php echo base_url('karir'); ?>">Jenjang Karir</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <a style="color: #fff;">Kebijakan Privasi</a>
+                    <br></br>
+                    <ul>
+                        <li><a href="#">Ketentuan Pengguna</a></li>
+                        <li><a href="#">Kebijakan Privasi</a></li>
+                        <li><a href="#">Ketentuan Pengiriman</a></li>
+
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <a style="color: #fff;">Our product &amp; Categories</a>
+                    <br></br>
+                    <ul>
+                        <li><a href="<?= base_url('product_pintu_splus') ?>">Pintu</a></li>
+                        <li><a href="<?= base_url('product_window_splus') ?>">Jendela</a></li>
+                        <li><a href="<?= base_url('product_interior_material_splus') ?>">Interior Material</a></li>
+                        <li><a href="<?= base_url('product_exterior_material_splus') ?>">Exterior Material</a></li>
+                        <li><a href="<?= base_url('product_aksesoris_splus') ?>">Aksesoris</a></li>
+                        <li><a href="<?= base_url('product_masker_splus') ?>">Masker</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-12">

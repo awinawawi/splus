@@ -610,6 +610,7 @@ $this->load->view('user/header', $meta) ?>
                         <div class="col-lg-3 py-3">
                             <div class="card-blog">
                                 <iframe src="assets/images/vidiopromosi/splus2.mp4" style="height:400px;display:block;" frameborder="0" allow="encrypted-media;gyroscope;picture-in-picture" type="video/mp4" allowfullscreen></iframe>
+                                <!-- <iframe src="assets/images/vidiopromosi/splus8.mp4" style="height:200px;display:block;" frameborder="0" allow="accelerometer;encrypted-media;gyroscope;picture-in-picture" type="video/mp4"></iframe> -->
                                 <br></br>
                                 <div class="testimony-wrap py-4" style="color: #0a0a0a;">
                                     <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></div>
