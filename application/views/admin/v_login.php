@@ -86,7 +86,7 @@
 
                   <a href='<?= base_url('register') ?>'><button type="submit" class="btn btn-primary btn-block btn-flat">Daftar Akun Disini</button></a>
                   </br>
-                  <div class="new-customer__benefit">
+                  <!-- <div class="new-customer__benefit">
                     <div class="benefit__title">
                       <img src="https://www.monotaro.id/static/version1648123777/frontend/MonotaroIndonesia/default/id_ID/images/icon-building.svg"> Keuntungan menjadi Akun Bisnis
                     </div>
@@ -96,14 +96,14 @@
                       <li><i class="fa fa-check-circle"></i> Penerbitan Faktur Pajak</li>
                     </ul>
                   </div>
-                  </br>
+                  </br> -->
                   <div class="row" style="background: #ffffff;border: 1px solid #ddd;box-sizing: border-box;">
                     <div class="col-xs-12">
                       <img src="https://www.monotaro.id/static/version1648123777/frontend/MonotaroIndonesia/default/id_ID/images/icon_shipping-buss.svg">
                     </div>
                     <div class="col-xs-12">
                       <strong class="main-red-text">PROMO GRATIS ONGKIR*</strong> ke Jabodetabek, Banten, Jabar, Jatim, Jawa Tengah, DI Yogyakarta, Bali, Jambi, Lampung, &amp; Sumatera Selatan. *)
-                      <a href="https://support.monotaro.id/hc/id/articles/360022258173-Berapa-biaya-pengiriman-ke-alamat-saya-" target="_blank" rel="noopener">Lihat selengkapnya</a>
+                      <a href="" target="_blank" rel="noopener">Lihat selengkapnya</a>
                     </div>
                   </div>
                   <hr />

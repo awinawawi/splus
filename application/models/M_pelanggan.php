@@ -104,4 +104,11 @@ class M_pelanggan extends CI_Model
         $this->db->join('tbl_produk', 'produk_id=pesanan_produk_id');
         return $this->db->get('tbl_pelanggan_pesanan')->result();
     }
+
+
+    public function view_where($table, $data)
+    {
+        $this->db->where($data);
+        return $this->db->get($table);
+    }
 }

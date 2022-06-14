@@ -31,18 +31,18 @@
 <body>
 
     <?php
-    if ($data['status'] == '0') {
+    if ($record2['status'] == '0') {
         $proses = 'Pending';
-    } elseif ($data['status'] == '1') {
+    } elseif ($record2['status'] == '1') {
         $proses = 'Proses';
-    } elseif ($data['status'] == '2') {
+    } elseif ($record2['status'] == '2') {
         $proses = 'Dikirim';
     }
     ?>
 
-    <div class="wrapper w-100 mx-auto">
+    <div class="wrapper w-100 mx-auto" style="padding-left:40px ;">
         <div class="font-weight-bold mt-2 mb-4">
-            <h5 class="">Rincian Pesanan - <?= $data['faktur'] ?></h5>
+            <h5 class="">Rincian Pesanan - <?= $record2['faktur'] ?></h5>
         </div>
         <!-- Row -->
         <div class="row">
@@ -54,7 +54,7 @@
                                 <large>Nama</large>
                             </b>
                         </td>
-                        <td>: <?= $data['nama_produk']; ?></td>
+                        <td>: <?= $record2['nama_produk']; ?></td>
 
                     </tr>
                     <tr>
@@ -63,7 +63,7 @@
                                 <large>No. Telpon</large>
                             </b>
                         </td>
-                        <td>: <?= $data['handphone']; ?></td>
+                        <td>: <?= $record2['handphone']; ?></td>
 
                     </tr>
 
@@ -73,7 +73,7 @@
                                 <large>Alamat</large>
                             </b>
                         </td>
-                        <td>: <?= $data['alamat']; ?></td>
+                        <td>: <?= $record2['alamat']; ?></td>
 
                     </tr>
                 </table>
@@ -88,7 +88,7 @@
                             </b>
 
                         </td>
-                        <td>: <?= $data['total']; ?></td>
+                        <td>: Rp <?php echo number_format(($data['total']) + ($data['ongkir']), 0, '.', '.') ?></td>
                     </tr>
                     <tr>
                         <td>
@@ -98,8 +98,8 @@
                         </td>
 
                         <span style='text-transform:uppercase'>
-                            <td>: <?= $data['kurir_pengiriman']; ?> /
-                                <?= $data['layanan_pengiriman']; ?></td>
+                            <td>: <?= $record2['kurir_pengiriman']; ?> /
+                                <?= $record2['layanan_pengiriman']; ?></td>
                         </span>
 
                     </tr>
@@ -125,7 +125,8 @@
             <thead class="table-dark">
                 <tr class="border border-dark">
                     <th>No</th>
-                    <th width='47%'>Nama Produk</th>
+                    <th width='30%'>Nama Produk</th>
+                    <th>Type</th>
                     <th>Harga</th>
                     <th>Qty</th>
                     <th>Total</th>
@@ -135,47 +136,57 @@
 
                 <?php
                 $no = 0;
-                $data = $this->db->query('SELECT *,SUM(a.harga_produk) AS total FROM tbl_pembelian a JOIN tbl_pelanggan b ON a.session_id=b.session_id');
-                foreach ($data->result_array()  as $i) :
+
+                foreach ($record->result_array()  as $i) :
                     $no++;
                     $nama_produk = $i['nama_produk'];
-                    $harga_produk = $i['harga_produk'];
+                    $tipe_produk = $i['tipe_produk'];
+                    $harga_produk = $i['harga_produk_meter'];
                     $jumlah_produk = $i['jumlah_produk'];
-                    $total = $i['total'];
+
                 ?>
                     <tr>
                         <td><?php echo $no; ?></td>
                         <td><?php echo $nama_produk; ?></td>
-                        <td><?php echo $harga_produk; ?></td>
+                        <td><?php echo $tipe_produk; ?></td>
+                        <td>Rp <?php echo number_format($harga_produk, 0, '.', '.') ?></td>
                         <td><?php echo $jumlah_produk; ?></td>
-                        <td><?php echo $total; ?></td>
+                        <!-- <td><?php echo $total; ?></td> -->
+                        <td>Rp <?php echo number_format($harga_produk * $jumlah_produk, 0, '.', '.') ?></td>
 
                     </tr>
                 <?php endforeach; ?>
 
                 <tr>
-                    <td colspan='4'><b>Subtotal </b></td>
+                    <td colspan='5'><b>Subtotal </b></td>
+                    <td><b>Rp <?php echo number_format(($data['total']), 0, '.', '.') ?>
+                        </b>
+                    </td>
 
                 </tr>
 
                 <tr>
-                    <td colspan='4'><b>Ongkir </b></td>
+                    <td colspan='5'><b>Ongkir </b></td>
+                    <td><b>Rp <?php echo number_format(($data['ongkir']), 0, '.', '.') ?>
+                        </b>
+                    </td>
 
                 </tr>
 
                 <tr>
-                    <td colspan='4'><b>Total Bayar</b></td>
+                    <td colspan='5'><b>Total Bayar</b></td>
+                    <td><b>Rp <?php echo number_format(($data['total']) + ($data['ongkir']), 0, '.', '.') ?></b></td>
 
-                    <td>
+
                 </tr>
             </tbody>
         </table>
 
         <br>
 
-        <p class="text-center"> Silahkan transfer ke salah satu pilihan rekening bank dibawah ini:</p>
-        <table class="table table-borderless table-sm w-75 mx-auto" id='tablemodul1'>
-            <thead>
+        <p class="text-center"> Silahkan transfer ke rekening bank yang sudah di pilih dibawah ini:</p>
+        <table class="table" id='tablemodul1'>
+            <thead class="table-dark">
                 <tr>
                     <th>No</th>
                     <th>Nama Bank</th>
@@ -183,6 +194,29 @@
                     <th>Atas Nama</th>
                 </tr>
             </thead>
+            <tbody>
+                <?php
+                $no = 0;
+
+
+
+                foreach ($data_bank->result_array()  as $i) :
+                    $no++;
+                    $nama_bank = $i['nama_bank'];
+                    $no_rekening = $i['no_rekening'];
+                    $pemilik_rekening = $i['pemilik_rekening'];
+
+                ?>
+                    <tr>
+                        <td><?php echo $no; ?></td>
+                        <td><?php echo $nama_bank; ?></td>
+                        <td><?php echo $no_rekening; ?></td>
+                        <td><?php echo $pemilik_rekening; ?></td>
+
+
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
 
         </table>
         <hr>

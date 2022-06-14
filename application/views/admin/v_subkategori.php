@@ -68,7 +68,7 @@
                                             ?>
                                                 <tr>
                                                     <td><?php echo $no; ?></td>
-                                                    <td><img src="<?php echo base_url() . 'assets/user/images/galeri/' . $subkategori_cover; ?>" style="width:80px;"></td>
+                                                    <td><img src="<?php echo base_url() . 'assets/user/images/galeri/all_produk/' . $subkategori_cover; ?>" style="width:80px;"></td>
                                                     <td><?php echo $subkategori_nama; ?></td>
                                                     <td><?php echo $kategori_nama; ?></td>
                                                     <td><?php echo $subkategori_author; ?></td>
@@ -97,7 +97,7 @@
     </div>
     <!-- ./wrapper -->
 
-    <!--Modal Add Kategori-->
+    <!--Modal Add SubKategori-->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -105,17 +105,8 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
                     <h4 class="modal-title" id="myModalLabel">Tambah Subkategori</h4>
                 </div>
-                <form class="form-horizontal" action="<?php echo base_url() . 'admin/subkategori/simpan_kategori' ?>" method="post" enctype="multipart/form-data">
+                <form class="form-horizontal" action="<?php echo base_url() . 'admin/subkategori/simpan_subkategori' ?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
-
-
-                        <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Nama Subkategori</label>
-                            <div class="col-sm-7">
-                                <input type="text" name="nama_kategori" class="form-control" id="inputUserName" placeholder="Nama Subkategori" required>
-                            </div>
-                        </div>
-
                         <div class="form-group">
                             <label for="inputUserName" class="col-sm-4 control-label">Kategori</label>
                             <div class="col-sm-7">
@@ -132,6 +123,13 @@
                                         <option value="<?php echo $alb_id; ?>"><?php echo $alb_nama; ?></option>
                                     <?php endforeach; ?>
                                 </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputUserName" class="col-sm-4 control-label">Nama Subkategori</label>
+                            <div class="col-sm-7">
+                                <input type="text" name="nama_kategori" class="form-control" id="inputUserName" placeholder="Nama Subkategori" required>
                             </div>
                         </div>
 
@@ -166,11 +164,11 @@
 
     <!--Modal Edit kategori-->
     <?php foreach ($data->result_array() as $i) :
-        $kategori_id = $i['kategori_id'];
-        $kategori_nama = $i['kategori_nama'];
-        $kategori_deskripsi = $i['kategori_deskripsi'];
-        $kategori_author = $i['kategori_author'];
-        $kategori_cover = $i['kategori_cover'];
+        $subkategori_id = $i['subkategori_id'];
+        $subkategori_nama = $i['subkategori_nama'];
+        $subkategori_deskripsi = $i['subkategori_deskripsi'];
+        $subkategori_author = $i['subkategori_author'];
+        $subkategori_cover = $i['subkategori_cover'];
     ?>
 
         <div class="modal fade" id="ModalEdit<?php echo $subkategori_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -180,18 +178,10 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
                         <h4 class="modal-title" id="myModalLabel">Edit Subkategori</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url() . 'admin/subkategori/update_kategori' ?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url() . 'admin/subkategori/update_subkategori' ?>" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
-                            <input type="hidden" name="kode" value="<?php echo $kategori_id; ?>" />
-                            <input type="hidden" value="<?php echo $kategori_cover; ?>" name="gambar">
-
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Nama Subkategori</label>
-                                <div class="col-sm-7">
-                                    <input type="text" name="xnama_kategori" class="form-control" value="<?php echo $kategori_nama; ?>" id="inputUserName" placeholder="Nama Kategori" required>
-                                </div>
-                            </div>
-
+                            <input type="hidden" name="kode" value="<?php echo $subkategori_id; ?>" />
+                            <input type="hidden" value="<?php echo $subkategori_cover; ?>" name="gambar">
                             <div class="form-group">
                                 <label for="inputUserName" class="col-sm-4 control-label">Kategori</label>
                                 <div class="col-sm-7">
@@ -212,9 +202,16 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="inputUserName" class="col-sm-4 control-label">Nama Subkategori</label>
+                                <div class="col-sm-7">
+                                    <input type="text" name="subkategori_nama" class="form-control" value="<?php echo $subkategori_nama; ?>" id="inputUserName" placeholder="Nama Subkategori" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label for="inputUserName" class="col-sm-4 control-label">Deskripsi Subkategori</label>
                                 <div class="col-sm-7">
-                                    <textarea name="xdeskripsi_kategori" class="form-control ckedit" placeholder="Deskripsi Kategori" required><?php echo $kategori_deskripsi; ?></textarea>
+                                    <textarea name="subkategori_deskripsi" class="form-control ckedit" placeholder="Deskripsi subKategori" required><?php echo $subkategori_deskripsi; ?></textarea>
 
                                 </div>
                             </div>
@@ -239,11 +236,11 @@
     <!--Modal Edit kategori-->
 
     <?php foreach ($data->result_array() as $i) :
-        $kategori_id = $i['kategori_id'];
-        $kategori_nama = $i['kategori_nama'];
-        $kategori_deskripsi = $i['kategori_deskripsi'];
-        $kategori_author = $i['kategori_author'];
-        $kategori_cover = $i['kategori_cover'];
+        $subkategori_id = $i['subkategori_id'];
+        $subkategori_nama = $i['subkategori_nama'];
+        $subkategori_deskripsi = $i['subkategori_deskripsi'];
+        $subkategori_author = $i['subkategori_author'];
+        $subkategori_cover = $i['subkategori_cover'];
     ?>
         <!--Modal Hapus Pengguna-->
         <div class="modal fade" id="ModalHapus<?php echo $subkategori_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -253,11 +250,11 @@
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
                         <h4 class="modal-title" id="myModalLabel">Hapus Subkategori</h4>
                     </div>
-                    <form class="form-horizontal" action="<?php echo base_url() . 'admin/subkategori/hapus_kategori' ?>" method="post" enctype="multipart/form-data">
+                    <form class="form-horizontal" action="<?php echo base_url() . 'admin/subkategori/hapus_subkategori' ?>" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
-                            <input type="hidden" name="kode" value="<?php echo $kategori_id; ?>" />
-                            <input type="hidden" value="<?php echo $kategori_cover; ?>" name="gambar">
-                            <p>Apakah Anda yakin mau menghapus Kategori Produk <b><?php echo $kategori_nama; ?></b> ?</p>
+                            <input type="hidden" name="kode" value="<?php echo $subkategori_id; ?>" />
+                            <input type="hidden" value="<?php echo $subkategori_cover; ?>" name="gambar">
+                            <p>Apakah Anda yakin mau menghapus Kategori Produk <b><?php echo $subkategori_nama; ?></b> ?</p>
 
                         </div>
                         <div class="modal-footer">

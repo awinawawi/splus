@@ -81,11 +81,11 @@
     <div class="row">
         <div class="col-md-6 mx-auto">
             <?= $this->session->flashdata('message') ?>
-            <h5>Cek Status Pesanan</h5>
+            <h3>Cek Status Pesanan</h3>
             <p>Masukan No Invoice riwayat transaksi anda pada pada form dibawah ini.</p>
             <form method="POST" action="<?= base_url('Homepage/tracking') ?>">
                 <div class="input-group mb-3">
-                    <input type="text" name="kode" class="form-control" placeholder="SMTT/TANGGAL/NO" aria-label="Recipient's username" aria-describedby="basic-addon2" required>
+                    <input type="text" name="faktur" class="form-control" placeholder="Masukan no Invoice anda yang ada di Riwayat transaksi..." aria-label="Recipient's username" aria-describedby="basic-addon2" required>
                     <div class="input-group-append">
                         <button class="btn btn-primary" name="submit1" type="submit">cek invoice</button>
                     </div>
@@ -207,8 +207,8 @@
                         <br></br>
 
                         <ul>
-                            <li><a href="#">Cara Belanja</a></li>
-                            <li><a href="#">Tanya Jawab/FAQ</a></li>
+                            <li><a href="<?= base_url('paymen') ?>">Cara Belanja</a></li>
+                            <li><a href="<?= base_url('shopbybrand') ?>">Tanya Jawab/FAQ</a></li>
                             <li><a href="<?php echo base_url('pemasangan/splus'); ?>">Pemasangan Produk</a></li>
                             <li><a href="<?php echo base_url('hubungi-kami'); ?>">Hubungi kami</a></li>
 
@@ -231,9 +231,9 @@
                     <a style="color: #fff;">Kebijakan Privasi</a>
                     <br></br>
                     <ul>
-                        <li><a href="#">Ketentuan Pengguna</a></li>
-                        <li><a href="#">Kebijakan Privasi</a></li>
-                        <li><a href="#">Ketentuan Pengiriman</a></li>
+                        <li><a href='<?= base_url('syarat_k') ?>'>Syarat & Ketentuan</a></li>
+                        <li><a href='<?= base_url('kebijakan_p') ?>'>Kebijakan Privasi</a></li>
+
 
                     </ul>
                 </div>

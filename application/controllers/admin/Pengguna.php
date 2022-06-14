@@ -122,15 +122,15 @@ class Pengguna extends CI_Controller
 				// $level = $this->input->post('xlevel');
 				if ($password <> $konfirm_password) {
 					echo $this->session->set_flashdata('msg', 'error');
-					redirect('register');
+					redirect('admin/pengguna');
 				} else {
 					$this->m_pengguna->simpan_pengguna_new($nama, $jenkel, $username, md5($password), $email, $nohp, $gambar);
 					echo $this->session->set_flashdata('msg', 'success');
-					redirect('register');
+					redirect('admin/pengguna');
 				}
 			} else {
 				echo $this->session->set_flashdata('msg', 'warning');
-				redirect('register');
+				redirect('admin/pengguna');
 			}
 		} else {
 			$nama = $this->input->post('xnama');
@@ -143,11 +143,11 @@ class Pengguna extends CI_Controller
 			// $level = $this->input->post('xlevel');
 			if ($password <> $konfirm_password) {
 				echo $this->session->set_flashdata('msg', 'error');
-				redirect('register');
+				redirect('admin/pengguna');
 			} else {
 				$this->m_pengguna->simpan_pengguna_tanpa_gambar_new($nama, $jenkel, $username, md5($password), $email, $nohp);
 				echo $this->session->set_flashdata('msg', 'success');
-				redirect('register');
+				redirect('admin/pengguna');
 			}
 		}
 	}

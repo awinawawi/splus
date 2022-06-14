@@ -752,11 +752,16 @@ class Order extends CI_Controller
 
         // split kurir info
         $kurir              = explode(",", $_POST['kurir']);
-        $faktur             = 'SMTT/' . date('d-m-y') . '/' . rand(1111, 9999);
+        // $faktur             = 'SMTT/' . date('d-m-y') . '/' . rand(1111, 9999);
+        $faktur             = 'SMTT-' . date('dmy') . '-' . rand(1111, 9999);
+
+        $kode = $this->session->userdata('idadmin');
         $dataOrder = array(
             'pelanggan_id'          => $data['pelanggan_id'],
             'session_id'            => $this->session->userdata('user_session_id'),
             'faktur'                => $faktur,
+            'pengguna_id'           => $kode,
+
             'tanggal_pengiriman'    => $_POST['tanggal_pengiriman'],
             'kurir_pengiriman'      => $kurir[0],
             'layanan_pengiriman'    => $kurir[1],
@@ -781,6 +786,21 @@ class Order extends CI_Controller
                 $this->M_order->deleteCart($c->keranjang_id);
             }
         }
+
+
+        //new_update pelanggan_id agar bisa join ke tbl_pengguna untuk mengetahui alamat pengguna.
+
+        // $kode = $this->session->userdata('idadmin');
+        // $datapelanggan = array(
+        //     'pelanggan_id'          => $data['pelanggan_id']
+        // );
+        // $this->M_order->update_pengguna_pelanggan($datapelanggan, $kode);
+
+
+
+
+
+
 
         $email = $_POST['email'];
         $this->sendEmail($email, $faktur);

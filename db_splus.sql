@@ -1,622 +1,1341 @@
 /*
- Navicat Premium Data Transfer
-
- Source Server         : Amazon DB
- Source Server Type    : MySQL
- Source Server Version : 50722
- Source Host           : dbcloud.ct1z8ptclyeg.ap-southeast-1.rds.amazonaws.com:3306
- Source Schema         : db_splus
-
- Target Server Type    : MySQL
- Target Server Version : 50722
- File Encoding         : 65001
-db_splusdb_splus
- Date: 18/02/2020 08:38:34
+SQLyog Community v13.1.7 (64 bit)
+MySQL - 10.4.21-MariaDB : Database - u5815491_splus
+*********************************************************************
 */
 
-SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
+/*!40101 SET NAMES utf8 */;
 
--- ----------------------------
--- Table structure for tbl_galeri
--- ----------------------------
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`u5815491_splus` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+
+USE `u5815491_splus`;
+
+/*Table structure for table `product` */
+
+DROP TABLE IF EXISTS `product`;
+
+CREATE TABLE `product` (
+  `product_id` int(20) NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(120) NOT NULL,
+  `product_jenis` varchar(100) NOT NULL,
+  `product_price` decimal(8,2) NOT NULL,
+  `product_tipe` varchar(5) NOT NULL,
+  `product_brand` varchar(50) NOT NULL,
+  `product_camera` varchar(20) NOT NULL,
+  `product_image` varchar(100) NOT NULL,
+  `product_quantity` mediumint(5) NOT NULL,
+  `product_status` enum('0','1') NOT NULL COMMENT '0-active,1-inactive',
+  PRIMARY KEY (`product_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+
+/*Data for the table `product` */
+
+insert  into `product`(`product_id`,`product_name`,`product_jenis`,`product_price`,`product_tipe`,`product_brand`,`product_camera`,`product_image`,`product_quantity`,`product_status`) values 
+(1,'Honor 9 Lite (Sapphire Blue, 64 GB)  (4 GB RAM)','Honor',14499.00,'4','64','13','image-1.jpeg',10,'1'),
+(2,'\r\nInfinix Hot S3 (Sandstone Black, 32 GB)  (3 GB RAM)','Infinix',8999.00,'3','32','13','image-2.jpeg',10,'1'),
+(3,'VIVO V9 Youth (Gold, 32 GB)  (4 GB RAM)','VIVO',16990.00,'4','32','16','image-3.jpeg',10,'1'),
+(4,'Moto E4 Plus (Fine Gold, 32 GB)  (3 GB RAM)','Moto',11499.00,'3','32','8','image-4.jpeg',10,'1'),
+(5,'Lenovo K8 Plus (Venom Black, 32 GB)  (3 GB RAM)','Lenevo',9999.00,'3','32','13','image-5.jpg',10,'1'),
+(6,'Samsung Galaxy On Nxt (Gold, 16 GB)  (3 GB RAM)','Samsung',10990.00,'3','16','13','image-6.jpeg',10,'1'),
+(7,'Moto C Plus (Pearl White, 16 GB)  (2 GB RAM)','Moto',7799.00,'2','16','8','image-7.jpeg',10,'1'),
+(8,'Panasonic P77 (White, 16 GB)  (1 GB RAM)','Panasonic',5999.00,'1','16','8','image-8.jpeg',10,'1'),
+(9,'OPPO F5 (Black, 64 GB)  (6 GB RAM)','OPPO',19990.00,'6','64','16','image-9.jpeg',10,'1'),
+(10,'Honor 7A (Gold, 32 GB)  (3 GB RAM)','Honor',8999.00,'3','32','13','image-10.jpeg',10,'1'),
+(11,'Asus ZenFone 5Z (Midnight Blue, 64 GB)  (6 GB RAM)','Asus',29999.00,'6','128','12','image-12.jpeg',10,'1'),
+(12,'Redmi 5A (Gold, 32 GB)  (3 GB RAM)','MI',5999.00,'3','32','13','image-12.jpeg',10,'1'),
+(13,'Intex Indie 5 (Black, 16 GB)  (2 GB RAM)','Intex',4999.00,'2','16','8','image-13.jpeg',10,'1'),
+(14,'Google Pixel 2 XL (18:9 Display, 64 GB) White','Google',61990.00,'4','64','12','image-14.jpeg',10,'1'),
+(15,'Samsung Galaxy A9','Samsung',36000.00,'8','128','24','image-15.jpeg',10,'1'),
+(16,'Lenovo A5','Lenovo',5999.00,'2','16','13','image-16.jpeg',10,'1'),
+(17,'Asus Zenfone Lite L1','Asus',5999.00,'2','16','13','image-17.jpeg',10,'1'),
+(18,'Lenovo K9','Lenovo',8999.00,'3','32','13','image-18.jpeg',10,'1'),
+(19,'Infinix Hot S3x','Infinix',9999.00,'3','32','13','image-19.jpeg',10,'1'),
+(20,'Realme 2','Realme',8990.00,'4','64','13','image-20.jpeg',10,'1'),
+(21,'Redmi Note 6 Pro','Redmi',13999.00,'4','64','20','image-21.jpeg',10,'1'),
+(22,'Realme C1','Realme',7999.00,'2','16','15','image-22.jpeg',10,'1'),
+(23,'Vivo V11','Vivo',22900.00,'6','64','21','image-23.jpeg',10,'1'),
+(24,'Oppo F9 Pro','Oppo',23990.00,'6','64','18','image-24.jpg',10,'1'),
+(25,'Honor 9N','Honor',11999.00,'4','64','15','image-25.jpg',10,'1'),
+(26,'Redmi 6A','Redmi',6599.00,'2','16','13','image-26.jpeg',10,'1'),
+(27,'InFocus Vision 3','InFocus',7399.00,'2','16','13','image-27.jpeg',10,'1'),
+(28,'Vivo Y69','Vivo',11390.00,'3','32','16','image-28.jpeg',10,'1'),
+(29,'Honor 7x','Honor',12721.00,'4','32','18','image-29.jpeg',10,'1'),
+(30,'Nokia 2.1','Nokia',6580.00,'2','1','8','image-30.jpeg',10,'1');
+
+/*Table structure for table `tbl_blog` */
+
+DROP TABLE IF EXISTS `tbl_blog`;
+
+CREATE TABLE `tbl_blog` (
+  `blog_id` int(11) NOT NULL,
+  `blog_pengguna_id` int(11) DEFAULT NULL,
+  `blog_slug` varchar(255) DEFAULT NULL,
+  `blog_judul` varchar(255) DEFAULT NULL,
+  `blog_gambar` varchar(255) DEFAULT NULL,
+  `blog_deskripsi` varchar(255) DEFAULT NULL,
+  `blog_kategori` varchar(255) DEFAULT NULL,
+  `blog_subkategori` varchar(255) DEFAULT NULL,
+  `blog_meta_deskripsi` varchar(255) DEFAULT NULL,
+  `blog_meta_keyword` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`blog_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `tbl_blog` */
+
+/*Table structure for table `tbl_cabang` */
+
+DROP TABLE IF EXISTS `tbl_cabang`;
+
+CREATE TABLE `tbl_cabang` (
+  `id_cabang` int(10) NOT NULL AUTO_INCREMENT,
+  `nama_cabang` varchar(255) DEFAULT NULL,
+  `latitude` int(255) DEFAULT NULL,
+  `longitude` int(255) DEFAULT NULL,
+  PRIMARY KEY (`id_cabang`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `tbl_cabang` */
+
+/*Table structure for table `tbl_detail_produk` */
+
+DROP TABLE IF EXISTS `tbl_detail_produk`;
+
+CREATE TABLE `tbl_detail_produk` (
+  `varian_id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_kategori_produk` int(11) NOT NULL,
+  `produk_id` int(11) NOT NULL,
+  `varian_type` varchar(150) DEFAULT NULL,
+  `varian_nama` varchar(150) DEFAULT NULL,
+  `varian_gambar_depan` varchar(200) DEFAULT NULL,
+  `varian_gambar_utama` varchar(200) DEFAULT NULL,
+  `varian_gambar_warna` varchar(200) DEFAULT NULL,
+  `varian_harga` bigint(20) DEFAULT NULL,
+  `varian_harga_meter` decimal(10,0) DEFAULT NULL,
+  `varian_jumlah` bigint(20) DEFAULT NULL,
+  `varian_deskripsi` longtext DEFAULT NULL,
+  `varian_ukuran` varchar(100) DEFAULT NULL,
+  `varian_warna` varchar(100) DEFAULT NULL,
+  `tokopedia` text DEFAULT NULL,
+  `bukalapak` text DEFAULT NULL,
+  PRIMARY KEY (`varian_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=157 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_detail_produk` */
+
+insert  into `tbl_detail_produk`(`varian_id`,`id_kategori_produk`,`produk_id`,`varian_type`,`varian_nama`,`varian_gambar_depan`,`varian_gambar_utama`,`varian_gambar_warna`,`varian_harga`,`varian_harga_meter`,`varian_jumlah`,`varian_deskripsi`,`varian_ukuran`,`varian_warna`,`tokopedia`,`bukalapak`) values 
+(1,0,1,'clasic1','Multi Combi One Tone',NULL,'2.jpg','combi/warna/multi-combi-one-tone/01-white.jpg',0,973500,NULL,'Combi one tone','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-one-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d94raq-jual-roller-blind-s-plus-combi-shade-multi-combi-one-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(2,0,1,'clasic2','Multi Combi One Tone',NULL,'2.jpg','combi/warna/multi-combi-one-tone/02-ivory.jpg',0,973500,NULL,'Combi one tone','1000x1000','Ivory','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-one-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d94raq-jual-roller-blind-s-plus-combi-shade-multi-combi-one-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(3,0,1,'clasic3','Multi Combi One Tone',NULL,'2.jpg','combi/warna/multi-combi-one-tone/03-grey.jpg',0,973500,NULL,'Combi one tone','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-one-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d94raq-jual-roller-blind-s-plus-combi-shade-multi-combi-one-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(4,0,1,NULL,'Multi Combi Two Tone',NULL,'2.jpg','combi/warna/multi-combi-two-tone/01-beige.jpg',0,1111000,NULL,'Combi Two tone','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d96e39-jual-roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(5,0,1,NULL,'Multi Combi Two Tone',NULL,'combi/1.jpg','combi/warna/multi-combi-two-tone/02-white.jpg',0,1111000,NULL,'Combi Two tone','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d96e39-jual-roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(6,0,1,NULL,'Multi Combi Two Tone',NULL,'combi/1.jpg','combi/warna/multi-combi-two-tone/03-cherry.jpg',0,1111000,NULL,'Combi Two tone','1000x1000','Cherry','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d96e39-jual-roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(7,0,1,NULL,'Multi Combi Two Tone',NULL,'combi/1.jpg','combi/warna/multi-combi-two-tone/04-ivory.jpg',0,1111000,NULL,'Combi Two tone','1000x1000','Ivory','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d96e39-jual-roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(8,0,1,NULL,'Multi Combi Two Tone',NULL,'combi/1.jpg','combi/warna/multi-combi-two-tone/05-teak.jpg',0,1111000,NULL,'Combi Two tone','1000x1000','Taek','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d96e39-jual-roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(9,0,1,NULL,'Basic',NULL,'combi/1.jpg','combi/warna/basic/01-white.jpg',0,360800,NULL,'Combi Shade Basic','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-basic-uk-60x120-cm-a355','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ldyl-jual-roller-blind-s-plus-combi-shade-basic-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(10,0,1,NULL,'Basic',NULL,'combi/1.jpg','combi/warna/basic/02-peach.jpg',0,360800,NULL,'Combi Shade Basic','1000x1000','Peach','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-basic-uk-60x120-cm-a355','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ldyl-jual-roller-blind-s-plus-combi-shade-basic-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(11,0,1,NULL,'Basic',NULL,'combi/1.jpg','combi/warna/basic/03-mustard.jpg',0,360800,NULL,'Combi Shade Basic','1000x1000','Mustard','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-basic-uk-60x120-cm-a355','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ldyl-jual-roller-blind-s-plus-combi-shade-basic-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(12,0,1,NULL,'Basic',NULL,'combi/1.jpg','combi/warna/basic/07-flourscent-green.jpg',0,360800,NULL,'Combi Shade Basic','1000x1000','Flourcent Green','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-basic-uk-60x120-cm-a355','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ldyl-jual-roller-blind-s-plus-combi-shade-basic-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(13,0,1,NULL,'Basic',NULL,'combi/1.jpg','combi/warna/basic/05-pink.jpg',0,360800,NULL,'Combi Shade Basic','1000x1000','Pink','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-basic-uk-60x120-cm-a355','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ldyl-jual-roller-blind-s-plus-combi-shade-basic-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(14,0,1,NULL,'Basic',NULL,'combi/1.jpg','combi/warna/basic/06-mocha.jpg',0,360800,NULL,'Combi Shade Basic','1000x1000','Mocca','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-basic-uk-60x120-cm-a355','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ldyl-jual-roller-blind-s-plus-combi-shade-basic-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(15,0,1,NULL,'Woodlook S/T 2 Tone',NULL,'combi/1.jpg','combi/warna/woodlook-s-t-tone/01-ivory.jpg',0,594000,NULL,'Combi Shade Woodlook S/T 2 Tone','1000x1000','Ivory','\r\nhttps://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm\r\n\r\nhttps://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm\r\nhttps://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2n7ld-jual-roller-blind-s-plus-combi-shade-woodlook-2-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(16,0,1,NULL,'Woodlook S/T 2 Tone',NULL,'combi/1.jpg','combi/warna/woodlook-s-t-tone/02-white.jpg',0,594000,NULL,'Combi Shade Woodlook S/T 2 Tone','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2n7ld-jual-roller-blind-s-plus-combi-shade-woodlook-2-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(17,0,1,NULL,'Woodlook S/T 2 Tone',NULL,'combi/1.jpg','combi/warna/woodlook-s-t-tone/03-brown.jpg',0,594000,NULL,'Combi Shade Woodlook S/T 2 Tone','1000x1000','Brown','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2n7ld-jual-roller-blind-s-plus-combi-shade-woodlook-2-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(18,0,1,NULL,'Woodlook S/T 2 Tone',NULL,'combi/1.jpg','combi/warna/woodlook-s-t-tone/04-mushroom.jpg',0,594000,NULL,'Combi Shade Woodlook S/T 2 Tone','1000x1000','Mushroom','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2n7ld-jual-roller-blind-s-plus-combi-shade-woodlook-2-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(19,0,1,NULL,'Woodlook S/T 2 Tone',NULL,'combi/1.jpg','combi/warna/woodlook-s-t-tone/05-grey.jpg',0,594000,NULL,'Combi Shade Woodlook S/T 2 Tone','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2n7ld-jual-roller-blind-s-plus-combi-shade-woodlook-2-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(20,0,1,NULL,'Woodlook S/T 2 Tone',NULL,'combi/1.jpg','combi/warna/woodlook-s-t-tone/06-chocolate.jpg',0,594000,NULL,'Combi Shade Woodlook S/T 2 Tone','1000x1000','Chocolate','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2n7ld-jual-roller-blind-s-plus-combi-shade-woodlook-2-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(21,0,1,NULL,'Wood Look Soft',NULL,'combi/1.jpg','combi/warna/woodlook-soft/01-mushroom.jpg',0,594000,NULL,'Combi Shade Wood Look Soft','1000x1000','Mushroom','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-soft-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ojmo-jual-roller-blind-s-plus-combi-shade-woodlook-soft-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(22,0,1,NULL,'Wood Look Soft',NULL,'combi/1.jpg','combi/warna/woodlook-soft/02-white.jpg',0,594000,NULL,'Combi Shade Wood Look Soft','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-soft-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ojmo-jual-roller-blind-s-plus-combi-shade-woodlook-soft-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(23,0,1,NULL,'Wood Look Soft',NULL,'combi/1.jpg','combi/warna/woodlook-soft/03-chocolate.jpg',0,594000,NULL,'Combi Shade Wood Look Soft','1000x1000','Chocolate','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-soft-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ojmo-jual-roller-blind-s-plus-combi-shade-woodlook-soft-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(24,0,1,NULL,'Wood Look Soft',NULL,'combi/1.jpg','combi/warna/woodlook-soft/04-brown.jpg',0,594000,NULL,'Combi Shade Wood Look Soft','1000x1000','Brown','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-soft-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ojmo-jual-roller-blind-s-plus-combi-shade-woodlook-soft-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(25,0,1,NULL,'Wood Look Soft',NULL,'combi/1.jpg','combi/warna/woodlook-soft/05-grey.jpg',0,594000,NULL,'Combi Shade Wood Look Soft','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-soft-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ojmo-jual-roller-blind-s-plus-combi-shade-woodlook-soft-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(26,0,1,NULL,'Wood Look Soft',NULL,'combi/1.jpg','combi/warna/woodlook-soft/06-cadet-blue.jpg',0,594000,NULL,'Combi Shade Wood Look Soft','1000x1000','Cadet Blue','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-soft-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ojmo-jual-roller-blind-s-plus-combi-shade-woodlook-soft-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(27,0,1,NULL,'Net Wood Look',NULL,'combi/1.jpg','combi/warna/net-wood-look/01-green.jpg',0,481800,NULL,'Combi Shade Net Wood Look','1000x1000','Green','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-net-wood-look-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2plvm-jual-roller-blind-s-plus-net-wood-look-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(28,0,1,NULL,'Net Wood Look',NULL,'combi/1.jpg','combi/warna/net-wood-look/02-pink.jpg',0,481800,NULL,'Combi Shade Net Wood Look','1000x1000','Pink','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-net-wood-look-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2plvm-jual-roller-blind-s-plus-net-wood-look-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(29,0,1,NULL,'Net Wood Look',NULL,'combi/1.jpg','combi/warna/net-wood-look/03-blue.jpg',0,481800,NULL,'Combi Shade Net Wood Look','1000x1000','Blue','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-net-wood-look-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2plvm-jual-roller-blind-s-plus-net-wood-look-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(30,0,1,NULL,'Net Wood Look',NULL,'combi/1.jpg','combi/warna/net-wood-look/04-brown.jpg',0,481800,NULL,'Combi Shade Net Wood Look','1000x1000','Brown','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-net-wood-look-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2plvm-jual-roller-blind-s-plus-net-wood-look-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(31,0,1,NULL,'Net Wood Look',NULL,'combi/1.jpg','combi/warna/net-wood-look/05-black.jpg',0,481800,NULL,'Combi Shade Net Wood Look','1000x1000','Black','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-net-wood-look-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2plvm-jual-roller-blind-s-plus-net-wood-look-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(32,0,1,NULL,'Rainbow',NULL,'combi/1.jpg','combi/warna/rainbow/01-pink.jpg',0,492800,NULL,'Combi Shade Rainbow','1000x1000','Pink','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2r5wa-jual-roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(33,0,1,NULL,'Rainbow',NULL,'combi/1.jpg','combi/warna/rainbow/02-brown.jpg',0,492800,NULL,'Combi Shade Rainbow','1000x1000','Brown','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2r5wa-jual-roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(34,0,1,NULL,'Rainbow',NULL,'combi/1.jpg','combi/warna/rainbow/03-send.jpg',0,492800,NULL,'Combi Shade Rainbow','1000x1000','Sand','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2r5wa-jual-roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(35,0,1,NULL,'Rainbow',NULL,'combi/1.jpg','combi/warna/rainbow/04-grey.jpg',0,492800,NULL,'Combi Shade Rainbow','1000x1000','Gray','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2r5wa-jual-roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(36,0,1,NULL,'Balwood Look Combi',NULL,'combi/1.jpg','combi/warna/balwood-look-combi/01-mushroom.jpg',0,544500,NULL,'Combi Shade Balwood Look Combi','1000x1000','Mushroom','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-balwood-look-combi-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2sj6b-jual-roller-blind-s-plus-combi-shade-balwood-look?from=product_owner&product_owner=normal_seller'),
+(37,0,1,NULL,'Balwood Look Combi',NULL,'combi/1.jpg','combi/warna/balwood-look-combi/02-cherry.jpg',0,544500,NULL,'Combi Shade Balwood Look Combi','1000x1000','Cherry','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-balwood-look-combi-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2sj6b-jual-roller-blind-s-plus-combi-shade-balwood-look?from=product_owner&product_owner=normal_seller'),
+(38,0,1,NULL,'Balwood Look Combi',NULL,'combi/1.jpg','combi/warna/balwood-look-combi/03-nile.jpg',0,544500,NULL,'Combi Shade Balwood Look Combi','1000x1000','Nile','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-balwood-look-combi-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2sj6b-jual-roller-blind-s-plus-combi-shade-balwood-look?from=product_owner&product_owner=normal_seller'),
+(39,0,1,NULL,'Shani',NULL,'combi/1.jpg','combi/warna/shani/01-white.jpg',0,561000,NULL,'Combi Shade Shani','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-shani-uk-60-x-120cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ukft-jual-roller-blind-s-plus-combi-shade-shani-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(40,0,1,NULL,'Shani',NULL,'combi/1.jpg','combi/warna/shani/02-peach.jpg',0,561000,NULL,'Combi Shade Shani','1000x1000','Peach','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-shani-uk-60-x-120cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ukft-jual-roller-blind-s-plus-combi-shade-shani-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(41,0,1,NULL,'Shani',NULL,'combi/1.jpg','combi/warna/shani/03-caramel.jpg',0,561000,NULL,'Combi Shade Shani','1000x1000','Charamel','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-shani-uk-60-x-120cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ukft-jual-roller-blind-s-plus-combi-shade-shani-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(42,0,1,NULL,'Shani',NULL,'combi/1.jpg','combi/warna/shani/04-dark-grey.jpg',0,561000,NULL,'Combi Shade Shani','1000x1000','Dark Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-shani-uk-60-x-120cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ukft-jual-roller-blind-s-plus-combi-shade-shani-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(43,0,1,NULL,'Metal Romance',NULL,'combi/1.jpg','combi/warna/metal-romance/01-white.jpg',0,649000,NULL,'Combi Shade Metal Romance','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e8evs8-jual-roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(44,0,1,NULL,'Metal Romance',NULL,'combi/1.jpg','combi/warna/metal-romance/02-gold-pink.jpg',0,649000,NULL,'Combi Shade Metal Romance','1000x1000','Gold Pink','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e8evs8-jual-roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(45,0,1,NULL,'Metal Romance',NULL,'combi/1.jpg','combi/warna/metal-romance/03-blue.jpg',0,649000,NULL,'Combi Shade Metal Romance','1000x1000','Blue','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e8evs8-jual-roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(46,0,1,NULL,'Metal Romance',NULL,'combi/1.jpg','combi/warna/metal-romance/04-khaki.jpg',0,649000,NULL,'Combi Shade Metal Romance','1000x1000','Khaki','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e8evs8-jual-roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(47,0,1,NULL,'Blackout Combi',NULL,'combi/1.jpg','combi/warna/blackout-combi/01-white.jpg',0,753500,NULL,'Combi Shade Blackout Combi','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-blackout-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2zhvb-jual-roller-blind-s-plus-combi-shade-blackout-uk-60x120-cmm?from=product_owner&product_owner=normal_seller'),
+(48,0,1,NULL,'Blackout Combi',NULL,'combi/1.jpg','combi/warna/blackout-combi/02-beige.jpg',0,753500,NULL,'Combi Shade Blackout Combi','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-blackout-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2zhvb-jual-roller-blind-s-plus-combi-shade-blackout-uk-60x120-cmm?from=product_owner&product_owner=normal_seller'),
+(49,0,1,NULL,'Blackout Combi',NULL,'combi/1.jpg','combi/warna/blackout-combi/03-grey.jpg',0,753500,NULL,'Combi Shade Blackout Combi','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-blackout-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2zhvb-jual-roller-blind-s-plus-combi-shade-blackout-uk-60x120-cmm?from=product_owner&product_owner=normal_seller'),
+(50,0,1,NULL,'Blackout Combi',NULL,'combi/1.jpg','combi/warna/blackout-combi/04-dark-grey.jpg',0,753500,NULL,'Combi Shade Blackout Combi','1000x1000','Dark Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-blackout-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2zhvb-jual-roller-blind-s-plus-combi-shade-blackout-uk-60x120-cmm?from=product_owner&product_owner=normal_seller'),
+(51,0,3,NULL,'Alegro 3010 (1%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-1-3010/01-white.jpg',0,481800,NULL,'Sun Screen Alegro 3010 (1%)','1000x1000','White','https://www.tokopedia.com/splus-indonesia/sun-screen-s-plus-alegro-3010-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8x9lk-jual-sun-screen-s-plus-alegro-3010-uk-60x120?from=product_owner&product_owner=normal_seller'),
+(52,0,3,NULL,'Alegro 3010 (1%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-1-3010/02-beige.jpg',0,481800,NULL,'Sun Screen Alegro 3010 (1%)','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/sun-screen-s-plus-alegro-3010-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8x9lk-jual-sun-screen-s-plus-alegro-3010-uk-60x120?from=product_owner&product_owner=normal_seller'),
+(53,0,3,NULL,'Alegro 3010 (1%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-1-3010/03-grey.jpg',0,481800,NULL,'Sun Screen Alegro 3010 (1%)','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/sun-screen-s-plus-alegro-3010-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8x9lk-jual-sun-screen-s-plus-alegro-3010-uk-60x120?from=product_owner&product_owner=normal_seller'),
+(54,0,3,NULL,'Alegro 3030 (3%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-3-3030/01-white.jpg',0,481800,NULL,'Sun Screen Alegro 3030 (3%)','1000x1000','White',NULL,NULL),
+(55,0,3,NULL,'Alegro 3030 (3%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-3-3030/02-beige.jpg',0,481800,NULL,'Sun Screen Alegro 3030 (3%)','1000x1000','Beige',NULL,NULL),
+(56,0,3,NULL,'Alegro 3030 (3%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-3-3030/03-grey.jpg',0,481800,NULL,'Sun Screen Alegro 3030 (3%)','1000x1000','Grey',NULL,NULL),
+(57,0,3,NULL,'Alegro 3050 (5%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-5-3050/01-white.jpg',0,453200,NULL,'Sun Screen Alegro 3050 (5%)','1000x1000','White',NULL,NULL),
+(58,0,3,NULL,'Alegro 3050 (5%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-5-3050/02-beige.jpg',0,453200,NULL,'Sun Screen Alegro 3050 (5%)','1000x1000','Beige',NULL,NULL),
+(59,0,3,NULL,'Alegro 3050 (5%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-5-3050/03-grey.jpg',0,453200,NULL,'Sun Screen Alegro 3050 (5%)','1000x1000','Grey',NULL,NULL),
+(60,0,3,NULL,'Forte 4010 (1%)',NULL,'sun-screen/1.jpg','sun-screen/warna/forte-1-4010/01-white.jpg',0,564300,NULL,'Sun Screen Forte 4010 (1%)','1000x1000','White',NULL,NULL),
+(61,0,3,NULL,'Forte 4010 (1%)',NULL,'sun-screen/1.jpg','sun-screen/warna/forte-1-4010/02-beige.jpg',0,564300,NULL,'Sun Screen Forte 4010 (1%)','1000x1000','Beige',NULL,NULL),
+(62,0,3,NULL,'Forte 4010 (1%)',NULL,'sun-screen/1.jpg','sun-screen/warna/forte-1-4010/03-grey.jpg',0,564300,NULL,'Sun Screen Forte 4010 (1%)','1000x1000','Grey',NULL,NULL),
+(63,0,3,NULL,'Forte 4030 (3%)',NULL,'sun-screen/1.jpg','sun-screen/warna/forte-3-4030/01-white.jpg',0,564300,NULL,'Sun Screen Forte 4030 (3%)','1000x1000','White',NULL,NULL),
+(64,0,3,NULL,'Forte 4030 (3%)',NULL,'sun-screen/1.jpg','sun-screen/warna/forte-3-4030/02-beige.jpg',0,564300,NULL,'Sun Screen Forte 4030 (3%)','1000x1000','Beige',NULL,NULL),
+(65,0,3,NULL,'Forte 4030 (3%)',NULL,'sun-screen/1.jpg','sun-screen/warna/forte-3-4030/03-grey.jpg',0,564300,NULL,'Sun Screen Forte 4030 (3%)','1000x1000','Grey',NULL,NULL),
+(66,0,3,NULL,'Chaos 5000 (5%)',NULL,'sun-screen/1.jpg','sun-screen/warna/chaos-5000/01-white.jpg',0,398200,NULL,'Sun Screen Chaos 5000 (5%)','1000x1000','White','https://www.tokopedia.com/splus-indonesia/sun-screen-s-plus-chaos-5000-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3ehfh0a-jual-sun-screen-s-plus-chaos-5000-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(67,0,3,NULL,'Chaos 5000 (5%)',NULL,'sun-screen/1.jpg','sun-screen/warna/chaos-5000/02-beige.jpg',0,398200,NULL,'Sun Screen Chaos 5000 (5%)','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/sun-screen-s-plus-chaos-5000-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3ehfh0a-jual-sun-screen-s-plus-chaos-5000-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(68,0,3,NULL,'Chaos 5000 (5%)',NULL,'sun-screen/1.jpg','sun-screen/warna/chaos-5000/04-silver-white.jpg',0,547800,NULL,'Sun Screen Chaos 5000 (5%)','1000x1000','Silver',NULL,NULL),
+(69,0,2,NULL,'Peru',NULL,'roll-screen/1.jpg','roll-screen/warna/peru/01-1021.jpg',0,402600,NULL,'Roll Screen Peru','1000x1000','1021#740','https://www.tokopedia.com/splus-indonesia/roll-screen-s-plus-peru-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8n2ki-jual-roller-blind-s-plus-roll-screen-peru-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(70,0,2,NULL,'Peru',NULL,'roll-screen/1.jpg','roll-screen/warna/peru/01-1023.jpg',0,402600,NULL,'Roll Screen Peru','1000x1000','1023#743','https://www.tokopedia.com/splus-indonesia/roll-screen-s-plus-peru-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8n2ki-jual-roller-blind-s-plus-roll-screen-peru-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(71,0,2,NULL,'Straw',NULL,'roll-screen/1.jpg','roll-screen/warna/straw/01-brown.jpg',0,360800,NULL,'Roll Screen Straw','1000x1000','Brown','https://www.tokopedia.com/splus-indonesia/roll-screen-s-plus-straw-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8ob62-jual-roller-blind-s-plus-roll-screen-straw-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(72,0,2,NULL,'Straw',NULL,'roll-screen/1.jpg','roll-screen/warna/straw/01-beige.jpg',0,360800,NULL,'Roll Screen Straw','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/roll-screen-s-plus-straw-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8ob62-jual-roller-blind-s-plus-roll-screen-straw-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(73,0,2,NULL,'Mayway',NULL,'roll-screen/1.jpg','roll-screen/warna/mai-way/01-905-BrBg.jpg',0,363000,NULL,'Roll Screen Mayway','1000x1000','905BrBg','https://www.tokopedia.com/splus-indonesia/roll-screen-s-plus-mayway-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8p6od-jual-roller-blind-s-plus-roll-screen-mayway-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(74,0,2,NULL,'Mayway',NULL,'roll-screen/1.jpg','roll-screen/warna/mai-way/02-904-Brw.jpg',0,363000,NULL,'Roll Screen Mayway','1000x1000','904Brw','https://www.tokopedia.com/splus-indonesia/roll-screen-s-plus-mayway-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8p6od-jual-roller-blind-s-plus-roll-screen-mayway-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(75,0,4,NULL,'Ben Series',NULL,'blackout/1.jpg','blackout/warna/ben-series/01-forsythia.jpg',0,500500,NULL,'Blackout Roll Screen Ben Series','1000x1000','Forsythia','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-ben-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d3171e-jual-roller-blind-s-plus-blackout-shade-ben-series?from=product_owner&product_owner=normal_seller'),
+(76,0,4,NULL,'Ben Series',NULL,'blackout/1.jpg','blackout/warna/ben-series/02-blue.jpg',0,500500,NULL,'Blackout Roll Screen Ben Series','1000x1000','Blue','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-ben-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d3171e-jual-roller-blind-s-plus-blackout-shade-ben-series?from=product_owner&product_owner=normal_seller'),
+(77,0,4,NULL,'Ben Series',NULL,'blackout/1.jpg','blackout/warna/ben-series/03-rosewood.jpg',0,500500,NULL,'Blackout Roll Screen Ben Series','1000x1000','Rose Wood','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-ben-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d3171e-jual-roller-blind-s-plus-blackout-shade-ben-series?from=product_owner&product_owner=normal_seller'),
+(79,0,4,NULL,'DGCB Series',NULL,'blackout/1.jpg','blackout/warna/dgcb/01-white.jpg',0,453200,NULL,'Blackout Roll Screen DGCB Series','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8l2pp-jual-roller-blind-s-plus-blackout-shade-dgcb-series?from=product_owner&product_owner=normal_seller'),
+(80,0,4,NULL,'DGCB Series',NULL,'blackout/1.jpg','blackout/warna/dgcb/02-grey.jpg',0,453200,NULL,'Blackout Roll Screen DGCB Series','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8l2pp-jual-roller-blind-s-plus-blackout-shade-dgcb-series?from=product_owner&product_owner=normal_seller'),
+(81,0,4,NULL,'DGCB Series',NULL,'blackout/1.jpg','blackout/warna/dgcb/03-beige.jpg',0,453200,NULL,'Blackout Roll Screen DGCB Series','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8l2pp-jual-roller-blind-s-plus-blackout-shade-dgcb-series?from=product_owner&product_owner=normal_seller'),
+(82,0,4,NULL,'DGSB Series',NULL,'blackout/1.jpg','blackout/warna/dgsb/01-white.jpg',0,453200,NULL,'Blackout Roll Screen DGSB Series','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8m93y-jual-roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(83,0,4,NULL,'DGSB Series',NULL,'blackout/1.jpg','blackout/warna/dgsb/02-grey.jpg',0,453200,NULL,'Blackout Roll Screen DGSB Series','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8m93y-jual-roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(84,0,4,NULL,'DGSB Series',NULL,'blackout/1.jpg','blackout/warna/dgsb/03-beige.jpg',0,453200,NULL,'Blackout Roll Screen DGSB Series','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8m93y-jual-roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(85,0,5,NULL,'ALEGRO 3000',NULL,'vert-blind/1.jpg','vert-blind/warna/alegro-3000/01-white.jpg',0,632500,NULL,'Vertical Blind ALEGRO 3000','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-alegro-3000-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d91trz-jual-roller-blind-s-plus-vertical-alegro-3000-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(86,0,5,NULL,'ALEGRO 3000',NULL,'vert-blind/1.jpg','vert-blind/warna/alegro-3000/02-grey.jpg',0,632500,NULL,'Vertical Blind ALEGRO 3000','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-alegro-3000-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d91trz-jual-roller-blind-s-plus-vertical-alegro-3000-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(87,0,5,NULL,'ALEGRO 3000',NULL,'vert-blind/1.jpg','vert-blind/warna/alegro-3000/03-beige.jpg',0,632500,NULL,'Vertical Blind ALEGRO 3000','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-alegro-3000-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d91trz-jual-roller-blind-s-plus-vertical-alegro-3000-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(88,0,5,NULL,'FORTE 4000',NULL,'vert-blind/1.jpg','vert-blind/warna/forte-4000/01-white.jpg',0,712800,NULL,'Vertical Blind FORTE 4000','1000x1000','White',NULL,NULL),
+(89,0,5,NULL,'FORTE 4000',NULL,'vert-blind/1.jpg','vert-blind/warna/forte-4000/02-grey.jpg',0,712800,NULL,'Vertical Blind FORTE 4000','1000x1000','Grey',NULL,NULL),
+(90,0,5,NULL,'FORTE 4000',NULL,'vert-blind/1.jpg','vert-blind/warna/forte-4000/03-beige.jpg',0,712800,NULL,'Vertical Blind FORTE 4000','1000x1000','Beige',NULL,NULL),
+(91,0,5,NULL,'CHAOS 5000',NULL,'vert-blind/1.jpg','vert-blind/warna/chaos-5000/01-white.jpg',0,603000,NULL,'Vertical Blind CHAOS 5000','1000x1000','White',NULL,NULL),
+(92,0,5,NULL,'CHAOS 5000',NULL,'vert-blind/1.jpg','vert-blind/warna/chaos-5000/02-beige.jpg',0,603000,NULL,'Vertical Blind CHAOS 5000','1000x1000','Beige',NULL,NULL),
+(93,0,5,NULL,'CHAOS 5000',NULL,'vert-blind/1.jpg','vert-blind/warna/chaos-5000/04-silver-white.jpg',0,696500,NULL,'Vertical Blind CHAOS 5000','1000x1000','Silver',NULL,NULL),
+(94,0,5,NULL,'BEN SERIES',NULL,'vert-blind/1.jpg','vert-blind/warna/ben-series/01-forsythia.jpg',0,841500,NULL,'Vertical Blind BEN SERIES','1000x1000','Forsythia','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-ben-series-uk-60x120-cm-forsythia','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eaf2m5-jual-roller-blind-s-plus-vertical-ben-series-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(95,0,5,NULL,'BEN SERIES',NULL,'vert-blind/1.jpg','vert-blind/warna/ben-series/02-blue.jpg',0,841500,NULL,'Vertical Blind BEN SERIES','1000x1000','Blue','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-ben-series-uk-60x120-cm-forsythia','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eaf2m5-jual-roller-blind-s-plus-vertical-ben-series-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(96,0,5,NULL,'BEN SERIES',NULL,'vert-blind/1.jpg','vert-blind/warna/ben-series/03-rosewood.jpg',0,841500,NULL,'Vertical Blind BEN SERIES','1000x1000','Rose Wood','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-ben-series-uk-60x120-cm-forsythia','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eaf2m5-jual-roller-blind-s-plus-vertical-ben-series-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(98,0,5,NULL,'STRAW',NULL,'vert-blind/1.jpg','vert-blind/warna/straw/01-brown.jpg',0,874000,NULL,'Vertical Blind STRAW','1000x1000','Brown','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-straw-uk-60x120-cm-beige','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eaje74-jual-roller-blind-s-plus-vertical-straw-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(99,0,5,NULL,'STRAW',NULL,'vert-blind/1.jpg','vert-blind/warna/straw/02-beige.jpg',0,874000,NULL,'Vertical Blind STRAW','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-straw-uk-60x120-cm-beige','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eaje74-jual-roller-blind-s-plus-vertical-straw-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(100,0,5,NULL,'GV00501',NULL,'vert-blind/1.jpg','vert-blind/warna/gv/01.jpg',0,484000,NULL,'Vertical Blind GV00501','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-gv00501-uk-60x120-cm-yellow','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eam1j7-jual-roller-blind-s-plus-vertical-gv00501-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(101,0,5,NULL,'GV00501',NULL,'vert-blind/1.jpg','vert-blind/warna/gv/02.jpg',0,484000,NULL,'Vertical Blind GV00501','1000x1000','Green','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-gv00501-uk-60x120-cm-yellow','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eam1j7-jual-roller-blind-s-plus-vertical-gv00501-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(102,0,5,NULL,'GV00501',NULL,'vert-blind/1.jpg','vert-blind/warna/gv/03.jpg',0,484000,NULL,'Vertical Blind GV00501','1000x1000','Blue','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-gv00501-uk-60x120-cm-yellow','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eam1j7-jual-roller-blind-s-plus-vertical-gv00501-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(103,0,6,NULL,'WOOD 50MM',NULL,'wood-blind/1.jpg','wood-blind/warna/horizontal-wood/01-LH-113.jpg',0,1119800,NULL,'Horizontal Wood WOOD 50MM','1000x1000','LH-113','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-wood-uk-90x180-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8vdm7-jual-roller-blind-s-plus-horizontal-wood-uk-90x180-cm?from=product_owner&product_owner=normal_seller'),
+(104,0,6,NULL,'WOOD 50MM',NULL,'wood-blind/1.jpg','wood-blind/warna/horizontal-wood/02-LH-1017.jpg',0,1119800,NULL,'Horizontal Wood WOOD 50MM','1000x1000','LH-1017','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-wood-uk-90x180-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8vdm7-jual-roller-blind-s-plus-horizontal-wood-uk-90x180-cm?from=product_owner&product_owner=normal_seller'),
+(105,0,6,NULL,'WOOD 50MM',NULL,'wood-blind/1.jpg','wood-blind/warna/horizontal-wood/03-LH-1016.jpg',0,1119800,NULL,'Horizontal Wood WOOD 50MM','1000x1000','LH-1016','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-wood-uk-90x180-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8vdm7-jual-roller-blind-s-plus-horizontal-wood-uk-90x180-cm?from=product_owner&product_owner=normal_seller'),
+(106,0,6,NULL,'WOOD 50MM',NULL,'wood-blind/1.jpg','wood-blind/warna/horizontal-wood/04-LH-184.jpg',0,1119800,NULL,'Horizontal Wood WOOD 50MM','1000x1000','LH-184','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-wood-uk-90x180-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8vdm7-jual-roller-blind-s-plus-horizontal-wood-uk-90x180-cm?from=product_owner&product_owner=normal_seller'),
+(107,0,6,NULL,'WOOD 50MM',NULL,'wood-blind/1.jpg','wood-blind/warna/horizontal-wood/05-LH-1012.jpg',0,1119800,NULL,'Horizontal Wood WOOD 50MM','1000x1000','LH-1012','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-wood-uk-90x180-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8vdm7-jual-roller-blind-s-plus-horizontal-wood-uk-90x180-cm?from=product_owner&product_owner=normal_seller'),
+(108,0,7,NULL,'ONE TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-one-tone/01-B-006-Peach-Skin.jpg',0,645300,NULL,'Honeycomb ONE TONE','1000x1000','B-006 PEACH SKIN','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8py6x-jual-roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(109,0,7,NULL,'ONE TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-one-tone/02-B-043-Lemon.jpg',0,645300,NULL,'Honeycomb ONE TONE','1000x1000','B-043 LEMON','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8py6x-jual-roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(110,0,7,NULL,'ONE TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-one-tone/03-B-012-Dark-Cocoa.jpg',0,645300,NULL,'Honeycomb ONE TONE','1000x1000','B-012 DARK COCOA','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8py6x-jual-roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(111,0,7,NULL,'ONE TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-one-tone/04-B-20-Wine.jpg',0,645300,NULL,'Honeycomb ONE TONE','1000x1000','B-20 WINE','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8py6x-jual-roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(112,0,7,NULL,'TWO TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-two-tone/01-A-006-Peach-Skin.jpg',0,663300,NULL,'Honeycomb TWO TONE','1000x1000','A-006 PEACH SKIN','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8rm7m-jual-roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(113,0,7,NULL,'TWO TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-two-tone/02-A-012-Dark-Cocoa.jpg',0,663300,NULL,'Honeycomb TWO TONE','1000x1000','A-012 DARK COCOA','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8rm7m-jual-roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(114,0,7,NULL,'TWO TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-two-tone/03-A-20-Wine.jpg',0,663300,NULL,'Honeycomb TWO TONE','1000x1000','A-20 WINE','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8rm7m-jual-roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(115,0,7,NULL,'TWO TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-two-tone/04-A-027-Mose-Green.jpg',0,663300,NULL,'Honeycomb TWO TONE','1000x1000','A-027 MOSE GREEN','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8rm7m-jual-roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(116,0,7,NULL,'TWO TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-two-tone/05-A-034-Blue.jpg',0,663300,NULL,'Honeycomb TWO TONE','1000x1000','A-034 BLUE','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8rm7m-jual-roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(117,0,7,NULL,'TWO TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-two-tone/06-A-041-Grey.jpg',0,663300,NULL,'Honeycomb TWO TONE','1000x1000','A-041 GREY','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8rm7m-jual-roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(118,0,7,NULL,'BLACKOUT',NULL,'honeycomb/1.jpg','honeycomb/warna/blackout/01-Opa-902-ivory.jpg',0,1037300,NULL,'Honeycomb BLACKOUT','1000x1000','OPA-902 IVORY','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-blackout-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8t3s8-jual-roller-blind-s-plus-hoeycomb-blackout-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(119,0,7,NULL,'BLACKOUT',NULL,'honeycomb/1.jpg','honeycomb/warna/blackout/02-Opa-905-Ice-Blue.jpg',0,1037300,NULL,'Honeycomb BLACKOUT','1000x1000','OPA-095 ICE BLUE','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-blackout-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8t3s8-jual-roller-blind-s-plus-hoeycomb-blackout-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(120,0,8,NULL,'12,5MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/12-55mm-patternless/01-White-1211.jpg',0,2877600,NULL,'Horizontal Alumunium 12,5MM (Patternless)','1000x1000','WHITE (1211)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-12-5-mm-patternless-uk-70x150-white','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9i5b1-jual-roller-blind-s-plus-horizontal-aluminium-12-5-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(121,0,8,NULL,'12,5MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/12-55mm-patternless/02-Silver-1243.jpg',0,2877600,NULL,'Horizontal Alumunium 12,5MM (Patternless)','1000x1000','SILVER (1234)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-12-5-mm-patternless-uk-70x150-white','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9i5b1-jual-roller-blind-s-plus-horizontal-aluminium-12-5-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(122,0,8,NULL,'12,5MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/12-55mm-patternless/03-Gold-12906.jpg',0,2877600,NULL,'Honeycomb 12,5MM (Patternless)','1000x1000','GOLD (12906)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-12-5-mm-patternless-uk-70x150-white','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9i5b1-jual-roller-blind-s-plus-horizontal-aluminium-12-5-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(123,0,8,NULL,'25MM (woodlook)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-woodlook/01-L-Brown-2207.jpg',0,767300,NULL,'Horizontal Alumunium 25MM (woodlook)','1000x1000','L. WOOD (2207)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25mm-woodlook-uk-70x150-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8vdm7-jual-roller-blind-s-plus-horizontal-wood-uk-90x180-cm?from=product_owner&product_owner=normal_seller'),
+(124,0,8,NULL,'25MM (woodlook)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-woodlook/02-D-Brown-2207.jpg',0,767300,NULL,'Horizontal Alumunium 25MM (woodlook)','1000x1000','WOOD (2206)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25mm-woodlook-uk-70x150-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8vdm7-jual-roller-blind-s-plus-horizontal-wood-uk-90x180-cm?from=product_owner&product_owner=normal_seller'),
+(125,0,8,NULL,'25MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-patternless/07-Brown-6015.jpg',0,533500,NULL,'Horizontal Alumunium 25MM (Patternless)','1000x1000','BROWN (6015)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150cm-brown','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9llsk-jual-roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(126,0,8,NULL,'25MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-patternless/06-Sky-Blue-6009.jpg',0,533500,NULL,'Horizontal Alumunium 25MM (Patternless)','1000x1000','SKY BLUE (60009)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150cm-brown','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9llsk-jual-roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(127,0,8,NULL,'25MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-patternless/01-Milky-White-6001.jpg',0,533500,NULL,'Horizontal Alumunium 25MM (Patternless)','1000x1000','MILKY WHITE (6001)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150cm-brown','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9llsk-jual-roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(128,0,8,NULL,'25MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-patternless/04-Pink-2609.jpg',0,533500,NULL,'Horizontal Alumunium 25MM (Patternless)','1000x1000','PINK (2609)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150cm-brown','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9llsk-jual-roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(129,0,8,NULL,'25MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-patternless/02-Silver-2600.jpg',0,533500,NULL,'Horizontal Alumunium 25MM (Patternless)','1000x1000','SILVER (DSL 26000)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150cm-brown','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9llsk-jual-roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(130,0,8,NULL,'25MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-patternless/03-Ivory-2602.jpg',0,533500,NULL,'Horizontal Alumunium 25MM (Patternless)','1000x1000','LIGHT YELLOW (2602)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150cm-brown','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9llsk-jual-roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(131,0,8,NULL,'25MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-patternless/05-Mint-2606.jpg',0,533500,NULL,'Horizontal Alumunium 25MM (Patternless)','1000x1000','MINT (2606','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150cm-brown','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9llsk-jual-roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(132,0,8,NULL,'35MM (Perforated)',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-perforated/01-Silver-3050.jpg',0,671000,NULL,'Horizontal Alumunium 35MM (Perforated)','1000x1000','SILVER PERFORATED','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-perforated-uk-70x150-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9xcb9-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-perforated-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(133,0,8,NULL,'35MM (Perforated)',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-perforated/02-Gold-3010.jpg',0,671000,NULL,'Horizontal Alumunium 35MM (Perforated)','1000x1000','GOLD PERFORATED','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-perforated-uk-70x150-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9xcb9-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-perforated-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(134,0,8,NULL,'35MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-patternless/02-Matt-Silver-3500.jpg',0,556600,NULL,'Horizontal Alumunium 35MM (Patternless)','1000x1000','SILVER SHINE','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150cm-gold','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9pg0j-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(135,0,8,NULL,'35MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-patternless/05-Gold-3510.jpg',0,556600,NULL,'Horizontal Alumunium 35MM (Patternless)','1000x1000','GOLD SHINE','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150cm-gold','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9pg0j-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(136,0,8,NULL,'35MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-patternless/04-Silver-3511.jpg',0,556600,NULL,'Horizontal Alumunium 35MM (Patternless)','1000x1000','SILVER','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150cm-gold','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9pg0j-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(137,0,8,NULL,'35MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-patternless/01-Milky-White-3501.jpg',0,556600,NULL,'Horizontal Alumunium 35MM (Patternless)','1000x1000','WHITE','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150cm-gold','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9pg0j-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(138,0,8,NULL,'35MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-patternless/03-Black-3520.jpg',0,708400,NULL,'Horizontal Alumunium 35MM (Patternless)','1000x1000','BLACK','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150cm-gold','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9pg0j-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(139,0,8,NULL,'35MM Dot',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-dot/01-Silver-3808.jpg',0,657800,NULL,'Horizontal Alumunium 35MM Dot','1000x1000','SILVER DOT','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9n606-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(140,0,8,NULL,'35MM Dot',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-dot/02-Gold-3810.jpg',0,657800,NULL,'Horizontal Alumunium 35MM Dot','1000x1000','GOLD DOT','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9n606-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(141,0,9,'classic-2','classic-2','classic/classic-1-50.jpg','classic/classic-2-20.jpg','warna_new/19.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BROWN MOTIF','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9n606-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(142,0,9,'classic-2','classic-2','','classic/classic-2-20.jpg','warna_new/10.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BROWN','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9n606-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(143,0,9,'classic-1','classic-1','classic/classic-2-20.JPG','classic/classic-1-50.jpg','warna_new/veronastone-57.jpg',0,657800,NULL,'Pintu ABS','1000x1000','WHITE',NULL,NULL),
+(144,0,9,'classic-1','classic-1',NULL,'classic/classic-1-50.jpg','warna_new/10.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BLACK',NULL,NULL),
+(145,0,9,'classic-1','classic-1','','classic/classic-1-50.jpg','warna_new/20.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BROWN',NULL,NULL),
+(146,0,9,'classic-1','classic-1',NULL,'classic/classic-1-50.jpg','warna_new/59.jpg',NULL,NULL,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(147,0,9,'classic-1','classic-1',NULL,'classic/classic-1-50.jpg','warna_new/27.jpg',0,NULL,NULL,'Pintu ABS','1000x1000','YELLOW',NULL,NULL),
+(148,0,9,'classic-1','classic-1',NULL,'classic/classic-1-50.jpg','warna_new/80.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN 2',NULL,NULL),
+(149,0,9,'artdoor-c1-30','artdoor-c1-30','artdoor/artdoor-c1-30.jpg','artdoor/artdoor-c1-30.jpg','warna_new/59.jpg',NULL,NULL,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(150,0,9,'artdoor-c1-30','artdoor-c1-30',NULL,'artdoor/artdoor-c1-30.jpg','warna_new/20.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(151,0,9,'artdoor-c1-30','artdoor-c1-30',NULL,'artdoor/artdoor-c1-30.jpg','warna_new/27.jpg',NULL,NULL,NULL,NULL,'1000x1000','YELLOW',NULL,NULL),
+(152,0,10,'grande-pga-1090','grande-1','upvc/felice_upvc/grande-pga-1090.jpg','upvc/felice_upvc/grande-pga-1090.jpg','warna_new/50.jpg',NULL,NULL,NULL,'Pintu Upvc','1000x1000','WHITE',NULL,NULL),
+(153,0,10,'premium-p2-70','premium-1','upvc/sashdoor_upvc/premium-p2-70.jpg','upvc/sashdoor_upvc/premium-p2-70.jpg','warna_new/50.jpg',NULL,NULL,NULL,'Pintu Upvc','1000x1000','WHITE',NULL,NULL),
+(154,0,9,'artdoor-n2-50','artdoor-n2-50','artdoor/artdoor-n2-50.jpg','artdoor/artdoor-n2-50.jpg','warna_new/50.jpg',NULL,NULL,NULL,NULL,'1000x1000','WHITE',NULL,NULL),
+(155,0,9,'artdoor-p3-59','artdoor-p3-59','artdoor/artdoor-p3-59.jpg','artdoor/artdoor-p3-59.jpg','warna_new/59.jpg',NULL,NULL,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(156,0,9,'artdoor-r7-60','artdoor-r7-60','artdoor/artdoor-r7-60.jpg','artdoor/artdoor-r7-60.jpg','warna_new/60.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN',NULL,NULL);
+
+/*Table structure for table `tbl_galeri` */
+
 DROP TABLE IF EXISTS `tbl_galeri`;
-CREATE TABLE `tbl_galeri`  (
+
+CREATE TABLE `tbl_galeri` (
   `galeri_id` int(11) NOT NULL AUTO_INCREMENT,
-  `galeri_judul` varchar(60) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `galeri_tanggal` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP(0),
-  `galeri_gambar` varchar(40) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `galeri_kategori_id` int(11) NULL DEFAULT NULL,
-  `galeri_pengguna_id` int(11) NULL DEFAULT NULL,
-  `galeri_author` varchar(60) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `galeri_pengguna_id` int(11) DEFAULT NULL,
+  `galeri_judul` varchar(60) DEFAULT NULL,
+  `galeri_tanggal` timestamp NULL DEFAULT current_timestamp(),
+  `galeri_gambar` varchar(40) DEFAULT NULL,
+  `galeri_kategori` varchar(100) DEFAULT NULL,
+  `galeri_subkategori` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`galeri_id`) USING BTREE,
-  INDEX `galeri_album_id`(`galeri_kategori_id`) USING BTREE,
-  INDEX `galeri_pengguna_id`(`galeri_pengguna_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+  KEY `galeri_album_id` (`galeri_kategori`) USING BTREE,
+  KEY `galeri_pengguna_id` (`galeri_pengguna_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=173 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for tbl_inbox
--- ----------------------------
+/*Data for the table `tbl_galeri` */
+
+insert  into `tbl_galeri`(`galeri_id`,`galeri_pengguna_id`,`galeri_judul`,`galeri_tanggal`,`galeri_gambar`,`galeri_kategori`,`galeri_subkategori`) values 
+(4,2,'Event Jakarta S-Plus','2020-04-08 09:56:04','ea757575f99288d7bbe9e0066f01b377.jpg','aktifitas','Event Jakarta Maret 2020'),
+(5,2,'Penghargaan SMC','2020-04-09 08:48:15','9b6c8ec5bffc9db7e62c96126be59511.jpg','aktifitas','Penghargaan SMC'),
+(6,2,'Penghargaan SMC','2020-04-09 08:48:35','71dd5adaa057db31b54429c53a976551.jpg','aktifitas','Penghargaan SMC'),
+(7,2,'Penghargaan SMC','2020-04-09 08:48:54','91c70c91dd2e9efd06bbd829ade1a7f9.jpg','aktifitas','Penghargaan SMC'),
+(8,2,'Penghargaan SMC','2020-04-09 08:49:07','84bdfb29167a88428a7bccec48369175.jpg','aktifitas','Penghargaan SMC'),
+(9,2,'Jendela Swing S-Plus','2020-04-09 08:51:52','8725fc4cf26dc41429891f99fd057b30.jpg','jendela',''),
+(10,2,'Jendela Swing S-Plus','2020-04-09 09:34:39','89cc78f82ddec553dd6e5212fd3d64d7.jpg','jendela',''),
+(11,2,'Jendela Kombinasi S-Plus','2020-04-09 09:35:27','33149d0e7e35c19c53c8f36e3883e452.jpg','jendela',''),
+(12,2,'Pintu Classic ABS S-Plus','2020-04-09 09:36:05','2832c3542670022a7ce7e7ae17a89034.jpg','pintu',''),
+(13,2,'Pintu Classic ABS S-Plus','2020-04-09 09:38:01','29fbf0d65bf2c542381e6ca5e4977e0c.jpg','pintu',''),
+(14,2,'Pintu Classic ABS S-Plus','2020-04-09 09:49:33','3f25d3a0b841a0d3464c91efd35d3e0b.jpg','pintu',''),
+(15,2,'Pintu Classic ABS S-Plus','2020-04-09 09:51:32','f59dc77c36728f7f7054aac4619c7089.jpg','pintu',''),
+(16,2,'Pintu Fortebello ABS S-Plus','2020-04-09 09:57:01','9e67c2b25e1e6cce69f27834f479aabe.jpg','pintu',''),
+(17,2,'Pintu Fortebello ABS S-Plus','2020-04-09 09:58:18','7475fff49806492e044c59f319555695.jpg','pintu',''),
+(18,2,'Pintu Namo Membrane','2020-04-09 09:59:38','5bf428f74472aff692fba1e3f40cf537.jpg','namo',''),
+(19,2,'Pintu Premium Deco ABS S-Plus','2020-04-09 10:02:37','89917d6919bc9a2837e433ebd4514f74.jpg','pintu',''),
+(20,2,'Pintu Premium ABS S-Plus','2020-04-09 10:02:59','548a6d2f264f7774cc994f7ae76d1453.jpg','pintu',''),
+(21,2,'Pintu Premium ABS S-Plus','2020-04-09 10:03:33','039ddd5ed973f9c0baa915e996f39d46.jpg','pintu',''),
+(22,2,'Pintu Classic ABS S-Plus','2020-04-09 10:03:59','50b4f7997e8eb2f579e8f7aab59fab9f.jpg','pintu',''),
+(23,2,'Pintu Premium ABS S-Plus','2020-04-09 10:04:28','bbce8fbe64ad81e716e64b29ea429fe5.jpg','pintu',''),
+(24,2,'Pintu Premium ABS S-Plus','2020-04-09 10:04:52','f2f03a9eba688516aa68084cd4a46854.jpg','pintu',''),
+(25,2,'Pintu Premium ABS S-Plus','2020-04-09 10:05:04','f269a0b57a89690beb52b4f0e4b2c6fc.jpg','pintu',''),
+(26,2,'Pintu Fortebello S-Plus','2020-04-09 10:05:23','9a44d35bc413f23ee91cc0c4cd84dc53.jpg','pintu',''),
+(27,2,'Pintu Premium ABS S-Plus','2020-04-09 10:09:27','661174206696e4d66979689950f4f383.jpg','pintu',''),
+(28,2,'Pintu Classic ABS S-Plus','2020-04-09 10:10:08','f1b0bacc741573720aa76f5a725cbd92.jpg','pintu',''),
+(29,2,'Plafon Polos uPVC S-Plus','2020-04-09 10:13:41','f153dae0ed4eeba9f6e3ecb47e8c1933.jpg','plafon',''),
+(30,2,'Plafon Polos uPVC S-Plus','2020-04-09 10:14:19','c94597836b6426c0570066d6972d28c7.jpg','plafon',''),
+(31,2,'Plafon Polos uPVC S-Plus','2020-04-09 10:15:15','1078234064c09a0ec22fc75ae751694c.jpg','plafon',''),
+(32,2,'Plafon Laminate uPVC S-Plus','2020-04-09 10:15:43','b0d152982f4b5258703ea65f08bfe257.jpg','plafon',''),
+(33,2,'Plafon Laminate uPVC S-Plus','2020-04-09 10:16:25','657e2f04bad6daf142a3acde644b230a.jpg','plafon',''),
+(34,2,'Plafon Laminate uPVC S-Plus','2020-04-09 10:17:08','4549a54212135f9fe1474cfa84ff1b5f.jpg','plafon',''),
+(35,2,'Plafon Deco uPVC S-Plus','2020-04-09 10:18:00','db49c3763e9083a55f598f6aa91aec6f.jpg','plafon',''),
+(36,2,'Plafon Laminate uPVC S-Plus','2020-04-09 10:18:32','b500b96a60f44f16150bb8895c3bc0af.jpg','plafon',''),
+(37,2,'Plafon Laminate uPVC S-Plus','2020-04-09 10:19:03','83251c83cdd416b537c8b372a42ce933.jpg','plafon',''),
+(38,2,'WPC Deck S-Plus','2020-04-09 10:21:25','ac1959f35fe5f812c8892f8cced31c49.jpg','wpc',''),
+(39,2,'WPC Deck S-Plus','2020-04-09 10:21:41','6e5cf4e436f0bb1eb363b1e4bf25e52e.jpg','wpc',''),
+(40,2,'WPC Wall S-Plus','2020-04-09 10:22:03','9b853f2e04f2e24058e320eb1720dc6a.jpg','wpc',''),
+(41,2,'WPC Wall S-Plus','2020-04-09 10:22:21','60606c98463f7c8bbb78fa0325bf33b4.jpg','wpc',''),
+(42,2,'WPC Wall S-Plus','2020-04-09 10:22:37','2ea92cfd7f0abf77ea658eb5424e5330.jpg','wpc',''),
+(43,2,'Roller Blind S-Plus','2020-04-09 10:25:23','c2e9e4d9efe4cffde747bd69aabadae6.jpg','shade',''),
+(44,2,'Roller Blind S-Plus','2020-04-09 10:25:39','a2bfa360d7bc592b2663ced8e987b026.jpg','shade',''),
+(45,2,'Roller Blind S-Plus','2020-04-09 10:25:53','664b6936b80dbb99c4a84389a3a9ebf0.jpg','shade',''),
+(46,2,'Roller Blind S-Plus','2020-04-09 10:26:12','8ae262274d9957a3c7922c539f60e670.jpg','shade',''),
+(47,2,'Roller Blind S-Plus','2020-04-09 10:26:28','2a90830e0b9ead5f7b096419b46623d8.jpg','shade',''),
+(48,2,'Roller Blind S-Plus','2020-04-09 10:26:39','93696cb4e7bf0de6948c5516cf9b7c40.jpg','shade',''),
+(49,2,'Roller Blind S-Plus','2020-04-09 10:26:54','6f100ba97d493fa8fa26a46e11263ed1.jpg','shade',''),
+(50,2,'Roller Blind S-Plus','2020-04-09 10:27:08','5fd6f296077c67668df6e6c5da7f47e7.jpg','shade',''),
+(51,2,'Roller Blind S-Plus','2020-04-09 10:27:24','2b5f8f64f98e07c00588b15b6c0f3aa0.jpg','shade',''),
+(52,2,'Solid Surface S-Plus','2020-04-09 10:29:09','d36877ad369d7c6005c09bb94bfbf9f2.jpg','solid',''),
+(53,2,'Solid Surface S-Plus','2020-04-09 10:29:29','433790a81ec2868e067aebe109cb3e48.jpg','solid',''),
+(54,2,'Solid Surface S-Plus','2020-04-09 10:30:07','6de52fae0eecb8cba647565626ee3412.jpg','solid',''),
+(55,2,'Solid Surface S-Plus','2020-04-09 10:30:23','bebaead77d0da55fb50a7fbdfc6cc4fe.jpg','solid',''),
+(56,2,'Solid Surface S-Plus','2020-04-09 10:30:38','dcf8951e4f3d6cdd9cdae98e6cf9dee6.jpg','solid',''),
+(57,2,'Solid Surface S-Plus','2020-04-09 10:30:49','60e2b17386a3056d0b06eae9909e4fb9.jpg','solid',''),
+(58,2,'Kitchen Set S-Plus','2020-04-09 10:31:57','af529417bbabbd9a4b943a6e263cf9d0.jpg','kitchen',''),
+(59,2,'Kitchen Set S-Plus','2020-04-09 10:32:15','e6010b0c80e7b37a3953570481b5451e.jpg','kitchen',''),
+(60,2,'Kitchen Set S-Plus','2020-04-09 10:32:32','c08fba19fb1c1ef8b4644598c5c3bd73.jpg','kitchen',''),
+(61,2,'Kitchen Set S-Plus','2020-04-09 10:32:46','24cdbcaecea94a7ae43207882cdf326c.jpg','kitchen',''),
+(62,2,'Kitchen Set S-Plus','2020-04-09 10:33:03','55bad0ac5c7268439f0dda8528fdeddf.jpg','kitchen',''),
+(63,2,'Kitchen Set S-Plus','2020-04-09 10:33:17','d908ade36a5da626b7f3168c5dfacbe1.jpg','kitchen',''),
+(64,2,'Kitchen Set S-Plus','2020-04-09 10:33:28','8ef8da9f5db15bb9d914cb00ace212b7.jpg','kitchen',''),
+(65,2,'Kitchen Set S-Plus','2020-04-09 10:33:40','33e4c6a1774e34295c93a04c3d89eccc.jpg','kitchen',''),
+(66,2,'Kitchen Set S-Plus','2020-04-09 10:33:53','a81e6b8c7fb2bb312f2f89e470b4f9c9.jpg','kitchen',''),
+(67,2,'Kitchen Set S-Plus','2020-04-09 10:34:04','2790487c4a53a56ce341141a45cfd31a.jpg','kitchen',''),
+(68,2,'Kitchen Set S-Plus','2020-04-09 10:34:17','dbc6731e0fd6abd8cd56a992858a511d.jpg','kitchen',''),
+(69,2,'Kitchen Set S-Plus','2020-04-09 10:34:33','03cfedfcfa35f5b246c8ef272db34f02.jpg','kitchen',''),
+(83,2,'Event Jakarta','2020-04-09 13:38:59','c4df171af38f08f47e17411b99ed5643.jpg','aktifitas','Event Indobuildtech Jakarta 2016'),
+(84,2,'Event Jakarta','2020-04-09 13:48:42','b65d054bbe5aeb48dca6f94b7ae8013a.jpg','aktifitas','Event Indobuildtech Jakarta 2016'),
+(85,2,'Event Jakarta','2020-04-09 13:48:55','9e78dd1742207b0ea95c7e2a56cdd36a.jpg','aktifitas','Event Indobuildtech Jakarta 2016'),
+(86,2,'Event Jakarta','2020-04-09 13:49:09','b3ce1e2eb6d48544650778a2440f9966.jpg','aktifitas','Event Indobuildtech Jakarta 2016'),
+(87,2,'Event Jakarta','2020-04-09 13:49:23','71c6447610cab7c26009ecf3a19b4634.jpg','aktifitas','Event Indobuildtech Jakarta 2016'),
+(90,2,'Event Surabaya','2020-04-09 13:54:14','de70b161ab58122de85de8ad0a4c0eb0.jpg','aktifitas','Event Indobuildtech Surabaya 2016'),
+(91,2,'Event Surabaya','2020-04-09 13:54:34','434b9f35038205cd07f5eddc3a7b75d9.jpg','aktifitas','Event Indobuildtech Surabaya 2016'),
+(93,2,'Event Surabaya','2020-04-09 14:10:27','6bac98c683f2d08f84868e6416dc7f96.jpg','aktifitas','Event Indobuildtech Surabaya 2016'),
+(94,2,'Event Surabaya','2020-04-09 14:10:55','aaf82cc90783eb7d2de4d73e6c4c92b5.jpg','aktifitas','Event Indobuildtech Surabaya 2016'),
+(95,2,'Event Surabaya','2020-04-09 14:11:13','d1e8b90d2d98a6c4d5aa65bacd5300b0.jpg','aktifitas','Event Indobuildtech Surabaya 2016'),
+(96,2,'Event Surabaya','2020-04-09 14:11:27','450f8e22957b5accfe5930b4134da904.jpg','aktifitas','Event Indobuildtech Surabaya 2016'),
+(97,2,'Event Surabaya','2020-04-09 14:11:40','43bb4d3d86b12c51eb765bfa09cfc6aa.jpg','aktifitas','Event Indobuildtech Surabaya 2016'),
+(98,2,'Event Surabaya','2020-04-09 14:11:53','32a76cf379651d5bf90f6ea33d6ed145.jpg','aktifitas','Event Indobuildtech Surabaya 2016'),
+(99,2,'Event Surabaya','2020-04-09 14:12:08','4ebf9fd91b4b3ff1c96b982299e82e50.jpg','aktifitas','Event Indobuildtech Surabaya 2016'),
+(100,2,'Event Surabaya','2020-04-09 14:12:20','fa28cbcc46701a9b4002f872be578ade.jpg','aktifitas','Event Indobuildtech Surabaya 2016'),
+(108,2,'Gathering S-Plus','2020-04-09 14:19:22','6c39f8c9143d506883e41dad3f9f3125.jpg','aktifitas','Gathering'),
+(109,2,'Gathering S-Plus','2020-04-09 14:19:57','3276fa1a7d58c56c97d1fc9c367068b8.jpg','aktifitas','Gathering'),
+(110,2,'Gathering S-Plus','2020-04-09 14:20:11','bc54fa87b1c3d9ed37fcd8bc741233e2.jpg','aktifitas','Gathering'),
+(111,2,'Gathering S-Plus','2020-04-09 14:20:26','e1a3d0ca5ce5609cfbf5f9ac1a9e3d92.jpg','aktifitas','Gathering'),
+(112,2,'Gathering S-Plus','2020-04-09 14:20:45','dfec4981d36103411fcd4f343a9f4363.jpg','aktifitas','Gathering'),
+(113,2,'Gathering S-Plus','2020-04-09 14:21:03','484406c6ffe3239068573c36a836206f.jpg','aktifitas','Gathering'),
+(114,2,'Gathering S-Plus','2020-04-09 14:21:15','a8c6496dd4a87afe550cdf4fa4a0c9f6.jpg','aktifitas','Gathering'),
+(115,2,'Gathering S-Plus','2020-04-09 14:21:27','e6f5fce411942fb454486d99c99bc005.jpg','aktifitas','Gathering'),
+(116,2,'Jogja Expo','2020-04-09 14:22:11','209e87a632b850235db50931c6e906eb.jpg','aktifitas','Jogja Expo 2016'),
+(117,2,'Jogja Expo','2020-04-09 14:22:30','d5a9e7917bb664b2896da991c77a9b8c.jpg','aktifitas','Jogja Expo 2016'),
+(118,2,'Jogja Expo','2020-04-09 14:22:42','cd474f1bacd583f504972b671a260e3c.jpg','aktifitas','Jogja Expo 2016'),
+(119,2,'Jogja Expo','2020-04-09 14:22:55','128688ed50fc0a94327d9d8221e91592.jpg','aktifitas','Jogja Expo 2016'),
+(120,2,'Jogja Expo','2020-04-09 14:23:09','5fe5e8e2a3b4f262aa801fdfb5d71d01.jpg','aktifitas','Jogja Expo 2016'),
+(121,2,'Jogja Expo','2020-04-09 14:23:22','87ae44c757b2a47d49c0cd6e3b3a2b76.jpg','aktifitas','Jogja Expo 2016'),
+(122,2,'Jogja Expo','2020-04-09 14:23:34','b92a90df308645813675cf3931ca356d.jpg','aktifitas','Jogja Expo 2016'),
+(123,2,'Jogja Expo','2020-04-09 14:23:46','055484045f22662c7628cf4c0bb0fc20.jpg','aktifitas','Jogja Expo 2016'),
+(124,2,'Jogja Expo','2020-04-09 14:24:01','e38ee6d97e24ec30849e93fad70bb01e.jpg','aktifitas','Jogja Expo 2016'),
+(125,2,'Jogja Expo','2020-04-09 14:24:11','efc11e13e1810f359bd243fa9c7a5aa5.jpg','aktifitas','Jogja Expo 2016'),
+(126,2,'Jogja Expo','2020-04-09 14:24:23','af2fef9d83645de2ca439f47d61e92bb.jpg','aktifitas','Jogja Expo 2016'),
+(127,2,'Jogja Expo','2020-04-09 14:24:35','55cab74f0ea497b1f40ee8043887be7f.jpg','aktifitas','Jogja Expo 2016'),
+(128,2,'Jendela uPVC','2020-04-09 14:25:55','394a325898cfda54ad791b1cb192a6f0.jpg','jendela',''),
+(129,2,'Jendela uPVC','2020-04-09 14:26:06','671fc55fc84bea2003c3b33d608ad767.jpg','jendela',''),
+(130,2,'Jendela uPVC','2020-04-09 14:26:30','a20621db9c30a0c909bf6f00a4ff6e4a.jpg','jendela',''),
+(131,2,'Jendela uPVC','2020-04-09 14:26:43','023b9ebca8c2231b0e4e958cf2b1c3c0.jpeg','jendela',''),
+(132,2,'Jendela uPVC','2020-04-09 14:26:56','899b9ed17cb54b5013f431b551a7b82b.jpg','jendela',''),
+(133,2,'Jendela uPVC','2020-04-09 14:27:14','71b1846d57eab354593606dba5f3d3a7.jpg','jendela',''),
+(134,2,'Jendela uPVC','2020-04-09 14:27:30','0e6e80bc7c11f0cb7473332cf6e297c9.jpg','jendela',''),
+(135,2,'Jendela uPVC','2020-04-09 14:27:51','65470993887c20ec7950b00c81054f70.jpg','jendela',''),
+(136,2,'Jendela uPVC','2020-04-09 14:28:03','5d6de83cab9b7b2cfcee5656ab8dd66c.jpg','jendela',''),
+(137,2,'Jendela uPVC','2020-04-09 14:28:23','4d9bf7badbc8eb7f037c0e4fad57f947.jpg','jendela',''),
+(138,2,'Jendela uPVC','2020-04-09 14:30:40','476941858e9ae49864ed0a06f7e79764.jpg','jendela',''),
+(139,2,'Jendela uPVC','2020-04-09 14:31:30','14f0f0349064b43b532188b64a96fa20.jpg','jendela',''),
+(140,2,'Jendela uPVC','2020-04-09 14:31:58','092ba350ed728c80a9a52e05cd9b9f88.jpg','jendela',''),
+(141,2,'Jendela uPVC','2020-04-09 14:32:26','0e9c0e6ab3ccc8ef77b11c707ef5b419.jpg','jendela',''),
+(142,2,'Jendela uPVC','2020-04-09 14:33:10','eb5ede5cf25393f920550e0a4cd1040b.jpg','jendela',''),
+(144,2,'Jendela uPVC','2020-04-09 14:37:11','70e3d6ef223565774496d8bf4f22204f.jpg','jendela',''),
+(146,2,'DPRD PEMALANG','2021-11-12 11:19:14','9999118f2daca6dcc2ba63d4ae753016.jpg','project','GEDUNG DPRD PEMALANG'),
+(149,2,'DPRD PEMALANG','2021-11-12 12:36:37','952209fdecc205a2fca13fde31320ad1.jpg','project','GEDUNG DPRD PEMALANG'),
+(150,2,'DPRD PEMALANG','2021-11-12 13:06:43','1b02ee6d9f174c7df816a15a2d611f2f.jpg','project','GEDUNG DPRD PEMALANG'),
+(151,2,'C HOTEL','2021-11-12 13:22:30','4626c4ba45cba002781e35514c4841c8.jpg','project','HOTEL C CIREBON'),
+(152,2,'C HOTEL','2021-11-12 13:22:57','f7b04e3f3b411f675e6f6320e76b5267.jpg','project','HOTEL C CIREBON'),
+(153,2,'C HOTEL','2021-11-12 13:23:16','ec56802c0c8b3e064a4cdf1fbfb80d7e.jpg','project','HOTEL C CIREBON'),
+(163,2,'kosan yogya','2021-11-12 13:52:44','1c4decd0972235b477cd7b9e08305616.jpg','project','PROYEK KOSAN YOGYA'),
+(164,2,'kosan yogya','2021-11-12 13:53:57','8b44df1d14a51535e0a5a769c0be54ef.jpg','project','PROYEK KOSAN YOGYA'),
+(165,2,'kosan yogya','2021-11-12 13:54:14','70ecd6e89d8d3d89844e52af9a31337b.jpg','project','PROYEK KOSAN YOGYA'),
+(166,2,'kosan yogya','2021-11-12 13:54:35','46e84c0efed07e44219aecda1a3ae488.jpg','project','PROYEK KOSAN YOGYA'),
+(167,2,'kosan yogya','2021-11-12 13:54:59','ab3c1aae7787c19ab8676c0508039896.jpg','project','PROYEK KOSAN YOGYA'),
+(168,2,'rumah','2021-11-12 14:00:53','23346690caca9670bf72945387ced53b.jpg','project','RUMAH PRIBADI'),
+(169,2,'rumah','2021-11-12 14:02:23','81351f5cbd46fe9a5411b004c0d1fd78.jpg','project','RUMAH PRIBADI'),
+(170,2,'abs rumah tinggal','2021-11-12 14:05:14','011eb82742c660e8c1b5142319421fcc.jpg','project','ABS RUMAH TINGGAL'),
+(171,2,'abs rumah tinggal','2021-11-12 14:07:05','d328ab675611c5b09f0e16157a6ec154.jpg','project','ABS RUMAH TINGGAL'),
+(172,2,'abs rumah tinggal','2021-11-12 14:07:25','5f83a59a4b7ad57f173850281be90074.jpg','project','ABS RUMAH TINGGAL');
+
+/*Table structure for table `tbl_inbox` */
+
 DROP TABLE IF EXISTS `tbl_inbox`;
-CREATE TABLE `tbl_inbox`  (
+
+CREATE TABLE `tbl_inbox` (
   `inbox_id` int(11) NOT NULL AUTO_INCREMENT,
-  `inbox_nama` varchar(40) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `inbox_email` varchar(60) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `inbox_kontak` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `inbox_pesan` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
-  `inbox_tanggal` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP(0),
-  `inbox_status` int(11) NULL DEFAULT 1 COMMENT '1=Belum dilihat, 0=Telah dilihat',
+  `inbox_nama` varchar(40) DEFAULT NULL,
+  `inbox_email` varchar(60) DEFAULT NULL,
+  `inbox_kontak` varchar(20) DEFAULT NULL,
+  `inbox_pesan` text DEFAULT NULL,
+  `inbox_tanggal` timestamp NULL DEFAULT current_timestamp(),
+  `inbox_status` int(11) DEFAULT 1 COMMENT '1=Belum dilihat, 0=Telah dilihat',
   PRIMARY KEY (`inbox_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for tbl_kategori
--- ----------------------------
+/*Data for the table `tbl_inbox` */
+
+/*Table structure for table `tbl_kategori` */
+
 DROP TABLE IF EXISTS `tbl_kategori`;
-CREATE TABLE `tbl_kategori`  (
+
+CREATE TABLE `tbl_kategori` (
   `kategori_id` int(11) NOT NULL AUTO_INCREMENT,
-  `kategori_nama` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `kategori_deskripsi` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `kategori_tanggal` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP(0),
-  `kategori_pengguna_id` int(11) NULL DEFAULT NULL,
-  `kategori_author` varchar(60) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `kategori_count` int(11) NULL DEFAULT 0,
-  `kategori_cover` varchar(40) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `kategori_nama` varchar(50) DEFAULT NULL,
+  `kategori_deskripsi` text NOT NULL,
+  `kategori_tanggal` timestamp NULL DEFAULT current_timestamp(),
+  `kategori_pengguna_id` int(11) DEFAULT NULL,
+  `kategori_author` varchar(60) DEFAULT NULL,
+  `kategori_count` int(11) DEFAULT 0,
+  `kategori_cover` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`kategori_id`) USING BTREE,
-  INDEX `album_pengguna_id`(`kategori_pengguna_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+  KEY `album_pengguna_id` (`kategori_pengguna_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Records of tbl_kategori
--- ----------------------------
-INSERT INTO `tbl_kategori` VALUES (3, 'S-PLUS PINTU', 'S+ Door menjadikan ruangan anda menjadi nyaman dan penuh ketenangan yang dipancarkan oleh berbagai macam warna dan tekstur yang khas. Dengan tekstur kayu yang sangat mirip dengan kayu yang sebenarnya memberi kesan keindahan yang alami.', '2020-01-14 03:06:23', 2, 'Jenat', 5, '527e8e4535016385a675b7e8793c0a0a.png');
-INSERT INTO `tbl_kategori` VALUES (4, 'S-PLUS JENDELA', 'S+ Jendel', '2020-01-14 03:06:58', 2, 'Jenat', 0, '7a0aca8a8e8cc6ef6e376346538af455.png');
-INSERT INTO `tbl_kategori` VALUES (5, 'S-PLUS PLAFON', 'S+ Plafon', '2020-01-14 03:07:15', 2, 'Jenat', 0, '4335476687ab48555a9181c7b9a03999.png');
-INSERT INTO `tbl_kategori` VALUES (7, 'S-PLUS WPC DECK TILE', 'S+ WPC Deck', '2020-01-14 03:09:00', 2, 'Jenat', 0, 'a9a8e1f4ece6b6d93992010c004ffe6d.png');
-INSERT INTO `tbl_kategori` VALUES (8, 'S-PLUS SUN SHADE', 'S+ Sun Shade', '2020-01-14 03:09:21', 2, 'Jenat', 0, '72a5c3f21c9702bc2db3048fe7255df9.png');
-INSERT INTO `tbl_kategori` VALUES (9, 'S-PLUS SOLID SURFACE', 'S+ Solid surface adalah material sintetis mirip dengan batu granit atau batu marmer yang terbuat dari campuran Unsaturated Polyester (UPE) dan Filer Aluminium Tri-Hydroxide (ATH). Solid surface memiliki banyak keunggulan. Jika batu marmer atau granit memiliki pori-pori pada permukaannya, maka solid surface tidak memiliki pori-pori', '2020-01-29 00:56:34', 2, 'Jenat', 0, 'bb4a9f57fb644b614d1b8050ded37e5c.png');
-INSERT INTO `tbl_kategori` VALUES (10, 'S-PLUS KITCHEN SET', 'S+ Kitchen Set', '2020-01-29 00:56:45', 2, 'Jenat', 0, '5e2247186fda852d07e1797d2d65668c.png');
-INSERT INTO `tbl_kategori` VALUES (11, 'NAMO-PINTU', 'NAMO', '2020-02-11 02:06:39', 2, 'Jenat', 0, '7dbc31f7e1cb535948332a9ec78f3edb.jpg');
+/*Data for the table `tbl_kategori` */
 
--- ----------------------------
--- Table structure for tbl_komentar
--- ----------------------------
+insert  into `tbl_kategori`(`kategori_id`,`kategori_nama`,`kategori_deskripsi`,`kategori_tanggal`,`kategori_pengguna_id`,`kategori_author`,`kategori_count`,`kategori_cover`) values 
+(1,'PINTU','pintu','2022-04-20 14:06:01',22,'itakumala',0,'27902e4b4afb3ff1d9b2339f8dcacfc0.png'),
+(2,'JENDELA','jendela','2022-04-07 08:52:33',2,'itakumala',0,'6b36b3199192acf2125e4ea104f84dd3.png'),
+(3,'INTERIOR_MATERIAL','interior_material','2022-04-07 08:54:11',3,'itakumala',0,'88cec07b0d17fd617ea4d83ad55be21b.png'),
+(4,'EXTERIOR_MATERIAL','exterior_material','2022-04-07 08:54:52',4,'itakumala',0,'5c061f4f3acdf0a5cc258b5d5010b071.png'),
+(5,'MASKER','masker','2022-04-07 08:55:10',5,'itakumala',0,'85ff4bef35a883ab9e7bda0c050a8111.png'),
+(6,'AKSESORIS','aksesoris','2022-06-14 08:34:38',22,'itakumala',0,'9c6aed9e3dd0a575f040d8e8d7bec88f.png');
+
+/*Table structure for table `tbl_kategoriproduk` */
+
+DROP TABLE IF EXISTS `tbl_kategoriproduk`;
+
+CREATE TABLE `tbl_kategoriproduk` (
+  `id_kategori_produk` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_kategori` varchar(225) NOT NULL,
+  `kategori_seo` varchar(225) NOT NULL,
+  PRIMARY KEY (`id_kategori_produk`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_kategoriproduk` */
+
+insert  into `tbl_kategoriproduk`(`id_kategori_produk`,`nama_kategori`,`kategori_seo`) values 
+(1,'PINTU','pintu'),
+(2,'JENDELA','jendela'),
+(3,'INLIFE','inlife'),
+(4,'OUTLIFE','outlife'),
+(5,'MASKER','masker'),
+(6,'AKSESORIS','aksesoris');
+
+/*Table structure for table `tbl_kelas` */
+
+DROP TABLE IF EXISTS `tbl_kelas`;
+
+CREATE TABLE `tbl_kelas` (
+  `kelas_id` int(11) NOT NULL AUTO_INCREMENT,
+  `produk_subkategori` int(11) NOT NULL,
+  `kelas_nama` varchar(50) DEFAULT NULL,
+  `kelas_deskripsi` text NOT NULL,
+  `kelas_tanggal` timestamp NULL DEFAULT current_timestamp(),
+  `kelas_pengguna_id` int(11) DEFAULT NULL,
+  `kelas_author` varchar(60) DEFAULT NULL,
+  `kelas_count` int(11) DEFAULT 0,
+  `kelas_cover` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`kelas_id`),
+  KEY `album_pengguna_id` (`kelas_pengguna_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+
+/*Data for the table `tbl_kelas` */
+
+insert  into `tbl_kelas`(`kelas_id`,`produk_subkategori`,`kelas_nama`,`kelas_deskripsi`,`kelas_tanggal`,`kelas_pengguna_id`,`kelas_author`,`kelas_count`,`kelas_cover`) values 
+(1,1,'classic','classic','2022-06-14 10:11:20',22,'itakumala',0,'10438a73156c90c2c68b86cffa45b70d.png');
+
+/*Table structure for table `tbl_komentar` */
+
 DROP TABLE IF EXISTS `tbl_komentar`;
-CREATE TABLE `tbl_komentar`  (
+
+CREATE TABLE `tbl_komentar` (
   `komentar_id` int(11) NOT NULL AUTO_INCREMENT,
-  `komentar_nama` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `komentar_email` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `komentar_web` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `komentar_isi` varchar(120) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `komentar_tanggal` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP(0),
-  `komentar_status` int(2) NULL DEFAULT 0,
-  `komentar_tulisan_id` int(11) NULL DEFAULT NULL,
-  `komentar_parent` int(11) NULL DEFAULT 0,
+  `komentar_nama` varchar(30) DEFAULT NULL,
+  `komentar_email` varchar(50) DEFAULT NULL,
+  `komentar_web` varchar(100) DEFAULT NULL,
+  `komentar_isi` varchar(120) DEFAULT NULL,
+  `komentar_tanggal` timestamp NULL DEFAULT current_timestamp(),
+  `komentar_status` int(2) DEFAULT 0,
+  `komentar_tulisan_id` int(11) DEFAULT NULL,
+  `komentar_parent` int(11) DEFAULT 0,
   PRIMARY KEY (`komentar_id`) USING BTREE,
-  INDEX `komentar_tulisan_id`(`komentar_tulisan_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+  KEY `komentar_tulisan_id` (`komentar_tulisan_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for tbl_log_aktivitas
--- ----------------------------
+/*Data for the table `tbl_komentar` */
+
+/*Table structure for table `tbl_log_aktivitas` */
+
 DROP TABLE IF EXISTS `tbl_log_aktivitas`;
-CREATE TABLE `tbl_log_aktivitas`  (
+
+CREATE TABLE `tbl_log_aktivitas` (
   `log_id` int(11) NOT NULL AUTO_INCREMENT,
-  `log_nama` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
-  `log_tanggal` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP(0),
-  `log_ip` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `log_pengguna_id` int(11) NULL DEFAULT NULL,
-  `log_icon` blob NULL,
-  `log_jenis_icon` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `log_nama` text DEFAULT NULL,
+  `log_tanggal` timestamp NULL DEFAULT current_timestamp(),
+  `log_ip` varchar(20) DEFAULT NULL,
+  `log_pengguna_id` int(11) DEFAULT NULL,
+  `log_icon` blob DEFAULT NULL,
+  `log_jenis_icon` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`log_id`) USING BTREE,
-  INDEX `log_pengguna_id`(`log_pengguna_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+  KEY `log_pengguna_id` (`log_pengguna_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for tbl_pelanggan
--- ----------------------------
+/*Data for the table `tbl_log_aktivitas` */
+
+/*Table structure for table `tbl_pelanggan` */
+
 DROP TABLE IF EXISTS `tbl_pelanggan`;
-CREATE TABLE `tbl_pelanggan`  (
-  `pelanggan_id` int(11) NOT NULL AUTO_INCREMENT,
-  `pelanggan_foto` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `pelanggan_nama` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `pelanggan_provinsi` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `pelanggan_kecamatan` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `pelanggan_kota` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `pelanggan_kelurahan` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `pelanggan_alamat` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
-  `pelanggan_kodepos` decimal(5, 0) NULL DEFAULT NULL,
-  `pelanggan_ttl` date NULL DEFAULT NULL,
-  `pelanggan_telpon` decimal(15, 0) NULL DEFAULT NULL,
-  `pelanggan_username` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `pelanggan_email` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `pelanggan_password` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
-  `pelanggan_status` enum('verify','active') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT 'verify',
-  `pelanggan_token` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `pelanggan_last_login` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP(0) ON UPDATE CURRENT_TIMESTAMP(0),
-  PRIMARY KEY (`pelanggan_id`, `pelanggan_foto`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
--- ----------------------------
--- Records of tbl_pelanggan
--- ----------------------------
-INSERT INTO `tbl_pelanggan` VALUES (3, 'a245b4b6e746bf5e1c4ddac3e978476f.png', 'Splus Indonesia', 'JAWA BARAT', 'HARJAMUKTI', 'KOTA CIREBON', 'KALIJAGA', 'Jl. Raya Kanci ', 45144, '1992-07-28', 8794548241, 'splusindo', 'splusindo255@gmail.com', '$2y$10$qfcDQyjkEj1Pplta5A8hjeJa6Mwe/hEaprFLuDvSeW4k1zy25Q8lu', 'active', '400345', '2020-02-18 01:22:27');
-INSERT INTO `tbl_pelanggan` VALUES (4, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'faradillaiva@gmail.com', NULL, 'verify', '400345', '2020-02-18 01:22:27');
+CREATE TABLE `tbl_pelanggan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `session_id` varchar(100) DEFAULT NULL,
+  `nama` varchar(100) DEFAULT NULL,
+  `email` varchar(150) DEFAULT NULL,
+  `telepon` varchar(15) DEFAULT NULL,
+  `handphone` varchar(15) DEFAULT NULL,
+  `alamat` text DEFAULT NULL,
+  `kecamatan` varchar(100) DEFAULT NULL,
+  `kota` varchar(100) DEFAULT NULL,
+  `provinsi` varchar(100) DEFAULT NULL,
+  `kodepos` varchar(6) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=latin1;
 
--- ----------------------------
--- Table structure for tbl_pelanggan_keranjang
--- ----------------------------
-DROP TABLE IF EXISTS `tbl_pelanggan_keranjang`;
-CREATE TABLE `tbl_pelanggan_keranjang`  (
-  `keranjang_id` int(11) NOT NULL AUTO_INCREMENT,
-  `keranjang_pelanggan_id` int(11) NULL DEFAULT NULL,
-  `keranjang_produk_id` int(11) NULL DEFAULT NULL,
-  `keranjang_kuantitas` int(11) NULL DEFAULT NULL,
-  `keranjang_total` int(20) NULL DEFAULT NULL,
-  `keranjang_warna` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `keranjang_ukuran` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  PRIMARY KEY (`keranjang_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+/*Data for the table `tbl_pelanggan` */
 
--- ----------------------------
--- Records of tbl_pelanggan_keranjang
--- ----------------------------
-INSERT INTO `tbl_pelanggan_keranjang` VALUES (17, 3, 231, 1, 402600, '1023#743', '');
+insert  into `tbl_pelanggan`(`id`,`session_id`,`nama`,`email`,`telepon`,`handphone`,`alamat`,`kecamatan`,`kota`,`provinsi`,`kodepos`) values 
+(43,'22745457468250657','sw','sw@gsw.com','089xxxxxx','089xxxxxx','anjas','Arjasari','Kabupaten Bandung','Jawa Barat','3421'),
+(44,'22745457468250657','tesa','tesa@bb.com','083xxxxxx','083xxxxxx','kejaksan','Kejaksan','Kota Cirebon','Jawa Barat','45192'),
+(24,'22745457468250657','gandi','aruldimyati96@gmail.com','08xxxxxxxxxx','08xxxxxxxxxx','jl.Bengkulu','Gading Cempaka','Kota Bengkulu','Bengkulu','45123');
 
--- ----------------------------
--- Table structure for tbl_pelanggan_pesanan
--- ----------------------------
-DROP TABLE IF EXISTS `tbl_pelanggan_pesanan`;
-CREATE TABLE `tbl_pelanggan_pesanan`  (
-  `pesanan_id` int(11) NOT NULL AUTO_INCREMENT,
-  `pesanan_faktur` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `pesanan_pelanggan_id` int(11) NULL DEFAULT NULL,
-  `pesanan_produk_id` int(11) NULL DEFAULT NULL,
-  `pesanan_kuantitas` int(10) NULL DEFAULT NULL,
-  `pesanan_total` int(20) NULL DEFAULT NULL,
-  `pesanan_status` enum('Sudah Bayar','Belum Bayar','Selesai') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `pesanan_pengiriman` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `pesanan_tanggal` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP(0) ON UPDATE CURRENT_TIMESTAMP(0),
-  `pesanan_catatan` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
-  `pesanan_metode_pembayaran` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `pesanan_warna` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `pesanan_ukuran` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`pesanan_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+/*Table structure for table `tbl_pembelian` */
 
--- ----------------------------
--- Records of tbl_pelanggan_pesanan
--- ----------------------------
-INSERT INTO `tbl_pelanggan_pesanan` VALUES (13, 'SPLUS39873', 3, 232, 2, 721600, 'Sudah Bayar', NULL, '2020-02-03 03:27:44', NULL, 'Virtual Account Mandiri', 'Brown', '200x800');
-INSERT INTO `tbl_pelanggan_pesanan` VALUES (14, 'SPLUS67291', 3, 231, 4, 1610400, 'Belum Bayar', NULL, '2020-02-13 03:59:35', NULL, 'Virtual Account MANDIRI', '1023#743', NULL);
+DROP TABLE IF EXISTS `tbl_pembelian`;
 
--- ----------------------------
--- Table structure for tbl_pengguna
--- ----------------------------
+CREATE TABLE `tbl_pembelian` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pengguna_id` int(11) DEFAULT NULL,
+  `pelanggan_id` int(11) DEFAULT NULL,
+  `session_id` varchar(100) DEFAULT NULL,
+  `faktur` varchar(100) DEFAULT NULL,
+  `nama_produk` varchar(100) DEFAULT NULL,
+  `tipe_produk` varchar(100) DEFAULT NULL,
+  `harga_produk_meter` decimal(20,0) DEFAULT NULL,
+  `lebar_produk` decimal(10,0) DEFAULT NULL,
+  `tinggi_produk` decimal(10,0) DEFAULT NULL,
+  `warna_produk` varchar(50) DEFAULT NULL,
+  `jumlah_produk` decimal(10,0) DEFAULT NULL,
+  `harga_produk` decimal(50,0) DEFAULT NULL,
+  `kurir_pengiriman` varchar(20) DEFAULT NULL,
+  `layanan_pengiriman` varchar(50) DEFAULT NULL,
+  `ongkos_pengiriman` decimal(50,0) DEFAULT NULL,
+  `tanggal_pengiriman` date DEFAULT NULL,
+  `resi_pengiriman` varchar(40) DEFAULT NULL,
+  `catatan_pembelian` text DEFAULT NULL,
+  `metode_pembayaran` varchar(50) DEFAULT NULL,
+  `diskon` decimal(3,0) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT 1,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_pembelian` */
+
+insert  into `tbl_pembelian`(`id`,`pengguna_id`,`pelanggan_id`,`session_id`,`faktur`,`nama_produk`,`tipe_produk`,`harga_produk_meter`,`lebar_produk`,`tinggi_produk`,`warna_produk`,`jumlah_produk`,`harga_produk`,`kurir_pengiriman`,`layanan_pengiriman`,`ongkos_pengiriman`,`tanggal_pengiriman`,`resi_pengiriman`,`catatan_pembelian`,`metode_pembayaran`,`diskon`,`status`) values 
+(26,24,26,'22745457468250657','SMTT-060622-7437','PINTU','grande-001',10000,1000,1000,'BROWN',1,10000,'Jalur Nugraha Ekakur','OKE',50000,'0000-00-00',NULL,'jl.grogol','BCA',NULL,1),
+(25,24,25,'22745457468250657','SMTT-060622-7030 ','AKSESORIS','aksesoris',10000,1000,1000,'',2,20000,'Jalur Nugraha Ekakur','OKE',120000,'0000-00-00',NULL,'jl.doi','BNI',NULL,1),
+(23,22,22,'22745457468250657','SMTT-060622-7361','PINTU','classic-002',10000,1000,1000,'BROWN',2,20000,'Jalur Nugraha Ekakur','OKE',50000,'0000-00-00',NULL,'depan gang kosong','BCA',NULL,1),
+(24,22,24,'22745457468250657','SMTT-060622-2555','MASKER','masker',10000,1000,1000,'',2,20000,'Citra Van Titipan Ki','ECO',185000,'0000-00-00',NULL,'jl.gedong','BCA',NULL,1),
+(22,22,22,'22745457468250657','SMTT-060622-7361','PINTU','classic-001',10000,1000,1000,'BROWN',2,20000,'Jalur Nugraha Ekakur','OKE',50000,'0000-00-00',NULL,'depan gang kosong','BCA',NULL,1),
+(41,25,44,'22745457468250657','SMTT-130622-4147','PINTU','artdoor-p3-59',10000,1000,1000,'',1,10000,'Wahana Prestasi Logi','Normal',25000,'0000-00-00',NULL,'kejaksan','BCA',NULL,1),
+(40,25,43,'22745457468250657','SMTT-130622-6814','PINTU','artdoor-p3-59',10000,1000,1000,'',1,10000,'Jalur Nugraha Ekakur','OKE',50000,'0000-00-00',NULL,'anjas','BCA',NULL,1);
+
+/*Table structure for table `tbl_pengguna` */
+
 DROP TABLE IF EXISTS `tbl_pengguna`;
-CREATE TABLE `tbl_pengguna`  (
+
+CREATE TABLE `tbl_pengguna` (
   `pengguna_id` int(11) NOT NULL AUTO_INCREMENT,
-  `pengguna_nama` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `pengguna_moto` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `pengguna_jenkel` varchar(2) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `pengguna_username` varchar(30) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `pengguna_password` varchar(35) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `pengguna_tentang` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
-  `pengguna_email` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `pengguna_nohp` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `pengguna_facebook` varchar(35) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `pengguna_twitter` varchar(35) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `pengguna_linkdin` varchar(35) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `pengguna_google_plus` varchar(35) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `pengguna_status` int(2) NULL DEFAULT 1,
-  `pengguna_level` varchar(3) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `pengguna_register` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP(0),
-  `pengguna_photo` varchar(40) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `pelanggan_id` int(11) NOT NULL,
+  `pengguna_nama` varchar(50) DEFAULT NULL,
+  `pengguna_moto` varchar(100) DEFAULT NULL,
+  `pengguna_jenkel` varchar(2) DEFAULT NULL,
+  `pengguna_username` varchar(30) DEFAULT NULL,
+  `pengguna_password` varchar(35) DEFAULT NULL,
+  `pengguna_tentang` text DEFAULT NULL,
+  `pengguna_email` varchar(50) DEFAULT NULL,
+  `pengguna_nohp` varchar(20) DEFAULT NULL,
+  `pengguna_facebook` varchar(35) DEFAULT NULL,
+  `pengguna_twitter` varchar(35) DEFAULT NULL,
+  `pengguna_linkdin` varchar(35) DEFAULT NULL,
+  `pengguna_google_plus` varchar(35) DEFAULT NULL,
+  `pengguna_status` int(2) DEFAULT 1,
+  `pengguna_level` varchar(3) DEFAULT NULL,
+  `pengguna_register` timestamp NULL DEFAULT current_timestamp(),
+  `pengguna_photo` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`pengguna_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Records of tbl_pengguna
--- ----------------------------
-INSERT INTO `tbl_pengguna` VALUES (2, 'Jenat', NULL, 'P', 'admin', '21232f297a57a5a743894a0e4a801fc3', NULL, 'w@gmail.com', '001001001001', NULL, NULL, NULL, NULL, 1, '1', '2020-01-13 06:31:34', '0284cb1f94c0b62dd8d3afd02a828d0a.png');
+/*Data for the table `tbl_pengguna` */
 
--- ----------------------------
--- Table structure for tbl_pengunjung
--- ----------------------------
+insert  into `tbl_pengguna`(`pengguna_id`,`pelanggan_id`,`pengguna_nama`,`pengguna_moto`,`pengguna_jenkel`,`pengguna_username`,`pengguna_password`,`pengguna_tentang`,`pengguna_email`,`pengguna_nohp`,`pengguna_facebook`,`pengguna_twitter`,`pengguna_linkdin`,`pengguna_google_plus`,`pengguna_status`,`pengguna_level`,`pengguna_register`,`pengguna_photo`) values 
+(2,0,'S-Plus Indonesia',NULL,'L','smtechtex@splusindonesia.co.id','e471711af0db2f6c64df4f60573baa8e',NULL,'smtechtex@splusindonesia.co.id','(0231) 8511781',NULL,NULL,NULL,NULL,1,'1','2020-01-13 06:31:34','d540ba14929a5fbc859fcf8004d894fc.png'),
+(3,0,'S-Plus Jakarta',NULL,'L','arul','4c9d830f39238c6607b162a92e528759',NULL,'jakarta@splusindonesia.co.id','(021) 62301599',NULL,NULL,NULL,NULL,1,'1','2020-04-07 13:59:55','b8167f3e2c7eca3e873838f066a50057.png'),
+(4,0,'IT',NULL,'L','it','0b1dd5fabd221ef63c58c026bce4cf6b',NULL,'it@gmail.com','089235772503',NULL,NULL,NULL,NULL,1,'2','2022-01-13 03:21:25','1d55ed29faf8663cd66fd968cbbae450.png'),
+(22,22,'itakumala',NULL,'P','itakumala','62ca9672c3bf3b1357ae0bd56c244be3',NULL,'itakumala@gmail.com','08923577990',NULL,NULL,NULL,NULL,1,'1','2022-04-01 10:29:24','76ddc7ba0ef32bc274b775fdca5d2f60.png'),
+(24,24,'gandi',NULL,'L','coro','a83cf5e7e3efb396410e825794c1bff2',NULL,'coro@gmail.com','089235772503',NULL,NULL,NULL,NULL,1,'2','2022-04-20 15:44:03','c8b6acca4131113b6ba17489a8c38aa5.png'),
+(25,40,'nawawi',NULL,'L','nawawi','a83cf5e7e3efb396410e825794c1bff2',NULL,'nawawi@gmail.com','089235772503',NULL,NULL,NULL,NULL,1,'2','2022-06-11 08:28:36','f7f035021ff7131a76baf6514a172865.png');
+
+/*Table structure for table `tbl_pengunjung` */
+
 DROP TABLE IF EXISTS `tbl_pengunjung`;
-CREATE TABLE `tbl_pengunjung`  (
+
+CREATE TABLE `tbl_pengunjung` (
   `pengunjung_id` int(10) NOT NULL AUTO_INCREMENT,
-  `pengunjung_tanggal` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP(0),
-  `pengunjung_ip` varchar(40) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `pengunjung_perangkat` varchar(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `pengunjung_tanggal` timestamp NULL DEFAULT current_timestamp(),
+  `pengunjung_ip` varchar(40) DEFAULT NULL,
+  `pengunjung_perangkat` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`pengunjung_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE=InnoDB AUTO_INCREMENT=124863 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Records of tbl_pengunjung
--- ----------------------------
-INSERT INTO `tbl_pengunjung` VALUES (1, '2020-01-27 03:53:21', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (2, '2020-01-28 00:45:59', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (3, '2020-01-29 00:48:52', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (4, '2020-01-30 01:21:13', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (5, '2020-01-31 00:58:41', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (6, '2020-02-01 02:59:26', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (7, '2020-02-03 00:37:45', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (8, '2020-02-04 00:21:35', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (9, '2020-02-05 00:46:52', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (10, '2020-02-05 00:52:59', '127.0.0.1', 'Firefox');
-INSERT INTO `tbl_pengunjung` VALUES (11, '2020-02-05 00:52:59', '127.0.0.1', 'Firefox');
-INSERT INTO `tbl_pengunjung` VALUES (12, '2020-02-06 00:48:19', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (13, '2020-02-07 01:00:55', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (14, '2020-02-08 00:54:19', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (15, '2020-02-10 01:00:19', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (16, '2020-02-11 00:52:09', '127.0.0.1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (17, '2020-02-11 00:52:23', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (18, '2020-02-11 07:51:32', '192.168.1.186', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (19, '2020-02-11 08:34:13', '192.168.1.80', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (20, '2020-02-12 00:52:57', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (21, '2020-02-12 03:47:48', '103.10.60.214', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (22, '2020-02-13 00:54:20', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (23, '2020-02-13 03:01:00', '192.168.1.23', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (24, '2020-02-14 00:45:30', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (25, '2020-02-15 00:41:52', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (26, '2020-02-17 01:23:08', '::1', 'Chrome');
-INSERT INTO `tbl_pengunjung` VALUES (27, '2020-02-18 00:49:50', '::1', 'Chrome');
+/*Data for the table `tbl_pengunjung` */
 
--- ----------------------------
--- Table structure for tbl_produk
--- ----------------------------
+insert  into `tbl_pengunjung`(`pengunjung_id`,`pengunjung_tanggal`,`pengunjung_ip`,`pengunjung_perangkat`) values 
+(124759,'2022-01-13 12:32:30','::1','Chrome'),
+(124760,'2022-01-13 13:09:56','127.0.0.1','Firefox'),
+(124761,'2022-01-14 07:26:22','127.0.0.1','Firefox'),
+(124762,'2022-01-14 14:46:51','::1','Chrome'),
+(124763,'2022-01-15 07:36:22','::1','Chrome'),
+(124764,'2022-01-17 07:27:22','::1','Chrome'),
+(124765,'2022-01-18 08:11:41','::1','Chrome'),
+(124766,'2022-01-19 08:08:49','::1','Chrome'),
+(124767,'2022-01-20 07:53:46','::1','Chrome'),
+(124768,'2022-01-21 07:25:02','::1','Chrome'),
+(124769,'2022-01-22 07:52:10','::1','Chrome'),
+(124770,'2022-01-24 08:14:04','::1','Chrome'),
+(124771,'2022-01-25 07:34:17','::1','Chrome'),
+(124772,'2022-01-26 07:27:17','::1','Chrome'),
+(124773,'2022-01-27 07:35:06','::1','Chrome'),
+(124774,'2022-01-28 08:33:11','::1','Chrome'),
+(124775,'2022-01-29 07:44:26','::1','Chrome'),
+(124776,'2022-01-31 07:50:27','::1','Chrome'),
+(124777,'2022-02-02 07:45:43','::1','Chrome'),
+(124778,'2022-02-03 08:02:01','::1','Chrome'),
+(124779,'2022-02-04 08:02:15','::1','Chrome'),
+(124780,'2022-02-19 12:24:30','::1','Chrome'),
+(124781,'2022-02-21 07:39:59','::1','Chrome'),
+(124782,'2022-02-22 07:39:08','::1','Chrome'),
+(124783,'2022-02-23 07:48:12','::1','Chrome'),
+(124784,'2022-02-24 07:45:18','::1','Chrome'),
+(124785,'2022-02-25 07:41:30','::1','Chrome'),
+(124786,'2022-02-26 07:57:21','::1','Chrome'),
+(124787,'2022-03-01 08:34:14','::1','Chrome'),
+(124788,'2022-03-02 07:24:44','::1','Chrome'),
+(124789,'2022-03-04 08:05:38','::1','Chrome'),
+(124790,'2022-03-05 07:51:48','::1','Chrome'),
+(124791,'2022-03-07 09:02:46','::1','Chrome'),
+(124792,'2022-03-08 07:41:00','::1','Chrome'),
+(124793,'2022-03-09 07:57:01','::1','Chrome'),
+(124794,'2022-03-10 07:51:25','::1','Chrome'),
+(124795,'2022-03-11 08:27:23','::1','Chrome'),
+(124796,'2022-03-12 08:16:38','::1','Chrome'),
+(124797,'2022-03-14 08:02:36','::1','Chrome'),
+(124798,'2022-03-15 08:37:07','::1','Chrome'),
+(124799,'2022-03-16 07:59:22','::1','Chrome'),
+(124800,'2022-03-16 09:21:01','127.0.0.1','Firefox'),
+(124801,'2022-03-17 07:45:13','::1','Chrome'),
+(124802,'2022-03-18 07:24:45','::1','Chrome'),
+(124803,'2022-03-19 07:43:25','::1','Chrome'),
+(124804,'2022-03-21 07:35:06','::1','Chrome'),
+(124805,'2022-03-22 07:53:34','::1','Chrome'),
+(124806,'2022-03-23 08:13:14','::1','Chrome'),
+(124807,'2022-03-24 08:03:07','::1','Chrome'),
+(124808,'2022-03-25 08:01:31','::1','Chrome'),
+(124809,'2022-03-26 07:45:42','::1','Chrome'),
+(124810,'2022-03-28 07:46:21','::1','Chrome'),
+(124811,'2022-03-29 08:34:28','::1','Chrome'),
+(124812,'2022-03-30 08:15:38','::1','Chrome'),
+(124813,'2022-04-01 07:27:51','::1','Chrome'),
+(124814,'2022-04-02 08:05:11','::1','Chrome'),
+(124815,'2022-04-04 08:09:18','::1','Chrome'),
+(124816,'2022-04-06 11:21:44','::1','Chrome'),
+(124817,'2022-04-07 08:49:04','::1','Chrome'),
+(124818,'2022-04-08 07:42:40','::1','Chrome'),
+(124819,'2022-04-09 08:11:33','::1','Chrome'),
+(124820,'2022-04-11 08:45:33','::1','Chrome'),
+(124821,'2022-04-12 08:01:57','::1','Chrome'),
+(124822,'2022-04-13 09:18:44','::1','Chrome'),
+(124823,'2022-04-14 11:06:03','::1','Chrome'),
+(124824,'2022-04-18 08:04:48','::1','Chrome'),
+(124825,'2022-04-19 07:57:26','::1','Chrome'),
+(124826,'2022-04-20 09:10:32','::1','Chrome'),
+(124827,'2022-04-21 07:49:53','::1','Chrome'),
+(124828,'2022-04-22 07:35:43','::1','Chrome'),
+(124829,'2022-04-22 08:35:58','127.0.0.1','Chrome'),
+(124830,'2022-04-23 08:30:51','::1','Chrome'),
+(124831,'2022-04-26 08:28:50','::1','Chrome'),
+(124832,'2022-04-27 07:32:15','::1','Chrome'),
+(124833,'2022-04-28 08:18:16','::1','Chrome'),
+(124834,'2022-05-09 07:32:53','::1','Chrome'),
+(124835,'2022-05-09 13:44:09','127.0.0.1','Firefox'),
+(124836,'2022-05-10 08:29:56','::1','Chrome'),
+(124837,'2022-05-11 08:08:31','::1','Chrome'),
+(124838,'2022-05-12 07:57:41','::1','Chrome'),
+(124839,'2022-05-13 14:40:24','::1','Chrome'),
+(124840,'2022-05-14 07:53:04','::1','Chrome'),
+(124841,'2022-05-17 08:06:13','::1','Chrome'),
+(124842,'2022-05-18 07:52:12','::1','Chrome'),
+(124843,'2022-05-19 07:50:08','::1','Chrome'),
+(124844,'2022-05-20 08:30:00','::1','Chrome'),
+(124845,'2022-05-23 07:45:25','::1','Chrome'),
+(124846,'2022-05-24 07:56:16','::1','Chrome'),
+(124847,'2022-05-25 07:35:19','::1','Chrome'),
+(124848,'2022-05-27 07:47:10','::1','Chrome'),
+(124849,'2022-05-28 07:45:17','::1','Chrome'),
+(124850,'2022-05-30 07:53:08','::1','Chrome'),
+(124851,'2022-05-31 07:31:07','::1','Chrome'),
+(124852,'2022-06-02 07:45:21','::1','Chrome'),
+(124853,'2022-06-03 07:51:33','::1','Chrome'),
+(124854,'2022-06-04 07:23:53','::1','Chrome'),
+(124855,'2022-06-06 07:37:04','::1','Chrome'),
+(124856,'2022-06-07 07:24:43','::1','Chrome'),
+(124857,'2022-06-08 08:45:24','::1','Chrome'),
+(124858,'2022-06-09 08:01:13','::1','Chrome'),
+(124859,'2022-06-10 07:56:28','::1','Chrome'),
+(124860,'2022-06-11 07:31:45','::1','Chrome'),
+(124861,'2022-06-13 07:57:54','::1','Chrome'),
+(124862,'2022-06-14 07:58:14','::1','Chrome');
+
+/*Table structure for table `tbl_product_splus` */
+
+DROP TABLE IF EXISTS `tbl_product_splus`;
+
+CREATE TABLE `tbl_product_splus` (
+  `product_id` int(20) NOT NULL AUTO_INCREMENT,
+  `product_kategori` int(11) NOT NULL,
+  `product_name` varchar(120) NOT NULL,
+  `product_jenis` varchar(100) NOT NULL,
+  `product_price` decimal(8,2) NOT NULL,
+  `product_tipe` varchar(100) NOT NULL,
+  `product_brand` varchar(50) NOT NULL,
+  `product_image` varchar(100) NOT NULL,
+  `product_quantity` mediumint(5) NOT NULL,
+  `product_status` enum('0','1') NOT NULL COMMENT '0-active,1-inactive',
+  PRIMARY KEY (`product_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+
+/*Data for the table `tbl_product_splus` */
+
+insert  into `tbl_product_splus`(`product_id`,`product_kategori`,`product_name`,`product_jenis`,`product_price`,`product_tipe`,`product_brand`,`product_image`,`product_quantity`,`product_status`) values 
+(1,1,'Pintu Classic-001','ABS',10000.00,'Pintu Classic-001','SPLUS','pintu/classic-2-20.jpg',5,'1'),
+(2,2,'Jendela Classic-110','UPVC_JENDELA',10000.00,'Jendela Classic-110','SPLUS','window/window3.jpg',5,'1'),
+(3,3,'kichen-001','KICHEN',10000.00,'kichen-001','SPLUS','interior/kichen-001.jpg',5,'1'),
+(4,4,'wpc-001','WPC',10000.00,'wpc-001','SPLUS','exterior/wpc-001.jpg',5,'1'),
+(5,5,'gagang-pintu-001','AKSESORIS',10000.00,'gagang-pintu-001','SPLUS','aksesoris/gagang-pintu.jpg',5,'1'),
+(6,6,'masker-dewasa-001','MASKER',10000.00,'masker-dewasa-001','SPLUS','masker/masker-dewasa-001.jpg',5,'1'),
+(7,3,'kichen-002','KICHEN',10000.00,'kichen-002','SPLUS','interior/kichen-002.jpg',5,'1'),
+(8,1,'Pintu artdoor -001','UPVC_PINTU',8000.00,'Pintu artdoor -001','SPLUS','pintu/artdoor-c1-30.jpg',5,'1'),
+(9,1,'Pintu grande-001','NAMO',8000.00,'Pintu grande-001','NAMO','pintu/grande.jpg',5,'1'),
+(10,1,'Pintu Classic-002','ABS',8000.00,'Pintu Classic-002','SPLUS','pintu/classic-1-50.jpg',5,'1');
+
+/*Table structure for table `tbl_produk` */
+
 DROP TABLE IF EXISTS `tbl_produk`;
-CREATE TABLE `tbl_produk`  (
+
+CREATE TABLE `tbl_produk` (
   `produk_id` int(20) NOT NULL AUTO_INCREMENT,
-  `produk_judul` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `produk_tanggal` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP(0),
-  `produk_type` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `produk_deskripsi` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
-  `produk_harga` int(50) NULL DEFAULT NULL,
-  `produk_kategori_id` int(20) NULL DEFAULT NULL,
-  `produk_stok` int(10) NULL DEFAULT NULL,
-  `produk_gambar` varchar(40) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `produk_warna` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL,
-  `produk_ukuran` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
-  `produk_pengguna_id` int(11) NULL DEFAULT NULL,
-  `produk_author` varchar(60) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `id_kategori_produk` int(11) DEFAULT NULL,
+  `produk_kategori_id` int(20) DEFAULT NULL,
+  `produk_judul` varchar(50) DEFAULT NULL,
+  `tanggal` timestamp NULL DEFAULT current_timestamp(),
+  `produk_author` varchar(60) DEFAULT NULL,
+  `produk_slug` varchar(200) DEFAULT NULL,
+  `produk_nama` varchar(100) DEFAULT NULL,
+  `produk_kategori` varchar(100) DEFAULT NULL,
+  `produk_gambar` varchar(200) DEFAULT NULL,
+  `produk_deskripsi` text DEFAULT NULL,
   PRIMARY KEY (`produk_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 241 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Records of tbl_produk
--- ----------------------------
-INSERT INTO `tbl_produk` VALUES (2, 'Classic KL 1', '2020-01-27 03:29:27', 'classic', 'Daun + Kusen', 1331000, 3, 1000, '', '', '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (3, 'Classic KL 1', '2020-01-27 03:30:35', 'classic', 'Daun + Kusen', 1524600, 3, 1000, '', '', '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (4, 'Classic KL 2', '2020-01-27 03:33:22', 'classic', 'Daun', 968000, 3, 1000, '', '', '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (5, 'Classic KL 2', '2020-01-27 04:18:13', 'classic', 'Daun', 1120350, 3, 200, '', '', '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (6, 'Fortebello A', '2020-01-27 04:19:20', 'fortebello', 'Daun + Kusen', 1958500, 3, 300, '', '', '700,1900', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (7, 'Fortebello A', '2020-01-27 06:17:31', 'fortebello', 'Daun + Kusen', 2071650, 3, 250, NULL, NULL, '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (8, 'Fortebello A', '2020-01-27 06:18:54', 'fortebello', 'Daun + Kusen', 2175500, 3, 230, NULL, NULL, '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (9, 'Fortebello A', '2020-01-27 06:22:26', 'fortebello', 'Daun + Kusen', 2262000, 3, 220, NULL, NULL, '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (10, 'Fortebello A', '2020-01-27 06:23:33', 'fortebello', 'Daun + Kusen', 2489600, 3, 240, NULL, NULL, '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (11, 'Fortebello A', '2020-01-27 06:26:27', 'fortebello', 'Daun', 1261060, 3, 210, NULL, NULL, '630,1860', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (12, 'Fortebello A', '2020-01-27 06:28:18', 'fortebello', 'Daun', 1330280, 3, 205, NULL, NULL, '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (13, 'Fortebello A', '2020-01-27 06:29:47', 'fortebello', 'Daun', 1396830, 3, 204, NULL, NULL, '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (14, 'Fortebello A', '2020-01-27 06:33:53', 'fortebello', 'Daun', 1458050, 3, 210, NULL, NULL, '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (15, 'Fortebello A', '2020-01-27 06:35:04', 'fortebello', 'Daun', 1604460, 3, 202, NULL, NULL, '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (16, 'Fortebello B', '2020-01-27 06:49:07', 'fortebello', 'Daun + Kusen', 1958500, 3, 203, NULL, NULL, '700,1900', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (17, 'Fortebello B', '2020-01-27 06:51:09', 'fortebello', 'Daun + Kusen', 2071650, 3, 205, NULL, NULL, '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (18, 'Fortebello B', '2020-01-27 06:52:01', 'fortebello', 'Daun + Kusen', 2175500, 3, 204, NULL, NULL, '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (19, 'Fortebello B', '2020-01-27 06:53:01', 'fortebello', 'Daun + Kusen', 2262000, 3, 202, NULL, NULL, '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (20, 'Fortebello B', '2020-01-28 01:05:23', 'fortebello', 'Daun + Kusen', 2489600, 3, 203, NULL, NULL, '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (21, 'Fortebello B', '2020-01-28 01:07:58', 'fortebello', 'Daun', 1261060, 3, 205, NULL, NULL, '630,1860', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (22, 'Fortebello B', '2020-01-28 01:12:57', 'fortebello', 'Daun', 1330280, 3, 203, NULL, NULL, '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (23, 'Fortebello B', '2020-01-28 01:13:00', 'fortebello', 'Daun', 1396830, 3, 202, NULL, NULL, '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (24, 'Fortebello B', '2020-01-28 01:13:03', 'fortebello', 'Daun', 1458050, 3, 201, NULL, NULL, '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (25, 'Fortebello B', '2020-01-28 01:13:13', 'fortebello', 'Daun', 1604460, 3, 199, NULL, NULL, '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (26, 'Fortebello C', '2020-01-28 01:15:39', 'fortebello', 'Daun + Kusen', 1958500, 3, 196, NULL, NULL, '700,1900', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (27, 'Fortebello C', '2020-01-28 01:16:02', 'fortebello', 'Daun + Kusen', 2071650, 3, 206, NULL, NULL, '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (28, 'Fortebello C', '2020-01-28 01:16:08', 'fortebello', 'Daun + Kusen', 2175500, 3, 207, NULL, NULL, '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (29, 'Fortebello C', '2020-01-28 01:16:11', 'fortebello', 'Daun + Kusen', 2262000, 3, 248, NULL, NULL, '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (30, 'Fortebello C', '2020-01-28 01:16:17', 'fortebello', 'Daun + Kusen', 2489600, 3, 233, NULL, NULL, '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (31, 'Fortebello C', '2020-01-28 01:22:12', 'fortebello', 'Daun', 1261060, 3, 205, NULL, NULL, '630,1860', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (32, 'Fortebello C', '2020-01-28 01:22:27', 'fortebello', 'Daun', 1330280, 3, 208, NULL, NULL, '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (33, 'Fortebello C', '2020-01-28 01:22:34', 'fortebello', 'Daun', 1396830, 3, 201, NULL, NULL, '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (34, 'Fortebello C', '2020-01-28 01:22:37', 'fortebello', 'Daun', 1458050, 3, 209, NULL, NULL, '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (35, 'Fortebello C', '2020-01-28 01:22:44', 'fortebello', 'Daun', 1604460, 3, 208, NULL, NULL, '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (36, 'Fortebello D', '2020-01-28 02:02:03', 'fortebello', 'Daun + Kusen', 1958500, 3, 201, NULL, NULL, '700,1900', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (37, 'Fortebello D', '2020-01-28 02:02:18', 'fortebello', 'Daun + Kusen', 2071650, 3, 209, NULL, NULL, '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (38, 'Fortebello D', '2020-01-28 02:02:22', 'fortebello', 'Daun + Kusen', 2175500, 3, 206, NULL, NULL, '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (39, 'Fortebello D', '2020-01-28 02:02:25', 'fortebello', 'Daun + Kusen', 2262000, 3, 201, NULL, NULL, '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (40, 'Fortebello D', '2020-01-28 02:02:31', 'fortebello', 'Daun + Kusen', 2489600, 3, 205, NULL, NULL, '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (41, 'Fortebello D', '2020-01-28 02:04:57', 'fortebello', 'Daun', 1261060, 3, 201, NULL, NULL, '630,1860', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (42, 'Fortebello D', '2020-01-28 02:05:03', 'fortebello', 'Daun', 1330280, 3, 97, NULL, NULL, '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (43, 'Fortebello D', '2020-01-28 02:05:05', 'fortebello', 'Daun', 1396830, 3, 92, NULL, NULL, '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (44, 'Fortebello D', '2020-01-28 02:05:08', 'fortebello', 'Daun', 1458050, 3, 95, NULL, NULL, '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (45, 'Fortebello D', '2020-01-28 02:05:11', 'fortebello', 'Daun', 1604460, 3, 94, NULL, NULL, '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (46, 'Fortebello E', '2020-01-28 02:07:55', 'fortebello', 'Daun + Kusen', 1958500, 3, 108, NULL, NULL, '700,1900', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (47, 'Fortebello E', '2020-01-28 02:08:07', 'fortebello', 'Daun + Kusen', 2071650, 3, 106, NULL, NULL, '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (48, 'Fortebello E', '2020-01-28 02:08:10', 'fortebello', 'Daun + Kusen', 2175500, 3, 107, NULL, NULL, '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (49, 'Fortebello E', '2020-01-28 02:08:14', 'fortebello', 'Daun + Kusen', 2262000, 3, 101, NULL, NULL, '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (50, 'Fortebello E', '2020-01-28 02:08:17', 'fortebello', 'Daun + Kusen', 2489600, 3, 111, NULL, NULL, '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (51, 'Fortebello E', '2020-01-28 02:10:35', 'fortebello', 'Daun', 1261060, 3, 104, NULL, NULL, '630,1860', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (52, 'Fortebello E', '2020-01-28 02:10:46', 'fortebello', 'Daun', 1330280, 3, 113, NULL, NULL, '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (53, 'Fortebello E', '2020-01-28 02:10:53', 'fortebello', 'Daun', 1396830, 3, 111, NULL, NULL, '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (54, 'Fortebello E', '2020-01-28 02:10:56', 'fortebello', 'Daun', 1458050, 3, 110, NULL, NULL, '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (55, 'Fortebello E', '2020-01-28 02:10:58', 'fortebello', 'Daun', 1604460, 3, 118, NULL, NULL, '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (56, 'Fortebello F', '2020-01-28 02:12:32', 'fortebello', 'Daun + Kusen', 1958500, 3, 115, NULL, NULL, '700,1900', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (57, 'Fortebello F', '2020-01-28 02:12:49', 'fortebello', 'Daun + Kusen', 2071650, 3, 110, NULL, NULL, '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (58, 'Fortebello F', '2020-01-28 02:12:52', 'fortebello', 'Daun + Kusen', 2175500, 3, 96, NULL, NULL, '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (59, 'Fortebello F', '2020-01-28 02:12:59', 'fortebello', 'Daun + Kusen', 2262000, 3, 99, NULL, NULL, '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (60, 'Fortebello F', '2020-01-28 02:13:02', 'fortebello', 'Daun + Kusen', 2489600, 3, 93, NULL, NULL, '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (61, 'Fortebello F', '2020-01-28 02:18:07', 'fortebello', 'Daun', 1261060, 3, 96, NULL, NULL, '630,1860', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (62, 'Fortebello F', '2020-01-28 02:18:20', 'fortebello', 'Daun', 1330280, 3, 99, NULL, NULL, '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (63, 'Fortebello F', '2020-01-28 02:18:23', 'fortebello', 'Daun', 1396830, 3, 107, NULL, NULL, '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (64, 'Fortebello F', '2020-01-28 02:18:30', 'fortebello', 'Daun', 1458050, 3, 91, NULL, NULL, '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (65, 'Fortebello F', '2020-01-28 02:18:33', 'fortebello', 'Daun', 1604460, 3, 90, NULL, NULL, '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (66, 'Fortebello G', '2020-01-28 02:21:14', 'fortebello', 'Daun + Kusen', 1958500, 3, 116, NULL, NULL, '700,1900', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (67, 'Fortebello G', '2020-01-28 02:21:28', 'fortebello', 'Daun + Kusen', 2071650, 3, 121, NULL, NULL, '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (68, 'Fortebello G', '2020-01-28 02:21:30', 'fortebello', 'Daun + Kusen', 2175500, 3, 123, NULL, NULL, '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (69, 'Fortebello G', '2020-01-28 02:21:33', 'fortebello', 'Daun + Kusen', 2262000, 3, 196, NULL, NULL, '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (70, 'Fortebello G', '2020-01-28 02:21:36', 'fortebello', 'Daun + Kusen', 2489600, 3, 104, NULL, NULL, '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (71, 'Fortebello G', '2020-01-28 02:23:59', 'fortebello', 'Daun', 1261060, 3, 96, NULL, NULL, '630,1860', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (72, 'Fortebello G', '2020-01-28 02:24:03', 'fortebello', 'Daun', 1330280, 3, 99, NULL, NULL, '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (73, 'Fortebello G', '2020-01-28 02:24:06', 'fortebello', 'Daun', 1396830, 3, 93, NULL, NULL, '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (74, 'Fortebello G', '2020-01-28 02:24:09', 'fortebello', 'Daun', 1458050, 3, 96, NULL, NULL, '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (75, 'Fortebello G', '2020-01-28 02:24:11', 'fortebello', 'Daun', 1604460, 3, 99, NULL, NULL, '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (76, 'Fortebello H', '2020-01-28 02:28:27', 'fortebello', 'Daun + Kusen', 1958500, 3, 116, NULL, NULL, '700,1900', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (78, 'Fortebello H', '2020-01-28 02:28:48', 'fortebello', 'Daun + Kusen', 2071650, 3, 121, NULL, NULL, '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (79, 'Fortebello H', '2020-01-28 02:28:57', 'fortebello', 'Daun + Kusen', 2175500, 3, 123, NULL, NULL, '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (80, 'Fortebello H', '2020-01-28 02:29:00', 'fortebello', 'Daun + Kusen', 2262000, 3, 196, NULL, NULL, '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (81, 'Fortebello H', '2020-01-28 02:29:03', 'fortebello', 'Daun + Kusen', 2489600, 3, 104, NULL, NULL, '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (82, 'Fortebello H', '2020-01-28 02:32:20', 'fortebello', 'Daun', 1261060, 3, 96, NULL, NULL, '630,1860', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (83, 'Fortebello H', '2020-01-28 02:32:24', 'fortebello', 'Daun', 1330280, 3, 99, NULL, NULL, '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (84, 'Fortebello H', '2020-01-28 02:32:27', 'fortebello', 'Daun', 1396830, 3, 107, NULL, NULL, '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (85, 'Fortebello H', '2020-01-28 02:32:33', 'fortebello', 'Daun', 1458050, 3, 91, NULL, NULL, '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (86, 'Fortebello H', '2020-01-28 02:32:38', 'fortebello', 'Daun', 1604460, 3, 90, NULL, NULL, '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (87, 'Premium P1', '2020-01-28 02:35:57', 'premium', 'Daun + Kusen', 2258350, 3, 116, NULL, NULL, '700,1900', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (88, 'Premium P1', '2020-01-28 02:36:21', 'premium', 'Daun + Kusen', 2385760, 3, 121, NULL, NULL, '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (89, 'Premium P1', '2020-01-28 02:36:23', 'premium', 'Daun + Kusen', 2502890, 3, 123, NULL, NULL, '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (90, 'Premium P1', '2020-01-28 02:36:27', 'premium', 'Daun + Kusen', 2601990, 3, 196, NULL, NULL, '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (91, 'Premium P1', '2020-01-28 02:36:29', 'premium', 'Daun + Kusen', 2858870, 3, 104, NULL, NULL, '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (92, 'Premium P1', '2020-01-28 02:44:02', 'premium', 'Daun', 1500400, 3, 96, NULL, NULL, '630,1860', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (93, 'Premium P1', '2020-01-28 02:44:14', 'premium', 'Daun', 1583890, 3, 99, NULL, NULL, '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (94, 'Premium P1', '2020-01-28 02:44:18', 'premium', 'Daun', 1663750, 3, 107, NULL, NULL, '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (95, 'Premium P1', '2020-01-28 02:44:24', 'premium', 'Daun', 1737560, 3, 91, NULL, NULL, '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (96, 'Premium P1', '2020-01-28 02:44:32', 'premium', 'Daun', 1913250, 3, 98, NULL, NULL, '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (97, 'Premium P2', '2020-01-28 02:49:36', 'premium', 'Daun + Kusen', 2258350, 3, 225, NULL, NULL, '700,1900', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (98, 'Premium P2', '2020-01-28 02:49:39', 'premium', 'Daun + Kusen', 2385760, 3, 207, NULL, NULL, '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (99, 'Premium P2', '2020-01-28 02:49:43', 'premium', 'Daun + Kusen', 2502890, 3, 220, NULL, NULL, '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (100, 'Premium P2', '2020-01-28 02:49:46', 'premium', 'Daun + Kusen', 2601990, 3, 210, NULL, NULL, '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (101, 'Premium P2', '2020-01-28 02:49:53', 'premium', 'Daun + Kusen', 2858870, 3, 215, NULL, NULL, '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (102, 'Premium P2', '2020-01-28 02:52:45', 'premium', 'Daun', 1500400, 3, 116, NULL, NULL, '630,1860', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (103, 'Premium P2', '2020-01-28 02:52:48', 'premium', 'Daun', 1583890, 3, 121, NULL, NULL, '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (104, 'Premium P2', '2020-01-28 02:52:50', 'premium', 'Daun', 1663750, 3, 123, NULL, NULL, '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (105, 'Premium P2', '2020-01-28 02:52:59', 'premium', 'Daun', 1737560, 3, 196, NULL, NULL, '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (106, 'Premium P2', '2020-01-28 02:53:01', 'premium', 'Daun', 1913250, 3, 104, NULL, NULL, '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (107, 'Premium P3', '2020-01-28 02:56:13', 'premium', 'Daun + Kusen', 2258350, 3, 96, NULL, NULL, '700,1900', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (108, 'Premium P3', '2020-01-28 02:56:16', 'premium', 'Daun + Kusen', 2385760, 3, 99, NULL, NULL, '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (109, 'Premium P3', '2020-01-28 02:56:19', 'premium', 'Daun + Kusen', 2502890, 3, 107, NULL, NULL, '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (110, 'Premium P3', '2020-01-28 02:56:21', 'premium', 'Daun + Kusen', 2601990, 3, 91, NULL, NULL, '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (111, 'Premium P3', '2020-01-28 02:56:25', 'premium', 'Daun + Kusen', 2858870, 3, 98, NULL, NULL, '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (112, 'Premium P3', '2020-01-28 02:59:26', 'premium', 'Daun', 1500400, 3, 225, NULL, NULL, '630,1860', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (113, 'Premium P3', '2020-01-28 02:59:29', 'premium', 'Daun', 1583890, 3, 207, NULL, NULL, '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (114, 'Premium P3', '2020-01-28 02:59:32', 'premium', 'Daun', 1663750, 3, 220, NULL, NULL, '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (115, 'Premium P3', '2020-01-28 02:59:35', 'premium', 'Daun', 1737560, 3, 210, NULL, NULL, '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (116, 'Premium P3', '2020-01-28 02:59:39', 'premium', 'Daun', 1913250, 3, 215, NULL, NULL, '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (117, 'Premium P4', '2020-01-28 03:02:02', 'premium', 'Daun + Kusen', 2258350, 3, 116, NULL, NULL, '700,1900', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (118, 'Premium P4', '2020-01-28 03:02:06', 'premium', 'Daun + Kusen', 2385760, 3, 121, NULL, NULL, '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (119, 'Premium P4', '2020-01-28 03:02:11', 'premium', 'Daun + Kusen', 2502890, 3, 123, NULL, NULL, '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (120, 'Premium P4', '2020-01-28 03:02:14', 'premium', 'Daun + Kusen', 2601990, 3, 196, NULL, NULL, '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (121, 'Premium P4', '2020-01-28 03:02:18', 'premium', 'Daun + Kusen', 2858870, 3, 104, NULL, NULL, '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (122, 'Premium P4', '2020-01-28 03:04:36', 'premium', 'Daun', 1500400, 3, 96, NULL, NULL, '630,1860', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (123, 'Premium P4', '2020-01-28 03:04:38', 'premium', 'Daun', 1583890, 3, 99, NULL, NULL, '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (124, 'Premium P4', '2020-01-28 03:04:47', 'premium', 'Daun', 1663750, 3, 107, NULL, NULL, '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (125, 'Premium P4', '2020-01-28 03:04:51', 'premium', 'Daun', 1737560, 3, 91, NULL, NULL, '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (126, 'Premium P4', '2020-01-28 03:04:56', 'premium', 'Daun', 1913250, 3, 98, NULL, NULL, '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (127, 'Premium P5', '2020-01-28 03:07:07', 'premium', 'Daun + Kusen', 2258350, 3, 225, NULL, NULL, '700,1900', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (128, 'Premium P5', '2020-01-28 03:07:21', 'premium', 'Daun + Kusen', 2385760, 3, 207, NULL, NULL, '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (129, 'Premium P5', '2020-01-28 03:07:23', 'premium', 'Daun + Kusen', 2502890, 3, 220, NULL, NULL, '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (130, 'Premium P5', '2020-01-28 03:07:26', 'premium', 'Daun + Kusen', 2601990, 3, 210, NULL, NULL, '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (131, 'Premium P5', '2020-01-28 03:07:29', 'premium', 'Daun + Kusen', 2858870, 3, 215, NULL, NULL, '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (132, 'Premium P5', '2020-01-28 03:10:02', 'premium', 'Daun', 1500400, 3, 116, NULL, NULL, '630,1860', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (133, 'Premium P5', '2020-01-28 03:10:05', 'premium', 'Daun', 1583890, 3, 121, NULL, NULL, '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (134, 'Premium P5', '2020-01-28 03:10:11', 'premium', 'Daun', 1663750, 3, 123, NULL, NULL, '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (135, 'Premium P5', '2020-01-28 03:10:15', 'premium', 'Daun', 1737560, 3, 196, NULL, NULL, '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (136, 'Premium P5', '2020-01-28 03:10:17', 'premium', 'Daun', 1913250, 3, 104, NULL, NULL, '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (137, 'Premium P6', '2020-01-28 03:13:07', 'premium', 'Daun + Kusen', 2258350, 3, 96, NULL, NULL, '700,1900', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (138, 'Premium P6', '2020-01-28 03:13:10', 'premium', 'Daun + Kusen', 2385760, 3, 99, NULL, NULL, '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (139, 'Premium P6', '2020-01-28 03:13:13', 'premium', 'Daun + Kusen', 2502890, 3, 107, NULL, NULL, '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (140, 'Premium P6', '2020-01-28 03:13:15', 'premium', 'Daun + Kusen', 2601990, 3, 91, NULL, NULL, '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (141, 'Premium P6', '2020-01-28 03:13:19', 'premium', 'Daun + Kusen', 2858870, 3, 98, NULL, NULL, '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (142, 'Premium P6', '2020-01-28 03:15:54', 'premium', 'Daun', 1500400, 3, 116, NULL, NULL, '630,1860', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (143, 'Premium P6', '2020-01-28 03:15:58', 'premium', 'Daun', 1583890, 3, 121, NULL, NULL, '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (144, 'Premium P6', '2020-01-28 03:16:01', 'premium', 'Daun', 1663750, 3, 123, NULL, NULL, '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (145, 'Premium P6', '2020-01-28 03:16:05', 'premium', 'Daun', 1737560, 3, 196, NULL, NULL, '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (146, 'Premium P6', '2020-01-28 03:16:08', 'premium', 'Daun', 1913250, 3, 104, NULL, NULL, '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (147, 'Premium P7', '2020-01-28 03:18:39', 'premium', 'Daun + Kusen', 2258350, 3, 116, NULL, NULL, '700,1900', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (148, 'Premium P7', '2020-01-28 03:18:41', 'premium', 'Daun + Kusen', 2385760, 3, 121, NULL, NULL, '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (149, 'Premium P7', '2020-01-28 03:18:44', 'premium', 'Daun + Kusen', 2502890, 3, 123, NULL, NULL, '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (150, 'Premium P7', '2020-01-28 03:18:46', 'premium', 'Daun + Kusen', 2601990, 3, 196, NULL, NULL, '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (151, 'Premium P7', '2020-01-28 03:18:49', 'premium', 'Daun + Kusen', 2858870, 3, 104, NULL, NULL, '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (152, 'Premium P7', '2020-01-28 03:20:45', 'premium', 'Daun', 1500400, 3, 116, NULL, NULL, '630,1860', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (153, 'Premium P7', '2020-01-28 03:20:47', 'premium', 'Daun', 1583890, 3, 121, NULL, NULL, '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (154, 'Premium P7', '2020-01-28 03:20:50', 'premium', 'Daun', 1663750, 3, 123, NULL, NULL, '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (155, 'Premium P7', '2020-01-28 03:20:52', 'premium', 'Daun', 1737560, 3, 196, NULL, NULL, '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (156, 'Premium P7', '2020-01-28 03:20:55', 'premium', 'Daun', 1913250, 3, 104, NULL, NULL, '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (157, 'Premium Deco A', '2020-01-28 03:28:36', 'premiun deco', 'Daun + Kusen', 2385780, 3, 116, NULL, 'A1,A2,A3', '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (158, 'Premium Deco A', '2020-01-28 03:29:33', 'premiun deco', 'Daun + Kusen', 2502890, 3, 121, NULL, 'A1,A2,A3', '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (159, 'Premium Deco A', '2020-01-28 03:29:42', 'premiun deco', 'Daun + Kusen', 2601990, 3, 123, NULL, 'A1,A2,A3', '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (160, 'Premium Deco A', '2020-01-28 03:29:50', 'premiun deco', 'Daun + Kusen', 2858870, 3, 196, NULL, 'A1,A2,A3', '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (161, 'Premium Deco A', '2020-01-28 03:30:00', 'premiun deco', 'Daun', 1583890, 3, 121, NULL, 'A1,A2,A3', '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (162, 'Premium Deco A', '2020-01-28 03:30:09', 'premiun deco', 'Daun', 1663750, 3, 123, NULL, 'A1,A2,A3', '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (163, 'Premium Deco A', '2020-01-28 03:30:18', 'premiun deco', 'Daun', 1737560, 3, 196, NULL, 'A1,A2,A3', '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (164, 'Premium Deco A', '2020-01-28 03:30:29', 'premiun deco', 'Daun', 1913250, 3, 104, NULL, 'A1,A2,A3', '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (165, 'Premium Deco B', '2020-01-28 03:37:40', 'premiun deco', 'Daun + Kusen', 2385780, 3, 225, NULL, 'B1,B2,B3', '800,2000', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (166, 'Premium Deco B', '2020-01-28 03:38:19', 'premiun deco', 'Daun + Kusen', 2502890, 3, 207, NULL, 'B1,B2,B3', '800,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (167, 'Premium Deco B', '2020-01-28 03:38:23', 'premiun deco', 'Daun + Kusen', 2601990, 3, 220, NULL, 'B1,B2,B3', '900,2100', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (168, 'Premium Deco B', '2020-01-28 03:38:30', 'premiun deco', 'Daun + Kusen', 2858870, 3, 210, NULL, 'B1,B2,B3', '900,2400', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (169, 'Premium Deco B', '2020-01-28 03:41:26', 'premiun deco', 'Daun', 1583890, 3, 104, NULL, 'B1,B2,B3', '730,1960', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (170, 'Premium Deco B', '2020-01-28 03:41:50', 'premiun deco', 'Daun', 1663750, 3, 113, NULL, 'B1,B2,B3', '730,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (171, 'Premium Deco B', '2020-01-28 03:41:58', 'premiun deco', 'Daun', 1737560, 3, 111, NULL, 'B1,B2,B3', '830,2060', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (172, 'Premium Deco B', '2020-01-28 03:42:05', 'premiun deco', 'Daun', 1913250, 3, 110, NULL, 'B1,B2,B3', '830,2360', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (173, 'Felice F1', '2020-01-28 03:47:50', 'felice', 'Daun + Kusen + Engsel', 1035000, 3, 87, NULL, 'White,Brown', '700,1950', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (174, 'Felice F2', '2020-01-28 03:52:59', 'felice', 'Daun + Kusen + Engsel', 1035000, 3, 82, NULL, 'White,Brown', '700,1950', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (175, 'Felice F1', '2020-01-28 03:47:50', 'felice', 'Daun + Kusen + Engsel', 1085000, 3, 54, NULL, 'White,Brown', '700,1950', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (176, 'Felice F2', '2020-01-28 03:52:59', 'felice', 'Daun + Kusen + Engsel', 1085000, 3, 56, NULL, 'White,Brown', '700,1950', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (178, 'Plafon 140 Putih Polos', '2020-01-28 03:59:29', 'plafon polos', 'P x L x T dan harga /lembar', 108800, 5, 12, NULL, 'Putih Polos', '4000,140,7.28', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (179, 'Plafon 200 Putih Polos', '2020-01-28 04:05:53', 'plafon polos', 'P x L x T dan harga /lembar', 64800, 5, 18, NULL, 'Putih Polos', '4000,200,7.28', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (180, 'Plafon 140 Laminate', '2020-01-29 01:25:50', 'plafon laminate', 'P x L x T dan harga /lembar', 177800, 5, 14, NULL, '', '4000,140,7.28', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (181, 'Plafon 200 Laminate', '2020-01-29 01:27:50', 'plafon laminate', 'P x L x T dan harga /lembar', 131500, 5, 18, NULL, '', '4000,200,7.28', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (182, 'Plafon 200 Deco', '2020-01-29 03:41:37', 'plafon deco', 'P x L x T dan harga /lembar', 112500, 5, 4, NULL, NULL, '3000,140,7.28', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (183, 'Lis EG2', '2020-01-29 03:43:40', 'accesories', 'P x L x T dan harga /batang', 20500, 5, 9, NULL, NULL, '4000,140,7.28', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (184, 'Lis EG3', '2020-01-29 03:48:29', 'accesories', 'P x L x T dan harga /batang', 11250, 5, 11, NULL, NULL, '4000,140,7.28', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (185, 'Lis EG4', '2020-01-29 03:52:35', 'accesories', 'P x L x T dan harga /batang', 20500, 5, 16, NULL, NULL, '4000,140,7.28', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (186, 'Lis EG90', '2020-01-29 03:54:31', 'accesories', 'P x L x T dan harga /batang', 13250, 5, 18, NULL, NULL, '4000,140,7.28', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (187, 'CHIP', '2020-01-29 06:26:09', 'solid surface lembar', 'P x L x K dan harga /lembar', 2152200, 9, 34, NULL, 'Snow White,Corn,White,Ice Berg,Night Sky,Natural Granite,Heather Grey,Grey Sand,Emerald', '2000,760,12', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (188, 'CHIP', '2020-01-29 06:26:10', 'solid surface lembar', 'P x L x K dan harga /lembar', 2582600, 9, 36, NULL, 'Snow White,Corn,White,Ice Berg,Night Sky,Natural Granite,Heather Grey,Grey Sand,Emerald', '2400,760,12', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (189, 'CHIP', '2020-01-29 06:26:11', 'solid surface lembar', 'P x L x K dan harga /lembar', 3724700, 9, 38, NULL, 'Snow White,Corn,White,Ice Berg,Night Sky,Natural Granite,Heather Grey,Grey Sand,Emerald', '3760,760,12', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (190, 'CHIP', '2020-01-29 06:26:12', 'solid surface pabrik', 'P x L x K dan harga /meter', 2215700, 9, 21, NULL, 'Snow White,Corn,White,Ice Berg,Night Sky,Natural Granite,Heather Grey,Grey Sand,Emerald', 'M1', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (191, 'DECO', '2020-01-29 06:37:46', 'solid surface lembar', 'P x L x K dan harga /lembar', 2215700, 9, 31, NULL, 'Vogve Grey Sand 1,Vogve Grey Sand 2,Pure Black,Pure White,Cube White,Cube Black', '2000,760,12', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (192, 'DECO', '2020-01-29 06:40:44', 'solid surface lembar', 'P x L x K dan harga /lembar', 2658900, 9, 35, NULL, 'Vogve Grey Sand 1,Vogve Grey Sand 2,Pure Black,Pure White,Cube White,Cube Black', '2400,760,12', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (193, 'DECO', '2020-01-29 06:42:24', 'solid surface pabrik', 'P x L x K dan harga /meter', 1266100, 9, 39, NULL, 'Vogve Grey Sand 1,Vogve Grey Sand 2,Pure Black,Pure White,Cube White,Cube Black', 'M1', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (195, 'Multi Combi One Tone', '2020-01-29 06:51:35', 'combi shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\nCombi:280x300cm', 973500, 8, 20, '4452ca661a60006dc8c58a6f218870dd.jpg', 'White,Ivory,Grey', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (196, 'Multi Combi Two Tone', '2020-01-29 06:56:47', 'combi shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\nCombi:280x300cm', 1111000, 8, 10, '50e1c3c4a43ed75858ed13b45750c69c.jpg', 'White,Ivory,Beige,Cherry,Taek', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (197, 'Basic', '2020-01-29 07:06:24', 'combi shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\nCombi:280x300cm', 360800, 8, 15, '4f6406ab9d3ccde3b822c40284ba7948.png', 'White,Green,Peach,Mustard,Mocca,Pink', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (198, 'Wood Look S/T 2 Tone', '2020-01-29 07:08:34', 'combi shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\nCombi:280x300cm', 594000, 8, 19, NULL, 'White,Ivory,Mushroom,Brown,Chocolate,Gray', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (199, 'Wood Look Soft', '2020-01-29 07:11:58', 'combi shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\nCombi:280x300cm', 594000, 8, 19, '2ecdf522869e38fb8939144ea07d1c97.png', 'White,Ivory,Mushroom,Brown,Chocolate,Codet Blue,Gray', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (200, 'Net Wood Look', '2020-01-29 07:13:14', 'combi shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\nCombi:280x300cm', 481800, 8, 19, NULL, 'Green,Pink,Blue,Brown,Black', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (201, 'Rainbow', '2020-01-29 07:15:37', 'combi shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\nCombi:280x300cm', 492800, 8, 25, '3892c93e20b9561c8f858d979025b038.png', 'Pink,Brown,Sand,Gray', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (202, 'Balwood Look Combi', '2020-01-29 07:17:23', 'combi shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\nCombi:280x300cm', 544500, 8, 29, 'a9a327585a59d81ba316e299ec433480.png', 'Mushroom,Cherry,Nile', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (203, 'Shani', '2020-01-29 07:20:22', 'combi shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\nCombi:280x300cm', 561000, 8, 32, 'a7ee36d576ac5698a33d1b4bb4806f6d.png', 'White,Peach,Caramel,Dark Gray', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (204, 'Metal Romance', '2020-01-29 07:22:05', 'combi shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\nCombi:280x300cm', 649000, 8, 35, '3be09c6b88d13283f0f69bf5b059cfe2.png', 'White,Gold Pink,Blue,Khaki', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (205, 'Blackout Combi', '2020-01-29 07:23:33', 'combi shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\nCombi:280x300cm', 753500, 8, 39, '843e38424efc88aba01fa512dc07e1d5.png', 'White,Beige,Gray,Dark Gray', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (206, 'Alegro 3010 (1%)', '2020-01-29 07:25:35', 'roll screen shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x300cm', 481800, 8, 42, NULL, 'White,Beige,Gray', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (207, 'Alegro 3030 (3%)', '2020-01-29 07:27:17', 'roll screen shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x300cm', 481800, 8, 42, NULL, 'White,Beige,Gray', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (208, 'Alegro 3050 (5%)', '2020-01-29 07:28:18', 'roll screen shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x300cm', 453200, 8, 45, NULL, 'White,Beige,Gray', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (209, 'Forte 4010 (1%)', '2020-01-29 07:29:32', 'roll screen shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x300cm', 564300, 8, 47, NULL, 'White,Beige,Gray', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (210, 'Forte 4030 (3%)', '2020-01-29 07:31:08', 'roll screen shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x300cm', 564300, 8, 49, NULL, 'White,Beige,Gray', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (211, 'Chaos 5000 (5%)', '2020-01-29 07:32:09', 'roll screen shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x300cm', 398200, 8, 49, NULL, 'White,Beige', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (212, 'Chaos 5000 (5%)', '2020-01-29 07:33:21', 'roll screen shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x300cm', 547800, 8, 59, NULL, 'Silver', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (213, '12,5MM (Patternless)', '2020-01-29 07:34:45', 'aluminium blind', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x300cm', 2877600, 8, 65, NULL, 'White,Silver,Gold', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (214, '25MM (Woodlook)', '2020-01-29 07:37:31', 'aluminium blind', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x300cm', 767300, 8, 62, NULL, 'L.Wood,Wood', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (215, '25MM (Patternless)', '2020-01-29 07:38:50', 'aluminium blind', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x300cm', 533500, 8, 66, NULL, 'Brown,Sky Blue,Milky White,Pink,Silver,Light Yellow,Mint', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (216, '35MM (Perforated)', '2020-01-29 07:40:58', 'aluminium blind', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x300cm', 671000, 8, 69, NULL, 'Silver Perforated,Gold Perforated', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (217, '35MM (Patternless)', '2020-01-29 07:42:36', 'aluminium blind', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x300cm', 556600, 8, 63, NULL, 'Silver Shine,Gold Shine,Silver,White', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (218, '35MM (Patternless)', '2020-01-29 07:45:11', 'aluminium blind', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x300cm', 708400, 8, 67, NULL, 'Black', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (219, '35MM Dot', '2020-01-29 07:48:07', 'aluminium blind', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x300cm', 657800, 8, 77, NULL, 'Silver Dot,Gold Dot', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (220, 'Alegro 3000', '2020-01-29 07:51:37', 'vertical blind', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x400', 632500, 8, 74, NULL, 'White,Beige,Gray', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (221, 'Forte 4000', '2020-01-29 07:54:16', 'vertical blind', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x400', 712800, 8, 79, NULL, 'White,Beige,Gray', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (222, 'Chaos 5000', '2020-01-29 07:55:42', 'vertical blind', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x400', 603000, 8, 72, NULL, 'White,Beige', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (223, 'Chaos 5000', '2020-01-29 07:56:51', 'vertical blind', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x400', 696500, 8, 74, NULL, 'Silver', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (224, 'Ben Series', '2020-01-29 07:57:59', 'vertical blind', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x400', 841500, 8, 72, NULL, 'Forsythia,Blue,Rosewood,Brown', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (225, 'Straw', '2020-01-29 07:59:55', 'vertical blind', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x400', 874000, 8, 71, NULL, 'Beige,Brown', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (226, 'GV00501', '2020-01-29 08:01:11', 'vertical blind', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x400', 484000, 8, 79, NULL, 'Yellow,Blue,Green', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (227, 'Ben Series', '2020-01-29 08:06:09', 'blackout shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n260x300cm', 500500, 8, 72, NULL, 'Forsythia,Blue,Rosewood', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (228, 'DGCB Series', '2020-01-29 08:08:22', 'blackout shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n260x300cm', 453200, 8, 75, NULL, 'White,Gray,Beige', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (229, 'DGSB Series', '2020-01-29 08:10:44', 'blackout shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n260x300cm', 453200, 8, 72, NULL, 'White,Gray,Beige', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (230, 'Wood 50MM', '2020-01-29 08:11:23', 'wood blind', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n300x300cm', 1119800, 8, 74, NULL, 'LH-113,LH1017,LH1016,LH184,LH1012', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (231, 'Peru', '2020-01-29 08:15:38', 'roll shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n280x300cm', 402600, 8, 70, 'd9001b13ddbcee1b00f1a76d465bda3e.png', '1021#740,1023#743', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (232, 'Staw', '2020-01-29 08:17:39', 'roll shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n280x300cm', 360800, 8, 64, 'd74460255e4aa3dd4eebc96cfe3df940.png', 'Beige,Brown', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (233, 'Mayway', '2020-01-29 08:18:51', 'roll shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\nMaksimum Pembelian :\r\n280x300cm', 363000, 8, 71, '1c634ed9d8d900de98e7ea4007b65784.png', '905BrBg,904Brw', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (234, 'One Tone', '2020-01-29 08:20:31', 'honeycomb shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\n', 645300, 8, 79, NULL, 'Peach Skin,Lemon,Dark Cocoa,Wine', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (235, 'Two Tone', '2020-01-29 08:25:32', 'honeycomb shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\n', 663300, 8, 89, NULL, 'Peach Skin,Lemon,Dark Cocoa,Wine,Mose Green,Blue,Gray', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (236, 'Blackout', '2020-01-29 08:27:14', 'honeycomb shade', 'Note Jawa\r\nLuas= PxL\r\nTotal= LuasxHarga\r\nMinimum Pembelian 1M2\r\n', 1037300, 8, 95, NULL, 'Ivory,Ice Blue', '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (237, 'Sliding', '2020-01-30 00:58:17', NULL, NULL, NULL, 4, 20, NULL, NULL, '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (238, 'Sliding+Grid', '2020-01-30 00:59:28', NULL, NULL, NULL, 4, 25, NULL, NULL, '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (239, 'Swing', '2020-01-30 01:00:18', NULL, NULL, NULL, 4, 32, NULL, NULL, '', 2, 'Jenat');
-INSERT INTO `tbl_produk` VALUES (240, 'Fixed Glass', '2020-01-30 01:01:00', NULL, NULL, NULL, 4, 12, NULL, NULL, '', 2, 'Jenat');
+/*Data for the table `tbl_produk` */
 
--- ----------------------------
--- Table structure for tbl_rekan
--- ----------------------------
+insert  into `tbl_produk`(`produk_id`,`id_kategori_produk`,`produk_kategori_id`,`produk_judul`,`tanggal`,`produk_author`,`produk_slug`,`produk_nama`,`produk_kategori`,`produk_gambar`,`produk_deskripsi`) values 
+(1,1,1,NULL,'2022-04-07 09:28:42',NULL,'pintu','Pintu','1','classic-2-20.jpg','Pintu ABS'),
+(2,2,2,NULL,'2022-04-07 09:28:42',NULL,'window','window','2','window.jpg','window'),
+(3,3,3,NULL,'2022-04-07 09:28:42',NULL,'interor-Material','Interor Material','3',NULL,NULL),
+(4,4,4,NULL,'2022-04-07 09:28:42',NULL,'exterior-Material','Exterior Material','4',NULL,NULL),
+(5,5,5,NULL,'2022-04-07 09:28:42',NULL,'Aksesoris','Aksesoris','5',NULL,NULL),
+(6,6,6,NULL,'2022-04-07 09:28:42',NULL,'Masker','Masker','6',NULL,NULL);
+
+/*Table structure for table `tbl_produk_keranjang` */
+
+DROP TABLE IF EXISTS `tbl_produk_keranjang`;
+
+CREATE TABLE `tbl_produk_keranjang` (
+  `keranjang_id` int(11) NOT NULL AUTO_INCREMENT,
+  `session_id` varchar(100) DEFAULT NULL,
+  `nama_produk` varchar(200) DEFAULT NULL,
+  `tipe_produk` varchar(200) DEFAULT NULL,
+  `harga_produk_meter` decimal(20,0) DEFAULT NULL,
+  `lebar_produk` decimal(10,0) DEFAULT NULL,
+  `tinggi_produk` decimal(10,0) DEFAULT NULL,
+  `warna_produk` varchar(50) DEFAULT NULL,
+  `jumlah_produk` decimal(10,0) DEFAULT NULL,
+  `harga_produk` decimal(50,0) DEFAULT NULL,
+  PRIMARY KEY (`keranjang_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=256 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_produk_keranjang` */
+
+/*Table structure for table `tbl_produk_lama` */
+
+DROP TABLE IF EXISTS `tbl_produk_lama`;
+
+CREATE TABLE `tbl_produk_lama` (
+  `produk_id` int(20) NOT NULL AUTO_INCREMENT,
+  `id_kategori_produk` int(11) DEFAULT NULL,
+  `produk_slug` varchar(200) DEFAULT NULL,
+  `produk_nama` varchar(100) DEFAULT NULL,
+  `produk_kategori` varchar(100) DEFAULT NULL,
+  `produk_gambar` varchar(200) DEFAULT NULL,
+  `produk_deskripsi` text DEFAULT NULL,
+  PRIMARY KEY (`produk_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+
+/*Data for the table `tbl_produk_lama` */
+
+insert  into `tbl_produk_lama`(`produk_id`,`id_kategori_produk`,`produk_slug`,`produk_nama`,`produk_kategori`,`produk_gambar`,`produk_deskripsi`) values 
+(1,0,'sunshade-combi-roll-screen','Combi Roll Screen','Sunshade','combi/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(2,0,'sunshade-roll-screen','Roll Screen','Sunshade','roll-screen/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(3,0,'sunshade-sun-screen','Sun Screen','Sunshade','sun-screen/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(4,0,'sunshade-black-out-roll-screen','Blackout Roll Screen	','Sunshade','blackout/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(5,0,'sunshade-vertical-blind','Vertical Blind','Sunshade','vert-blind/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(6,0,'sunshade-horizontal-wood','Horizontal Wood','Sunshade','wood-blind/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(7,0,'sunshade-honeycomb','Honeycomb','Sunshade','honeycomb/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(8,0,'sunshade-horizontal-alumunium','Horizontal Alumunium','Sunshade','alumunium/1.jpg','Sun shade merupakan gabungan dari PVC dengan kain serat fiber'),
+(9,1,'pintu','Pintu','pintu','classic-2-20.jpg','Pintu ABS'),
+(10,2,'window','window','window','window.jpg','window'),
+(11,3,'interor-Material','Interor Material','Interor ',NULL,NULL),
+(12,4,'exterior-Material','Exterior Material','Exterior',NULL,NULL),
+(13,5,'Aksesoris','Aksesoris','Aksesoris',NULL,NULL),
+(14,6,'Masker','Masker','Masker',NULL,NULL);
+
+/*Table structure for table `tbl_produk_varian` */
+
+DROP TABLE IF EXISTS `tbl_produk_varian`;
+
+CREATE TABLE `tbl_produk_varian` (
+  `varian_id` int(11) NOT NULL AUTO_INCREMENT,
+  `produk_id` int(11) NOT NULL,
+  `varian_produk_id` int(11) NOT NULL,
+  `varian_kategori_id` int(11) NOT NULL,
+  `varian_author` varchar(150) DEFAULT NULL,
+  `varian_judul` varchar(100) DEFAULT NULL,
+  `varian_stok` varchar(100) DEFAULT NULL,
+  `varian_gambar` varchar(100) DEFAULT NULL,
+  `varian_pengguna_id` int(11) NOT NULL,
+  `id_subkategori_produk` int(11) NOT NULL,
+  `varian_type` varchar(150) DEFAULT NULL,
+  `varian_nama` varchar(150) DEFAULT NULL,
+  `varian_gambar_depan` varchar(150) DEFAULT NULL,
+  `varian_gambar_utama` varchar(200) DEFAULT NULL,
+  `varian_gambar_warna` varchar(200) DEFAULT NULL,
+  `varian_harga` bigint(20) DEFAULT NULL,
+  `varian_harga_meter` decimal(10,0) DEFAULT NULL,
+  `varian_jumlah` bigint(20) DEFAULT NULL,
+  `varian_deskripsi` longtext DEFAULT NULL,
+  `varian_ukuran` varchar(100) DEFAULT NULL,
+  `varian_warna` varchar(100) DEFAULT NULL,
+  `tokopedia` text DEFAULT NULL,
+  `bukalapak` text DEFAULT NULL,
+  `product_name` varchar(120) NOT NULL,
+  `product_jenis` varchar(100) NOT NULL,
+  `product_price` decimal(8,2) NOT NULL,
+  `product_tipe` varchar(100) NOT NULL,
+  `product_brand` varchar(50) NOT NULL,
+  `product_image` varchar(100) NOT NULL,
+  `product_quantity` mediumint(5) NOT NULL,
+  `product_status` enum('0','1') NOT NULL,
+  PRIMARY KEY (`varian_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=182 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_produk_varian` */
+
+insert  into `tbl_produk_varian`(`varian_id`,`produk_id`,`varian_produk_id`,`varian_kategori_id`,`varian_author`,`varian_judul`,`varian_stok`,`varian_gambar`,`varian_pengguna_id`,`id_subkategori_produk`,`varian_type`,`varian_nama`,`varian_gambar_depan`,`varian_gambar_utama`,`varian_gambar_warna`,`varian_harga`,`varian_harga_meter`,`varian_jumlah`,`varian_deskripsi`,`varian_ukuran`,`varian_warna`,`tokopedia`,`bukalapak`,`product_name`,`product_jenis`,`product_price`,`product_tipe`,`product_brand`,`product_image`,`product_quantity`,`product_status`) values 
+(7,1,0,0,NULL,NULL,NULL,NULL,0,1,'pintu','classic-001','pintu/classic-1-50.jpg','pintu/classic-1-50.jpg','warna_new/20.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'Pintu Classic-001','ABS',10000.00,'Pintu Classic-001','SPLUS','pintu/classic-1-50.jpg',5,'1'),
+(1,1,0,0,NULL,NULL,NULL,NULL,0,1,'pintu','classic-001',NULL,'pintu/classic-1-50.jpg','warna_new/19.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN-MOTIF',NULL,NULL,'Pintu Classic-001','ABS',10000.00,'Pintu Classic-001','SPLUS','pintu/classic-1-50.jpg',5,'0'),
+(2,2,0,0,NULL,NULL,NULL,NULL,0,1,'jendela','window','window/window3.jpg','window/window3.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000',NULL,NULL,NULL,'Jendela Classic-110','UPVC_JENDELA',10000.00,'Jendela Classic-110','SPLUS','window/window3.jpg',5,'1'),
+(3,3,0,0,NULL,NULL,NULL,NULL,0,1,'kichen','kichen-001','interior/kichen-001.jpg','interior/kichen-001.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000',NULL,NULL,NULL,'kichen-001','KICHEN',10000.00,'kichen-001','SPLUS','interior/kichen-001.jpg',5,'1'),
+(4,4,0,0,NULL,NULL,NULL,NULL,0,2,'exterior','exterior','exterior/wpc-001.jpg','exterior/wpc-001.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000',NULL,NULL,NULL,'wpc-001','WPC',10000.00,'wpc-001','SPLUS','exterior/wpc-001.jpg',5,'1'),
+(5,5,0,0,NULL,NULL,NULL,NULL,0,2,'aksesoris','aksesoris','aksesoris/gagang-pintu.jpg','aksesoris/gagang-pintu.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000',NULL,NULL,NULL,'gagang-pintu-001','AKSESORIS',10000.00,'gagang pintu-001','NAMO','aksesoris/gagang-pintu.jpg',5,'1'),
+(6,6,0,0,NULL,NULL,NULL,NULL,0,2,'masker','masker','masker/masker-dewasa-001.jpg','masker/masker-dewasa-001.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000',NULL,NULL,NULL,'masker-dewasa-001','MASKER',10000.00,'masker dewasa-001','SPLUS','masker/masker-dewasa-001.jpg',5,'1'),
+(8,1,0,0,NULL,NULL,NULL,NULL,0,1,'pintu','classic-002','pintu/classic-2-20.jpg','pintu/classic-2-20.jpg','warna_new/20.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'Pintu Classic-002','ABS',10000.00,'Pintu Classic-002','SPLUS','pintu/classic-2-20.jpg',5,'1'),
+(9,3,0,0,NULL,NULL,NULL,NULL,0,1,'kichen','kichen-002','interior/kichen-002.jpg','interior/kichen-002.jpg','warna_new/20.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'kichen-002','KICHEN',10000.00,'kichen-002','SPLUS','interior/kichen-002.jpg',5,'1'),
+(10,1,0,0,NULL,NULL,NULL,NULL,0,1,'pintu','artdoor-001','pintu/artdoor-c1-30.jpg','pintu/artdoor-c1-30.jpg','warna_new/20.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'Pintu artdoor-001','NAMO',8000.00,'Pintu artdoor-001','NAMO','pintu/artdoor-c1-30.jpg',3,'1'),
+(11,1,0,0,NULL,NULL,NULL,NULL,0,1,'pintu','grande-001','pintu/grande.jpg','pintu/grande.jpg','warna_new/20.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'Pintu grande-001','ABS',8000.00,'Pintu grande-001','SPLUS','pintu/grande.jpg',3,'1'),
+(12,1,0,0,'itakumala',NULL,NULL,NULL,22,1,'pintu','artdoor-p3-59','pintu/artdoor-r7-60.jpg','pintu/artdoor-r7-60.jpg','warna_new/59.jpg',NULL,10000,NULL,'23','1000x1000',NULL,NULL,NULL,'Pintu artdoor-r7-60','ARTDOOR',10000.00,'Pintu artdoor-r7-60','SPLUS','pintu/artdoor-r7-60.jpg',3,'1'),
+(13,1,0,0,NULL,NULL,NULL,NULL,0,1,'pintu','artdoor-p3-59','pintu/artdoor-p3-59.jpg','pintu/artdoor-p3-59.jpg','warna_new/59.jpg',NULL,10000,NULL,NULL,'1000x1000','BROWN',NULL,NULL,'Pintu artdoor-p3-59','ARTDOOR',10000.00,'Pintu artdoor-p3-59','SPLUS','pintu/artdoor-p3-59.jpg',3,'1');
+
+/*Table structure for table `tbl_produk_varian_lama` */
+
+DROP TABLE IF EXISTS `tbl_produk_varian_lama`;
+
+CREATE TABLE `tbl_produk_varian_lama` (
+  `varian_id` int(11) NOT NULL AUTO_INCREMENT,
+  `produk_id` int(11) NOT NULL,
+  `varian_type` varchar(150) DEFAULT NULL,
+  `varian_nama` varchar(150) DEFAULT NULL,
+  `varian_gambar_depan` varchar(200) DEFAULT NULL,
+  `varian_gambar_utama` varchar(200) DEFAULT NULL,
+  `varian_gambar_warna` varchar(200) DEFAULT NULL,
+  `varian_harga` bigint(20) DEFAULT NULL,
+  `varian_harga_meter` decimal(10,0) DEFAULT NULL,
+  `varian_jumlah` bigint(20) DEFAULT NULL,
+  `varian_deskripsi` longtext DEFAULT NULL,
+  `varian_ukuran` varchar(100) DEFAULT NULL,
+  `varian_warna` varchar(100) DEFAULT NULL,
+  `tokopedia` text DEFAULT NULL,
+  `bukalapak` text DEFAULT NULL,
+  PRIMARY KEY (`varian_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=172 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_produk_varian_lama` */
+
+insert  into `tbl_produk_varian_lama`(`varian_id`,`produk_id`,`varian_type`,`varian_nama`,`varian_gambar_depan`,`varian_gambar_utama`,`varian_gambar_warna`,`varian_harga`,`varian_harga_meter`,`varian_jumlah`,`varian_deskripsi`,`varian_ukuran`,`varian_warna`,`tokopedia`,`bukalapak`) values 
+(1,1,NULL,'Multi Combi One Tone','combi/1.jpg','combi/1.jpg','combi/warna/multi-combi-one-tone/01-white.jpg',0,973500,NULL,'Combi one tone','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-one-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d94raq-jual-roller-blind-s-plus-combi-shade-multi-combi-one-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(2,1,NULL,'Multi Combi One Tone','combi/1.jpg','combi/1.jpg','combi/warna/multi-combi-one-tone/02-ivory.jpg',0,973500,NULL,'Combi one tone','1000x1000','Ivory','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-one-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d94raq-jual-roller-blind-s-plus-combi-shade-multi-combi-one-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(3,1,NULL,'Multi Combi One Tone','combi/1.jpg','combi/1.jpg','combi/warna/multi-combi-one-tone/03-grey.jpg',0,973500,NULL,'Combi one tone','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-one-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d94raq-jual-roller-blind-s-plus-combi-shade-multi-combi-one-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(4,1,NULL,'Multi Combi Two Tone','combi/1.jpg','combi/1.jpg','combi/warna/multi-combi-two-tone/01-beige.jpg',0,1111000,NULL,'Combi Two tone','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d96e39-jual-roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(5,1,NULL,'Multi Combi Two Tone','combi/1.jpg','combi/1.jpg','combi/warna/multi-combi-two-tone/02-white.jpg',0,1111000,NULL,'Combi Two tone','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d96e39-jual-roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(6,1,NULL,'Multi Combi Two Tone','combi/1.jpg','combi/1.jpg','combi/warna/multi-combi-two-tone/03-cherry.jpg',0,1111000,NULL,'Combi Two tone','1000x1000','Cherry','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d96e39-jual-roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(7,1,NULL,'Multi Combi Two Tone','combi/1.jpg','combi/1.jpg','combi/warna/multi-combi-two-tone/04-ivory.jpg',0,1111000,NULL,'Combi Two tone','1000x1000','Ivory','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d96e39-jual-roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(8,1,NULL,'Multi Combi Two Tone','combi/1.jpg','combi/1.jpg','combi/warna/multi-combi-two-tone/05-teak.jpg',0,1111000,NULL,'Combi Two tone','1000x1000','Taek','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d96e39-jual-roller-blind-s-plus-combi-shade-multi-combi-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(9,1,NULL,'Basic',NULL,'combi/1.jpg','combi/warna/basic/01-white.jpg',0,360800,NULL,'Combi Shade Basic','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-basic-uk-60x120-cm-a355','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ldyl-jual-roller-blind-s-plus-combi-shade-basic-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(10,1,NULL,'Basic',NULL,'combi/1.jpg','combi/warna/basic/02-peach.jpg',0,360800,NULL,'Combi Shade Basic','1000x1000','Peach','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-basic-uk-60x120-cm-a355','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ldyl-jual-roller-blind-s-plus-combi-shade-basic-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(11,1,NULL,'Basic',NULL,'combi/1.jpg','combi/warna/basic/03-mustard.jpg',0,360800,NULL,'Combi Shade Basic','1000x1000','Mustard','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-basic-uk-60x120-cm-a355','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ldyl-jual-roller-blind-s-plus-combi-shade-basic-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(12,1,NULL,'Basic',NULL,'combi/1.jpg','combi/warna/basic/07-flourscent-green.jpg',0,360800,NULL,'Combi Shade Basic','1000x1000','Flourcent Green','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-basic-uk-60x120-cm-a355','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ldyl-jual-roller-blind-s-plus-combi-shade-basic-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(13,1,NULL,'Basic',NULL,'combi/1.jpg','combi/warna/basic/05-pink.jpg',0,360800,NULL,'Combi Shade Basic','1000x1000','Pink','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-basic-uk-60x120-cm-a355','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ldyl-jual-roller-blind-s-plus-combi-shade-basic-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(14,1,NULL,'Basic',NULL,'combi/1.jpg','combi/warna/basic/06-mocha.jpg',0,360800,NULL,'Combi Shade Basic','1000x1000','Mocca','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-basic-uk-60x120-cm-a355','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ldyl-jual-roller-blind-s-plus-combi-shade-basic-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(15,1,NULL,'Woodlook S/T 2 Tone',NULL,'combi/1.jpg','combi/warna/woodlook-s-t-tone/01-ivory.jpg',0,594000,NULL,'Combi Shade Woodlook S/T 2 Tone','1000x1000','Ivory','\r\nhttps://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm\r\n\r\nhttps://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm\r\nhttps://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2n7ld-jual-roller-blind-s-plus-combi-shade-woodlook-2-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(16,1,NULL,'Woodlook S/T 2 Tone',NULL,'combi/1.jpg','combi/warna/woodlook-s-t-tone/02-white.jpg',0,594000,NULL,'Combi Shade Woodlook S/T 2 Tone','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2n7ld-jual-roller-blind-s-plus-combi-shade-woodlook-2-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(17,1,NULL,'Woodlook S/T 2 Tone',NULL,'combi/1.jpg','combi/warna/woodlook-s-t-tone/03-brown.jpg',0,594000,NULL,'Combi Shade Woodlook S/T 2 Tone','1000x1000','Brown','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2n7ld-jual-roller-blind-s-plus-combi-shade-woodlook-2-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(18,1,NULL,'Woodlook S/T 2 Tone',NULL,'combi/1.jpg','combi/warna/woodlook-s-t-tone/04-mushroom.jpg',0,594000,NULL,'Combi Shade Woodlook S/T 2 Tone','1000x1000','Mushroom','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2n7ld-jual-roller-blind-s-plus-combi-shade-woodlook-2-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(19,1,NULL,'Woodlook S/T 2 Tone',NULL,'combi/1.jpg','combi/warna/woodlook-s-t-tone/05-grey.jpg',0,594000,NULL,'Combi Shade Woodlook S/T 2 Tone','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2n7ld-jual-roller-blind-s-plus-combi-shade-woodlook-2-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(20,1,NULL,'Woodlook S/T 2 Tone',NULL,'combi/1.jpg','combi/warna/woodlook-s-t-tone/06-chocolate.jpg',0,594000,NULL,'Combi Shade Woodlook S/T 2 Tone','1000x1000','Chocolate','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-s-t-2-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2n7ld-jual-roller-blind-s-plus-combi-shade-woodlook-2-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(21,1,NULL,'Wood Look Soft',NULL,'combi/1.jpg','combi/warna/woodlook-soft/01-mushroom.jpg',0,594000,NULL,'Combi Shade Wood Look Soft','1000x1000','Mushroom','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-soft-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ojmo-jual-roller-blind-s-plus-combi-shade-woodlook-soft-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(22,1,NULL,'Wood Look Soft',NULL,'combi/1.jpg','combi/warna/woodlook-soft/02-white.jpg',0,594000,NULL,'Combi Shade Wood Look Soft','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-soft-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ojmo-jual-roller-blind-s-plus-combi-shade-woodlook-soft-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(23,1,NULL,'Wood Look Soft',NULL,'combi/1.jpg','combi/warna/woodlook-soft/03-chocolate.jpg',0,594000,NULL,'Combi Shade Wood Look Soft','1000x1000','Chocolate','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-soft-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ojmo-jual-roller-blind-s-plus-combi-shade-woodlook-soft-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(24,1,NULL,'Wood Look Soft',NULL,'combi/1.jpg','combi/warna/woodlook-soft/04-brown.jpg',0,594000,NULL,'Combi Shade Wood Look Soft','1000x1000','Brown','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-soft-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ojmo-jual-roller-blind-s-plus-combi-shade-woodlook-soft-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(25,1,NULL,'Wood Look Soft',NULL,'combi/1.jpg','combi/warna/woodlook-soft/05-grey.jpg',0,594000,NULL,'Combi Shade Wood Look Soft','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-soft-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ojmo-jual-roller-blind-s-plus-combi-shade-woodlook-soft-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(26,1,NULL,'Wood Look Soft',NULL,'combi/1.jpg','combi/warna/woodlook-soft/06-cadet-blue.jpg',0,594000,NULL,'Combi Shade Wood Look Soft','1000x1000','Cadet Blue','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-wood-look-soft-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ojmo-jual-roller-blind-s-plus-combi-shade-woodlook-soft-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(27,1,NULL,'Net Wood Look',NULL,'combi/1.jpg','combi/warna/net-wood-look/01-green.jpg',0,481800,NULL,'Combi Shade Net Wood Look','1000x1000','Green','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-net-wood-look-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2plvm-jual-roller-blind-s-plus-net-wood-look-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(28,1,NULL,'Net Wood Look',NULL,'combi/1.jpg','combi/warna/net-wood-look/02-pink.jpg',0,481800,NULL,'Combi Shade Net Wood Look','1000x1000','Pink','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-net-wood-look-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2plvm-jual-roller-blind-s-plus-net-wood-look-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(29,1,NULL,'Net Wood Look',NULL,'combi/1.jpg','combi/warna/net-wood-look/03-blue.jpg',0,481800,NULL,'Combi Shade Net Wood Look','1000x1000','Blue','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-net-wood-look-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2plvm-jual-roller-blind-s-plus-net-wood-look-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(30,1,NULL,'Net Wood Look',NULL,'combi/1.jpg','combi/warna/net-wood-look/04-brown.jpg',0,481800,NULL,'Combi Shade Net Wood Look','1000x1000','Brown','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-net-wood-look-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2plvm-jual-roller-blind-s-plus-net-wood-look-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(31,1,NULL,'Net Wood Look',NULL,'combi/1.jpg','combi/warna/net-wood-look/05-black.jpg',0,481800,NULL,'Combi Shade Net Wood Look','1000x1000','Black','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-net-wood-look-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2plvm-jual-roller-blind-s-plus-net-wood-look-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(32,1,NULL,'Rainbow',NULL,'combi/1.jpg','combi/warna/rainbow/01-pink.jpg',0,492800,NULL,'Combi Shade Rainbow','1000x1000','Pink','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2r5wa-jual-roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(33,1,NULL,'Rainbow',NULL,'combi/1.jpg','combi/warna/rainbow/02-brown.jpg',0,492800,NULL,'Combi Shade Rainbow','1000x1000','Brown','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2r5wa-jual-roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(34,1,NULL,'Rainbow',NULL,'combi/1.jpg','combi/warna/rainbow/03-send.jpg',0,492800,NULL,'Combi Shade Rainbow','1000x1000','Sand','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2r5wa-jual-roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(35,1,NULL,'Rainbow',NULL,'combi/1.jpg','combi/warna/rainbow/04-grey.jpg',0,492800,NULL,'Combi Shade Rainbow','1000x1000','Gray','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2r5wa-jual-roller-blind-s-plus-combi-shade-rainbow-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(36,1,NULL,'Balwood Look Combi',NULL,'combi/1.jpg','combi/warna/balwood-look-combi/01-mushroom.jpg',0,544500,NULL,'Combi Shade Balwood Look Combi','1000x1000','Mushroom','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-balwood-look-combi-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2sj6b-jual-roller-blind-s-plus-combi-shade-balwood-look?from=product_owner&product_owner=normal_seller'),
+(37,1,NULL,'Balwood Look Combi',NULL,'combi/1.jpg','combi/warna/balwood-look-combi/02-cherry.jpg',0,544500,NULL,'Combi Shade Balwood Look Combi','1000x1000','Cherry','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-balwood-look-combi-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2sj6b-jual-roller-blind-s-plus-combi-shade-balwood-look?from=product_owner&product_owner=normal_seller'),
+(38,1,NULL,'Balwood Look Combi',NULL,'combi/1.jpg','combi/warna/balwood-look-combi/03-nile.jpg',0,544500,NULL,'Combi Shade Balwood Look Combi','1000x1000','Nile','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-balwood-look-combi-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2sj6b-jual-roller-blind-s-plus-combi-shade-balwood-look?from=product_owner&product_owner=normal_seller'),
+(39,1,NULL,'Shani',NULL,'combi/1.jpg','combi/warna/shani/01-white.jpg',0,561000,NULL,'Combi Shade Shani','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-shani-uk-60-x-120cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ukft-jual-roller-blind-s-plus-combi-shade-shani-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(40,1,NULL,'Shani',NULL,'combi/1.jpg','combi/warna/shani/02-peach.jpg',0,561000,NULL,'Combi Shade Shani','1000x1000','Peach','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-shani-uk-60-x-120cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ukft-jual-roller-blind-s-plus-combi-shade-shani-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(41,1,NULL,'Shani',NULL,'combi/1.jpg','combi/warna/shani/03-caramel.jpg',0,561000,NULL,'Combi Shade Shani','1000x1000','Charamel','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-shani-uk-60-x-120cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ukft-jual-roller-blind-s-plus-combi-shade-shani-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(42,1,NULL,'Shani',NULL,'combi/1.jpg','combi/warna/shani/04-dark-grey.jpg',0,561000,NULL,'Combi Shade Shani','1000x1000','Dark Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-shani-uk-60-x-120cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2ukft-jual-roller-blind-s-plus-combi-shade-shani-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(43,1,NULL,'Metal Romance',NULL,'combi/1.jpg','combi/warna/metal-romance/01-white.jpg',0,649000,NULL,'Combi Shade Metal Romance','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e8evs8-jual-roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(44,1,NULL,'Metal Romance',NULL,'combi/1.jpg','combi/warna/metal-romance/02-gold-pink.jpg',0,649000,NULL,'Combi Shade Metal Romance','1000x1000','Gold Pink','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e8evs8-jual-roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(45,1,NULL,'Metal Romance',NULL,'combi/1.jpg','combi/warna/metal-romance/03-blue.jpg',0,649000,NULL,'Combi Shade Metal Romance','1000x1000','Blue','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e8evs8-jual-roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(46,1,NULL,'Metal Romance',NULL,'combi/1.jpg','combi/warna/metal-romance/04-khaki.jpg',0,649000,NULL,'Combi Shade Metal Romance','1000x1000','Khaki','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e8evs8-jual-roller-blind-s-plus-combi-shade-metal-romance-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(47,1,NULL,'Blackout Combi',NULL,'combi/1.jpg','combi/warna/blackout-combi/01-white.jpg',0,753500,NULL,'Combi Shade Blackout Combi','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-blackout-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2zhvb-jual-roller-blind-s-plus-combi-shade-blackout-uk-60x120-cmm?from=product_owner&product_owner=normal_seller'),
+(48,1,NULL,'Blackout Combi',NULL,'combi/1.jpg','combi/warna/blackout-combi/02-beige.jpg',0,753500,NULL,'Combi Shade Blackout Combi','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-blackout-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2zhvb-jual-roller-blind-s-plus-combi-shade-blackout-uk-60x120-cmm?from=product_owner&product_owner=normal_seller'),
+(49,1,NULL,'Blackout Combi',NULL,'combi/1.jpg','combi/warna/blackout-combi/03-grey.jpg',0,753500,NULL,'Combi Shade Blackout Combi','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-blackout-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2zhvb-jual-roller-blind-s-plus-combi-shade-blackout-uk-60x120-cmm?from=product_owner&product_owner=normal_seller'),
+(50,1,NULL,'Blackout Combi',NULL,'combi/1.jpg','combi/warna/blackout-combi/04-dark-grey.jpg',0,753500,NULL,'Combi Shade Blackout Combi','1000x1000','Dark Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-combi-shade-blackout-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d2zhvb-jual-roller-blind-s-plus-combi-shade-blackout-uk-60x120-cmm?from=product_owner&product_owner=normal_seller'),
+(51,3,NULL,'Alegro 3010 (1%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-1-3010/01-white.jpg',0,481800,NULL,'Sun Screen Alegro 3010 (1%)','1000x1000','White','https://www.tokopedia.com/splus-indonesia/sun-screen-s-plus-alegro-3010-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8x9lk-jual-sun-screen-s-plus-alegro-3010-uk-60x120?from=product_owner&product_owner=normal_seller'),
+(52,3,NULL,'Alegro 3010 (1%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-1-3010/02-beige.jpg',0,481800,NULL,'Sun Screen Alegro 3010 (1%)','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/sun-screen-s-plus-alegro-3010-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8x9lk-jual-sun-screen-s-plus-alegro-3010-uk-60x120?from=product_owner&product_owner=normal_seller'),
+(53,3,NULL,'Alegro 3010 (1%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-1-3010/03-grey.jpg',0,481800,NULL,'Sun Screen Alegro 3010 (1%)','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/sun-screen-s-plus-alegro-3010-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8x9lk-jual-sun-screen-s-plus-alegro-3010-uk-60x120?from=product_owner&product_owner=normal_seller'),
+(54,3,NULL,'Alegro 3030 (3%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-3-3030/01-white.jpg',0,481800,NULL,'Sun Screen Alegro 3030 (3%)','1000x1000','White',NULL,NULL),
+(55,3,NULL,'Alegro 3030 (3%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-3-3030/02-beige.jpg',0,481800,NULL,'Sun Screen Alegro 3030 (3%)','1000x1000','Beige',NULL,NULL),
+(56,3,NULL,'Alegro 3030 (3%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-3-3030/03-grey.jpg',0,481800,NULL,'Sun Screen Alegro 3030 (3%)','1000x1000','Grey',NULL,NULL),
+(57,3,NULL,'Alegro 3050 (5%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-5-3050/01-white.jpg',0,453200,NULL,'Sun Screen Alegro 3050 (5%)','1000x1000','White',NULL,NULL),
+(58,3,NULL,'Alegro 3050 (5%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-5-3050/02-beige.jpg',0,453200,NULL,'Sun Screen Alegro 3050 (5%)','1000x1000','Beige',NULL,NULL),
+(59,3,NULL,'Alegro 3050 (5%)',NULL,'sun-screen/1.jpg','sun-screen/warna/alegro-5-3050/03-grey.jpg',0,453200,NULL,'Sun Screen Alegro 3050 (5%)','1000x1000','Grey',NULL,NULL),
+(60,3,NULL,'Forte 4010 (1%)',NULL,'sun-screen/1.jpg','sun-screen/warna/forte-1-4010/01-white.jpg',0,564300,NULL,'Sun Screen Forte 4010 (1%)','1000x1000','White',NULL,NULL),
+(61,3,NULL,'Forte 4010 (1%)',NULL,'sun-screen/1.jpg','sun-screen/warna/forte-1-4010/02-beige.jpg',0,564300,NULL,'Sun Screen Forte 4010 (1%)','1000x1000','Beige',NULL,NULL),
+(62,3,NULL,'Forte 4010 (1%)',NULL,'sun-screen/1.jpg','sun-screen/warna/forte-1-4010/03-grey.jpg',0,564300,NULL,'Sun Screen Forte 4010 (1%)','1000x1000','Grey',NULL,NULL),
+(63,3,NULL,'Forte 4030 (3%)',NULL,'sun-screen/1.jpg','sun-screen/warna/forte-3-4030/01-white.jpg',0,564300,NULL,'Sun Screen Forte 4030 (3%)','1000x1000','White',NULL,NULL),
+(64,3,NULL,'Forte 4030 (3%)',NULL,'sun-screen/1.jpg','sun-screen/warna/forte-3-4030/02-beige.jpg',0,564300,NULL,'Sun Screen Forte 4030 (3%)','1000x1000','Beige',NULL,NULL),
+(65,3,NULL,'Forte 4030 (3%)',NULL,'sun-screen/1.jpg','sun-screen/warna/forte-3-4030/03-grey.jpg',0,564300,NULL,'Sun Screen Forte 4030 (3%)','1000x1000','Grey',NULL,NULL),
+(66,3,NULL,'Chaos 5000 (5%)',NULL,'sun-screen/1.jpg','sun-screen/warna/chaos-5000/01-white.jpg',0,398200,NULL,'Sun Screen Chaos 5000 (5%)','1000x1000','White','https://www.tokopedia.com/splus-indonesia/sun-screen-s-plus-chaos-5000-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3ehfh0a-jual-sun-screen-s-plus-chaos-5000-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(67,3,NULL,'Chaos 5000 (5%)',NULL,'sun-screen/1.jpg','sun-screen/warna/chaos-5000/02-beige.jpg',0,398200,NULL,'Sun Screen Chaos 5000 (5%)','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/sun-screen-s-plus-chaos-5000-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3ehfh0a-jual-sun-screen-s-plus-chaos-5000-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(68,3,NULL,'Chaos 5000 (5%)',NULL,'sun-screen/1.jpg','sun-screen/warna/chaos-5000/04-silver-white.jpg',0,547800,NULL,'Sun Screen Chaos 5000 (5%)','1000x1000','Silver',NULL,NULL),
+(69,2,NULL,'Peru',NULL,'roll-screen/1.jpg','roll-screen/warna/peru/01-1021.jpg',0,402600,NULL,'Roll Screen Peru','1000x1000','1021#740','https://www.tokopedia.com/splus-indonesia/roll-screen-s-plus-peru-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8n2ki-jual-roller-blind-s-plus-roll-screen-peru-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(70,2,NULL,'Peru',NULL,'roll-screen/1.jpg','roll-screen/warna/peru/01-1023.jpg',0,402600,NULL,'Roll Screen Peru','1000x1000','1023#743','https://www.tokopedia.com/splus-indonesia/roll-screen-s-plus-peru-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8n2ki-jual-roller-blind-s-plus-roll-screen-peru-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(71,2,NULL,'Straw',NULL,'roll-screen/1.jpg','roll-screen/warna/straw/01-brown.jpg',0,360800,NULL,'Roll Screen Straw','1000x1000','Brown','https://www.tokopedia.com/splus-indonesia/roll-screen-s-plus-straw-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8ob62-jual-roller-blind-s-plus-roll-screen-straw-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(72,2,NULL,'Straw',NULL,'roll-screen/1.jpg','roll-screen/warna/straw/01-beige.jpg',0,360800,NULL,'Roll Screen Straw','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/roll-screen-s-plus-straw-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8ob62-jual-roller-blind-s-plus-roll-screen-straw-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(73,2,NULL,'Mayway',NULL,'roll-screen/1.jpg','roll-screen/warna/mai-way/01-905-BrBg.jpg',0,363000,NULL,'Roll Screen Mayway','1000x1000','905BrBg','https://www.tokopedia.com/splus-indonesia/roll-screen-s-plus-mayway-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8p6od-jual-roller-blind-s-plus-roll-screen-mayway-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(74,2,NULL,'Mayway',NULL,'roll-screen/1.jpg','roll-screen/warna/mai-way/02-904-Brw.jpg',0,363000,NULL,'Roll Screen Mayway','1000x1000','904Brw','https://www.tokopedia.com/splus-indonesia/roll-screen-s-plus-mayway-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8p6od-jual-roller-blind-s-plus-roll-screen-mayway-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(75,4,NULL,'Ben Series',NULL,'blackout/1.jpg','blackout/warna/ben-series/01-forsythia.jpg',0,500500,NULL,'Blackout Roll Screen Ben Series','1000x1000','Forsythia','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-ben-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d3171e-jual-roller-blind-s-plus-blackout-shade-ben-series?from=product_owner&product_owner=normal_seller'),
+(76,4,NULL,'Ben Series',NULL,'blackout/1.jpg','blackout/warna/ben-series/02-blue.jpg',0,500500,NULL,'Blackout Roll Screen Ben Series','1000x1000','Blue','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-ben-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d3171e-jual-roller-blind-s-plus-blackout-shade-ben-series?from=product_owner&product_owner=normal_seller'),
+(77,4,NULL,'Ben Series',NULL,'blackout/1.jpg','blackout/warna/ben-series/03-rosewood.jpg',0,500500,NULL,'Blackout Roll Screen Ben Series','1000x1000','Rose Wood','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-ben-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d3171e-jual-roller-blind-s-plus-blackout-shade-ben-series?from=product_owner&product_owner=normal_seller'),
+(79,4,NULL,'DGCB Series',NULL,'blackout/1.jpg','blackout/warna/dgcb/01-white.jpg',0,453200,NULL,'Blackout Roll Screen DGCB Series','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8l2pp-jual-roller-blind-s-plus-blackout-shade-dgcb-series?from=product_owner&product_owner=normal_seller'),
+(80,4,NULL,'DGCB Series',NULL,'blackout/1.jpg','blackout/warna/dgcb/02-grey.jpg',0,453200,NULL,'Blackout Roll Screen DGCB Series','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8l2pp-jual-roller-blind-s-plus-blackout-shade-dgcb-series?from=product_owner&product_owner=normal_seller'),
+(81,4,NULL,'DGCB Series',NULL,'blackout/1.jpg','blackout/warna/dgcb/03-beige.jpg',0,453200,NULL,'Blackout Roll Screen DGCB Series','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8l2pp-jual-roller-blind-s-plus-blackout-shade-dgcb-series?from=product_owner&product_owner=normal_seller'),
+(82,4,NULL,'DGSB Series',NULL,'blackout/1.jpg','blackout/warna/dgsb/01-white.jpg',0,453200,NULL,'Blackout Roll Screen DGSB Series','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8m93y-jual-roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(83,4,NULL,'DGSB Series',NULL,'blackout/1.jpg','blackout/warna/dgsb/02-grey.jpg',0,453200,NULL,'Blackout Roll Screen DGSB Series','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8m93y-jual-roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(84,4,NULL,'DGSB Series',NULL,'blackout/1.jpg','blackout/warna/dgsb/03-beige.jpg',0,453200,NULL,'Blackout Roll Screen DGSB Series','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8m93y-jual-roller-blind-s-plus-blackout-shade-dgsb-series-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(85,5,NULL,'ALEGRO 3000',NULL,'vert-blind/1.jpg','vert-blind/warna/alegro-3000/01-white.jpg',0,632500,NULL,'Vertical Blind ALEGRO 3000','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-alegro-3000-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d91trz-jual-roller-blind-s-plus-vertical-alegro-3000-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(86,5,NULL,'ALEGRO 3000',NULL,'vert-blind/1.jpg','vert-blind/warna/alegro-3000/02-grey.jpg',0,632500,NULL,'Vertical Blind ALEGRO 3000','1000x1000','Grey','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-alegro-3000-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d91trz-jual-roller-blind-s-plus-vertical-alegro-3000-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(87,5,NULL,'ALEGRO 3000',NULL,'vert-blind/1.jpg','vert-blind/warna/alegro-3000/03-beige.jpg',0,632500,NULL,'Vertical Blind ALEGRO 3000','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-alegro-3000-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d91trz-jual-roller-blind-s-plus-vertical-alegro-3000-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(88,5,NULL,'FORTE 4000',NULL,'vert-blind/1.jpg','vert-blind/warna/forte-4000/01-white.jpg',0,712800,NULL,'Vertical Blind FORTE 4000','1000x1000','White',NULL,NULL),
+(89,5,NULL,'FORTE 4000',NULL,'vert-blind/1.jpg','vert-blind/warna/forte-4000/02-grey.jpg',0,712800,NULL,'Vertical Blind FORTE 4000','1000x1000','Grey',NULL,NULL),
+(90,5,NULL,'FORTE 4000',NULL,'vert-blind/1.jpg','vert-blind/warna/forte-4000/03-beige.jpg',0,712800,NULL,'Vertical Blind FORTE 4000','1000x1000','Beige',NULL,NULL),
+(91,5,NULL,'CHAOS 5000',NULL,'vert-blind/1.jpg','vert-blind/warna/chaos-5000/01-white.jpg',0,603000,NULL,'Vertical Blind CHAOS 5000','1000x1000','White',NULL,NULL),
+(92,5,NULL,'CHAOS 5000',NULL,'vert-blind/1.jpg','vert-blind/warna/chaos-5000/02-beige.jpg',0,603000,NULL,'Vertical Blind CHAOS 5000','1000x1000','Beige',NULL,NULL),
+(93,5,NULL,'CHAOS 5000',NULL,'vert-blind/1.jpg','vert-blind/warna/chaos-5000/04-silver-white.jpg',0,696500,NULL,'Vertical Blind CHAOS 5000','1000x1000','Silver',NULL,NULL),
+(94,5,NULL,'BEN SERIES',NULL,'vert-blind/1.jpg','vert-blind/warna/ben-series/01-forsythia.jpg',0,841500,NULL,'Vertical Blind BEN SERIES','1000x1000','Forsythia','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-ben-series-uk-60x120-cm-forsythia','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eaf2m5-jual-roller-blind-s-plus-vertical-ben-series-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(95,5,NULL,'BEN SERIES',NULL,'vert-blind/1.jpg','vert-blind/warna/ben-series/02-blue.jpg',0,841500,NULL,'Vertical Blind BEN SERIES','1000x1000','Blue','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-ben-series-uk-60x120-cm-forsythia','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eaf2m5-jual-roller-blind-s-plus-vertical-ben-series-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(96,5,NULL,'BEN SERIES',NULL,'vert-blind/1.jpg','vert-blind/warna/ben-series/03-rosewood.jpg',0,841500,NULL,'Vertical Blind BEN SERIES','1000x1000','Rose Wood','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-ben-series-uk-60x120-cm-forsythia','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eaf2m5-jual-roller-blind-s-plus-vertical-ben-series-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(98,5,NULL,'STRAW',NULL,'vert-blind/1.jpg','vert-blind/warna/straw/01-brown.jpg',0,874000,NULL,'Vertical Blind STRAW','1000x1000','Brown','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-straw-uk-60x120-cm-beige','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eaje74-jual-roller-blind-s-plus-vertical-straw-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(99,5,NULL,'STRAW',NULL,'vert-blind/1.jpg','vert-blind/warna/straw/02-beige.jpg',0,874000,NULL,'Vertical Blind STRAW','1000x1000','Beige','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-straw-uk-60x120-cm-beige','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eaje74-jual-roller-blind-s-plus-vertical-straw-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(100,5,NULL,'GV00501',NULL,'vert-blind/1.jpg','vert-blind/warna/gv/01.jpg',0,484000,NULL,'Vertical Blind GV00501','1000x1000','White','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-gv00501-uk-60x120-cm-yellow','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eam1j7-jual-roller-blind-s-plus-vertical-gv00501-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(101,5,NULL,'GV00501',NULL,'vert-blind/1.jpg','vert-blind/warna/gv/02.jpg',0,484000,NULL,'Vertical Blind GV00501','1000x1000','Green','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-gv00501-uk-60x120-cm-yellow','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eam1j7-jual-roller-blind-s-plus-vertical-gv00501-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(102,5,NULL,'GV00501',NULL,'vert-blind/1.jpg','vert-blind/warna/gv/03.jpg',0,484000,NULL,'Vertical Blind GV00501','1000x1000','Blue','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-vertical-gv00501-uk-60x120-cm-yellow','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3eam1j7-jual-roller-blind-s-plus-vertical-gv00501-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(103,6,NULL,'WOOD 50MM',NULL,'wood-blind/1.jpg','wood-blind/warna/horizontal-wood/01-LH-113.jpg',0,1119800,NULL,'Horizontal Wood WOOD 50MM','1000x1000','LH-113','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-wood-uk-90x180-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8vdm7-jual-roller-blind-s-plus-horizontal-wood-uk-90x180-cm?from=product_owner&product_owner=normal_seller'),
+(104,6,NULL,'WOOD 50MM',NULL,'wood-blind/1.jpg','wood-blind/warna/horizontal-wood/02-LH-1017.jpg',0,1119800,NULL,'Horizontal Wood WOOD 50MM','1000x1000','LH-1017','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-wood-uk-90x180-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8vdm7-jual-roller-blind-s-plus-horizontal-wood-uk-90x180-cm?from=product_owner&product_owner=normal_seller'),
+(105,6,NULL,'WOOD 50MM',NULL,'wood-blind/1.jpg','wood-blind/warna/horizontal-wood/03-LH-1016.jpg',0,1119800,NULL,'Horizontal Wood WOOD 50MM','1000x1000','LH-1016','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-wood-uk-90x180-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8vdm7-jual-roller-blind-s-plus-horizontal-wood-uk-90x180-cm?from=product_owner&product_owner=normal_seller'),
+(106,6,NULL,'WOOD 50MM',NULL,'wood-blind/1.jpg','wood-blind/warna/horizontal-wood/04-LH-184.jpg',0,1119800,NULL,'Horizontal Wood WOOD 50MM','1000x1000','LH-184','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-wood-uk-90x180-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8vdm7-jual-roller-blind-s-plus-horizontal-wood-uk-90x180-cm?from=product_owner&product_owner=normal_seller'),
+(107,6,NULL,'WOOD 50MM',NULL,'wood-blind/1.jpg','wood-blind/warna/horizontal-wood/05-LH-1012.jpg',0,1119800,NULL,'Horizontal Wood WOOD 50MM','1000x1000','LH-1012','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-wood-uk-90x180-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8vdm7-jual-roller-blind-s-plus-horizontal-wood-uk-90x180-cm?from=product_owner&product_owner=normal_seller'),
+(108,7,NULL,'ONE TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-one-tone/01-B-006-Peach-Skin.jpg',0,645300,NULL,'Honeycomb ONE TONE','1000x1000','B-006 PEACH SKIN','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8py6x-jual-roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(109,7,NULL,'ONE TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-one-tone/02-B-043-Lemon.jpg',0,645300,NULL,'Honeycomb ONE TONE','1000x1000','B-043 LEMON','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8py6x-jual-roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(110,7,NULL,'ONE TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-one-tone/03-B-012-Dark-Cocoa.jpg',0,645300,NULL,'Honeycomb ONE TONE','1000x1000','B-012 DARK COCOA','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8py6x-jual-roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(111,7,NULL,'ONE TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-one-tone/04-B-20-Wine.jpg',0,645300,NULL,'Honeycomb ONE TONE','1000x1000','B-20 WINE','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8py6x-jual-roller-blind-s-plus-honeycomb-one-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(112,7,NULL,'TWO TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-two-tone/01-A-006-Peach-Skin.jpg',0,663300,NULL,'Honeycomb TWO TONE','1000x1000','A-006 PEACH SKIN','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8rm7m-jual-roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(113,7,NULL,'TWO TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-two-tone/02-A-012-Dark-Cocoa.jpg',0,663300,NULL,'Honeycomb TWO TONE','1000x1000','A-012 DARK COCOA','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8rm7m-jual-roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(114,7,NULL,'TWO TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-two-tone/03-A-20-Wine.jpg',0,663300,NULL,'Honeycomb TWO TONE','1000x1000','A-20 WINE','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8rm7m-jual-roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(115,7,NULL,'TWO TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-two-tone/04-A-027-Mose-Green.jpg',0,663300,NULL,'Honeycomb TWO TONE','1000x1000','A-027 MOSE GREEN','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8rm7m-jual-roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(116,7,NULL,'TWO TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-two-tone/05-A-034-Blue.jpg',0,663300,NULL,'Honeycomb TWO TONE','1000x1000','A-034 BLUE','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8rm7m-jual-roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(117,7,NULL,'TWO TONE',NULL,'honeycomb/1.jpg','honeycomb/warna/honeycomb-two-tone/06-A-041-Grey.jpg',0,663300,NULL,'Honeycomb TWO TONE','1000x1000','A-041 GREY','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8rm7m-jual-roller-blind-s-plus-honeycomb-two-tone-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(118,7,NULL,'BLACKOUT',NULL,'honeycomb/1.jpg','honeycomb/warna/blackout/01-Opa-902-ivory.jpg',0,1037300,NULL,'Honeycomb BLACKOUT','1000x1000','OPA-902 IVORY','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-blackout-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8t3s8-jual-roller-blind-s-plus-hoeycomb-blackout-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(119,7,NULL,'BLACKOUT',NULL,'honeycomb/1.jpg','honeycomb/warna/blackout/02-Opa-905-Ice-Blue.jpg',0,1037300,NULL,'Honeycomb BLACKOUT','1000x1000','OPA-095 ICE BLUE','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-honeycomb-blackout-uk-60x120-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8t3s8-jual-roller-blind-s-plus-hoeycomb-blackout-uk-60x120-cm?from=product_owner&product_owner=normal_seller'),
+(120,8,NULL,'12,5MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/12-55mm-patternless/01-White-1211.jpg',0,2877600,NULL,'Horizontal Alumunium 12,5MM (Patternless)','1000x1000','WHITE (1211)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-12-5-mm-patternless-uk-70x150-white','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9i5b1-jual-roller-blind-s-plus-horizontal-aluminium-12-5-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(121,8,NULL,'12,5MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/12-55mm-patternless/02-Silver-1243.jpg',0,2877600,NULL,'Horizontal Alumunium 12,5MM (Patternless)','1000x1000','SILVER (1234)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-12-5-mm-patternless-uk-70x150-white','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9i5b1-jual-roller-blind-s-plus-horizontal-aluminium-12-5-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(122,8,NULL,'12,5MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/12-55mm-patternless/03-Gold-12906.jpg',0,2877600,NULL,'Honeycomb 12,5MM (Patternless)','1000x1000','GOLD (12906)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-12-5-mm-patternless-uk-70x150-white','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9i5b1-jual-roller-blind-s-plus-horizontal-aluminium-12-5-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(123,8,NULL,'25MM (woodlook)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-woodlook/01-L-Brown-2207.jpg',0,767300,NULL,'Horizontal Alumunium 25MM (woodlook)','1000x1000','L. WOOD (2207)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25mm-woodlook-uk-70x150-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8vdm7-jual-roller-blind-s-plus-horizontal-wood-uk-90x180-cm?from=product_owner&product_owner=normal_seller'),
+(124,8,NULL,'25MM (woodlook)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-woodlook/02-D-Brown-2207.jpg',0,767300,NULL,'Horizontal Alumunium 25MM (woodlook)','1000x1000','WOOD (2206)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25mm-woodlook-uk-70x150-cm','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3d8vdm7-jual-roller-blind-s-plus-horizontal-wood-uk-90x180-cm?from=product_owner&product_owner=normal_seller'),
+(125,8,NULL,'25MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-patternless/07-Brown-6015.jpg',0,533500,NULL,'Horizontal Alumunium 25MM (Patternless)','1000x1000','BROWN (6015)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150cm-brown','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9llsk-jual-roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(126,8,NULL,'25MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-patternless/06-Sky-Blue-6009.jpg',0,533500,NULL,'Horizontal Alumunium 25MM (Patternless)','1000x1000','SKY BLUE (60009)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150cm-brown','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9llsk-jual-roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(127,8,NULL,'25MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-patternless/01-Milky-White-6001.jpg',0,533500,NULL,'Horizontal Alumunium 25MM (Patternless)','1000x1000','MILKY WHITE (6001)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150cm-brown','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9llsk-jual-roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(128,8,NULL,'25MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-patternless/04-Pink-2609.jpg',0,533500,NULL,'Horizontal Alumunium 25MM (Patternless)','1000x1000','PINK (2609)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150cm-brown','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9llsk-jual-roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(129,8,NULL,'25MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-patternless/02-Silver-2600.jpg',0,533500,NULL,'Horizontal Alumunium 25MM (Patternless)','1000x1000','SILVER (DSL 26000)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150cm-brown','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9llsk-jual-roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(130,8,NULL,'25MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-patternless/03-Ivory-2602.jpg',0,533500,NULL,'Horizontal Alumunium 25MM (Patternless)','1000x1000','LIGHT YELLOW (2602)','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150cm-brown','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9llsk-jual-roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(131,8,NULL,'25MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/25-00mm-patternless/05-Mint-2606.jpg',0,533500,NULL,'Horizontal Alumunium 25MM (Patternless)','1000x1000','MINT (2606','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150cm-brown','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9llsk-jual-roller-blind-s-plus-horizontal-aluminium-25-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(132,8,NULL,'35MM (Perforated)',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-perforated/01-Silver-3050.jpg',0,671000,NULL,'Horizontal Alumunium 35MM (Perforated)','1000x1000','SILVER PERFORATED','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-perforated-uk-70x150-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9xcb9-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-perforated-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(133,8,NULL,'35MM (Perforated)',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-perforated/02-Gold-3010.jpg',0,671000,NULL,'Horizontal Alumunium 35MM (Perforated)','1000x1000','GOLD PERFORATED','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-perforated-uk-70x150-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9xcb9-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-perforated-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(134,8,NULL,'35MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-patternless/02-Matt-Silver-3500.jpg',0,556600,NULL,'Horizontal Alumunium 35MM (Patternless)','1000x1000','SILVER SHINE','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150cm-gold','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9pg0j-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(135,8,NULL,'35MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-patternless/05-Gold-3510.jpg',0,556600,NULL,'Horizontal Alumunium 35MM (Patternless)','1000x1000','GOLD SHINE','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150cm-gold','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9pg0j-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(136,8,NULL,'35MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-patternless/04-Silver-3511.jpg',0,556600,NULL,'Horizontal Alumunium 35MM (Patternless)','1000x1000','SILVER','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150cm-gold','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9pg0j-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(137,8,NULL,'35MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-patternless/01-Milky-White-3501.jpg',0,556600,NULL,'Horizontal Alumunium 35MM (Patternless)','1000x1000','WHITE','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150cm-gold','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9pg0j-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(138,8,NULL,'35MM (Patternless)',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-patternless/03-Black-3520.jpg',0,708400,NULL,'Horizontal Alumunium 35MM (Patternless)','1000x1000','BLACK','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150cm-gold','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9pg0j-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-patternless-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(139,8,NULL,'35MM Dot',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-dot/01-Silver-3808.jpg',0,657800,NULL,'Horizontal Alumunium 35MM Dot','1000x1000','SILVER DOT','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9n606-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(140,8,NULL,'35MM Dot',NULL,'alumunium/1.jpg','alumunium/warna/35-00mm-dot/02-Gold-3810.jpg',0,657800,NULL,'Horizontal Alumunium 35MM Dot','1000x1000','GOLD DOT','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9n606-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(141,9,'classic-2','classic-2','pintu/classic-2-20.jpg','pintu/classic-2-20.jpg','warna_new/19.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BROWN MOTIF','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9n606-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(142,9,'classic-2','classic-2','','pintu/classic-2-20.jpg','warna_new/10.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BROWN','https://www.tokopedia.com/splus-indonesia/roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm-silver','https://www.bukalapak.com/p/rumah-tangga/furniture-interior/dekorasi-rumah/3e9n606-jual-roller-blind-s-plus-horizontal-aluminium-35-mm-dot-uk-70x150-cm?from=product_owner&product_owner=normal_seller'),
+(143,9,'classic-1','classic-1','pintu/classic-1-50.jpg','pintu/classic-1-50.jpg','warna_new/veronastone-57.jpg',0,657800,NULL,'Pintu ABS','1000x1000','WHITE',NULL,NULL),
+(144,9,'classic-1','classic-1','','pintu/classic-1-50.jpg','warna_new/10.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BLACK',NULL,NULL),
+(145,9,'classic-1','classic-1','','pintu/classic-1-50.jpg','warna_new/20.jpg',0,657800,NULL,'Pintu ABS','1000x1000','BROWN',NULL,NULL),
+(146,9,'classic-1','classic-1',NULL,'pintu/classic-1-50.jpg','warna_new/59.jpg',NULL,NULL,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(147,9,'classic-1','classic-1',NULL,'pintu/classic-1-50.jpg','warna_new/27.jpg',0,NULL,NULL,'Pintu ABS','1000x1000','YELLOW',NULL,NULL),
+(148,9,'classic-1','classic-1',NULL,'pintu/classic-1-50.jpg','warna_new/80.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN 2',NULL,NULL),
+(149,9,'artdoor-c1-30','artdoor-c1-30','pintu/artdoor-c1-30.jpg','pintu/artdoor-c1-30.jpg','warna_new/59.jpg',NULL,NULL,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(150,9,'artdoor-c1-30','artdoor-c1-30','','pintu/artdoor-c1-30.jpg','warna_new/20.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(151,9,'artdoor-c1-30','artdoor-c1-30','','pintu/artdoor-c1-30.jpg','warna_new/27.jpg',NULL,NULL,NULL,NULL,'1000x1000','YELLOW',NULL,NULL),
+(152,9,'grande-pga-1090','grande-1','pintu/grande.jpg','pintu/grande.jpg','warna_new/50.jpg',NULL,NULL,NULL,'Pintu Upvc','1000x1000','WHITE',NULL,NULL),
+(159,10,'window-003','window-003','window/window3.jpg','window/window3.jpg','warna_new/60.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(153,9,'premium-p2-70','premium-1','pintu/premium.jpg','pintu/premium.jpg','warna_new/50.jpg',NULL,NULL,NULL,'Pintu Upvc','1000x1000','WHITE',NULL,NULL),
+(158,10,'window-002','window-002','window/window2.jpg','window/window2.jpg','warna_new/10.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(154,9,'artdoor-n2-50','artdoor-n2-50','pintu/artdoor-n2-50.jpg','pintu/artdoor-n2-50.jpg','warna_new/50.jpg',NULL,NULL,NULL,NULL,'1000x1000','WHITE',NULL,NULL),
+(155,9,'artdoor-p3-59','artdoor-p3-59','pintu/artdoor-p3-59.jpg','pintu/artdoor-p3-59.jpg','warna_new/59.jpg',NULL,NULL,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(156,9,'artdoor-r7-60','artdoor-r7-60','pintu/artdoor-r7-60.jpg','pintu/artdoor-r7-60.jpg','warna_new/60.jpg',NULL,NULL,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(157,10,'window-001','window-001','window/window.jpg','window/window.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','WHITE',NULL,NULL),
+(160,10,'window-004','window-004','window/window4.jpg','window/window4.jpg','warna_new/50.jpg',NULL,657800,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(161,10,'window-005','window-005','window/window5.jpg','window/window5.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(162,10,'window-006','window-006','window/window6.jpg','window/window6.jpg','warna_new/59.jpg',NULL,657800,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(163,11,'pvc-toilet-001','pvc-toilet-001','interior/pvc-toilet-001.jpg','interior/pvc-toilet-001.jpg','warna_new/59.jpg',NULL,657800,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(164,11,'kichen-001','kichen-001','interior/kichen-001.jpg','interior/kichen-001.jpg','warna_new/59.jpg',NULL,657800,NULL,NULL,'1000x1000','BROWN',NULL,NULL),
+(165,11,'kichen-002','kichen-002','interior/kichen-002.jpg','interior/kichen-002.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(166,11,'pvc-toilet-002','pvc-toilet-002','interior/pvc-toilet-002.jpg','interior/pvc-toilet-002.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(167,12,'wpc-001','wpc-001','exterior/wpc-001.jpg','exterior/wpc-001.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(168,12,'wpc-002','wpc-002','exterior/wpc-002.jpeg','exterior/wpc-002.jpeg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000','GRAY',NULL,NULL),
+(169,13,'gagang-pintu-001','gagang-pintu-001','aksesoris/gagang-pintu.jpg','aksesoris/gagang-pintu.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000',NULL,NULL,NULL),
+(170,14,'masker-dewasa-001','masker-dewasa-001','masker/masker-dewasa-001.jpg','masker/masker-dewasa-001.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000',NULL,NULL,NULL),
+(171,14,'masker-anak-001','masker-anak-001','masker/masker-dewasa-002.jpg','masker/masker-dewasa-002.jpg','warna_new/60.jpg',NULL,657800,NULL,NULL,'1000x1000',NULL,NULL,NULL);
+
+/*Table structure for table `tbl_rekan` */
+
 DROP TABLE IF EXISTS `tbl_rekan`;
-CREATE TABLE `tbl_rekan`  (
+
+CREATE TABLE `tbl_rekan` (
   `rekan_id` int(20) NOT NULL AUTO_INCREMENT,
-  `rekan_nama` varchar(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `rekan_logo` varchar(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `rekan_tanggal` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP(0),
-  UNIQUE INDEX `rekan_id`(`rekan_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+  `rekan_nama` varchar(50) DEFAULT NULL,
+  `rekan_logo` varchar(200) DEFAULT NULL,
+  `rekan_tanggal` timestamp NULL DEFAULT current_timestamp(),
+  UNIQUE KEY `rekan_id` (`rekan_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Records of tbl_rekan
--- ----------------------------
-INSERT INTO `tbl_rekan` VALUES (1, 'Partner 1', 'c893cf243f34a436178a26c056a2c405.jpg', '2020-01-10 03:01:04');
-INSERT INTO `tbl_rekan` VALUES (2, 'Partner 2', 'e7c7fc5051e6c920e222be0257e568c5.jpg', '2020-01-10 03:37:37');
-INSERT INTO `tbl_rekan` VALUES (3, 'Partner 3', '5f43580d4356387a9125b7785296e956.jpg', '2020-01-10 03:38:06');
-INSERT INTO `tbl_rekan` VALUES (4, 'Partner 4', '1a8e122a1acf6ab4891c33f4acff95de.jpg', '2020-01-10 03:38:14');
-INSERT INTO `tbl_rekan` VALUES (5, 'Partner 5', 'db090f9606c6fd832ff087971d30b7c5.jpg', '2020-01-10 03:38:23');
-INSERT INTO `tbl_rekan` VALUES (6, 'Partner 6', 'e966a85470b6e2dcabb0b1a715a5f1d3.jpg', '2020-01-10 03:38:33');
-INSERT INTO `tbl_rekan` VALUES (7, 'Partner 7', '9f310c654fac735054a3a925648b1b95.jpg', '2020-01-10 03:38:41');
-INSERT INTO `tbl_rekan` VALUES (8, 'Partner 8', '2abbceeeeb1a218fe335d22c5ca9bf33.jpg', '2020-01-10 03:38:52');
-INSERT INTO `tbl_rekan` VALUES (9, 'Partner 9', 'a64a55dc8e01a77b6e6336a9218c9820.jpg', '2020-01-10 03:38:59');
-INSERT INTO `tbl_rekan` VALUES (10, 'Partner 10', 'a1dd1b2ac39d8a56d192e21ea172ba7f.jpg', '2020-01-10 03:39:17');
-INSERT INTO `tbl_rekan` VALUES (11, 'Partner 11', '708c08760ecd74173a30cc3f3b3a6010.jpg', '2020-01-10 03:39:25');
+/*Data for the table `tbl_rekan` */
 
--- ----------------------------
--- Table structure for tbl_slider
--- ----------------------------
+insert  into `tbl_rekan`(`rekan_id`,`rekan_nama`,`rekan_logo`,`rekan_tanggal`) values 
+(1,'Partner 1','c893cf243f34a436178a26c056a2c405.jpg','2020-01-10 03:01:04'),
+(2,'Partner 2','e7c7fc5051e6c920e222be0257e568c5.jpg','2020-01-10 03:37:37'),
+(3,'Partner 3','5f43580d4356387a9125b7785296e956.jpg','2020-01-10 03:38:06'),
+(4,'Partner 4','1a8e122a1acf6ab4891c33f4acff95de.jpg','2020-01-10 03:38:14'),
+(5,'Partner 5','db090f9606c6fd832ff087971d30b7c5.jpg','2020-01-10 03:38:23'),
+(6,'Partner 6','e966a85470b6e2dcabb0b1a715a5f1d3.jpg','2020-01-10 03:38:33'),
+(7,'Partner 7','9f310c654fac735054a3a925648b1b95.jpg','2020-01-10 03:38:41'),
+(8,'Partner 8','2abbceeeeb1a218fe335d22c5ca9bf33.jpg','2020-01-10 03:38:52'),
+(9,'Partner 9','a64a55dc8e01a77b6e6336a9218c9820.jpg','2020-01-10 03:38:59'),
+(10,'Partner 10','a1dd1b2ac39d8a56d192e21ea172ba7f.jpg','2020-01-10 03:39:17'),
+(11,'Partner 11','708c08760ecd74173a30cc3f3b3a6010.jpg','2020-01-10 03:39:25');
+
+/*Table structure for table `tbl_slider` */
+
 DROP TABLE IF EXISTS `tbl_slider`;
-CREATE TABLE `tbl_slider`  (
+
+CREATE TABLE `tbl_slider` (
   `slider_id` int(11) NOT NULL AUTO_INCREMENT,
-  `slider_ket` varchar(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `slider_gambar` varchar(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `slider_ket` varchar(200) DEFAULT NULL,
+  `slider_gambar` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`slider_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Table structure for tbl_testimoni
--- ----------------------------
+/*Data for the table `tbl_slider` */
+
+/*Table structure for table `tbl_splus_rekening` */
+
+DROP TABLE IF EXISTS `tbl_splus_rekening`;
+
+CREATE TABLE `tbl_splus_rekening` (
+  `id_rekening` int(5) NOT NULL AUTO_INCREMENT,
+  `nama_bank` varchar(50) NOT NULL,
+  `no_rekening` varchar(50) NOT NULL,
+  `pemilik_rekening` varchar(150) NOT NULL,
+  PRIMARY KEY (`id_rekening`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_splus_rekening` */
+
+insert  into `tbl_splus_rekening`(`id_rekening`,`nama_bank`,`no_rekening`,`pemilik_rekening`) values 
+(1,'BNI','268 302 961','PT SMART TECHTEX'),
+(2,'MANDIRI','134 000 734 3691','PT SMART TECHTEX'),
+(3,'BCA','3041 777 000','PT SMART TECHTEX');
+
+/*Table structure for table `tbl_subkategori` */
+
+DROP TABLE IF EXISTS `tbl_subkategori`;
+
+CREATE TABLE `tbl_subkategori` (
+  `subkategori_id` int(11) NOT NULL AUTO_INCREMENT,
+  `subkategori_nama` varchar(50) DEFAULT NULL,
+  `subkategori_deskripsi` text NOT NULL,
+  `subkategori_tanggal` timestamp NULL DEFAULT current_timestamp(),
+  `subkategori_pengguna_id` int(11) DEFAULT NULL,
+  `subkategori_author` varchar(60) DEFAULT NULL,
+  `subkategori_count` int(11) DEFAULT 0,
+  `subkategori_cover` varchar(40) DEFAULT NULL,
+  `produk_kategori` int(11) NOT NULL,
+  PRIMARY KEY (`subkategori_id`),
+  KEY `album_pengguna_id` (`subkategori_pengguna_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+
+/*Data for the table `tbl_subkategori` */
+
+insert  into `tbl_subkategori`(`subkategori_id`,`subkategori_nama`,`subkategori_deskripsi`,`subkategori_tanggal`,`subkategori_pengguna_id`,`subkategori_author`,`subkategori_count`,`subkategori_cover`,`produk_kategori`) values 
+(1,'PINTU ABS','ABS','2022-06-14 09:27:38',22,'itakumala',0,'10438a73156c90c2c68b86cffa45b70d.png',1),
+(2,'PINTU UPVC','UPVC','2022-06-14 09:28:16',22,'itakumala',0,'9cd2ab728d6b21732d7d12d356ddc6de.png',1),
+(3,'PINTU IROOM','IROOM','2022-06-14 09:41:08',22,'itakumala',0,'e0a2eb3fb6e0c12317d88078615dd593.png',1),
+(4,'PINTU NAMO','NAMO','2022-06-14 09:41:31',22,'itakumala',0,'157ee9237a669fa7b827fd07a95bca64.png',1);
+
+/*Table structure for table `tbl_subkategoriproduk` */
+
+DROP TABLE IF EXISTS `tbl_subkategoriproduk`;
+
+CREATE TABLE `tbl_subkategoriproduk` (
+  `id_kategori_produk` int(11) NOT NULL,
+  `id_subkategori_produk` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_subkategori` varchar(255) NOT NULL,
+  `subkategori_seo` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_subkategori_produk`)
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tbl_subkategoriproduk` */
+
+insert  into `tbl_subkategoriproduk`(`id_kategori_produk`,`id_subkategori_produk`,`nama_subkategori`,`subkategori_seo`) values 
+(1,1,'Pintu ABS','pintu_abs'),
+(1,2,'Pintu UPVC','Pintu_UPVC'),
+(1,3,'Pintu Namo','Pintu_Namo'),
+(1,4,'Pintu IROOM','Pintu_IROOM'),
+(2,5,'Jendela UPVC','Jendela_UPVC'),
+(2,6,'Jendela IROOM','Jendela_IROOM'),
+(3,7,'Plafon UPVC','Plafon_UPVC'),
+(3,8,'Sun Shade','Sun_Shade'),
+(3,9,'Solid Surface','Solid_Surface'),
+(3,10,'Kitchen Set','Kitchen_Set'),
+(3,11,'PVC Foarm Board','PVC_Foarm_Board'),
+(3,12,'Vinyl Flooring','Vinyl_Flooring'),
+(4,13,'WPC','WPC'),
+(4,14,'Parasol','Parasol'),
+(5,15,'Masker Dewasa','Masker_Dewasa'),
+(5,16,'Masker Anak-anak','Masker_Anak-anak'),
+(3,17,'Ambalan','ambalan'),
+(6,18,'Aksesoris pintu','aksesoris_pintu'),
+(6,19,'Aksesoris jendela','aksesoris_jendela'),
+(6,20,'Aksesoris kichenset','aksesoris_kichenset'),
+(6,21,'Aksesoris Automatic','aksesoris_Automatic'),
+(6,22,'Aksesoris Acclainya','aksesoris_Acclainya');
+
+/*Table structure for table `tbl_testimoni` */
+
 DROP TABLE IF EXISTS `tbl_testimoni`;
-CREATE TABLE `tbl_testimoni`  (
+
+CREATE TABLE `tbl_testimoni` (
   `testimoni_id` int(20) NOT NULL AUTO_INCREMENT,
-  `testimoni_pelanggan_id` int(20) NULL DEFAULT NULL,
-  `testimoni_pelanggan_nama` varchar(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `testimoni_isi` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `testimoni_tanggal` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP(0),
-  `testimoni_gambar` varchar(40) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
+  `testimoni_pelanggan_id` int(20) DEFAULT NULL,
+  `testimoni_pelanggan_nama` varchar(20) DEFAULT NULL,
+  `testimoni_isi` varchar(255) DEFAULT NULL,
+  `testimoni_tanggal` timestamp NULL DEFAULT current_timestamp(),
+  `testimoni_gambar` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`testimoni_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Records of tbl_testimoni
--- ----------------------------
-INSERT INTO `tbl_testimoni` VALUES (1, 0, 'Jail', '', '2020-01-10 04:23:15', 'ea61eddae3e5708d87d0b64f2ae6d1f4.jpg');
+/*Data for the table `tbl_testimoni` */
 
--- ----------------------------
--- Table structure for tbl_testing
--- ----------------------------
+insert  into `tbl_testimoni`(`testimoni_id`,`testimoni_pelanggan_id`,`testimoni_pelanggan_nama`,`testimoni_isi`,`testimoni_tanggal`,`testimoni_gambar`) values 
+(1,0,'Jail','','2020-01-10 04:23:15','ea61eddae3e5708d87d0b64f2ae6d1f4.jpg');
+
+/*Table structure for table `tbl_testing` */
+
 DROP TABLE IF EXISTS `tbl_testing`;
-CREATE TABLE `tbl_testing`  (
+
+CREATE TABLE `tbl_testing` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `bank_code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `amount` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `external_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `account_number` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `id_create` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `payment_id` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `suggested_amount` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `bank_code` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `amount` varchar(255) DEFAULT NULL,
+  `external_id` varchar(255) DEFAULT NULL,
+  `account_number` varchar(255) DEFAULT NULL,
+  `id_create` varchar(255) DEFAULT NULL,
+  `payment_id` varchar(255) DEFAULT NULL,
+  `suggested_amount` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- ----------------------------
--- Records of tbl_testing
--- ----------------------------
-INSERT INTO `tbl_testing` VALUES (6, 'Splus Indonesia', 'BRI', 'ACTIVE', '721600', 'SPLUS39873', '262159999484150', '5e3513b95581c46003f8653b', 'SPLUS39873_1580536802044', NULL);
+/*Data for the table `tbl_testing` */
 
--- ----------------------------
--- Table structure for tbl_video
--- ----------------------------
+insert  into `tbl_testing`(`id`,`name`,`bank_code`,`status`,`amount`,`external_id`,`account_number`,`id_create`,`payment_id`,`suggested_amount`) values 
+(6,'Splus Indonesia','BRI','ACTIVE','721600','SPLUS39873','262159999484150','5e3513b95581c46003f8653b','SPLUS39873_1580536802044',NULL);
+
+/*Table structure for table `tbl_video` */
+
 DROP TABLE IF EXISTS `tbl_video`;
-CREATE TABLE `tbl_video`  (
-  `video_id` int(11) NOT NULL AUTO_INCREMENT,
-  `video_judul` varchar(60) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `video_tanggal` timestamp(0) NULL DEFAULT CURRENT_TIMESTAMP(0),
-  `video_video` varchar(40) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  `video_album_id` int(11) NULL DEFAULT NULL,
-  `video_pengguna_id` int(11) NULL DEFAULT NULL,
-  `video_author` varchar(60) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`video_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = latin1 COLLATE = latin1_swedish_ci ROW_FORMAT = Dynamic;
 
-SET FOREIGN_KEY_CHECKS = 1;
+CREATE TABLE `tbl_video` (
+  `video_id` int(11) NOT NULL AUTO_INCREMENT,
+  `video_judul` varchar(60) DEFAULT NULL,
+  `video_tanggal` timestamp NULL DEFAULT current_timestamp(),
+  `video_video` varchar(40) DEFAULT NULL,
+  `video_album_id` int(11) DEFAULT NULL,
+  `video_pengguna_id` int(11) DEFAULT NULL,
+  `video_author` varchar(60) DEFAULT NULL,
+  PRIMARY KEY (`video_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC;
+
+/*Data for the table `tbl_video` */
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

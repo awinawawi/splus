@@ -129,7 +129,7 @@
                             </span>
                         </a>
                     </li>
-                    <li class="sm" <?= ($uri == 'Ubah_profil' ? 'class="active"' : '') ?>>
+                    <li class="sm" <?= ($uri == 'Ubah_alamat' ? 'class="active"' : '') ?>>
                         <a href="<?php echo base_url() . 'admin/Ubah_alamat' ?>">
                             <i class="fa fa-user"></i> <span>Ubah Alamat</span>
                             <span class="pull-right-container">

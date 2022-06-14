@@ -38,6 +38,8 @@
 	<!-- Custom CSS -->
 	<link href="<?= base_url('assets/css/css-filter/style.css') ?>" rel="stylesheet">
 
+	<link rel="stylesheet" href="<?= base_url('assets/template/tema/') ?>css/style.css">
+
 
 
 
@@ -92,7 +94,7 @@
 								</ul>
 							</li> -->
 							<li><a href="<?= base_url('/cart') ?>">
-									<span><svg width="20px" height="20px">
+									<span><svg width="30px" height="30px">
 											<use xlink:href="<?= base_url('assets/css/') ?>sprite.svg#cart-20"></use>
 										</svg>
 										<?php
@@ -106,14 +108,153 @@
 											<span> cart(<?= $isi_keranjang; ?>)</span>
 										<?php } ?>
 									</span>
-									Keranjang
+
 								</a>
 							</li>
-							<li class="scroll-to-section"><a href="<?= base_url('administrator') ?>"> <span class="indicator__area">
+							<!-- <li class="scroll-to-section"><a href="<?= base_url('administrator') ?>"> <span class="indicator__area">
 										<svg width="20px" height="20px">
 											<use xlink:href="<?= base_url('assets/') ?>images/sprite.svg#person-20"></use>
 										</svg>
 									</span>login</a>
+							</li> -->
+							<li>
+								<style>
+									.dropbtn {
+										background-color: #fff;
+										color: white;
+										padding: 16px;
+										font-size: 16px;
+										border: none;
+										cursor: pointer;
+									}
+
+									.dropbtn:hover,
+									.dropbtn:focus {
+										background-color: #2980B9;
+									}
+
+									.dropdown {
+										position: relative;
+										display: inline-block;
+									}
+
+									.dropdown-content {
+										display: none;
+										position: inherit;
+										background-color: #f1f1f1;
+										min-width: 160px;
+										overflow: auto;
+										box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+										z-index: 1;
+									}
+
+									.dropdown-content a {
+										color: black;
+										padding: 12px 16px;
+										text-decoration: none;
+										display: block;
+									}
+
+									.dropdown a:hover {
+										background-color: #ddd;
+									}
+
+									.show {
+										display: block;
+									}
+								</style>
+								<div class="dropdown">
+
+									<a onclick="myFunction()" class="dropbtn">
+										<span>
+											<svg width="20px" height="20px">
+												<use xlink:href="<?= base_url('assets/') ?>images/sprite.svg#person-20"></use>
+											</svg>
+										</span>
+									</a>
+
+									<div id="myDropdown" class="dropdown-content">
+
+
+
+										<?php
+										if (!empty($this->session->userdata('idadmin'))) { ?>
+
+											<form>
+												<?php
+												$id_admin = $this->session->userdata('idadmin');
+												$q = $this->db->query("SELECT * FROM tbl_pengguna WHERE pengguna_id='$id_admin' ");
+												$c = $q->row_array();
+												?>
+												<ul>
+													<a href="<?= base_url('members/dashboard') ?>" class="account-menu__user">
+														<div class="account-menu__user-avatar">
+															<img src="<?php echo base_url() . 'assets/user/images/admin/' . $c['pengguna_photo']; ?>" class="img-circle" alt="">
+														</div>
+														<div class="account-menu__user-info">
+															<div class="account-menu__user-name"> <b><?php echo $c['pengguna_nama']; ?></b></div>
+															<div class="account-menu__user-email"><?php echo $c['pengguna_email']; ?></div>
+														</div>
+
+													</a>
+												</ul>
+												<br><br>
+												<ul class="account-menu__links">
+													<li><a href="<?= base_url('admin/Ubah_profil') ?>">Profil</a></li>
+													<li><a href="<?= base_url('admin/Riwayat_transaksi') ?>">Riwayat Transaksi</a></li>
+													<li><a href="<?= base_url('admin/Ubah_profil') ?>">Password</a></li>
+												</ul>
+												<ul class="account-menu__links">
+													<li><a href="<?php echo base_url() . 'administrator/logout' ?>">Keluar</a></li>
+												</ul>
+											</form>
+
+										<?php } else { ?>
+
+											<form action="<?php echo base_url() . 'administrator/auth' ?>" method="post">
+												<div class="account-menu__form-title">Masuk ke akun Anda</div>
+												<div class="form-group has-feedback">
+													<input type="text" name="username" class="form-control" placeholder="Username" required>
+													<span class="glyphicon glyphicon-user form-control-feedback"></span>
+												</div>
+												<div class="form-group has-feedback">
+													<input type="password" name="password" class="form-control" placeholder="Password" required>
+													<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+												</div>
+												<div class="form-group account-menu__form-button">
+													<button type="submit" name="submit" class="btn btn-primary btn-block">Login</button>
+												</div>
+												<div class="account-menu__form-link">
+													<a href="<?= base_url('register') ?>">Buat akun baru</a>
+												</div>
+											</form>
+
+
+
+										<?php } ?>
+
+									</div>
+
+								</div>
+								<script>
+									function myFunction() {
+										document.getElementById("myDropdown").classList.toggle("show");
+									}
+
+
+									window.onclick = function(event) {
+										if (!event.target.matches('.dropbtn')) {
+											var dropdowns = document.getElementsByClassName("dropdown-content");
+											var i;
+											for (i = 0; i < dropdowns.length; i++) {
+												var openDropdown = dropdowns[i];
+												if (openDropdown.classList.contains('show')) {
+													openDropdown.classList.remove('show');
+												}
+											}
+										}
+									}
+								</script>
 							</li>
 						</ul>
 						<a class='menu-trigger'>
@@ -304,51 +445,61 @@
 	<!-- ***** Footer Start ***** -->
 	<footer>
 		<div class="container">
-			<div class="row">
+			<div class="row" style="font-size:20px ;">
 				<div class="col-lg-3">
 					<div class="first-item">
-						<a style="color: #fff;">Head Office & Factory</a>
+						<!-- <a style="color: #fff;">Head Office & Factory</a>
+                        <br></br>
+                        <ul>
+                            <li><a href="#">Jl. Raya Kanci Cirebon – Tegal KM 13,5 Desa Rawaurip<br>
+                                    Kec. Pangenan Kab. Cirebon 45182</a></li>
+                            <li><a href="#">Telp. (0231) 8511781 – 85</a></li>
+                            <li><a href="#">Fax.(0231) 85117825</a></li>
+                        </ul> -->
+						<a style="color: #fff;">Bantuan</a>
 						<br></br>
+
 						<ul>
-							<li><a href="#">Jl. Raya Kanci Cirebon – Tegal KM 13,5 Desa Rawaurip<br>
-									Kec. Pangenan Kab. Cirebon 45182</a></li>
-							<li><a href="#">Telp. (0231) 8511781 – 85</a></li>
-							<li><a href="#">Fax.(0231) 85117825</a></li>
+							<li><a href="<?= base_url('paymen') ?>">Cara Belanja</a></li>
+							<li><a href="<?= base_url('shopbybrand') ?>">Tanya Jawab/FAQ</a></li>
+							<li><a href="<?php echo base_url('pemasangan/splus'); ?>">Pemasangan Produk</a></li>
+							<li><a href="<?php echo base_url('hubungi-kami'); ?>">Hubungi kami</a></li>
+
 						</ul>
 					</div>
-				</div>
-				<div class="col-lg-3">
-					<a style="color: #fff;">Our product &amp; Categories</a>
-					<br></br>
-					<ul>
-						<li><a href="#">Pintu</a></li>
-						<li><a href="#">Jendela</a></li>
-						<li><a href="#">Interior Material</a></li>
-						<li><a href="#">Exterior Material</a></li>
-						<li><a href="#">Aksesoris</a></li>
-						<li><a href="#">Masker</a></li>
-					</ul>
-				</div>
-				<div class="col-lg-3">
-					<a style="color: #fff;">Customer service</a>
-					<br></br>
-
-					<ul>
-						<li><a href="#">Hubungi Kami</a></li>
-						<li><a href="#">Pemasangan</a></li>
-						<li><a href="#">Tentang Kami</a></li>
-						<li><a href="#">Karir</a></li>
-					</ul>
 				</div>
 				<div class="col-lg-3">
 					<a style="color: #fff;">Help &amp; Information</a>
 					<br></br>
 
 					<ul>
-						<li><a href="#">Help</a></li>
-						<li><a href="#">FAQ's</a></li>
-						<li><a href="#">Shipping</a></li>
-						<li><a href="#">Tracking ID</a></li>
+						<li><a href="<?php echo base_url('tentang-kami'); ?>">Tentang Kami</a></li>
+						<li><a href="<?= base_url('promosi') ?>">Berita & Acara</a></li>
+						<li><a href="<?= base_url('e-katalog') ?>">Katalog Produk</a></li>
+						<li><a href="<?= base_url('bebas_ogkir') ?>">Tracking Pesanan</a></li>
+						<li><a href="<?php echo base_url('karir'); ?>">Jenjang Karir</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3">
+					<a style="color: #fff;">Kebijakan Privasi</a>
+					<br></br>
+					<ul>
+						<li><a href='<?= base_url('syarat_k') ?>'>Syarat & Ketentuan</a></li>
+						<li><a href='<?= base_url('kebijakan_p') ?>'>Kebijakan Privasi</a></li>
+
+
+					</ul>
+				</div>
+				<div class="col-lg-3">
+					<a style="color: #fff;">Our product &amp; Categories</a>
+					<br></br>
+					<ul>
+						<li><a href="<?= base_url('product_pintu_splus') ?>">Pintu</a></li>
+						<li><a href="<?= base_url('product_window_splus') ?>">Jendela</a></li>
+						<li><a href="<?= base_url('product_interior_material_splus') ?>">Interior Material</a></li>
+						<li><a href="<?= base_url('product_exterior_material_splus') ?>">Exterior Material</a></li>
+						<li><a href="<?= base_url('product_aksesoris_splus') ?>">Aksesoris</a></li>
+						<li><a href="<?= base_url('product_masker_splus') ?>">Masker</a></li>
 					</ul>
 				</div>
 				<div class="col-lg-12">
@@ -357,10 +508,10 @@
 							<br>Follow Us on Social Media: <a href="https://localhost/splus" target="_blank" title="free & premium responsive templates">Splus Indonesia</a>
 						</p>
 						<ul>
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+							<li><a href="https://www.facebook.com/S-Plus-Indonesia-100698461599924/"><i class="fa fa-facebook"></i></a></li>
 							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-							<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+							<li><a href="https://www.instagram.com/splusindonesia/"><i class="fa fa-instagram"></i></a></li>
+							<li><a href="https://www.youtube.com/channel/UCMYj8Md6whMbPNFcyxjyA6A"><i class="fa fa-youtube"></i></a></li>
 						</ul>
 					</div>
 				</div>

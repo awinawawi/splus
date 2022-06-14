@@ -38,6 +38,8 @@ $route['promosi']                        = 'homepage/promosi';
 $route['bebas_ogkir']                    = 'homepage/bebas_ogkir';
 $route['paymen']                         = 'homepage/paymen';
 $route['shopbybrand']                    = 'homepage/shopbybrand';
+$route['kebijakan_p']                    = 'homepage/kebijakan_p';
+$route['syarat_k']                       = 'homepage/syarat_k';
 
 
 

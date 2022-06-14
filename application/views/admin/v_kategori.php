@@ -64,7 +64,7 @@
                                                 $kategori_cover = $i['kategori_cover'];
                                             ?>
                                                 <tr>
-                                                    <td><img src="<?php echo base_url() . 'assets/user/images/galeri/' . $kategori_cover; ?>" style="width:80px;"></td>
+                                                    <td><img src="<?php echo base_url() . 'assets/user/images/galeri/all_produk/' . $kategori_cover; ?>" style="width:80px;"></td>
                                                     <td><?php echo $kategori_nama; ?></td>
                                                     <td><?php echo $kategori_author; ?></td>
                                                     <td style="text-align:right;">
@@ -158,14 +158,14 @@
                             <div class="form-group">
                                 <label for="inputUserName" class="col-sm-4 control-label">Nama Kategori</label>
                                 <div class="col-sm-7">
-                                    <input type="text" name="xnama_kategori" class="form-control" value="<?php echo $kategori_nama; ?>" id="inputUserName" placeholder="Nama Kategori" required>
+                                    <input type="text" name="xnama_kategori" class="form-control" value="<?php echo $kategori_nama; ?>" id="inputUserName" placeholder="Nama Kategori">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="inputUserName" class="col-sm-4 control-label">Deskripsi Kategori</label>
                                 <div class="col-sm-7">
-                                    <textarea name="xdeskripsi_kategori" class="form-control ckedit" placeholder="Deskripsi Kategori" required><?php echo $kategori_deskripsi; ?></textarea>
+                                    <textarea name="xdeskripsi_kategori" class="form-control ckedit" placeholder="Deskripsi Kategori"><?php echo $kategori_deskripsi; ?></textarea>
 
                                 </div>
                             </div>

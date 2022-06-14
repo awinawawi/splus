@@ -49,10 +49,9 @@
                                                 <tr>
                                                     <th style="width: 5%">No</th>
                                                     <th>No Invoice</th>
-                                                    <th>Total Belanja</th>
                                                     <th>Status</th>
                                                     <th>Tanggal pengiriman</th>
-
+                                                    <th>Pengguna_username</th>
                                                     <th style="text-align:center;">Aksi</th>
                                                 </tr>
                                             </thead>
@@ -65,25 +64,24 @@
                                                 foreach ($data_all->result_array() as $i) :
                                                     $no++;
                                                     $faktur = $i['faktur'];
-                                                    $harga_produk = $i['harga_produk'];
-                                                    $jumlah_produk = $i['jumlah_produk'];
                                                     $pengiriman = $i['pengiriman'];
                                                     $tanggal_pengiriman = $i['tanggal_pengiriman'];
+                                                    $pengguna_username = $i['pengguna_username'];
 
                                                 ?>
                                                     <tr>
                                                         <td><?php echo $no; ?></td>
                                                         <td><?php echo $faktur; ?></td>
-                                                        <td style='color:red;'>Rp <?php echo number_format($harga_produk / $jumlah_produk, 0, '.', '.') ?></td>
                                                         <td><?php echo $pengiriman; ?></td>
                                                         <td><?php echo date_format(date_create($tanggal_pengiriman), 'd M Y') ?></td>
+                                                        <td><?php echo $pengguna_username; ?></td>
 
                                                         <td style="text-align:right;">
                                                             <button>
                                                                 <a class="btn" title='Download' href='" . base_url() . "page/download/$row[kode_transaksi]' target='_BLANK'>Download</a>
                                                             </button>
                                                             <button>
-                                                                <a class='btn' title='Rincian data pesanan' href='Riwayat_transaksi/tracking_status/$order[faktur]' target='_BLANK'>Rincian</a>
+                                                                <a class='btn' title='Rincian data pesanan' href='<?= base_url('Homepage/tracking_rincian/') . $i['faktur'] ?>'>Rincian</a>
                                                             </button>
                                                         </td>
                                                     </tr>
@@ -97,9 +95,8 @@
                                         <table id="example1" class="table table-striped" style="font-size:13px;">
                                             <thead>
                                                 <tr>
-                                                    <th style="width: 5%">No</th>
+                                                    <th style="width: 5%">No </th>
                                                     <th>No Invoice</th>
-                                                    <th>Total Belanja</th>
                                                     <th>Status</th>
                                                     <th>Tanggal pengiriman</th>
 
@@ -115,26 +112,30 @@
                                                 foreach ($data->result_array() as $i) :
                                                     $no++;
                                                     $faktur = $i['faktur'];
-                                                    $harga_produk = $i['harga_produk'];
-                                                    $jumlah_produk = $i['jumlah_produk'];
                                                     $pengiriman = $i['pengiriman'];
                                                     $tanggal_pengiriman = $i['tanggal_pengiriman'];
+
 
                                                 ?>
                                                     <tr>
                                                         <td><?php echo $no; ?></td>
                                                         <td><?php echo $faktur; ?></td>
-                                                        <td style='color:red;'>Rp <?php echo number_format($harga_produk / $jumlah_produk, 0, '.', '.') ?></td>
                                                         <td><?php echo $pengiriman; ?></td>
                                                         <td><?php echo date_format(date_create($tanggal_pengiriman), 'd M Y') ?></td>
 
+
                                                         <td style="text-align:right;">
                                                             <button>
-                                                                <a class="btn" title='Download' href='" . base_url() . "page/download/$row[kode_transaksi]' target='_BLANK'>Download</a>
+                                                                <a class="btn" title='Download' href='<?= base_url('Homepage/download/') . $i['faktur'] ?>' target='_BLANK'>Download</a>
                                                             </button>
+                                                            <!-- <button>
+                                                                <a class='btn' title='Rincian data pesanan' href='Riwayat_transaksi/tracking_status/$order[faktur]' href='<?= base_url('Homepage/tracking_rincian/$i[kode_transaksi]') ?>' target='_BLANK'>Rincian</a>
+                                                            </button> -->
+
                                                             <button>
-                                                                <a class='btn' title='Rincian data pesanan' href='Riwayat_transaksi/tracking_status/$order[faktur]' target='_BLANK'>Rincian</a>
+                                                                <a class='btn' title='Rincian data pesanan' href='<?= base_url('Homepage/tracking_rincian/') . $i['faktur'] ?>'>Rincian</a>
                                                             </button>
+
                                                         </td>
                                                     </tr>
                                                 <?php endforeach; ?>

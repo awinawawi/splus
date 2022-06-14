@@ -27,7 +27,7 @@ class Kategori extends CI_Controller
 
 	function simpan_kategori()
 	{
-		$config['upload_path'] = './assets/user/images/galeri/'; //path folder
+		$config['upload_path'] = './assets/user/images/galeri/all_produk/'; //path folder
 		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 		$config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
@@ -37,13 +37,13 @@ class Kategori extends CI_Controller
 				$gbr = $this->upload->data();
 				//Compress Image
 				$config['image_library'] = 'gd2';
-				$config['source_image'] = './assets/user/images/galeri/' . $gbr['file_name'];
+				$config['source_image'] = './assets/user/images/galeri/all_produk/' . $gbr['file_name'];
 				$config['create_thumb'] = FALSE;
 				$config['maintain_ratio'] = FALSE;
 				$config['quality'] = '60%';
 				$config['width'] = 500;
 				$config['height'] = 400;
-				$config['new_image'] = './assets/user/images/galeri/' . $gbr['file_name'];
+				$config['new_image'] = './assets/user/images/galeri/all_produk/' . $gbr['file_name'];
 				$this->load->library('image_lib', $config);
 				$this->image_lib->resize();
 
@@ -70,7 +70,7 @@ class Kategori extends CI_Controller
 	function update_kategori()
 	{
 
-		$config['upload_path'] = './assets/user/images/galeri/'; //path folder
+		$config['upload_path'] = './assets/user/images/galeri/all_produk/'; //path folder
 		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 		$config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
@@ -80,29 +80,30 @@ class Kategori extends CI_Controller
 				$gbr = $this->upload->data();
 				//Compress Image
 				$config['image_library'] = 'gd2';
-				$config['source_image'] = './assets/user/images/galeri/' . $gbr['file_name'];
+				$config['source_image'] = './assets/user/images/galeri/all_produk/' . $gbr['file_name'];
 				$config['create_thumb'] = FALSE;
 				$config['maintain_ratio'] = FALSE;
 				$config['quality'] = '60%';
 				$config['width'] = 500;
 				$config['height'] = 400;
-				$config['new_image'] = './assets/user/images/galeri/' . $gbr['file_name'];
+				$config['new_image'] = './assets/user/images/galeri/all_produk/' . $gbr['file_name'];
 				$this->load->library('image_lib', $config);
 				$this->image_lib->resize();
 
 				$gambar = $gbr['file_name'];
 				$kategori_id = $this->input->post('kode');
-				$kategori_nama = strip_tags($this->input->post('nama_kategori'));
-				$kategori_deskripsi = strip_tags($this->input->post('deskripsi_kategori'));
+				$kategori_nama = strip_tags($this->input->post('xnama_kategori'));
+				$kategori_deskripsi = strip_tags($this->input->post('xdeskripsi_kategori'));
 				$images = $this->input->post('gambar');
-				$path = './assets/user/images/galeri/' . $images;
+				$path = './assets/user/images/galeri/all_produk/' . $images;
 				unlink($path);
 				$kode = $this->session->userdata('idadmin');
 				$user = $this->m_pengguna->get_pengguna_login($kode);
 				$p = $user->row_array();
 				$user_id = $p['pengguna_id'];
 				$user_nama = $p['pengguna_nama'];
-				$this->m_kategori->update_kategori($kategori_id, $kategori_nama, $kategori_deskripsi, $user_id, $user_nama, $gambar);
+				// $this->m_kategori->update_kategori($kategori_id, $kategori_nama, $kategori_deskripsi, $user_id, $user_nama, $gambar);
+				$this->m_kategori->update_kategori($kategori_id, $kategori_nama, $kategori_deskripsi, $gambar);
 				echo $this->session->set_flashdata('msg', 'info');
 				redirect('admin/kategori');
 			} else {
@@ -111,14 +112,16 @@ class Kategori extends CI_Controller
 			}
 		} else {
 			$kategori_id = $this->input->post('kode');
-			$kategori_nama = strip_tags($this->input->post('nama_kategori'));
-			$kategori_deskripsi = strip_tags($this->input->post('deskripsi_kategori'));
+			// $kategori_nama = strip_tags($this->input->post('nama_kategori'));
+			// $kategori_deskripsi = strip_tags($this->input->post('deskripsi_kategori'));
+			$kategori_nama = $this->input->post('xnama_kategori');
+			$kategori_deskripsi = $this->input->post('xdeskripsi_kategori');
 			$kode = $this->session->userdata('idadmin');
 			$user = $this->m_pengguna->get_pengguna_login($kode);
 			$p = $user->row_array();
 			$user_id = $p['pengguna_id'];
 			$user_nama = $p['pengguna_nama'];
-			$this->m_kategori->update_kategori_tanpa_img($kategori_id, $kategori_nama, $kategori_deskripsi, $user_id, $user_nama);
+			$this->m_kategori->update_kategori_tanpa_img($kategori_id, $kategori_nama, $kategori_deskripsi);
 			echo $this->session->set_flashdata('msg', 'info');
 			redirect('admin/kategori');
 		}

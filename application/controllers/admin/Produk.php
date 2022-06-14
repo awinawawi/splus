@@ -12,7 +12,7 @@ class Produk extends CI_Controller
 			redirect(base_url('admin/dashboard'));
 		}
 
-		$this->load->model('m_kategori');
+		$this->load->model('m_subkategori');
 		$this->load->model('m_produk');
 		$this->load->model('m_pengguna');
 		$this->load->library('upload');
@@ -63,14 +63,14 @@ class Produk extends CI_Controller
 		// $data['option_tahun'] = $this->m_produk->option_tahun();
 
 		$x['data'] = $this->m_produk->get_all_produk();
-		$x['alb'] = $this->m_kategori->get_all_kategori();
+		$x['alb'] = $this->m_subkategori->get_all_kategori();
 		$this->load->view('admin/v_produk', $x);
 	}
 
-	function simpan_produk()
+	function simpan_kelas()
 	{
 		// $this->base64toimage($_POST['filesimages'][0]);
-		$config['upload_path'] = './assets/user/images/produk/'; //path folder
+		$config['upload_path'] = './assets/user/images/produk/all_produk/'; //path folder
 		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
 		$config['encrypt_name'] = FALSE; //nama yang terupload nantinya
 
@@ -80,22 +80,26 @@ class Produk extends CI_Controller
 				$gbr = $this->upload->data();
 				//Compress Image
 				$config['image_library'] = 'gd2';
-				$config['source_image'] = './assets/user/images/produk/' . $gbr['file_name'];
+				$config['source_image'] = './assets/user/images/produk/all_produk/' . $gbr['file_name'];
 				$config['create_thumb'] = FALSE;
 				$config['maintain_ratio'] = FALSE;
 				$config['max_width']   = 1500;
 				$config['max_height']  = 1500;
-				$config['new_image'] = './assets/user/images/produk/' . $gbr['file_name'];
+				$config['new_image'] = './assets/user/images/produk/all_produk/' . $gbr['file_name'];
 				$this->load->library('image_lib', $config);
 				$this->image_lib->resize();
 
 				$produk_gambar = $gbr['file_name'];
-				$produk_nama = strip_tags($this->input->post('judul'));
+				$kelas_nama = strip_tags($this->input->post('kelas_nama'));
+				$kelas_deskripsi = $this->input->post('deskripsi');
+				$produk_subkategori = strip_tags($this->input->post('kategori'));
 				$produk_slug = url_title($this->input->post('judul'), '-', true);
 				$produk_deskripsi = $this->input->post('deskripsi');
 				$produk_kategori = strip_tags($this->input->post('kategori'));
 				$produk_kategori_id = $this->session->userdata('idadmin');
-				$this->m_produk->simpan_produk($produk_slug, $produk_nama, $produk_kategori_id, $produk_kategori, $produk_gambar, $produk_deskripsi);
+
+				$this->m_produk->simpan_produk($kelas_nama, $produk_subkategori, $kelas_deskripsi);
+				// $this->m_produk->simpan_produk($produk_slug, $produk_nama, $produk_kategori_id, $produk_kategori, $produk_gambar, $produk_deskripsi);
 				echo $this->session->set_flashdata('msg', 'success');
 				redirect('admin/produk');
 			} else {

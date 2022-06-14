@@ -109,8 +109,8 @@
                         <br></br>
 
                         <ul>
-                            <li><a href="#">Cara Belanja</a></li>
-                            <li><a href="#">Tanya Jawab/FAQ</a></li>
+                            <li><a href="<?= base_url('paymen') ?>">Cara Belanja</a></li>
+                            <li><a href="<?= base_url('shopbybrand') ?>">Tanya Jawab/FAQ</a></li>
                             <li><a href="<?php echo base_url('pemasangan/splus'); ?>">Pemasangan Produk</a></li>
                             <li><a href="<?php echo base_url('hubungi-kami'); ?>">Hubungi kami</a></li>
 
@@ -133,9 +133,9 @@
                     <a style="color: #fff;">Kebijakan Privasi</a>
                     <br></br>
                     <ul>
-                        <li><a href="#">Ketentuan Pengguna</a></li>
-                        <li><a href="#">Kebijakan Privasi</a></li>
-                        <li><a href="#">Ketentuan Pengiriman</a></li>
+                        <li><a href='<?= base_url('syarat_k') ?>'>Syarat & Ketentuan</a></li>
+                        <li><a href='<?= base_url('kebijakan_p') ?>'>Kebijakan Privasi</a></li>
+
 
                     </ul>
                 </div>
@@ -167,7 +167,6 @@
             </div>
         </div>
     </footer>
-
 
     <!-- jQuery -->
 

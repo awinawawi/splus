@@ -150,6 +150,14 @@ class M_order extends CI_Model
         return $this->db->update('tbl_produk_keranjang', $data);
     }
 
+
+    // function update_pengguna_pelanggan($data, $kode)
+    // {
+    //     $this->db->where('pengguna_id', $kode);
+    //     return $this->db->update('tbl_pengguna', $data);
+    // }
+
+
     public function deleteCart($id)
     {
         return $this->db->delete('tbl_produk_keranjang', ['keranjang_id' => $id]);

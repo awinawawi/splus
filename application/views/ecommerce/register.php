@@ -44,7 +44,6 @@
     <!-- ***** Header Area End ***** -->
 
 
-
     <!-- ***** Main Banner Area Start ***** -->
     <div class="page-heading" id="top" style="background: url('<?= base_url('assets/images/news/Register-now1.jpg') ?>'); background-size: cover;" class="pt-20">
         <div class="container">
@@ -78,30 +77,23 @@
                 </div>
                 <div class="col-lg-6">
 
-                    <form id="contact" action="<?php echo base_url() . 'admin/pengguna/simpan_pengguna_newup' ?>" method="post" enctype="multipart/form-data">
+                    <!-- <form id="contact" action="<?php echo base_url() . 'admin/pengguna/simpan_pengguna_newup' ?>" method="post" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-lg-6">
                                 <fieldset>
-                                    <label>Nama lengkap</label>
+                                    <label for="inputUserName">Nama lengkap</label>
                                     <input name="xnama" class="form-control" id="inputUserName" placeholder="Your Nama Lengkap" required>
                                 </fieldset>
                             </div>
                             <div class="col-lg-6">
                                 <fieldset>
-                                    <label>E-mail</label>
+                                    <label for="inputEmail3">E-mail</label>
                                     <input name="xemail" class="form-control" id="inputEmail3" placeholder="Your email" required>
                                 </fieldset>
                             </div>
-                            <!-- <div class="col-lg-12">
-                                <label>Jenis Kelamin</label>
-                                <select class="form-control" name="xjenkel" required>
-                                    <option value="1">Laki-Laki</option>
-                                    <option value="2">Perempuan</option>
-                                </select>
-                            </div> -->
+
                             <div class="col-lg-12">
                                 <label for="inputUserName">Jenis Kelamin</label>
-
                                 <div class="radio">
                                     <input type="radio" id="inlineRadio1" value="L" name="xjenkel" checked>
                                     <label for="inlineRadio1"> Laki-Laki </label>
@@ -110,53 +102,46 @@
                                     <input type="radio" id="inlineRadio1" value="P" name="xjenkel">
                                     <label for="inlineRadio2"> Perempuan </label>
                                 </div>
-
-
                             </div>
 
                             <div class="col-lg-12">
                                 <fieldset>
-                                    <label>Username</label>
+                                    <label for="inputUserName">Username</label>
                                     <input name="xusername" class="form-control" id="inputUserName" placeholder="Your username" required>
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
                                 <fieldset>
-                                    <label>Password</label>
+                                    <label for="inputPassword3">Password</label>
                                     <input name="xpassword" class="form-control" id="inputPassword3" placeholder="Your password" required>
 
                                 </fieldset>
                             </div>
                             <div class="col-lg-12">
                                 <fieldset>
-                                    <label>Ulangi Password</label>
+                                    <label for="inputPassword4">Ulangi Password</label>
                                     <input name="xpassword2" class="form-control" id="inputPassword4" placeholder="Your password Repeat" required>
                                 </fieldset>
                             </div>
-                            <!-- <div class="col-lg-12">
-                                <fieldset>
-                                    <label>Kontak Person</label>
-                                    <input name="xkontak" type="text" id="inputUserName" placeholder="Your kontak" required="">
-                                </fieldset>
-                            </div> -->
+
                             <div class="col-lg-12">
                                 <fieldset>
-                                    <label>Kontak Person</label>
+                                    <label for="inputUserName">Kontak Person</label>
                                     <input name="xkontak" class="form-control" id="inputUserName" placeholder="Your kontak" required>
                                 </fieldset>
                             </div>
-                            <!-- <div class="col-lg-12">
+                            <div class="col-lg-12">
                                 <label>Level</label>
                                 <select class="form-control" name="xlevel" required>
                                     <option value="1">Head Office</option>
                                     <option value="2">Cabang</option>
                                 </select>
-                            </div> -->
+                            </div>
 
                             <div class="col-lg-12" style="margin-top: 20px;">
                                 <fieldset>
-                                    <label>Photo</label>
-                                    <input style="border:0px; padding-left: 2px; " type="file" name="filefoto" required="">
+                                    <label for="inputUserName">Photo</label>
+                                    <input style="border:0px; padding-left: 2px; " type="file" name="filefoto">
                                 </fieldset>
                             </div>
 
@@ -164,12 +149,108 @@
                             <hr>
                             <a class="btn btn-default mt-4 float-right" href='<?= base_url('administrator') ?>' style="padding-top: 2px;">Sudah Punya Akun?</a>
                         </div>
+                    </form> -->
+
+                    <form class="form-horizontal" action="<?php echo base_url() . 'admin/Register/simpan_pengguna_newup' ?>" method="post" enctype="multipart/form-data">
+                        <div class="row">
+
+                            <div class="col-lg-6">
+                                <fieldset>
+                                    <label for="inputUserName">Nama lengkap</label>
+                                    <input name="xnama" class="form-control" id="inputUserName" placeholder="Your Nama Lengkap" required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-6">
+                                <fieldset>
+                                    <label for="inputEmail3">E-mail</label>
+                                    <input name="xemail" class="form-control" id="inputEmail3" placeholder="Your email" required>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <label for="inputUserName">Jenis Kelamin</label>
+                                <div class="radio">
+                                    <input type="radio" id="inlineRadio1" value="L" name="xjenkel" checked>
+                                    <label for="inlineRadio1"> Laki-Laki </label>
+                                </div>
+                                <div class="radio">
+                                    <input type="radio" id="inlineRadio1" value="P" name="xjenkel">
+                                    <label for="inlineRadio2"> Perempuan </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <fieldset>
+                                    <label for="inputUserName" class="col-sm-4 control-label">Username</label>
+                                    <div class="col-lg-12">
+                                        <input type="text" name="xusername" class="form-control" id="inputUserName" placeholder="Username" required>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="form-group">
+                                <fieldset>
+                                    <label for="inputPassword3" class="col-sm-4 control-label">Password</label>
+                                    <div class="col-lg-12">
+                                        <input type="password" name="xpassword" class="form-control" id="inputPassword3" placeholder="Password" required>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputPassword4" class="col-sm-4 control-label">Ulangi Password</label>
+                                <div class="col-lg-12">
+                                    <input type="password" name="xpassword2" class="form-control" id="inputPassword4" placeholder="Ulangi Password" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputUserName" class="col-sm-4 control-label">Kontak Person</label>
+                                <div class="col-lg-12">
+                                    <input type="text" name="xkontak" class="form-control" id="inputUserName" placeholder="Kontak Person" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputUserName" class="col-sm-4 control-label">Photo</label>
+                                <div class="col-lg-12">
+                                    <input type="file" name="filefoto">
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <hr>
+                        <button type="submit" class="btn btn-primary btn-flat" style="padding-top: 2px; width: 90px" id="simpan">Simpan</button>
+                        <button type="submit" class="btn btn-primary btn-flat" style="padding-top: 2px; width: 200px"><a href='<?= base_url('administrator') ?>' style='color: #ffecec;'> Sudah Punya Akun?</a></button>
+                        <!-- <a class="btn btn-default mt-4 float-right" href='<?= base_url('administrator') ?>' style="padding-top: 2px;">Sudah Punya Akun?</a> -->
+
                     </form>
+
+                    <div>
+                        <br>
+                        <p style="text-align:center ;">
+                            Dengan mendaftar, saya menyetujui<br>
+                            <a href='<?= base_url('syarat_k') ?>' style="color:dodgerblue;">Syarat dan Ketentuan</a> serta
+                            <a href='<?= base_url('kebijakan_p') ?>' style="color:dodgerblue;">Kebijakan Privasi</a>
+                        </p>
+                    </div>
+
+
+
                 </div>
             </div>
         </div>
     </div>
 
+    <script>
+        $(function() {
+            $("#example1").DataTable();
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false
+            });
+        });
+    </script>
     <?php if ($this->session->flashdata('msg') == 'error') : ?>
         <script type="text/javascript">
             $.toast({
@@ -235,6 +316,7 @@
             $('#ModalResetPassword').modal('show');
         </script>
     <?php else : ?>
+
     <?php endif; ?>
 
     <!-- ***** Contact Area Ends ***** -->
@@ -244,51 +326,61 @@
     <!-- ***** Footer Start ***** -->
     <footer>
         <div class="container">
-            <div class="row">
+            <div class="row" style="font-size:20px ;">
                 <div class="col-lg-3">
                     <div class="first-item">
-                        <a style="color: #fff;">Head Office & Factory</a>
+                        <!-- <a style="color: #fff;">Head Office & Factory</a>
                         <br></br>
                         <ul>
                             <li><a href="#">Jl. Raya Kanci Cirebon – Tegal KM 13,5 Desa Rawaurip<br>
                                     Kec. Pangenan Kab. Cirebon 45182</a></li>
                             <li><a href="#">Telp. (0231) 8511781 – 85</a></li>
                             <li><a href="#">Fax.(0231) 85117825</a></li>
+                        </ul> -->
+                        <a style="color: #fff;">Bantuan</a>
+                        <br></br>
+
+                        <ul>
+                            <li><a href="<?= base_url('paymen') ?>">Cara Belanja</a></li>
+                            <li><a href="<?= base_url('shopbybrand') ?>">Tanya Jawab/FAQ</a></li>
+                            <li><a href="<?php echo base_url('pemasangan/splus'); ?>">Pemasangan Produk</a></li>
+                            <li><a href="<?php echo base_url('hubungi-kami'); ?>">Hubungi kami</a></li>
+
                         </ul>
                     </div>
-                </div>
-                <div class="col-lg-3">
-                    <a style="color: #fff;">Our product &amp; Categories</a>
-                    <br></br>
-                    <ul>
-                        <li><a href="#">Pintu</a></li>
-                        <li><a href="#">Jendela</a></li>
-                        <li><a href="#">Interior Material</a></li>
-                        <li><a href="#">Exterior Material</a></li>
-                        <li><a href="#">Aksesoris</a></li>
-                        <li><a href="#">Masker</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3">
-                    <a style="color: #fff;">Customer service</a>
-                    <br></br>
-
-                    <ul>
-                        <li><a href="#">Hubungi Kami</a></li>
-                        <li><a href="#">Pemasangan</a></li>
-                        <li><a href="#">Tentang Kami</a></li>
-                        <li><a href="#">Karir</a></li>
-                    </ul>
                 </div>
                 <div class="col-lg-3">
                     <a style="color: #fff;">Help &amp; Information</a>
                     <br></br>
 
                     <ul>
-                        <li><a href="#">Help</a></li>
-                        <li><a href="#">FAQ's</a></li>
-                        <li><a href="#">Shipping</a></li>
-                        <li><a href="#">Tracking ID</a></li>
+                        <li><a href="<?php echo base_url('tentang-kami'); ?>">Tentang Kami</a></li>
+                        <li><a href="<?= base_url('promosi') ?>">Berita & Acara</a></li>
+                        <li><a href="<?= base_url('e-katalog') ?>">Katalog Produk</a></li>
+                        <li><a href="<?= base_url('bebas_ogkir') ?>">Tracking Pesanan</a></li>
+                        <li><a href="<?php echo base_url('karir'); ?>">Jenjang Karir</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <a style="color: #fff;">Kebijakan Privasi</a>
+                    <br></br>
+                    <ul>
+                        <li><a href='<?= base_url('syarat_k') ?>'>Syarat & Ketentuan</a></li>
+                        <li><a href='<?= base_url('kebijakan_p') ?>'>Kebijakan Privasi</a></li>
+
+
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <a style="color: #fff;">Our product &amp; Categories</a>
+                    <br></br>
+                    <ul>
+                        <li><a href="<?= base_url('product_pintu_splus') ?>">Pintu</a></li>
+                        <li><a href="<?= base_url('product_window_splus') ?>">Jendela</a></li>
+                        <li><a href="<?= base_url('product_interior_material_splus') ?>">Interior Material</a></li>
+                        <li><a href="<?= base_url('product_exterior_material_splus') ?>">Exterior Material</a></li>
+                        <li><a href="<?= base_url('product_aksesoris_splus') ?>">Aksesoris</a></li>
+                        <li><a href="<?= base_url('product_masker_splus') ?>">Masker</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-12">
@@ -297,10 +389,10 @@
                             <br>Follow Us on Social Media: <a href="https://localhost/splus" target="_blank" title="free & premium responsive templates">Splus Indonesia</a>
                         </p>
                         <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.facebook.com/S-Plus-Indonesia-100698461599924/"><i class="fa fa-facebook"></i></a></li>
                             <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="https://www.instagram.com/splusindonesia/"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://www.youtube.com/channel/UCMYj8Md6whMbPNFcyxjyA6A"><i class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>

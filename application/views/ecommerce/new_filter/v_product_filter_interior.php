@@ -38,6 +38,8 @@
 	<!-- Custom CSS -->
 	<link href="<?= base_url('assets/css/css-filter/style.css') ?>" rel="stylesheet">
 
+	<link rel="stylesheet" href="<?= base_url('assets/template/tema/') ?>css/style.css">
+
 
 
 
@@ -69,8 +71,7 @@
 								<img src="<?= base_url('assets/images/ourproduk/logo.jpg') ?>" style="width: 300px;">
 							</a>
 						</div>
-						<!-- ***** Logo End ***** -->
-						<!-- ***** Menu Start ***** -->
+
 						<ul class="nav">
 							<!-- <li class="submenu">
 								<a href="javascript:;">Hubungi kami</a>
@@ -92,7 +93,7 @@
 								</ul>
 							</li> -->
 							<li><a href="<?= base_url('/cart') ?>">
-									<span><svg width="20px" height="20px">
+									<span><svg width="30px" height="30px">
 											<use xlink:href="<?= base_url('assets/css/') ?>sprite.svg#cart-20"></use>
 										</svg>
 										<?php
@@ -106,14 +107,153 @@
 											<span> cart(<?= $isi_keranjang; ?>)</span>
 										<?php } ?>
 									</span>
-									Keranjang
+
 								</a>
 							</li>
-							<li class="scroll-to-section"><a href="<?= base_url('administrator') ?>"> <span class="indicator__area">
+							<!-- <li class="scroll-to-section"><a href="<?= base_url('administrator') ?>"> <span class="indicator__area">
 										<svg width="20px" height="20px">
 											<use xlink:href="<?= base_url('assets/') ?>images/sprite.svg#person-20"></use>
 										</svg>
 									</span>login</a>
+							</li> -->
+							<li>
+								<style>
+									.dropbtn {
+										background-color: #fff;
+										color: white;
+										padding: 16px;
+										font-size: 16px;
+										border: none;
+										cursor: pointer;
+									}
+
+									.dropbtn:hover,
+									.dropbtn:focus {
+										background-color: #2980B9;
+									}
+
+									.dropdown {
+										position: relative;
+										display: inline-block;
+									}
+
+									.dropdown-content {
+										display: none;
+										position: inherit;
+										background-color: #f1f1f1;
+										min-width: 160px;
+										overflow: auto;
+										box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+										z-index: 1;
+									}
+
+									.dropdown-content a {
+										color: black;
+										padding: 12px 16px;
+										text-decoration: none;
+										display: block;
+									}
+
+									.dropdown a:hover {
+										background-color: #ddd;
+									}
+
+									.show {
+										display: block;
+									}
+								</style>
+								<div class="dropdown">
+
+									<a onclick="myFunction()" class="dropbtn">
+										<span>
+											<svg width="20px" height="20px">
+												<use xlink:href="<?= base_url('assets/') ?>images/sprite.svg#person-20"></use>
+											</svg>
+										</span>
+									</a>
+
+									<div id="myDropdown" class="dropdown-content">
+
+
+
+										<?php
+										if (!empty($this->session->userdata('idadmin'))) { ?>
+
+											<form>
+												<?php
+												$id_admin = $this->session->userdata('idadmin');
+												$q = $this->db->query("SELECT * FROM tbl_pengguna WHERE pengguna_id='$id_admin' ");
+												$c = $q->row_array();
+												?>
+												<ul>
+													<a href="<?= base_url('members/dashboard') ?>" class="account-menu__user">
+														<div class="account-menu__user-avatar">
+															<img src="<?php echo base_url() . 'assets/user/images/admin/' . $c['pengguna_photo']; ?>" class="img-circle" alt="">
+														</div>
+														<div class="account-menu__user-info">
+															<div class="account-menu__user-name"> <b><?php echo $c['pengguna_nama']; ?></b></div>
+															<div class="account-menu__user-email"><?php echo $c['pengguna_email']; ?></div>
+														</div>
+
+													</a>
+												</ul>
+												<br><br>
+												<ul class="account-menu__links">
+													<li><a href="<?= base_url('admin/Ubah_profil') ?>">Profil</a></li>
+													<li><a href="<?= base_url('admin/Riwayat_transaksi') ?>">Riwayat Transaksi</a></li>
+													<li><a href="<?= base_url('admin/Ubah_profil') ?>">Password</a></li>
+												</ul>
+												<ul class="account-menu__links">
+													<li><a href="<?php echo base_url() . 'administrator/logout' ?>">Keluar</a></li>
+												</ul>
+											</form>
+
+										<?php } else { ?>
+
+											<form action="<?php echo base_url() . 'administrator/auth' ?>" method="post">
+												<div class="account-menu__form-title">Masuk ke akun Anda</div>
+												<div class="form-group has-feedback">
+													<input type="text" name="username" class="form-control" placeholder="Username" required>
+													<span class="glyphicon glyphicon-user form-control-feedback"></span>
+												</div>
+												<div class="form-group has-feedback">
+													<input type="password" name="password" class="form-control" placeholder="Password" required>
+													<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+												</div>
+												<div class="form-group account-menu__form-button">
+													<button type="submit" name="submit" class="btn btn-primary btn-block">Login</button>
+												</div>
+												<div class="account-menu__form-link">
+													<a href="<?= base_url('register') ?>">Buat akun baru</a>
+												</div>
+											</form>
+
+
+
+										<?php } ?>
+
+									</div>
+
+								</div>
+								<script>
+									function myFunction() {
+										document.getElementById("myDropdown").classList.toggle("show");
+									}
+
+
+									window.onclick = function(event) {
+										if (!event.target.matches('.dropbtn')) {
+											var dropdowns = document.getElementsByClassName("dropdown-content");
+											var i;
+											for (i = 0; i < dropdowns.length; i++) {
+												var openDropdown = dropdowns[i];
+												if (openDropdown.classList.contains('show')) {
+													openDropdown.classList.remove('show');
+												}
+											}
+										}
+									}
+								</script>
 							</li>
 						</ul>
 						<a class='menu-trigger'>
@@ -319,8 +459,8 @@
 						<br></br>
 
 						<ul>
-							<li><a href="#">Cara Belanja</a></li>
-							<li><a href="#">Tanya Jawab/FAQ</a></li>
+							<li><a href="<?= base_url('paymen') ?>">Cara Belanja</a></li>
+							<li><a href="<?= base_url('shopbybrand') ?>">Tanya Jawab/FAQ</a></li>
 							<li><a href="<?php echo base_url('pemasangan/splus'); ?>">Pemasangan Produk</a></li>
 							<li><a href="<?php echo base_url('hubungi-kami'); ?>">Hubungi kami</a></li>
 
@@ -343,9 +483,9 @@
 					<a style="color: #fff;">Kebijakan Privasi</a>
 					<br></br>
 					<ul>
-						<li><a href="#">Ketentuan Pengguna</a></li>
-						<li><a href="#">Kebijakan Privasi</a></li>
-						<li><a href="#">Ketentuan Pengiriman</a></li>
+						<li><a href='<?= base_url('syarat_k') ?>'>Syarat & Ketentuan</a></li>
+						<li><a href='<?= base_url('kebijakan_p') ?>'>Kebijakan Privasi</a></li>
+
 
 					</ul>
 				</div>
@@ -377,7 +517,6 @@
 			</div>
 		</div>
 	</footer>
-
 
 	<!-- jQuery -->
 

@@ -19,12 +19,12 @@
         <div class="content-wrapper">
             <section class="content-header">
                 <h1>
-                    Daftar Produk
+                    Daftar Kelas
                     <small>S Plus Indonesia</small>
                 </h1>
                 <ol class="breadcrumb">
                     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li class="active">Produk</li>
+                    <li class="active">Kelas</li>
                 </ol>
             </section>
             <section class="content">
@@ -66,9 +66,11 @@
                                 <table id="example1" class="table table-striped" style="font-size:13px;">
                                     <thead>
                                         <tr>
+                                            <th style="width: 5%">No</th>
                                             <th>Gambar</th>
-                                            <th>Nama Produk</th>
-                                            <th>Kategori</th>
+                                            <th>Kelas</th>
+                                            <th>Subkategori</th>
+                                            <th>Author</th>
                                             <th style="text-align:right;">Aksi</th>
                                         </tr>
                                     </thead>
@@ -77,19 +79,21 @@
                                         $no = 0;
                                         foreach ($data->result_array() as $i) :
                                             $no++;
-                                            $produk_id = $i['produk_id'];
-                                            $produk_nama = $i['produk_nama'];
-                                            $produk_gambar = $i['produk_gambar'];
-                                            $produk_kategori_id = $i['produk_kategori_id'];
-                                            $produk_kategori_nama = $i['kategori_nama'];
+                                            $kelas_id = $i['kelas_id'];
+                                            $kelas_nama = $i['kelas_nama'];
+                                            $subkategori_nama = $i['subkategori_nama'];
+                                            $kelas_author = $i['kelas_author'];
+                                            $kelas_cover = $i['kelas_cover'];
                                         ?>
                                             <tr>
-                                                <td><img src="<?php echo base_url() . 'assets/user/images/produk/' . $produk_gambar; ?>" style="width:80px;"></td>
-                                                <td><?php echo $produk_nama; ?></td>
-                                                <td><?php echo $produk_kategori_nama; ?></td>
+                                                <td><?php echo $no; ?></td>
+                                                <td><img src="<?php echo base_url() . 'assets/user/images/galeri/all_produk/' . $kelas_cover; ?>" style="width:80px;"></td>
+                                                <td><?php echo $kelas_nama; ?></td>
+                                                <td><?php echo $subkategori_nama; ?></td>
+                                                <td><?php echo $kelas_author; ?></td>
                                                 <td style="text-align:right;">
-                                                    <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $produk_id; ?>"><span class="fa fa-pencil"></span></a>
-                                                    <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $produk_id; ?>"><span class="fa fa-trash"></span></a>
+                                                    <a class="btn" data-toggle="modal" data-target="#ModalEdit<?php echo $kelas_id; ?>"><span class="fa fa-pencil"></span></a>
+                                                    <a class="btn" data-toggle="modal" data-target="#ModalHapus<?php echo $kelas_id; ?>"><span class="fa fa-trash"></span></a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
@@ -117,19 +121,12 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                    <h4 class="modal-title" id="myModalLabel">Tambah Produk</h4>
+                    <h4 class="modal-title" id="myModalLabel">Tambah Kelas</h4>
                 </div>
-                <form class="form-horizontal" action="<?php echo base_url() . 'admin/produk/simpan_produk' ?>" method="post" enctype="multipart/form-data">
+                <form class="form-horizontal" action="<?php echo base_url() . 'admin/produk/simpan_kelas' ?>" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Nama Produk</label>
-                            <div class="col-sm-7">
-                                <input type="text" name="judul" class="form-control" placeholder="Nama Produk" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Kategori</label>
+                            <label for="inputUserName" class="col-sm-4 control-label">Subkategori</label>
                             <div class="col-sm-7">
 
                                 <select class="form-control" name="kategori" style="width: 100%;" required>
@@ -138,8 +135,8 @@
                                     $no = 0;
                                     foreach ($alb->result_array() as $a) :
                                         $no++;
-                                        $alb_id = $a['kategori_id'];
-                                        $alb_nama = $a['kategori_nama'];
+                                        $alb_id = $a['subkategori_id'];
+                                        $alb_nama = $a['subkategori_nama'];
                                     ?>
                                         <option value="<?php echo $alb_id; ?>"><?php echo $alb_nama; ?></option>
                                     <?php endforeach; ?>
@@ -148,14 +145,21 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Deskripsi Produk</label>
+                            <label for="inputUserName" class="col-sm-4 control-label">Nama Kelas</label>
+                            <div class="col-sm-7">
+                                <input type="text" name="kelas_nama" class="form-control" placeholder="Nama Kelas" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputUserName" class="col-sm-4 control-label">Deskripsi Kelas</label>
                             <div class="col-sm-7">
                                 <textarea id="ckeditor" name="deskripsi" class="form-control ckedit" placeholder="Deskripsi" required></textarea>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="inputUserName" class="col-sm-4 control-label">Gambar Produk</label>
+                            <label for="inputUserName" class="col-sm-4 control-label">Gambar Kelas</label>
                             <div class="col-sm-1">
                                 <span class="btn btn-default btn-file">
                                     <i class="fa fa-file-image-o" style="padding-top:12px;"></i>
@@ -222,50 +226,69 @@
 
     <!--Modal Edit produk-->
     <?php foreach ($data->result_array() as $i) :
-        $produk_id = $i['produk_id'];
-        $produk_judul = $i['produk_judul'];
-        $produk_deskripsi = $i['produk_deskripsi'];
-        $produk_gambar = $i['produk_gambar'];
-        $produk_kategori_id = $i['produk_kategori_id'];
-        $produk_kategori_nama = $i['kategori_nama'];
+        $kelas_id = $i['kelas_id'];
+        $kelas_nama = $i['kelas_nama'];
+        $kelas_deskripsi = $i['kelas_deskripsi'];
+        $kelas_author = $i['kelas_author'];
+        $kelas_cover = $i['kelas_cover'];
     ?>
 
-        <div class="modal fade" id="ModalEdit<?php echo $produk_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="ModalEdit<?php echo $kelas_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Edit Produk</h4>
+                        <h4 class="modal-title" id="myModalLabel">Edit kelas</h4>
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url() . 'admin/produk/update_produk' ?>" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
-                            <input type="hidden" name="kode" value="<?php echo $produk_id; ?>" />
-                            <input type="hidden" value="<?php echo $produk_gambar; ?>" name="gambar">
+                            <input type="hidden" name="kode" value="<?php echo $kelas_id; ?>" />
+                            <input type="hidden" value="<?php echo $kelas_cover; ?>" name="gambar">
+
                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Nama Produk</label>
+                                <label for="inputUserName" class="col-sm-4 control-label">Subkategori</label>
                                 <div class="col-sm-7">
-                                    <input type="text" name="xjudul" class="form-control" value="<?php echo $produk_judul; ?>" placeholder="Jenis Produk" required>
+
+                                    <select class="form-control" name="kategori" style="width: 100%;" required>
+                                        <option value="">-Pilih-</option>
+                                        <?php
+                                        $no = 0;
+                                        foreach ($alb->result_array() as $a) :
+                                            $no++;
+                                            $alb_id = $a['subkategori_id'];
+                                            $alb_nama = $a['subkategori_nama'];
+                                        ?>
+                                            <option value="<?php echo $alb_id; ?>"><?php echo $alb_nama; ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inputUserName" class="col-sm-4 control-label">Nama Kelas</label>
+                                <div class="col-sm-7">
+                                    <input type="text" name="kelas" class="form-control" value="<?php echo $kelas_nama; ?>" placeholder="Nama Kelas" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="inputUserName" class="col-sm-4 control-label">Deskripsi Produk</label>
                                 <div class="col-sm-7">
-                                    <textarea name="xdeskripsi" class="form-control ckedit" placeholder="Deskripsi" required><?php echo $produk_deskripsi; ?></textarea>
+                                    <textarea name="xdeskripsi" class="form-control ckedit" placeholder="Deskripsi" required><?php echo $kelas_deskripsi; ?></textarea>
 
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Kategori</label>
+                            <!-- <div class="form-group">
+                                <label for="inputUserName" class="col-sm-4 control-label">SubKategori</label>
                                 <div class="col-sm-7">
 
                                     <select class="form-control" name="xkategori" style="width: 100%;" required>
                                         <option value="">-Pilih-</option>
                                         <?php
                                         foreach ($alb->result_array() as $a) {
-                                            $alb_id = $a['kategori_id'];
-                                            $alb_nama = $a['kategori_nama'];
+                                            $alb_id = $a['subkategori_id'];
+                                            $alb_nama = $a['subkategori_nama'];
                                             if ($produk_kategori_id == $alb_id)
                                                 echo "<option value='$alb_id' selected>$alb_nama</option>";
                                             else
@@ -273,10 +296,10 @@
                                         } ?>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="form-group">
-                                <label for="inputUserName" class="col-sm-4 control-label">Gambar Produk</label>
+                                <label for="inputUserName" class="col-sm-4 control-label">Cover kelas</label>
                                 <div class="col-sm-7">
                                     <input type="file" name="filefoto" class="filefoto" />
                                 </div>
@@ -296,28 +319,26 @@
     <!--Modal Edit kategori-->
 
     <?php foreach ($data->result_array() as $i) :
-        $produk_id = $i['produk_id'];
-        $produk_judul = $i['produk_judul'];
-        $produk_tanggal = $i['tanggal'];
-        $produk_author = $i['produk_author'];
-        $produk_gambar = $i['produk_gambar'];
-        $produk_kategori_id = $i['produk_kategori_id'];
-        $produk_kategori_nama = $i['kategori_nama'];
+        $kelas_id = $i['kelas_id'];
+        $kelas_nama = $i['kelas_nama'];
+        $kelas_deskripsi = $i['kelas_deskripsi'];
+        $kelas_author = $i['kelas_author'];
+        $kelas_cover = $i['kelas_cover'];
     ?>
         <!--Modal Hapus Pengguna-->
-        <div class="modal fade" id="ModalHapus<?php echo $produk_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="ModalHapus<?php echo $kelas_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><span class="fa fa-close"></span></span></button>
-                        <h4 class="modal-title" id="myModalLabel">Hapus Produk</h4>
+                        <h4 class="modal-title" id="myModalLabel">Hapus Kelas</h4>
                     </div>
                     <form class="form-horizontal" action="<?php echo base_url() . 'admin/produk/hapus_produk' ?>" method="post" enctype="multipart/form-data">
                         <div class="modal-body">
-                            <input type="hidden" name="kode" value="<?php echo $produk_id; ?>" />
-                            <input type="hidden" value="<?php echo $produk_gambar; ?>" name="gambar">
-                            <input type="hidden" value="<?php echo $produk_kategori_id; ?>" name="kategori">
-                            <p>Apakah Anda yakin mau menghapus Produk <b><?php echo $produk_judul; ?></b> ?</p>
+                            <input type="hidden" name="kode" value="<?php echo $kelas_id; ?>" />
+                            <input type="hidden" value="<?php echo $kelas_cover; ?>" name="gambar">
+
+                            <p>Apakah Anda yakin mau menghapus Kelas <b><?php echo $kelas_nama; ?></b> ?</p>
 
                         </div>
                         <div class="modal-footer">

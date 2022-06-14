@@ -32,23 +32,14 @@
 </head>
 
 <body>
-    <!-- <div class="page-banner bg-img bg-img-parallax overlay-dark" style="background-image: url(assets/images/bg_image_2.jpg);">
-        <div class="container h-100">
-            <div class="row justify-content-center align-items-center h-100">
-                <div class="col-lg-8">
-                    <h1 class="fg-white text-center">Promosi</h1>
-                    <center><span style="color:antiquewhite;">Smart Living With S-plus Indonesia</span></center>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
-    <div class="page-arul" style="background: url('<?= base_url('assets/images/jendela1.jpg') ?>'); background-size: cover;" class="pt-20; ">
+
+    <div class="page-arul" style="background: url('<?= base_url('assets/images/kebijakan_p.jpg') ?>'); background-size: cover;" class="pt-20; ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="inner-content">
-                        <h1 class="fg-black text-center">&nbsp&nbsp</h1>
+                        <h1 class="fg-black text-center">&nbsp</h1>
                         <span style="color:black;">&nbsp</span>
                     </div>
                 </div>
@@ -56,7 +47,28 @@
         </div>
     </div>
 
-    <div>
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <center class="h-title h-m-title">KEBIJAKAN PRIVASI</center>
+            <hr style="width: 25%; margin-top: 5px; margin-bottom: 25px; border: 1px solid #e24545;">
+            <span style="text-align: justify;" class="h-body h-m-body">&emsp; Selamat Datang di splusindonesia.com. Kami menghormati privasi informasi pribadi Anda. Silahkan baca informasi yang terdapat pada halaman ini sebagai pedoman “Kebijakan Privasi”. Kami tidak berbagi atau mengungkapkan informasi pribadi Anda kepada pihak ketiga kecuali dalam kasus di mana itu bagian dari penyediaan layanan kepada Anda, misalnya, alamat pengiriman.</span>
+            <br><br><span style="text-align: justify;" class="h-body h-m-body">&emsp; Untuk item yang dibeli serta kredit dan keamanan lainnya. Kebijakan Privasi ini menjelaskan bagaimana S-Plus Indonesia mengumpulkan, menggunakan, melindungi, dan dalam beberapa kasus, mengungkapkan informasi pribadi Anda. Dengan mengunjungi situs ini, Anda setuju dan menerima syarat yang dijelaskan dalam Kebijakan ini.</span>
+            <br><br><span class="h-subtitle h-m-title">COLLECTION AND USE OF PERSONAL INFORMATION</span>
+            <br><br><span style="text-align: justify;" class="h-body h-m-body">&nbsp &nbsp S-Plus Indonesia meminta informasi yang dianggap perlu dan penting dalam rangka untuk memastikan layanan yang akurat dan memuaskan. Semua informasi yang S-Plus Indonesia kumpulkan diperlukan untuk menyelesaikan pembelian atau memberikan pengembalian dana. S-Plus Indonesia meminta berbagai informasi seperti nama lengkap, alamat, nomor telepon, alamat e-mail, informasi rekening bank, dan deskripsi dari item yang diminta atau dibeli.</span>
+            <br><br><span class="h-subtitle h-m-title">TRANSACTION SECURITY</span>
+            <br><br><span style="text-align: justify;" class="h-body h-m-body">&nbsp &nbsp Dalam rangka untuk melakukan segala upaya untuk memastikan bahwa pengalaman belanja Anda di splusindonesia.com aman, S-Plus Indonesia menggunakan teknologi enkripsi untuk melindungi Anda terhadap kehilangan, penyalahgunaan, atau perubahan informasi pribadi Anda.</span>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!-- <div>
         <main>
             <div class="page-section">
                 <div class="container">
@@ -141,13 +153,12 @@
                                 <button class="btn btn-danger">Belanja Sekarang</button>
                             </div>
                         </div>
-                    </div> <!-- .grid -->
+                    </div> 
 
-                </div> <!-- .container -->
-            </div> <!-- .page-section -->
+                </div> 
+            </div> 
         </main>
-    </div>
-
+    </div> -->
 
     <footer>
         <div class="container">

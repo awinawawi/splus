@@ -1,13 +1,13 @@
 <?php
-class Ubah_alamat extends CI_Controller
+class Register extends CI_Controller
 {
 	function __construct()
 	{
 		parent::__construct();
-		if ($this->session->userdata('logged_in') != TRUE) {
-			$url = base_url('administrator');
-			redirect($url);
-		};
+		// if ($this->session->userdata('logged_in') != TRUE) {
+		// 	$url = base_url('administrator');
+		// 	redirect($url);
+		// };
 
 		// if ($this->session->userdata('level') != 1) {
 		// 	redirect(base_url('admin/dashboard'));
@@ -22,8 +22,8 @@ class Ubah_alamat extends CI_Controller
 	{
 		$kode = $this->session->userdata('idadmin');
 		$x['user'] = $this->m_pengguna->get_pengguna_login($kode);
-		$x['data'] = $this->m_pengguna->get_all_ubah_alamat($kode);
-		$this->load->view('admin/v_ubah_alamat', $x);
+		$x['data'] = $this->m_pengguna->get_all_pengguna();
+		$this->load->view('ecommerce/register', $x);
 	}
 
 	function simpan_pengguna()
@@ -59,15 +59,15 @@ class Ubah_alamat extends CI_Controller
 				$level = $this->input->post('xlevel');
 				if ($password <> $konfirm_password) {
 					echo $this->session->set_flashdata('msg', 'error');
-					redirect('admin/pengguna');
+					redirect('admin/Register');
 				} else {
 					$this->m_pengguna->simpan_pengguna($nama, $jenkel, $username, md5($password), $email, $nohp, $level, $gambar);
 					echo $this->session->set_flashdata('msg', 'success');
-					redirect('admin/pengguna');
+					redirect('admin/Register');
 				}
 			} else {
 				echo $this->session->set_flashdata('msg', 'warning');
-				redirect('admin/pengguna');
+				redirect('admin/Register');
 			}
 		} else {
 			$nama = $this->input->post('xnama');
@@ -80,11 +80,11 @@ class Ubah_alamat extends CI_Controller
 			$level = $this->input->post('xlevel');
 			if ($password <> $konfirm_password) {
 				echo $this->session->set_flashdata('msg', 'error');
-				redirect('admin/pengguna');
+				redirect('admin/Register');
 			} else {
 				$this->m_pengguna->simpan_pengguna_tanpa_gambar($nama, $jenkel, $username, md5($password), $email, $nohp, $level);
 				echo $this->session->set_flashdata('msg', 'success');
-				redirect('admin/pengguna');
+				redirect('admin/Register');
 			}
 		}
 	}
@@ -122,15 +122,15 @@ class Ubah_alamat extends CI_Controller
 				// $level = $this->input->post('xlevel');
 				if ($password <> $konfirm_password) {
 					echo $this->session->set_flashdata('msg', 'error');
-					redirect('register');
+					redirect('admin/Register');
 				} else {
 					$this->m_pengguna->simpan_pengguna_new($nama, $jenkel, $username, md5($password), $email, $nohp, $gambar);
 					echo $this->session->set_flashdata('msg', 'success');
-					redirect('register');
+					redirect('admin/Register');
 				}
 			} else {
 				echo $this->session->set_flashdata('msg', 'warning');
-				redirect('register');
+				redirect('admin/Register');
 			}
 		} else {
 			$nama = $this->input->post('xnama');
@@ -143,11 +143,11 @@ class Ubah_alamat extends CI_Controller
 			// $level = $this->input->post('xlevel');
 			if ($password <> $konfirm_password) {
 				echo $this->session->set_flashdata('msg', 'error');
-				redirect('register');
+				redirect('admin/Register');
 			} else {
 				$this->m_pengguna->simpan_pengguna_tanpa_gambar_new($nama, $jenkel, $username, md5($password), $email, $nohp);
 				echo $this->session->set_flashdata('msg', 'success');
-				redirect('register');
+				redirect('admin/Register');
 			}
 		}
 	}
@@ -226,18 +226,6 @@ class Ubah_alamat extends CI_Controller
 				redirect('admin/pengguna');
 			}
 		}
-	}
-
-
-	function update_alamat()
-	{
-		$alamat = $this->input->post('alamat');
-		$provinsi = $this->input->post('provinsi');
-		$kecamatan = $this->input->post('kecamatan');
-		$kota = $this->input->post('kota');
-		$this->m_pengguna->update_alamat($alamat, $provinsi, $kecamatan, $kota);
-		echo $this->session->set_flashdata('msg', 'success-update');
-		redirect('admin/Ubah_alamat');
 	}
 
 	function hapus_pengguna()

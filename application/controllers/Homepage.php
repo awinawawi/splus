@@ -20,6 +20,8 @@ class Homepage extends CI_Controller
 		$this->load->model('Product_filter_model_pintu');
 		$this->load->model('Product_filter_model_all');
 
+		// $this->load->model('M_order');
+
 		//count pengunjung
 		$this->M_pengunjung->count_visitor();
 	}
@@ -126,17 +128,15 @@ class Homepage extends CI_Controller
 			} else {
 				return redirect(base_url());
 			}
-		} elseif ($name == 's-plus-wpc') {
+		} elseif ($name == 's-plus-exterior-material') {
 			if (empty($produk)) {
-				$this->load->view('user/produk/v_splus_wpc');
+				$this->load->view('user/produk/exterior-material/v_kategori_outlife');
 			} else if ($produk == 'deck-tile') {
-				$this->load->view('user/produk/wpc/v_wpc_deck');
+				$this->load->view('user/produk/exterior-material/wpc/v_wpc_deck');
 			} else if ($produk == 'wall-partition') {
-				$this->load->view('user/produk/wpc/v_wpc_wall');
+				$this->load->view('user/produk/exterior-material/wpc/v_wpc_wall');
 			} else if ($produk == 'wpc_kategori') {
-				$this->load->view('user/produk/wpc/v_kategori_wpc');
-			} else if ($produk == 'wpc') {
-				$this->load->view('user/produk/wpc/v_kategori_outlife');
+				$this->load->view('user/produk/exterior-material/wpc/v_kategori_wpc');
 			} else {
 				return redirect(base_url());
 			}
@@ -259,6 +259,32 @@ class Homepage extends CI_Controller
 			} else {
 				redirect(base_url());
 			}
+		} elseif ($name == 'karir') {
+			if (empty($produk)) {
+				$this->load->view('user/karir');
+			} else if ($produk == 'it') {
+				$this->load->view('user/karir/v_it');
+			} else if ($produk == 'programmer') {
+				$this->load->view('user/karir/v_programmer');
+			} else if ($produk == 'hrd') {
+				$this->load->view('user/karir/v_hrd');
+			} else if ($produk == 'marketing') {
+				$this->load->view('user/karir/v_marketing');
+			} else if ($produk == 'admin') {
+				$this->load->view('user/karir/v_admin');
+			} else if ($produk == 'admin-gudang') {
+				$this->load->view('user/karir/v_adm-gudang');
+			} else if ($produk == 'finance') {
+				$this->load->view('user/karir/v_finance');
+			} else if ($produk == 'purchase') {
+				$this->load->view('user/karir/v_purchase');
+			} else if ($produk == 'design') {
+				$this->load->view('user/karir/v_design');
+			} else if ($produk == 'produksi') {
+				$this->load->view('user/karir/v_produksi');
+			} else {
+				return redirect(base_url());
+			}
 		} else {
 			return redirect(base_url());
 		}
@@ -332,6 +358,8 @@ class Homepage extends CI_Controller
 		$this->load->view('ecommerce/icon/v_promosi');
 	}
 
+
+
 	public function bebas_ogkir()
 	{
 		$this->load->view('ecommerce/icon/v_bebas_ongkir');
@@ -340,9 +368,54 @@ class Homepage extends CI_Controller
 	function tracking()
 	{
 
-		$data['data'] = $this->db->query("SELECT *,SUM(a.harga_produk) AS total FROM tbl_pembelian a JOIN tbl_pelanggan b ON a.session_id=b.session_id
-		")->row_array();
+		// $data['data'] = $this->db->query("SELECT *,SUM(a.harga_produk*a.jumlah_produk) 
+		// AS total,SUM(ongkos_pengiriman) AS ongkir  FROM tbl_pembelian a JOIN tbl_pelanggan b 
+		// ON a.session_id=b.session_id  ")->row_array();
+
+		$faktur = $this->input->post('faktur');
+		$data['data'] = $this->db->query("SELECT SUM(harga_produk) as total,ongkos_pengiriman as ongkir FROM tbl_pembelian where faktur='$faktur' ")->row_array();
+
+		$data['record2'] = $this->db->query("SELECT * FROM tbl_pembelian a JOIN tbl_pelanggan b ON a.pelanggan_id=b.id  where a.faktur='$faktur'  GROUP BY faktur ")->row_array();
+
+		$data['record'] = $this->db->query("SELECT * FROM tbl_pembelian a 
+											JOIN tbl_pelanggan b ON a.pelanggan_id=b.id where a.faktur='$faktur'");
+
+		$data['data_bank'] = $this->db->query("SELECT b.nama_bank,b.no_rekening,b.pemilik_rekening 
+											   FROM tbl_pembelian a JOIN tbl_splus_rekening b ON a.metode_pembayaran=b.nama_bank where a.faktur='$faktur' GROUP BY pelanggan_id");
+
 		$this->load->view('ecommerce/icon/view_tracking_view', $data);
+	}
+
+	function tracking_rincian()
+	{
+
+		$fakturx = $this->uri->segment(3);
+		$data['data'] = $this->db->query("SELECT SUM(harga_produk) as total,ongkos_pengiriman as ongkir FROM tbl_pembelian where faktur='$fakturx'  ")->row_array();
+		$data['record2'] = $this->db->query("SELECT * FROM tbl_pembelian a JOIN tbl_pelanggan b ON a.pelanggan_id=b.id  where a.faktur='$fakturx'  GROUP BY faktur ")->row_array();
+		$data['record'] = $this->db->query("SELECT * FROM tbl_pembelian a 
+											JOIN tbl_pelanggan b ON a.pelanggan_id=b.id where a.faktur='$fakturx'");
+		$data['data_bank'] = $this->db->query("SELECT b.nama_bank,b.no_rekening,b.pemilik_rekening 
+											   FROM tbl_pembelian a JOIN tbl_splus_rekening b ON a.metode_pembayaran=b.nama_bank where a.faktur='$fakturx' GROUP BY pelanggan_id");
+		$this->load->view('ecommerce/icon/view_tracking_view', $data);
+
+		// var_dump($fakturx);
+
+	}
+
+	function download()
+	{
+
+		$fakturx = $this->uri->segment(3);
+		$data['data'] = $this->db->query("SELECT SUM(harga_produk) as total,ongkos_pengiriman as ongkir FROM tbl_pembelian where faktur='$fakturx'  ")->row_array();
+		$data['record2'] = $this->db->query("SELECT * FROM tbl_pembelian a JOIN tbl_pelanggan b ON a.pelanggan_id=b.id  where a.faktur='$fakturx'  GROUP BY faktur ")->row_array();
+		$data['record'] = $this->db->query("SELECT * FROM tbl_pembelian a 
+											JOIN tbl_pelanggan b ON a.pelanggan_id=b.id where a.faktur='$fakturx'");
+		$data['data_bank'] = $this->db->query("SELECT b.nama_bank,b.no_rekening,b.pemilik_rekening 
+											   FROM tbl_pembelian a JOIN tbl_splus_rekening b ON a.metode_pembayaran=b.nama_bank where a.faktur='$fakturx' GROUP BY pelanggan_id");
+		$this->load->view('ecommerce/icon/view_tracking_view', $data);
+
+		// var_dump($fakturx);
+
 	}
 
 	public function paymen()
@@ -359,8 +432,15 @@ class Homepage extends CI_Controller
 	}
 
 
+	public function kebijakan_p()
+	{
+		$this->load->view('ecommerce/icon/v_kebijakan');
+	}
 
-
+	public function syarat_k()
+	{
+		$this->load->view('ecommerce/icon/v_syarat');
+	}
 
 
 	public function product_pintu_splus()
@@ -462,8 +542,6 @@ class Homepage extends CI_Controller
 	{
 		$this->load->view('ecommerce/v_product_masker');
 	}
-
-
 
 	public function contact()
 	{

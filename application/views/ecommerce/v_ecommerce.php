@@ -127,7 +127,7 @@
                                     <li><a href="<?= base_url('contact') ?>">Contact Us</a></li>
                                 </ul>
                             </li> -->
-                            <li class="submenu">
+                            <!-- <li class="submenu">
                                 <a href="javascript:;">Product</a>
                                 <ul>
                                     <li><a href="<?= base_url('product_pintu_splus') ?>">Door</a></li>
@@ -138,7 +138,7 @@
                                     <li><a href="<?= base_url('product_masker_splus') ?>">Masker</a></li>
                                     <li><a href="<?= base_url('product_all') ?>">All Product</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <li class="submenu">
                                 <a href="javascript:;"> Special Product</a>
                                 <ul>
@@ -325,17 +325,6 @@
 
                                     </div>
 
-
-
-
-
-
-
-
-
-
-
-
                                 </div>
                                 <script>
                                     function myFunction() {
@@ -451,7 +440,7 @@
                             <br></br>
                             <span class="description">
                                 <h5>Tanya Jawab</h5>
-                                <span class="detail">Diskon, Voucher, dan Flash Sale Setiap Hari</span>
+                                <span class="detail">Kapan saya menerima pesanan.</span>
                             </span>
                         </a>
                     </div>
@@ -1078,7 +1067,7 @@
 
                         <ul>
                             <li><a href="<?= base_url('paymen') ?>">Cara Belanja</a></li>
-                            <li><a href="#">Tanya Jawab/FAQ</a></li>
+                            <li><a href="<?= base_url('shopbybrand') ?>">Tanya Jawab/FAQ</a></li>
                             <li><a href="<?php echo base_url('pemasangan/splus'); ?>">Pemasangan Produk</a></li>
                             <li><a href="<?php echo base_url('hubungi-kami'); ?>">Hubungi kami</a></li>
 
@@ -1101,9 +1090,9 @@
                     <a style="color: #fff;">Kebijakan Privasi</a>
                     <br></br>
                     <ul>
-                        <li><a href="#">Ketentuan Pengguna</a></li>
-                        <li><a href="#">Kebijakan Privasi</a></li>
-                        <li><a href="#">Ketentuan Pengiriman</a></li>
+                        <li><a href='<?= base_url('syarat_k') ?>'>Syarat & Ketentuan</a></li>
+                        <li><a href='<?= base_url('kebijakan_p') ?>'>Kebijakan Privasi</a></li>
+
 
                     </ul>
                 </div>

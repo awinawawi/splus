@@ -2,12 +2,16 @@
 class M_produk extends CI_Model
 {
 
+
+
 	function get_all_produk()
 	{
 
 		// $hsl = $this->db->query("SELECT * FROM tbl_produk join tbl_kategori on produk_kategori_id=kategori_id ORDER BY produk_id ASC");
 		// $hsl = $this->db->query("SELECT * FROM tbl_produk a JOIN tbl_kategori b ON a.id_kategori_produk=b.kategori_id ORDER BY a.produk_id ASC");
-		$hsl = $this->db->query("SELECT * FROM tbl_produk join tbl_kategori on produk_kategori=kategori_id ORDER BY produk_id ASC");
+		// $hsl = $this->db->query("SELECT * FROM tbl_produk join tbl_kategori on produk_kategori=kategori_id ORDER BY produk_id ASC");
+
+		$hsl = $this->db->query("SELECT * FROM tbl_kelas a JOIN tbl_subkategori b ON a.produk_subkategori=b.subkategori_id ORDER BY kelas_id ASC");
 		return $hsl;
 	}
 

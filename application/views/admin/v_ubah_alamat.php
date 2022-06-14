@@ -44,14 +44,11 @@
                 <div class="row">
                     <?php foreach ($data->result_array() as $i) :
                         $pengguna_id = $i['pengguna_id'];
-                        $pengguna_nama = $i['pengguna_nama'];
-                        $pengguna_jenkel = $i['pengguna_jenkel'];
-                        $pengguna_email = $i['pengguna_email'];
-                        $pengguna_username = $i['pengguna_username'];
-                        $pengguna_password = $i['pengguna_password'];
-                        $pengguna_nohp = $i['pengguna_nohp'];
-                        $pengguna_level = $i['pengguna_level'];
-                        $pengguna_photo = $i['pengguna_photo'];
+                        $alamat = $i['alamat'];
+                        $provinsi = $i['provinsi'];
+                        $kecamatan = $i['kecamatan'];
+                        $kota = $i['kota'];
+
                     ?>
                         <!--Modal Edit Pengguna-->
                         <div id="ModalEdit<?php echo $pengguna_id; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -60,7 +57,7 @@
                                     <div class="modal-header">
                                         <h4 class="modal-title" id="myModalLabel">Ubah Alamat</h4>
                                     </div>
-                                    <form class="form-horizontal" action="<?php echo base_url() . 'admin/Ubah_alamat/update_pengguna' ?>" method="post" enctype="multipart/form-data">
+                                    <form class="form-horizontal" action="<?php echo base_url() . 'admin/Ubah_alamat/update_alamat' ?>" method="post" enctype="multipart/form-data">
                                         <div class="modal-body">
 
                                             <!-- <div class="form-group">
@@ -74,14 +71,15 @@
                                             <div class="form-group">
                                                 <label for="inputUserName" class="col-sm-4 control-label">Alamat</label>
                                                 <div class="col-sm-7">
-                                                    <textarea name="alamat" class="form-control" rows="5" required><?php echo $pengguna_nama; ?></textarea>
+                                                    <textarea name="alamat" class="form-control" rows="5" required><?php echo $alamat; ?></textarea>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-4 control-label">Provinsi</label>
                                                 <div class="col-sm-7">
-                                                    <select name="provinsi" id="ajax_order_address_province" class="form-control" style="height:40px" required></select>
+                                                    <!-- <select name="provinsi" id="ajax_order_address_province" class="form-control" style="height:40px" required></select> -->
+                                                    <input type="text" name="provinsi" class="form-control" id="inputUserName" value="<?php echo $provinsi; ?>" placeholder="provinsi" required>
                                                 </div>
                                             </div>
 
@@ -89,18 +87,20 @@
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-4 control-label">Kecamatan</label>
                                                 <div class="col-sm-7">
-                                                    <select name="kecamatan" id="ajax_order_address_district" class="form-control" style="height:40px" required>
+                                                    <!-- <select name="kecamatan" id="ajax_order_address_district" class="form-control" style="height:40px" required>
                                                         <option value="0">-- Pilih Kecamatan --</option>
-                                                    </select>
+                                                    </select> -->
+                                                    <input type="text" name="kecamatan" class="form-control" id="inputUserName" value="<?php echo $kecamatan; ?>" placeholder="Kecamatan" required>
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="inputEmail3" class="col-sm-4 control-label">Kota/Kab</label>
                                                 <div class="col-sm-7">
-                                                    <select name="kota" id="ajax_order_address_city" class="form-control" style="height:40px" required>
+                                                    <!-- <select name="kota" id="ajax_order_address_city" class="form-control" style="height:40px" required>
                                                         <option value="0">-- Pilih Kota/Kab --</option>
-                                                    </select>
+                                                    </select> -->
+                                                    <input type="text" name="kota" class="form-control" id="inputUserName" value="<?php echo $kota; ?>" placeholder="kota/kab" required>
                                                 </div>
                                             </div>
 
@@ -110,9 +110,9 @@
                                         </div>
 
                                         <div class="modal-footer">
-                                            <a href="<?php echo base_url() . 'admin/dashboard' ?>">
+                                            <!-- <a href="<?php echo base_url() . 'admin/dashboard' ?>">
                                                 <button type="button" class="btn btn-default btn-flat">kembali</button>
-                                            </a>
+                                            </a> -->
                                             <button type="submit" class="btn btn-primary btn-flat" id="simpan">Update</button>
                                         </div>
                                     </form>
@@ -125,10 +125,7 @@
 
                 </div>
             </section>
-
-
         </div>
-
     </div>
 
 
