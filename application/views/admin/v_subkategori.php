@@ -254,7 +254,7 @@
                         <div class="modal-body">
                             <input type="hidden" name="kode" value="<?php echo $subkategori_id; ?>" />
                             <input type="hidden" value="<?php echo $subkategori_cover; ?>" name="gambar">
-                            <p>Apakah Anda yakin mau menghapus Kategori Produk <b><?php echo $subkategori_nama; ?></b> ?</p>
+                            <p>Apakah Anda yakin mau menghapus SubKategori Produk <b><?php echo $subkategori_nama; ?></b> ?</p>
 
                         </div>
                         <div class="modal-footer">

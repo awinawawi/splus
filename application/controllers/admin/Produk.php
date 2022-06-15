@@ -22,6 +22,7 @@ class Produk extends CI_Controller
 	{
 
 		$x['data'] = $this->m_produk->get_all_produk_filter($kategori);
+		$x['alb'] = $this->m_subkategori->get_all_kategori();
 		$this->load->view('admin/v_produk', $x);
 	}
 
@@ -67,12 +68,12 @@ class Produk extends CI_Controller
 		$this->load->view('admin/v_produk', $x);
 	}
 
+
 	function simpan_kelas()
 	{
-		// $this->base64toimage($_POST['filesimages'][0]);
-		$config['upload_path'] = './assets/user/images/produk/all_produk/'; //path folder
+		$config['upload_path'] = './assets/user/images/galeri/all_produk/'; //path folder
 		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
-		$config['encrypt_name'] = FALSE; //nama yang terupload nantinya
+		$config['encrypt_name'] = TRUE; //nama yang terupload nantinya
 
 		$this->upload->initialize($config);
 		if (!empty($_FILES['filefoto']['name'])) {
@@ -80,36 +81,107 @@ class Produk extends CI_Controller
 				$gbr = $this->upload->data();
 				//Compress Image
 				$config['image_library'] = 'gd2';
-				$config['source_image'] = './assets/user/images/produk/all_produk/' . $gbr['file_name'];
+				$config['source_image'] = './assets/user/images/galeri/all_produk/' . $gbr['file_name'];
 				$config['create_thumb'] = FALSE;
 				$config['maintain_ratio'] = FALSE;
-				$config['max_width']   = 1500;
-				$config['max_height']  = 1500;
-				$config['new_image'] = './assets/user/images/produk/all_produk/' . $gbr['file_name'];
+				$config['quality'] = '60%';
+				$config['width'] = 500;
+				$config['height'] = 400;
+				$config['new_image'] = './assets/user/images/galeri/all_produk/' . $gbr['file_name'];
 				$this->load->library('image_lib', $config);
 				$this->image_lib->resize();
 
-				$produk_gambar = $gbr['file_name'];
-				$kelas_nama = strip_tags($this->input->post('kelas_nama'));
-				$kelas_deskripsi = $this->input->post('deskripsi');
-				$produk_subkategori = strip_tags($this->input->post('kategori'));
-				$produk_slug = url_title($this->input->post('judul'), '-', true);
-				$produk_deskripsi = $this->input->post('deskripsi');
+				$gambar = $gbr['file_name'];
+				$kelas_nama = strip_tags($this->input->post('nama_kelas'));
+				$kelas_deskripsi = strip_tags($this->input->post('deskripsi_kelas'));
+				$kode = $this->session->userdata('idadmin');
+				$user = $this->m_pengguna->get_pengguna_login($kode);
+				$p = $user->row_array();
+				$user_id = $p['pengguna_id'];
+				$user_nama = $p['pengguna_nama'];
 				$produk_kategori = strip_tags($this->input->post('kategori'));
-				$produk_kategori_id = $this->session->userdata('idadmin');
-
-				$this->m_produk->simpan_produk($kelas_nama, $produk_subkategori, $kelas_deskripsi);
-				// $this->m_produk->simpan_produk($produk_slug, $produk_nama, $produk_kategori_id, $produk_kategori, $produk_gambar, $produk_deskripsi);
+				$this->m_produk->simpan_kelas($kelas_nama, $produk_kategori, $kelas_deskripsi, $user_id, $user_nama, $gambar);
 				echo $this->session->set_flashdata('msg', 'success');
 				redirect('admin/produk');
 			} else {
-				$this->session->set_flashdata('msg', 'warning');
+				echo $this->session->set_flashdata('msg', 'warning');
 				redirect('admin/produk');
 			}
 		} else {
 			redirect('admin/produk');
 		}
 	}
+
+
+	function update_kelas()
+	{
+
+		$config['upload_path'] = './assets/user/images/galeri/all_produk/'; //path folder
+		$config['allowed_types'] = 'gif|jpg|png|jpeg|bmp'; //type yang dapat diakses bisa anda sesuaikan
+		$config['encrypt_name'] = TRUE; //nama yang terupload nantinya
+
+		$this->upload->initialize($config);
+		if (!empty($_FILES['filefoto']['name'])) {
+			if ($this->upload->do_upload('filefoto')) {
+				$gbr = $this->upload->data();
+				//Compress Image
+				$config['image_library'] = 'gd2';
+				$config['source_image'] = './assets/user/images/galeri/all_produk/' . $gbr['file_name'];
+				$config['create_thumb'] = FALSE;
+				$config['maintain_ratio'] = FALSE;
+				$config['quality'] = '60%';
+				$config['width'] = 500;
+				$config['height'] = 400;
+				$config['new_image'] = './assets/user/images/galeri/all_produk/' . $gbr['file_name'];
+				$this->load->library('image_lib', $config);
+				$this->image_lib->resize();
+
+				$gambar = $gbr['file_name'];
+				$kelas_id = $this->input->post('kode');
+
+				// $subkategori_nama = strip_tags($this->input->post('subkategori_nama'));
+				// $subkategori_deskripsi = strip_tags($this->input->post('subkategori_deskripsi'));
+
+				$kelas_nama = $this->input->post('kelas_nama');
+				$kelas_deskripsi = $this->input->post('kelas_deskripsi');
+
+				$images = $this->input->post('gambar');
+				$path = './assets/user/images/galeri/all_produk/' . $images;
+				unlink($path);
+				$kode = $this->session->userdata('idadmin');
+				$user = $this->m_pengguna->get_pengguna_login($kode);
+				$p = $user->row_array();
+				$user_id = $p['pengguna_id'];
+				$user_nama = $p['pengguna_nama'];
+				// $produk_kategori = strip_tags($this->input->post('kategori'));
+				$produk_kategori = $this->input->post('kategori');
+				// $this->m_subkategori->update_subkategori($subkategori_id, $subkategori_nama, $produk_kategori, $subkategori_deskripsi, $user_id, $user_nama, $gambar);
+				$this->m_produk->update_kelas($kelas_id, $kelas_nama, $produk_kategori, $kelas_deskripsi, $gambar);
+				echo $this->session->set_flashdata('msg', 'info');
+				redirect('admin/produk');
+			} else {
+				echo $this->session->set_flashdata('msg', 'warning');
+				redirect('admin/produk');
+			}
+		} else {
+			$kelas_id = $this->input->post('kode');
+			// $subkategori_nama = strip_tags($this->input->post('subkategori_nama'));
+			$kelas_nama = $this->input->post('kelas_nama');
+			$kelas_deskripsi = strip_tags($this->input->post('kelas_deskripsi'));
+			$kode = $this->session->userdata('idadmin');
+			$user = $this->m_pengguna->get_pengguna_login($kode);
+			$p = $user->row_array();
+			$user_id = $p['pengguna_id'];
+			$user_nama = $p['pengguna_nama'];
+			$produk_kategori = $this->input->post('kategori');
+			// $this->m_subkategori->update_subkategori_tanpa_img($subkategori_id, $subkategori_nama, $produk_kategori, $subkategori_deskripsi, $user_id, $user_nama);
+			$this->m_produk->update_kelas_tanpa_img($kelas_id, $kelas_nama, $produk_kategori, $kelas_deskripsi);
+			echo $this->session->set_flashdata('msg', 'info');
+			redirect('admin/produk');
+		}
+	}
+
+
 
 	function update_produk()
 	{
@@ -167,6 +239,18 @@ class Produk extends CI_Controller
 		}
 	}
 
+
+	function hapus_kelas()
+	{
+		$kode = $this->input->post('kode');
+		$gambar = $this->input->post('gambar');
+		$path = './assets/user/images/galeri/all_produk/' . $gambar;
+		unlink($path);
+		$this->m_produk->hapus_kelas($kode);
+		echo $this->session->set_flashdata('msg', 'success-hapus');
+		redirect('admin/produk');
+	}
+
 	function hapus_produk()
 	{
 		$kode = $this->input->post('kode');
@@ -216,7 +300,7 @@ class Produk extends CI_Controller
 		ob_end_clean();
 
 		require_once('./assets/html2pdf/html2pdf.class.php');
-		$pdf = new HTML2PDF('P', 'A4', 'en');
+		// $pdf = new HTML2PDF('P', 'A4', 'en');
 		$pdf->WriteHTML($html);
 		$pdf->Output('Data Transaksi.pdf', 'D');
 	}

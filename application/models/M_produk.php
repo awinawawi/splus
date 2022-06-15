@@ -18,12 +18,17 @@ class M_produk extends CI_Model
 	function get_all_produk_filter($kategori)
 	{
 		if (empty($kategori) || $kategori == 'all') :
-			$hsl = $this->db->query("SELECT * FROM tbl_produk join tbl_kategori on produk_kategori=kategori_id 
-		  ORDER BY produk_id ASC");
+			// 	$hsl = $this->db->query("SELECT * FROM tbl_produk join tbl_kategori on produk_kategori=kategori_id 
+			//   ORDER BY produk_id ASC");
+			$hsl = $this->db->query("SELECT * FROM tbl_kelas a JOIN tbl_subkategori b 
+									ON a.produk_subkategori=b.subkategori_id ORDER BY kelas_id ASC");
 			return $hsl;
 		else :
-			$hsl = $this->db->query("SELECT * FROM tbl_produk join tbl_kategori on produk_kategori=kategori_id 
-			where produk_kategori='$kategori'  ORDER BY produk_id ASC");
+			// $hsl = $this->db->query("SELECT * FROM tbl_produk join tbl_kategori on produk_kategori=kategori_id 
+			// where produk_kategori='$kategori'  ORDER BY produk_id ASC");
+			$hsl = $this->db->query("SELECT * FROM tbl_kelas a JOIN tbl_subkategori b 
+			ON a.produk_subkategori=b.subkategori_id  WHERE a.produk_subkategori='$kategori' 
+			ORDER BY kelas_id ASC");
 			return $hsl;
 		endif;
 	}
@@ -39,6 +44,38 @@ class M_produk extends CI_Model
 		else
 			return false;
 	}
+
+
+	//simpan kelas//
+
+	function simpan_kelas($kelas_nama, $produk_kategori, $kelas_deskripsi, $user_id, $user_nama, $gambar)
+	{
+		$hsl = $this->db->query("insert into tbl_kelas(kelas_nama,produk_subkategori, kelas_deskripsi,kelas_pengguna_id,kelas_author,kelas_cover) values ('$kelas_nama','$produk_kategori','$kelas_deskripsi','$user_id','$user_nama','$gambar')");
+		return $hsl;
+	}
+
+	function update_kelas($kelas_id, $kelas_nama, $produk_kategori, $kelas_deskripsi, $gambar)
+	{
+		$hsl = $this->db->query("update tbl_kelas set kelas_nama='$kelas_nama',produk_subkategori='$produk_kategori',kelas_deskripsi = '$kelas_deskripsi',kelas_cover='$gambar' where kelas_id='$kelas_id'");
+		return $hsl;
+	}
+
+	function update_kelas_tanpa_img($kelas_id, $kelas_nama, $produk_kategori, $kelas_deskripsi)
+	{
+		$hsl = $this->db->query("update tbl_kelas set kelas_nama='$kelas_nama',produk_subkategori='$produk_kategori',kelas_deskripsi = '$kelas_deskripsi'
+		where kelas_id='$kelas_id'");
+		return $hsl;
+	}
+
+	function hapus_kelas($kode)
+	{
+		$hsl = $this->db->query("delete from tbl_kelas where kelas_id='$kode'");
+		return $hsl;
+	}
+
+	/// anjing cape bnget bangsat kerja sendiri
+
+
 
 	function update_produk($produk_id, $produk_slug, $produk_nama,  $produk_kategori, $produk_gambar, $produk_deskripsi)
 	{

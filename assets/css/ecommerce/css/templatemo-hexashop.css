@@ -121,8 +121,8 @@ html[xmlns] .clearfix {
 
 ul,
 li {
-  padding: 0;
-  margin: 0;
+  padding: 0px;
+  margin: 0px;
   list-style: none;
 }
 
@@ -170,7 +170,7 @@ ul {
 }
 
 p {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 25px;
   color: #2a2a2a;
 }
@@ -1573,7 +1573,7 @@ footer ul li {
 }
 
 footer ul li a {
-  font-size: 14px;
+  font-size: 18px;
   color: #fff;
   transition: all 0.3s;
 }
@@ -1612,7 +1612,7 @@ footer .under-footer ul li a {
 
 footer .under-footer p {
   color: #fff;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 300;
 }
 
@@ -1636,6 +1636,39 @@ Products Page
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.page-arul {
+  margin-top: 0px;
+  margin-bottom: 30px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.page-arul .inner-content {
+  padding: 150px 0px;
+  text-align: center;
+}
+
+.page-arul .inner-content h2 {
+  font-size: 52px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.page-arul .inner-content span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  font-style: italic;
+}
+
+#products .section-arul {
+  text-align: center;
+  margin-bottom: 60px;
+  margin-top: 80px;
 }
 
 .page-heading .inner-content {

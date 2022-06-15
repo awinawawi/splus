@@ -402,7 +402,7 @@
                                 <div class="body">
                                     <form action="<?= base_url('add_to_cart') ?>" method="POST">
                                         <div class="form-group row">
-                                            <label for="type" class="col-sm-2 pt-10">Tipe</label>
+                                            <label for="type" class="col-sm-2 pt-10">Tipe </label>
                                             <div class="col-sm-8">
                                                 <input type="hidden" name="nama_produk" value="<?= strtoupper($varian[0]->produk_nama) ?>">
                                                 <select name="tipe_produk" id="order_tipe" class="form-control" style="height:40px">
