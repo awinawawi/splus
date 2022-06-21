@@ -83,8 +83,8 @@
             <div>
                 <p style="font-size:20px;text-align: justify;">Untuk mengetahui estimasi waktu pengiriman produk Anda,
                     silahkan mengacu pada estimasi waktu yang ditentukan pihak logistik berdasarkan tipe pengiriman yang Anda pilih,
-                    ditambah dengan waktu proses selama 1-2 hari dari pihak Mitra10. Secara umum, estimasi waktu pengiriman 2-7 hari kerja,
-                    tidak termasuk hari libur dan cuti bersama.Informasi lebih detail tentang pengiriman bisa dicek di sini</p>
+                    ditambah dengan waktu proses selama 1-2 hari dari pihak splus Indonesia. Secara umum, estimasi waktu pengiriman 2-7 hari kerja,
+                    tidak termasuk hari libur dan cuti bersama.</p>
             </div>
         </div>
     </div>

@@ -445,49 +445,55 @@ class Homepage extends CI_Controller
 
 	public function product_pintu_splus()
 	{
-		$data['jenis_data'] = $this->Product_filter_model_pintu->fetch_filter_type('product_jenis');
-		$data['tipe_data'] = $this->Product_filter_model_pintu->fetch_filter_type('product_tipe');
-		$data['brand_data'] = $this->Product_filter_model_pintu->fetch_filter_type('product_brand');
+		$data['jenis_data'] = $this->Product_filter_model_pintu->fetch_filter_type('subkategori_nama');
+		$data['tipe_data'] = $this->Product_filter_model_pintu->fetch_filter_type('kelas_nama');
+		$data['brand_data'] = $this->Product_filter_model_pintu->fetch_filter_type('brand');
 		$this->load->view('ecommerce/new_filter/v_product_filter_pintu', $data);
 	}
 
 	public function product_window_splus()
 	{
-		$data['jenis_data'] = $this->product_filter_model->fetch_filter_type('product_jenis');
-		$data['tipe_data'] = $this->product_filter_model->fetch_filter_type('product_tipe');
-		$data['brand_data'] = $this->product_filter_model->fetch_filter_type('product_brand');
+		// $data['jenis_data'] = $this->product_filter_model->fetch_filter_type('product_jenis');
+		// $data['tipe_data'] = $this->product_filter_model->fetch_filter_type('product_tipe');
+		// $data['brand_data'] = $this->product_filter_model->fetch_filter_type('product_brand');
+		$data['jenis_data'] = $this->product_filter_model->fetch_filter_type('subkategori_nama');
+		$data['tipe_data'] = $this->product_filter_model->fetch_filter_type('kelas_nama');
+		$data['brand_data'] = $this->product_filter_model->fetch_filter_type('brand');
 		$this->load->view('ecommerce/new_filter/v_product_filter_window', $data);
 	}
 
 	public function product_interior_material_splus()
 	{
-		$data['jenis_data'] = $this->Product_filter_model_interior->fetch_filter_type('product_jenis');
-		$data['tipe_data'] = $this->Product_filter_model_interior->fetch_filter_type('product_tipe');
-		$data['brand_data'] = $this->Product_filter_model_interior->fetch_filter_type('product_brand');
+		// $data['jenis_data'] = $this->Product_filter_model_interior->fetch_filter_type('product_jenis');
+		// $data['tipe_data'] = $this->Product_filter_model_interior->fetch_filter_type('product_tipe');
+		// $data['brand_data'] = $this->Product_filter_model_interior->fetch_filter_type('product_brand');
+		$data['jenis_data'] = $this->Product_filter_model_interior->fetch_filter_type('subkategori_nama');
+		$data['tipe_data'] = $this->Product_filter_model_interior->fetch_filter_type('kelas_nama');
+		$data['brand_data'] = $this->Product_filter_model_interior->fetch_filter_type('brand');
 		$this->load->view('ecommerce/new_filter/v_product_filter_interior', $data);
 	}
 
 	public function product_exterior_material_splus()
 	{
-		$data['jenis_data'] = $this->Product_filter_model_exterior->fetch_filter_type('product_jenis');
-		$data['tipe_data'] = $this->Product_filter_model_exterior->fetch_filter_type('product_tipe');
-		$data['brand_data'] = $this->Product_filter_model_exterior->fetch_filter_type('product_brand');
+		$data['jenis_data'] = $this->Product_filter_model_exterior->fetch_filter_type('subkategori_nama');
+		$data['tipe_data'] = $this->Product_filter_model_exterior->fetch_filter_type('kelas_nama');
+		$data['brand_data'] = $this->Product_filter_model_exterior->fetch_filter_type('brand');
 		$this->load->view('ecommerce/new_filter/v_product_filter_exterior', $data);
 	}
 
 	public function product_aksesoris_splus()
 	{
-		$data['jenis_data'] = $this->Product_filter_model_aksesoris->fetch_filter_type('product_jenis');
-		$data['tipe_data'] = $this->Product_filter_model_aksesoris->fetch_filter_type('product_tipe');
-		$data['brand_data'] = $this->Product_filter_model_aksesoris->fetch_filter_type('product_brand');
+		$data['jenis_data'] = $this->Product_filter_model_aksesoris->fetch_filter_type('subkategori_nama');
+		$data['tipe_data'] = $this->Product_filter_model_aksesoris->fetch_filter_type('kelas_nama');
+		$data['brand_data'] = $this->Product_filter_model_aksesoris->fetch_filter_type('brand');
 		$this->load->view('ecommerce/new_filter/v_product_filter_aksesoris', $data);
 	}
 
 	public function product_masker_splus()
 	{
-		$data['jenis_data'] = $this->Product_filter_model_masker->fetch_filter_type('product_jenis');
-		$data['tipe_data'] = $this->Product_filter_model_masker->fetch_filter_type('product_tipe');
-		$data['brand_data'] = $this->Product_filter_model_masker->fetch_filter_type('product_brand');
+		$data['jenis_data'] = $this->Product_filter_model_masker->fetch_filter_type('subkategori_nama');
+		$data['tipe_data'] = $this->Product_filter_model_masker->fetch_filter_type('kelas_nama');
+		$data['brand_data'] = $this->Product_filter_model_masker->fetch_filter_type('brand');
 		$this->load->view('ecommerce/new_filter/v_product_filter_masker', $data);
 	}
 

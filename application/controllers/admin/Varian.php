@@ -13,6 +13,8 @@ class Varian extends CI_Controller
 			redirect(base_url('admin/dashboard'));
 		}
 
+		$this->load->model('m_kategori');
+		$this->load->model('m_subkategori');
 		$this->load->model('m_varian');
 		$this->load->model('m_produk');
 		$this->load->model('m_dependentSelect');
@@ -23,7 +25,10 @@ class Varian extends CI_Controller
 
 	function index()
 	{
+		$x['kategori'] = $this->m_kategori->get_all_kategori();
+		$x['subkategori'] = $this->m_subkategori->get_all_kategori();
 		$x['alb'] = $this->m_produk->get_all_produk();
+		$x['brand'] = $this->m_varian->get_all_brand();
 		$x['data'] = $this->m_varian->get_all_varian();
 		$this->load->view('admin/v_varian', $x);
 	}
@@ -60,6 +65,7 @@ class Varian extends CI_Controller
 				$this->image_lib->resize();
 
 				$gambar = $gbr['file_name'];
+
 				$varian_nama = strip_tags($this->input->post('nama_varian'));
 				$varian_deskripsi = strip_tags($this->input->post('deskripsi_varian'));
 				$kode = $this->session->userdata('idadmin');
@@ -67,8 +73,38 @@ class Varian extends CI_Controller
 				$p = $user->row_array();
 				$user_id = $p['pengguna_id'];
 				$user_nama = $p['pengguna_nama'];
+
+				$produk_subkategori = strip_tags($this->input->post('subkategori'));
+				$produk_kategori = strip_tags($this->input->post('kategori'));
 				$produk_kelas = strip_tags($this->input->post('kelas'));
-				$this->m_varian->simpan_varian_new($varian_nama, $produk_kelas, $varian_deskripsi, $user_id, $user_nama, $gambar);
+				$produk_brand = strip_tags($this->input->post('brand'));
+				$satuan = strip_tags($this->input->post('satuan'));
+				$berat = strip_tags($this->input->post('berat'));
+				$harga = strip_tags($this->input->post('harga'));
+				$warna = strip_tags($this->input->post('warna'));
+				$diskon = strip_tags($this->input->post('diskon'));
+				$stok = strip_tags($this->input->post('stok'));
+
+				$this->m_varian->simpan_varian_new(
+					$produk_kategori,
+					$produk_subkategori,
+					$produk_kelas,
+					$produk_brand,
+					$varian_nama,
+					$satuan,
+					$berat,
+					$harga,
+					$diskon,
+					$stok,
+					$warna,
+					$varian_deskripsi,
+					$user_id,
+					$user_nama,
+					$gambar
+
+				);
+
+				// $this->m_varian->simpan_varian_new($varian_nama, $produk_kelas, $varian_deskripsi, $user_id, $user_nama, $gambar);
 				echo $this->session->set_flashdata('msg', 'success');
 				redirect('admin/varian');
 			} else {
@@ -122,9 +158,39 @@ class Varian extends CI_Controller
 				$user_id = $p['pengguna_id'];
 				$user_nama = $p['pengguna_nama'];
 				// $produk_kategori = strip_tags($this->input->post('kategori'));
-				$produk_kelas = $this->input->post('kelas');
-				// $this->m_subkategori->update_subkategori($subkategori_id, $subkategori_nama, $produk_kategori, $subkategori_deskripsi, $user_id, $user_nama, $gambar);
-				$this->m_varian->update_varian_new($varian_id, $varian_nama, $produk_kelas, $varian_deskripsi, $gambar);
+
+				$produk_subkategori = strip_tags($this->input->post('subkategori'));
+				$produk_kategori = strip_tags($this->input->post('kategori'));
+				$produk_kelas = strip_tags($this->input->post('kelas'));
+				$produk_brand = strip_tags($this->input->post('brand'));
+				$satuan = strip_tags($this->input->post('satuan'));
+				$berat = strip_tags($this->input->post('berat'));
+				$harga = strip_tags($this->input->post('harga'));
+				$warna = strip_tags($this->input->post('warna'));
+				$diskon = strip_tags($this->input->post('diskon'));
+				$stok = strip_tags($this->input->post('stok'));
+
+
+				// $this->m_varian->update_varian_new($varian_id, $varian_nama, $produk_kelas, $varian_deskripsi, $gambar);
+
+				$this->m_varian->update_varian_new(
+					$varian_id,
+					$produk_kategori,
+					$produk_subkategori,
+					$produk_kelas,
+					$produk_brand,
+					$varian_nama,
+					$satuan,
+					$berat,
+					$harga,
+					$diskon,
+					$stok,
+					$warna,
+					$varian_deskripsi,
+					$gambar
+
+				);
+
 				echo $this->session->set_flashdata('msg', 'info');
 				redirect('admin/varian');
 			} else {
@@ -141,9 +207,37 @@ class Varian extends CI_Controller
 			$p = $user->row_array();
 			$user_id = $p['pengguna_id'];
 			$user_nama = $p['pengguna_nama'];
-			$produk_kelas = $this->input->post('kelas');
-			// $this->m_subkategori->update_subkategori_tanpa_img($subkategori_id, $subkategori_nama, $produk_kategori, $subkategori_deskripsi, $user_id, $user_nama);
-			$this->m_varian->update_varian_new_tanpa_img($varian_id, $varian_nama, $produk_kelas, $varian_deskripsi);
+
+			$produk_subkategori = strip_tags($this->input->post('subkategori'));
+			$produk_kategori = strip_tags($this->input->post('kategori'));
+			$produk_kelas = strip_tags($this->input->post('kelas'));
+			$produk_brand = strip_tags($this->input->post('brand'));
+			$satuan = strip_tags($this->input->post('satuan'));
+			$berat = strip_tags($this->input->post('berat'));
+			$harga = strip_tags($this->input->post('harga'));
+			$warna = strip_tags($this->input->post('warna'));
+			$diskon = strip_tags($this->input->post('diskon'));
+			$stok = strip_tags($this->input->post('stok'));
+
+
+			// $this->m_varian->update_varian_new_tanpa_img($varian_id, $varian_nama, $produk_kelas, $varian_deskripsi);
+
+			$this->m_varian->update_varian_new_tanpa_img(
+				$varian_id,
+				$produk_kategori,
+				$produk_subkategori,
+				$produk_kelas,
+				$produk_brand,
+				$varian_nama,
+				$satuan,
+				$berat,
+				$harga,
+				$diskon,
+				$stok,
+				$warna,
+				$varian_deskripsi
+			);
+
 			echo $this->session->set_flashdata('msg', 'info');
 			redirect('admin/varian ');
 		}

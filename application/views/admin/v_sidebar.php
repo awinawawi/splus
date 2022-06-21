@@ -35,7 +35,7 @@
 
                     <li class="sm" <?= ($uri == 'produk' ? 'class="active"' : '') ?>>
                         <a href="<?php echo base_url() . 'admin/produk' ?>">
-                            <i class="fa fa-product-hunt"></i> <span>Produk</span>
+                            <i class="fa fa-product-hunt"></i> <span>Kelas</span>
                             <span class="pull-right-container">
                                 <small class="label pull-right"></small>
                             </span>
@@ -43,7 +43,7 @@
                     </li>
                     <li class="sm" <?= ($uri == 'varian' ? 'class="active"' : '') ?>>
                         <a href="<?php echo base_url() . 'admin/varian' ?>">
-                            <i class="fa fa-clone"></i> <span>Varian</span>
+                            <i class="fa fa-clone"></i> <span>Varian Produk</span>
                             <span class="pull-right-container">
                                 <small class="label pull-right"></small>
                             </span>

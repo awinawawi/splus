@@ -11,20 +11,38 @@ class M_order extends CI_Model
     //         ->get('tbl_produk')->result();
     // }
 
+    //lama
+    // public function getProduk($slug)
+    // {
+    //     return $this->db->join('tbl_produk_varian', 'tbl_produk_varian.produk_id=tbl_produk.produk_id')
+    //         ->where('varian_nama', $slug)
+    //         ->group_by('varian_nama')
+    //         ->get('tbl_produk')->result();
+    // }
+
+
+    // public function getVarian($varian)
+    // {
+    //     return $this->db->where('varian_nama', $varian)
+    //         ->get('tbl_produk_varian')->result();
+    // }
+
+    //new
     public function getProduk($slug)
     {
-        return $this->db->join('tbl_produk_varian', 'tbl_produk_varian.produk_id=tbl_produk.produk_id')
+        return $this->db->join('tbl_varian_coba', 'tbl_varian_coba.produk_kategori=tbl_produk.produk_id')
             ->where('varian_nama', $slug)
             ->group_by('varian_nama')
             ->get('tbl_produk')->result();
     }
 
-
     public function getVarian($varian)
     {
         return $this->db->where('varian_nama', $varian)
-            ->get('tbl_produk_varian')->result();
+            ->get('tbl_varian_coba')->result();
     }
+
+
 
     public function get_all_category()
     {
@@ -94,6 +112,12 @@ class M_order extends CI_Model
 
 
     /////////////////END FILTER PRODUCT//////////////////
+
+    // public function getPrice($id)
+    // {
+    //     return $this->db->where('varian_id', $id)
+    //         ->get('tbl_produk_varian')->result();
+    // }
 
     public function getPrice($id)
     {

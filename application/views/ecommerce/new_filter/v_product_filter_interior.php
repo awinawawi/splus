@@ -299,7 +299,7 @@
 							foreach ($jenis_data->result_array() as $row) {
 							?>
 								<div class="list-group-item checkbox">
-									<label><input type="checkbox" class="common_selector brand" value="<?php echo $row['product_jenis']; ?>"> <?php echo $row['product_jenis']; ?></label>
+									<label><input type="checkbox" class="common_selector brand" value="<?php echo $row['subkategori_nama']; ?>"> <?php echo $row['subkategori_nama']; ?></label>
 								</div>
 							<?php
 							}
@@ -314,7 +314,7 @@
 							foreach ($tipe_data->result_array() as $row) {
 							?>
 								<div class="list-group-item checkbox">
-									<label><input type="checkbox" class="common_selector ram" value="<?php echo $row['product_tipe']; ?>"> <?php echo $row['product_tipe']; ?></label>
+									<label><input type="checkbox" class="common_selector ram" value="<?php echo $row['kelas_nama']; ?>"> <?php echo $row['kelas_nama']; ?></label>
 								</div>
 							<?php
 							}
@@ -328,7 +328,7 @@
 						foreach ($brand_data->result_array() as $row) {
 						?>
 							<div class="list-group-item checkbox">
-								<label><input type="checkbox" class="common_selector storage" value="<?php echo $row['product_brand']; ?>"> <?php echo $row['product_brand']; ?></label>
+								<label><input type="checkbox" class="common_selector storage" value="<?php echo $row['brand']; ?>"> <?php echo $row['brand']; ?></label>
 							</div>
 						<?php
 						}
